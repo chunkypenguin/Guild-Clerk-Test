@@ -164,7 +164,15 @@ public class GrabObjectProperties{
 			if (m_targetRB.CompareTag("Quest"))
 			{
 				m_targetRB.useGravity = true;
-			}
+                // Get all colliders attached to this GameObject
+                Collider[] colliderz = m_targetRB.gameObject.GetComponents<Collider>();
+
+                // Disable each collider
+                foreach (Collider col in colliderz)
+                {
+                    col.isTrigger = false;
+                }
+            }
 
 			//m_targetRB.gameObject.GetComponent<BoxCollider>().enabled = false; //THIS WAS THE FIRST COLLIDER CODE
 
@@ -226,10 +234,7 @@ public class GrabObjectProperties{
                 col.enabled = true;
             }
 
-
             m_targetRB.gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Default");
-
-
 
 			//Grab Properties	
 			m_targetRB.useGravity = m_defaultProperties.m_useGravity;
@@ -242,6 +247,15 @@ public class GrabObjectProperties{
 				//m_targetRB.isKinematic = true;
 				m_targetRB.useGravity = false;
 				m_targetRB.velocity = Vector3.zero;
+
+                // Get all colliders attached to this GameObject
+                Collider[] colliderz = m_targetRB.gameObject.GetComponents<Collider>();
+
+                // Disable each collider
+                foreach (Collider col in colliderz)
+                {
+					col.isTrigger = true;
+                }
             }
 
             m_targetRB = null;
@@ -259,8 +273,6 @@ public class GrabObjectProperties{
 			Vector3 hitPointPos = m_hitPointObject.transform.position;
             //Vector3 dif = m_targetPos - hitPointPos;
             Vector3 dif = m_transform.position - m_targetRB.position; //YYYEEEESSSS
-
-            //Debug.Log(dif);
 
 			if (m_isHingeJoint)
 				m_targetRB.AddForceAtPosition(m_grabSpeed * dif * 100, hitPointPos, ForceMode.Force);

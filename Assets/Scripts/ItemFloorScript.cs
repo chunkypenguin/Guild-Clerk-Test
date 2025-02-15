@@ -48,6 +48,15 @@ public class ItemFloorScript : MonoBehaviour
             if (gameObject.CompareTag("Quest"))
             {
                 rb.useGravity = false;
+
+                // Get all colliders attached to this GameObject
+                Collider[] colliderz = gameObject.GetComponents<Collider>();
+
+                // Disable each collider
+                foreach (Collider col in colliderz)
+                {
+                    col.isTrigger = true;
+                }
             }
         }
     }
