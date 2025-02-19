@@ -13,6 +13,8 @@ public class MousePos3D : MonoBehaviour
     private bool goldOpen;
     public Transform mousePos;
 
+    [SerializeField] AudioSource bellSound;
+
     [SerializeField] QuestSystem questSystem;
     // Update is called once per frame
     void Update()
@@ -29,6 +31,7 @@ public class MousePos3D : MonoBehaviour
             if (questraycastHit.collider.CompareTag("Bell") && Input.GetMouseButtonDown(0))
             {
                 questSystem.FinalizeItems();
+                bellSound.Play();
             }
 
             if (questraycastHit.collider.CompareTag("Gold") && Input.GetMouseButtonDown(0))
