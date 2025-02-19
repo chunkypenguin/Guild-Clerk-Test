@@ -60,6 +60,8 @@ public class GoldSystem : MonoBehaviour
     public void SpawnGold()
     {
         GameObject coin = Instantiate(goldCoin);
+        float force = Random.Range(-2f, 2f);
+        coin.GetComponent<Rigidbody>().AddForce((Vector3.right * force), ForceMode.Impulse);
 
         coins.Add(coin);
 

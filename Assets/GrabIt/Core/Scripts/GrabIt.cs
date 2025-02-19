@@ -143,12 +143,31 @@ public class GrabObjectProperties{
 					if (Physics.Raycast(ray, out hitInfo, m_grabMaxDistance, m_collisionMask))
 					{
 						//Debug.Log(hitInfo.collider.name);
-						Rigidbody rb = hitInfo.collider.GetComponent<Rigidbody>();
-						if (rb != null) {
-							Set(rb, hitInfo.distance);
-							//Debug.Log(hitInfo.distance);
-							m_grabbing = true;
-						}
+
+						if (hitInfo.collider.gameObject.CompareTag("Quest"))
+						{
+                            Rigidbody rb = hitInfo.collider.transform.parent.GetComponent<Rigidbody>();
+
+                            if (rb != null)
+                            {
+                                Set(rb, hitInfo.distance);
+                                //Debug.Log(hitInfo.distance);
+                                m_grabbing = true;
+                            }
+                        }
+						else
+						{
+                            Rigidbody rb = hitInfo.collider.GetComponent<Rigidbody>();
+
+                            if (rb != null)
+                            {
+                                Set(rb, hitInfo.distance);
+                                //Debug.Log(hitInfo.distance);
+                                m_grabbing = true;
+                            }
+                        }
+                        //Rigidbody rb = hitInfo.collider.GetComponent<Rigidbody>();
+
 					}
 				}
 			}
@@ -157,21 +176,40 @@ public class GrabObjectProperties{
 
 		void Set(Rigidbody target, float distance)
 		{
-			m_targetRB = target;
+			//back to norm
+            m_targetRB = target;
+
+			Debug.Log(m_targetRB.gameObject.name);
 
 			m_targetRB.gameObject.GetComponent<Billboard>().isHeld = true;
 
 			if (m_targetRB.CompareTag("Quest"))
 			{
 				m_targetRB.useGravity = true;
+
+                m_targetRB.constraints = RigidbodyConstraints.None;
+				m_targetRB.constraints = RigidbodyConstraints.FreezeRotation;
+
                 // Get all colliders attached to this GameObject
                 Collider[] colliderz = m_targetRB.gameObject.GetComponents<Collider>();
 
                 // Disable each collider
                 foreach (Collider col in colliderz)
                 {
-                    col.isTrigger = false;
+                    //col.isTrigger = false;
                 }
+
+                Collider colliderchild = m_targetRB.transform.GetChild(1).GetComponent<Collider>();
+
+                colliderchild.isTrigger = true;
+
+				m_targetRB.transform.GetChild(1).gameObject.layer = LayerMask.NameToLayer("PickedUp");
+
+            }
+
+			else
+			{
+                m_targetRB.gameObject.layer = LayerMask.NameToLayer("PickedUp");
             }
 
 			//m_targetRB.gameObject.GetComponent<BoxCollider>().enabled = false; //THIS WAS THE FIRST COLLIDER CODE
@@ -187,7 +225,7 @@ public class GrabObjectProperties{
             }
 
 
-            m_targetRB.gameObject.layer = LayerMask.NameToLayer("PickedUp");
+            //m_targetRB.gameObject.layer = LayerMask.NameToLayer("PickedUp");//OLD
             //m_targetRB.gameObject.tag = "PickedUp";
             //m_targetRB.gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("PickedUp");
             //m_targetRB.gameObject.layer = LayerMask.NameToLayer("PickedUp");
@@ -221,7 +259,16 @@ public class GrabObjectProperties{
 		void Reset()
 		{
             m_targetRB.gameObject.GetComponent<Billboard>().isHeld = false;
-            m_targetRB.gameObject.layer = LayerMask.NameToLayer("GrabIt");
+			//m_targetRB.gameObject.layer = LayerMask.NameToLayer("GrabIt");
+
+			if (m_targetRB.CompareTag("Quest"))
+			{
+                m_targetRB.transform.GetChild(1).gameObject.layer = LayerMask.NameToLayer("GrabIt");
+            }
+			else
+			{
+                m_targetRB.gameObject.layer = LayerMask.NameToLayer("GrabIt");
+            }
 
             //m_targetRB.gameObject.GetComponent<BoxCollider>().enabled = true; //FIRST COLLIDER CODE
 
@@ -234,7 +281,7 @@ public class GrabObjectProperties{
                 col.enabled = true;
             }
 
-            m_targetRB.gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Default");
+            //m_targetRB.gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Default");
 
 			//Grab Properties	
 			m_targetRB.useGravity = m_defaultProperties.m_useGravity;
@@ -244,9 +291,13 @@ public class GrabObjectProperties{
 
             if (m_targetRB.CompareTag("Quest") && m_targetRB.transform.GetChild(0).GetComponent<QuestBoardCheck>().onBoard)
             {
+
+				Debug.Log("Onboard");
 				//m_targetRB.isKinematic = true;
 				m_targetRB.useGravity = false;
 				m_targetRB.velocity = Vector3.zero;
+
+                m_targetRB.constraints = RigidbodyConstraints.FreezeAll;
 
                 // Get all colliders attached to this GameObject
                 Collider[] colliderz = m_targetRB.gameObject.GetComponents<Collider>();
@@ -254,8 +305,19 @@ public class GrabObjectProperties{
                 // Disable each collider
                 foreach (Collider col in colliderz)
                 {
-					col.isTrigger = true;
+					//col.isTrigger = true;
                 }
+
+
+            }
+
+			else if (m_targetRB.CompareTag("Quest") && !m_targetRB.transform.GetChild(0).GetComponent<QuestBoardCheck>().onBoard)
+			{
+                m_targetRB.gameObject.GetComponent<Collider>().isTrigger = true;
+
+                Collider colliderchild = m_targetRB.transform.GetChild(1).GetComponent<Collider>();
+
+                colliderchild.isTrigger = false;
             }
 
             m_targetRB = null;

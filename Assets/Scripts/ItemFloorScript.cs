@@ -7,6 +7,7 @@ public class ItemFloorScript : MonoBehaviour
     Vector3 startPos;
     Quaternion startRotation;
     Rigidbody rb;
+    Rigidbody prb;
     [SerializeField] float downForce;
     // Start is called before the first frame update
     void Start()
@@ -40,14 +41,19 @@ public class ItemFloorScript : MonoBehaviour
     {
         if (collision.gameObject.layer == 9)
         {
-            Debug.Log("hi");
-            rb.isKinematic = true;
-            transform.position = startPos;
-            transform.rotation = startRotation;
-            rb.isKinematic = false;
+
             if (gameObject.CompareTag("Quest"))
             {
-                rb.useGravity = false;
+                prb = gameObject.transform.parent.GetComponent<Rigidbody>();
+                Debug.Log("hi");
+                prb.isKinematic = true;
+                prb.transform.position = startPos;
+                prb.transform.rotation = startRotation;
+                prb.isKinematic = false;
+
+                prb.useGravity = false;
+
+                prb.constraints = RigidbodyConstraints.FreezeAll;
 
                 // Get all colliders attached to this GameObject
                 Collider[] colliderz = gameObject.GetComponents<Collider>();
@@ -58,6 +64,16 @@ public class ItemFloorScript : MonoBehaviour
                     col.isTrigger = true;
                 }
             }
+            else
+            {
+                Debug.Log("hi");
+                rb.isKinematic = true;
+                transform.position = startPos;
+                transform.rotation = startRotation;
+                rb.isKinematic = false;
+            }
+
+
         }
     }
 }

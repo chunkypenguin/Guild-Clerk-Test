@@ -20,7 +20,7 @@ public class MoveCharacter : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            transform.DOScale(endPos.position, moveSpeed);
+            transform.DOMove(endPos.position, moveSpeed);
         }
 
         if (Input.GetKeyDown(KeyCode.J))
