@@ -9,6 +9,8 @@ public class MousePos3D : MonoBehaviour
     [SerializeField] LayerMask pickedUpLayer;
     [SerializeField] GameObject pickUpObject;
     [SerializeField] bool pickedUp;
+    [SerializeField] GameObject goldUI;
+    private bool goldOpen;
     public Transform mousePos;
 
     [SerializeField] QuestSystem questSystem;
@@ -27,6 +29,21 @@ public class MousePos3D : MonoBehaviour
             if (questraycastHit.collider.CompareTag("Bell") && Input.GetMouseButtonDown(0))
             {
                 questSystem.FinalizeItems();
+            }
+
+            if (questraycastHit.collider.CompareTag("Gold") && Input.GetMouseButtonDown(0))
+            {
+                if (!goldOpen)
+                {
+                    goldOpen = true;
+                    goldUI.SetActive(true);
+                }
+                else
+                {
+                    goldOpen = false;
+                    goldUI.SetActive(false);
+                }
+
             }
 
             if (questraycastHit.collider.CompareTag("Quest"))

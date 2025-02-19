@@ -11,6 +11,7 @@ TagManager:
   - Rasberry
   - Bell
   - PickedUp
+  - Gold
   layers:
   - Default
   - TransparentFX

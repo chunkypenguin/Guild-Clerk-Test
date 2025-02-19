@@ -17,6 +17,8 @@ public class Billboard : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        moveCamScript = Camera.main.GetComponent<movecam>();
     }
 
     void Update()

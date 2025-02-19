@@ -13,15 +13,19 @@ public class movecam : MonoBehaviour
     [SerializeField] Vector3 rewardsAngle;
     [SerializeField] Vector3 rewardsPosition;
     [SerializeField] Vector3 centerPosition;
+    [SerializeField] Vector3 questPosition;
+    [SerializeField] Vector3 equipmentPosition;
     [SerializeField] float camMoveSpeed;
     [SerializeField] public bool center, left, right, bottom;
     public bool canMoveCam;
 
     [SerializeField] GrabIt grabItScript;
+    [SerializeField] GoldSystem goldSystemScript;
 
     private void Start()
     {
-        centerPosition = transform.position;
+        //centerPosition = transform.position;
+        transform.position = centerPosition;
     }
 
     // Update is called once per frame
@@ -42,12 +46,20 @@ public class movecam : MonoBehaviour
     {
         if (canMoveCam)
         {
-            if (center || bottom)
+            if (center)
             {
                 center = false;
                 bottom = false;
                 left = true;
                 MoveCamToEquipment();
+            }
+            else if (bottom)
+            {
+                center = false;
+                bottom = false;
+                left = true;
+                MoveCamToEquipment();
+                goldSystemScript.CloseGoldDrawer();
             }
             else if (right)
             {
@@ -67,12 +79,20 @@ public class movecam : MonoBehaviour
     {
         if (canMoveCam)
         {
-            if (center || bottom)
+            if (center)
             {
                 center = false;
                 bottom = false;
                 right = true;
                 MoveCamToQuests();
+            }
+            else if (bottom)
+            {
+                center = false;
+                bottom = false;
+                right = true;
+                MoveCamToQuests();
+                goldSystemScript.CloseGoldDrawer();
             }
             else if (left)
             {
@@ -99,6 +119,8 @@ public class movecam : MonoBehaviour
                 right = false;
                 bottom = true;
                 MoveCamRewards();
+
+                goldSystemScript.OpenGoldDrawer();
             }
             else if (bottom)
             {
@@ -117,6 +139,8 @@ public class movecam : MonoBehaviour
                 bottom = false;
                 center = true;
                 MoveCamCenter();
+
+                goldSystemScript.CloseGoldDrawer();
             }
 
             else
@@ -132,7 +156,7 @@ public class movecam : MonoBehaviour
     {
         canMoveCam = false;
         transform.DORotate(questAngle, camMoveSpeed).onComplete = grabItScript.CamMoveCheck;
-        transform.DOMove(centerPosition, camMoveSpeed);
+        transform.DOMove(questPosition, camMoveSpeed);
         Invoke(nameof(CanMoveCamera), 0.5f);
 
     }
@@ -141,7 +165,7 @@ public class movecam : MonoBehaviour
     {
         canMoveCam = false;
         transform.DORotate(equipmentAngle, camMoveSpeed).onComplete = grabItScript.CamMoveCheck;
-        transform.DOMove(centerPosition, camMoveSpeed);
+        transform.DOMove(equipmentPosition, camMoveSpeed);
         Invoke(nameof(CanMoveCamera), 0.5f);
     }
 
@@ -157,7 +181,7 @@ public class movecam : MonoBehaviour
     {
         canMoveCam = false;
         transform.DORotate(rewardsAngle, camMoveSpeed).onComplete = grabItScript.CamMoveCheck;
-        transform.DOMove(rewardsPosition, camMoveSpeed);
+        transform.DOMove(centerPosition, camMoveSpeed);
         Invoke(nameof(CanMoveCamera), 0.5f);
     }
 
