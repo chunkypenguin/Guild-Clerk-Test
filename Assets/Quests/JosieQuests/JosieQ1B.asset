@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
+  m_Name: JosieQ1B
+  m_EditorClassIdentifier: 
+  questTitle: Help Farmer A. Gene harvest apples at her orchard
+  questDescription: "\u201CI need help harvesting this season! There's been a plentiful
+    growth this time around, and I'm afraid I won't be able to harvest 'em all before
+    those pesky gnats get to some of 'em. I'll bake ya cookies for anyone willing
+    to lend a hand, and if you\u2019re lucky, you might even hear one of my famous
+    stories while we work!\u201D"
+  questReward: 'Reward: 4 Gold'

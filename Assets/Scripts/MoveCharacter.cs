@@ -16,13 +16,13 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] float jumpSpeed;
     [SerializeField] int jumpCount;
     [SerializeField] float jumpDuration;
-    [SerializeField] DialogueTrigger dialogueTriggerScript;
-    [SerializeField] DialogueManager dialogueManagerScript;
 
     bool hasMoved;
 
+    bool josieHasMoved;
+
     //Character Dialogue Nodes
-    [SerializeField] GameObject Josie3;
+    [SerializeField] CharacterSystem cs;
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public class MoveCharacter : MonoBehaviour
             {
 
                 //Start Dialogue
-                dialogueManagerScript.StartNewDialogue(dialogueTriggerScript);
+                cs.josieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
                 //Debug.Log("Hello");
             });
         }
@@ -64,7 +64,24 @@ public class MoveCharacter : MonoBehaviour
         Debug.Log("move to desk");
         transform.DOMove(endPos.position, moveSpeed * 0.25f).OnComplete(() =>
         {
-            Josie3.GetComponent<DialogueManager>().StartNewDialogue(dialogueTriggerScript);
+            if (!josieHasMoved)
+            {
+                cs.josieD1P3.GetComponent<DialogueManager>().StartNewDialogue(cs.dialogueTriggerScript);
+                josieHasMoved = true;
+            }
+            else
+            {
+                if (cs.pickedQ1A)
+                {
+                    cs.josieD1Q1AP2.GetComponent<DialogueManager>().StartNewDialogue(cs.dialogueTriggerScript);
+                }
+                else if (cs.pickedQ1B)
+                {
+                    cs.josieD1Q1BP2.GetComponent<DialogueManager>().StartNewDialogue(cs.dialogueTriggerScript);
+                }
+
+            }
+
         });
     }
 }

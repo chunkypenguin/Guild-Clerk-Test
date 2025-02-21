@@ -51,10 +51,11 @@ public class MousePos3D : MonoBehaviour
 
             if (questraycastHit.collider.CompareTag("Quest"))
             {
-                questSystem.ShowQuestDescription();
+                GameObject quest = questraycastHit.transform.gameObject;
+                questSystem.ShowQuestDescription(quest);
             }
 
-            else
+            else //COULD BE OPTIMIZED WITH BOOL
             {
                 questSystem.HideQuestDescription();
             }

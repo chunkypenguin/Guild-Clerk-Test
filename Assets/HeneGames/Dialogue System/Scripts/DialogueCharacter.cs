@@ -8,5 +8,7 @@ namespace HeneGames.DialogueSystem
     {
         public Sprite characterPhoto;
         public string characterName;
+
+        public QuestObject[] quest;
     }
 }

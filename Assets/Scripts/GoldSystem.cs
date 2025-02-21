@@ -8,7 +8,7 @@ using static UnityEngine.Rendering.DebugUI.Table;
 public class GoldSystem : MonoBehaviour
 {
 
-    int goldAmount;
+    public int goldAmount;
     [SerializeField] TMP_Text goldText;
     [SerializeField] GameObject goldUI;
     [SerializeField] GameObject goldDrawer;

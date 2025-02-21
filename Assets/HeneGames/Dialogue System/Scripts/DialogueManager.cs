@@ -212,6 +212,8 @@ namespace HeneGames.DialogueSystem
 
         public void NextSentence(out bool lastSentence)
         {
+            Debug.Log("next ssentence");
+
             //The next sentence cannot be changed immediately after starting
             if (coolDownTimer > 0f)
             {
@@ -292,6 +294,8 @@ namespace HeneGames.DialogueSystem
 
         private void ShowCurrentSentence()
         {
+            Debug.Log("show ssentence");
+
             //my code
             if (UIManagerScript != null)
             {
