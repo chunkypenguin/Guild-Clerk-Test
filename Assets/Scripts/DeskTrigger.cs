@@ -24,4 +24,9 @@ public class DeskTrigger : MonoBehaviour
             Debug.Log(obj.name + " added to the list.");
         }
     }
+
+    public void CheckForQuest()
+    {
+        //if(items.contains)
+    }
 }

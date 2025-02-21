@@ -11,6 +11,9 @@ namespace HeneGames.DialogueSystem
         private float coolDownTimer;
         private bool dialogueIsOn;
         private DialogueTrigger dialogueTrigger;
+        public UIManager UIManagerScript;
+
+        public string playerName;
 
         public enum TriggerState
         {
@@ -57,6 +60,9 @@ namespace HeneGames.DialogueSystem
 
                 dialogueIsOn = true;
             }
+
+
+
         }
 
         //Start dialogue by trigger
@@ -78,6 +84,22 @@ namespace HeneGames.DialogueSystem
 
                     dialogueIsOn = true;
                 }
+            }
+        }
+
+        public void StartNewDialogue(DialogueTrigger _trigger)
+        {
+            if (!dialogueIsOn)
+            {
+                dialogueTrigger = _trigger;
+                dialogueTrigger.startDialogueEvent.Invoke();
+
+                startDialogueEvent.Invoke();
+
+                //If component found start dialogue
+                DialogueUI.instance.StartDialogue(this);
+
+                dialogueIsOn = true;
             }
         }
 
@@ -270,10 +292,23 @@ namespace HeneGames.DialogueSystem
 
         private void ShowCurrentSentence()
         {
+            //my code
+            if (UIManagerScript != null)
+            {
+                playerName = UIManagerScript.playerName;
+            }
+
+            //NEW
+            //Debug.Log($"Player Name: {playerName}"); // Check if playerName is set correctly
+            string formattedSentence = sentences[currentSentence].GetFormattedSentence(playerName);
+            //Debug.Log($"Formatted Sentence: {formattedSentence}"); // See what the final string is
+
             if (sentences[currentSentence].dialogueCharacter != null)
             {
                 //Show sentence on the screen
-                DialogueUI.instance.ShowSentence(sentences[currentSentence].dialogueCharacter, sentences[currentSentence].sentence);
+                //DialogueUI.instance.ShowSentence(sentences[currentSentence].dialogueCharacter, sentences[currentSentence].sentence);
+
+                DialogueUI.instance.ShowSentence(sentences[currentSentence].dialogueCharacter, formattedSentence);
 
                 //Invoke sentence event
                 sentences[currentSentence].sentenceEvent.Invoke();
@@ -284,7 +319,9 @@ namespace HeneGames.DialogueSystem
                 _dialogueCharacter.characterName = "";
                 _dialogueCharacter.characterPhoto = null;
 
-                DialogueUI.instance.ShowSentence(_dialogueCharacter, sentences[currentSentence].sentence);
+                //DialogueUI.instance.ShowSentence(_dialogueCharacter, sentences[currentSentence].sentence); //ORIGNAL
+
+                DialogueUI.instance.ShowSentence(_dialogueCharacter, formattedSentence);
 
                 //Invoke sentence event
                 sentences[currentSentence].sentenceEvent.Invoke();
@@ -313,12 +350,17 @@ namespace HeneGames.DialogueSystem
         public DialogueCharacter dialogueCharacter;
 
         [TextArea(3, 10)]
-        public string sentence;
+        public string sentence = "Hello, {0}! Welcome to the world of Unity.";
 
         public float skipDelayTime = 0.5f;
 
         public AudioClip sentenceSound;
 
         public UnityEvent sentenceEvent;
+
+        public string GetFormattedSentence(string playerName)
+        {
+            return string.Format(sentence, playerName);
+        }
     }
 }

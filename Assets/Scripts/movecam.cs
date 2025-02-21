@@ -31,15 +31,15 @@ public class movecam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            MoveCamToQuests();
-        }
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    MoveCamToQuests();
+        //}
 
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            MoveCamToEquipment();
-        }
+        //else if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    MoveCamToEquipment();
+        //}
     }
 
     public void LeftButton()

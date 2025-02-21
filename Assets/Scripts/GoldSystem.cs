@@ -37,7 +37,7 @@ public class GoldSystem : MonoBehaviour
 
     public void PressedUp()
     {
-        if (goldAmount < 99) //cap at 99
+        if (goldAmount < 50) //cap at 99
         {
             goldAmount++;
             goldText.text = goldAmount.ToString();
@@ -60,8 +60,8 @@ public class GoldSystem : MonoBehaviour
     public void SpawnGold()
     {
         GameObject coin = Instantiate(goldCoin);
-        float force = Random.Range(-2f, 2f);
-        coin.GetComponent<Rigidbody>().AddForce((Vector3.right * force), ForceMode.Impulse);
+        float force = Random.Range(-1.5f, 1.5f);
+        coin.GetComponent<Rigidbody>().AddForce((Vector3.right * force) + Vector3.up * 1.5f, ForceMode.Impulse);
 
         coins.Add(coin);
 
