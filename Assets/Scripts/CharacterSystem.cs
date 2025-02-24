@@ -14,6 +14,7 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager josieD1P1;
     public DialogueManager josieD1P2;
     public DialogueManager josieD1P3;
+    public DialogueManager josieD1P4;
     public DialogueManager josieD1Q1AP1;
     public DialogueManager josieD1Q1AP2;
     public DialogueManager josieD1Q1BP1;

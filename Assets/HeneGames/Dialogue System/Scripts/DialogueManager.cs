@@ -22,7 +22,7 @@ namespace HeneGames.DialogueSystem
         }
 
         [Header("References")]
-        [SerializeField] private AudioSource audioSource;
+        [SerializeField] public AudioSource audioSource;
 
         [Header("Events")]
         public UnityEvent startDialogueEvent;
@@ -212,7 +212,7 @@ namespace HeneGames.DialogueSystem
 
         public void NextSentence(out bool lastSentence)
         {
-            Debug.Log("next ssentence");
+            Debug.Log("next sentence");
 
             //The next sentence cannot be changed immediately after starting
             if (coolDownTimer > 0f)
@@ -294,7 +294,7 @@ namespace HeneGames.DialogueSystem
 
         private void ShowCurrentSentence()
         {
-            Debug.Log("show ssentence");
+            Debug.Log("show sentence");
 
             //my code
             if (UIManagerScript != null)
@@ -302,7 +302,7 @@ namespace HeneGames.DialogueSystem
                 playerName = UIManagerScript.playerName;
             }
 
-            //NEW
+            //NEW TO PUT PLAYER NAME IN SENTENCE
             //Debug.Log($"Player Name: {playerName}"); // Check if playerName is set correctly
             string formattedSentence = sentences[currentSentence].GetFormattedSentence(playerName);
             //Debug.Log($"Formatted Sentence: {formattedSentence}"); // See what the final string is

@@ -89,6 +89,9 @@ namespace HeneGames.DialogueSystem
                     StopAllCoroutines();
                     typing = false;
                     messageText.text = currentMessage;
+
+                    //NEW CODE TO TRY AND STOP DIALOGUE SOUND
+                    currentDialogueManager.audioSource.Stop();
                 }
             }
         }
@@ -193,6 +196,8 @@ namespace HeneGames.DialogueSystem
                 if(_textMeshObject.text.Length == _letters.Length)
                 {
                     typing = false;
+                    //NEW CODE TO TRY AND STOP DIALOGUE SOUND
+                    currentDialogueManager.audioSource.Stop();
                 }
 
                 yield return new WaitForSeconds(0.1f * _speed);
