@@ -81,6 +81,7 @@ public class GrabObjectProperties{
 		public MousePos3D mouseScript;
 		public QuestBoardCheck questBoardScript;
 		public movecam moveCamScript;
+		public TutorialScript ts;
 
 		void Awake()
 		{
@@ -147,6 +148,19 @@ public class GrabObjectProperties{
 						if (hitInfo.collider.gameObject.CompareTag("Quest"))
 						{
                             Rigidbody rb = hitInfo.collider.transform.parent.GetComponent<Rigidbody>();
+
+							//TUTORIAL STUFF
+							if (ts.tutP1)
+							{
+								ts.holdingQuest = true;
+                                moveCamScript.dontFlash = false;
+								if (ts.questsOnBoard && !moveCamScript.flashOn)
+								{
+                                    moveCamScript.ButtonFlashUp(moveCamScript.leftButton);
+                                }
+
+                            }
+
 
                             if (rb != null)
                             {
@@ -264,6 +278,14 @@ public class GrabObjectProperties{
 			if (m_targetRB.CompareTag("Quest"))
 			{
                 m_targetRB.transform.GetChild(1).gameObject.layer = LayerMask.NameToLayer("GrabIt");
+
+                //TUTORIAL STUFF
+                if (ts.tutP1)
+				{
+					ts.holdingQuest = false;
+                    moveCamScript.dontFlash = true;
+					moveCamScript.TurnFlashOff();
+                }
             }
 			else
 			{

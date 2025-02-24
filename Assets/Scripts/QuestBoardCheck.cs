@@ -22,4 +22,6 @@ public class QuestBoardCheck : MonoBehaviour
             onBoard = false;
         }
     }
+
+
 }

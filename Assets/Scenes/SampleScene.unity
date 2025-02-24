@@ -221,6 +221,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 963194229}
+          m_TargetAssemblyTypeName: movecam, Assembly-CSharp
+          m_MethodName: BottomButtonLockToggle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 963194229}
+          m_TargetAssemblyTypeName: movecam, Assembly-CSharp
+          m_MethodName: TopButtonLockToggle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &101162315
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.72037673, g: 0.72506726, b: 0.30781153, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -531,6 +555,112 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2088083222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &181643793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181643794}
+  - component: {fileID: 181643797}
+  - component: {fileID: 181643796}
+  - component: {fileID: 181643795}
+  m_Layer: 9
+  m_Name: Floor (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &181643794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181643793}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 11.81, z: 0}
+  m_LocalScale: {x: 1137.7051, y: 1137.7051, z: 1137.7051}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1378081579}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &181643795
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181643793}
+  m_Material: {fileID: 13400000, guid: bf3906444e5440e45853d2fe594551d6, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -629719859055844128, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+--- !u!23 &181643796
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181643793}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 9154063753028388989, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &181643797
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181643793}
+  m_Mesh: {fileID: -629719859055844128, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
 --- !u!1 &184499392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,7 +1374,7 @@ GameObject:
   - component: {fileID: 260577184}
   m_Layer: 0
   m_Name: GoldDrawer
-  m_TagString: Untagged
+  m_TagString: GoldObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1258,8 +1388,8 @@ Transform:
   m_GameObject: {fileID: 260577179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.62, y: 3.1, z: -2.4}
-  m_LocalScale: {x: 1.6569142, y: 1, z: 6.55}
+  m_LocalPosition: {x: -7.65, y: 3.1275, z: -2.3753}
+  m_LocalScale: {x: 1.6569142, y: 0.804908, z: 6.349457}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 946335709}
@@ -1356,6 +1486,12 @@ MonoBehaviour:
   goldCoin: {fileID: 5840946704655884335, guid: c952530162324cd4d9e97e2d5fbe5cd8, type: 3}
   coins: []
   coinSpawnPos: {fileID: 0}
+  addedGold: 0
+  isSuctionActive: 0
+  vacuumPoint: {fileID: 1557248497}
+  suckForce: 20
+  maxSpeed: 10
+  collectDistance: 0.5
 --- !u!1 &280610215 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4029053671485550580, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
@@ -2190,7 +2326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.72037673, g: 0.72506726, b: 0.30781153, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2509,7 +2645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &587459919
 Transform:
   m_ObjectHideFlags: 0
@@ -2684,18 +2820,6 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 963194229}
-          m_TargetAssemblyTypeName: movecam, Assembly-CSharp
-          m_MethodName: ButtonFlashUp
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1799022098}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3390,9 +3514,18 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
       insertIndex: 3
+      addedObject: {fileID: 181643794}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+      insertIndex: 4
       addedObject: {fileID: 2077162770}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
-      insertIndex: 7
+      insertIndex: 5
+      addedObject: {fileID: 1110948466}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 1749717268}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+      insertIndex: 10
       addedObject: {fileID: 1124248183}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2191750151954457832, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
@@ -3957,7 +4090,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a1a9859a1d13f3f44949a867ae029e2f, type: 2}
+  - {fileID: 2100000, guid: aa816ea3619442847a6d1199b80494fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3996,8 +4129,8 @@ Transform:
   m_GameObject: {fileID: 792930836}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000002078712, y: -0.70710796, z: 0.7071057, w: 0.0000021234155}
-  m_LocalPosition: {x: 4.04, y: 3.5, z: 25.16}
-  m_LocalScale: {x: 5.0986743, y: 2.668345, z: 3.3549101}
+  m_LocalPosition: {x: 6.9, y: 3.7, z: 25.16}
+  m_LocalScale: {x: 5.83092, y: 2.668345, z: 3.3549101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5001,7 +5134,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 973462385}
+        m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+        m_MethodName: TutorialP1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5208,9 +5353,11 @@ MonoBehaviour:
   grabItScript: {fileID: 963194230}
   goldSystemScript: {fileID: 260577184}
   cs: {fileID: 655475413}
+  tutorial: 1
   turnedRight: 0
   turnedLeft: 0
   dontFlash: 0
+  flashOn: 0
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5244,6 +5391,7 @@ MonoBehaviour:
   mouseScript: {fileID: 1018871379}
   questBoardScript: {fileID: 0}
   moveCamScript: {fileID: 963194229}
+  ts: {fileID: 973462385}
 --- !u!1 &964100854
 GameObject:
   m_ObjectHideFlags: 0
@@ -5290,6 +5438,7 @@ GameObject:
   - component: {fileID: 973462383}
   - component: {fileID: 973462382}
   - component: {fileID: 973462384}
+  - component: {fileID: 973462385}
   m_Layer: 0
   m_Name: JosieD1P1
   m_TagString: Untagged
@@ -5525,6 +5674,29 @@ MonoBehaviour:
   endDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &973462385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973462376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f16a8c140773f264da54d2e406093138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questDialogue1: 0
+  questDialogue2: 0
+  tutP1: 0
+  tutP2: 0
+  questsOnBoard: 0
+  holdingQuest: 0
+  questA: {fileID: 805243921}
+  questB: {fileID: 1200052222}
+  cs: {fileID: 655475413}
+  mc: {fileID: 963194229}
+  gs: {fileID: 260577184}
 --- !u!1 &1018871378
 GameObject:
   m_ObjectHideFlags: 0
@@ -6116,7 +6288,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 973462385}
+        m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+        m_MethodName: TutorialP1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -6317,6 +6501,112 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104754104}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1110948465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1110948466}
+  - component: {fileID: 1110948469}
+  - component: {fileID: 1110948468}
+  - component: {fileID: 1110948467}
+  m_Layer: 0
+  m_Name: Floor (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1110948466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110948465}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5000022, y: 0.49999937, z: 0.49999923, w: 0.49999925}
+  m_LocalPosition: {x: -8.99, y: 6.55, z: 0}
+  m_LocalScale: {x: 1137.7051, y: 1137.7051, z: 1137.7051}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1378081579}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!64 &1110948467
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110948465}
+  m_Material: {fileID: 13400000, guid: bf3906444e5440e45853d2fe594551d6, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -629719859055844128, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+--- !u!23 &1110948468
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110948465}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 9154063753028388989, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1110948469
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110948465}
+  m_Mesh: {fileID: -629719859055844128, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
 --- !u!1001 &1115578509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7035,18 +7325,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 963194229}
-          m_TargetAssemblyTypeName: movecam, Assembly-CSharp
-          m_MethodName: PlayerTurnedRight
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "The board may look overwhelming to you right now, and it's kinda maybe
       the only reason why we lost the last person before you\u2026"
@@ -7091,18 +7369,6 @@ MonoBehaviour:
         - m_Target: {fileID: 963194229}
           m_TargetAssemblyTypeName: movecam, Assembly-CSharp
           m_MethodName: LeftButton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 963194229}
-          m_TargetAssemblyTypeName: movecam, Assembly-CSharp
-          m_MethodName: PlayerTurnedLeft
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7535,6 +7801,7 @@ MonoBehaviour:
   questBDescription: {fileID: 2078944771}
   questBReward: {fileID: 403238769}
   cs: {fileID: 655475413}
+  dt: {fileID: 1296600103}
   a: 0
   b: 1
 --- !u!4 &1287477356
@@ -8274,7 +8541,7 @@ GameObject:
   - component: {fileID: 1430079034}
   - component: {fileID: 1430079036}
   - component: {fileID: 1430079035}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8290,8 +8557,8 @@ Transform:
   m_GameObject: {fileID: 1430079033}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000008940696, y: -0.70710665, z: 0.707107, w: 0.00000008940696}
-  m_LocalPosition: {x: 1.4813, y: 11.97, z: -0}
-  m_LocalScale: {x: 86.97472, y: 100, z: 100}
+  m_LocalPosition: {x: 0.8183, y: 11.97, z: 0}
+  m_LocalScale: {x: 81.147415, y: 81.319, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 946335709}
@@ -8794,6 +9061,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557210092}
   m_CullTransparentMesh: 1
+--- !u!1 &1557248496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1557248497}
+  m_Layer: 0
+  m_Name: VacuumPoint
+  m_TagString: Vacuum
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1557248497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557248496}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
+  m_LocalPosition: {x: -2.73, y: 6.75, z: 10.19}
+  m_LocalScale: {x: 0.44738832, y: 0.44738832, z: 0.67108244}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1574124532
 GameObject:
   m_ObjectHideFlags: 0
@@ -9372,13 +9670,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 963194229}
-          m_TargetAssemblyTypeName: movecam, Assembly-CSharp
-          m_MethodName: ButtonFlashUp
-          m_Mode: 2
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: TutorialP1
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 2136788830}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -9685,6 +9983,112 @@ Transform:
   - {fileID: 1126729002}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1749717267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1749717268}
+  - component: {fileID: 1749717271}
+  - component: {fileID: 1749717270}
+  - component: {fileID: 1749717269}
+  m_Layer: 0
+  m_Name: Floor (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1749717268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749717267}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5000022, y: 0.49999937, z: 0.49999923, w: 0.49999925}
+  m_LocalPosition: {x: -8.99, y: 6.55, z: 0}
+  m_LocalScale: {x: 1137.7051, y: 1137.7051, z: 1137.7051}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1378081579}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!64 &1749717269
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749717267}
+  m_Material: {fileID: 13400000, guid: bf3906444e5440e45853d2fe594551d6, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -629719859055844128, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+--- !u!23 &1749717270
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749717267}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 9154063753028388989, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1749717271
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749717267}
+  m_Mesh: {fileID: -629719859055844128, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
 --- !u!1 &1762933411
 GameObject:
   m_ObjectHideFlags: 0
@@ -9917,7 +10321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.72037673, g: 0.72506726, b: 0.30781153, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10376,7 +10780,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 973462385}
+        m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+        m_MethodName: TutorialP1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -10400,12 +10816,12 @@ MonoBehaviour:
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: 'A help quest for 4 gold huh? '
     skipDelayTime: 0
-    sentenceSound: {fileID: 0}
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
-    sentence: Aw this sounds delightful hun.
+    sentence: Aw this quest sounds delightful hun.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -10675,7 +11091,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 973462385}
+        m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+        m_MethodName: TutorialP1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11077,7 +11505,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 973462385}
+        m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+        m_MethodName: TutorialP1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11306,7 +11746,7 @@ MonoBehaviour:
     sentence: 'Anyways, now that I''ve totally come back from my super hard quest,
       it''s time for me to get my reward. '
     skipDelayTime: 0
-    sentenceSound: {fileID: 0}
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -11340,6 +11780,30 @@ MonoBehaviour:
         - m_Target: {fileID: 655475413}
           m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
           m_MethodName: IsReward
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 963194229}
+          m_TargetAssemblyTypeName: movecam, Assembly-CSharp
+          m_MethodName: BottomButtonLockToggle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 963194229}
+          m_TargetAssemblyTypeName: movecam, Assembly-CSharp
+          m_MethodName: TopButtonLockToggle
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -11716,6 +12180,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: JosieTutDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 602895682}
+            m_ObjectArgumentAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager,
+              Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &2136788833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11773,7 +12250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.72037673, g: 0.72506726, b: 0.30781153, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11824,7 +12301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6449296285829880520, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: textAnimationSpeed
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6449296285829880521, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_Pivot.x
@@ -11959,6 +12436,7 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 1018871383}
   - {fileID: 812819323}
+  - {fileID: 1557248497}
   - {fileID: 1989573862}
   - {fileID: 186464396}
   - {fileID: 1892736946}

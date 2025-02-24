@@ -30,22 +30,22 @@ public class DeskTrigger : MonoBehaviour
             Debug.Log(obj.name + " added to the list.");
         }
 
-        if(cs.isQuest)
-        {
-            if(canPressBell)
-            {
-                CheckForQuest();
-                canPressBell = false;
-            }
-        }
+        //if(cs.isQuest)
+        //{
+        //    if(canPressBell)
+        //    {
+        //        CheckForQuest();
+        //        canPressBell = false;
+        //    }
+        //}
 
-        else if(cs.isReward)
-        {
-            if (canPressBell)
-            {
-                CheckForReward();
-            }
-        }
+        //else if(cs.isReward)
+        //{
+        //    if (canPressBell)
+        //    {
+        //        CheckForReward();
+        //    }
+        //}
 
     }
 
@@ -75,6 +75,10 @@ public class DeskTrigger : MonoBehaviour
 
     public void CheckForReward()
     {
+        if(gs.coins.Count > 0)
+        {
+            gs.isSuctionActive = true;
+        }
         if(cs.pickedQ1A)
         {
             if (gs.goldAmount == 7)
@@ -119,5 +123,10 @@ public class DeskTrigger : MonoBehaviour
     public void CanPressBell()
     {
         canPressBell = true;
+    }
+
+    public void SuckItems()
+    {
+
     }
 }

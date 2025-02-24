@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
-using static UnityEngine.Rendering.DebugUI.Table;
 
 public class GoldSystem : MonoBehaviour
 {
-
     public int goldAmount;
     [SerializeField] TMP_Text goldText;
     [SerializeField] GameObject goldUI;
@@ -16,28 +14,102 @@ public class GoldSystem : MonoBehaviour
     [SerializeField] float drawerSpeed;
 
     [SerializeField] GameObject goldCoin;
-    public List<GameObject> coins;
+    public List<GameObject> coins = new List<GameObject>(); // Ensure list is initialized
     [SerializeField] Transform coinSpawnPos;
+
+    // FOR TUTORIAL
+    public bool addedGold;
+
+    // VACUUM SYSTEM
+    public bool isSuctionActive = false;
+    [SerializeField] Transform vacuumPoint; // The position coins should be sucked toward
+    [SerializeField] float suckForce = 20f;
+    [SerializeField] float maxSpeed = 10f;
+    [SerializeField] float collectDistance = 0.5f;
 
     private void Start()
     {
         goldDrawerStartPos = transform.position;
     }
 
+    private void Update()
+    {
+        // Start suction when Space is pressed
+        if (Input.GetKeyDown(KeyCode.Space) && coins.Count > 0)
+        {
+            //isSuctionActive = true;
+        }
+
+        // Stop suction when all coins are collected
+        if (isSuctionActive && coins.Count == 0)
+        {
+            isSuctionActive = false;
+            Debug.Log("All coins collected! Suction stopped.");
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!isSuctionActive) return;
+
+        // Move all coins toward the vacuum point
+        for (int i = coins.Count - 1; i >= 0; i--)
+        {
+            GameObject coin = coins[i];
+            if (coin == null) continue; // Skip if coin was already destroyed
+
+            Rigidbody rb = coin.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                // Turn off gravity and collider while getting sucked
+                rb.useGravity = false;
+                Collider col = coin.GetComponent<Collider>();
+                if (col != null) col.enabled = false;
+
+                Vector3 direction = (vacuumPoint.position - coin.transform.position).normalized;
+                rb.AddForce(direction * suckForce, ForceMode.Acceleration);
+                rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+            }
+
+            // Check if close enough to be collected
+            if (Vector3.Distance(coin.transform.position, vacuumPoint.position) < collectDistance)
+            {
+                CollectCoin(coin);
+            }
+        }
+    }
+
+    void CollectCoin(GameObject coin)
+    {
+        Debug.Log(coin.name + " collected!");
+
+        // Remove from the list
+        coins.Remove(coin);
+
+        goldAmount--;
+        goldText.text = goldAmount.ToString();
+
+        // Destroy the coin
+        Destroy(coin);
+    }
+
     public void PressedDown()
     {
-        if (goldAmount > 0) //cant go below 0
+        if (goldAmount > 0) // Can't go below 0
         {
             goldAmount--;
             goldText.text = goldAmount.ToString();
             RemoveGold();
         }
-
     }
 
     public void PressedUp()
     {
-        if (goldAmount < 50) //cap at 99
+        if (!addedGold)
+        {
+            addedGold = true;
+        }
+        if (goldAmount < 50) // Cap at 50
         {
             goldAmount++;
             goldText.text = goldAmount.ToString();
@@ -61,17 +133,25 @@ public class GoldSystem : MonoBehaviour
     {
         GameObject coin = Instantiate(goldCoin);
         float force = Random.Range(-1.5f, 1.5f);
-        coin.GetComponent<Rigidbody>().AddForce((Vector3.right * force) + Vector3.up * 1.5f, ForceMode.Impulse);
+        Rigidbody rb = coin.GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            rb.AddForce((Vector3.right * force) + Vector3.up * 1.5f, ForceMode.Impulse);
+        }
 
         coins.Add(coin);
-
         Debug.Log(coins.Count);
     }
 
     public void RemoveGold()
     {
-        Destroy(coins[coins.Count - 1]);
-        coins.RemoveAt(coins.Count - 1);
-        Debug.Log(coins.Count);
+        if (coins.Count > 0)
+        {
+            GameObject lastCoin = coins[coins.Count - 1];
+            coins.RemoveAt(coins.Count - 1);
+            Destroy(lastCoin);
+            Debug.Log(coins.Count);
+        }
     }
 }

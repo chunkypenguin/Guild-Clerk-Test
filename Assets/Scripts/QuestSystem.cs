@@ -25,6 +25,7 @@ public class QuestSystem : MonoBehaviour
 
 
     [SerializeField] CharacterSystem cs;
+    [SerializeField] DeskTrigger dt;
 
     public int a = 0;
     public int b = 1;
@@ -67,6 +68,16 @@ public class QuestSystem : MonoBehaviour
         foreach (GameObject obj in deskTrigger.items)
         {
             Debug.Log(obj.name);
+        }
+
+        if (cs.isQuest)
+        {
+            dt.CheckForQuest();
+        }
+
+        else if (cs.isReward)
+        {
+            dt.CheckForReward();
         }
 
         deskTrigger.items.Clear();

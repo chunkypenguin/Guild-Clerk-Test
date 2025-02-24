@@ -26,6 +26,14 @@ public class MoveCharacter : MonoBehaviour
 
     private void Start()
     {
+        hasMoved = true;
+        transform.DOMove(endPos.position, moveSpeed).OnComplete(() =>
+        {
+
+            //Start Dialogue
+            cs.josieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+            //Debug.Log("Hello");
+        });
     }
 
     // Update is called once per frame

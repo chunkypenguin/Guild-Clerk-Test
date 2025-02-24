@@ -12,6 +12,8 @@ TagManager:
   - Bell
   - PickedUp
   - Gold
+  - Vacuum
+  - GoldObject
   layers:
   - Default
   - TransparentFX

@@ -28,9 +28,11 @@ public class movecam : MonoBehaviour
     [SerializeField] CharacterSystem cs;
 
     //TUTORIAL STUFF
+    public bool tutorial;
     [SerializeField] bool turnedRight;
     [SerializeField] bool turnedLeft;
-    [SerializeField] bool dontFlash;
+    [SerializeField] public bool dontFlash;
+    [SerializeField] public bool flashOn;
 
     private void Start()
     {
@@ -133,12 +135,13 @@ public class movecam : MonoBehaviour
                 center = true;
                 MoveCamCenter();
 
-                //Tutorial
-                if (turnedLeft)
-                {
-                    dontFlash = true;
-                    turnedLeft = false;
-                }
+                ///Tutorial
+                //if (turnedLeft)
+                //{
+                //    dontFlash = true;
+                //    turnedLeft = false;
+                //    tutorial = false;
+                //}
             }
             else if (left)
             {
@@ -159,12 +162,12 @@ public class movecam : MonoBehaviour
                 right = true;
                 MoveCamToQuests();
 
-                if (turnedRight)
-                {
-                    cs.josieD1P4.StartNewDialogue(cs.dialogueTriggerScript);
-                    dontFlash = true;
-                    turnedRight = false;
-                }
+                //if (turnedRight)
+                //{
+                //    cs.josieD1P4.StartNewDialogue(cs.dialogueTriggerScript);
+                //    dontFlash = true;
+                //    turnedRight = false;
+                //}
             }
             else if (bottom)
             {
@@ -282,9 +285,11 @@ public class movecam : MonoBehaviour
 
     public void ButtonFlashUp(GameObject button)
     {
+        flashOn = true;
         button.GetComponent<Image>().DOFade(0.75f, 1f).onComplete = () =>
         {
             ButtonFlashDown(button);
+            
         };
     }
 
@@ -299,8 +304,15 @@ public class movecam : MonoBehaviour
             else
             {
                 dontFlash = false;
+                flashOn = false;
             }
             
         };
+    }
+
+    public void TurnFlashOff()
+    {
+        dontFlash = true;
+        //flashOn = false;
     }
 }
