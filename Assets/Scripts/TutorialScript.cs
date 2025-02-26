@@ -9,6 +9,8 @@ public class TutorialScript : MonoBehaviour
     public bool tutP1, tutP2;
     public bool questsOnBoard;
     public bool holdingQuest;
+    bool josieStarted;
+    bool josieHasMoved;
 
     [SerializeField] QuestBoardCheck questA;
     [SerializeField] QuestBoardCheck questB;
@@ -123,5 +125,32 @@ public class TutorialScript : MonoBehaviour
             tutP2 = false;
         }
 
+    }
+
+    public void TutorialMoveDesk()
+    {
+
+        if (!josieStarted)
+        {
+            cs.josieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+            josieStarted = true;
+        }
+        else if (!josieHasMoved && josieStarted)
+        {
+            cs.josieD1P3.GetComponent<DialogueManager>().StartNewDialogue(cs.dialogueTriggerScript);
+            josieHasMoved = true;
+        }
+        else
+        {
+            if (cs.pickedQ1A)
+            {
+                cs.josieD1Q1AP2.GetComponent<DialogueManager>().StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else if (cs.pickedQ1B)
+            {
+                cs.josieD1Q1BP2.GetComponent<DialogueManager>().StartNewDialogue(cs.dialogueTriggerScript);
+            }
+
+        }
     }
 }

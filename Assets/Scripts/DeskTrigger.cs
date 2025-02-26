@@ -9,6 +9,7 @@ public class DeskTrigger : MonoBehaviour
 
     [SerializeField] CharacterSystem cs;
     [SerializeField] GoldSystem gs;
+    [SerializeField] QuestSystem qs;
 
     public bool canPressBell;
 
@@ -53,6 +54,10 @@ public class DeskTrigger : MonoBehaviour
     {
         if ((items.Find(item => item.name == "QuestA") != null) && items.Find(item => item.name == "QuestB") == null)
         {
+            GameObject questRB = items.Find(item => item.name == "QuestA");
+            qs.GetQuestRB(questRB);
+            cs.currentCharacter.choseQuestA = true;
+            cs.currentCharacter.choseQuestB = false;
             Debug.Log("QuestA found! Performing action...");
             // Add your action here
             cs.josieD1Q1AP1.StartNewDialogue(cs.dialogueTriggerScript);
@@ -61,6 +66,10 @@ public class DeskTrigger : MonoBehaviour
 
         else if ((items.Find(item => item.name == "QuestB") != null) && items.Find(item => item.name == "QuestA") == null)
         {
+            GameObject questRB = items.Find(item => item.name == "QuestB");
+            qs.GetQuestRB(questRB);
+            cs.currentCharacter.choseQuestB = true;
+            cs.currentCharacter.choseQuestA = false;
             Debug.Log("QuestB found! Performing action...");
             // Add your action here
             cs.josieD1Q1BP1.StartNewDialogue(cs.dialogueTriggerScript);

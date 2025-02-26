@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
+  m_Name: GregQ1B
+  m_EditorClassIdentifier: 
+  questTitle: Collect 4 mushrooms from the Under Root Woods (1 gold per 2 mushrooms)
+  questDescription: "\u201CFor the life of me, I can NOT find these elusive mushrooms!
+    It's been weeks already! I\u2019M GONNA GO CRAZY. someone please help me.\u201D"
+  questReward: 'Reward: 2 gold'

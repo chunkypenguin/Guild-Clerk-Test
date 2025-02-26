@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
+  m_Name: GregQ1A
+  m_EditorClassIdentifier: 
+  questTitle: "Drive away the 2 pesky kobolds terrorizing the outskirts of town\r"
+  questDescription: "\u201CThose stupid kobolds are back again!! We've been havin'
+    trouble with the goblins already, but now these morons are back to steal my underwear
+    again!!!\u201D"
+  questReward: 'Reward: 8 gold'

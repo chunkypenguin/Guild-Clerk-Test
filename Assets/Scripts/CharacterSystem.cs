@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class CharacterSystem : MonoBehaviour
 {
-    [SerializeField] DialogueCharacter[] characters; //for example, Josie character
+    public DialogueCharacter[] characters; //for example, Josie character
     public DialogueCharacter currentCharacter;
 
+    public GameObject[] characterObjects;
+    public GameObject currentCharacterObject;
+
     public DialogueTrigger dialogueTriggerScript;
+
+    public int characterCount;
 
     //JOSIE
     public DialogueManager josieD1P1;
@@ -30,9 +35,17 @@ public class CharacterSystem : MonoBehaviour
     public bool pickedQ1A;
     public bool pickedQ1B;
 
+    //[SerializeField] GameObject josie;
+    //[SerializeField] GameObject greg;
+
+    private void Awake()
+    {
+        currentCharacter = characters[characterCount];
+        currentCharacterObject = characterObjects[characterCount];
+    }
     private void Start()
     {
-        currentCharacter = characters[0];
+        currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
     }
 
     public void IsQuest()
@@ -57,5 +70,14 @@ public class CharacterSystem : MonoBehaviour
         isReward = false;
         isQuest = false;
 
+    }
+
+    public void StartNewCharacter()
+    {
+        characterCount++;
+        currentCharacter = characters[characterCount];
+        currentCharacterObject = characterObjects[characterCount];
+
+        currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
     }
 }

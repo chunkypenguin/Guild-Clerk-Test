@@ -19,48 +19,43 @@ public class MoveCharacter : MonoBehaviour
 
     bool hasMoved;
 
-    bool josieHasMoved;
-
     //Character Dialogue Nodes
     [SerializeField] CharacterSystem cs;
-
-    private void Start()
-    {
-        hasMoved = true;
-        transform.DOMove(endPos.position, moveSpeed).OnComplete(() =>
-        {
-
-            //Start Dialogue
-            cs.josieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
-            //Debug.Log("Hello");
-        });
-    }
+    [SerializeField] TutorialScript ts;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !hasMoved)
-        {
-            hasMoved = true;
-            transform.DOMove(endPos.position, moveSpeed).OnComplete(() =>
-            {
+        //if(Input.GetKeyDown(KeyCode.Space) && !hasMoved)
+        //{
+        //    hasMoved = true;
+        //    transform.DOMove(endPos.position, moveSpeed).OnComplete(() =>
+        //    {
 
-                //Start Dialogue
-                cs.josieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
-                //Debug.Log("Hello");
-            });
-        }
+        //        //Start Dialogue
+        //        cs.josieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+        //        //Debug.Log("Hello");
+        //    });
+        //}
 
-        if (Input.GetKeyDown(KeyCode.J))
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    transform.DOJump(jumpPoint.position, jumpSpeed, jumpCount, jumpDuration);
+        //}
+    }
+
+    public void MoveToEnd()
+    {
+        transform.DOMove(startPos.position, moveSpeed).OnComplete(() =>
         {
-            transform.DOJump(jumpPoint.position, jumpSpeed, jumpCount, jumpDuration);
-        }
+            cs.StartNewCharacter();
+        });
     }
 
     public void MoveToStart()
     {
         
-        transform.DOMove(startPos.position, moveSpeed * 0.25f).OnComplete(() =>
+        transform.DOMove(startPos.position, moveSpeed).OnComplete(() =>
         {
             MoveToDesk();
         });
@@ -69,24 +64,16 @@ public class MoveCharacter : MonoBehaviour
 
     public void MoveToDesk()
     {
-        Debug.Log("move to desk");
-        transform.DOMove(endPos.position, moveSpeed * 0.25f).OnComplete(() =>
+        //Debug.Log("move to desk");
+        transform.DOMove(endPos.position, moveSpeed).OnComplete(() =>
         {
-            if (!josieHasMoved)
+            if (cs.currentCharacter.characterName == "Josie")
             {
-                cs.josieD1P3.GetComponent<DialogueManager>().StartNewDialogue(cs.dialogueTriggerScript);
-                josieHasMoved = true;
+                ts.TutorialMoveDesk();
             }
-            else
+
+            if(cs.currentCharacter.characterName == "Greg")
             {
-                if (cs.pickedQ1A)
-                {
-                    cs.josieD1Q1AP2.GetComponent<DialogueManager>().StartNewDialogue(cs.dialogueTriggerScript);
-                }
-                else if (cs.pickedQ1B)
-                {
-                    cs.josieD1Q1BP2.GetComponent<DialogueManager>().StartNewDialogue(cs.dialogueTriggerScript);
-                }
 
             }
 

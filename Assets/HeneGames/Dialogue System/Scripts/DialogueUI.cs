@@ -91,7 +91,11 @@ namespace HeneGames.DialogueSystem
                     messageText.text = currentMessage;
 
                     //NEW CODE TO TRY AND STOP DIALOGUE SOUND
-                    currentDialogueManager.audioSource.Stop();
+                    if(currentDialogueManager.audioSource != null)
+                    {
+                        currentDialogueManager.audioSource.Stop();
+                    }
+
                 }
             }
         }
@@ -197,7 +201,11 @@ namespace HeneGames.DialogueSystem
                 {
                     typing = false;
                     //NEW CODE TO TRY AND STOP DIALOGUE SOUND
-                    currentDialogueManager.audioSource.Stop();
+                    if(currentDialogueManager.audioSource != null)
+                    {
+                        currentDialogueManager.audioSource.Stop();
+                    }
+
                 }
 
                 yield return new WaitForSeconds(0.1f * _speed);

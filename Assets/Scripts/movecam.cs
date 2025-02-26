@@ -29,8 +29,8 @@ public class movecam : MonoBehaviour
 
     //TUTORIAL STUFF
     public bool tutorial;
-    [SerializeField] bool turnedRight;
-    [SerializeField] bool turnedLeft;
+    //[SerializeField] bool turnedRight;
+    //[SerializeField] bool turnedLeft;
     [SerializeField] public bool dontFlash;
     [SerializeField] public bool flashOn;
 
@@ -275,12 +275,12 @@ public class movecam : MonoBehaviour
 
     public void PlayerTurnedRight()
     {
-        turnedRight = true;
+        //turnedRight = true;
     }
 
     public void PlayerTurnedLeft()
     {
-        turnedLeft = true;
+        //turnedLeft = true;
     }
 
     public void ButtonFlashUp(GameObject button)

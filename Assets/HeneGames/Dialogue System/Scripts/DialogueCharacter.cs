@@ -10,5 +10,8 @@ namespace HeneGames.DialogueSystem
         public string characterName;
 
         public QuestObject[] quest;
+
+        public bool choseQuestA;
+        public bool choseQuestB;
     }
 }

@@ -17,3 +17,5 @@ MonoBehaviour:
   quest:
   - {fileID: 11400000, guid: 607944331b544bb4fbbcd6bad21275f4, type: 2}
   - {fileID: 11400000, guid: 1d2fbb86a94ff6340aa8ebc4728db365, type: 2}
+  choseQuestA: 0
+  choseQuestB: 0
