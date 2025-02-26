@@ -1155,6 +1155,138 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1637260669}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
+--- !u!1 &215668411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215668412}
+  - component: {fileID: 215668413}
+  m_Layer: 0
+  m_Name: GregD1P1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &215668412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215668411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1298240869}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &215668413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215668411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 655475413}
+        m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
+        m_MethodName: IsQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1287477355}
+        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
+        m_MethodName: UpdateQuests
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
+    sentence: 'Hello there! '
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
+    sentence: "You look like a new face\u2014you must be a new guild clerk! I'm quite
+      fond of all of the clerks here-"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
+    sentence: Oh wait.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
+    sentence: What am I blabbering about?
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
+    sentence: I should be introducing myself to you!
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: My name's Gregory, but you can call me Greg.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: I was hoping to get a quest contract today. Any quest should be fine.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &222871340
 GameObject:
   m_ObjectHideFlags: 0
@@ -3274,6 +3406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
   currentCharacter: {fileID: 0}
   characterObjects:
   - {fileID: 973462376}
@@ -3292,6 +3425,9 @@ MonoBehaviour:
   josieD1G1AP1: {fileID: 1956575492}
   josieD1G1BP1: {fileID: 2056054896}
   josieD1G1CP1: {fileID: 939738348}
+  gregD1P1: {fileID: 215668413}
+  gregD1Q1AP1: {fileID: 1311710834}
+  gregD1Q1BP1: {fileID: 2016044845}
   isQuest: 1
   isReward: 0
   isEquipment: 0
@@ -6002,6 +6138,7 @@ MonoBehaviour:
   jumpDuration: 0.75
   cs: {fileID: 655475413}
   ts: {fileID: 973462385}
+  gregs: {fileID: 1298240875}
 --- !u!23 &973462379
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8395,6 +8532,8 @@ MonoBehaviour:
   returnPoint: {fileID: 944075382}
   cs: {fileID: 655475413}
   dt: {fileID: 1296600103}
+  questAHolder: {fileID: 836519281}
+  questBHolder: {fileID: 1737869212}
   a: 0
   b: 1
   rb: {fileID: 0}
@@ -8555,6 +8694,7 @@ GameObject:
   - component: {fileID: 1298240873}
   - component: {fileID: 1298240872}
   - component: {fileID: 1298240870}
+  - component: {fileID: 1298240875}
   m_Layer: 0
   m_Name: Greg
   m_TagString: Untagged
@@ -8574,7 +8714,10 @@ Transform:
   m_LocalPosition: {x: 0.16, y: 0, z: 0}
   m_LocalScale: {x: 0.6033074, y: 0.44738832, z: 0.67108244}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 215668412}
+  - {fileID: 1311710833}
+  - {fileID: 2016044844}
   m_Father: {fileID: 1989573862}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
 --- !u!65 &1298240870
@@ -8619,6 +8762,7 @@ MonoBehaviour:
   jumpDuration: 0.75
   cs: {fileID: 655475413}
   ts: {fileID: 973462385}
+  gregs: {fileID: 1298240875}
 --- !u!23 &1298240873
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8669,6 +8813,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298240868}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1298240875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298240868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52d41f80a1348b4ab247b3f3b276a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cs: {fileID: 655475413}
 --- !u!1 &1300548960
 GameObject:
   m_ObjectHideFlags: 0
@@ -8745,6 +8902,105 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300548960}
   m_CullTransparentMesh: 1
+--- !u!1 &1311710832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311710833}
+  - component: {fileID: 1311710834}
+  m_Layer: 0
+  m_Name: GregD1Q1AP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1311710833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311710832}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1298240869}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1311710834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311710832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1298240872}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: "Oh, I\u2019ve never really tried out these kinds of quests before,
+      but there\u2019s always a first for everything! "
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: "Should be easy enough, there\u2019s only two to worry about."
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: Thanks, I look forward to actually trying this one out!
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: Well, it was nice meetin' ya! I'll cya later.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1331057228
 GameObject:
   m_ObjectHideFlags: 0
@@ -12501,6 +12757,111 @@ Transform:
   - {fileID: 973462381}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2016044843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2016044844}
+  - component: {fileID: 2016044845}
+  m_Layer: 0
+  m_Name: GregD1Q1BP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2016044844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016044843}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1298240869}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2016044845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016044843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1298240872}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: 'Oh I love mushroom quests! '
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: "And it\u2019s in the Under Root Woods too! "
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: Gotta love those woods.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: "It may not be worth much gold, but it\u2019s honest work."
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+    sentence: Well, it was nice meetin' ya! I'll cya later.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &2053473943
 GameObject:
   m_ObjectHideFlags: 0

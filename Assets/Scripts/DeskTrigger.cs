@@ -60,7 +60,7 @@ public class DeskTrigger : MonoBehaviour
             cs.currentCharacter.choseQuestB = false;
             Debug.Log("QuestA found! Performing action...");
             // Add your action here
-            cs.josieD1Q1AP1.StartNewDialogue(cs.dialogueTriggerScript);
+            cs.QuestADialogue();
             cs.pickedQ1A = true;
         }
 
@@ -72,7 +72,7 @@ public class DeskTrigger : MonoBehaviour
             cs.currentCharacter.choseQuestA = false;
             Debug.Log("QuestB found! Performing action...");
             // Add your action here
-            cs.josieD1Q1BP1.StartNewDialogue(cs.dialogueTriggerScript);
+            cs.QuestBDialogue();
             cs.pickedQ1B = true;
         }
 
@@ -87,6 +87,8 @@ public class DeskTrigger : MonoBehaviour
         if(gs.coins.Count > 0)
         {
             gs.isSuctionActive = true;
+            GameObject questRB = items.Find(item => item.name == "QuestReturn");
+            qs.GetQuestRB(questRB);
         }
         if(cs.pickedQ1A)
         {
@@ -132,10 +134,5 @@ public class DeskTrigger : MonoBehaviour
     public void CanPressBell()
     {
         canPressBell = true;
-    }
-
-    public void SuckItems()
-    {
-
     }
 }

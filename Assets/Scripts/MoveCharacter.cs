@@ -21,7 +21,9 @@ public class MoveCharacter : MonoBehaviour
 
     //Character Dialogue Nodes
     [SerializeField] CharacterSystem cs;
+
     [SerializeField] TutorialScript ts;
+    [SerializeField] GregScript gregs;
 
     // Update is called once per frame
     void Update()
@@ -74,7 +76,8 @@ public class MoveCharacter : MonoBehaviour
 
             if(cs.currentCharacter.characterName == "Greg")
             {
-
+                Debug.Log("hi im greg");
+                gregs.StartDialogue();
             }
 
         });

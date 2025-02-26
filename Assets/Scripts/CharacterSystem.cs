@@ -16,6 +16,7 @@ public class CharacterSystem : MonoBehaviour
     public int characterCount;
 
     //JOSIE
+    [Header("Josie")]
     public DialogueManager josieD1P1;
     public DialogueManager josieD1P2;
     public DialogueManager josieD1P3;
@@ -27,6 +28,11 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager josieD1G1AP1;
     public DialogueManager josieD1G1BP1;
     public DialogueManager josieD1G1CP1;
+
+    [Header("Greg")]
+    public DialogueManager gregD1P1;
+    public DialogueManager gregD1Q1AP1;
+    public DialogueManager gregD1Q1BP1;
 
     public bool isQuest;
     public bool isReward;
@@ -75,9 +81,44 @@ public class CharacterSystem : MonoBehaviour
     public void StartNewCharacter()
     {
         characterCount++;
-        currentCharacter = characters[characterCount];
-        currentCharacterObject = characterObjects[characterCount];
+        if (characterCount == characters.Length)
+        {
+            Debug.Log("no more");
+        }
+        else
+        {
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
 
-        currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
+            currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
+        }
+
+    }
+
+    public void QuestADialogue()
+    {
+        if (currentCharacter.characterName == "Josie")
+        {
+            josieD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+        }
+
+        if (currentCharacter.characterName == "Greg")
+        {
+            gregD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+        }
+        
+    }
+
+    public void QuestBDialogue()
+    {
+        if (currentCharacter.characterName == "Josie")
+        {
+            josieD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+        }
+
+        if (currentCharacter.characterName == "Greg")
+        {
+            gregD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+        }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemFloorScript : MonoBehaviour
 {
     Vector3 startPos;
+    Vector3 startScale;
     Quaternion startRotation;
     Rigidbody rb;
     Rigidbody prb;
@@ -14,6 +15,8 @@ public class ItemFloorScript : MonoBehaviour
     {
         startPos = transform.position;
         startRotation = transform.rotation;
+        startScale = transform.localScale;
+
         rb = GetComponent<Rigidbody>();
     }
 
@@ -41,39 +44,45 @@ public class ItemFloorScript : MonoBehaviour
     {
         if (collision.gameObject.layer == 9)
         {
+            ResetItem();
+        }
+    }
 
-            if (gameObject.CompareTag("Quest"))
+    public void ResetItem()
+    {
+        if (gameObject.CompareTag("Quest"))
+        {
+            prb = gameObject.transform.parent.GetComponent<Rigidbody>();
+
+            rb.useGravity = true;
+            prb.isKinematic = true;
+            prb.transform.position = startPos;
+            prb.transform.rotation = startRotation;
+            transform.localScale = startScale;//Added later for reset of sucked quest
+            prb.isKinematic = false;
+
+            prb.useGravity = false;
+
+            prb.constraints = RigidbodyConstraints.FreezeAll;
+
+            // Get all colliders attached to this GameObject
+            Collider[] colliderz = gameObject.GetComponents<Collider>();
+
+            // Disable each collider
+            foreach (Collider col in colliderz)
             {
-                prb = gameObject.transform.parent.GetComponent<Rigidbody>();
-                Debug.Log("hi");
-                prb.isKinematic = true;
-                prb.transform.position = startPos;
-                prb.transform.rotation = startRotation;
-                prb.isKinematic = false;
-
-                prb.useGravity = false;
-
-                prb.constraints = RigidbodyConstraints.FreezeAll;
-
-                // Get all colliders attached to this GameObject
-                Collider[] colliderz = gameObject.GetComponents<Collider>();
-
-                // Disable each collider
-                foreach (Collider col in colliderz)
-                {
-                    col.isTrigger = true;
-                }
+                col.enabled = true;
+                col.isTrigger = true;
             }
-            else
-            {
-                Debug.Log("hi");
-                rb.isKinematic = true;
-                transform.position = startPos;
-                transform.rotation = startRotation;
-                rb.isKinematic = false;
-            }
-
-
+        }
+        else
+        {
+            Debug.Log("hi");
+            rb.isKinematic = true;
+            transform.position = startPos;
+            transform.rotation = startRotation;
+            transform.localScale = startScale;
+            rb.isKinematic = false;
         }
     }
 }

@@ -35,6 +35,9 @@ public class QuestSystem : MonoBehaviour
     [SerializeField] CharacterSystem cs;
     [SerializeField] DeskTrigger dt;
 
+    [SerializeField] GameObject questAHolder;
+    [SerializeField] GameObject questBHolder;
+
     public int a = 0;
     public int b = 1;
 
@@ -95,7 +98,9 @@ public class QuestSystem : MonoBehaviour
         isSuctionActive = false;
 
         // Destroy the quest
+        questObject.GetComponent<ItemFloorScript>().ResetItem();
         questObject.transform.parent.gameObject.SetActive(false);
+        
     }
 
     public void DropQuest(GameObject questObject)
@@ -160,6 +165,10 @@ public class QuestSystem : MonoBehaviour
 
     public void UpdateQuests()
     {
+        Debug.Log("update quests");
+        questAHolder.SetActive(true);
+        questBHolder.SetActive(true);
+
         questATitle.text = cs.currentCharacter.quest[a].questTitle;
         questADescription.text = cs.currentCharacter.quest[a].questDescription;
         questAReward.text = cs.currentCharacter.quest[a].questReward;
