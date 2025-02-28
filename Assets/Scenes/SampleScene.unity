@@ -3650,6 +3650,95 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1637260669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &517694424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 517694425}
+  - component: {fileID: 517694426}
+  m_Layer: 0
+  m_Name: FinchD1GR11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &517694425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517694424}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &517694426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517694424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 186464397}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: FinchButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: HA! YOU FOOL.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &537008576
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,6 +3823,95 @@ MonoBehaviour:
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
     sentence: LORD MORT WILL BEFALL YOU.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!1 &544869206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544869207}
+  - component: {fileID: 544869208}
+  m_Layer: 0
+  m_Name: FinchD1GR8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &544869207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544869206}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &544869208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544869206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 186464397}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: FinchButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: WE WILL BE BACK.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -4309,11 +4487,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
   - {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
   currentCharacter: {fileID: 0}
   characterObjects:
   - {fileID: 973462376}
+  - {fileID: 1937845689}
   - {fileID: 1298240868}
   - {fileID: 1086671382}
   currentCharacterObject: {fileID: 0}
@@ -4944,6 +5124,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2144094992}
   m_SourcePrefab: {fileID: 100100000, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+--- !u!1 &714989457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 714989458}
+  m_Layer: 0
+  m_Name: JumpPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &714989458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714989457}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.46, y: 5.55, z: 8.245}
+  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &721780941
 GameObject:
   m_ObjectHideFlags: 0
@@ -5078,6 +5289,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721780941}
   m_CullTransparentMesh: 1
+--- !u!1 &726898776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 726898777}
+  - component: {fileID: 726898778}
+  m_Layer: 0
+  m_Name: FinchD1GR10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &726898777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726898776}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &726898778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726898776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: YOU MUST GIVE.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &742614209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5632,6 +5908,90 @@ Transform:
   - {fileID: 1225887255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &821517870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821517871}
+  - component: {fileID: 821517872}
+  m_Layer: 0
+  m_Name: FinchD1G1CP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &821517871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821517870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &821517872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821517870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 186464397}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: FinchButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: LORD MORT WILL BE PLEASED.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: GIVE MORE.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &827509012
 GameObject:
   m_ObjectHideFlags: 0
@@ -6636,6 +6996,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887001914}
   m_CullTransparentMesh: 1
+--- !u!1 &904124825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904124826}
+  - component: {fileID: 904124827}
+  m_Layer: 0
+  m_Name: FinchD1GR5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &904124826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904124825}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904124827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904124825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 186464397}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: FinchButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: LORD MORT IS UNHAPPY. BUT LORD MORT FORGIVES.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &917287517
 GameObject:
   m_ObjectHideFlags: 0
@@ -7343,7 +7792,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -8194,7 +8643,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -8984,6 +9433,71 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.59841853, y: 0.7294238, z: 0.1699646}
   m_Center: {x: 0.0015704888, y: 0.0012596895, z: 0.024321299}
+--- !u!1 &1144648714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144648715}
+  - component: {fileID: 1144648716}
+  m_Layer: 0
+  m_Name: FinchD1GR2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1144648715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144648714}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1144648716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144648714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: GIVE MORE?
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1153946437
 GameObject:
   m_ObjectHideFlags: 0
@@ -9090,6 +9604,95 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1637260669}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: -90}
+--- !u!1 &1160991944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160991945}
+  - component: {fileID: 1160991946}
+  m_Layer: 0
+  m_Name: FinchD1GR4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1160991945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160991944}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1160991946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160991944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 186464397}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: FinchButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: LORD MORT IS PLEASED. WE WILL BE BACK.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1184651982
 GameObject:
   m_ObjectHideFlags: 0
@@ -10190,7 +10793,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -10764,6 +11367,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344791441}
   m_CullTransparentMesh: 1
+--- !u!1 &1349617300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1349617301}
+  - component: {fileID: 1349617302}
+  m_Layer: 0
+  m_Name: FinchD1GR12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1349617301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349617300}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1349617302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349617300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 186464397}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: FinchButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: THIS IS NOT THE LAST WE MEET!
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1376289446
 GameObject:
   m_ObjectHideFlags: 0
@@ -10988,6 +11680,95 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378638251}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1390197901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1390197902}
+  - component: {fileID: 1390197903}
+  m_Layer: 0
+  m_Name: FinchD1GR6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1390197902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390197901}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1390197903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390197901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 186464397}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: FinchButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: LORD MORT WILL BEFALL YOU.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1397783551
 GameObject:
   m_ObjectHideFlags: 0
@@ -12562,6 +13343,71 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1702521122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1702521123}
+  - component: {fileID: 1702521124}
+  m_Layer: 0
+  m_Name: FinchD1GR7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1702521123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702521122}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1702521124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702521122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: GIVE, GIVE.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1707510285
 GameObject:
   m_ObjectHideFlags: 0
@@ -13931,6 +14777,71 @@ MonoBehaviour:
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
+--- !u!1 &1874706949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1874706950}
+  - component: {fileID: 1874706951}
+  m_Layer: 0
+  m_Name: FinchD1GR1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1874706950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874706949}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1874706951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874706949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: LORD MORT WILL BE PLEASED. GIVE MORE.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1892736943
 GameObject:
   m_ObjectHideFlags: 0
@@ -14197,6 +15108,293 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 313921606213018484, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+--- !u!1 &1932924469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1932924470}
+  - component: {fileID: 1932924471}
+  m_Layer: 0
+  m_Name: FinchD1GR3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1932924470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932924469}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1932924471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932924469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: AGAIN.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!1 &1937845689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1937845690}
+  - component: {fileID: 1937845695}
+  - component: {fileID: 1937845694}
+  - component: {fileID: 1937845691}
+  - component: {fileID: 1937845693}
+  m_Layer: 0
+  m_Name: Andy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1937845690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937845689}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
+  m_LocalPosition: {x: 6.19, y: -6.17, z: 2.67}
+  m_LocalScale: {x: 0.29374474, y: 0.14130287, z: 0.31659612}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2030897817}
+  - {fileID: 2023834212}
+  - {fileID: 1941135804}
+  - {fileID: 821517871}
+  - {fileID: 1874706950}
+  - {fileID: 1144648715}
+  - {fileID: 1932924470}
+  - {fileID: 1160991945}
+  - {fileID: 904124826}
+  - {fileID: 1390197902}
+  - {fileID: 1702521123}
+  - {fileID: 544869207}
+  - {fileID: 2086889321}
+  - {fileID: 726898777}
+  - {fileID: 517694425}
+  - {fileID: 1349617301}
+  m_Father: {fileID: 1989573862}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+--- !u!114 &1937845691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937845689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8871c91988a1f5144814100a3d83a9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {fileID: 956607129}
+  endPos: {fileID: 101162316}
+  moveSpeed: 3
+  jumpPoint: {fileID: 714989458}
+  jumpSpeed: 2
+  jumpCount: 1
+  jumpDuration: 0.75
+  cs: {fileID: 655475413}
+  josieS: {fileID: 973462385}
+  gregS: {fileID: 1298240875}
+  finchS: {fileID: 1086671388}
+--- !u!65 &1937845693
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937845689}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.000001, y: 1, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1937845694
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937845689}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1937845695
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937845689}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1941135803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1941135804}
+  - component: {fileID: 1941135805}
+  m_Layer: 0
+  m_Name: FinchD1G1BP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1941135804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941135803}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1941135805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941135803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 186464397}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: FinchButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: "NEED MORE\u2026 GIVE MORE?"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1956575490
 GameObject:
   m_ObjectHideFlags: 0
@@ -14627,6 +15825,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1937845690}
   - {fileID: 1086671383}
   - {fileID: 1298240869}
   - {fileID: 973462381}
@@ -14826,6 +16025,179 @@ MonoBehaviour:
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
+--- !u!1 &2023834211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2023834212}
+  - component: {fileID: 2023834213}
+  m_Layer: 0
+  m_Name: FinchD1G1AP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2023834212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023834211}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2023834213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023834211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 186464397}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: FinchButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: FINCH KNOWS FINCH WORTH!
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: GIVE FINCH GOLD!
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!1 &2030897816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030897817}
+  - component: {fileID: 2030897818}
+  m_Layer: 0
+  m_Name: FinchD1P1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2030897817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030897816}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2030897818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030897816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: GOLD? FINCH QUEST DONE PLEASE GIVE. FINCH NEED.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1287477355}
+          m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
+          m_MethodName: UpdateReturnQuest
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 655475413}
+          m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
+          m_MethodName: IsReward
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2049901259
 GameObject:
   m_ObjectHideFlags: 0
@@ -15626,6 +16998,95 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1225887255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2086889320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2086889321}
+  - component: {fileID: 2086889322}
+  m_Layer: 0
+  m_Name: FinchD1GR9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2086889321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086889320}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1937845690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2086889322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086889320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 186464397}
+        m_TargetAssemblyTypeName: CanvasButtons, Assembly-CSharp
+        m_MethodName: FinchButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+    sentence: ...
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!4 &2088083222 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 078db2568bb6efb478dec8be2f479768, type: 3}
@@ -16087,6 +17548,7 @@ SceneRoots:
   - {fileID: 792930840}
   - {fileID: 956607129}
   - {fileID: 101162316}
+  - {fileID: 714989458}
   - {fileID: 1637260669}
   - {fileID: 1287477356}
   - {fileID: 1296600107}

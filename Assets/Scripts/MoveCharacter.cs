@@ -67,24 +67,35 @@ public class MoveCharacter : MonoBehaviour
 
     public void MoveToDesk()
     {
-        //Debug.Log("move to desk");
-        transform.DOMove(endPos.position, moveSpeed).OnComplete(() =>
+
+        if (cs.currentCharacter.characterName == "Andy")
         {
-            if (cs.currentCharacter.characterName == "Josie")
-            {
-                josieS.TutorialMoveDesk();
-            }
+            transform.DOJump(jumpPoint.position, jumpSpeed, jumpCount, jumpDuration);
+        }
 
-            if(cs.currentCharacter.characterName == "Greg")
+        else
+        {
+            //Debug.Log("move to desk");
+            transform.DOMove(endPos.position, moveSpeed).OnComplete(() =>
             {
-                gregS.StartDialogue();
-            }
+                if (cs.currentCharacter.characterName == "Josie")
+                {
+                    josieS.TutorialMoveDesk();
+                }
 
-            if (cs.currentCharacter.characterName == "Finch")
-            {
-                finchS.StartDialogue();
-            }
+                if (cs.currentCharacter.characterName == "Greg")
+                {
+                    gregS.StartDialogue();
+                }
 
-        });
+                if (cs.currentCharacter.characterName == "Finch")
+                {
+                    finchS.StartDialogue();
+                }
+
+            });
+        }
+
+
     }
 }
