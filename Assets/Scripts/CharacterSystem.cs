@@ -34,6 +34,28 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager gregD1Q1AP1;
     public DialogueManager gregD1Q1BP1;
 
+    [Header("Finch")]
+    public DialogueManager finchD1P1;
+    public DialogueManager finchD1G1AP1;
+    public DialogueManager finchD1G1BP1;
+    public DialogueManager finchD1G1CP1;
+
+    [Header("Finch Gold Request")]
+    public DialogueManager finchD1GR1;
+    public DialogueManager finchD1GR2;
+    public DialogueManager finchD1GR3;
+    public DialogueManager finchD1GR4;
+    public DialogueManager finchD1GR5;
+    public DialogueManager finchD1GR6;
+    public DialogueManager finchD1GR7;
+    public DialogueManager finchD1GR8;
+    public DialogueManager finchD1GR9;
+    public DialogueManager finchD1GR10;
+    public DialogueManager finchD1GR11;
+    public DialogueManager finchD1GR12;
+
+
+
     public bool isQuest;
     public bool isReward;
     public bool isEquipment;
@@ -71,11 +93,9 @@ public class CharacterSystem : MonoBehaviour
 
     public void IsEquipment()
     {
-
         isEquipment = true;
         isReward = false;
         isQuest = false;
-
     }
 
     public void StartNewCharacter()

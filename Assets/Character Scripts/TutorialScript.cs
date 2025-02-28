@@ -153,4 +153,46 @@ public class TutorialScript : MonoBehaviour
 
         }
     }
+
+    public void CheckForReward()
+    {
+        if (cs.pickedQ1A)
+        {
+            if (gs.goldAmount == 7)
+            {
+                //Do this
+                cs.josieD1G1BP1.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else if (gs.goldAmount > 7)
+            {
+                //do this
+                cs.josieD1G1AP1.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+
+            else if (gs.goldAmount < 7)
+            {
+                //do this
+                cs.josieD1G1CP1.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+        }
+        else if (cs.pickedQ1B)
+        {
+            if (gs.goldAmount == 4)
+            {
+                //Do this
+                cs.josieD1G1BP1.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else if (gs.goldAmount > 4)
+            {
+                //do this
+                cs.josieD1G1AP1.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+
+            else if (gs.goldAmount < 4)
+            {
+                //do this
+                cs.josieD1G1CP1.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+        }
+    }
 }

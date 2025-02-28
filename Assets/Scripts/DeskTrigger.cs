@@ -11,6 +11,10 @@ public class DeskTrigger : MonoBehaviour
     [SerializeField] GoldSystem gs;
     [SerializeField] QuestSystem qs;
 
+    [SerializeField] TutorialScript josieS;
+    [SerializeField] GregScript gregS;
+    [SerializeField] FinchScript finchS;
+
     public bool canPressBell;
 
     private void OnTriggerEnter(Collider other)
@@ -86,49 +90,50 @@ public class DeskTrigger : MonoBehaviour
     {
         if(gs.coins.Count > 0)
         {
-            gs.isSuctionActive = true;
-            GameObject questRB = items.Find(item => item.name == "QuestReturn");
-            qs.GetQuestRB(questRB);
-        }
-        if(cs.pickedQ1A)
-        {
-            if (gs.goldAmount == 7)
+
+            if (cs.currentCharacter.characterName != "Finch")
             {
-                //Do this
-                cs.josieD1G1BP1.StartNewDialogue(cs.dialogueTriggerScript);
+                gs.isSuctionActive = true;
+                GameObject questRB = items.Find(item => item.name == "QuestReturn");
+                qs.GetQuestRB(questRB);
+                Debug.Log("not finch");
             }
-            else if(gs.goldAmount > 7)
+            else
             {
-                //do this
-                cs.josieD1G1AP1.StartNewDialogue(cs.dialogueTriggerScript);
+                if (!finchS.askingForGold)
+                {
+                    cs.pickedQ1A = true;
+                    gs.isSuctionActive = true;
+                    GameObject questRB = items.Find(item => item.name == "QuestReturn");
+                    qs.GetQuestRB(questRB);
+                    finchS.askingForGold = true;
+                    Debug.Log("Is Finch");
+                }
+                else
+                {
+                    gs.isSuctionActive = true;
+                }
+
+
             }
 
-            else if(gs.goldAmount < 7)
-            {
-                //do this
-                cs.josieD1G1CP1.StartNewDialogue(cs.dialogueTriggerScript);
-            }
         }
-        else if(cs.pickedQ1B)
-        {
-            if (gs.goldAmount == 4)
-            {
-                //Do this
-                cs.josieD1G1BP1.StartNewDialogue(cs.dialogueTriggerScript);
-            }
-            else if (gs.goldAmount > 4)
-            {
-                //do this
-                cs.josieD1G1AP1.StartNewDialogue(cs.dialogueTriggerScript);
-            }
 
-            else if (gs.goldAmount < 4)
-            {
-                //do this
-                cs.josieD1G1CP1.StartNewDialogue(cs.dialogueTriggerScript);
-            }
+        if (cs.currentCharacter.characterName == "Josie")
+        {
+            josieS.CheckForReward();
         }
-        
+
+        if (cs.currentCharacter.characterName == "Greg")
+        {
+            gregS.StartDialogue();
+        }
+
+        if (cs.currentCharacter.characterName == "Finch")
+        {
+            finchS.CheckForReward();
+            Debug.Log("Finch Reward call");
+        }
     }
 
     public void CanPressBell()
