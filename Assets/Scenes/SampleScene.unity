@@ -2738,6 +2738,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1637260669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &339831111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339831113}
+  - component: {fileID: 339831112}
+  m_Layer: 0
+  m_Name: LightManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &339831112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339831111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b9a8538329acc49a62ef3b233ca68d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light1: {fileID: 1820921434}
+  light2: {fileID: 1124248184}
+  lightColor: {r: 0, g: 0, b: 0, a: 0}
+  startIntensity: 0
+  duration: 1.5
+  targetIntensity: 1.5
+--- !u!4 &339831113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339831111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.6488886, y: 2.3028734, z: 13.211998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354447881
 GameObject:
   m_ObjectHideFlags: 0
@@ -4795,16 +4845,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
-  - {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
   - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+  - {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
   - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
   currentCharacter: {fileID: 0}
   characterObjects:
   - {fileID: 973462376}
-  - {fileID: 1086671382}
   - {fileID: 1298240868}
+  - {fileID: 1086671382}
   - {fileID: 1937845689}
   - {fileID: 1066098676}
   - {fileID: 973462376}
@@ -5206,6 +5256,18 @@ MonoBehaviour:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsEquipment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 339831112}
+        m_TargetAssemblyTypeName: LightSystem, Assembly-CSharp
+        m_MethodName: DimLights
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8593,8 +8655,8 @@ Transform:
   m_GameObject: {fileID: 1066098676}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
-  m_LocalPosition: {x: 0.13, y: 0.27, z: -0.09}
-  m_LocalScale: {x: 0.47475025, y: 0.22837369, z: 0.77770644}
+  m_LocalPosition: {x: 0.1, y: -1.08, z: -0.09}
+  m_LocalScale: {x: 0.6286221, y: 0.30239215, z: 1.0297698}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 694138051}
@@ -8667,7 +8729,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: df9deb73b6bfa0848a6db4bdf1430bd2, type: 2}
+  - {fileID: 2100000, guid: 4c5f90ac03a0e8340b1b4fa25a59f63c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10799,6 +10861,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1066098680}
         m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
         m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 339831112}
+        m_TargetAssemblyTypeName: LightSystem, Assembly-CSharp
+        m_MethodName: UndimLights
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14743,6 +14817,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804893553}
   m_CullTransparentMesh: 1
+--- !u!108 &1820921434 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: -6722085885383957590, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+  m_PrefabInstance: {fileID: 697872974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1821416492
 GameObject:
   m_ObjectHideFlags: 0
@@ -17567,3 +17646,4 @@ SceneRoots:
   - {fileID: 944075382}
   - {fileID: 1293637339}
   - {fileID: 726354695}
+  - {fileID: 339831113}

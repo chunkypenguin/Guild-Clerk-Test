@@ -52,28 +52,65 @@ public class ItemFloorScript : MonoBehaviour
     {
         if (gameObject.CompareTag("Quest"))
         {
-            prb = gameObject.transform.parent.GetComponent<Rigidbody>();
-
-            rb.useGravity = true;
-            prb.isKinematic = true;
-            prb.transform.position = startPos;
-            prb.transform.rotation = startRotation;
-            transform.localScale = startScale;//Added later for reset of sucked quest
-            prb.isKinematic = false;
-
-            prb.useGravity = false;
-
-            prb.constraints = RigidbodyConstraints.FreezeAll;
-
-            // Get all colliders attached to this GameObject
-            Collider[] colliderz = gameObject.GetComponents<Collider>();
-
-            // Disable each collider
-            foreach (Collider col in colliderz)
+            if (gameObject.name == "QuestReturn")
             {
-                col.enabled = true;
-                col.isTrigger = true;
+                prb = gameObject.transform.parent.GetComponent<Rigidbody>();
+
+                rb.useGravity = true;
+                prb.isKinematic = true;
+                prb.transform.position = startPos;
+                prb.transform.rotation = startRotation;
+                transform.localScale = startScale;
+                prb.isKinematic = false;
+
+
+
+                //prb.useGravity = false;
+
+                //prb.constraints = RigidbodyConstraints.FreezeAll;
+                prb.constraints =  RigidbodyConstraints.FreezePositionZ |
+                 RigidbodyConstraints.FreezeRotation;
+
+                // Get all colliders attached to this GameObject
+                Collider[] colliderz = gameObject.GetComponents<Collider>();
+
+                // Disable each collider
+                foreach (Collider col in colliderz)
+                {
+                    col.enabled = true;
+                    //col.isTrigger = true;
+                }
             }
+
+            else
+            {
+                prb = gameObject.transform.parent.GetComponent<Rigidbody>();
+
+                rb.useGravity = true;
+                prb.isKinematic = true;
+                prb.transform.position = startPos;
+                prb.transform.rotation = startRotation;
+                transform.localScale = startScale;
+                prb.isKinematic = false;
+
+
+
+                prb.useGravity = false;
+
+                prb.constraints = RigidbodyConstraints.FreezeAll;
+
+                // Get all colliders attached to this GameObject
+                Collider[] colliderz = gameObject.GetComponents<Collider>();
+
+                // Disable each collider
+                foreach (Collider col in colliderz)
+                {
+                    col.enabled = true;
+                    col.isTrigger = true;
+                }
+            }
+
+
         }
         else
         {
