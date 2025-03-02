@@ -64,6 +64,16 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager lorneD1P1;
     public DialogueManager lorneD1I1P1;
 
+    [Header("Maggie")]
+    public DialogueManager maggieD1P1;
+    public DialogueManager maggieD1Q1AP1;
+    public DialogueManager maggieD1Q1BP1;
+
+    [Header("Jolene")]
+    public DialogueManager joleneD1P1;
+    public DialogueManager joleneD1Q1AP1;
+    public DialogueManager joleneD1Q1BP1;
+
     public bool isQuest;
     public bool isReward;
     public bool isEquipment;
@@ -142,7 +152,12 @@ public class CharacterSystem : MonoBehaviour
         {
             andyD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
         }
-        
+
+        if (currentCharacter.characterName == "Maggie")
+        {
+            joleneD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+        }
+
     }
 
     public void QuestBDialogue()
@@ -159,6 +174,16 @@ public class CharacterSystem : MonoBehaviour
         if(currentCharacter.characterName == "Andy")
         {
             andyD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+        }
+
+        if (currentCharacter.characterName == "Maggie")
+        {
+            maggieD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+        }
+
+        if (currentCharacter.characterName == "Jolene")
+        {
+            joleneD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
         }
     }
 

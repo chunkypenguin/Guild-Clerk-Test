@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
+  m_Name: MaggieQ1A
+  m_EditorClassIdentifier: 
+  questTitle: Deliver baked goods to the neighboring eastern village
+  questDescription: "\u201CHoping a capable adventurer would be able to deliver my
+    pastries to the neighboring village! I know they're struggling with this season's
+    harvest so I want to help them out! Please send your fastest adventurer and tell
+    them to meet me at my Bakery on Pawn Street!\u201D"
+  questReward: 'Reward: 8 Gold'

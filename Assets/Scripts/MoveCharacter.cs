@@ -27,6 +27,8 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] FinchScript finchS;
     [SerializeField] AndyScript andyS;
     [SerializeField] LorneScript lorneS;
+    [SerializeField] MaggieScript maggieS;
+    [SerializeField] JoleneScript joleneS;
 
     private void Start()
     {
@@ -104,6 +106,16 @@ public class MoveCharacter : MonoBehaviour
                 if (cs.currentCharacter.characterName == "Lorne")
                 {
                     lorneS.StartDialogue();
+                }
+
+                if (cs.currentCharacter.characterName == "Maggie")
+                {
+                    maggieS.StartDialogue();
+                }
+
+                if (cs.currentCharacter.characterName == "Jolene")
+                {
+                    joleneS.StartDialogue();
                 }
 
             });
