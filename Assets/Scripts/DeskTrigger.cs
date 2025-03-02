@@ -10,6 +10,7 @@ public class DeskTrigger : MonoBehaviour
     [SerializeField] CharacterSystem cs;
     [SerializeField] GoldSystem gs;
     [SerializeField] QuestSystem qs;
+    [SerializeField] ItemSystem itemS;
 
     [SerializeField] TutorialScript josieS;
     [SerializeField] GregScript gregS;
@@ -140,4 +141,39 @@ public class DeskTrigger : MonoBehaviour
     {
         canPressBell = true;
     }
+
+    public void CheckForItems()
+    {
+        if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+        {
+            GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);
+            //qs.GetQuestRB(itemRB);
+            itemS.GetItemRb(itemRB);
+            cs.currentCharacter.choseItemA = true;
+            cs.currentCharacter.choseItemB = false;
+            // Add your action here
+            //cs.QuestADialogue();
+            cs.ItemADialogue();
+            //cs.pickedQ1A = true;
+        }
+
+        else if ((items.Find(item => item.name == cs.currentCharacter.ItemBName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemAName) == null)
+        {
+            GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemBName);
+            //qs.GetQuestRB(itemRB);
+            itemS.GetItemRb(itemRB);
+            cs.currentCharacter.choseItemB = true;
+            cs.currentCharacter.choseItemA = false;
+            // Add your action here
+            //cs.QuestADialogue();
+            cs.ItemBDialogue();
+            //cs.pickedQ1A = true;
+        }
+
+        else
+        {
+            Debug.Log("two or no quests on desk");
+        }
+    }
+
 }

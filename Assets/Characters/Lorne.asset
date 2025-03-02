@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f4a308dae7ffd048a8b0eb8d5ae4a02, type: 3}
-  m_Name: Andy
+  m_Name: Lorne
   m_EditorClassIdentifier: 
   characterPhoto: {fileID: 0}
-  characterName: Andy
-  quest:
-  - {fileID: 11400000, guid: 0d3170ca586450746b5f93a64c2f4197, type: 2}
-  - {fileID: 11400000, guid: 7376b5e553fda404b8a6d160997ba31b, type: 2}
+  characterName: Lorne
+  quest: []
+  ItemAName: Blue Package
+  ItemBName: Purple Package
   choseQuestA: 0
   choseQuestB: 0
+  choseItemA: 0
+  choseItemB: 0

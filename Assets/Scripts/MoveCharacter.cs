@@ -25,34 +25,37 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] TutorialScript josieS;
     [SerializeField] GregScript gregS;
     [SerializeField] FinchScript finchS;
+    [SerializeField] AndyScript andyS;
+    [SerializeField] LorneScript lorneS;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        //if(Input.GetKeyDown(KeyCode.Space) && !hasMoved)
-        //{
-        //    hasMoved = true;
-        //    transform.DOMove(endPos.position, moveSpeed).OnComplete(() =>
-        //    {
-
-        //        //Start Dialogue
-        //        cs.josieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
-        //        //Debug.Log("Hello");
-        //    });
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.J))
-        //{
-        //    transform.DOJump(jumpPoint.position, jumpSpeed, jumpCount, jumpDuration);
-        //}
+        moveSpeed = 0.25f;
     }
 
     public void MoveToEnd()
     {
-        transform.DOMove(startPos.position, moveSpeed).OnComplete(() =>
+        if (cs.currentCharacter.characterName == "Andy")
         {
-            cs.StartNewCharacter();
-        });
+            transform.DOJump(startPos.position, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
+            {
+                cs.StartNewCharacter();
+            });
+        }
+
+        else
+        {
+            transform.DOMove(startPos.position, moveSpeed).OnComplete(() =>
+            {
+                cs.StartNewCharacter();
+            });
+        }
+
+    }
+
+    public void MoveEndDay()
+    {
+        transform.position = startPos.position;
     }
 
     public void MoveToStart()
@@ -70,7 +73,12 @@ public class MoveCharacter : MonoBehaviour
 
         if (cs.currentCharacter.characterName == "Andy")
         {
-            transform.DOJump(jumpPoint.position, jumpSpeed, jumpCount, jumpDuration);
+            transform.DOJump(jumpPoint.position, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
+            {
+                andyS.StartDialogue();
+            });
+
+
         }
 
         else
@@ -91,6 +99,11 @@ public class MoveCharacter : MonoBehaviour
                 if (cs.currentCharacter.characterName == "Finch")
                 {
                     finchS.StartDialogue();
+                }
+
+                if (cs.currentCharacter.characterName == "Lorne")
+                {
+                    lorneS.StartDialogue();
                 }
 
             });

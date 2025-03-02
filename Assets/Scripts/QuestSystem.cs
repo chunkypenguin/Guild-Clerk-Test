@@ -160,6 +160,11 @@ public class QuestSystem : MonoBehaviour
             dt.CheckForReward();
         }
 
+        else if(cs.isEquipment)
+        {
+            dt.CheckForItems();
+        }
+
         deskTrigger.items.Clear();
     }
 

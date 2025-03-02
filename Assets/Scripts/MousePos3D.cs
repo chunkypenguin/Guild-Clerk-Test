@@ -46,7 +46,6 @@ public class MousePos3D : MonoBehaviour
                     goldOpen = false;
                     goldUI.SetActive(false);
                 }
-
             }
 
             if (questraycastHit.collider.CompareTag("Quest"))

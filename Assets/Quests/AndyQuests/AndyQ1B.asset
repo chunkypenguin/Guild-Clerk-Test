@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
+  m_Name: AndyQ1B
+  m_EditorClassIdentifier: 
+  questTitle: Fetch 10 Tulips from the nearby meadows
+  questDescription: "\u201CThe children at the local orphanage are feeling a bit
+    down and I want to make them feel special. I want to teach them how to make some
+    flower crowns and for that I'm going to need some nice flowers.\u201D"
+  questReward: 'Reward: 2 gold'

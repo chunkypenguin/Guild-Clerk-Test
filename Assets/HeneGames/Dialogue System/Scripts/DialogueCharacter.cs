@@ -11,7 +11,13 @@ namespace HeneGames.DialogueSystem
 
         public QuestObject[] quest;
 
+        public string ItemAName;
+        public string ItemBName;
+
         public bool choseQuestA;
         public bool choseQuestB;
+
+        public bool choseItemA;
+        public bool choseItemB;
     }
 }

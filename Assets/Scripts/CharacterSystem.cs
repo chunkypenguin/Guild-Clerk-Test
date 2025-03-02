@@ -21,6 +21,7 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager josieD1P2;
     public DialogueManager josieD1P3;
     public DialogueManager josieD1P4;
+    public DialogueManager josieD1P5;
     public DialogueManager josieD1Q1AP1;
     public DialogueManager josieD1Q1AP2;
     public DialogueManager josieD1Q1BP1;
@@ -54,7 +55,14 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager finchD1GR11;
     public DialogueManager finchD1GR12;
 
+    [Header("Andy")]
+    public DialogueManager andyD1P1;
+    public DialogueManager andyD1Q1AP1;
+    public DialogueManager andyD1Q1BP1;
 
+    [Header("Lorne")]
+    public DialogueManager lorneD1P1;
+    public DialogueManager lorneD1I1P1;
 
     public bool isQuest;
     public bool isReward;
@@ -62,6 +70,9 @@ public class CharacterSystem : MonoBehaviour
 
     public bool pickedQ1A;
     public bool pickedQ1B;
+
+    public bool pickedItemA;
+    public bool pickedItemB;
 
     //[SerializeField] GameObject josie;
     //[SerializeField] GameObject greg;
@@ -126,6 +137,11 @@ public class CharacterSystem : MonoBehaviour
         {
             gregD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
         }
+
+        if(currentCharacter.characterName == "Andy")
+        {
+            andyD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+        }
         
     }
 
@@ -139,6 +155,25 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Greg")
         {
             gregD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+        }
+        if(currentCharacter.characterName == "Andy")
+        {
+            andyD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+        }
+    }
+
+    public void ItemADialogue()
+    {
+        if(currentCharacter.characterName == "Lorne")
+        {
+            lorneD1I1P1.StartNewDialogue(dialogueTriggerScript);
+        }
+    }
+    public void ItemBDialogue()
+    {
+        if (currentCharacter.characterName == "Lorne")
+        {
+            lorneD1I1P1.StartNewDialogue(dialogueTriggerScript);
         }
     }
 }
