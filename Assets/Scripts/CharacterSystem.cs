@@ -35,6 +35,18 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager gregD1Q1AP1;
     public DialogueManager gregD1Q1BP1;
 
+    public DialogueManager gregD2Q1A;
+    public DialogueManager gregD2Q1B;
+    //picked A
+    public DialogueManager gregD2G1AP1;
+    public DialogueManager gregD2G1BP1;
+    public DialogueManager gregD2G1CP1;
+    //picked B
+    public DialogueManager gregD2G2AP1;
+    public DialogueManager gregD2G2BP1;
+    public DialogueManager gregD2G2CP1;
+
+
     [Header("Finch")]
     public DialogueManager finchD1P1;
     public DialogueManager finchD1G1AP1;
@@ -59,10 +71,18 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager andyD1P1;
     public DialogueManager andyD1Q1AP1;
     public DialogueManager andyD1Q1BP1;
+    public DialogueManager andyD2Q1A;
+    public DialogueManager andyD2Q1B;
+    public DialogueManager andyD2Q1BP2;
+    public DialogueManager andyD2Q1BP3;
+    public DialogueManager andyD2Q1AP2;
 
     [Header("Lorne")]
     public DialogueManager lorneD1P1;
     public DialogueManager lorneD1I1P1;
+    public DialogueManager lorneD2P1;
+    public DialogueManager lorneD2ItemA;
+    public DialogueManager lorneD2ItemRefuse;
 
     [Header("Maggie")]
     public DialogueManager maggieD1P1;
@@ -74,6 +94,11 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager joleneD1Q1AP1;
     public DialogueManager joleneD1Q1BP1;
 
+    [Header("Lotest")]
+    public DialogueManager lotestD1P1;
+    public DialogueManager lotestD1ItemA1;
+    public DialogueManager lotestD1ItemB1;
+
     public bool isQuest;
     public bool isReward;
     public bool isEquipment;
@@ -84,8 +109,8 @@ public class CharacterSystem : MonoBehaviour
     public bool pickedItemA;
     public bool pickedItemB;
 
-    //[SerializeField] GameObject josie;
-    //[SerializeField] GameObject greg;
+    public bool D1 = true;
+    public bool D2 = false;
 
     private void Awake()
     {
@@ -150,10 +175,23 @@ public class CharacterSystem : MonoBehaviour
 
         if(currentCharacter.characterName == "Andy")
         {
-            andyD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+            if (D1)
+            {
+                andyD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+            }
+            else
+            {
+                andyD2Q1AP2.StartNewDialogue(dialogueTriggerScript);
+            }
+
         }
 
         if (currentCharacter.characterName == "Maggie")
+        {
+            maggieD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+        }
+
+        if (currentCharacter.characterName == "Jolene")
         {
             joleneD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
         }
@@ -173,7 +211,15 @@ public class CharacterSystem : MonoBehaviour
         }
         if(currentCharacter.characterName == "Andy")
         {
-            andyD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+            if (D1)
+            {
+                andyD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+            }
+            else
+            {
+                andyD2Q1BP3.StartNewDialogue(dialogueTriggerScript);
+            }
+            
         }
 
         if (currentCharacter.characterName == "Maggie")
@@ -191,7 +237,23 @@ public class CharacterSystem : MonoBehaviour
     {
         if(currentCharacter.characterName == "Lorne")
         {
-            lorneD1I1P1.StartNewDialogue(dialogueTriggerScript);
+            
+
+            if (D1 && !D2)
+            {
+                lorneD1I1P1.StartNewDialogue(dialogueTriggerScript);
+                D1 = false;
+                D2 = true;
+            }
+            else if (!D1 && D2)
+            {
+                lorneD2ItemA.StartNewDialogue(dialogueTriggerScript);
+            }
+        }
+
+        if (currentCharacter.characterName == "Lotest")
+        {
+            lotestD1ItemA1.StartNewDialogue(dialogueTriggerScript);
         }
     }
     public void ItemBDialogue()
@@ -199,6 +261,12 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Lorne")
         {
             lorneD1I1P1.StartNewDialogue(dialogueTriggerScript);
+        }
+
+
+        if (currentCharacter.characterName == "Lotest")
+        {
+            lotestD1ItemB1.StartNewDialogue(dialogueTriggerScript);
         }
     }
 }

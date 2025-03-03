@@ -29,6 +29,7 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] LorneScript lorneS;
     [SerializeField] MaggieScript maggieS;
     [SerializeField] JoleneScript joleneS;
+    [SerializeField] LotestScript lotestS;
 
     private void Start()
     {
@@ -41,7 +42,15 @@ public class MoveCharacter : MonoBehaviour
         {
             transform.DOJump(startPos.position, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
             {
+
+                if (cs.currentCharacter.characterName == "Andy")
+                {
+                    andyS.ChangeToMom();
+                }
+
                 cs.StartNewCharacter();
+
+
             });
         }
 
@@ -49,6 +58,11 @@ public class MoveCharacter : MonoBehaviour
         {
             transform.DOMove(startPos.position, moveSpeed).OnComplete(() =>
             {
+                if (cs.currentCharacter.characterName == "Greg")
+                {
+                    gregS.ArrowHead();
+                }
+
                 cs.StartNewCharacter();
             });
         }
@@ -58,6 +72,8 @@ public class MoveCharacter : MonoBehaviour
     public void MoveEndDay()
     {
         transform.position = startPos.position;
+        cs.D1 = false;
+        cs.D2 = true;
     }
 
     public void MoveToStart()
@@ -116,6 +132,11 @@ public class MoveCharacter : MonoBehaviour
                 if (cs.currentCharacter.characterName == "Jolene")
                 {
                     joleneS.StartDialogue();
+                }
+
+                if (cs.currentCharacter.characterName == "Lotest")
+                {
+                    lotestS.StartDialogue();
                 }
 
             });

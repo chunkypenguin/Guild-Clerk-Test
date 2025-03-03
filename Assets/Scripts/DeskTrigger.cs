@@ -15,6 +15,7 @@ public class DeskTrigger : MonoBehaviour
     [SerializeField] TutorialScript josieS;
     [SerializeField] GregScript gregS;
     [SerializeField] FinchScript finchS;
+    [SerializeField] AndyScript andyS;
 
     public bool canPressBell;
 
@@ -127,13 +128,18 @@ public class DeskTrigger : MonoBehaviour
 
         if (cs.currentCharacter.characterName == "Greg")
         {
-            gregS.StartDialogue();
+            gregS.CheckForReward();
         }
 
         if (cs.currentCharacter.characterName == "Finch")
         {
             finchS.CheckForReward();
             Debug.Log("Finch Reward call");
+        }
+
+        if (cs.currentCharacter.characterName == "Andy")
+        {
+            andyS.CheckForReward();
         }
     }
 
