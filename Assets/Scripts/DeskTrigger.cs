@@ -96,8 +96,8 @@ public class DeskTrigger : MonoBehaviour
             if (cs.currentCharacter.characterName != "Finch")
             {
                 gs.isSuctionActive = true;
-                GameObject questRB = items.Find(item => item.name == "QuestReturn");
-                qs.GetQuestRB(questRB);
+                //GameObject questRB = items.Find(item => item.name == "QuestReturn");
+                //qs.GetQuestRB(questRB);
                 Debug.Log("not finch");
             }
             else
@@ -106,8 +106,8 @@ public class DeskTrigger : MonoBehaviour
                 {
                     cs.pickedQ1A = true;
                     gs.isSuctionActive = true;
-                    GameObject questRB = items.Find(item => item.name == "QuestReturn");
-                    qs.GetQuestRB(questRB);
+                    //GameObject questRB = items.Find(item => item.name == "QuestReturn");
+                    //qs.GetQuestRB(questRB);
                     finchS.askingForGold = true;
                     Debug.Log("Is Finch");
                 }
@@ -115,11 +115,17 @@ public class DeskTrigger : MonoBehaviour
                 {
                     gs.isSuctionActive = true;
                 }
-
-
             }
 
         }
+
+        //always take return quest
+        GameObject questRB = items.Find(item => item.name == "QuestReturn");
+        if(questRB != null)
+        {
+            qs.GetQuestRB(questRB);
+        }
+       
 
         if (cs.currentCharacter.characterName == "Josie")
         {

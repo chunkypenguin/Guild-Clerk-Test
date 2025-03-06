@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwordMat
+  m_Name: VelvetBag
   m_Shader: {fileID: -6465566751694194690, guid: 5b3a353b69499534ea923316fb2770c3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -41,7 +41,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Sprite:
-        m_Texture: {fileID: 2800000, guid: 72dabc2a49b4d08478d992d85579a66f, type: 3}
+        m_Texture: {fileID: 2800000, guid: d24a6783c07f74e4ab8af683a8385f3e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []

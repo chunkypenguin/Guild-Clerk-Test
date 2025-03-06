@@ -17,6 +17,7 @@ public class GoldSystem : MonoBehaviour
     public List<GameObject> coins = new List<GameObject>(); // Ensure list is initialized
     [SerializeField] Transform coinSpawnPos;
 
+    [SerializeField] CharacterSystem cs;
     // FOR TUTORIAL
     public bool addedGold;
 
@@ -66,13 +67,13 @@ public class GoldSystem : MonoBehaviour
                 Collider col = coin.GetComponent<Collider>();
                 if (col != null) col.enabled = false;
 
-                Vector3 direction = (vacuumPoint.position - coin.transform.position).normalized;
+                Vector3 direction = (cs.currentCharacterObject.transform.position - coin.transform.position).normalized;
                 rb.AddForce(direction * suckForce, ForceMode.Acceleration);
                 rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
             }
 
             // Check if close enough to be collected
-            if (Vector3.Distance(coin.transform.position, vacuumPoint.position) < collectDistance)
+            if (Vector3.Distance(coin.transform.position, cs.currentCharacterObject.transform.position) < collectDistance)
             {
                 CollectCoin(coin);
             }

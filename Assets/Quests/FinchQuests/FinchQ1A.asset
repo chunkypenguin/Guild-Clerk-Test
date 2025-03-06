@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
   m_Name: FinchQ1A
   m_EditorClassIdentifier: 
-  questTitle: "Retrieve retired Captain Nuubaan Sparlar\u2019s long sword from the
-    sunken ship wreck\r"
-  questDescription: "\u201CI would love to retrieve it myself, however if I did that
-    I would have to spend more time away from my wife that I would like. I have been
-    thinking about how to do both but I can't bring myself to spend too much time
-    away from home. If someone happens to be passing by the bottom of the ocean,
-    keep your eyes out for my sword. It might be in bad shape but it did a fine job
-    when I needed it. Whatever you can retrieve, I will be more than happy to compensate
-    an adventurer for it.\u201D"
-  questReward: 'Reward: 25 gold'
+  questTitle: Collect 5 Harpy Talons for Fernian the Hedge Witch
+  questDescription: "\u201CI\u2019m currently in the works of a new potion and realized
+    too late I\u2019m running low on Harpy Talons. \r\n\r\nPlease, please, please,
+    if anyone is able to get me these ingredients it would mean a lot to me! I\u2019ll
+    even give you a discount on your next purchase at my shop! And for those who
+    don\u2019t know, it's the shop on Pawn Street with the huge sign that says \u201CThe
+    Burning Brewery\u201D it should be easy enough to find!\""
+  questReward: 'Reward: 15 gold'

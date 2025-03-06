@@ -68,19 +68,19 @@ public class QuestSystem : MonoBehaviour
         Collider col = rb.gameObject.GetComponent<Collider>();
         if (col != null) col.enabled = false;
 
-        Vector3 direction = (vacuumPoint.position - rb.transform.position).normalized;
+        Vector3 direction = (cs.currentCharacterObject.transform.position - rb.transform.position).normalized;
         rb.AddForce(direction * suckForce, ForceMode.Acceleration);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
 
         // Shrink the object as it moves towards the vacuum point
-        float distance = Vector3.Distance(rb.transform.position, vacuumPoint.position);
+        float distance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position);
         float shrinkFactor = Mathf.Clamp01(distance / initialDistance); // Normalize shrink between 1 and 0
         rb.transform.localScale = startScale * shrinkFactor; // Apply scale reduction
 
         // Check if close enough to be collected
-        if (Vector3.Distance(rb.transform.position, vacuumPoint.position) < collectDistance)
+        if (Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position) < collectDistance)
         {
-            CollectQuest(rb.gameObject);
+            CollectQuest();
         }
     }
 
@@ -89,18 +89,23 @@ public class QuestSystem : MonoBehaviour
         rb = questObject.GetComponent<Rigidbody>();
         rb2 = rb.transform.parent.gameObject.GetComponent<Rigidbody>();
         startScale = rb.transform.localScale; // Store initial scale
-        initialDistance = Vector3.Distance(rb.transform.position, vacuumPoint.position); // Get starting distance
+        initialDistance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position); // Get starting distance
         isSuctionActive = true;
+
+        Invoke(nameof(CollectQuest), 2f); //prevent quest getting stuck
     }
 
-    private void CollectQuest(GameObject questObject)
+    private void CollectQuest()
     {
         isSuctionActive = false;
 
         // Destroy the quest
-        questObject.GetComponent<ItemFloorScript>().ResetItem();
-        questObject.transform.parent.gameObject.SetActive(false);
-        
+        //questObject.GetComponent<ItemFloorScript>().ResetItem();
+        //questObject.transform.parent.gameObject.SetActive(false);
+        CancelInvoke(nameof(CollectQuest));
+        rb.gameObject.GetComponent<ItemFloorScript>().ResetItem();
+        rb.transform.parent.gameObject.SetActive(false);
+
     }
 
     public void DropQuest(GameObject questObject)

@@ -10,6 +10,34 @@ public class LorneScript : MonoBehaviour
 
     [SerializeField] GameObject refuseButton;
     bool on;
+
+    [SerializeField] GameObject refuseTag;
+
+
+    [SerializeField] YarnScript yarnS;
+    [SerializeField] GameObject yarn;
+    [SerializeField] GameObject yarnTrigger;
+
+    bool tagSystem;
+    bool tagOn;
+
+    private void Update()
+    {
+        if (tagSystem)
+        {
+            if (!yarnS.yarnOnDesk && !tagOn)
+            {
+                refuseTag.SetActive(true);
+                tagOn = true;
+            }
+            else if (yarnS.yarnOnDesk && tagOn)
+            {
+                refuseTag.SetActive(false);
+                tagOn = false;
+            }
+        }
+    }
+
     public void StartDialogue()
     {
         if (cs.D1 && !cs.D2)
@@ -44,6 +72,15 @@ public class LorneScript : MonoBehaviour
             refuseButton.SetActive(false);
             on = false;
         }
-       
+    }
+
+    public void TagSystemOn()
+    {
+        tagSystem = true;
+    }
+    public void TagSystemOff()
+    {
+        tagSystem = false;
+        refuseTag.SetActive(false);
     }
 }

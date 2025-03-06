@@ -18,6 +18,8 @@ public class ItemSystem : MonoBehaviour
     private Vector3 startScale; // Store initial scale
     private float initialDistance;
 
+    [SerializeField] Transform ReturnItemPoint;
+
     private void FixedUpdate()
     {
         if (!isSuctionActive) return;
@@ -29,18 +31,18 @@ public class ItemSystem : MonoBehaviour
             Collider col = rb.GetComponent<Collider>();
             if (col != null) col.enabled = false;
 
-            Vector3 direction = (vacuumPoint.position - rb.transform.position).normalized;
+            Vector3 direction = (cs.currentCharacterObject.transform.position - rb.transform.position).normalized;
             rb.AddForce(direction * suckForce, ForceMode.Acceleration);
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
 
             // Shrink the object as it moves towards the vacuum point
-            float distance = Vector3.Distance(rb.transform.position, vacuumPoint.position);
+            float distance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position);
             float shrinkFactor = Mathf.Clamp01(distance / initialDistance); // Normalize shrink between 1 and 0
             rb.transform.localScale = startScale * shrinkFactor; // Apply scale reduction
         }
 
         // Check if close enough to be collected
-        if (Vector3.Distance(rb.transform.position, vacuumPoint.position) < collectDistance)
+        if (Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position) < collectDistance)
         {
             CollectItem(rb.gameObject);
         }
@@ -50,7 +52,10 @@ public class ItemSystem : MonoBehaviour
     {
         rb = item.GetComponent<Rigidbody>();
         startScale = rb.transform.localScale; // Store initial scale
-        initialDistance = Vector3.Distance(rb.transform.position, vacuumPoint.position); // Get starting distance
+
+        
+
+        initialDistance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position); // Get starting distance
         isSuctionActive = true;
     }
 
@@ -62,5 +67,11 @@ public class ItemSystem : MonoBehaviour
         itemObject.GetComponent<ItemFloorScript>().ResetItem();
         itemObject.SetActive(false);
 
+    }
+
+    public void ReturnItem(GameObject item)
+    {
+        //item.SetActive(true);
+        item.transform.position = ReturnItemPoint.position;
     }
 }

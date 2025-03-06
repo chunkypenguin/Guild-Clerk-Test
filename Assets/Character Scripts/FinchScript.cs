@@ -7,7 +7,11 @@ public class FinchScript : MonoBehaviour
     [SerializeField] CharacterSystem cs;
     [SerializeField] GoldSystem gs;
 
+    [SerializeField] GameObject refuseTag;
+    bool tagOn;
+
     bool gaveGold;
+    bool tagSystem;
     int goldRequestCount;
 
     int a;
@@ -15,9 +19,26 @@ public class FinchScript : MonoBehaviour
     int c;
     int d;
 
-    bool pickedA, pickedB, pickedC, pickedD;
+    bool pickedA, pickedB, pickedC;
 
     public bool askingForGold;
+
+    private void Update()
+    {
+        if (tagSystem)
+        {
+            if (gs.goldAmount == 0 && !tagOn)
+            {
+                refuseTag.SetActive(true);
+                tagOn = true;
+            }
+            else if(gs.goldAmount > 0 && tagOn)
+            {
+                refuseTag.SetActive(false);
+                tagOn = false;
+            }
+        }
+    }
 
     public void StartDialogue()
     {
@@ -28,18 +49,18 @@ public class FinchScript : MonoBehaviour
     {
         if (cs.pickedQ1A && !gaveGold)
         {
-            if (gs.goldAmount == 25)
+            if (gs.goldAmount == 15)
             {
                 //Do this
                 cs.finchD1G1BP1.StartNewDialogue(cs.dialogueTriggerScript);
             }
-            else if (gs.goldAmount > 25)
+            else if (gs.goldAmount > 15)
             {
                 //do this
                 cs.finchD1G1CP1.StartNewDialogue(cs.dialogueTriggerScript);
             }
 
-            else if (gs.goldAmount < 25)
+            else if (gs.goldAmount < 15)
             {
                 //do this
                 cs.finchD1G1AP1.StartNewDialogue(cs.dialogueTriggerScript);
@@ -77,9 +98,8 @@ public class FinchScript : MonoBehaviour
             else
             {
                 Refuse();
+
             }
-
-
         }
     }
 
@@ -173,7 +193,16 @@ public class FinchScript : MonoBehaviour
         {
             d--;
         }
-
         ChooseDialogue();
+    }
+
+    public void TagSystemOn()
+    {
+        tagSystem = true;
+    }
+    public void TagSystemOff()
+    {
+        tagSystem = false;
+        refuseTag.SetActive(false);
     }
 }
