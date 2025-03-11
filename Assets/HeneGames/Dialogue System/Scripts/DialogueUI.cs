@@ -38,8 +38,8 @@ namespace HeneGames.DialogueSystem
 
         [Header("References")]
         [SerializeField] private Image portrait;
-        [SerializeField] private TextMeshProUGUI nameText;
-        [SerializeField] private TextMeshProUGUI messageText;
+        [SerializeField] public TextMeshProUGUI nameText;
+        [SerializeField] public TextMeshProUGUI messageText;
         [SerializeField] private GameObject dialogueWindow;
         [SerializeField] private GameObject interactionUI;
 

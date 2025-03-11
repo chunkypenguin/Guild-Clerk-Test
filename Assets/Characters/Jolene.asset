@@ -20,6 +20,7 @@ MonoBehaviour:
   ItemAName: 
   ItemBName: 
   choseQuestA: 0
-  choseQuestB: 0
+  choseQuestB: 1
   choseItemA: 0
   choseItemB: 0
+  textColor: {r: 0.49411765, g: 0, b: 0.30980393, a: 1}

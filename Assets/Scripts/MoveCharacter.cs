@@ -43,7 +43,7 @@ public class MoveCharacter : MonoBehaviour
     {
         if (cs.currentCharacter.characterName == "Andy")
         {
-            transform.DOJump(startPos.transform.position, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
+            transform.DOJump(startPos.transform.position, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
             {
 
                 if (cs.currentCharacter.characterName == "Andy")
@@ -61,7 +61,7 @@ public class MoveCharacter : MonoBehaviour
             {
                 if (cs.currentCharacter.characterName == "Greg")
                 {
-                    gregS.ArrowHead();
+                    gregS.GregArrow();
                 }
 
                 cs.StartNewCharacter();

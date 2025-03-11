@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: AndyQ1A
   m_EditorClassIdentifier: 
   questTitle: Slay the Ancient Dragon in the Deep Rune Mines
-  questDescription: "\rAn ancient dragon has recently inhabited the Deep Rune Mines.
+  questDescription: "\r\"An ancient dragon has recently inhabited the Deep Rune Mines.
     It\u2019s been hoarding tools, wrecking equipment, and making work impossible
     for the miners. We\u2019ve tried luring it out with gems, but anyone who has
-    attempted, has been burnt to a crisp!\r\n\r\nIf you\u2019ve got a guts and a
-    sharp blade, we need your help. Defeat this dragon and deal with them however
-    you see fit. The mines won\u2019t be safe until it\u2019s gone.\r\r\n"
+    attempted has been burnt to a crisp!\r\n\r\nIf you\u2019ve got a guts and a sharp
+    blade, we need your help. The mines won\u2019t be safe until it\u2019s gone.\"\r\r\n"
   questReward: 'Reward: 50 Gold'

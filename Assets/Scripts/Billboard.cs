@@ -35,8 +35,6 @@ public class Billboard : MonoBehaviour
 
             // Apply rotation but keep the object's own Y-axis rotation free
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-
-
         }
 
         if (moveCamScript.center)

@@ -17,6 +17,8 @@ public class DeskTrigger : MonoBehaviour
     [SerializeField] FinchScript finchS;
     [SerializeField] AndyScript andyS;
 
+    [SerializeField] YarnScript yarnS;
+
     public bool canPressBell;
 
     private void OnTriggerEnter(Collider other)
@@ -68,6 +70,8 @@ public class DeskTrigger : MonoBehaviour
             // Add your action here
             cs.QuestADialogue();
             cs.pickedQ1A = true;
+
+            cs.IsIdle();// go back to idle task
         }
 
         else if ((items.Find(item => item.name == "QuestB") != null) && items.Find(item => item.name == "QuestA") == null)
@@ -80,6 +84,8 @@ public class DeskTrigger : MonoBehaviour
             // Add your action here
             cs.QuestBDialogue();
             cs.pickedQ1B = true;
+
+            cs.IsIdle();// go back to idle task
         }
 
         else
@@ -185,6 +191,10 @@ public class DeskTrigger : MonoBehaviour
         else
         {
             Debug.Log("two or no quests on desk");
+            if(cs.currentCharacter.characterName == "Lorne" && !yarnS.yarnOnDesk && cs.D2)
+            {
+                cs.lorneD2ItemRefuse.StartNewDialogue(cs.dialogueTriggerScript);
+            }
         }
     }
 

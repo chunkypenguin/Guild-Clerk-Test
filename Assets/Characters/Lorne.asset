@@ -15,9 +15,10 @@ MonoBehaviour:
   characterPhoto: {fileID: 0}
   characterName: Lorne
   quest: []
-  ItemAName: Blue Package
+  ItemAName: Yarn
   ItemBName: Purple Package
   choseQuestA: 0
   choseQuestB: 0
   choseItemA: 0
-  choseItemB: 0
+  choseItemB: 1
+  textColor: {r: 0.16078432, g: 0.62352943, b: 0.4117647, a: 1}

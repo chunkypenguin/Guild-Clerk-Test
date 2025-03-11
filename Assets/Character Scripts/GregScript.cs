@@ -10,9 +10,21 @@ public class GregScript : MonoBehaviour
 
     [SerializeField] GoldSystem gs;
 
+    [SerializeField] MeshRenderer mr;
+
+    [Header("Emotions")]
+    [SerializeField] Material gregIdle;
+    [SerializeField] Material gregHappy;
+    [SerializeField] Material gregArrow;
+
     //bool D1 = true;
     //bool D2 = false;
 
+
+    private void Start()
+    {
+        mr.material = gregIdle;
+    }
 
     public void StartDialogue()
     {
@@ -75,17 +87,19 @@ public class GregScript : MonoBehaviour
         }
     }
 
-    public void ArrowHead()
+    public void GregArrow()
     {
-        if (cs.currentCharacter.choseQuestA)
-        {
-            idleImage.SetActive(false);
-            arrowImage.SetActive(true);
-        }
-        else
-        {
-
-        }
-
+        mr.material = gregArrow;
     }
+
+    public void GregIdle()
+    {
+        mr.material = gregIdle;
+    }
+
+    public void GregHappy()
+    {
+        mr.material = gregHappy;
+    }
+
 }

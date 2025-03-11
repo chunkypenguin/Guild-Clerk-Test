@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using HeneGames.DialogueSystem;
+using DG.Tweening;
 
 public class QuestSystem : MonoBehaviour
 {
@@ -38,6 +39,9 @@ public class QuestSystem : MonoBehaviour
     [SerializeField] GameObject questAHolder;
     [SerializeField] GameObject questBHolder;
 
+    [SerializeField] GameObject visualQuests;
+    [SerializeField] ParticleSystem poofFX;
+
     public int a = 0;
     public int b = 1;
 
@@ -54,7 +58,7 @@ public class QuestSystem : MonoBehaviour
 
     private void Start()
     {
-        UpdateQuests();
+        //UpdateQuests();
     }
 
     private void FixedUpdate()
@@ -103,8 +107,15 @@ public class QuestSystem : MonoBehaviour
         //questObject.GetComponent<ItemFloorScript>().ResetItem();
         //questObject.transform.parent.gameObject.SetActive(false);
         CancelInvoke(nameof(CollectQuest));
+        //rb.transform.parent.gameObject.SetActive(false); //was before below
+        returnQuest.SetActive(false);
+        Debug.Log("Quest returned");
+        questAHolder.SetActive(false); 
+        questBHolder.SetActive(false);
+
+        visualQuests.SetActive(true);
+
         rb.gameObject.GetComponent<ItemFloorScript>().ResetItem();
-        rb.transform.parent.gameObject.SetActive(false);
 
     }
 
@@ -139,7 +150,7 @@ public class QuestSystem : MonoBehaviour
         questDescriptionR.SetActive(false);
     }
 
-    public void FinalizeItems()
+    public void FinalizeItems() //WHEN BELL PRESSED I THINK
     {
         desk.SetActive(true);
         Invoke(nameof(CountItemsOnDesk), 0.2f);
@@ -170,11 +181,19 @@ public class QuestSystem : MonoBehaviour
             dt.CheckForItems();
         }
 
+        else if(cs.isIdle)
+        {
+            //Do nothing
+        }
+
         deskTrigger.items.Clear();
     }
 
     public void UpdateQuests()
     {
+        visualQuests.SetActive(false); //*poof*
+        poofFX.Play();
+
         Debug.Log("update quests");
         questAHolder.SetActive(true);
         questBHolder.SetActive(true);
@@ -186,8 +205,6 @@ public class QuestSystem : MonoBehaviour
         questBTitle.text = cs.currentCharacter.quest[b].questTitle;
         questBDescription.text = cs.currentCharacter.quest[b].questDescription;
         questBReward.text = cs.currentCharacter.quest[b].questReward;
-
-
 
         //questATitle.text = questObjectA[0].questTitle;
         //questADescription.text = questObjectA[0].questDescription;

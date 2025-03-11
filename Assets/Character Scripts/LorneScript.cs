@@ -18,6 +18,9 @@ public class LorneScript : MonoBehaviour
     [SerializeField] GameObject yarn;
     [SerializeField] GameObject yarnTrigger;
 
+    public GameObject packageGlow;
+    public GameObject yarnGlow;
+
     bool tagSystem;
     bool tagOn;
 

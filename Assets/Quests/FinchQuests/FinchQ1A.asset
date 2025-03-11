@@ -16,7 +16,5 @@ MonoBehaviour:
   questDescription: "\u201CI\u2019m currently in the works of a new potion and realized
     too late I\u2019m running low on Harpy Talons. \r\n\r\nPlease, please, please,
     if anyone is able to get me these ingredients it would mean a lot to me! I\u2019ll
-    even give you a discount on your next purchase at my shop! And for those who
-    don\u2019t know, it's the shop on Pawn Street with the huge sign that says \u201CThe
-    Burning Brewery\u201D it should be easy enough to find!\""
+    even give you a discount on your next purchase at my shop!\""
   questReward: 'Reward: 15 gold'

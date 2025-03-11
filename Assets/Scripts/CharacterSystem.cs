@@ -102,6 +102,7 @@ public class CharacterSystem : MonoBehaviour
     public bool isQuest;
     public bool isReward;
     public bool isEquipment;
+    public bool isIdle;
 
     public bool pickedQ1A;
     public bool pickedQ1B;
@@ -112,6 +113,8 @@ public class CharacterSystem : MonoBehaviour
     public bool D1 = true;
     public bool D2 = false;
 
+    [SerializeField] DialogueUI dui;
+
     private void Awake()
     {
         currentCharacter = characters[characterCount];
@@ -120,6 +123,7 @@ public class CharacterSystem : MonoBehaviour
     private void Start()
     {
         currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
+        ChangeTextColor();
     }
 
     public void IsQuest()
@@ -127,19 +131,29 @@ public class CharacterSystem : MonoBehaviour
         isQuest = true;
         isReward = false;
         isEquipment = false;
+        isIdle = false;
     }
 
     public void IsReward()
     {
         isReward = true;
         isQuest = false;
-        
         isEquipment = false;
+        isIdle = false;
     }
 
     public void IsEquipment()
     {
         isEquipment = true;
+        isReward = false;
+        isQuest = false;
+        isIdle = false;
+    }
+
+    public void IsIdle()
+    {
+        isIdle = true;
+        isEquipment = false;
         isReward = false;
         isQuest = false;
     }
@@ -157,6 +171,7 @@ public class CharacterSystem : MonoBehaviour
             currentCharacterObject = characterObjects[characterCount];
 
             currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
+            ChangeTextColor();
         }
 
     }
@@ -268,5 +283,11 @@ public class CharacterSystem : MonoBehaviour
         {
             lotestD1ItemB1.StartNewDialogue(dialogueTriggerScript);
         }
+    }
+
+    public void ChangeTextColor()
+    {
+        dui.messageText.color = currentCharacter.textColor;
+        dui.nameText.color = currentCharacter.textColor;
     }
 }

@@ -13,6 +13,13 @@ public class TutorialScript : MonoBehaviour
     bool josieHasMoved;
     bool dayOneEnd;
 
+    [SerializeField] MeshRenderer mr;
+
+    [Header("Emotions")]
+    [SerializeField] Material josieIdle;
+    [SerializeField] Material josieFun;
+    [SerializeField] Material josieSassy;
+
     [SerializeField] QuestBoardCheck questA;
     [SerializeField] QuestBoardCheck questB;
 
@@ -205,5 +212,20 @@ public class TutorialScript : MonoBehaviour
                 cs.josieD1G1CP1.StartNewDialogue(cs.dialogueTriggerScript);
             }
         }
+    }
+
+    public void JosieIdle()
+    {
+        mr.material = josieIdle;
+    }
+
+    public void JosieFun()
+    {
+        mr.material = josieFun;
+    }
+
+    public void JosieSassy()
+    {
+        mr.material = josieSassy;
     }
 }

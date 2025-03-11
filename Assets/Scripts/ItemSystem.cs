@@ -20,6 +20,9 @@ public class ItemSystem : MonoBehaviour
 
     [SerializeField] Transform ReturnItemPoint;
 
+    [SerializeField] LorneScript lorneScript;
+    [SerializeField] LotestScript lotestScript;
+
     private void FixedUpdate()
     {
         if (!isSuctionActive) return;
@@ -53,8 +56,6 @@ public class ItemSystem : MonoBehaviour
         rb = item.GetComponent<Rigidbody>();
         startScale = rb.transform.localScale; // Store initial scale
 
-        
-
         initialDistance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position); // Get starting distance
         isSuctionActive = true;
     }
@@ -63,15 +64,55 @@ public class ItemSystem : MonoBehaviour
     {
         isSuctionActive = false;
 
-        // Destroy the quest
+        //Destroy the quest
         itemObject.GetComponent<ItemFloorScript>().ResetItem();
         itemObject.SetActive(false);
+
+        ItemGlowOff();
 
     }
 
     public void ReturnItem(GameObject item)
     {
-        //item.SetActive(true);
+        item.SetActive(true);
         item.transform.position = ReturnItemPoint.position;
+    }
+
+    public void ItemGlow()
+    {
+        Debug.Log("glow");
+        if (cs.D1)
+        {
+            if(cs.currentCharacter.characterName == "Lorne")
+            {
+                lorneScript.packageGlow.SetActive(true);
+            }
+
+        }
+        else if(cs.D2)
+        {
+            if (cs.currentCharacter.characterName == "Lorne")
+            {
+                lorneScript.yarnGlow.SetActive(true);
+            }
+
+            if (cs.currentCharacter.characterName == "Lotest")
+            {
+                lotestScript.greenGlow.SetActive(true);
+                lotestScript.velvetGlow.SetActive(true);
+            }
+        }
+
+    }
+
+    public void ItemGlowOff()
+    {
+        //Lorne
+        lorneScript.packageGlow.SetActive(false);
+        lorneScript.yarnGlow.SetActive(false);
+
+        //Lotest
+        lotestScript.greenGlow.SetActive(false);
+        lotestScript.velvetGlow.SetActive(false);
     }
 }

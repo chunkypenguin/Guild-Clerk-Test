@@ -19,5 +19,7 @@ namespace HeneGames.DialogueSystem
 
         public bool choseItemA;
         public bool choseItemB;
+
+        public Color textColor;
     }
 }

@@ -15,17 +15,18 @@ public class UIManager : MonoBehaviour
 
     public string playerName = "Hi";
 
-    //[SerializeField] DialogueManager dialogueManagerScript;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    [SerializeField] CharacterSystem cs;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Return) && inputFieldShown)
+        {
+            Debug.Log("Enter");
+            PrintInputText();
+            ShowInputField();
+            cs.josieD1P2.StartNewDialogue(cs.dialogueTriggerScript);
+        }
     }
 
     public void ShowInputField()

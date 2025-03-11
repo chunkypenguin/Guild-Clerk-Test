@@ -10,6 +10,8 @@ public class ItemFloorScript : MonoBehaviour
     Rigidbody rb;
     Rigidbody prb;
     [SerializeField] float downForce;
+
+    [SerializeField] ParticleSystem poofFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class ItemFloorScript : MonoBehaviour
         startScale = transform.localScale;
 
         rb = GetComponent<Rigidbody>();
+
+        poofFX = GameObject.Find("CloudPoof").GetComponent<ParticleSystem>();
     }
 
     //private void OnTriggerExit(Collider other)
@@ -63,7 +67,11 @@ public class ItemFloorScript : MonoBehaviour
                 transform.localScale = startScale;
                 prb.isKinematic = false;
 
-
+                if (prb.gameObject.activeInHierarchy)
+                {
+                    poofFX.transform.position = rb.transform.position;
+                    poofFX.Play();
+                }
 
                 //prb.useGravity = false;
 
@@ -93,7 +101,11 @@ public class ItemFloorScript : MonoBehaviour
                 transform.localScale = startScale;
                 prb.isKinematic = false;
 
-
+                if (prb.gameObject.activeInHierarchy)
+                {
+                    poofFX.transform.position = rb.transform.position;
+                    poofFX.Play();
+                }
 
                 prb.useGravity = false;
 
@@ -120,6 +132,13 @@ public class ItemFloorScript : MonoBehaviour
             transform.rotation = startRotation;
             transform.localScale = startScale;
             rb.isKinematic = false;
+
+            if (rb.gameObject.activeInHierarchy)
+            {
+                poofFX.transform.position = rb.transform.position;
+                poofFX.Play();
+            }
+
         }
     }
 }
