@@ -99,6 +99,12 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager lotestD1ItemA1;
     public DialogueManager lotestD1ItemB1;
 
+    [Header("CharacterStates")]
+    public DialogueManager questDialogue;
+    public DialogueManager equipmentDialogue;
+    public DialogueManager rewardDialogue;
+
+
     public bool isQuest;
     public bool isReward;
     public bool isEquipment;

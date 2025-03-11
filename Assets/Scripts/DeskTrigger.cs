@@ -21,6 +21,8 @@ public class DeskTrigger : MonoBehaviour
 
     public bool canPressBell;
 
+    [SerializeField] ItemSystem itemScript;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 7)
@@ -194,6 +196,7 @@ public class DeskTrigger : MonoBehaviour
             if(cs.currentCharacter.characterName == "Lorne" && !yarnS.yarnOnDesk && cs.D2)
             {
                 cs.lorneD2ItemRefuse.StartNewDialogue(cs.dialogueTriggerScript);
+                itemScript.ItemGlowOff();
             }
         }
     }

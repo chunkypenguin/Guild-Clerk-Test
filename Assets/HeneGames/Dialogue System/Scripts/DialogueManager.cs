@@ -212,7 +212,7 @@ namespace HeneGames.DialogueSystem
 
         public void NextSentence(out bool lastSentence)
         {
-            Debug.Log("next sentence");
+            //Debug.Log("next sentence");
 
             //The next sentence cannot be changed immediately after starting
             if (coolDownTimer > 0f)
@@ -294,7 +294,7 @@ namespace HeneGames.DialogueSystem
 
         private void ShowCurrentSentence()
         {
-            Debug.Log("show sentence");
+            //Debug.Log("show sentence");
 
             //my code
             if (UIManagerScript != null)
@@ -342,7 +342,7 @@ namespace HeneGames.DialogueSystem
 
         public void Test()
         {
-            Debug.Log("hello");
+            //Debug.Log("hello");
         }
     }
 

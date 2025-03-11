@@ -16,6 +16,7 @@ TagManager:
   - GoldObject
   - YarnTrigger
   - YarnOutTrigger
+  - Character
   layers:
   - Default
   - TransparentFX

@@ -34,6 +34,8 @@ public class movecam : MonoBehaviour
     [SerializeField] public bool dontFlash;
     [SerializeField] public bool flashOn;
 
+    public bool flashWasOn;
+
     private void Start()
     {
         //centerPosition = transform.position;
@@ -147,6 +149,12 @@ public class movecam : MonoBehaviour
             {
                 //do nothing
             }
+
+            if(flashWasOn)
+            {
+                ButtonFlashDown(leftButton);
+                flashWasOn = false;
+            }
         }
 
     }
@@ -187,6 +195,12 @@ public class movecam : MonoBehaviour
             {
                 //do nothing
             }
+
+            if (flashWasOn)
+            {
+                ButtonFlashDown(rightButton);
+                flashWasOn = false;
+            }
         }
 
     }
@@ -208,6 +222,12 @@ public class movecam : MonoBehaviour
             else if (bottom)
             {
                 //do nothing
+            }
+
+            if (flashWasOn)
+            {
+                ButtonFlashDown(bottomButton);
+                flashWasOn = false;
             }
         }
 

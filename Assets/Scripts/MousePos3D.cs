@@ -16,6 +16,8 @@ public class MousePos3D : MonoBehaviour
     [SerializeField] AudioSource bellSound;
 
     [SerializeField] QuestSystem questSystem;
+    [SerializeField] CharacterSystem cs;
+    [SerializeField] movecam mc;
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +30,36 @@ public class MousePos3D : MonoBehaviour
         Ray questray = mainCam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(questray, out RaycastHit questraycastHit))
         {
+            if (questraycastHit.collider.CompareTag("Character") && Input.GetMouseButtonDown(0))
+            {
+                //Debug.Log("ClickedCharacter");
+                if (cs.isQuest)
+                {
+                    Debug.Log("I need a quest");
+                    cs.questDialogue.StartNewDialogue(cs.dialogueTriggerScript);
+                    //mc.ButtonFlashUp(mc.rightButton);
+                    //mc.flashWasOn = true;
+                }
+                else if(cs.isEquipment)
+                {
+                    Debug.Log("I need equipment");
+                    cs.equipmentDialogue.StartNewDialogue(cs.dialogueTriggerScript);
+                    //mc.ButtonFlashUp(mc.leftButton);
+                    //mc.flashWasOn = true;
+                }
+                else if(cs.isReward)
+                {
+                    Debug.Log("I need a reward");
+                    cs.rewardDialogue.StartNewDialogue(cs.dialogueTriggerScript);
+                    //mc.ButtonFlashUp(mc.bottomButton);
+                    //mc.flashWasOn = true;
+                }
+                else
+                {
+                    Debug.Log("idle");
+                }
+            }
+
             if (questraycastHit.collider.CompareTag("Bell") && Input.GetMouseButtonDown(0))
             {
                 questSystem.FinalizeItems();
