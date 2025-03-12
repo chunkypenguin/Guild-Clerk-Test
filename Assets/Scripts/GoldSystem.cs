@@ -28,6 +28,8 @@ public class GoldSystem : MonoBehaviour
     [SerializeField] float maxSpeed = 10f;
     [SerializeField] float collectDistance = 0.5f;
 
+    [SerializeField] movecam mc;
+
     private void Start()
     {
         goldDrawerStartPos = transform.position;
@@ -128,6 +130,7 @@ public class GoldSystem : MonoBehaviour
     {
         goldDrawer.transform.DOMove(goldDrawerStartPos, drawerSpeed);
         goldUI.SetActive(false);
+        mc.drawerOpen = false;
     }
 
     public void SpawnGold()

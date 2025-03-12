@@ -36,6 +36,9 @@ public class movecam : MonoBehaviour
 
     public bool flashWasOn;
 
+    public bool drawerOpen;
+    public bool canOpenDrawer;
+
     private void Start()
     {
         //centerPosition = transform.position;
@@ -334,5 +337,10 @@ public class movecam : MonoBehaviour
     {
         dontFlash = true;
         //flashOn = false;
+    }
+
+    public void UnlockDrawer()
+    {
+        canOpenDrawer = true;
     }
 }
