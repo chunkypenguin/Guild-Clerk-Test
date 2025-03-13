@@ -22,6 +22,7 @@ public class DeskTrigger : MonoBehaviour
     public bool canPressBell;
 
     [SerializeField] ItemSystem itemScript;
+    [SerializeField] movecam movecamScript;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -74,6 +75,7 @@ public class DeskTrigger : MonoBehaviour
             cs.pickedQ1A = true;
 
             cs.IsIdle();// go back to idle task
+
         }
 
         else if ((items.Find(item => item.name == "QuestB") != null) && items.Find(item => item.name == "QuestA") == null)
@@ -88,6 +90,7 @@ public class DeskTrigger : MonoBehaviour
             cs.pickedQ1B = true;
 
             cs.IsIdle();// go back to idle task
+
         }
 
         else

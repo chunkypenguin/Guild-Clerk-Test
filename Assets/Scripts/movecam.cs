@@ -20,7 +20,7 @@ public class movecam : MonoBehaviour
     public bool center, left, right, bottom;
     public bool canMoveCam;
 
-    public GameObject leftButton, rightButton, topButton, bottomButton, drawerButton;
+    public GameObject leftButton, rightButton, topButton, bottomButton, drawerButton, bellButton;
     public bool lockLeft, lockRight, lockTop, lockBottom;
 
     [SerializeField] GrabIt grabItScript;

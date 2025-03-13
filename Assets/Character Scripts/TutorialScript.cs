@@ -26,6 +26,8 @@ public class TutorialScript : MonoBehaviour
     [SerializeField] CharacterSystem cs;
     [SerializeField] movecam mc;
     [SerializeField] GoldSystem gs;
+
+    bool flashBell;
     public void JosieTutDialogue(DialogueManager dialogue)
     {
         if(!questDialogue1)
@@ -67,6 +69,7 @@ public class TutorialScript : MonoBehaviour
         {
             if(mc.flashOn)
             {
+                flashBell = true;
                 Debug.Log("flash off");
                 mc.TurnFlashOff();
                 //mc.flashOn = false;
@@ -80,6 +83,17 @@ public class TutorialScript : MonoBehaviour
                 mc.TurnFlashOff();
                 //mc.flashOn = false;
             }
+        }
+        else if(mc.center && !holdingQuest && tutP1 && !questsOnBoard && flashBell)
+        {
+            if (!mc.flashOn)
+            {
+                mc.dontFlash = false;
+                mc.ButtonFlashUp(mc.bellButton);
+                //flashBell = false;
+                Debug.Log("bell flash");
+            }
+
         }
 
         //REWARDS PORTION
@@ -103,7 +117,8 @@ public class TutorialScript : MonoBehaviour
             if (!mc.flashOn)
             {
                 mc.dontFlash = false;
-                mc.ButtonFlashUp(mc.topButton);
+                //mc.ButtonFlashUp(mc.topButton);
+                mc.ButtonFlashUp(mc.bellButton);
             }
 
         }
@@ -112,7 +127,7 @@ public class TutorialScript : MonoBehaviour
             if (mc.flashOn)
             {
                 Debug.Log("turn off flash");
-                mc.TurnFlashOff();
+                //mc.TurnFlashOff();
             }
         }
     }
@@ -131,6 +146,7 @@ public class TutorialScript : MonoBehaviour
         else
         {
             tutP2 = false;
+            mc.TurnFlashOff();
         }
 
     }
