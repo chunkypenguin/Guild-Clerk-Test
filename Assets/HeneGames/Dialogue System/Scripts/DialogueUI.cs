@@ -52,6 +52,10 @@ namespace HeneGames.DialogueSystem
         [Header("Next sentence input")]
         public KeyCode actionInput = KeyCode.Space;
 
+        //MY ADDITION
+        [Header("Get Last Sentence")]
+        public string lastMessage;
+
         private void Update()
         {
             //Delay timer
@@ -115,7 +119,10 @@ namespace HeneGames.DialogueSystem
             //If last sentence remove current dialogue manager
             if (lastSentence)
             {
+                lastMessage = currentMessage;
+                Debug.Log(lastMessage);
                 currentDialogueManager = null;
+                Debug.Log("dialogue end");
             }
         }
 
@@ -129,6 +136,8 @@ namespace HeneGames.DialogueSystem
 
             //Start displaying dialogue
             currentDialogueManager.StartDialogue();
+
+            Debug.Log("start dialogue");
         }
 
         public void ShowSentence(DialogueCharacter _dialogueCharacter, string _message)

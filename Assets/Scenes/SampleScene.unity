@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -432,6 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -545,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -626,6 +629,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 963194229}
+          m_TargetAssemblyTypeName: movecam, Assembly-CSharp
+          m_MethodName: ButtonFlashUp
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 477224884}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -800,10 +815,10 @@ MonoBehaviour:
     them to say hi out of fear of embarassing yourself.\r\n\nAs you walk into the
     Guild House, you see a few guild clerks already here\u2014just chatting with
     one another before the day starts. You walk to your station, tidy up your counter,
-    and await your next customer.\n\nPress \"Space\" to start your shift.\n"
+    and await the next adventurer.\n\nPress [Space] to start your shift.\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -827,8 +842,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1160,6 +1175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -1208,13 +1224,6 @@ MonoBehaviour:
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
     sentence: Give me a quest, and... can you just like, give me whatever gives the
       most gold? And hurry it up, I've been waiting for too long now.
-    skipDelayTime: 0
-    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
-    sentenceEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
-    sentence: Yawn.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -1798,6 +1807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -2180,6 +2190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -2288,6 +2299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -3028,8 +3040,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3253,6 +3265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -3964,8 +3977,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'reward:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4028,7 +4041,7 @@ MonoBehaviour:
   m_margin: {x: -40.39087, y: -120.059814, z: -40.73285, w: 114.26759}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &268864542
@@ -4166,6 +4179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -4316,6 +4330,108 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4401027696460798729, guid: 1cc283931e9bc3545a1fddd98dd1dd23, type: 3}
+--- !u!1 &285321103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 285321104}
+  - component: {fileID: 285321107}
+  - component: {fileID: 285321106}
+  - component: {fileID: 285321105}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &285321104
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285321103}
+  m_LocalRotation: {x: -0, y: -0.70710576, z: 0, w: 0.70710784}
+  m_LocalPosition: {x: 0, y: 0, z: -2.39}
+  m_LocalScale: {x: 6.3927, y: 0.8711752, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 477224885}
+  m_Father: {fileID: 1863555983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -6.802, y: 3.118}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &285321105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285321103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &285321106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285321103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &285321107
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285321103}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &290914033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4557,6 +4673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -5218,6 +5335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -5357,8 +5475,8 @@ MonoBehaviour:
 
     Wow what a cool quest!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5421,7 +5539,7 @@ MonoBehaviour:
   m_margin: {x: -40.39087, y: -120.059814, z: -40.73285, w: -194.68683}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &368490424
@@ -5596,8 +5714,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'reward:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5660,7 +5778,7 @@ MonoBehaviour:
   m_margin: {x: -40.39087, y: -120.059814, z: -40.73285, w: 114.26759}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &403238770
@@ -5984,6 +6102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -6075,6 +6194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -6273,6 +6393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -6539,6 +6660,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8806150b481b8f543a5774ddeb2d013a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &477224884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477224885}
+  - component: {fileID: 477224887}
+  - component: {fileID: 477224886}
+  m_Layer: 2
+  m_Name: DrawerButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &477224885
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477224884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 285321104}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &477224886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477224884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.72156864, g: 0.7254902, b: 0.30588236, a: 0}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &477224887
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477224884}
+  m_CullTransparentMesh: 1
 --- !u!1 &477418198
 GameObject:
   m_ObjectHideFlags: 0
@@ -6771,6 +6967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -6989,6 +7186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -7101,8 +7299,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quest B
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7165,7 +7363,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &498541080
@@ -7220,6 +7418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -7556,6 +7755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -8318,6 +8518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -8584,6 +8785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -8716,6 +8918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -8927,6 +9130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -9346,9 +9550,11 @@ MonoBehaviour:
   lotestD1P1: {fileID: 1315579909}
   lotestD1ItemA1: {fileID: 432888331}
   lotestD1ItemB1: {fileID: 1095495582}
+  dialogueHistory: {fileID: 1305821477}
   questDialogue: {fileID: 357877040}
   equipmentDialogue: {fileID: 2096946931}
   rewardDialogue: {fileID: 611598338}
+  duiScript: {fileID: 470124613}
   isQuest: 0
   isReward: 0
   isEquipment: 0
@@ -9765,6 +9971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -9816,7 +10023,7 @@ MonoBehaviour:
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
-    sentence: There is a package here addressed to me.
+    sentence: There is a package here for me.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -9830,7 +10037,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
-    sentence: Retrieve it.
+    sentence: Now, retrieve the package.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -10412,6 +10619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -11439,6 +11647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -12625,6 +12834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -12741,8 +12951,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quest B
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12805,7 +13015,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &886026290
@@ -13097,6 +13307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -13433,6 +13644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -13962,6 +14174,7 @@ MonoBehaviour:
   rightButton: {fileID: 2136788830}
   topButton: {fileID: 422830787}
   bottomButton: {fileID: 113630231}
+  drawerButton: {fileID: 477224884}
   lockLeft: 1
   lockRight: 1
   lockTop: 1
@@ -14669,6 +14882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -15506,8 +15720,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quest A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15570,7 +15784,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1060519086
@@ -16150,6 +16364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -16159,6 +16374,18 @@ MonoBehaviour:
       - m_Target: {fileID: 973462385}
         m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
         m_MethodName: TutorialP1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 655475413}
+        m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
+        m_MethodName: IsIdle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16523,6 +16750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -17240,6 +17468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -18134,6 +18363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -18295,8 +18525,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.000002, y: 4.364886, z: 10}
-  m_Center: {x: -1.2570574e-12, y: 1.682443, z: -1.5804556e-14}
+  m_Size: {x: 10.000002, y: 4.838762, z: 10}
+  m_Center: {x: -1.5756291e-12, y: 1.9193809, z: -2.1694555e-13}
 --- !u!114 &1168836907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18567,8 +18797,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.000002, y: 7.0441504, z: 10}
-  m_Center: {x: 1.01329176e-13, y: 3.022075, z: 3.4370588e-14}
+  m_Size: {x: 10.000002, y: 7.4748197, z: 10}
+  m_Center: {x: -5.3968582e-14, y: 3.2374096, z: -1.0036153e-13}
 --- !u!114 &1196896052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18780,8 +19010,8 @@ MonoBehaviour:
 
     Wow what a cool quest!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18844,7 +19074,7 @@ MonoBehaviour:
   m_margin: {x: -40.39087, y: -120.059814, z: -40.73285, w: -194.68683}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1203074409
@@ -18899,6 +19129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -19240,6 +19471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -19738,6 +19970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -20385,8 +20618,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.000001, y: 4.5067415, z: 10}
-  m_Center: {x: 1.979148e-14, y: 1.7533712, z: -1.4069567e-13}
+  m_Size: {x: 10.000001, y: 4.88558, z: 10}
+  m_Center: {x: -9.5518035e-14, y: 1.9427906, z: -3.487226e-13}
 --- !u!114 &1298240872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20561,6 +20794,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300548960}
   m_CullTransparentMesh: 1
+--- !u!1 &1305821475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1305821476}
+  - component: {fileID: 1305821477}
+  m_Layer: 0
+  m_Name: HistoryDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1305821476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305821475}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1989573862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305821477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305821475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSentence: 0
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 0}
+    sentence: 
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1311710832
 GameObject:
   m_ObjectHideFlags: 0
@@ -20605,6 +20904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -20740,6 +21040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -21267,8 +21568,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter name...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21386,6 +21687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -21999,6 +22301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -22336,7 +22639,13 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 2bd63e808b77f2a45906d8b3b071d328, type: 3}
     - {fileID: 65702495048144492, guid: 2bd63e808b77f2a45906d8b3b071d328, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2bd63e808b77f2a45906d8b3b071d328, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 285321104}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2bd63e808b77f2a45906d8b3b071d328, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1803349238}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5528078466911944822, guid: 2bd63e808b77f2a45906d8b3b071d328, type: 3}
       insertIndex: -1
@@ -22492,6 +22801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -22620,6 +22930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -22895,8 +23206,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22959,7 +23270,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1533426205
@@ -23029,8 +23340,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'reward:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -23093,7 +23404,7 @@ MonoBehaviour:
   m_margin: {x: -40.39087, y: -120.059814, z: -40.73285, w: 114.26759}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1557210095
@@ -23534,6 +23845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -24147,6 +24459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -24475,6 +24788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -24792,6 +25106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -25220,6 +25535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -25437,6 +25753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -25997,6 +26314,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799022098}
   m_CullTransparentMesh: 1
+--- !u!1 &1803349237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1803349238}
+  - component: {fileID: 1803349242}
+  - component: {fileID: 1803349241}
+  - component: {fileID: 1803349240}
+  - component: {fileID: 1803349239}
+  m_Layer: 0
+  m_Name: HighlightDrawer
+  m_TagString: GoldObject
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1803349238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803349237}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0.011567121, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863555983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1803349239
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803349237}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.016681515, y: 0.063938215, z: 0.008389998}
+  m_Center: {x: -0.07514872, y: 0.023769878, z: 0.031311087}
+--- !u!114 &1803349240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803349237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc591108e318ae47938d17b49181165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldAmount: 0
+  goldText: {fileID: 258388548}
+  goldUI: {fileID: 1984450829}
+  goldDrawer: {fileID: 1803349237}
+  goldDrawerStartPos: {x: 0, y: 0, z: 0}
+  drawerSpeed: 0.5
+  goldCoin: {fileID: 5840946704655884335, guid: c952530162324cd4d9e97e2d5fbe5cd8, type: 3}
+  coins: []
+  coinSpawnPos: {fileID: 0}
+  cs: {fileID: 655475413}
+  addedGold: 0
+  isSuctionActive: 0
+  vacuumPoint: {fileID: 1557248497}
+  suckForce: 20
+  maxSpeed: 10
+  collectDistance: 0.5
+  mc: {fileID: 963194229}
+--- !u!23 &1803349241
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803349237}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b0292715b517ad94ea3440cbc16d54cc, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1803349242
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803349237}
+  m_Mesh: {fileID: -8930740714778682797, guid: 2bd63e808b77f2a45906d8b3b071d328, type: 3}
 --- !u!1 &1804893553
 GameObject:
   m_ObjectHideFlags: 0
@@ -26252,6 +26704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -26734,6 +27187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -26743,6 +27197,18 @@ MonoBehaviour:
       - m_Target: {fileID: 973462385}
         m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
         m_MethodName: TutorialP1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 655475413}
+        m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
+        m_MethodName: IsIdle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26824,6 +27290,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!4 &1863555983 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2bd63e808b77f2a45906d8b3b071d328, type: 3}
+  m_PrefabInstance: {fileID: 1459066362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1892736943
 GameObject:
   m_ObjectHideFlags: 0
@@ -26936,6 +27407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -27015,8 +27487,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.000001, y: 4.4322677, z: 10}
-  m_Center: {x: -4.5840523e-13, y: 1.7161343, z: -4.6953056e-13}
+  m_Size: {x: 10.000001, y: 5.0014443, z: 10}
+  m_Center: {x: -4.4249774e-13, y: 2.0007226, z: -6.284734e-13}
 --- !u!114 &1898575741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27558,8 +28030,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.000001, y: 8.192062, z: 10}
-  m_Center: {x: 2.7056544e-13, y: 3.5960314, z: -2.5790302e-13}
+  m_Size: {x: 10.000001, y: 8.92305, z: 10}
+  m_Center: {x: 3.7043852e-13, y: 3.9615245, z: -1.6505655e-13}
 --- !u!23 &1937845694
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27678,6 +28150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -27873,6 +28346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -28380,6 +28854,7 @@ Transform:
   - {fileID: 1168836905}
   - {fileID: 973462381}
   - {fileID: 1011881218}
+  - {fileID: 1305821476}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997432409
@@ -28560,6 +29035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -28767,6 +29243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -29039,6 +29516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -29316,6 +29794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -29433,6 +29912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -29742,6 +30222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -29823,6 +30304,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 963194229}
+          m_TargetAssemblyTypeName: movecam, Assembly-CSharp
+          m_MethodName: ButtonFlashUp
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 477224884}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -30046,8 +30539,8 @@ MonoBehaviour:
 
     Wow what a cool quest!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
-  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
+  m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -30110,7 +30603,7 @@ MonoBehaviour:
   m_margin: {x: -40.39087, y: -120.059814, z: -40.73285, w: -194.68683}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2078944772
@@ -30331,6 +30824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -30509,6 +31003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -30574,6 +31069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -30585,7 +31081,19 @@ MonoBehaviour:
       m_Calls: []
   endDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1460095399}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ShowInputField
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerState: 1
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
@@ -30694,19 +31202,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1460095399}
-          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-          m_MethodName: ShowInputField
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &2116614732
 GameObject:
   m_ObjectHideFlags: 0
@@ -30834,6 +31330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -30959,6 +31456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSentence: 0
   UIManagerScript: {fileID: 1460095399}
   playerName: 
   audioSource: {fileID: 1821416493}
@@ -31258,6 +31756,10 @@ PrefabInstance:
       value: '[SPACE/CLICK]'
       objectReference: {fileID: 0}
     - target: {fileID: 2338859298468319739, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338859298468319739, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_margin.w
       value: 0.3968029
       objectReference: {fileID: 0}
@@ -31268,7 +31770,7 @@ PrefabInstance:
     - target: {fileID: 2338859298468319739, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+      objectReference: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
     - target: {fileID: 2338859298468319739, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontColor.b
       value: 0.17464627
@@ -31282,9 +31784,13 @@ PrefabInstance:
       value: 0.35309958
       objectReference: {fileID: 0}
     - target: {fileID: 2338859298468319739, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338859298468319739, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+      objectReference: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
     - target: {fileID: 2338859298468319739, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4281150810
@@ -31348,7 +31854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6449296285419502213, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontSize
-      value: 24
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6449296285419502213, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_margin.w
@@ -31369,7 +31875,7 @@ PrefabInstance:
     - target: {fileID: 6449296285419502213, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+      objectReference: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
     - target: {fileID: 6449296285419502213, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontColor.b
       value: 0.41018853
@@ -31384,12 +31890,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6449296285419502213, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontSizeMax
-      value: 24
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6449296285419502213, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+      objectReference: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
     - target: {fileID: 6449296285419502213, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4285112105
@@ -31412,20 +31918,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6449296285614807723, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontSize
-      value: 22.85
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6449296285614807723, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+      objectReference: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
     - target: {fileID: 6449296285614807723, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_fontSizeMax
-      value: 32
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6449296285614807723, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+      objectReference: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
     - target: {fileID: 6449296285614807723, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0

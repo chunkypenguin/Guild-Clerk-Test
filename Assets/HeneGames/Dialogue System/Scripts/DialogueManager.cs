@@ -7,7 +7,7 @@ namespace HeneGames.DialogueSystem
 {
     public class DialogueManager : MonoBehaviour
     {
-        private int currentSentence;
+        public int currentSentence;
         private float coolDownTimer;
         private bool dialogueIsOn;
         private DialogueTrigger dialogueTrigger;
@@ -31,7 +31,7 @@ namespace HeneGames.DialogueSystem
 
         [Header("Dialogue")]
         [SerializeField] private TriggerState triggerState;
-        [SerializeField] private List<NPC_Centence> sentences = new List<NPC_Centence>();
+        [SerializeField] public List<NPC_Centence> sentences = new List<NPC_Centence>();
 
         private void Update()
         {
@@ -60,9 +60,6 @@ namespace HeneGames.DialogueSystem
 
                 dialogueIsOn = true;
             }
-
-
-
         }
 
         //Start dialogue by trigger

@@ -20,7 +20,7 @@ public class movecam : MonoBehaviour
     public bool center, left, right, bottom;
     public bool canMoveCam;
 
-    public GameObject leftButton, rightButton, topButton, bottomButton;
+    public GameObject leftButton, rightButton, topButton, bottomButton, drawerButton;
     public bool lockLeft, lockRight, lockTop, lockBottom;
 
     [SerializeField] GrabIt grabItScript;
@@ -309,7 +309,7 @@ public class movecam : MonoBehaviour
     public void ButtonFlashUp(GameObject button)
     {
         flashOn = true;
-        button.GetComponent<Image>().DOFade(0.75f, 1f).onComplete = () =>
+        button.GetComponent<Image>().DOFade(0.5f, 1f).onComplete = () =>
         {
             ButtonFlashDown(button);
             

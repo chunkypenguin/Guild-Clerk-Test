@@ -107,6 +107,8 @@ public class DeskTrigger : MonoBehaviour
                 //GameObject questRB = items.Find(item => item.name == "QuestReturn");
                 //qs.GetQuestRB(questRB);
                 Debug.Log("not finch");
+                cs.IsIdle();
+
             }
             else
             {
@@ -138,11 +140,13 @@ public class DeskTrigger : MonoBehaviour
         if (cs.currentCharacter.characterName == "Josie")
         {
             josieS.CheckForReward();
+            cs.IsIdle();
         }
 
         if (cs.currentCharacter.characterName == "Greg")
         {
             gregS.CheckForReward();
+            cs.IsIdle();
         }
 
         if (cs.currentCharacter.characterName == "Finch")
@@ -154,6 +158,7 @@ public class DeskTrigger : MonoBehaviour
         if (cs.currentCharacter.characterName == "Andy")
         {
             andyS.CheckForReward();
+            cs.IsIdle();
         }
     }
 
@@ -175,6 +180,7 @@ public class DeskTrigger : MonoBehaviour
             //cs.QuestADialogue();
             cs.ItemADialogue();
             //cs.pickedQ1A = true;
+            cs.IsIdle();
         }
 
         else if ((items.Find(item => item.name == cs.currentCharacter.ItemBName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemAName) == null)
@@ -188,6 +194,7 @@ public class DeskTrigger : MonoBehaviour
             //cs.QuestADialogue();
             cs.ItemBDialogue();
             //cs.pickedQ1A = true;
+            cs.IsIdle();
         }
 
         else
@@ -197,6 +204,7 @@ public class DeskTrigger : MonoBehaviour
             {
                 cs.lorneD2ItemRefuse.StartNewDialogue(cs.dialogueTriggerScript);
                 itemScript.ItemGlowOff();
+                cs.IsIdle();
             }
         }
     }

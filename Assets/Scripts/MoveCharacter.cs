@@ -61,7 +61,12 @@ public class MoveCharacter : MonoBehaviour
             {
                 if (cs.currentCharacter.characterName == "Greg")
                 {
-                    gregS.GregArrow();
+                    //if chose quest A...
+                    if (cs.currentCharacter.choseItemA)
+                    {
+                        gregS.GregArrow();
+                    }
+                    
                 }
 
                 cs.StartNewCharacter();

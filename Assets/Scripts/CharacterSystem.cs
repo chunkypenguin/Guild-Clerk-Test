@@ -99,10 +99,15 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager lotestD1ItemA1;
     public DialogueManager lotestD1ItemB1;
 
+    [Header("Dialogue History")]
+    public DialogueManager dialogueHistory;
+
     [Header("CharacterStates")]
     public DialogueManager questDialogue;
     public DialogueManager equipmentDialogue;
     public DialogueManager rewardDialogue;
+
+    [SerializeField] DialogueUI duiScript;
 
 
     public bool isQuest;
@@ -295,5 +300,14 @@ public class CharacterSystem : MonoBehaviour
     {
         dui.messageText.color = currentCharacter.textColor;
         dui.nameText.color = currentCharacter.textColor;
+    }
+
+    public void TextHistory()
+    {
+        Debug.Log("text history");
+        dialogueHistory.currentSentence = 0;
+        dialogueHistory.sentences[dialogueHistory.currentSentence].sentence = duiScript.lastMessage;
+        dialogueHistory.sentences[dialogueHistory.currentSentence].dialogueCharacter = currentCharacter;
+        dialogueHistory.StartNewDialogue(dialogueTriggerScript);
     }
 }
