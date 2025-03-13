@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+
+    [SerializeField] GameObject creditsObj; [SerializeField] GameObject menuObj;
+    bool creditsOn;
     public void MainScene()
     {
         SceneManager.LoadScene(1);
@@ -17,6 +20,13 @@ public class MenuScript : MonoBehaviour
 
     public void CreditsButton()
     {
-        Debug.Log("credits");
+        creditsObj.SetActive(true);
+        menuObj.SetActive(false);
+    }
+
+    public void MainMenuButton()
+    {
+        creditsObj.SetActive(false);
+        menuObj.SetActive(true);
     }
 }

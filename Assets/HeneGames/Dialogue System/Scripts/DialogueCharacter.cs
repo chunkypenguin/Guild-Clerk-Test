@@ -21,5 +21,14 @@ namespace HeneGames.DialogueSystem
         public bool choseItemB;
 
         public Color textColor;
+
+        public void ResetBools()
+        {
+            choseQuestA = false;
+            choseQuestB = false;
+
+            choseItemA = false;
+            choseItemB = false;
+        }
     }
 }
