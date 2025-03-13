@@ -31,41 +31,6 @@ public class MousePos3D : MonoBehaviour
         Ray questray = mainCam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(questray, out RaycastHit questraycastHit))
         {
-            if (questraycastHit.collider.CompareTag("Character") && Input.GetMouseButtonDown(0))
-            {
-                
-                //Debug.Log("ClickedCharacter");
-                if (cs.isQuest)
-                {
-                    Debug.Log("I need a quest");
-                    cs.TextHistory();
-                    //cs.questDialogue.StartNewDialogue(cs.dialogueTriggerScript);
-                    //mc.ButtonFlashUp(mc.rightButton);
-                    //mc.flashWasOn = true;
-                }
-                else if(cs.isEquipment)
-                {
-                    Debug.Log("I need equipment");
-                    cs.TextHistory();
-                    //cs.equipmentDialogue.StartNewDialogue(cs.dialogueTriggerScript);
-                    //mc.ButtonFlashUp(mc.leftButton);
-                    //mc.flashWasOn = true;
-                }
-                else if(cs.isReward)
-                {
-                    Debug.Log("I need a reward");
-                    cs.TextHistory();
-                    //cs.rewardDialogue.StartNewDialogue(cs.dialogueTriggerScript);
-                    //mc.ButtonFlashUp(mc.bottomButton);
-                    //mc.flashWasOn = true;
-                }
-                else
-                {
-                    Debug.Log("idle");
-                }
-            }
-
-
 
             if (questraycastHit.collider.CompareTag("Bell") && Input.GetMouseButtonDown(0))
             {
@@ -118,6 +83,40 @@ public class MousePos3D : MonoBehaviour
                         mc.UpButton();
                         mc.drawerOpen = false;
                     }
+                }
+            }
+
+            if (questraycastHit.collider.CompareTag("Character") && Input.GetMouseButtonDown(0))
+            {
+
+                //Debug.Log("ClickedCharacter");
+                if (cs.isQuest)
+                {
+                    Debug.Log("I need a quest");
+                    cs.TextHistory();
+                    //cs.questDialogue.StartNewDialogue(cs.dialogueTriggerScript);
+                    //mc.ButtonFlashUp(mc.rightButton);
+                    //mc.flashWasOn = true;
+                }
+                else if (cs.isEquipment)
+                {
+                    Debug.Log("I need equipment");
+                    cs.TextHistory();
+                    //cs.equipmentDialogue.StartNewDialogue(cs.dialogueTriggerScript);
+                    //mc.ButtonFlashUp(mc.leftButton);
+                    //mc.flashWasOn = true;
+                }
+                else if (cs.isReward)
+                {
+                    Debug.Log("I need a reward");
+                    cs.TextHistory();
+                    //cs.rewardDialogue.StartNewDialogue(cs.dialogueTriggerScript);
+                    //mc.ButtonFlashUp(mc.bottomButton);
+                    //mc.flashWasOn = true;
+                }
+                else
+                {
+                    Debug.Log("idle");
                 }
             }
         }

@@ -21,7 +21,7 @@ public class movecam : MonoBehaviour
     public bool canMoveCam;
 
     public GameObject leftButton, rightButton, topButton, bottomButton, drawerButton, bellButton;
-    public bool lockLeft, lockRight, lockTop, lockBottom;
+    public bool lockLeft, lockRight, lockTop, lockBottom, lockDrawer;
 
     [SerializeField] GrabIt grabItScript;
     [SerializeField] GoldSystem goldSystemScript;
@@ -112,6 +112,20 @@ public class movecam : MonoBehaviour
         {
             bottomButton.SetActive(true);
             lockBottom = false;
+        }
+    }
+
+    public void DrawerButtonToggle()
+    {
+        if (!lockDrawer)
+        {
+            drawerButton.SetActive(false);
+            lockDrawer = true;
+        }
+        else
+        {
+            drawerButton.SetActive(true);
+            lockDrawer = false;
         }
     }
 
@@ -256,6 +270,7 @@ public class movecam : MonoBehaviour
         }
 
     }
+
 
 
     private void MoveCamToQuests()

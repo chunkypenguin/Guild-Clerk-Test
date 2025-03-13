@@ -176,7 +176,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: movecam, Assembly-CSharp
-        m_MethodName: BottomButtonLockToggle
+        m_MethodName: DrawerButtonToggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -206,7 +206,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: movecam, Assembly-CSharp
-        m_MethodName: BottomButtonLockToggle
+        m_MethodName: DrawerButtonToggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -442,7 +442,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: movecam, Assembly-CSharp
-        m_MethodName: BottomButtonLockToggle
+        m_MethodName: DrawerButtonToggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -472,7 +472,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: movecam, Assembly-CSharp
-        m_MethodName: BottomButtonLockToggle
+        m_MethodName: DrawerButtonToggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1891,7 +1891,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: movecam, Assembly-CSharp
-        m_MethodName: BottomButtonLockToggle
+        m_MethodName: DrawerButtonToggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1921,7 +1921,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: movecam, Assembly-CSharp
-        m_MethodName: BottomButtonLockToggle
+        m_MethodName: DrawerButtonToggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3859,7 +3859,7 @@ MonoBehaviour:
   suckForce: 20
   maxSpeed: 10
   collectDistance: 0.5
-  mc: {fileID: 0}
+  mc: {fileID: 963194229}
 --- !u!1 &268751624
 GameObject:
   m_ObjectHideFlags: 0
@@ -9537,30 +9537,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
-  - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
   - {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
+  - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
   - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
-  - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
+  - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
   - {fileID: 11400000, guid: 6dc1457b030e3a74e899061c38af5fc1, type: 2}
   - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
-  - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
   - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
+  - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
   - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   currentCharacter: {fileID: 0}
   characterObjects:
   - {fileID: 973462376}
-  - {fileID: 1298240868}
   - {fileID: 1086671382}
+  - {fileID: 1298240868}
   - {fileID: 1937845689}
   - {fileID: 1066098676}
   - {fileID: 973462376}
-  - {fileID: 1066098676}
+  - {fileID: 1298240868}
   - {fileID: 1898575738}
   - {fileID: 1168836904}
-  - {fileID: 1298240868}
   - {fileID: 1196896048}
+  - {fileID: 1066098676}
   - {fileID: 1937845689}
   currentCharacterObject: {fileID: 0}
   dialogueTriggerScript: {fileID: 973462384}
@@ -10934,6 +10934,12 @@ MonoBehaviour:
   fadeDuration: 3
   dayOneTextObject: {fileID: 58657973}
   cs: {fileID: 655475413}
+  returnItems:
+  - {fileID: 1115274021}
+  - {fileID: 1704317912}
+  - {fileID: 943334278}
+  - {fileID: 106603660}
+  - {fileID: 1139491333}
 --- !u!4 &726354695
 Transform:
   m_ObjectHideFlags: 0
@@ -12086,7 +12092,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.1583003, y: 0.09020679, z: 0.20000002}
   m_Center: {x: -0.0052010566, y: 0.31763396, z: 0}
@@ -13781,6 +13787,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 963194229}
+        m_TargetAssemblyTypeName: movecam, Assembly-CSharp
+        m_MethodName: TurnFlashOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
@@ -14256,6 +14274,7 @@ MonoBehaviour:
   lockRight: 1
   lockTop: 1
   lockBottom: 1
+  lockDrawer: 0
   grabItScript: {fileID: 963194230}
   goldSystemScript: {fileID: 1459066364}
   cs: {fileID: 655475413}
@@ -15035,30 +15054,6 @@ MonoBehaviour:
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 943334278}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1293637338}
-          m_TargetAssemblyTypeName: ItemSystem, Assembly-CSharp
-          m_MethodName: ReturnItem
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 106603660}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1293637338}
-          m_TargetAssemblyTypeName: ItemSystem, Assembly-CSharp
-          m_MethodName: ReturnItem
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1139491333}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -16596,8 +16591,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.000001, y: 5.523377, z: 10}
-  m_Center: {x: -1.2761968e-13, y: 2.2616887, z: -2.9709658e-13}
+  m_Size: {x: 10.000001, y: 5.3397746, z: 10}
+  m_Center: {x: -4.87882e-13, y: 2.1698875, z: -7.522567e-15}
 --- !u!114 &1086671385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19566,6 +19561,12 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
@@ -19579,12 +19580,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  nextSentenceDialogueEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  endDialogueEvent:
-    m_PersistentCalls:
-      m_Calls: []
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
@@ -22710,6 +22705,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6956395885858268048, guid: 2bd63e808b77f2a45906d8b3b071d328, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6956395885858268048, guid: 2bd63e808b77f2a45906d8b3b071d328, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: b0292715b517ad94ea3440cbc16d54cc, type: 2}
@@ -24829,7 +24828,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.33254263, y: 0.25708747, z: 0.25708747}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465013813}
@@ -25684,7 +25683,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.1583003, y: 0.09020679, z: 0.20000002}
   m_Center: {x: -0.0052010566, y: 0.31763396, z: 0}
@@ -26800,6 +26799,12 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
@@ -26813,12 +26818,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  nextSentenceDialogueEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  endDialogueEvent:
-    m_PersistentCalls:
-      m_Calls: []
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
@@ -26830,7 +26829,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1298240875}
           m_TargetAssemblyTypeName: GregScript, Assembly-CSharp
-          m_MethodName: GregHappy
+          m_MethodName: GregArrow
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -27589,8 +27588,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.000001, y: 5.0014443, z: 10}
-  m_Center: {x: -4.4249774e-13, y: 2.0007226, z: -6.284734e-13}
+  m_Size: {x: 10.000001, y: 5.054609, z: 10}
+  m_Center: {x: -7.506037e-13, y: 2.027306, z: -3.9124433e-13}
 --- !u!114 &1898575741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28304,6 +28303,18 @@ MonoBehaviour:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsIdle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 963194229}
+        m_TargetAssemblyTypeName: movecam, Assembly-CSharp
+        m_MethodName: TurnFlashOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30075,6 +30086,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 963194229}
+        m_TargetAssemblyTypeName: movecam, Assembly-CSharp
+        m_MethodName: TurnFlashOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
@@ -31439,13 +31462,13 @@ MonoBehaviour:
   startDialogueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 655475413}
-        m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
-        m_MethodName: IsReward
-        m_Mode: 1
+      - m_Target: {fileID: 1293637338}
+        m_TargetAssemblyTypeName: ItemSystem, Assembly-CSharp
+        m_MethodName: ReturnItem
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2079533769}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -31463,24 +31486,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1293637338}
-        m_TargetAssemblyTypeName: ItemSystem, Assembly-CSharp
-        m_MethodName: ReturnItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2079533769}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
   endDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 655475413}
+        m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
+        m_MethodName: IsReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
@@ -31564,19 +31587,7 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 655475413}
-        m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
-        m_MethodName: IsQuest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -31586,6 +31597,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1287477355}
         m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
         m_MethodName: UpdateQuests
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 655475413}
+        m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
+        m_MethodName: IsQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31630,13 +31653,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
-    sentence: "Please... Can you please just give me a slay quest..? \r\n"
-    skipDelayTime: 0
-    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
-    sentenceEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
     sentence: "I promise if it's too much I'll head back home without a second thought.
       \r\n"
     skipDelayTime: 0
@@ -31645,7 +31661,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
-    sentence: 'Please give me a chance.
+    sentence: 'Please... Can you please just give me a slay quest..?
 
 '
     skipDelayTime: 0
@@ -32042,6 +32058,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 14.9
       objectReference: {fileID: 0}
+    - target: {fileID: 6449296285829880520, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
+      propertyPath: gs
+      value: 
+      objectReference: {fileID: 1459066364}
     - target: {fileID: 6449296285829880520, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
       propertyPath: textAnimationSpeed
       value: 0.6

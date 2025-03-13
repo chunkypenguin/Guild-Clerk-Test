@@ -13,6 +13,8 @@ public class DaySystem : MonoBehaviour
 
     [SerializeField] CharacterSystem cs;
 
+    [SerializeField] GameObject[] returnItems;
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && canStartNextDay)
@@ -34,6 +36,12 @@ public class DaySystem : MonoBehaviour
                 dayOneTextObject.SetActive(true);
                 canStartNextDay = true;
                 cs.currentCharacterObject.GetComponent<MoveCharacter>().MoveEndDay();
+
+                //remove return items
+                foreach (GameObject obj in returnItems)
+                {
+                    obj.SetActive(false);
+                }
 
             });
         }

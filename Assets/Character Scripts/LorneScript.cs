@@ -55,7 +55,7 @@ public class LorneScript : MonoBehaviour
 
     public void Day2Lorne()
     {
-        lorneCharacter.ItemAName = "Yarn";
+        //lorneCharacter.ItemAName = "Yarn";
     }
 
     public void RefuseYarn()

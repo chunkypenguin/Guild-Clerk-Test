@@ -56,6 +56,8 @@ namespace HeneGames.DialogueSystem
         [Header("Get Last Sentence")]
         public string lastMessage;
 
+        [SerializeField] GoldSystem gs;
+
         private void Update()
         {
             //Delay timer
@@ -123,6 +125,7 @@ namespace HeneGames.DialogueSystem
                 Debug.Log(lastMessage);
                 currentDialogueManager = null;
                 Debug.Log("dialogue end");
+                gs.GoldDrawerDisable();
             }
         }
 

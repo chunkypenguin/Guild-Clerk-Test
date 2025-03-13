@@ -163,6 +163,12 @@ public class DeskTrigger : MonoBehaviour
             andyS.CheckForReward();
             cs.IsIdle();
         }
+
+        if (movecamScript.bottom)
+        {
+            movecamScript.UpButton();//move button up
+        }
+        
     }
 
     public void CanPressBell()
@@ -172,8 +178,62 @@ public class DeskTrigger : MonoBehaviour
 
     public void CheckForItems()
     {
-        if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+        //CHECK TO SEE FOR LORNE STUFF
+        if(cs.currentCharacter.characterName == "Lorne")
         {
+            if (cs.D1)
+            {
+                if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+                {
+
+                    GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);
+                    //qs.GetQuestRB(itemRB);
+                    itemS.GetItemRb(itemRB);
+                    cs.currentCharacter.choseItemA = true;
+                    cs.currentCharacter.choseItemB = false;
+                    // Add your action here
+                    //cs.QuestADialogue();
+                    cs.ItemADialogue();
+                    //cs.pickedQ1A = true;
+                    cs.IsIdle();
+                }
+            }
+
+            else if (cs.D2)
+            {
+                if ((items.Find(item => item.name == cs.currentCharacter.ItemBName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemAName) == null)
+                {
+                    GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemBName);
+                    //qs.GetQuestRB(itemRB);
+                    itemS.GetItemRb(itemRB);
+                    cs.currentCharacter.choseItemB = true;
+                    cs.currentCharacter.choseItemA = false;
+                    // Add your action here
+                    //cs.QuestADialogue();
+                    cs.ItemBDialogue();
+                    //cs.pickedQ1A = true;
+                    cs.IsIdle();
+                }
+
+                else
+                {
+                    Debug.Log("two or no quests on desk");
+                    if (!yarnS.yarnOnDesk)
+                    {
+                        cs.lorneD2ItemRefuse.StartNewDialogue(cs.dialogueTriggerScript);
+                        itemScript.ItemGlowOff();
+                        cs.IsIdle();
+                    }
+                }
+            }
+
+
+        }
+
+        //REGULAR STUFF FOR OTHER CHARACTERS
+        else if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+        {
+
             GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);
             //qs.GetQuestRB(itemRB);
             itemS.GetItemRb(itemRB);
@@ -203,12 +263,6 @@ public class DeskTrigger : MonoBehaviour
         else
         {
             Debug.Log("two or no quests on desk");
-            if(cs.currentCharacter.characterName == "Lorne" && !yarnS.yarnOnDesk && cs.D2)
-            {
-                cs.lorneD2ItemRefuse.StartNewDialogue(cs.dialogueTriggerScript);
-                itemScript.ItemGlowOff();
-                cs.IsIdle();
-            }
         }
     }
 

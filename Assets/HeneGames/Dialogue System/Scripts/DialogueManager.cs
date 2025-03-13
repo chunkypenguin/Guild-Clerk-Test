@@ -98,6 +98,10 @@ namespace HeneGames.DialogueSystem
 
                 dialogueIsOn = true;
             }
+            else
+            {
+                Debug.Log("something broke, dialogueIsOn is still false");
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

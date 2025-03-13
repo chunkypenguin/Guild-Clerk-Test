@@ -15,8 +15,8 @@ MonoBehaviour:
   characterPhoto: {fileID: 0}
   characterName: Lorne
   quest: []
-  ItemAName: Yarn
-  ItemBName: Purple Package
+  ItemAName: Purple Package
+  ItemBName: Yarn
   choseQuestA: 0
   choseQuestB: 0
   choseItemA: 0

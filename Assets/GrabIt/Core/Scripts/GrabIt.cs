@@ -97,7 +97,6 @@ public class GrabObjectProperties{
 		{
 			if (m_grabbing)
 			{
-
 				m_targetDistance += Input.GetAxisRaw("Mouse ScrollWheel") * m_scrollWheelSpeed;
 				m_targetDistance = Mathf.Clamp(m_targetDistance, m_grabMinDistance, m_grabMaxDistance);
 
@@ -235,7 +234,8 @@ public class GrabObjectProperties{
             // Disable each collider
             foreach (Collider col in colliders)
             {
-                col.enabled = false;
+				//col.enabled = false;
+				col.isTrigger = true;
             }
 
 
@@ -300,7 +300,8 @@ public class GrabObjectProperties{
             // Disable each collider
             foreach (Collider col in colliders)
             {
-                col.enabled = true;
+				//col.enabled = true;
+				col.isTrigger = false;
             }
 
             //m_targetRB.gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Default");

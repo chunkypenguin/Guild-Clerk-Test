@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
   m_Name: FinchQ1A
   m_EditorClassIdentifier: 
-  questTitle: Collect 5 Harpy Talons for Fernian the Hedge Witch
+  questTitle: Collect 3 Harpy Talons for Fernian the Hedge Witch
   questDescription: "\u201CI\u2019m currently in the works of a new potion and realized
     too late I\u2019m running low on Harpy Talons. \r\n\r\nPlease, please, please,
     if anyone is able to get me these ingredients it would mean a lot to me! I\u2019ll

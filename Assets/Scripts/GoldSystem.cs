@@ -158,4 +158,15 @@ public class GoldSystem : MonoBehaviour
             Debug.Log(coins.Count);
         }
     }
+
+    public void GoldDrawerDisable()
+    {
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        Invoke(nameof(GoldDrawerEnable), 0.25f);
+    }
+
+    public void GoldDrawerEnable()
+    {
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+    }
 }

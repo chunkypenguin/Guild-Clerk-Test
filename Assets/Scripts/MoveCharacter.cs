@@ -62,7 +62,7 @@ public class MoveCharacter : MonoBehaviour
                 if (cs.currentCharacter.characterName == "Greg")
                 {
                     //if chose quest A...
-                    if (cs.currentCharacter.choseItemA)
+                    if (cs.currentCharacter.choseQuestA)
                     {
                         gregS.GregArrow();
                     }
