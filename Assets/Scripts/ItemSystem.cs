@@ -22,6 +22,7 @@ public class ItemSystem : MonoBehaviour
 
     [SerializeField] LorneScript lorneScript;
     [SerializeField] LotestScript lotestScript;
+    [SerializeField] ZekeScript zekeScript;
 
     private void FixedUpdate()
     {
@@ -85,7 +86,8 @@ public class ItemSystem : MonoBehaviour
         {
             if(cs.currentCharacter.characterName == "Lorne")
             {
-                lorneScript.packageGlow.SetActive(true);
+                lorneScript.purplePackageGlow.SetActive(true);
+                lorneScript.blackPackageGlow.SetActive(true);
             }
 
         }
@@ -102,17 +104,26 @@ public class ItemSystem : MonoBehaviour
                 lotestScript.velvetGlow.SetActive(true);
             }
         }
+        
+        if(cs.currentCharacter.characterName == "Zeke")
+        {
+            zekeScript.raspberriesGlow.SetActive(true);
+        }
 
     }
 
     public void ItemGlowOff()
     {
         //Lorne
-        lorneScript.packageGlow.SetActive(false);
+        lorneScript.purplePackageGlow.SetActive(false);
+        lorneScript.blackPackageGlow.SetActive(false);
         lorneScript.yarnGlow.SetActive(false);
 
         //Lotest
         lotestScript.greenGlow.SetActive(false);
         lotestScript.velvetGlow.SetActive(false);
+
+        //zeke
+        zekeScript.raspberriesGlow.SetActive(false);
     }
 }

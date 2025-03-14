@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 public class DaySystem : MonoBehaviour
 {
-    int dayCount;
+    int dayCount = 1;
     public Image targetImage; // Assign this in the Inspector
     public float fadeDuration = 1.5f; // Duration of fade effect
     [SerializeField] GameObject dayOneTextObject;
+    [SerializeField] GameObject dayTwoTextObject;
 
     bool canStartNextDay;
 
@@ -15,6 +16,11 @@ public class DaySystem : MonoBehaviour
 
     [SerializeField] GameObject[] returnItems;
 
+
+    private void Start()
+    {
+        dayCount = 1;
+    }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && canStartNextDay)
@@ -33,7 +39,20 @@ public class DaySystem : MonoBehaviour
             targetImage.DOFade(1f, fadeDuration).OnComplete(() =>
             {
                 dayCount++;
-                dayOneTextObject.SetActive(true);
+                if(dayCount == 2)
+                {
+                    dayOneTextObject.SetActive(true);
+                    cs.D2 = true;
+                    cs.D1 = false;
+                }
+                else if (dayCount == 3)
+                {
+                    dayTwoTextObject.SetActive(true);
+                    cs.D3 = true;
+                    cs.D2 = false;
+                    cs.D1 = false;
+                }
+
                 canStartNextDay = true;
                 cs.currentCharacterObject.GetComponent<MoveCharacter>().MoveEndDay();
 
@@ -54,12 +73,14 @@ public class DaySystem : MonoBehaviour
     public void NewDay()
     {
         dayOneTextObject.SetActive(false);
+        dayTwoTextObject.SetActive(false);
 
         if (targetImage != null)
         {
             // Fade in effect
             targetImage.DOFade(0f, fadeDuration).OnComplete(() =>
             {
+                
                 targetImage.gameObject.SetActive(false);
                 cs.StartNewCharacter();
 

@@ -1,0 +1,68 @@
+using HeneGames.DialogueSystem;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ZekeScript : MonoBehaviour
+{
+    [SerializeField] CharacterSystem cs;
+    [SerializeField] DialogueCharacter zekeCharacter;
+
+    [SerializeField] GameObject refuseTag;
+
+    [SerializeField] GameObject raspberries;
+    [SerializeField] RaspberriesScript raspS;
+
+    public GameObject raspberriesGlow;
+
+    bool tagSystem;
+    bool tagOn;
+
+    public bool refusedOnce;
+
+    private void Update()
+    {
+        if (tagSystem)
+        {
+            if (!raspS.raspberriesOnDesk && !tagOn)
+            {
+                refuseTag.SetActive(true);
+                tagOn = true;
+            }
+            else if (raspS.raspberriesOnDesk && tagOn)
+            {
+                refuseTag.SetActive(false);
+                tagOn = false;
+            }
+        }
+    }
+
+    public void StartDialogue()
+    {
+        cs.zekeD3P1.StartNewDialogue(cs.dialogueTriggerScript);
+    }
+
+    public void RefuseRaspberries()
+    {
+        if(!refusedOnce)
+        {
+            cs.zekeD3Refuse1.StartNewDialogue(cs.dialogueTriggerScript);
+            refusedOnce = true;
+        }
+        else
+        {
+            cs.zekeD3Refuse2.StartNewDialogue(cs.dialogueTriggerScript);
+        }
+    }
+
+    public void TagSystemOn()
+    {
+        tagSystem = true;
+    }
+
+    public void TagSystemOff()
+    {
+        tagSystem = false;
+        refuseTag.SetActive(false);
+    }
+}

@@ -16,8 +16,12 @@ public class DeskTrigger : MonoBehaviour
     [SerializeField] GregScript gregS;
     [SerializeField] FinchScript finchS;
     [SerializeField] AndyScript andyS;
+    [SerializeField] MaggieScript maggieS;
+    [SerializeField] JoleneScript joleneS;
+    [SerializeField] TahmasScript tahmasS;
 
     [SerializeField] YarnScript yarnS;
+    [SerializeField] RaspberriesScript raspS;
 
     public bool canPressBell;
 
@@ -164,6 +168,24 @@ public class DeskTrigger : MonoBehaviour
             cs.IsIdle();
         }
 
+        if (cs.currentCharacter.characterName == "Maggie")
+        {
+            maggieS.CheckForReward();
+            cs.IsIdle();
+        }
+
+        if (cs.currentCharacter.characterName == "Jolene")
+        {
+            joleneS.CheckForReward();
+            cs.IsIdle();
+        }
+
+        if (cs.currentCharacter.characterName == "Tahmas")
+        {
+            tahmasS.CheckForReward();
+            cs.IsIdle();
+        }
+
         if (movecamScript.bottom)
         {
             movecamScript.UpButton();//move button up
@@ -179,7 +201,7 @@ public class DeskTrigger : MonoBehaviour
     public void CheckForItems()
     {
         //CHECK TO SEE FOR LORNE STUFF
-        if(cs.currentCharacter.characterName == "Lorne")
+        if (cs.currentCharacter.characterName == "Lorne")
         {
             if (cs.D1)
             {
@@ -228,6 +250,45 @@ public class DeskTrigger : MonoBehaviour
             }
 
 
+        }
+
+        else if(cs.currentCharacter.characterName == "Zeke")
+        {
+            if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+            {
+
+                GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);
+                //qs.GetQuestRB(itemRB);
+                itemS.GetItemRb(itemRB);
+                cs.currentCharacter.choseItemA = true;
+                cs.currentCharacter.choseItemB = false;
+                // Add your action here
+                //cs.QuestADialogue();
+                cs.ItemADialogue();
+                //cs.pickedQ1A = true;
+                cs.IsIdle();
+            }
+
+            else
+            {
+                Debug.Log("two or no quests on desk");
+                if (!raspS.raspberriesOnDesk)
+                {
+
+                    if (!raspS.refusedOnce)
+                    {
+                        cs.zekeD3Refuse1.StartNewDialogue(cs.dialogueTriggerScript);
+                        raspS.refusedOnce = true;
+                    }
+                    else
+                    {
+                        cs.zekeD3Refuse2.StartNewDialogue(cs.dialogueTriggerScript);
+                        itemScript.ItemGlowOff();
+                        
+                    }
+                    cs.IsIdle();
+                }
+            }
         }
 
         //REGULAR STUFF FOR OTHER CHARACTERS

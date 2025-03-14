@@ -30,6 +30,8 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] MaggieScript maggieS;
     [SerializeField] JoleneScript joleneS;
     [SerializeField] LotestScript lotestS;
+    [SerializeField] TahmasScript tahmasS;
+    [SerializeField] ZekeScript zekeS;
 
     private void Awake()
     {
@@ -66,7 +68,27 @@ public class MoveCharacter : MonoBehaviour
                     {
                         gregS.GregArrow();
                     }
-                    
+                }
+                if(cs.currentCharacter.characterName == "Andy")
+                {
+                    if (cs.currentCharacter.choseQuestB)
+                    {
+                        andyS.AndyAngry();
+                    }
+                }
+                if (cs.currentCharacter.characterName == "Maggie")//Maggie is always before day 3 Jolene
+                {
+                    if(joleneS.joleneDead && cs.D3) //if day 3 and jolene has died
+                    {
+                        cs.characterCount++;//skip jolene
+                    }
+                }
+                if (cs.currentCharacter.characterName == "Jolene")
+                {
+                    if(!joleneS.gaveJoleneMoreGold && cs.D3) //if player did not give jolene more gold, skip tahmas
+                    {
+                        cs.characterCount++;
+                    }
                 }
 
                 cs.StartNewCharacter();
@@ -78,8 +100,6 @@ public class MoveCharacter : MonoBehaviour
     public void MoveEndDay()
     {
         transform.position = startPos.transform.position;
-        cs.D1 = false;
-        cs.D2 = true;
     }
 
     public void MoveToStart()
@@ -143,6 +163,18 @@ public class MoveCharacter : MonoBehaviour
                 if (cs.currentCharacter.characterName == "Lotest")
                 {
                     lotestS.StartDialogue();
+                }
+
+                if(cs.currentCharacter.characterName == "Tahmas")
+                {
+                    tahmasS.StartDialogue();
+                    Debug.Log("Start tahmas dialogue");
+                }
+
+                if(cs.currentCharacter.characterName == "Zeke")
+                {
+                    zekeS.StartDialogue();
+                    Debug.Log("start zeke dialogue");
                 }
 
             });

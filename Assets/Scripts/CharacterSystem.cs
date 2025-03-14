@@ -13,6 +13,8 @@ public class CharacterSystem : MonoBehaviour
 
     public DialogueTrigger dialogueTriggerScript;
 
+    public JoleneScript joleneS;
+
     public int characterCount;
 
     //JOSIE
@@ -88,16 +90,46 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager maggieD1P1;
     public DialogueManager maggieD1Q1AP1;
     public DialogueManager maggieD1Q1BP1;
+    public DialogueManager maggieD2Q1A;
+    public DialogueManager maggieD2G1A;
+    public DialogueManager maggieD2G1B;
+    public DialogueManager maggieD2G1C;
+    public DialogueManager maggieD2Q1B;
+    public DialogueManager maggieD2G2A;
+    public DialogueManager maggieD2G2B;
+    public DialogueManager maggieD2G2C;
+
 
     [Header("Jolene")]
     public DialogueManager joleneD1P1;
     public DialogueManager joleneD1Q1AP1;
     public DialogueManager joleneD1Q1BP1;
+    public DialogueManager joleneD2Q1A;
+    public DialogueManager joleneD2G1A;
+    public DialogueManager joleneD2G1B;
+    public DialogueManager joleneD2G1C;
 
     [Header("Lotest")]
     public DialogueManager lotestD1P1;
     public DialogueManager lotestD1ItemA1;
     public DialogueManager lotestD1ItemB1;
+
+    [Header("Tahmas")]
+    public DialogueManager tahmasD3JoleneQA3;
+    public DialogueManager tahmasD3G1A;
+    public DialogueManager tahmasD3G1B;
+    public DialogueManager tahmasD3G1C;
+    public DialogueManager tahmasD3JoleneB;
+    public DialogueManager tahmasD3G2A;
+    public DialogueManager tahmasD3G2B;
+    public DialogueManager tahmasD3G2C;
+
+    [Header("Zeke")]
+    public DialogueManager zekeD3P1;
+    public DialogueManager zekeD3Feed;
+    public DialogueManager zekeD3Refuse1;
+    public DialogueManager zekeD3Refuse2;
+
 
     [Header("Dialogue History")]
     public DialogueManager dialogueHistory;
@@ -109,6 +141,7 @@ public class CharacterSystem : MonoBehaviour
 
     [SerializeField] DialogueUI duiScript;
 
+    [SerializeField] DialogueCharacter tahmasCharacter;
 
     public bool isQuest;
     public bool isReward;
@@ -123,6 +156,7 @@ public class CharacterSystem : MonoBehaviour
 
     public bool D1 = true;
     public bool D2 = false;
+    public bool D3 = false;
 
     [SerializeField] DialogueUI dui;
 
@@ -220,6 +254,8 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Jolene")
         {
             joleneD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+
+            tahmasCharacter.choseQuestA = true; 
         }
 
     }
@@ -256,6 +292,8 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Jolene")
         {
             joleneD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+            joleneS.joleneDead = true;
+            tahmasCharacter.choseQuestB = true;
         }
     }
 
@@ -280,6 +318,11 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Lotest")
         {
             lotestD1ItemA1.StartNewDialogue(dialogueTriggerScript);
+        }
+
+        if(currentCharacter.characterName == "Zeke")
+        {
+            zekeD3Feed.StartNewDialogue(dialogueTriggerScript);
         }
     }
     public void ItemBDialogue()
