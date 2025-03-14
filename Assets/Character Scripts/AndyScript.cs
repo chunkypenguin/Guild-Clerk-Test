@@ -1,3 +1,4 @@
+using HeneGames.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine;
 public class AndyScript : MonoBehaviour
 {
     [SerializeField] CharacterSystem cs;
+    [SerializeField] GoldSystem gs;
+
+    public DialogueCharacter andyCharacter;
 
     [SerializeField] GameObject AndyImage;
     [SerializeField] Material andyIdle;
@@ -25,8 +29,6 @@ public class AndyScript : MonoBehaviour
 
     public void StartDialogue()
     {
-        
-
         if (cs.D1 && !cs.D2)
         {
             cs.andyD1P1.StartNewDialogue(cs.dialogueTriggerScript);
@@ -41,6 +43,10 @@ public class AndyScript : MonoBehaviour
             {
                 cs.andyD2Q1B.StartNewDialogue(cs.dialogueTriggerScript);
             }
+        }
+        else if (cs.D3)
+        {
+            cs.andyD3P1.StartNewDialogue(cs.dialogueTriggerScript);
         }
     }
 
@@ -61,7 +67,19 @@ public class AndyScript : MonoBehaviour
 
     public void CheckForReward()
     {
-        cs.andyD2Q1BP2.StartNewDialogue(cs.dialogueTriggerScript);
+        if (!cs.D3)
+        {
+            cs.andyD2Q1BP2.StartNewDialogue(cs.dialogueTriggerScript);
+        }
+        else if(gs.goldAmount >= 50)
+        {
+            cs.andyD3G1B.StartNewDialogue(cs.dialogueTriggerScript);
+        }
+        else if(gs.goldAmount < 50)
+        {
+            cs.andyD3G1A.StartNewDialogue(cs.dialogueTriggerScript);
+        }
+
     }
 
     public void AndyIdle()

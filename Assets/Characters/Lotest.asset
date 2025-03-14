@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPhoto: {fileID: 0}
   characterName: Lotest
-  quest: []
+  quest:
+  - {fileID: 11400000, guid: 8f734793f45875c478f998b2e3e7b335, type: 2}
+  - {fileID: 11400000, guid: a4a78dff99df0184eb9bcf3f044bcadb, type: 2}
   ItemAName: Green Bundle
   ItemBName: Velvet Bundle
-  choseQuestA: 0
+  choseQuestA: 1
   choseQuestB: 0
   choseItemA: 0
   choseItemB: 0

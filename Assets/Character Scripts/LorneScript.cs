@@ -25,6 +25,7 @@ public class LorneScript : MonoBehaviour
     bool tagSystem;
     bool tagOn;
 
+    public bool gaveYarn;
     private void Update()
     {
         if (tagSystem)
@@ -51,6 +52,13 @@ public class LorneScript : MonoBehaviour
         else if (!cs.D1 && cs.D2)
         {
             cs.lorneD2P1.StartNewDialogue(cs.dialogueTriggerScript);
+        }
+        else if (!cs.D1 && !cs.D2 && cs.D3)
+        {
+            if (gaveYarn)
+            {
+                cs.lorneD3Yarn.StartNewDialogue(cs.dialogueTriggerScript);
+            }
         }
     }
 
@@ -86,5 +94,10 @@ public class LorneScript : MonoBehaviour
     {
         tagSystem = false;
         refuseTag.SetActive(false);
+    }
+
+    public void StealYarn()
+    {
+        yarn.SetActive(false);
     }
 }

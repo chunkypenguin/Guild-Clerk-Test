@@ -48,6 +48,9 @@ public class JoleneScript : MonoBehaviour
             {
                 //do this
                 cs.joleneD2G1C.StartNewDialogue(cs.dialogueTriggerScript);
+
+                //TAHMAS ENTERS
+                gaveJoleneMoreGold = true;
             }
 
             else if (gs.goldAmount < 2)
@@ -55,8 +58,7 @@ public class JoleneScript : MonoBehaviour
                 //do this
                 cs.joleneD2G1A.StartNewDialogue(cs.dialogueTriggerScript);
 
-                //TAHMAS ENTERS
-                gaveJoleneMoreGold = true;
+
                 
             }
         }

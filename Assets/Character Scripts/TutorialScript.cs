@@ -42,6 +42,15 @@ public class TutorialScript : MonoBehaviour
 
     }
 
+    public void StartDialogue()
+    {
+        if (cs.D3)
+        {
+            Debug.Log("josie talks about magenta bag");
+            cs.josieD3Lotest.StartNewDialogue(cs.dialogueTriggerScript);
+        }
+    }
+
     private void Update()
     {
         if(questA.onBoard && questB.onBoard)

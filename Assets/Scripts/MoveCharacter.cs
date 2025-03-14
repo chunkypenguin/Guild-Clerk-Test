@@ -91,6 +91,45 @@ public class MoveCharacter : MonoBehaviour
                     }
                 }
 
+                if (cs.currentCharacter.characterName == "Zeke")
+                {
+                    if (!lorneS.gaveYarn && cs.D3) //skip lorne if didnt give yarn
+                    {
+                        cs.characterCount++;
+                        lorneS.StealYarn();
+
+                        if (lotestS.lotestCharacter.choseItemB) //skip lotest as well if lotest given valvet pouch of seeds
+                        {
+                            cs.characterCount++; //skip to josie
+                        }
+                    }
+
+                }
+
+                if (cs.currentCharacter.characterName == "Lorne")
+                {
+                    if (lorneS.gaveYarn && cs.D3)
+                    {
+                        if (lotestS.lotestCharacter.choseItemB)//skip lotest, else stay with lotest
+                        {
+                            cs.characterCount++;
+                        }
+                    }
+                }
+
+                if (cs.currentCharacter.characterName == "Lotest")
+                {
+                    if (cs.D3)
+                    {
+                        cs.characterCount++; //skip josie
+                        if (!andyS.andyCharacter.choseQuestA)
+                        {
+                            cs.characterCount++; //skip Andy
+                            //END GAME
+                        }
+                    }
+                }
+
                 cs.StartNewCharacter();
             });
         }
@@ -122,7 +161,6 @@ public class MoveCharacter : MonoBehaviour
                 andyS.StartDialogue();
             });
 
-
         }
 
         else
@@ -132,7 +170,15 @@ public class MoveCharacter : MonoBehaviour
             {
                 if (cs.currentCharacter.characterName == "Josie")
                 {
-                    josieS.TutorialMoveDesk();
+                    if (cs.D1 && !cs.D2 && !cs.D3)
+                    {
+                        josieS.TutorialMoveDesk();
+                    }
+                    else if (cs.D3)
+                    {
+                        josieS.StartDialogue();
+                    }
+
                 }
 
                 if (cs.currentCharacter.characterName == "Greg")

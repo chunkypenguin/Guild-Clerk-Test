@@ -14,6 +14,7 @@ public class CharacterSystem : MonoBehaviour
     public DialogueTrigger dialogueTriggerScript;
 
     public JoleneScript joleneS;
+    public LorneScript lorneS;
 
     public int characterCount;
 
@@ -31,6 +32,7 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager josieD1G1AP1;
     public DialogueManager josieD1G1BP1;
     public DialogueManager josieD1G1CP1;
+    public DialogueManager josieD3Lotest;
 
     [Header("Greg")]
     public DialogueManager gregD1P1;
@@ -78,13 +80,17 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager andyD2Q1BP2;
     public DialogueManager andyD2Q1BP3;
     public DialogueManager andyD2Q1AP2;
+    public DialogueManager andyD3P1;
+    public DialogueManager andyD3G1A;
+    public DialogueManager andyD3G1B;
 
     [Header("Lorne")]
     public DialogueManager lorneD1P1;
     public DialogueManager lorneD1I1P1;
     public DialogueManager lorneD2P1;
-    public DialogueManager lorneD2ItemA;
+    public DialogueManager lorneD2ItemB;
     public DialogueManager lorneD2ItemRefuse;
+    public DialogueManager lorneD3Yarn;
 
     [Header("Maggie")]
     public DialogueManager maggieD1P1;
@@ -113,6 +119,11 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager lotestD1P1;
     public DialogueManager lotestD1ItemA1;
     public DialogueManager lotestD1ItemB1;
+    public DialogueManager lotestD2Q1A;
+    public DialogueManager lotestD2G1A;
+    public DialogueManager lotestD2G1B;
+    public DialogueManager lotestD2G1C;
+
 
     [Header("Tahmas")]
     public DialogueManager tahmasD3JoleneQA3;
@@ -301,18 +312,13 @@ public class CharacterSystem : MonoBehaviour
     {
         if(currentCharacter.characterName == "Lorne")
         {
-            
-
             if (D1 && !D2)
             {
                 lorneD1I1P1.StartNewDialogue(dialogueTriggerScript);
-                D1 = false;
-                D2 = true;
+                //D1 = false;
+                //D2 = true;
             }
-            else if (!D1 && D2)
-            {
-                lorneD2ItemA.StartNewDialogue(dialogueTriggerScript);
-            }
+
         }
 
         if (currentCharacter.characterName == "Lotest")
@@ -329,7 +335,19 @@ public class CharacterSystem : MonoBehaviour
     {
         if (currentCharacter.characterName == "Lorne")
         {
-            lorneD1I1P1.StartNewDialogue(dialogueTriggerScript);
+            
+            if (D1 && !D2)
+            {
+                lorneD1I1P1.StartNewDialogue(dialogueTriggerScript);
+            }
+
+            else if (!D1 && D2)
+            {
+                lorneD2ItemB.StartNewDialogue(dialogueTriggerScript);
+                //gave yarn
+                Debug.Log("gave yarn");
+                //lorneS.gaveYarn = true;
+            }
         }
 
 

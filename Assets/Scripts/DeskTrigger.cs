@@ -19,6 +19,8 @@ public class DeskTrigger : MonoBehaviour
     [SerializeField] MaggieScript maggieS;
     [SerializeField] JoleneScript joleneS;
     [SerializeField] TahmasScript tahmasS;
+    [SerializeField] LotestScript lotestS;
+    [SerializeField] LorneScript lorneS;
 
     [SerializeField] YarnScript yarnS;
     [SerializeField] RaspberriesScript raspS;
@@ -186,6 +188,12 @@ public class DeskTrigger : MonoBehaviour
             cs.IsIdle();
         }
 
+        if (cs.currentCharacter.characterName == "Lotest")
+        {
+            lotestS.CheckForReward();
+            cs.IsIdle();
+        }
+
         if (movecamScript.bottom)
         {
             movecamScript.UpButton();//move button up
@@ -223,6 +231,7 @@ public class DeskTrigger : MonoBehaviour
 
             else if (cs.D2)
             {
+                //If lorne gets yarn
                 if ((items.Find(item => item.name == cs.currentCharacter.ItemBName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemAName) == null)
                 {
                     GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemBName);
@@ -235,6 +244,7 @@ public class DeskTrigger : MonoBehaviour
                     cs.ItemBDialogue();
                     //cs.pickedQ1A = true;
                     cs.IsIdle();
+                    lorneS.gaveYarn = true;
                 }
 
                 else

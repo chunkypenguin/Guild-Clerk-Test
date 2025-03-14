@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
+  m_Name: LotestQuestA
+  m_EditorClassIdentifier: 
+  questTitle: Assist Farmer A. Gene plow and sow her fields
+  questDescription: "\u201CI\u2019m looking to expand my fields this year and I would
+    appreciate some extra hands to help me out. It\u2019s going to be some rigorous
+    labor this time around, so please warn your adventurers first! \r\n\r\nOh! Lastly,
+    if we can get the fields ready earlier than expected, I\u2019ll throw in an extra
+    10 gold!\u201D"
+  questReward: 'Reward: 15 gold'

@@ -10,6 +10,7 @@ public class QuestSystem : MonoBehaviour
     [SerializeField] GameObject questDescriptionA;
     [SerializeField] GameObject questDescriptionB;
     [SerializeField] GameObject questDescriptionR;
+    [SerializeField] GameObject bloodyQuestDescription;
 
     [SerializeField] DeskTrigger deskTrigger;
     [SerializeField] GameObject desk;
@@ -29,8 +30,13 @@ public class QuestSystem : MonoBehaviour
     [SerializeField] TMP_Text questRTitle;
     [SerializeField] TMP_Text questRDescription;
     [SerializeField] TMP_Text questRReward;
+    //bloody version
+    [SerializeField] TMP_Text bquestRTitle;
+    [SerializeField] TMP_Text bquestRDescription;
+    [SerializeField] TMP_Text bquestRReward;
 
     [SerializeField] GameObject returnQuest;
+    [SerializeField] GameObject bloodyReturnQuest;
     [SerializeField] Transform returnPoint;
 
     [SerializeField] CharacterSystem cs;
@@ -140,6 +146,10 @@ public class QuestSystem : MonoBehaviour
         {
             questDescriptionR.SetActive(true);
         }
+        else if(quest.name == "BloodyQuestReturn")
+        {
+            bloodyQuestDescription.SetActive(true);
+        }
         
     }
 
@@ -148,6 +158,7 @@ public class QuestSystem : MonoBehaviour
         questDescriptionA.SetActive(false);
         questDescriptionB.SetActive(false);
         questDescriptionR.SetActive(false);
+        bloodyQuestDescription.SetActive(false);
     }
 
     public void FinalizeItems() //WHEN BELL PRESSED I THINK
@@ -217,13 +228,27 @@ public class QuestSystem : MonoBehaviour
     {
         if (cs.currentCharacter.choseQuestA)
         {
-            Debug.Log("throw out Quest A");
-            returnQuest.SetActive(true);
-            returnQuest.transform.position = returnPoint.position;
-            //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
-            questRTitle.text = cs.currentCharacter.quest[a].questTitle;
-            questRDescription.text = cs.currentCharacter.quest[a].questDescription;
-            questRReward.text = cs.currentCharacter.quest[a].questReward;
+            if(cs.currentCharacter.characterName != "Andy")
+            {
+                Debug.Log("throw out Quest A");
+                returnQuest.SetActive(true);
+                returnQuest.transform.position = returnPoint.position;
+                //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
+                questRTitle.text = cs.currentCharacter.quest[a].questTitle;
+                questRDescription.text = cs.currentCharacter.quest[a].questDescription;
+                questRReward.text = cs.currentCharacter.quest[a].questReward;
+            }
+            else
+            {
+                Debug.Log("throw out Quest A");
+                bloodyReturnQuest.SetActive(true);
+                bloodyReturnQuest.transform.position = returnPoint.position;
+                //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
+                questRTitle.text = cs.currentCharacter.quest[a].questTitle;
+                questRDescription.text = cs.currentCharacter.quest[a].questDescription;
+                questRReward.text = cs.currentCharacter.quest[a].questReward;
+            }
+
 
         }
         else if (cs.currentCharacter.choseQuestB)

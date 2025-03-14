@@ -29,5 +29,7 @@ public class GameManager : MonoBehaviour
         }
 
         finchCharacter.choseQuestA = true;
+
+        characters[7].choseQuestA = true; //lotest 
     }
 }
