@@ -22,6 +22,8 @@ public class AndyScript : MonoBehaviour
     [SerializeField] Material andyEvilImage;
     [SerializeField] Material andyIrritatedImage;
     [SerializeField] Material andyBruhImage;
+    [SerializeField] Material andyInjuredImage;
+    [SerializeField] Material andyinjuredWinkImage;
 
     [SerializeField] GameObject AndyMomImage;
 
@@ -63,6 +65,13 @@ public class AndyScript : MonoBehaviour
 
         }
 
+    }
+
+    public void ChangeToAndy()
+    {
+        AndyImage.SetActive(true);
+        AndyMomImage.SetActive(false);
+        Debug.Log("Change Andy Pic");
     }
 
     public void CheckForReward()
@@ -135,5 +144,15 @@ public class AndyScript : MonoBehaviour
     public void AndyBruh()
     {
         mr.material = andyBruhImage;
+    }
+
+    public void AndyInjuiredIdle()
+    {
+        mr.material = andyInjuredImage;
+    }
+
+    public void AndyInjuiredWink()
+    {
+        mr.material = andyinjuredWinkImage;
     }
 }

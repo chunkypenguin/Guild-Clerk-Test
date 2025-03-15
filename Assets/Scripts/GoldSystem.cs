@@ -169,4 +169,12 @@ public class GoldSystem : MonoBehaviour
     {
         gameObject.GetComponent<BoxCollider>().enabled = true;
     }
+
+    public void GiveBackGold()
+    {
+        for (int i = 0; i < 5; i++) // Calls the function 5 times
+        {
+            PressedUp();
+        }
+    }
 }

@@ -19,6 +19,6 @@ MonoBehaviour:
   ItemBName: Yarn
   choseQuestA: 0
   choseQuestB: 0
-  choseItemA: 0
-  choseItemB: 1
-  textColor: {r: 0.16078432, g: 0.62352943, b: 0.4117647, a: 1}
+  choseItemA: 1
+  choseItemB: 0
+  textColor: {r: 0.08392483, g: 0.41239887, b: 0.26208025, a: 1}

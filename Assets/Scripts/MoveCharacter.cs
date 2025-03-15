@@ -48,10 +48,20 @@ public class MoveCharacter : MonoBehaviour
             transform.DOJump(startPos.transform.position, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
             {
 
-                if (cs.currentCharacter.characterName == "Andy")
+                if (cs.currentCharacter.characterName == "Andy" && cs.D1)
                 {
                     andyS.ChangeToMom();
                 }
+
+                if (cs.currentCharacter.characterName == "Andy")
+                {
+                    if (cs.currentCharacter.choseQuestB && cs.D1)
+                    {
+                        andyS.AndyAngry();
+                    }
+                }
+
+
 
                 cs.StartNewCharacter();
             });
@@ -69,13 +79,7 @@ public class MoveCharacter : MonoBehaviour
                         gregS.GregArrow();
                     }
                 }
-                if(cs.currentCharacter.characterName == "Andy")
-                {
-                    if (cs.currentCharacter.choseQuestB)
-                    {
-                        andyS.AndyAngry();
-                    }
-                }
+
                 if (cs.currentCharacter.characterName == "Maggie")//Maggie is always before day 3 Jolene
                 {
                     if(joleneS.joleneDead && cs.D3) //if day 3 and jolene has died
@@ -130,7 +134,15 @@ public class MoveCharacter : MonoBehaviour
                     }
                 }
 
-                cs.StartNewCharacter();
+                if (cs.currentCharacter.characterName == "Josie")
+                {
+                    if (cs.D1)
+                    {
+                        josieS.ChangeEmote(josieS.josieRegular);
+                    }
+                }
+
+                    cs.StartNewCharacter();
             });
         }
 
@@ -139,6 +151,15 @@ public class MoveCharacter : MonoBehaviour
     public void MoveEndDay()
     {
         transform.position = startPos.transform.position;
+
+        if(cs.currentCharacter.characterName == "Andy")
+        {
+            andyS.ChangeToAndy();
+
+
+            andyS.AndyInjuiredIdle();
+
+        }
     }
 
     public void MoveToStart()
@@ -147,6 +168,11 @@ public class MoveCharacter : MonoBehaviour
         transform.DOMove(startPos.transform.position, moveSpeed).OnComplete(() =>
         {
             MoveToDesk();
+            if (cs.D1)
+            {
+                josieS.ChangeEmote(josieS.josieDisguise);
+            }
+
         });
         
     }
@@ -173,6 +199,7 @@ public class MoveCharacter : MonoBehaviour
                     if (cs.D1 && !cs.D2 && !cs.D3)
                     {
                         josieS.TutorialMoveDesk();
+                        
                     }
                     else if (cs.D3)
                     {

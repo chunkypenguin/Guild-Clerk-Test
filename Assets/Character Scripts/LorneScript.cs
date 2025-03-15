@@ -22,10 +22,20 @@ public class LorneScript : MonoBehaviour
     public GameObject blackPackageGlow;
     public GameObject yarnGlow;
 
+    public GameObject returnPurpPackage;
+    public GameObject returnBlackPackage;
+
+    public GameObject purpPackage;
+    public GameObject blackPackage;
+
+    [SerializeField] ItemSystem itemS;
+
     bool tagSystem;
     bool tagOn;
 
     public bool gaveYarn;
+
+
     private void Update()
     {
         if (tagSystem)
@@ -99,5 +109,18 @@ public class LorneScript : MonoBehaviour
     public void StealYarn()
     {
         yarn.SetActive(false);
+    }
+
+    public void ReturnPackage()
+    {
+        if (purpPackage.activeSelf)
+        {
+            itemS.ReturnItem(returnBlackPackage);
+        }
+        else
+        {
+            itemS.ReturnItem(returnPurpPackage);
+        }
+
     }
 }

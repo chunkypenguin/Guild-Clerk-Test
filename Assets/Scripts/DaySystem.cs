@@ -9,12 +9,17 @@ public class DaySystem : MonoBehaviour
     public float fadeDuration = 1.5f; // Duration of fade effect
     [SerializeField] GameObject dayOneTextObject;
     [SerializeField] GameObject dayTwoTextObject;
+    [SerializeField] GameObject dayThreeTextObject;
 
     bool canStartNextDay;
 
     [SerializeField] CharacterSystem cs;
 
     [SerializeField] GameObject[] returnItems;
+
+    bool endGame;
+
+    [SerializeField] GameObject credits;
 
 
     private void Start()
@@ -25,8 +30,15 @@ public class DaySystem : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && canStartNextDay)
         {
-            canStartNextDay = false;
-            NewDay();
+            if(!endGame)
+            {
+                canStartNextDay = false;
+                NewDay();
+            }
+            else
+            {
+                credits.SetActive(true);
+            }
         }
     }
 
@@ -51,6 +63,11 @@ public class DaySystem : MonoBehaviour
                     cs.D3 = true;
                     cs.D2 = false;
                     cs.D1 = false;
+                }
+                else
+                {
+                    dayThreeTextObject.SetActive(true);
+                    endGame = true;
                 }
 
                 canStartNextDay = true;

@@ -2,6 +2,7 @@ using HeneGames.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,5 +32,10 @@ public class GameManager : MonoBehaviour
         finchCharacter.choseQuestA = true;
 
         characters[7].choseQuestA = true; //lotest 
+    }
+
+    public void MenuScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }

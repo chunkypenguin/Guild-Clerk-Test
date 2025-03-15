@@ -8,6 +8,8 @@ public class ZekeScript : MonoBehaviour
     [SerializeField] CharacterSystem cs;
     [SerializeField] DialogueCharacter zekeCharacter;
 
+    [SerializeField] MeshRenderer mr;
+
     [SerializeField] GameObject refuseTag;
 
     [SerializeField] GameObject raspberries;
@@ -64,5 +66,10 @@ public class ZekeScript : MonoBehaviour
     {
         tagSystem = false;
         refuseTag.SetActive(false);
+    }
+
+    public void ChangeEmote(Material emote)
+    {
+        mr.material = emote;
     }
 }

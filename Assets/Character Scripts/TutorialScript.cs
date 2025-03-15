@@ -19,6 +19,8 @@ public class TutorialScript : MonoBehaviour
     [SerializeField] Material josieIdle;
     [SerializeField] Material josieFun;
     [SerializeField] Material josieSassy;
+    public Material josieDisguise;
+    public Material josieRegular;
 
     [SerializeField] QuestBoardCheck questA;
     [SerializeField] QuestBoardCheck questB;
@@ -252,5 +254,10 @@ public class TutorialScript : MonoBehaviour
     public void JosieSassy()
     {
         mr.material = josieSassy;
+    }
+
+    public void ChangeEmote(Material emote)
+    {
+        mr.material = emote;
     }
 }

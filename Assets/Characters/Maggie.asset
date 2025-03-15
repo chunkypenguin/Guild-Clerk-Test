@@ -19,8 +19,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 543525db90177c34c81f6de60adba4a1, type: 2}
   ItemAName: 
   ItemBName: 
-  choseQuestA: 1
-  choseQuestB: 0
+  choseQuestA: 0
+  choseQuestB: 1
   choseItemA: 0
   choseItemB: 0
-  textColor: {r: 0.5137255, g: 0.5137255, b: 0, a: 1}
+  textColor: {r: 0.035271592, g: 0.02979121, b: 0.374663, a: 1}
