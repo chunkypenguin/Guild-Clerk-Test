@@ -16,9 +16,9 @@ public class TutorialScript : MonoBehaviour
     [SerializeField] MeshRenderer mr;
 
     [Header("Emotions")]
-    [SerializeField] Material josieIdle;
-    [SerializeField] Material josieFun;
-    [SerializeField] Material josieSassy;
+    //[SerializeField] Material josieIdle;
+    //[SerializeField] Material josieFun;
+    //[SerializeField] Material josieSassy;
     public Material josieDisguise;
     public Material josieRegular;
 
@@ -243,17 +243,17 @@ public class TutorialScript : MonoBehaviour
 
     public void JosieIdle()
     {
-        mr.material = josieIdle;
+        //mr.material = josieIdle;
     }
 
     public void JosieFun()
     {
-        mr.material = josieFun;
+        //mr.material = josieFun;
     }
 
     public void JosieSassy()
     {
-        mr.material = josieSassy;
+        //mr.material = josieSassy;
     }
 
     public void ChangeEmote(Material emote)
