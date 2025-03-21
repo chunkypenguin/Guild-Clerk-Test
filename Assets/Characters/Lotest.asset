@@ -23,4 +23,4 @@ MonoBehaviour:
   choseQuestB: 0
   choseItemA: 0
   choseItemB: 0
-  textColor: {r: 0.3019608, g: 0.49411765, b: 0, a: 1}
+  textColor: {r: 0.72156864, g: 0.17254902, b: 0.20784314, a: 1}

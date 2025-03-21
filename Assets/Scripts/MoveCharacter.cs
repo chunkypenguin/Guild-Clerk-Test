@@ -33,6 +33,8 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] TahmasScript tahmasS;
     [SerializeField] ZekeScript zekeS;
 
+    [SerializeField] DaySystem ds;
+
     private void Awake()
     {
         moveSpeed = 1.5f;
@@ -130,6 +132,7 @@ public class MoveCharacter : MonoBehaviour
                         {
                             cs.characterCount++; //skip Andy
                             //END GAME
+                            ds.EndDay();
                         }
                     }
                 }

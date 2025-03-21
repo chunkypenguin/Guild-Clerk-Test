@@ -7,6 +7,8 @@ public class FinchScript : MonoBehaviour
     [SerializeField] CharacterSystem cs;
     [SerializeField] GoldSystem gs;
 
+    [SerializeField] MeshRenderer mr;
+
     [SerializeField] GameObject refuseTag;
     bool tagOn;
 
@@ -204,5 +206,10 @@ public class FinchScript : MonoBehaviour
     {
         tagSystem = false;
         refuseTag.SetActive(false);
+    }
+
+    public void ChangeEmote(Material emote)
+    {
+        mr.material = emote;
     }
 }

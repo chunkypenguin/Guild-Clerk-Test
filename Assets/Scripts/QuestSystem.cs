@@ -50,7 +50,7 @@ public class QuestSystem : MonoBehaviour
 
     public int a = 0;
     public int b = 1;
-
+    public int c = 2;
     // VACUUM SYSTEM
     [SerializeField] Rigidbody rb;
     [SerializeField] Rigidbody rb2;
@@ -209,13 +209,33 @@ public class QuestSystem : MonoBehaviour
         questAHolder.SetActive(true);
         questBHolder.SetActive(true);
 
-        questATitle.text = cs.currentCharacter.quest[a].questTitle;
-        questADescription.text = cs.currentCharacter.quest[a].questDescription;
-        questAReward.text = cs.currentCharacter.quest[a].questReward;
+        if (cs.currentCharacter.characterName == "Andy" && cs.currentCharacter.choseQuestB)
+        {
+            Debug.Log("switch to alternative quest B text");
 
-        questBTitle.text = cs.currentCharacter.quest[b].questTitle;
-        questBDescription.text = cs.currentCharacter.quest[b].questDescription;
-        questBReward.text = cs.currentCharacter.quest[b].questReward;
+            questATitle.text = cs.currentCharacter.quest[a].questTitle;
+            questADescription.text = cs.currentCharacter.quest[a].questDescription;
+            questAReward.text = cs.currentCharacter.quest[a].questReward;
+
+            questBTitle.text = cs.currentCharacter.quest[c].questTitle;
+            questBDescription.text = cs.currentCharacter.quest[c].questDescription;
+            questBReward.text = cs.currentCharacter.quest[c].questReward;
+        }
+
+        else
+        {
+            questATitle.text = cs.currentCharacter.quest[a].questTitle;
+            questADescription.text = cs.currentCharacter.quest[a].questDescription;
+            questAReward.text = cs.currentCharacter.quest[a].questReward;
+
+            questBTitle.text = cs.currentCharacter.quest[b].questTitle;
+            questBDescription.text = cs.currentCharacter.quest[b].questDescription;
+            questBReward.text = cs.currentCharacter.quest[b].questReward;
+        }
+
+
+
+
 
         //questATitle.text = questObjectA[0].questTitle;
         //questADescription.text = questObjectA[0].questDescription;

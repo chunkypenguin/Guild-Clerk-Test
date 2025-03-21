@@ -24,6 +24,8 @@ public class AndyScript : MonoBehaviour
     [SerializeField] Material andyBruhImage;
     [SerializeField] Material andyInjuredImage;
     [SerializeField] Material andyinjuredWinkImage;
+    [SerializeField] Material andyWarCryImage;
+    [SerializeField] Material andyWarCryInjuredImage;
 
     [SerializeField] GameObject AndyMomImage;
 
@@ -154,5 +156,15 @@ public class AndyScript : MonoBehaviour
     public void AndyInjuiredWink()
     {
         mr.material = andyinjuredWinkImage;
+    }
+
+    public void AndyWarCry()
+    {
+        mr.material = andyWarCryImage;
+    }
+
+    public void AndyWarCryInjured()
+    {
+        mr.material = andyWarCryInjuredImage;
     }
 }

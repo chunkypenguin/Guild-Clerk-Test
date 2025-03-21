@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
-  m_Name: JoleneQ1A
+  m_Name: AndyQ2B
   m_EditorClassIdentifier: 
-  questTitle: Fetch 5 apples for Grandma Necy
-  questDescription: "\u201CGrandma Necy has been planning to make an apple pie, but
-    needs help getting apples from Auber Gene's Farm, she just can't make the trek
-    anymore to and from the farm.\u201D"
-  questReward: 'Reward: 2 Gold'
+  questTitle: Gather worms for Angler Dusty (5 gold per worm)
+  questDescription: "\u201CLookin\u2019 for a chipper fellow to fetch me more worms.
+    Grab as many as you can find, I got the gold to cover it!\u201D"
+  questReward: 'Reward: Conditional'
