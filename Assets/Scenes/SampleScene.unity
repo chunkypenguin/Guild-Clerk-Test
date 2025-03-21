@@ -11273,7 +11273,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1086671388}
+          m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 0a42d72c38821754e94b90c21f16e28d, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &639375505
 GameObject:
   m_ObjectHideFlags: 0
@@ -11831,9 +11843,9 @@ MonoBehaviour:
   josieD1Q1AP2: {fileID: 2058420793}
   josieD1Q1BP1: {fileID: 1860294730}
   josieD1Q1BP2: {fileID: 39346313}
-  josieD1G1AP1: {fileID: 1956575492}
+  josieD1G1AP1: {fileID: 939738348}
   josieD1G1BP1: {fileID: 2056054896}
-  josieD1G1CP1: {fileID: 939738348}
+  josieD1G1CP1: {fileID: 1956575492}
   josieD3Lotest: {fileID: 1497165642}
   gregD1P1: {fileID: 215668413}
   gregD1Q1AP1: {fileID: 1311710834}
@@ -16245,7 +16257,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1086671388}
+          m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: b2099ca5e6678c34b8614a96345dc903, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &886026287
 GameObject:
   m_ObjectHideFlags: 0
@@ -16816,7 +16840,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1086671388}
+          m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 0a42d72c38821754e94b90c21f16e28d, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &918060871
 GameObject:
   m_ObjectHideFlags: 0
@@ -18581,7 +18617,7 @@ Transform:
   m_GameObject: {fileID: 973462376}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
-  m_LocalPosition: {x: -4.53, y: 0.11, z: 0}
+  m_LocalPosition: {x: 0.43, y: 0.11, z: 0}
   m_LocalScale: {x: 0.47302365, y: 0.44738832, z: 0.67108244}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20316,7 +20352,7 @@ Transform:
   m_GameObject: {fileID: 1066098676}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
-  m_LocalPosition: {x: 0.92, y: -0.89, z: -0.09}
+  m_LocalPosition: {x: 0.92, y: -0.83, z: -0.09}
   m_LocalScale: {x: 0.5428969, y: 0.26115495, z: 0.88934004}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23376,7 +23412,7 @@ Transform:
   m_GameObject: {fileID: 1168836904}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
-  m_LocalPosition: {x: 0.69, y: 0, z: 0}
+  m_LocalPosition: {x: 0.6, y: 0, z: 0}
   m_LocalScale: {x: 0.32895747, y: 0.3944376, z: 0.5916563}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26594,7 +26630,7 @@ Transform:
   m_GameObject: {fileID: 1298240868}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
-  m_LocalPosition: {x: 0.57, y: -0.11, z: 0}
+  m_LocalPosition: {x: 0.6, y: -0.11, z: 0}
   m_LocalScale: {x: 0.471412, y: 0.40897554, z: 0.6134633}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31437,7 +31473,7 @@ Transform:
   m_GameObject: {fileID: 1580913493}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
-  m_LocalPosition: {x: 0.35, y: 0.41, z: -0.060341}
+  m_LocalPosition: {x: 0.47, y: 0.41, z: -0.060341}
   m_LocalScale: {x: 0.68796486, y: 0.27170563, z: 0.7912904}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31873,7 +31909,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1086671388}
+          m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: b2099ca5e6678c34b8614a96345dc903, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1596569017
 GameObject:
   m_ObjectHideFlags: 0
@@ -34285,7 +34333,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1086671388}
+          m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: b2099ca5e6678c34b8614a96345dc903, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1737869212
 GameObject:
   m_ObjectHideFlags: 0
@@ -36190,7 +36250,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 32
-  m_CharacterLimit: 0
+  m_CharacterLimit: 20
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -38886,7 +38946,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1086671388}
+          m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: b2099ca5e6678c34b8614a96345dc903, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2010085257
 GameObject:
   m_ObjectHideFlags: 0
@@ -39736,7 +39808,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1086671388}
+          m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 2b675e9204ae8f24a98afc806bf2995a, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2053473943
 GameObject:
   m_ObjectHideFlags: 0
