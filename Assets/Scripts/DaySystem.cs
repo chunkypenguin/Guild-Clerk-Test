@@ -21,6 +21,9 @@ public class DaySystem : MonoBehaviour
 
     [SerializeField] GameObject credits;
 
+    public AudioSource bgMusic;
+    public AudioSource creditSceneMusic;
+
 
     private void Start()
     {
@@ -38,6 +41,9 @@ public class DaySystem : MonoBehaviour
             else
             {
                 credits.SetActive(true);
+
+                bgMusic.DOFade(0, 7);
+                creditSceneMusic.DOFade(0.5f, 10);
             }
         }
     }
