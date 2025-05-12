@@ -36,7 +36,6 @@ public class GrabObjectProperties{
 		float m_grabMaxDistance = 10;
 
 		[SerializeField]
-		[Range(1, 10)]
 		float m_scrollWheelSpeed = 5;
 
 		[SerializeField]
@@ -83,6 +82,8 @@ public class GrabObjectProperties{
 		public movecam moveCamScript;
 		public TutorialScript ts;
 
+		private float scroll;
+
 		void Awake()
 		{
 			//m_transform = transform;
@@ -95,22 +96,29 @@ public class GrabObjectProperties{
 
 		void Update()
 		{
-			if (m_grabbing)
+			if (m_grabbing)//if already holding an object
 			{
-				m_targetDistance += Input.GetAxisRaw("Mouse ScrollWheel") * m_scrollWheelSpeed;
-				m_targetDistance = Mathf.Clamp(m_targetDistance, m_grabMinDistance, m_grabMaxDistance);
+                //m_targetDistance += Input.GetAxisRaw("Mouse ScrollWheel") * m_scrollWheelSpeed;
+                //m_targetDistance = Mathf.Clamp(m_targetDistance, m_grabMinDistance, m_grabMaxDistance);
 
-				m_targetPos = m_transform.position + new Vector3(0,0,1) * m_targetDistance;
+                scroll = Input.GetAxis("Mouse ScrollWheel") * m_scrollWheelSpeed;
+
+                m_targetPos = m_transform.position + new Vector3(0,0,1) * m_targetDistance;
 				//Debug.Log(m_transform.forward);
 				//m_targetPos = m_transform.position + m_transform.forward;
 
-				if (!m_isHingeJoint) {
-					if (Input.GetKey(m_rotatePitchPosKey) || Input.GetKey(m_rotatePitchNegKey) || Input.GetKey(m_rotateYawPosKey) || Input.GetKey(m_rotateYawNegKey)) {
+				if (!m_isHingeJoint) { // no need for this 
+					if (Input.GetKey(m_rotatePitchPosKey) || Input.GetKey(m_rotatePitchNegKey)) {
 						m_targetRB.constraints = RigidbodyConstraints.None;
 					} else {
 						m_targetRB.constraints = m_grabProperties.m_constraints;
 					}
+					//Debug.Log("no hinge");
 				}
+				else
+				{
+                    //Debug.Log("yes hinge");
+                }
 
 
 				if (Input.GetMouseButtonUp(0)) {
@@ -128,17 +136,15 @@ public class GrabObjectProperties{
 				} else if (Input.GetMouseButtonDown(1)) {
 					m_applyImpulse = true;
 				}
-
-
 			}
-			else
+			else //if not holding an object
 			{
 				if (Input.GetMouseButtonDown(0))
 				{
 					mouseButtonUp = false; //my code
 
 					//Debug.Log("Pressed Button Not grabbing");
-					Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+					Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // send out ray at position of mouse
 					RaycastHit hitInfo;
 					if (Physics.Raycast(ray, out hitInfo, m_grabMaxDistance, m_collisionMask))
 					{
@@ -245,7 +251,7 @@ public class GrabObjectProperties{
             //m_targetRB.gameObject.layer = LayerMask.NameToLayer("PickedUp");
 
 
-            m_isHingeJoint = target.GetComponent<HingeJoint>() != null;
+            m_isHingeJoint = target.GetComponent<HingeJoint>() != null; // no need
 
 			//Rigidbody default properties
 			m_defaultProperties.m_useGravity = m_targetRB.useGravity;
@@ -373,18 +379,19 @@ public class GrabObjectProperties{
 
 		void Rotate()
 		{
-			if (Input.GetKey(m_rotatePitchPosKey)) {
-				m_targetRB.AddTorque(m_transform.right * m_angularSpeed);
-			} else if (Input.GetKey(m_rotatePitchNegKey)) {
-				m_targetRB.AddTorque(-m_transform.right * m_angularSpeed);
-			}
+            if (Input.GetKey(m_rotatePitchPosKey)) {
+            	m_targetRB.AddTorque(m_transform.right * m_angularSpeed);
+            } else if (Input.GetKey(m_rotatePitchNegKey)) {
+            	m_targetRB.AddTorque(-m_transform.right * m_angularSpeed);
+            }
 
-			if (Input.GetKey(m_rotateYawPosKey)) {
-				m_targetRB.AddTorque(-m_transform.up * m_angularSpeed);
-			} else if (Input.GetKey(m_rotateYawNegKey)) {
-				m_targetRB.AddTorque(m_transform.up * m_angularSpeed);
-			}
-		}
+            //if (Input.GetKey(m_rotateYawPosKey)) {
+            //	m_targetRB.AddTorque(-m_transform.up * m_angularSpeed);
+            //} else if (Input.GetKey(m_rotateYawNegKey)) {
+            //	m_targetRB.AddTorque(m_transform.up * m_angularSpeed);
+            //}
+
+        }
 
 		void FixedUpdate()
 		{

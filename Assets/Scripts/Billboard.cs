@@ -58,7 +58,7 @@ public class Billboard : MonoBehaviour
             {
                 // Lock the position along the global X-axis
                 Vector3 currentPosition = rb.position;
-                rb.position = new Vector3(-8.4f, currentPosition.y, currentPosition.z); // Lock the X value to 0 (or any other fixed value)
+                rb.position = new Vector3(-8.2f, currentPosition.y, currentPosition.z); // Lock the X value to 0 (or any other fixed value)
             }
 
         }
@@ -69,7 +69,7 @@ public class Billboard : MonoBehaviour
             {
                 // Lock the position along the global X-axis
                 Vector3 currentPosition = rb.position;
-                rb.position = new Vector3(8.25f, currentPosition.y, currentPosition.z); // Lock the X value to 0 (or any other fixed value)
+                rb.position = new Vector3(8.35f, currentPosition.y, currentPosition.z); // Lock the X value to 0 (or any other fixed value)
             }
         }
 
@@ -79,7 +79,7 @@ public class Billboard : MonoBehaviour
             {
                 // Lock the position along the global X-axis
                 Vector3 currentPosition = rb.position;
-                rb.position = new Vector3(currentPosition.x, currentPosition.y, 8.5f); // Lock the X value to 0 (or any other fixed value)
+                rb.position = new Vector3(currentPosition.x, currentPosition.y, 8.9f); // Lock the X value to 0 (or any other fixed value)
             }
         }
 

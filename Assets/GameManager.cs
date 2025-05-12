@@ -9,8 +9,12 @@ public class GameManager : MonoBehaviour
     public DialogueCharacter[] characters;
 
     [SerializeField] DialogueCharacter finchCharacter;
+
+    public static GameManager instance;
     private void Awake()
     {
+        instance = this;
+
         ResetCharacters();
     }
 
@@ -18,7 +22,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            //Application.Quit();
         }
     }
 
@@ -37,5 +41,10 @@ public class GameManager : MonoBehaviour
     public void MenuScene()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

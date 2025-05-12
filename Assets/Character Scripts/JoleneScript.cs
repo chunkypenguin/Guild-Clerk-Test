@@ -15,6 +15,10 @@ public class JoleneScript : MonoBehaviour
 
     public bool gaveJoleneMoreGold;
 
+    private void Start()
+    {
+        gs = GoldSystem.instance;
+    }
     public void StartDialogue()
     {
         if (!cs.D1 && cs.D2)

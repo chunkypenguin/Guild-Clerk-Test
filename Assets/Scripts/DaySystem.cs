@@ -24,9 +24,11 @@ public class DaySystem : MonoBehaviour
     public AudioSource bgMusic;
     public AudioSource creditSceneMusic;
 
+    bool gameEnd;
 
     private void Start()
     {
+        gameEnd = false;
         dayCount = 1;
     }
     private void Update()
@@ -42,10 +44,18 @@ public class DaySystem : MonoBehaviour
             {
                 credits.SetActive(true);
 
+                gameEnd = true;
+
                 bgMusic.DOFade(0, 7);
                 creditSceneMusic.DOFade(0.5f, 10);
             }
+
         }
+        if(Input.GetKeyDown(KeyCode.Escape) && gameEnd)
+        {
+            GameManager.instance.QuitGame();
+        }
+
     }
 
     public void EndDay()

@@ -30,6 +30,12 @@ public class GoldSystem : MonoBehaviour
 
     [SerializeField] movecam mc;
 
+    public static GoldSystem instance;
+
+    private void Awake()
+    {
+        instance = this; 
+    }
     private void Start()
     {
         goldDrawerStartPos = transform.position;
@@ -122,6 +128,7 @@ public class GoldSystem : MonoBehaviour
 
     public void OpenGoldDrawer()
     {
+        Debug.Log("open drawer");
         goldDrawer.transform.DOMove(goldDrawerStartPos + new Vector3(0, 0, -1.5f), drawerSpeed);
         goldUI.SetActive(true);
     }
@@ -135,7 +142,7 @@ public class GoldSystem : MonoBehaviour
 
     public void SpawnGold()
     {
-        GameObject coin = Instantiate(goldCoin);
+        GameObject coin = Instantiate(goldCoin, coinSpawnPos.position, Quaternion.identity);
         float force = Random.Range(-1.5f, 1.5f);
         Rigidbody rb = coin.GetComponent<Rigidbody>();
 
@@ -161,13 +168,13 @@ public class GoldSystem : MonoBehaviour
 
     public void GoldDrawerDisable()
     {
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+        gameObject.GetComponent<MeshCollider>().enabled = false;
         Invoke(nameof(GoldDrawerEnable), 0.25f);
     }
 
     public void GoldDrawerEnable()
     {
-        gameObject.GetComponent<BoxCollider>().enabled = true;
+        gameObject.GetComponent<MeshCollider>().enabled = true;
     }
 
     public void GiveBackGold()

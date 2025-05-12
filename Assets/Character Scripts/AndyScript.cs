@@ -31,6 +31,11 @@ public class AndyScript : MonoBehaviour
 
     [SerializeField] MeshRenderer mr;
 
+
+    private void Start()
+    {
+        gs = GoldSystem.instance;
+    }
     public void StartDialogue()
     {
         if (cs.D1 && !cs.D2)

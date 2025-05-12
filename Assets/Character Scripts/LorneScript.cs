@@ -35,7 +35,6 @@ public class LorneScript : MonoBehaviour
 
     public bool gaveYarn;
 
-
     private void Update()
     {
         if (tagSystem)

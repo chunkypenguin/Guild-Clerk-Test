@@ -30,6 +30,11 @@ public class TutorialScript : MonoBehaviour
     [SerializeField] GoldSystem gs;
 
     bool flashBell;
+
+    public void Start()
+    {
+        gs = GoldSystem.instance;
+    }
     public void JosieTutDialogue(DialogueManager dialogue)
     {
         if(!questDialogue1)

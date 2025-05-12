@@ -7,9 +7,12 @@ using HeneGames.DialogueSystem;
 public class MoveCharacter : MonoBehaviour
 {
     //Move 
-    [SerializeField] GameObject startPos;
-    [SerializeField] GameObject endPos;
+    //[SerializeField] GameObject startPos;
+    //[SerializeField] GameObject endPos;
     [SerializeField] float moveSpeed;
+
+    [SerializeField] Vector3 startPos;
+    [SerializeField] Vector3 endPos;
 
     //Jump
     [SerializeField] Transform jumpPoint;
@@ -38,8 +41,12 @@ public class MoveCharacter : MonoBehaviour
     private void Awake()
     {
         moveSpeed = 1.5f;
-        startPos.transform.position = transform.position;
-        endPos.transform.position = startPos.transform.position + new Vector3(10.5f, 0, 0);
+        startPos = transform.position;
+        endPos = startPos - new Vector3(12f, 0, 0);
+
+        transform.position = endPos;
+
+        //endPos.transform.position = startPos.transform.position + new Vector3(10.5f, 0, 0);
     }
 
 
@@ -47,7 +54,7 @@ public class MoveCharacter : MonoBehaviour
     {
         if (cs.currentCharacter.characterName == "Andy")
         {
-            transform.DOJump(startPos.transform.position, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
+            transform.DOJump(startPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
             {
 
                 if (cs.currentCharacter.characterName == "Andy" && cs.D1)
@@ -62,16 +69,13 @@ public class MoveCharacter : MonoBehaviour
                         andyS.AndyAngry();
                     }
                 }
-
-
-
                 cs.StartNewCharacter();
             });
         }
 
         else
         {
-            transform.DOMove(startPos.transform.position, moveSpeed).OnComplete(() =>
+            transform.DOMove(endPos, moveSpeed).OnComplete(() =>
             {
                 if (cs.currentCharacter.characterName == "Greg")
                 {
@@ -153,7 +157,7 @@ public class MoveCharacter : MonoBehaviour
 
     public void MoveEndDay()
     {
-        transform.position = startPos.transform.position;
+        transform.position = startPos;
 
         if(cs.currentCharacter.characterName == "Andy")
         {
@@ -168,7 +172,7 @@ public class MoveCharacter : MonoBehaviour
     public void MoveToStart()
     {
         
-        transform.DOMove(startPos.transform.position, moveSpeed).OnComplete(() =>
+        transform.DOMove(endPos, moveSpeed).OnComplete(() =>
         {
             MoveToDesk();
             if (cs.D1)
@@ -194,8 +198,7 @@ public class MoveCharacter : MonoBehaviour
 
         else
         {
-            //Debug.Log("move to desk");
-            transform.DOMove(endPos.transform.position, moveSpeed).OnComplete(() =>
+            transform.DOMove(startPos, moveSpeed).OnComplete(() =>
             {
                 if (cs.currentCharacter.characterName == "Josie")
                 {

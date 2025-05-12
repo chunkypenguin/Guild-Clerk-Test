@@ -25,6 +25,11 @@ public class FinchScript : MonoBehaviour
 
     public bool askingForGold;
 
+    private void Start()
+    {
+        gs = GoldSystem.instance;
+    }
+
     private void Update()
     {
         if (tagSystem)

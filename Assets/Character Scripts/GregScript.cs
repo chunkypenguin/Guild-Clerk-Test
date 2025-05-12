@@ -24,6 +24,7 @@ public class GregScript : MonoBehaviour
     private void Start()
     {
         mr.material = gregIdle;
+        gs = GoldSystem.instance;
     }
 
     public void StartDialogue()

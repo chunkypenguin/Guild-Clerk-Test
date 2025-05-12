@@ -7,6 +7,7 @@ public class MousePos3D : MonoBehaviour
 {
     [SerializeField] private Camera mainCam;
     [SerializeField] LayerMask guideLayer;
+    [SerializeField] LayerMask noGuideLayer;
     [SerializeField] LayerMask pickedUpLayer;
     [SerializeField] GameObject pickUpObject;
     [SerializeField] bool pickedUp;
@@ -29,7 +30,7 @@ public class MousePos3D : MonoBehaviour
         }
 
         Ray questray = mainCam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(questray, out RaycastHit questraycastHit))
+        if (Physics.Raycast(questray, out RaycastHit questraycastHit, float.MaxValue, noGuideLayer))
         {
 
             if (questraycastHit.collider.CompareTag("Bell") && Input.GetMouseButtonDown(0))
@@ -88,7 +89,6 @@ public class MousePos3D : MonoBehaviour
 
             if (questraycastHit.collider.CompareTag("Character") && Input.GetMouseButtonDown(0))
             {
-
                 //Debug.Log("ClickedCharacter");
                 if (cs.isQuest)
                 {

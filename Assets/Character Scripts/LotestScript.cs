@@ -14,6 +14,11 @@ public class LotestScript : MonoBehaviour
     public GameObject greenGlow;
     public GameObject velvetGlow;
 
+    private void Start()
+    {
+        gs = GoldSystem.instance;
+    }
+
     public void StartDialogue()
     {
         if (!cs.D1 && cs.D2)

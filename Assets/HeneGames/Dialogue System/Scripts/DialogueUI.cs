@@ -58,6 +58,11 @@ namespace HeneGames.DialogueSystem
 
         [SerializeField] GoldSystem gs;
 
+        private void Start()
+        {
+            gs = GoldSystem.instance;
+        }
+
         private void Update()
         {
             //Delay timer
