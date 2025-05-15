@@ -48,24 +48,29 @@ public class GregScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        int rep = 0;
         if (cs.currentCharacter.choseQuestA)
         {
             if (gs.goldAmount == 8)
             {
                 //do this
                 cs.gregD2G1BP1.StartNewDialogue(cs.dialogueTriggerScript);
+
             }
             else if (gs.goldAmount > 8)
             {
                 //do this
                 cs.gregD2G1CP1.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = -1;
             }
 
             else if (gs.goldAmount < 8)
             {
                 //do this
                 cs.gregD2G1AP1.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = -1;
             }
+            
         }
         else if (cs.currentCharacter.choseQuestB)
         {
@@ -78,6 +83,7 @@ public class GregScript : MonoBehaviour
             {
                 //do this
                 cs.gregD2G2CP1.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = 1;
             }
 
             else if (gs.goldAmount < 2)
@@ -86,6 +92,10 @@ public class GregScript : MonoBehaviour
                 cs.gregD2G2AP1.StartNewDialogue(cs.dialogueTriggerScript);
             }
         }
+
+        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+
+        rep = 0;
     }
 
     public void GregArrow()

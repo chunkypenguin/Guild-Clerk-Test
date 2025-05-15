@@ -15,6 +15,7 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] Vector3 endPos;
 
     //Jump
+    [SerializeField] bool jumping;
     [SerializeField] Transform jumpPoint;
     [SerializeField] float jumpSpeed;
     [SerializeField] int jumpCount;
@@ -41,8 +42,17 @@ public class MoveCharacter : MonoBehaviour
     private void Awake()
     {
         moveSpeed = 1.5f;
-        startPos = transform.position;
-        endPos = startPos - new Vector3(12f, 0, 0);
+        if (!jumping)
+        {
+            startPos = transform.position;
+            endPos = startPos - new Vector3(12f, 0, 0);
+        }
+        else
+        {
+            startPos = transform.position;
+            endPos = startPos + new Vector3(0, -5, 1);
+        }
+
 
         transform.position = endPos;
 
@@ -54,7 +64,7 @@ public class MoveCharacter : MonoBehaviour
     {
         if (cs.currentCharacter.characterName == "Andy")
         {
-            transform.DOJump(startPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
+            transform.DOJump(endPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
             {
 
                 if (cs.currentCharacter.characterName == "Andy" && cs.D1)
@@ -157,7 +167,7 @@ public class MoveCharacter : MonoBehaviour
 
     public void MoveEndDay()
     {
-        transform.position = startPos;
+        transform.position = endPos;
 
         if(cs.currentCharacter.characterName == "Andy")
         {
@@ -189,7 +199,7 @@ public class MoveCharacter : MonoBehaviour
 
         if (cs.currentCharacter.characterName == "Andy")
         {
-            transform.DOJump(jumpPoint.position, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
+            transform.DOJump(startPos, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
             {
                 andyS.StartDialogue();
             });

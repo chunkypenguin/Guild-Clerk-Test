@@ -171,8 +171,12 @@ public class CharacterSystem : MonoBehaviour
 
     [SerializeField] DialogueUI dui;
 
+    public static CharacterSystem instance;
+
     private void Awake()
     {
+        instance = this;
+
         currentCharacter = characters[characterCount];
         currentCharacterObject = characterObjects[characterCount];
     }
@@ -226,6 +230,9 @@ public class CharacterSystem : MonoBehaviour
             currentCharacter = characters[characterCount];
             currentCharacterObject = characterObjects[characterCount];
 
+            //NEW SHIT for rep system
+            PlayerRepTrackerCharacter.instance.ActivateNpc(characterCount);
+
             currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
             ChangeTextColor();
         }
@@ -237,11 +244,13 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Josie")
         {
             josieD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+            
         }
 
         if (currentCharacter.characterName == "Greg")
         {
             gregD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+            currentCharacterObject.GetComponent<CharacterReputation>().RemoveReputation(1);
         }
 
         if(currentCharacter.characterName == "Andy")
@@ -249,6 +258,7 @@ public class CharacterSystem : MonoBehaviour
             if (D1)
             {
                 andyD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+                currentCharacterObject.GetComponent<CharacterReputation>().AddReputation(1);
             }
             else
             {
@@ -281,12 +291,15 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Greg")
         {
             gregD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+            //Adds reputation
+            currentCharacterObject.GetComponent<CharacterReputation>().AddReputation(1);
         }
         if(currentCharacter.characterName == "Andy")
         {
             if (D1)
             {
                 andyD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+                currentCharacterObject.GetComponent<CharacterReputation>().RemoveReputation(1);
             }
             else
             {

@@ -69,28 +69,31 @@ public class DeskTrigger : MonoBehaviour
 
     public void CheckForQuest()
     {
+        //Quest A
         if ((items.Find(item => item.name == "QuestA") != null) && items.Find(item => item.name == "QuestB") == null)
         {
             GameObject questRB = items.Find(item => item.name == "QuestA");
             qs.GetQuestRB(questRB);
             cs.currentCharacter.choseQuestA = true;
             cs.currentCharacter.choseQuestB = false;
-            Debug.Log("QuestA found! Performing action...");
+            //Debug.Log("QuestA found! Performing action...");
             // Add your action here
             cs.QuestADialogue();
             cs.pickedQ1A = true;
 
             cs.IsIdle();// go back to idle task
 
-        }
 
+
+        }
+        //Quest B
         else if ((items.Find(item => item.name == "QuestB") != null) && items.Find(item => item.name == "QuestA") == null)
         {
             GameObject questRB = items.Find(item => item.name == "QuestB");
             qs.GetQuestRB(questRB);
             cs.currentCharacter.choseQuestB = true;
             cs.currentCharacter.choseQuestA = false;
-            Debug.Log("QuestB found! Performing action...");
+            //Debug.Log("QuestB found! Performing action...");
             // Add your action here
             cs.QuestBDialogue();
             cs.pickedQ1B = true;
