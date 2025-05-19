@@ -22,39 +22,46 @@ public class MaggieScript : MonoBehaviour
         }
         else if (!cs.D2 && cs.D3)
         {
-            if (cs.currentCharacter.choseQuestA)
+            if (cs.currentCharacter.choseQuestA) //food
             {
                 cs.maggieD2Q1A.StartNewDialogue(cs.dialogueTriggerScript);
+                gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
             }
-            else
+            else//goblin
             {
                 cs.maggieD2Q1B.StartNewDialogue(cs.dialogueTriggerScript);
+                gameObject.GetComponent<CharacterReputation>().ModifyReputation(1);
             }
         }
     }
 
     public void CheckForReward()
     {
-        if (cs.currentCharacter.choseQuestA)
+
+        int rep = 0;
+        if (cs.currentCharacter.choseQuestA)//food
         {
             if (gs.goldAmount == 8)
             {
                 //do this
                 cs.maggieD2G1B.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = 1;
             }
             else if (gs.goldAmount > 8)
             {
                 //do this
                 cs.maggieD2G1C.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = -1;
             }
 
             else if (gs.goldAmount < 8)
             {
                 //do this
                 cs.maggieD2G1A.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = 0;
             }
         }
-        else if (cs.currentCharacter.choseQuestB)
+        else if (cs.currentCharacter.choseQuestB)//goblin
         {
             if (gs.goldAmount == 16)
             {
@@ -65,6 +72,7 @@ public class MaggieScript : MonoBehaviour
             {
                 //do this
                 cs.maggieD2G2C.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = 1;
             }
 
             else if (gs.goldAmount < 16)
@@ -73,6 +81,8 @@ public class MaggieScript : MonoBehaviour
                 cs.maggieD2G2A.StartNewDialogue(cs.dialogueTriggerScript);
             }
         }
+
+        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
 
     public void ChangeEmote(Material emote)

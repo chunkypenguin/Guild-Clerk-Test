@@ -44,18 +44,20 @@ public class AndyScript : MonoBehaviour
         }
         else if (!cs.D1 && cs.D2)
         {
-            if (cs.currentCharacter.choseQuestA)
+            if (cs.currentCharacter.choseQuestA)//dragon quest (andys mom)
             {
                 cs.andyD2Q1A.StartNewDialogue(cs.dialogueTriggerScript);
             }
-            else
+            else // fetch quest
             {
                 cs.andyD2Q1B.StartNewDialogue(cs.dialogueTriggerScript);
+                gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
             }
         }
-        else if (cs.D3)
+        else if (cs.D3) 
         {
             cs.andyD3P1.StartNewDialogue(cs.dialogueTriggerScript);
+            gameObject.GetComponent<CharacterReputation>().ModifyReputation(3);
         }
     }
 
@@ -83,19 +85,27 @@ public class AndyScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        int rep = 0;
         if (!cs.D3)
         {
             cs.andyD2Q1BP2.StartNewDialogue(cs.dialogueTriggerScript);
         }
-        else if(gs.goldAmount >= 50)
+        else if(gs.goldAmount == 50)
         {
             cs.andyD3G1B.StartNewDialogue(cs.dialogueTriggerScript);
+            rep = 1;
+        }
+        else if (gs.goldAmount > 50)
+        {
+            cs.andyD3G1B.StartNewDialogue(cs.dialogueTriggerScript);
+            rep = 2;
         }
         else if(gs.goldAmount < 50)
         {
             cs.andyD3G1A.StartNewDialogue(cs.dialogueTriggerScript);
+            rep = -1;
         }
-
+        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
 
     public void AndyIdle()

@@ -60,7 +60,7 @@ public class MoveCharacter : MonoBehaviour
     }
 
 
-    public void MoveToEnd()
+    public void MoveToEnd() //move character out of sight
     {
         if (cs.currentCharacter.characterName == "Andy")
         {

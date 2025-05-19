@@ -67,6 +67,7 @@ public class LorneScript : MonoBehaviour
             if (gaveYarn)
             {
                 cs.lorneD3Yarn.StartNewDialogue(cs.dialogueTriggerScript);
+                gameObject.GetComponent<CharacterReputation>().ModifyReputation(1);
             }
         }
     }

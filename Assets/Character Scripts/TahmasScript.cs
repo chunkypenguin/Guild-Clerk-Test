@@ -33,23 +33,27 @@ public class TahmasScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        int rep = 0;
         if (cs.currentCharacter.choseQuestA)
         {
             if (gs.goldAmount == 25)
             {
                 //do this
                 cs.tahmasD3G1B.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = -1;
             }
             else if (gs.goldAmount > 25)
             {
                 //do this
                 cs.tahmasD3G1C.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = 1;
             }
 
             else if (gs.goldAmount < 25)
             {
                 //do this
                 cs.tahmasD3G1A.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = -2;
             }
         }
         else if (cs.currentCharacter.choseQuestB)
@@ -58,19 +62,23 @@ public class TahmasScript : MonoBehaviour
             {
                 //do this
                 cs.tahmasD3G2B.StartNewDialogue(cs.dialogueTriggerScript);
+
             }
             else if (gs.goldAmount > 25)
             {
                 //do this
                 cs.tahmasD3G2C.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = 1;
             }
 
             else if (gs.goldAmount < 25)
             {
                 //do this
                 cs.tahmasD3G2A.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = -2;
             }
         }
+        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
 
     public void ChangeEmote(Material emote)

@@ -38,23 +38,27 @@ public class LotestScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        int rep = 0;
         if (cs.currentCharacter.choseQuestA)
         {
             if (gs.goldAmount == 15)
             {
                 //do this
                 cs.lotestD2G1B.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = 1;
             }
             else if (gs.goldAmount > 15)
             {
                 //do this
                 cs.lotestD2G1C.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = -1;
             }
 
             else if (gs.goldAmount < 15)
             {
                 //do this
                 cs.lotestD2G1A.StartNewDialogue(cs.dialogueTriggerScript);
+                rep = -1;
             }
         }
         else if (cs.currentCharacter.choseQuestB)
@@ -76,5 +80,6 @@ public class LotestScript : MonoBehaviour
                 //cs.gregD2G2AP1.StartNewDialogue(cs.dialogueTriggerScript);
             }
         }
+        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
 }
