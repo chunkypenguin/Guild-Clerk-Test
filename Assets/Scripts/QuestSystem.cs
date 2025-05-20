@@ -65,6 +65,7 @@ public class QuestSystem : MonoBehaviour
     private void Start()
     {
         //UpdateQuests();
+        cs = CharacterSystem.instance;
     }
 
     private void FixedUpdate()
@@ -105,7 +106,7 @@ public class QuestSystem : MonoBehaviour
         Invoke(nameof(CollectQuest), 2f); //prevent quest getting stuck
     }
 
-    private void CollectQuest()
+    private void CollectQuest() //once quest dissapears/is taken...
     {
         isSuctionActive = false;
 
@@ -122,6 +123,27 @@ public class QuestSystem : MonoBehaviour
         visualQuests.SetActive(true);
 
         rb.gameObject.GetComponent<ItemFloorScript>().ResetItem();
+
+
+        //UNIQUE VANELLE INTERACTION
+        //if current character is vanelle and quest b was just chosen...
+        if(cs.currentCharacter.name == "Vanelle" && cs.currentCharacter.choseQuestB)
+        {
+            Debug.Log("vanelle chose B");
+            //turn back choseQuestB to false
+            cs.currentCharacter.choseQuestB = false;
+            //swap to vanelle eat emote
+            //play chomp sound
+
+            //continue dialogue
+            cs.currentCharacterObject.GetComponent<VanelleScript>().EatQuestBDialogue();
+            //go from idle to quest task
+            cs.IsQuest();
+            //turn off quest visuals
+            visualQuests.SetActive(false);
+            //make sure quest A is still available
+            questAHolder.SetActive(true);
+        }
 
     }
 
@@ -179,7 +201,25 @@ public class QuestSystem : MonoBehaviour
 
         if (cs.isQuest)
         {
-            dt.CheckForQuest();
+            
+            if(cs.currentCharacter.characterName == "Vanelle" && VanelleScript.instance.tagSystem)
+            {
+                if (!VanelleQuestAScript.instance.questAOnDesk) //if the quest is not on the desk...
+                {
+                    //refuse
+                    Debug.Log("refused");
+                    cs.VanelleD1Q1BRefuse.StartNewDialogue(cs.dialogueTriggerScript);
+                }
+                else
+                {
+                    dt.CheckForQuest();
+                }
+            }
+            else //for everyone else...
+            {
+                dt.CheckForQuest();
+            }
+
         }
 
         else if (cs.isReward)

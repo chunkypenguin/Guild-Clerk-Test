@@ -36,6 +36,7 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] LotestScript lotestS;
     [SerializeField] TahmasScript tahmasS;
     [SerializeField] ZekeScript zekeS;
+    [SerializeField] VanelleScript vanelleS;
 
     [SerializeField] DaySystem ds;
 
@@ -189,7 +190,6 @@ public class MoveCharacter : MonoBehaviour
             {
                 josieS.ChangeEmote(josieS.josieDisguise);
             }
-
         });
         
     }
@@ -264,6 +264,12 @@ public class MoveCharacter : MonoBehaviour
                 {
                     zekeS.StartDialogue();
                     Debug.Log("start zeke dialogue");
+                }
+
+                if (cs.currentCharacter.characterName == "Vanelle")
+                {
+                    vanelleS.StartDialogue();
+                    Debug.Log("start vanelle dialogue");
                 }
 
             });

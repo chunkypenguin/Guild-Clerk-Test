@@ -141,6 +141,12 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager zekeD3Refuse1;
     public DialogueManager zekeD3Refuse2;
 
+    [Header("Vanelle")]
+    public DialogueManager vanelleD1P1;
+    public DialogueManager VanelleD1Q1AP1;
+    public DialogueManager VanelleD1Q1BP1;
+    public DialogueManager VanelleD1Q1BP2;
+    public DialogueManager VanelleD1Q1BRefuse;
 
     [Header("Dialogue History")]
     public DialogueManager dialogueHistory;
@@ -285,6 +291,11 @@ public class CharacterSystem : MonoBehaviour
             currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
         }
 
+        if (currentCharacter.characterName == "Vanelle")
+        {
+            VanelleD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+        }
+
     }
 
     public void QuestBDialogue()
@@ -328,6 +339,12 @@ public class CharacterSystem : MonoBehaviour
             tahmasCharacter.choseQuestB = true;
             currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
         }
+
+        if (currentCharacter.characterName == "Vanelle")
+        {
+            VanelleD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+        }
+
     }
 
     public void ItemADialogue()
