@@ -70,16 +70,16 @@ public class movecam : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) 
         {
-            LeftButton();
+            FirePointerEnter(leftButton);
         }
         // ---- vertical ----
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
-            BottomButton();
+            FirePointerEnter(bottomButton);
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) 
         {
-            UpButton();
+            FirePointerEnter(topButton);
         }
     }
 
