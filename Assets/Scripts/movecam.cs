@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using Lightbug.GrabIt;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class movecam : MonoBehaviour
 {
@@ -57,6 +58,36 @@ public class movecam : MonoBehaviour
         //{
         //    MoveCamToEquipment();
         //}
+
+        // block input while the camera is tweening
+        if (!canMoveCam) return;
+
+        // ---- horizontal ----
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        {
+            FirePointerEnter(rightButton);
+        }
+
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) 
+        {
+            LeftButton();
+        }
+        // ---- vertical ----
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        {
+            BottomButton();
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) 
+        {
+            UpButton();
+        }
+    }
+
+
+    void FirePointerEnter(GameObject go)
+    {
+        var data = new PointerEventData(EventSystem.current);
+        ExecuteEvents.Execute(go, data, ExecuteEvents.pointerEnterHandler);
     }
 
     public void LeftButtonLockToggle()
