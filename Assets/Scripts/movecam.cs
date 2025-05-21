@@ -21,7 +21,7 @@ public class movecam : MonoBehaviour
     public bool center, left, right, bottom;
     public bool canMoveCam;
 
-    public GameObject leftButton, rightButton, topButton, bottomButton, drawerButton, bellButton;
+    public GameObject leftButton, rightButton, topButton, bottomButton, drawerButton, bellButton, lowerButton, upperButton;
     public bool lockLeft, lockRight, lockTop, lockBottom, lockDrawer;
 
     [SerializeField] GrabIt grabItScript;
@@ -36,6 +36,11 @@ public class movecam : MonoBehaviour
     [SerializeField] public bool flashOn;
 
     public bool flashWasOn;
+
+    // ??? Peek settings ???????????????????????????????????????????????
+    [SerializeField] float peekOffset = -0.60f;   // how far to drop (?Y world units)
+    [SerializeField] float peekSpeed = 0.20f;   // tween duration
+    Tween peekTween;
 
     public bool drawerOpen;
     public bool canOpenDrawer;
@@ -88,6 +93,39 @@ public class movecam : MonoBehaviour
     {
         var data = new PointerEventData(EventSystem.current);
         ExecuteEvents.Execute(go, data, ExecuteEvents.pointerEnterHandler);
+    }
+
+    public void StartPeek()
+    {
+        if (canMoveCam) { 
+            // base position depends on current view (left/center/right/bottom)
+            Vector3 basePos = GetCurrentBasePos();          // helper shown below
+            Vector3 target = basePos + new Vector3(0, peekOffset, 0);
+
+            peekTween?.Kill();
+            peekTween = transform.DOMoveY(target.y, peekSpeed)
+                                 .SetEase(Ease.OutSine);
+        }
+    }
+
+    // Called by Event Trigger ? Pointer Exit
+    public void StopPeek()
+    {
+        if (canMoveCam)
+        {
+            Vector3 basePos = GetCurrentBasePos();          // back to default height
+
+            peekTween?.Kill();
+            peekTween = transform.DOMoveY(basePos.y, peekSpeed)
+                                 .SetEase(Ease.OutSine);
+        }
+    }
+    Vector3 GetCurrentBasePos()
+    {
+        if (left) return equipmentPosition;
+        if (right) return questPosition;
+        if (bottom) return rewardsPosition;
+        return centerPosition;          // default
     }
 
     public void LeftButtonLockToggle()
@@ -266,6 +304,7 @@ public class movecam : MonoBehaviour
                 MoveCamRewards();
 
                 goldSystemScript.OpenGoldDrawer();
+                lowerButton.SetActive(false);
             }
             else if (bottom)
             {
@@ -292,6 +331,7 @@ public class movecam : MonoBehaviour
                 MoveCamCenter();
 
                 goldSystemScript.CloseGoldDrawer();
+                lowerButton.SetActive(true);
             }
 
             else
@@ -388,5 +428,6 @@ public class movecam : MonoBehaviour
     public void UnlockDrawer()
     {
         canOpenDrawer = true;
+
     }
 }
