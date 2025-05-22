@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class CharacterSystem : MonoBehaviour
 {
-    public DialogueCharacter[] characters; //for example, Josie character
+    //public DialogueCharacter[] characters; //for example, Josie character
+    public List<DialogueCharacter> characters;
     public DialogueCharacter currentCharacter;
 
-    public GameObject[] characterObjects;
+    //public GameObject[] characterObjects;
+    public List<GameObject> characterObjects;
     public GameObject currentCharacterObject;
 
     public DialogueTrigger dialogueTriggerScript;
@@ -156,6 +158,16 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager vanelleD2Q1AGMinusRefuse;
     public DialogueManager vanelleD2Q1AGMinusGive;
 
+    [Header("Nomira")]
+    public DialogueManager nomiraD1P1;
+    public DialogueManager nomiraD1Q1AP1;
+    public DialogueManager nomiraD1Q1BP1;
+
+    [Header("Zeto")]
+    public DialogueManager zetoD1P1;
+    public DialogueManager zetoD1ASteal;
+    public DialogueManager zetoD1BSteal;
+
     [Header("Dialogue History")]
     public DialogueManager dialogueHistory;
 
@@ -235,7 +247,7 @@ public class CharacterSystem : MonoBehaviour
     public void StartNewCharacter()
     {
         characterCount++;
-        if (characterCount == characters.Length)
+        if (characterCount == characters.Count) //characters.Length
         {
             Debug.Log("no more");
         }
@@ -243,6 +255,14 @@ public class CharacterSystem : MonoBehaviour
         {
             currentCharacter = characters[characterCount];
             currentCharacterObject = characterObjects[characterCount];
+
+            //new shit for reodering characters
+            if(currentCharacter.characterName == "Vanelle" && !currentCharacter.choseQuestA) //if you refused vanelle any quest
+            {
+                characterCount++;
+                currentCharacter = characters[characterCount];
+                currentCharacterObject = characterObjects[characterCount];
+            }
 
             //NEW SHIT for rep system
             PlayerRepTrackerCharacter.instance.ActivateNpc(characterCount);
@@ -302,6 +322,11 @@ public class CharacterSystem : MonoBehaviour
         {
             VanelleD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
         }
+
+        if (currentCharacter.characterName == "Nomira")
+        {
+            nomiraD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+        }
     }
 
     public void QuestBDialogue()
@@ -351,6 +376,10 @@ public class CharacterSystem : MonoBehaviour
             VanelleD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
         }
 
+        if (currentCharacter.characterName == "Nomira")
+        {
+            nomiraD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+        }
     }
 
     public void ItemADialogue()

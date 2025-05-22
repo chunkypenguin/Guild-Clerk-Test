@@ -55,12 +55,18 @@ public class QuestSystem : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] Rigidbody rb2;
     [SerializeField] bool isSuctionActive = false;
-    [SerializeField] Transform vacuumPoint; // The position coins should be sucked toward
+    [SerializeField] Vector3 vacuumPoint; // The position coins should be sucked toward
     [SerializeField] float suckForce = 20f;
     [SerializeField] float maxSpeed = 10f;
     [SerializeField] float collectDistance = 0.5f;
     private Vector3 startScale; // Store initial scale
     private float initialDistance;
+
+    public static QuestSystem instance;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -97,10 +103,20 @@ public class QuestSystem : MonoBehaviour
 
     public void GetQuestRB(GameObject questObject)
     {
+        //nomira stuff
+        if(cs.currentCharacter.characterName == "Nomira")
+        {
+            vacuumPoint = ZetoScript.instance.zetoTransform.position; //move quest to zeto
+        }
+        else
+        {
+            vacuumPoint = cs.currentCharacterObject.transform.position;
+        }
+
         rb = questObject.GetComponent<Rigidbody>();
         rb2 = rb.transform.parent.gameObject.GetComponent<Rigidbody>();
         startScale = rb.transform.localScale; // Store initial scale
-        initialDistance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position); // Get starting distance
+        initialDistance = Vector3.Distance(rb.transform.position, vacuumPoint); // Get starting distance
         isSuctionActive = true;
 
         Invoke(nameof(CollectQuest), 2f); //prevent quest getting stuck
@@ -143,6 +159,25 @@ public class QuestSystem : MonoBehaviour
             visualQuests.SetActive(false);
             //make sure quest A is still available
             questAHolder.SetActive(true);
+        }
+
+        if (cs.currentCharacter.name == "Nomira")
+        {
+            if (cs.currentCharacter.choseQuestA)
+            {
+                visualQuests.SetActive(false);
+                //make sure quest A is still available
+                questBHolder.SetActive(true);
+                cs.zetoD1ASteal.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else if (cs.currentCharacter.choseQuestB)
+            {
+                visualQuests.SetActive(false);
+                //make sure quest A is still available
+                questAHolder.SetActive(true);
+                cs.zetoD1BSteal.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+
         }
 
     }

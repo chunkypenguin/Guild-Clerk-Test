@@ -37,6 +37,7 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] TahmasScript tahmasS;
     [SerializeField] ZekeScript zekeS;
     [SerializeField] VanelleScript vanelleS;
+    [SerializeField] NomiraScript nomiraS;
 
     [SerializeField] DaySystem ds;
 
@@ -272,9 +273,29 @@ public class MoveCharacter : MonoBehaviour
                     Debug.Log("start vanelle dialogue");
                 }
 
+                if (cs.currentCharacter.characterName == "Nomira")
+                {
+                    nomiraS.StartDialogue();
+                    Debug.Log("start nomira dialogue");
+                }
+
             });
         }
+    }
 
+    public void ZetoJumpUp()
+    {
+        transform.DOJump(startPos, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
+        {
+            cs.zetoD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
 
+    public void ZetoJumpDown()
+    {
+        transform.DOJump(endPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
+        {
+            //resume nomari dialogue
+        });
     }
 }

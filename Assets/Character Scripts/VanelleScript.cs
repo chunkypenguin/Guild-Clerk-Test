@@ -9,6 +9,11 @@ public class VanelleScript : MonoBehaviour
     CharacterSystem cs;
     GoldSystem gs;
 
+    [SerializeField] MeshRenderer mr;
+
+    [Header("Emotions")]
+    [SerializeField] Material vanelleIdle;
+
     public bool questTagSystem;
     bool questTagOn;
 
@@ -28,11 +33,15 @@ public class VanelleScript : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        mr = gameObject.GetComponent<MeshRenderer>();
+        vanelleIdle = gameObject.GetComponent<Material>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        mr.material = vanelleIdle;
+
         cs = CharacterSystem.instance;
         gs = GoldSystem.instance;
     }
@@ -167,5 +176,10 @@ public class VanelleScript : MonoBehaviour
     {
         questTagSystem = false;
         refuseTag.SetActive(false);
+    }
+
+    public void ChangeEmote(Material emote)
+    {
+        mr.material = emote;
     }
 }
