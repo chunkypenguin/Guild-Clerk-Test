@@ -5,16 +5,24 @@ using UnityEngine;
 public class DisableLowerButtonWhileDialogue : MonoBehaviour
 {
     [SerializeField] GameObject lowerButton;     
-    [SerializeField] GameObject dialogueWindow;  
+    [SerializeField] GameObject dialogueWindow;
+    [SerializeField] GameObject inputUI;
 
     void Update()
     {
         if (!lowerButton) return;
 
-        // activeSelf is TRUE while dialogue text box is showing
-        bool dialogueShowing = dialogueWindow.activeSelf;
+        bool overlayShowing = false;
 
-        if (lowerButton.activeSelf == dialogueShowing)
-            lowerButton.SetActive(!dialogueShowing);   // toggle only when needed
+        if (dialogueWindow && dialogueWindow.activeSelf)
+            overlayShowing = true;
+
+        if (inputUI && inputUI.activeSelf)
+            overlayShowing = true;
+
+        bool shouldBeActive = !overlayShowing;
+
+        if (lowerButton.activeSelf != shouldBeActive)
+            lowerButton.SetActive(shouldBeActive);
     }
 }
