@@ -21,6 +21,7 @@ public class DeskTrigger : MonoBehaviour
     [SerializeField] TahmasScript tahmasS;
     [SerializeField] LotestScript lotestS;
     [SerializeField] LorneScript lorneS;
+    [SerializeField] VanelleScript vanelleS;
 
     [SerializeField] YarnScript yarnS;
     [SerializeField] RaspberriesScript raspS;
@@ -29,6 +30,11 @@ public class DeskTrigger : MonoBehaviour
 
     [SerializeField] ItemSystem itemScript;
     [SerializeField] movecam movecamScript;
+
+    private void Start()
+    {
+        vanelleS = VanelleScript.instance;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -112,17 +118,7 @@ public class DeskTrigger : MonoBehaviour
     {
         if(gs.coins.Count > 0)
         {
-
-            if (cs.currentCharacter.characterName != "Finch")
-            {
-                gs.isSuctionActive = true;
-                //GameObject questRB = items.Find(item => item.name == "QuestReturn");
-                //qs.GetQuestRB(questRB);
-                Debug.Log("not finch");
-                cs.IsIdle();
-
-            }
-            else
+            if (cs.currentCharacter.characterName == "Finch")
             {
                 if (!finchS.askingForGold)
                 {
@@ -138,7 +134,15 @@ public class DeskTrigger : MonoBehaviour
                     gs.isSuctionActive = true;
                 }
             }
-
+            else
+            {
+                gs.isSuctionActive = true;
+                //GameObject questRB = items.Find(item => item.name == "QuestReturn");
+                //qs.GetQuestRB(questRB);
+                Debug.Log("not finch");
+                //cs.IsIdle();
+            }
+            cs.IsIdle();
         }
 
         //always take return quest
@@ -165,6 +169,7 @@ public class DeskTrigger : MonoBehaviour
         {
             finchS.CheckForReward();
             Debug.Log("Finch Reward call");
+            cs.IsIdle();
         }
 
         if (cs.currentCharacter.characterName == "Andy")
@@ -194,6 +199,12 @@ public class DeskTrigger : MonoBehaviour
         if (cs.currentCharacter.characterName == "Lotest")
         {
             lotestS.CheckForReward();
+            cs.IsIdle();
+        }
+
+        if (cs.currentCharacter.characterName == "Vanelle")
+        {
+            vanelleS.CheckForReward();
             cs.IsIdle();
         }
 

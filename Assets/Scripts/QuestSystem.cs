@@ -138,7 +138,7 @@ public class QuestSystem : MonoBehaviour
             //continue dialogue
             cs.currentCharacterObject.GetComponent<VanelleScript>().EatQuestBDialogue();
             //go from idle to quest task
-            cs.IsQuest();
+            //cs.IsQuest();
             //turn off quest visuals
             visualQuests.SetActive(false);
             //make sure quest A is still available
@@ -202,7 +202,7 @@ public class QuestSystem : MonoBehaviour
         if (cs.isQuest)
         {
             
-            if(cs.currentCharacter.characterName == "Vanelle" && VanelleScript.instance.tagSystem)
+            if(cs.currentCharacter.characterName == "Vanelle" && VanelleScript.instance.questTagSystem)
             {
                 if (!VanelleQuestAScript.instance.questAOnDesk) //if the quest is not on the desk...
                 {

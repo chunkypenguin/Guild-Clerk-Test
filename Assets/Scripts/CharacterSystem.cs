@@ -147,6 +147,14 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager VanelleD1Q1BP1;
     public DialogueManager VanelleD1Q1BP2;
     public DialogueManager VanelleD1Q1BRefuse;
+    public DialogueManager VanelleD2Q1A;
+    public DialogueManager VanelleD2Q1AGA;
+    public DialogueManager VanelleD2Q1AGB;
+    public DialogueManager VanelleD2Q1AGC;
+    public DialogueManager vanelleD2Q1AGPlusRefuse;
+    public DialogueManager vanelleD2Q1AGPlusGive;
+    public DialogueManager vanelleD2Q1AGMinusRefuse;
+    public DialogueManager vanelleD2Q1AGMinusGive;
 
     [Header("Dialogue History")]
     public DialogueManager dialogueHistory;
@@ -242,7 +250,6 @@ public class CharacterSystem : MonoBehaviour
             currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
             ChangeTextColor();
         }
-
     }
 
     public void QuestADialogue()
@@ -295,7 +302,6 @@ public class CharacterSystem : MonoBehaviour
         {
             VanelleD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
         }
-
     }
 
     public void QuestBDialogue()
@@ -357,7 +363,6 @@ public class CharacterSystem : MonoBehaviour
                 //D1 = false;
                 //D2 = true;
             }
-
         }
 
         if (currentCharacter.characterName == "Lotest") //drab
