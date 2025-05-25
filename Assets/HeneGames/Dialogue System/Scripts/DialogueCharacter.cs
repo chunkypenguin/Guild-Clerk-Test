@@ -14,11 +14,15 @@ namespace HeneGames.DialogueSystem
         public string ItemAName;
         public string ItemBName;
 
+        public string ItemANameA;
+        public string ItemBNameB;
+
         public bool choseQuestA;
         public bool choseQuestB;
 
         public bool choseItemA;
         public bool choseItemB;
+        public bool choseItemAA;
 
         public Color textColor;
 

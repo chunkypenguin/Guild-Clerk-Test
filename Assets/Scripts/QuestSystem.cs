@@ -85,17 +85,17 @@ public class QuestSystem : MonoBehaviour
         Collider col = rb.gameObject.GetComponent<Collider>();
         if (col != null) col.enabled = false;
 
-        Vector3 direction = (cs.currentCharacterObject.transform.position - rb.transform.position).normalized;
+        Vector3 direction = (vacuumPoint - rb.transform.position).normalized;
         rb.AddForce(direction * suckForce, ForceMode.Acceleration);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
 
         // Shrink the object as it moves towards the vacuum point
-        float distance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position);
+        float distance = Vector3.Distance(rb.transform.position, vacuumPoint);
         float shrinkFactor = Mathf.Clamp01(distance / initialDistance); // Normalize shrink between 1 and 0
         rb.transform.localScale = startScale * shrinkFactor; // Apply scale reduction
 
         // Check if close enough to be collected
-        if (Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position) < collectDistance)
+        if (Vector3.Distance(rb.transform.position, vacuumPoint) < collectDistance)
         {
             CollectQuest();
         }
@@ -104,9 +104,11 @@ public class QuestSystem : MonoBehaviour
     public void GetQuestRB(GameObject questObject)
     {
         //nomira stuff
-        if(cs.currentCharacter.characterName == "Nomira")
+        if(cs.currentCharacter.characterName == "Nomira" && !NomiraScript.instance.brokeStaff)
         {
             vacuumPoint = ZetoScript.instance.zetoTransform.position; //move quest to zeto
+            Debug.Log("whoa");
+           // NomiraScript.instance.brokeStaff = true;
         }
         else
         {
@@ -161,7 +163,7 @@ public class QuestSystem : MonoBehaviour
             questAHolder.SetActive(true);
         }
 
-        if (cs.currentCharacter.name == "Nomira")
+        if (cs.currentCharacter.name == "Nomira" && !NomiraScript.instance.brokeStaff)
         {
             if (cs.currentCharacter.choseQuestA)
             {
@@ -177,9 +179,8 @@ public class QuestSystem : MonoBehaviour
                 questAHolder.SetActive(true);
                 cs.zetoD1BSteal.StartNewDialogue(cs.dialogueTriggerScript);
             }
-
+            NomiraScript.instance.brokeStaff = true;
         }
-
     }
 
     public void DropQuest(GameObject questObject)

@@ -17,10 +17,13 @@ MonoBehaviour:
   quest:
   - {fileID: 11400000, guid: 7855e8dbe81c0144c817ce6bacffa1f3, type: 2}
   - {fileID: 11400000, guid: c6f2eb31c69f88f4583d8e929daeacac, type: 2}
-  ItemAName: 
-  ItemBName: 
-  choseQuestA: 0
+  ItemAName: Nomira Weapon
+  ItemBName: Divine Arcane Focus
+  ItemANameA: Arcane Focus
+  ItemBNameB: 
+  choseQuestA: 1
   choseQuestB: 0
-  choseItemA: 0
+  choseItemA: 1
   choseItemB: 0
+  choseItemAA: 0
   textColor: {r: 0, g: 0, b: 0, a: 1}

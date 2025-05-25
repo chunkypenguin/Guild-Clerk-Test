@@ -52,13 +52,26 @@ public class MoveCharacter : MonoBehaviour
         else
         {
             startPos = transform.position;
-            endPos = startPos + new Vector3(0, -5, 1);
+            endPos = startPos + new Vector3(-5, -5, 1);
         }
 
 
         transform.position = endPos;
 
         //endPos.transform.position = startPos.transform.position + new Vector3(10.5f, 0, 0);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            if (cs.currentCharacter.characterName == "Nomira")
+            {
+                //NomiraHit();
+                //ZetoJumpAcross();
+                NomiraSlowEnter();
+            }
+        }
     }
 
 
@@ -206,7 +219,10 @@ public class MoveCharacter : MonoBehaviour
             });
 
         }
-
+        else if(cs.currentCharacter.characterName == "Nomira")
+        {
+            NomiraSlowEnter();
+        }
         else
         {
             transform.DOMove(startPos, moveSpeed).OnComplete(() =>
@@ -283,6 +299,7 @@ public class MoveCharacter : MonoBehaviour
         }
     }
 
+    //ZETO AND NOMIRA STUFF
     public void ZetoJumpUp()
     {
         transform.DOJump(startPos, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
@@ -296,6 +313,53 @@ public class MoveCharacter : MonoBehaviour
         transform.DOJump(endPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
         {
             //resume nomari dialogue
+            cs.nomiraD1Q1AB.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+
+    public void ZetoJumpAcross()
+    {
+        transform.DOJump(transform.position + new Vector3(5, 0, 0), jumpSpeed, 3, 0.75f).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            nomiraS.NomiraHit();
+        });
+    }
+
+    public void NomiraMoveToEndFake()
+    {
+        transform.DOMove(endPos, moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraD1Q1AB3.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+    public void NomiraMoveBackToDesk()
+    {
+        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+        {
+            if (cs.currentCharacter.choseQuestA)
+            {
+                cs.nomiraD1Q1AP2.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else if (cs.currentCharacter.choseQuestB)
+            {
+                cs.nomiraD1Q1BP2.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+        });
+    }
+
+    public void NomiraSlowEnter()
+    {
+        transform.DOMove(startPos - new Vector3(9, 0, 0), moveSpeed).OnComplete(() =>
+        {
+            nomiraS.StartDialogue();
+        });
+    }
+
+    public void NomiraCompleteEnter()
+    {
+        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraD1P2.StartNewDialogue(cs.dialogueTriggerScript);
         });
     }
 }

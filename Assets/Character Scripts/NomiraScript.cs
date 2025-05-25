@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class NomiraScript : MonoBehaviour
 {
@@ -10,6 +11,14 @@ public class NomiraScript : MonoBehaviour
 
     [SerializeField] MeshRenderer mr;
 
+    public bool brokeStaff;
+
+    public static NomiraScript instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         cs = CharacterSystem.instance;
@@ -24,5 +33,17 @@ public class NomiraScript : MonoBehaviour
     public void ChangeEmote(Material emote)
     {
         mr.material = emote;
+    }
+
+    public void NomiraHit()
+    {
+        transform.DOPunchPosition(
+            punch: new Vector3(1f, 0f, 0f),  // direction and strength of the punch
+            duration: 0.5f,                 // total time of the punch effect
+            vibrato: 10,                    // how many times it vibrates
+            elasticity: 1f                  // how far it goes beyond the punch vector
+        );
+
+        cs.NomiraD1QOw.StartNewDialogue(cs.dialogueTriggerScript);
     }
 }

@@ -160,8 +160,20 @@ public class CharacterSystem : MonoBehaviour
 
     [Header("Nomira")]
     public DialogueManager nomiraD1P1;
+    public DialogueManager nomiraD1P2;
     public DialogueManager nomiraD1Q1AP1;
+    public DialogueManager nomiraD1Q1AP2;
+    public DialogueManager nomiraD1Q1AEWeapon;
     public DialogueManager nomiraD1Q1BP1;
+    public DialogueManager nomiraD1Q1BP2;
+    public DialogueManager nomiraD1Q1BEDivine;
+    public DialogueManager nomiraD1Q1AB;
+    public DialogueManager nomiraD1Q1AB2;
+    public DialogueManager nomiraD1Q1AB3;
+    public DialogueManager nomiraD1Q1ABEOther;
+    public DialogueManager NomiraD1QOw;
+
+
 
     [Header("Zeto")]
     public DialogueManager zetoD1P1;
@@ -325,7 +337,15 @@ public class CharacterSystem : MonoBehaviour
 
         if (currentCharacter.characterName == "Nomira")
         {
-            nomiraD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+            if (!NomiraScript.instance.brokeStaff)
+            {
+                nomiraD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+            }
+            else
+            {
+                nomiraD1Q1AB2.StartNewDialogue(dialogueTriggerScript);
+            }
+
         }
     }
 
@@ -378,7 +398,15 @@ public class CharacterSystem : MonoBehaviour
 
         if (currentCharacter.characterName == "Nomira")
         {
-            nomiraD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+            if (!NomiraScript.instance.brokeStaff)
+            {
+                nomiraD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+            }
+            else
+            {
+                nomiraD1Q1AB2.StartNewDialogue(dialogueTriggerScript);
+            }
+            
         }
     }
 
