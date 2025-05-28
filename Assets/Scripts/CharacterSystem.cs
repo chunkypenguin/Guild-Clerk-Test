@@ -177,8 +177,19 @@ public class CharacterSystem : MonoBehaviour
 
     [Header("Zeto")]
     public DialogueManager zetoD1P1;
+    public DialogueManager zetoD1QAGMinus;
+    public DialogueManager zetoD1QAGEquals;
+    public DialogueManager zetoD1QAGPlus;
+    public DialogueManager zetonomiraD1P1;
     public DialogueManager zetoD1ASteal;
     public DialogueManager zetoD1BSteal;
+    public DialogueManager zetoP2QA1;
+    public DialogueManager zetoP2QAG;
+    public DialogueManager ZetoP2QB1;
+    public DialogueManager ZetoP2QBGMinus;
+    public DialogueManager ZetoP2QBGEquals;
+    public DialogueManager ZetoP2QBGPlus;
+
 
     [Header("Dialogue History")]
     public DialogueManager dialogueHistory;
@@ -191,6 +202,7 @@ public class CharacterSystem : MonoBehaviour
     [SerializeField] DialogueUI duiScript;
 
     [SerializeField] DialogueCharacter tahmasCharacter;
+    public DialogueCharacter zetoCharacter;
 
     public bool isQuest;
     public bool isReward;

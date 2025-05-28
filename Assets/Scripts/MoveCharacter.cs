@@ -38,6 +38,7 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] ZekeScript zekeS;
     [SerializeField] VanelleScript vanelleS;
     [SerializeField] NomiraScript nomiraS;
+    [SerializeField] ZetoScript zetoS;
 
     [SerializeField] DaySystem ds;
 
@@ -77,10 +78,14 @@ public class MoveCharacter : MonoBehaviour
 
     public void MoveToEnd() //move character out of sight
     {
-        if (cs.currentCharacter.characterName == "Andy")
+        if (cs.currentCharacter.characterName == "Andy" || cs.currentCharacter.characterName == "Zeto Storma")
         {
             transform.DOJump(endPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
             {
+                if (cs.currentCharacter.characterName == "Zeto Storma")
+                {
+                    zetoS.ZetoDefault(); //return back to default
+                }
 
                 if (cs.currentCharacter.characterName == "Andy" && cs.D1)
                 {
@@ -211,11 +216,21 @@ public class MoveCharacter : MonoBehaviour
     public void MoveToDesk()
     {
 
-        if (cs.currentCharacter.characterName == "Andy")
+        if (cs.currentCharacter.characterName == "Andy" || cs.currentCharacter.characterName == "Zeto Storma")
         {
+
+
             transform.DOJump(startPos, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
             {
-                andyS.StartDialogue();
+                if (cs.currentCharacter.characterName == "Andy")
+                {
+                    andyS.StartDialogue();
+                }
+                else if (cs.currentCharacter.characterName == "Zeto Storma")
+                {
+                    zetoS.StartDialogue();
+                }
+
             });
 
         }
@@ -304,7 +319,7 @@ public class MoveCharacter : MonoBehaviour
     {
         transform.DOJump(startPos, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
         {
-            cs.zetoD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+            cs.zetonomiraD1P1.StartNewDialogue(cs.dialogueTriggerScript);
         });
     }
 

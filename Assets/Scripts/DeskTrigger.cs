@@ -92,8 +92,12 @@ public class DeskTrigger : MonoBehaviour
             if (cs.currentCharacter.characterName == "Nomira" && !nomiraS.brokeStaff)
             {
                 cs.nomiraD1Q1AP1.StartNewDialogue(cs.dialogueTriggerScript);
+
                 cs.currentCharacter.choseQuestA = true;
                 cs.currentCharacter.choseQuestB = false;
+                cs.zetoCharacter.choseQuestA = true;
+                cs.zetoCharacter.choseQuestB = false;
+
                 zetoS.zetoQuest = items.Find(item => item.name == "QuestA");
                 cs.IsIdle();
                 //nomiraS.brokeStaff = true;
@@ -119,8 +123,12 @@ public class DeskTrigger : MonoBehaviour
             if (cs.currentCharacter.characterName == "Nomira" && !nomiraS.brokeStaff)
             {
                 cs.nomiraD1Q1BP1.StartNewDialogue(cs.dialogueTriggerScript);
+
                 cs.currentCharacter.choseQuestB = true;
                 cs.currentCharacter.choseQuestA = false;
+                cs.zetoCharacter.choseQuestB = true;
+                cs.zetoCharacter.choseQuestA = false;
+
                 zetoS.zetoQuest = items.Find(item => item.name == "QuestB");
                 cs.IsIdle();
                 //nomiraS.brokeStaff = true;
@@ -237,6 +245,12 @@ public class DeskTrigger : MonoBehaviour
         if (cs.currentCharacter.characterName == "Vanelle")
         {
             vanelleS.CheckForReward();
+            cs.IsIdle();
+        }
+
+        if(cs.currentCharacter.characterName == "Zeto Storma")
+        {
+            zetoS.CheckForReward();
             cs.IsIdle();
         }
 
@@ -387,7 +401,7 @@ public class DeskTrigger : MonoBehaviour
                 {
                     cs.nomiraD1Q1ABEOther.StartNewDialogue(cs.dialogueTriggerScript);
                     cs.currentCharacter.choseItemAA = true;
-                    GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);
+                    GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemANameA);
                     itemS.GetItemRb(itemRB);
                     cs.IsIdle();
                 }

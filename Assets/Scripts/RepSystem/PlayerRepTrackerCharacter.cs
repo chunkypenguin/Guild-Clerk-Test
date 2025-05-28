@@ -101,7 +101,7 @@ public class PlayerRepTrackerCharacter : MonoBehaviour {
 
         // When the player gets to the end of the day (for now just pressing 'space' key), show the end of day reputation visual.
         if (Input.GetKeyDown(showEodRepVisual)) {
-            _reputationVisualizer.ShowEndOfDay();
+            //_reputationVisualizer.ShowEndOfDay();
         }
 
         // When a new day starts, clear the list (for now just pressing 'C' key) of characters the player has interacted with.

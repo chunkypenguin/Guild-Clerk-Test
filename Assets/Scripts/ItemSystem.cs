@@ -76,7 +76,7 @@ public class ItemSystem : MonoBehaviour
     public void ReturnItem(GameObject item)
     {
         item.SetActive(true);
-        item.transform.position = ReturnItemPoint.position;
+        //item.transform.position = ReturnItemPoint.position;
     }
 
     public void ItemGlow()

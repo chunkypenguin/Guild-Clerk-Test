@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public DialogueCharacter[] characters;
 
     [SerializeField] DialogueCharacter finchCharacter;
+    [SerializeField] DialogueCharacter zetoCharacter;
 
     public static GameManager instance;
     private void Awake()
@@ -33,9 +34,11 @@ public class GameManager : MonoBehaviour
             data.ResetBools();
         }
 
-        finchCharacter.choseQuestA = true;
+        finchCharacter.choseQuestA = true; //finch
 
         characters[7].choseQuestA = true; //lotest 
+
+        zetoCharacter.choseQuestA = true; // zeto
     }
 
     public void MenuScene()

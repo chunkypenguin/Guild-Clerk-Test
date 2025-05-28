@@ -4,6 +4,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class UIVisualizer : MonoBehaviour {
     // Assign NPCs in the inspector
@@ -46,6 +47,9 @@ public class UIVisualizer : MonoBehaviour {
     [Tooltip("Drag the 'CoinText' GameObject here")]
     [SerializeField] private GameObject _coinText;
 
+    [SerializeField] private GameObject _newCoinText;
+    [SerializeField] private GameObject _totalCoinText;
+
     // Unity automatically calls Awake when the game starts. This is called before Start().
     // I use this to set up the initial state of the script.
     private void Awake() {
@@ -73,7 +77,7 @@ public class UIVisualizer : MonoBehaviour {
     }
 
     // This function just shows or hides the heart visual in the UI.
-    private void ShowHeartVisual(bool showVisual) {
+    public void ShowHeartVisual(bool showVisual) {
         if (showVisual) {
             // Enable all of the heart slots in the canvas
             foreach (var slot in charHeartSlots) {
@@ -284,7 +288,7 @@ public class UIVisualizer : MonoBehaviour {
         UpdateEodHeartVisuals(averageRep);
     }
 
-    public void UpdateCoinUI() {
+    public void OldUpdateCoinUI() {
 
         if (_coinText == null) {
             Debug.LogWarning("CoinText is not assigned in the inspector.");
@@ -299,6 +303,62 @@ public class UIVisualizer : MonoBehaviour {
 
         Text coinTextComponent = coinNum.GetComponent<Text>();
         if (coinTextComponent == null) {
+            Debug.LogWarning("CoinNum does not have a Text component.");
+            return;
+        }
+
+        // Update the text to show the new amount of coins
+        int coinAmount = DayReputationTracker.Instance.GetGold();
+        coinTextComponent.text = coinAmount.ToString();
+    }
+
+    public void UpdateCoinUI(int coins)
+    {
+
+        if (_newCoinText == null)
+        {
+            Debug.LogWarning("CoinText is not assigned in the inspector.");
+            return;
+        }
+
+        Transform coinNum = _newCoinText.transform.Find("RepCoinNum");
+        if (coinNum == null)
+        {
+            Debug.LogWarning("CoinNum is not found in the CoinText GameObject.");
+            return;
+        }
+
+        TMP_Text coinTextComponent = coinNum.GetComponent<TMP_Text>();
+        if (coinTextComponent == null)
+        {
+            Debug.LogWarning("CoinNum does not have a Text component.");
+            return;
+        }
+
+        // Update the text to show the new amount of coins
+        int coinAmount = coins;
+        coinTextComponent.text = coinAmount.ToString();
+    }
+
+    public void TotalUpdateCoinUI()
+    {
+
+        if (_totalCoinText == null)
+        {
+            Debug.LogWarning("CoinText is not assigned in the inspector.");
+            return;
+        }
+
+        Transform coinNum = _totalCoinText.transform.Find("TotalCoinNum");
+        if (coinNum == null)
+        {
+            Debug.LogWarning("CoinNum is not found in the CoinText GameObject.");
+            return;
+        }
+
+        TMP_Text coinTextComponent = coinNum.GetComponent<TMP_Text>();
+        if (coinTextComponent == null)
+        {
             Debug.LogWarning("CoinNum does not have a Text component.");
             return;
         }

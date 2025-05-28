@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
+  m_Name: ZetoQuestA
+  m_EditorClassIdentifier: 
+  questTitle: "Clear the Ancient Graveyard of Skeletons\r"
+  questDescription: "\"A dozen of skeleton soldiers in the Ancient Graveyard have
+    recently been reanimated. The skeletons are specifically targeting all merchant
+    caravans that carry any precious metals, which is really hurting the Merchant
+    Guild\u2019s ability to engage in trade. \r\n\r\n\r\nThese skeletons have proven
+    themselves to be very dangerous to adventurers and merchants alike, so proceed
+    with caution. Please defeat these skeletons quickly and safely.\" \r"
+  questReward: "Reward: 15 Gold\r"

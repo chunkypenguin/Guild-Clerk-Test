@@ -334,7 +334,7 @@ public class QuestSystem : MonoBehaviour
                 questRDescription.text = cs.currentCharacter.quest[a].questDescription;
                 questRReward.text = cs.currentCharacter.quest[a].questReward;
             }
-            else
+            else if (cs.currentCharacter.characterName == "Andy")
             {
                 Debug.Log("throw out Quest A");
                 bloodyReturnQuest.SetActive(true);
@@ -344,18 +344,42 @@ public class QuestSystem : MonoBehaviour
                 questRDescription.text = cs.currentCharacter.quest[a].questDescription;
                 questRReward.text = cs.currentCharacter.quest[a].questReward;
             }
+            else if(cs.currentCharacter.characterName == "Zeto Storma" && ZetoScript.instance.partOneComplete)
+            {
+                Debug.Log("throw out Quest A");
+                returnQuest.SetActive(true);
+                returnQuest.transform.position = returnPoint.position;
+                //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
+                questRTitle.text = cs.currentCharacter.quest[b].questTitle;
+                questRDescription.text = cs.currentCharacter.quest[b].questDescription;
+                questRReward.text = cs.currentCharacter.quest[b].questReward;
+            }
 
 
         }
         else if (cs.currentCharacter.choseQuestB)
         {
-            Debug.Log("throw out Quest B");
-            returnQuest.SetActive(true);
-            returnQuest.transform.position = returnPoint.position;
-            //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
-            questRTitle.text = cs.currentCharacter.quest[b].questTitle;
-            questRDescription.text = cs.currentCharacter.quest[b].questDescription;
-            questRReward.text = cs.currentCharacter.quest[b].questReward;
+            if(cs.currentCharacter.characterName == "Zeto Storma" && ZetoScript.instance.partOneComplete)
+            {
+                Debug.Log("throw out Quest B");
+                returnQuest.SetActive(true);
+                returnQuest.transform.position = returnPoint.position;
+                //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
+                questRTitle.text = cs.currentCharacter.quest[c].questTitle;
+                questRDescription.text = cs.currentCharacter.quest[c].questDescription;
+                questRReward.text = cs.currentCharacter.quest[c].questReward;
+            }
+            else
+            {
+                Debug.Log("throw out Quest B");
+                returnQuest.SetActive(true);
+                returnQuest.transform.position = returnPoint.position;
+                //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
+                questRTitle.text = cs.currentCharacter.quest[b].questTitle;
+                questRDescription.text = cs.currentCharacter.quest[b].questDescription;
+                questRReward.text = cs.currentCharacter.quest[b].questReward;
+            }
+
         }
     }
 }

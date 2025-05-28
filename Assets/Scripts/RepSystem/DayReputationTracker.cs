@@ -17,7 +17,7 @@ public class DayReputationTracker : MonoBehaviour
     // This is the list of all the characters the player interacts with in the current day.
     [SerializeField]private List<CharacterReputation> _visitedToday = new List<CharacterReputation>();
 
-    private int _playerGold = 0;
+    public int _playerGold = 0;
 
     private void Awake() {
         // This makes sure there's only one instance of this script.
@@ -72,15 +72,19 @@ public class DayReputationTracker : MonoBehaviour
         float rep = EODAverageRep();
         int coinsToAdd = Mathf.RoundToInt(rep * 10f); // 5 coins for 0.5 rep
 
+        //DAILY WAGE
+        //coinsToAdd += 10;
+
         AddCoins(coinsToAdd);
+        _reputationVisualizer.UpdateCoinUI(coinsToAdd);
         Debug.Log($"EOD Rep: {rep}, Coins Added: {coinsToAdd}");
     }
 
     // This function adds coins to the player and updates the coins UI.
     public void AddCoins(int amount) {
-        _playerGold += amount;
+        _playerGold += amount + 10; //rep amount plus daily wage
 
-        _reputationVisualizer.UpdateCoinUI();
+        _reputationVisualizer.TotalUpdateCoinUI();
     }
 
     // Returns how much gold the player has
@@ -96,7 +100,7 @@ public class DayReputationTracker : MonoBehaviour
 
         _playerGold -= amount;
 
-        _reputationVisualizer.UpdateCoinUI();
+        _reputationVisualizer.TotalUpdateCoinUI();
 
         return true;
     }
