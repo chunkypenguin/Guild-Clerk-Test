@@ -39,6 +39,11 @@ public class NomiraScript : MonoBehaviour
 
     public void ChangeEmote(Material emote)
     {
+        if(emote == null)
+        {
+            Debug.Log("No material assigned");
+            return;
+        }
         mr.material = emote;
     }
 
