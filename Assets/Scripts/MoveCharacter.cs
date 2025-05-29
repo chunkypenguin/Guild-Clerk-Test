@@ -53,7 +53,7 @@ public class MoveCharacter : MonoBehaviour
         else
         {
             startPos = transform.position;
-            endPos = startPos + new Vector3(-5, -5, 1);
+            endPos = startPos + new Vector3(-5, -6, 1);
         }
 
 
@@ -179,6 +179,15 @@ public class MoveCharacter : MonoBehaviour
                     }
                 }
 
+                if(cs.currentCharacter.characterName == "Nomira")
+                {
+                    if (!nomiraS.partOneComplete)
+                    {
+                        nomiraS.partOneComplete = true;
+                    }
+
+                }
+
                     cs.StartNewCharacter();
             });
         }
@@ -236,7 +245,45 @@ public class MoveCharacter : MonoBehaviour
         }
         else if(cs.currentCharacter.characterName == "Nomira")
         {
-            NomiraSlowEnter();
+            if(!nomiraS.partOneComplete)
+            {
+                NomiraSlowEnter();
+            }
+            else 
+            {
+                if(cs.currentCharacter.choseQuestA)
+                {
+                    if(cs.currentCharacter.choseItemB || cs.currentCharacter.choseItemAA)
+                    {
+                        //divine and arcane focus
+                        //peak
+                        NomiraSlowEnterOtherArcaneFocus();
+                    }
+                    else if(cs.currentCharacter.choseItemA) //weapon
+                    {
+                        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+                        {
+                            cs.nomiraP2QAWeapon.StartNewDialogue(cs.dialogueTriggerScript);
+                        });
+                    }
+                }
+                else if (cs.currentCharacter.choseQuestB)
+                {
+                    if (cs.currentCharacter.choseItemB) //divine focus
+                    {
+                        //peak
+                        NomiraSlowEnterDivineFocus();
+                    }
+                    else if(cs.currentCharacter.choseItemAA) // other arcane focus
+                    {
+                        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+                        {
+                            cs.nomiraP2QBOtherFocus.StartNewDialogue(cs.dialogueTriggerScript);
+                        });
+                    }
+                }
+            }
+
         }
         else
         {
@@ -306,7 +353,7 @@ public class MoveCharacter : MonoBehaviour
 
                 if (cs.currentCharacter.characterName == "Nomira")
                 {
-                    nomiraS.StartDialogue();
+                    //nomiraS.StartDialogue();
                     Debug.Log("start nomira dialogue");
                 }
 
@@ -329,6 +376,16 @@ public class MoveCharacter : MonoBehaviour
         {
             //resume nomari dialogue
             cs.nomiraD1Q1AB.StartNewDialogue(cs.dialogueTriggerScript);
+
+            if (cs.zetoCharacter.choseQuestA)
+            {
+                zetoS.ZetoCursedDefault();
+            }
+            else if (cs.zetoCharacter.choseQuestB)
+            {
+
+                zetoS.ZetoBurnedDefault();
+            }
         });
     }
 
@@ -364,17 +421,47 @@ public class MoveCharacter : MonoBehaviour
 
     public void NomiraSlowEnter()
     {
-        transform.DOMove(startPos - new Vector3(9, 0, 0), moveSpeed).OnComplete(() =>
+        transform.DOMove(startPos - new Vector3(8, 0, 0), moveSpeed).OnComplete(() =>
         {
             nomiraS.StartDialogue();
         });
     }
 
+    public void NomiraSlowEnterOtherArcaneFocus()
+    {
+        transform.DOMove(startPos - new Vector3(8, 0, 0), moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraP2QAArcaneFocus1.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+    public void NomiraSlowEnterDivineFocus()
+    {
+        transform.DOMove(startPos - new Vector3(8, 0, 0), moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraP2QBDivineFocus1.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
     public void NomiraCompleteEnter()
     {
         transform.DOMove(startPos, moveSpeed).OnComplete(() =>
         {
             cs.nomiraD1P2.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+
+    public void NomiraCompleteEnterDivineFocus()
+    {
+        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraP2QBDivineFocus2.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+
+    public void NomiraCompleteEnterOtherArcaneFocus()
+    {
+        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraP2QAArcaneFocus2.StartNewDialogue(cs.dialogueTriggerScript);
         });
     }
 }

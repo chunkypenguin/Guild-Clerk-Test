@@ -17,6 +17,8 @@ public class ZetoScript : MonoBehaviour
     [SerializeField] MeshRenderer mr;
 
     [SerializeField] Material defaultEmote;
+    [SerializeField] Material burnedEmote;
+    [SerializeField] Material cursedEmote;
 
     public bool partOneComplete;
     private void Awake()
@@ -93,20 +95,20 @@ public class ZetoScript : MonoBehaviour
             }
             else if (cs.currentCharacter.choseQuestB)
             {
-                if (gs.goldAmount == 15) //=
+                if (gs.goldAmount == 35) //=
                 {
                     //do this
                     cs.ZetoP2QBGEquals.StartNewDialogue(cs.dialogueTriggerScript);
 
                 }
-                else if (gs.goldAmount > 15) //+
+                else if (gs.goldAmount > 35) //+
                 {
                     //do this
                     cs.ZetoP2QBGPlus.StartNewDialogue(cs.dialogueTriggerScript);
                     //rep = -1;
                 }
 
-                else if (gs.goldAmount < 15) //-
+                else if (gs.goldAmount < 35) //-
                 {
                     //do this
                     cs.ZetoP2QBGMinus.StartNewDialogue(cs.dialogueTriggerScript);
@@ -132,5 +134,15 @@ public class ZetoScript : MonoBehaviour
     public void ZetoDefault()
     {
         mr.material = defaultEmote;
+    }
+
+    public void ZetoBurnedDefault()
+    {
+        mr.material = burnedEmote;
+    }
+
+    public void ZetoCursedDefault()
+    {
+        mr.material = cursedEmote;
     }
 }

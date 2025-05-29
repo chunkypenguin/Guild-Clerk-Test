@@ -33,6 +33,7 @@ namespace HeneGames.DialogueSystem
 
             choseItemA = false;
             choseItemB = false;
-        }
+            choseItemAA = false;
+    }
     }
 }

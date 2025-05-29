@@ -172,8 +172,21 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager nomiraD1Q1AB3;
     public DialogueManager nomiraD1Q1ABEOther;
     public DialogueManager NomiraD1QOw;
-
-
+    public DialogueManager nomiraP2QAWeapon;
+    public DialogueManager nomiraP2QAArcaneFocus1;
+    public DialogueManager nomiraP2QAArcaneFocus2;
+    public DialogueManager nomiraP2QAGWeaponMinus;
+    public DialogueManager nomiraP2QAGWeaponEquals;
+    public DialogueManager nomiraP2QAGWeaponPlus;
+    public DialogueManager nomiraP2QAGArcaneFoucosMinus;
+    public DialogueManager nomiraP2QAGArcaneFoucosEquals;
+    public DialogueManager nomiraP2QAGArcaneFoucosPlus;
+    public DialogueManager nomiraP2QBDivineFocus1;
+    public DialogueManager nomiraP2QBDivineFocus2;
+    public DialogueManager nomiraP2QBOtherFocus;
+    public DialogueManager nomiraP2QBGDivineFocusMinus;
+    public DialogueManager nomiraP2QBGDivineFocusEquals;
+    public DialogueManager nomiraP2QBGDivineFocusPlus;
 
     [Header("Zeto")]
     public DialogueManager zetoD1P1;

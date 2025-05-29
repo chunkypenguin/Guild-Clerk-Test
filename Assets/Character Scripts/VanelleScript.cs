@@ -49,33 +49,37 @@ public class VanelleScript : MonoBehaviour
 
     private void Update()
     {
-        if (questTagSystem)
+        if(cs.currentCharacter.characterName == "Vanelle")
         {
-            if (!qAScript.questAOnDesk && !questTagOn)
+            if (questTagSystem)
             {
-                refuseTag.SetActive(true);
-                questTagOn = true;
+                if (!qAScript.questAOnDesk && !questTagOn)
+                {
+                    refuseTag.SetActive(true);
+                    questTagOn = true;
+                }
+                else if (qAScript.questAOnDesk && questTagOn)
+                {
+                    refuseTag.SetActive(false);
+                    questTagOn = false;
+                }
             }
-            else if (qAScript.questAOnDesk && questTagOn)
+
+            if (goldTagSystem)
             {
-                refuseTag.SetActive(false);
-                questTagOn = false;
+                if (gs.goldAmount < 1 && !goldTagOn)
+                {
+                    refuseTag.SetActive(true);
+                    goldTagOn = true;
+                }
+                else if (gs.goldAmount > 0 && goldTagOn)
+                {
+                    refuseTag.SetActive(false);
+                    goldTagOn = false;
+                }
             }
         }
 
-        if (goldTagSystem)
-        {
-            if ( gs.goldAmount < 1 && !goldTagOn)
-            {
-                refuseTag.SetActive(true);
-                goldTagOn = true;
-            }
-            else if (gs.goldAmount > 0 && goldTagOn)
-            {
-                refuseTag.SetActive(false);
-                goldTagOn = false;
-            }
-        }
     }
 
     public void GoldTag()

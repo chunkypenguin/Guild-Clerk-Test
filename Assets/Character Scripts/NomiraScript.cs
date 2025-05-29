@@ -15,6 +15,8 @@ public class NomiraScript : MonoBehaviour
 
     public static NomiraScript instance;
 
+    public bool partOneComplete;
+
     private void Awake()
     {
         instance = this;
@@ -28,6 +30,11 @@ public class NomiraScript : MonoBehaviour
     public void StartDialogue()
     {
         cs.nomiraD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+    }
+
+    public void CheckForReward()
+    {
+        //for 5/29
     }
 
     public void ChangeEmote(Material emote)
