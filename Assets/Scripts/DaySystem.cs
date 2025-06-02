@@ -30,6 +30,7 @@ public class DaySystem : MonoBehaviour
     //new stuff for end of day screen
     [SerializeField] TMP_Text dayText;
     [SerializeField] TMP_Text descriptionText;
+    [SerializeField] GameObject nextDayText;
 
     [TextArea(10, 15)]
     [SerializeField] string[] dayDescription;
@@ -145,6 +146,8 @@ public class DaySystem : MonoBehaviour
         dayText.gameObject.SetActive(false);
         descriptionText.gameObject.SetActive(false);
 
+        nextDayText.gameObject.SetActive(false);
+
         _reputationVisualizer.ShowHeartVisual(false);
 
         coinText.SetActive(false);
@@ -170,6 +173,7 @@ public class DaySystem : MonoBehaviour
     {
         dayText.gameObject.SetActive(true);
         descriptionText.gameObject.SetActive(true);
+        nextDayText.SetActive(true);
         coinText.SetActive(true);
         dayText.text = "Day " + dayCount.ToString();
         descriptionText.text = dayDescription[dayCount].ToString(); 
