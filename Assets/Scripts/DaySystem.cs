@@ -55,7 +55,7 @@ public class DaySystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //EndDay();
+            EndDay();
         }
 
         if(Input.GetKeyDown(KeyCode.Space) && canStartNextDay)

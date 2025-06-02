@@ -20,9 +20,27 @@ public class MousePos3D : MonoBehaviour
     [SerializeField] QuestSystem questSystem;
     [SerializeField] CharacterSystem cs;
     [SerializeField] movecam mc;
+
+    //MOUSE CURSOR STUFF
+    [SerializeField] Texture2D cursorTexture;
+    [SerializeField] GameObject cursorUIObject;
+
+
+    Vector2 cursorHotSpot;
+
+    private void Start()
+    {
+        //cursorHotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
+        //Cursor.SetCursor(cursorTexture, cursorHotSpot, CursorMode.ForceSoftware);
+        Cursor.visible = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        //MOUSE STUFF
+        cursorUIObject.transform.position = Input.mousePosition + new Vector3(18, -25, 0);
+
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, guideLayer))
         {

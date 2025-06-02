@@ -17,7 +17,7 @@ MonoBehaviour:
   quest:
   - {fileID: 11400000, guid: 7855e8dbe81c0144c817ce6bacffa1f3, type: 2}
   - {fileID: 11400000, guid: c6f2eb31c69f88f4583d8e929daeacac, type: 2}
-  ItemAName: Nomira Weapon
+  ItemAName: Violent Weapon
   ItemBName: Divine Arcane Focus
   ItemANameA: Arcane Focus
   ItemBNameB: 

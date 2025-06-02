@@ -17,6 +17,11 @@ public class NomiraScript : MonoBehaviour
 
     public bool partOneComplete;
 
+    public GameObject druidStaffGlow;
+    public GameObject divineStaffGlow;
+    public GameObject cosmicStaffGlow;
+    public GameObject weaponGlow;
+
     private void Awake()
     {
         instance = this;
@@ -25,6 +30,7 @@ public class NomiraScript : MonoBehaviour
     {
         cs = CharacterSystem.instance;
         gs = GoldSystem.instance;
+        mr = gameObject.GetComponent<MeshRenderer>();
     }
 
     public void StartDialogue()
@@ -34,7 +40,82 @@ public class NomiraScript : MonoBehaviour
 
     public void CheckForReward()
     {
-        //for 5/29
+        if (cs.currentCharacter.choseQuestA) //RUINS
+        {
+            if (cs.currentCharacter.choseItemB) //divine
+            {
+                if (gs.goldAmount == 40) //=
+                {
+                    //do this
+                    cs.nomiraP2QBGDivineFocusEquals.StartNewDialogue(cs.dialogueTriggerScript);
+
+                }
+                else if (gs.goldAmount > 40) //+
+                {
+                    //do this
+                    cs.nomiraP2QBGDivineFocusPlus.StartNewDialogue(cs.dialogueTriggerScript);
+                    //rep = -1;
+                }
+
+                else if (gs.goldAmount < 40) //-
+                {
+                    //do this
+                    cs.nomiraP2QBGDivineFocusMinus.StartNewDialogue(cs.dialogueTriggerScript);
+                    //rep = -1;
+                }
+            }
+            else //other
+            {
+                cs.nomiraP2QBOtherFocus.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+        }
+        else if (cs.currentCharacter.choseQuestB) //GOLEM
+        {
+            if (cs.currentCharacter.choseItemAA) //weapon
+            {
+                if (gs.goldAmount == 35) //=
+                {
+                    //do this
+                    cs.nomiraP2QAGWeaponEquals.StartNewDialogue(cs.dialogueTriggerScript);
+
+                }
+                else if (gs.goldAmount > 35) //+
+                {
+                    //do this
+                    cs.nomiraP2QAGWeaponPlus.StartNewDialogue(cs.dialogueTriggerScript);
+                    //rep = -1;
+                }
+
+                else if (gs.goldAmount < 35) //-
+                {
+                    //do this
+                    cs.nomiraP2QAGWeaponMinus.StartNewDialogue(cs.dialogueTriggerScript);
+                    //rep = -1;
+                }
+            }
+            else //arcane staff
+            {
+                if (gs.goldAmount == 35) //=
+                {
+                    //do this
+                    cs.nomiraP2QAGArcaneFoucosEquals.StartNewDialogue(cs.dialogueTriggerScript);
+
+                }
+                else if (gs.goldAmount > 35) //+
+                {
+                    //do this
+                    cs.nomiraP2QAGArcaneFoucosPlus.StartNewDialogue(cs.dialogueTriggerScript);
+                    //rep = -1;
+                }
+
+                else if (gs.goldAmount < 35) //-
+                {
+                    //do this
+                    cs.nomiraP2QAGArcaneFoucosMinus.StartNewDialogue(cs.dialogueTriggerScript);
+                    //rep = -1;
+                }
+            }
+        }
     }
 
     public void ChangeEmote(Material emote)

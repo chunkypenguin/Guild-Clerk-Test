@@ -177,11 +177,11 @@ public class UIVisualizer : MonoBehaviour {
 
             bool showFull = absValue >= i + 1f;
             bool showHalf = !showFull && absValue >= i + 0.5f;
-            bool showEmpty = !showFull && !showHalf;
+            //bool showEmpty = !showFull && !showHalf;
 
             // Similar to UpdateCharRepVisual
-            slot.GetChild(0).gameObject.SetActive(showEmpty); // Empty1
-            slot.GetChild(1).gameObject.SetActive(showEmpty); // Empty2
+            //slot.GetChild(0).gameObject.SetActive(showEmpty); // Empty1
+            //slot.GetChild(1).gameObject.SetActive(showEmpty); // Empty2
 
             slot.GetChild(2).gameObject.SetActive(isPositive && showFull); // Pos1
             slot.GetChild(3).gameObject.SetActive(isPositive && showFull); // Pos2
@@ -193,11 +193,11 @@ public class UIVisualizer : MonoBehaviour {
             if (showHalf) {
                 if (isPositive) {
                     slot.GetChild(2).gameObject.SetActive(true); // Pos1
-                    slot.GetChild(1).gameObject.SetActive(true); // Empty2
+                    //slot.GetChild(1).gameObject.SetActive(true); // Empty2
                 }
                 else {
                     slot.GetChild(4).gameObject.SetActive(true); // Neg1
-                    slot.GetChild(1).gameObject.SetActive(true); // Empty2
+                    //slot.GetChild(1).gameObject.SetActive(true); // Empty2
                 }
             }
         }

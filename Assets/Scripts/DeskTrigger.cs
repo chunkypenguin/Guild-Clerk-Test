@@ -254,6 +254,12 @@ public class DeskTrigger : MonoBehaviour
             cs.IsIdle();
         }
 
+        if (cs.currentCharacter.characterName == "Nomira")
+        {
+            nomiraS.CheckForReward();
+            cs.IsIdle();
+        }
+
         if (movecamScript.bottom)
         {
             movecamScript.UpButton();//move button up
@@ -363,7 +369,7 @@ public class DeskTrigger : MonoBehaviour
 
         else if (cs.currentCharacter.characterName == "Nomira")
         {
-            if (cs.currentCharacter.choseQuestA)
+            if (cs.currentCharacter.choseQuestB) //QUEST B (GOLEM)
             {
                 //weapon
                 if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null && items.Find(item => item.name == cs.currentCharacter.ItemANameA) == null)
@@ -394,7 +400,7 @@ public class DeskTrigger : MonoBehaviour
                 }
 
             }
-            else if (cs.currentCharacter.choseQuestB)
+            else if (cs.currentCharacter.choseQuestA) //QUEST A (RUINS)
             {
                 //arcane focus
                 if ((items.Find(item => item.name == cs.currentCharacter.ItemANameA) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)

@@ -627,18 +627,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899473554641832986}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2093739991048211237}
   - {fileID: 5307259540992506856}
-  m_Father: {fileID: 8653494517471354719}
+  m_Father: {fileID: 9007162848551779030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 11.999977, y: -69}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &932645400212599531
@@ -2872,6 +2872,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5591725101684079070}
+  - {fileID: 1306531838708554658}
   - {fileID: 8653494517471354719}
   - {fileID: 6549457818742497802}
   - {fileID: 2750972269812627015}
@@ -3135,7 +3136,6 @@ RectTransform:
   - {fileID: 8219870656395720023}
   - {fileID: 3863502957930196706}
   - {fileID: 3922131506125354770}
-  - {fileID: 1306531838708554658}
   m_Father: {fileID: 9007162848551779030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3174,6 +3174,8 @@ MonoBehaviour:
   eodModeText: {fileID: 7513256845250120363}
   _disableHeartVisual: 1
   _coinText: {fileID: 1110427517776233963}
+  _newCoinText: {fileID: 0}
+  _totalCoinText: {fileID: 0}
 --- !u!1 &4428686224095980287
 GameObject:
   m_ObjectHideFlags: 0

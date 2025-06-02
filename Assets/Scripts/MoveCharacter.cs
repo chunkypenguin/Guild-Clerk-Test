@@ -251,7 +251,7 @@ public class MoveCharacter : MonoBehaviour
             }
             else 
             {
-                if(cs.currentCharacter.choseQuestA)
+                if(cs.currentCharacter.choseQuestB) //QUEST B GOLEM
                 {
                     if(cs.currentCharacter.choseItemB || cs.currentCharacter.choseItemAA)
                     {
@@ -267,7 +267,7 @@ public class MoveCharacter : MonoBehaviour
                         });
                     }
                 }
-                else if (cs.currentCharacter.choseQuestB)
+                else if (cs.currentCharacter.choseQuestA) //QUEST A RUINS
                 {
                     if (cs.currentCharacter.choseItemB) //divine focus
                     {

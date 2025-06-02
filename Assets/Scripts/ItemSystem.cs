@@ -23,7 +23,13 @@ public class ItemSystem : MonoBehaviour
     [SerializeField] LorneScript lorneScript;
     [SerializeField] LotestScript lotestScript;
     [SerializeField] ZekeScript zekeScript;
+    [SerializeField] NomiraScript nomiraScript;
 
+
+    private void Start()
+    {
+        nomiraScript = NomiraScript.instance;
+    }
     private void FixedUpdate()
     {
         if (!isSuctionActive) return;
@@ -110,6 +116,19 @@ public class ItemSystem : MonoBehaviour
             zekeScript.raspberriesGlow.SetActive(true);
         }
 
+        if (cs.currentCharacter.characterName == "Nomira")
+        {
+            nomiraScript.druidStaffGlow.SetActive(true);
+            nomiraScript.divineStaffGlow.SetActive(true);
+            nomiraScript.cosmicStaffGlow.SetActive(true);
+
+            if (cs.currentCharacter.choseQuestB) //if its the golem quest
+            {
+                nomiraScript.weaponGlow.SetActive(true);
+            }
+
+        }
+
     }
 
     public void ItemGlowOff()
@@ -125,5 +144,13 @@ public class ItemSystem : MonoBehaviour
 
         //zeke
         zekeScript.raspberriesGlow.SetActive(false);
+
+        if (cs.currentCharacter.characterName == "Nomira")
+        {
+            nomiraScript.druidStaffGlow.SetActive(false);
+            nomiraScript.divineStaffGlow.SetActive(false);
+            nomiraScript.cosmicStaffGlow.SetActive(false);
+            nomiraScript.weaponGlow.SetActive(false);
+        }
     }
 }
