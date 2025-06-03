@@ -4800,7 +4800,7 @@ AudioSource:
   m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -17528,59 +17528,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
+  - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
+  - {fileID: 11400000, guid: 7c165361cb2abed4dbbae5062f5c38cd, type: 2}
+  - {fileID: 11400000, guid: 6dc1457b030e3a74e899061c38af5fc1, type: 2}
+  - {fileID: 11400000, guid: 6dc1457b030e3a74e899061c38af5fc1, type: 2}
   - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
+  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
+  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
+  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
+  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
   - {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
   - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
-  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
   - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
   - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
-  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
-  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
   - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
-  - {fileID: 11400000, guid: 6dc1457b030e3a74e899061c38af5fc1, type: 2}
   - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
   - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
-  - {fileID: 11400000, guid: 6dc1457b030e3a74e899061c38af5fc1, type: 2}
   - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
-  - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
   - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
   - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
   - {fileID: 11400000, guid: 9c17a12bb6e19e543a4c7753e4d92473, type: 2}
-  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
-  - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
-  - {fileID: 11400000, guid: 7c165361cb2abed4dbbae5062f5c38cd, type: 2}
   - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
   currentCharacter: {fileID: 0}
   characterObjects:
-  - {fileID: 973462376}
+  - {fileID: 1168836904}
+  - {fileID: 1168836904}
+  - {fileID: 1580913493}
+  - {fileID: 1898575738}
+  - {fileID: 1898575738}
   - {fileID: 1937845689}
   - {fileID: 1937845689}
   - {fileID: 1937845689}
   - {fileID: 1298240868}
+  - {fileID: 1937845689}
+  - {fileID: 973462376}
+  - {fileID: 973462376}
+  - {fileID: 1196896048}
+  - {fileID: 1196896048}
+  - {fileID: 973462376}
   - {fileID: 1086671382}
   - {fileID: 1066098676}
-  - {fileID: 1196896048}
   - {fileID: 1298240868}
   - {fileID: 1066098676}
-  - {fileID: 1196896048}
-  - {fileID: 973462376}
   - {fileID: 1066098676}
-  - {fileID: 1898575738}
   - {fileID: 306266341}
   - {fileID: 156297922}
-  - {fileID: 1898575738}
   - {fileID: 517612217}
-  - {fileID: 1168836904}
   - {fileID: 306266341}
   - {fileID: 517612217}
   - {fileID: 1486805168}
-  - {fileID: 973462376}
-  - {fileID: 1168836904}
-  - {fileID: 1580913493}
   - {fileID: 156297922}
   currentCharacterObject: {fileID: 0}
   dialogueTriggerScript: {fileID: 973462384}
@@ -31796,6 +31798,7 @@ MonoBehaviour:
   mr: {fileID: 1168836908}
   joleneDead: 0
   gaveJoleneMoreGold: 0
+  partOneComplete: 0
 --- !u!114 &1168836911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48726,7 +48729,7 @@ AudioSource:
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -49998,6 +50001,8 @@ MonoBehaviour:
   cs: {fileID: 655475413}
   gs: {fileID: 0}
   mr: {fileID: 1898575742}
+  partOneComplete: 0
+  partTwoComplete: 0
 --- !u!114 &1898575745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50907,6 +50912,10 @@ MonoBehaviour:
   andyWarCryInjuredImage: {fileID: 2100000, guid: a948907277c7dec4f888f8e3b9cbdc17, type: 2}
   AndyMomImage: {fileID: 1268794496}
   mr: {fileID: 18385569}
+  partOneComplete: 0
+  partTwoComplete: 0
+  partThreeComplete: 0
+  andyMomVisited: 0
 --- !u!114 &1937845697
 MonoBehaviour:
   m_ObjectHideFlags: 0

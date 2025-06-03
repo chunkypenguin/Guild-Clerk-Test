@@ -51,7 +51,7 @@ public class TutorialScript : MonoBehaviour
 
     public void StartDialogue()
     {
-        if (cs.D3)
+        if (LotestScript.instance.partOneComplete)
         {
             Debug.Log("josie talks about magenta bag");
             cs.josieD3Lotest.StartNewDialogue(cs.dialogueTriggerScript);

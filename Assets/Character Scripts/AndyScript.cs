@@ -33,6 +33,9 @@ public class AndyScript : MonoBehaviour
 
     public bool partOneComplete;
     public bool partTwoComplete;
+    public bool partThreeComplete;
+
+    public bool andyMomVisited;
 
     public static AndyScript instance;
     private void Awake()
@@ -56,6 +59,7 @@ public class AndyScript : MonoBehaviour
             if (cs.currentCharacter.choseQuestA)//dragon quest (andys mom)
             {
                 cs.andyD2Q1A.StartNewDialogue(cs.dialogueTriggerScript);
+                andyMomVisited = true;
             }
             else // fetch quest
             {
@@ -63,6 +67,20 @@ public class AndyScript : MonoBehaviour
                 gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
             }
             
+        }
+        else if (!partThreeComplete)
+        {
+            if (!andyMomVisited)
+            {
+                if (cs.currentCharacter.choseQuestA)//dragon quest (andys mom)
+                {
+                    cs.andyD2Q1A.StartNewDialogue(cs.dialogueTriggerScript);
+                    andyMomVisited = true;
+                }
+            }
+
+            partThreeComplete = true;
+            Debug.Log("day 3 over");
         }
         else
         {

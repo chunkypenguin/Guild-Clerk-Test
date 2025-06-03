@@ -198,12 +198,23 @@ public class MoveCharacter : MonoBehaviour
     {
         transform.position = endPos;
 
-        if(cs.currentCharacter.characterName == "Andy")
+        if(cs.currentCharacter.characterName == "Andy")// if andy on endy of day, if quest A (dragon) andy mom appears the next day, if quest B(fetch) andy does not show up again
         {
-            andyS.ChangeToAndy();
+            if (!AndyScript.instance.partTwoComplete)
+            {
 
 
-            andyS.AndyInjuiredIdle();
+            }
+            if (AndyScript.instance.andyMomVisited)
+            {
+                andyS.ChangeToAndy();
+                andyS.AndyInjuiredIdle();
+
+            }
+            else
+            {
+                andyS.ChangeToMom();
+            }
 
             AndyScript.instance.partTwoComplete = true;
         }
@@ -297,7 +308,7 @@ public class MoveCharacter : MonoBehaviour
                         josieS.TutorialMoveDesk();
                         
                     }
-                    else if (cs.D3)
+                    else if (LotestScript.instance.partOneComplete)
                     {
                         josieS.StartDialogue();
                     }
@@ -384,7 +395,6 @@ public class MoveCharacter : MonoBehaviour
             }
             else if (cs.zetoCharacter.choseQuestB)
             {
-
                 zetoS.ZetoBurnedDefault();
             }
         });

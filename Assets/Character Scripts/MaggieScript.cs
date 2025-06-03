@@ -10,17 +10,21 @@ public class MaggieScript : MonoBehaviour
 
     [SerializeField] MeshRenderer mr;
 
+    public bool partOneComplete;
+    public bool partTwoComplete;
+
     private void Start()
     {
         gs = GoldSystem.instance;
     }
     public void StartDialogue()
     {
-        if (!cs.D1 && cs.D2)
+        if (!partOneComplete)
         {
             cs.maggieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+            partOneComplete = true;
         }
-        else if (!cs.D2 && cs.D3)
+        else if (!partTwoComplete)
         {
             if (cs.currentCharacter.choseQuestA) //food
             {
@@ -32,6 +36,7 @@ public class MaggieScript : MonoBehaviour
                 cs.maggieD2Q1B.StartNewDialogue(cs.dialogueTriggerScript);
                 gameObject.GetComponent<CharacterReputation>().ModifyReputation(1);
             }
+            partTwoComplete = true;
         }
     }
 

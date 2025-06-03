@@ -517,18 +517,45 @@ public class CharacterSystem : MonoBehaviour
             currentCharacter = characters[characterCount];
             currentCharacterObject = characterObjects[characterCount];
             LotestScript.instance.skipJosie = false;
+            Debug.Log("Lotest skip");
         }
         if (currentCharacter.characterName == "Josie" && LotestScript.instance.skipJosie && LotestScript.instance.partOneComplete) //if josies turn, lotest was not skipped on his quest return, skip Josie
         {
             characterCount++;
             currentCharacter = characters[characterCount];
             currentCharacterObject = characterObjects[characterCount];
+            Debug.Log("Josie Skip");
         }
-        if (currentCharacter.characterName == "Andy" && currentCharacter.choseQuestB && AndyScript.instance.partTwoComplete) //if josies turn, lotest was not skipped on his quest return, skip Josie
+        if (currentCharacter.characterName == "Andy" && AndyScript.instance.partThreeComplete && currentCharacter.choseQuestB) //skip andy on his final day
         {
             characterCount++;
             currentCharacter = characters[characterCount];
             currentCharacterObject = characterObjects[characterCount];
+            Debug.Log("andy skip final day");
         }
+        else if (currentCharacter.characterName == "Andy" && (currentCharacter.choseQuestB || AndyScript.instance.andyMomVisited) && AndyScript.instance.partTwoComplete && !AndyScript.instance.partThreeComplete) //skip andy on his third day if quest b was chosen twice or andys mom has already visited
+        {
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            AndyScript.instance.partThreeComplete = true;
+            Debug.Log("andy skip 3rd day");
+        }
+        if (currentCharacter.characterName == "Jolene" && JoleneScript.instance.joleneDead && JoleneScript.instance.partOneComplete) //skip jolene if she died
+        {
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            Debug.Log("Jolene Skip");
+        }
+        if (currentCharacter.characterName == "Tahmas" && !JoleneScript.instance.gaveJoleneMoreGold && !JoleneScript.instance.joleneDead) //skip tahmas if jolene is alive and player didn't give jolene extra gold
+        {
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            Debug.Log("Tahmas Skip");
+        }
+
+
     }
 }
