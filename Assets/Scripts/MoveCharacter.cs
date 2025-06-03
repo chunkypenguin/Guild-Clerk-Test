@@ -87,17 +87,17 @@ public class MoveCharacter : MonoBehaviour
                     zetoS.ZetoDefault(); //return back to default
                 }
 
-                if (cs.currentCharacter.characterName == "Andy" && cs.D1)
-                {
-                    andyS.ChangeToMom();
-                }
-
-                if (cs.currentCharacter.characterName == "Andy")
+                if (cs.currentCharacter.characterName == "Andy" && !AndyScript.instance.partOneComplete)
                 {
                     if (cs.currentCharacter.choseQuestB && cs.D1)
                     {
                         andyS.AndyAngry();
                     }
+                    else
+                    {
+                        andyS.ChangeToMom();
+                    }
+                    AndyScript.instance.partOneComplete = true;
                 }
                 cs.StartNewCharacter();
             });
@@ -120,14 +120,14 @@ public class MoveCharacter : MonoBehaviour
                 {
                     if(joleneS.joleneDead && cs.D3) //if day 3 and jolene has died
                     {
-                        cs.characterCount++;//skip jolene
+                        //cs.characterCount++;//skip jolene
                     }
                 }
                 if (cs.currentCharacter.characterName == "Jolene")
                 {
                     if(!joleneS.gaveJoleneMoreGold && cs.D3) //if player did not give jolene more gold, skip tahmas
                     {
-                        cs.characterCount++;
+                        //cs.characterCount++;
                     }
                 }
 
@@ -135,12 +135,12 @@ public class MoveCharacter : MonoBehaviour
                 {
                     if (!lorneS.gaveYarn && cs.D3) //skip lorne if didnt give yarn
                     {
-                        cs.characterCount++;
+                        //cs.characterCount++;
                         lorneS.StealYarn();
 
                         if (lotestS.lotestCharacter.choseItemB) //skip lotest as well if lotest given valvet pouch of seeds
                         {
-                            cs.characterCount++; //skip to josie
+                            //cs.characterCount++; //skip to josie
                         }
                     }
 
@@ -148,11 +148,11 @@ public class MoveCharacter : MonoBehaviour
 
                 if (cs.currentCharacter.characterName == "Lorne")
                 {
-                    if (lorneS.gaveYarn && cs.D3)
+                    if (lorneS.gaveYarn && cs.D3) //if lorne is leaving on day 3...
                     {
-                        if (lotestS.lotestCharacter.choseItemB)//skip lotest, else stay with lotest
+                        if (lotestS.lotestCharacter.choseItemB)//skip lotest if they chose the bomb beans, else stay with lotest
                         {
-                            cs.characterCount++;
+                            //cs.characterCount++;
                         }
                     }
                 }
@@ -161,10 +161,10 @@ public class MoveCharacter : MonoBehaviour
                 {
                     if (cs.D3)
                     {
-                        cs.characterCount++; //skip josie
+                        //cs.characterCount++; //skip josie
                         if (!andyS.andyCharacter.choseQuestA)
                         {
-                            cs.characterCount++; //skip Andy
+                            //cs.characterCount++; //skip Andy
                             //END GAME
                             ds.EndDay();
                         }
@@ -205,6 +205,7 @@ public class MoveCharacter : MonoBehaviour
 
             andyS.AndyInjuiredIdle();
 
+            AndyScript.instance.partTwoComplete = true;
         }
     }
 

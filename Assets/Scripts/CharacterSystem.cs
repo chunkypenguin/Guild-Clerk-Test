@@ -293,13 +293,7 @@ public class CharacterSystem : MonoBehaviour
             currentCharacter = characters[characterCount];
             currentCharacterObject = characterObjects[characterCount];
 
-            //new shit for reodering characters
-            if(currentCharacter.characterName == "Vanelle" && !currentCharacter.choseQuestA) //if you refused vanelle any quest
-            {
-                characterCount++;
-                currentCharacter = characters[characterCount];
-                currentCharacterObject = characterObjects[characterCount];
-            }
+            SkipCharacter();
 
             //NEW SHIT for rep system
             PlayerRepTrackerCharacter.instance.ActivateNpc(characterCount);
@@ -326,7 +320,7 @@ public class CharacterSystem : MonoBehaviour
         if(currentCharacter.characterName == "Andy")
         {
             //when dragon quest it given
-            if (D1)
+            if (!AndyScript.instance.partOneComplete)
             {
                 andyD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
                 
@@ -389,7 +383,7 @@ public class CharacterSystem : MonoBehaviour
         }
         if(currentCharacter.characterName == "Andy")
         {
-            if (D1)
+            if (!AndyScript.instance.partOneComplete)
             {
                 andyD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
                 currentCharacterObject.GetComponent<CharacterReputation>().RemoveReputation(1);
@@ -500,5 +494,41 @@ public class CharacterSystem : MonoBehaviour
         dialogueHistory.sentences[dialogueHistory.currentSentence].sentence = duiScript.lastMessage;
         dialogueHistory.sentences[dialogueHistory.currentSentence].dialogueCharacter = currentCharacter;
         dialogueHistory.StartNewDialogue(dialogueTriggerScript);
+    }
+
+    private void SkipCharacter()
+    {
+        //new shit for reodering characters
+        if (currentCharacter.characterName == "Vanelle" && !currentCharacter.choseQuestA) //if you refused vanelle any quest
+        {
+            characterCount++; //SKIP VANELLE
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+        }
+        if (currentCharacter.characterName == "Lorne" && !LorneScript.instance.gaveYarn && LorneScript.instance.partTwoComplete) //if you've already talked to Lorne two times and didn't give them Yarn...
+        {
+            characterCount++; //SKIP LORNE
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+        }
+        if (currentCharacter.characterName == "Lotest" && currentCharacter.choseItemB && LotestScript.instance.partOneComplete) //if player gave exploding beans, after part one, skip lotest to Josie
+        {
+            characterCount++; 
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            LotestScript.instance.skipJosie = false;
+        }
+        if (currentCharacter.characterName == "Josie" && LotestScript.instance.skipJosie && LotestScript.instance.partOneComplete) //if josies turn, lotest was not skipped on his quest return, skip Josie
+        {
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+        }
+        if (currentCharacter.characterName == "Andy" && currentCharacter.choseQuestB && AndyScript.instance.partTwoComplete) //if josies turn, lotest was not skipped on his quest return, skip Josie
+        {
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+        }
     }
 }

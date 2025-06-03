@@ -11,35 +11,44 @@ public class PauseScript : MonoBehaviour
     [SerializeField] TMP_Text dayText;
     [SerializeField] TMP_Text _totalCoinText;
 
+    [SerializeField] AudioSource textAudioSource;
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("pressed esc");
-            if (!paused)
-            {
-                paused = true;
-                Paused();
-                Time.timeScale = 0f;
-            }
-            else
-            {
-                paused = false;
-                Time.timeScale = 1f;
-                Unpaused();
-            }
+            PressPause();
+        }
+    }
+
+    public void PressPause()
+    {
+        if (!paused)
+        {
+            paused = true;
+            Paused();
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            paused = false;
+            Time.timeScale = 1f;
+            Unpaused();
         }
     }
 
     private void Paused()
     {
         pauseOverlay.SetActive(true);
-        //dayText.text = "Day " + dayCount.ToString();
+        dayText.text = "Day " + DaySystem.instance.dayCount.ToString();
+        GetCoinsTotal();
+        textAudioSource.volume = 0f;
     }
     private void Unpaused()
     {
         pauseOverlay.SetActive(false);
+        textAudioSource.volume = 0.5f;
     }
 
     void GetCoinsTotal()

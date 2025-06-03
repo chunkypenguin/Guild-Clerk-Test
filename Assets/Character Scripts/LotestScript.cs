@@ -14,18 +14,30 @@ public class LotestScript : MonoBehaviour
     public GameObject greenGlow;
     public GameObject velvetGlow;
 
+    public bool partOneComplete;
+    public bool skipJosie;
+
+    public static LotestScript instance;
+    private void Awake()
+    {
+        instance = this;   
+    }
     private void Start()
     {
         gs = GoldSystem.instance;
+
+        //start off expecting to skip josie, changed in cs script later if chooses bean bombs
+        skipJosie = true;
     }
 
     public void StartDialogue()
     {
-        if (!cs.D1 && cs.D2)
+        if (!partOneComplete)
         {
             cs.lotestD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+            partOneComplete = true;
         }
-        else if (!cs.D1 && !cs.D2 && cs.D3)
+        else
         {
             cs.lotestD2Q1A.StartNewDialogue(cs.dialogueTriggerScript);
         }

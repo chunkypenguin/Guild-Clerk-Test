@@ -88,30 +88,29 @@ public class ItemSystem : MonoBehaviour
     public void ItemGlow()
     {
         Debug.Log("glow");
-        if (cs.D1)
+        if (!LorneScript.instance.partOneComplete)
         {
             if(cs.currentCharacter.characterName == "Lorne")
             {
                 lorneScript.purplePackageGlow.SetActive(true);
                 lorneScript.blackPackageGlow.SetActive(true);
             }
-
         }
-        else if(cs.D2)
+        else
         {
             if (cs.currentCharacter.characterName == "Lorne")
             {
                 lorneScript.yarnGlow.SetActive(true);
             }
-
-            if (cs.currentCharacter.characterName == "Lotest")
-            {
-                lotestScript.greenGlow.SetActive(true);
-                lotestScript.velvetGlow.SetActive(true);
-            }
         }
-        
-        if(cs.currentCharacter.characterName == "Zeke")
+
+        if (cs.currentCharacter.characterName == "Lotest")
+        {
+            lotestScript.greenGlow.SetActive(true);
+            lotestScript.velvetGlow.SetActive(true);
+        }
+
+        if (cs.currentCharacter.characterName == "Zeke")
         {
             zekeScript.raspberriesGlow.SetActive(true);
         }

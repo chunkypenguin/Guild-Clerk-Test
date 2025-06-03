@@ -41,7 +41,7 @@ public class DaySystem : MonoBehaviour
     //refernce to coin text
     [SerializeField] GameObject coinText;
 
-    [SerializeField] DaySystem instance;
+    public static DaySystem instance;
     private void Awake()
     {
         instance = this;
@@ -56,7 +56,7 @@ public class DaySystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            EndDay();
+            //EndDay();
         }
 
         if(Input.GetKeyDown(KeyCode.Space) && canStartNextDay)

@@ -32,7 +32,6 @@ public class VanelleScript : MonoBehaviour
     {
         instance = this;
         mr = gameObject.GetComponent<MeshRenderer>();
-        vanelleIdle = gameObject.GetComponent<Material>();
     }
 
     // Start is called before the first frame update

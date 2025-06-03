@@ -25,7 +25,6 @@ public class ZetoScript : MonoBehaviour
         instance = this;
     }
 
-
     private void Start()
     {
         zetoTransform = transform;

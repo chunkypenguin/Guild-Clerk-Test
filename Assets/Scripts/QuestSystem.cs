@@ -337,7 +337,7 @@ public class QuestSystem : MonoBehaviour
             }
             else if(cs.currentCharacter.characterName != "Andy")
             {
-                Debug.Log("throw out Quest A");
+                Debug.Log("everyone else throw out Quest A");
                 returnQuest.SetActive(true);
                 returnQuest.transform.position = returnPoint.position;
                 //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
@@ -347,7 +347,7 @@ public class QuestSystem : MonoBehaviour
             }
             else if (cs.currentCharacter.characterName == "Andy")
             {
-                Debug.Log("throw out Quest A");
+                Debug.Log("Andy throw out Quest A");
                 bloodyReturnQuest.SetActive(true);
                 bloodyReturnQuest.transform.position = returnPoint.position;
                 //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);

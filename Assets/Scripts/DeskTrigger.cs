@@ -277,7 +277,7 @@ public class DeskTrigger : MonoBehaviour
         //CHECK TO SEE FOR LORNE STUFF
         if (cs.currentCharacter.characterName == "Lorne")
         {
-            if (cs.D1)
+            if (!LorneScript.instance.partOneComplete)
             {
                 if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
                 {
@@ -292,10 +292,12 @@ public class DeskTrigger : MonoBehaviour
                     cs.ItemADialogue();
                     //cs.pickedQ1A = true;
                     cs.IsIdle();
+
+                    LorneScript.instance.partOneComplete = true;
                 }
             }
 
-            else if (cs.D2)
+            else if (!LorneScript.instance.partTwoComplete)
             {
                 //If lorne gets yarn
                 if ((items.Find(item => item.name == cs.currentCharacter.ItemBName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemAName) == null)
@@ -311,6 +313,8 @@ public class DeskTrigger : MonoBehaviour
                     //cs.pickedQ1A = true;
                     cs.IsIdle();
                     lorneS.gaveYarn = true;
+
+                    LorneScript.instance.partTwoComplete = true;
                 }
 
                 else
@@ -321,8 +325,12 @@ public class DeskTrigger : MonoBehaviour
                         cs.lorneD2ItemRefuse.StartNewDialogue(cs.dialogueTriggerScript);
                         itemScript.ItemGlowOff();
                         cs.IsIdle();
+
+                        LorneScript.instance.partTwoComplete = true;
                     }
                 }
+
+                
             }
 
 

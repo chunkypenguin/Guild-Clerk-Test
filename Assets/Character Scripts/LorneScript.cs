@@ -35,6 +35,14 @@ public class LorneScript : MonoBehaviour
 
     public bool gaveYarn;
 
+    public bool partOneComplete;
+    public bool partTwoComplete;
+
+    public static LorneScript instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Update()
     {
         if (tagSystem)
@@ -54,15 +62,17 @@ public class LorneScript : MonoBehaviour
 
     public void StartDialogue()
     {
-        if (cs.D1 && !cs.D2)
+        if (!partOneComplete)
         {
             cs.lorneD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+            //partOneComplete = true;
         }
-        else if (!cs.D1 && cs.D2)
+        else if (!partTwoComplete)
         {
             cs.lorneD2P1.StartNewDialogue(cs.dialogueTriggerScript);
+            //partTwoComplete = true;
         }
-        else if (!cs.D1 && !cs.D2 && cs.D3)
+        else if (partTwoComplete)
         {
             if (gaveYarn)
             {
