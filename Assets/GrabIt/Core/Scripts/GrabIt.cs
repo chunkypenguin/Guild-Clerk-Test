@@ -18,8 +18,8 @@ public class GrabObjectProperties{
 		[Header("Input")]
 		[SerializeField] KeyCode m_rotatePitchPosKey = KeyCode.I;
 		[SerializeField] KeyCode m_rotatePitchNegKey = KeyCode.K;
-		[SerializeField] KeyCode m_rotateYawPosKey = KeyCode.L;
-		[SerializeField] KeyCode m_rotateYawNegKey = KeyCode.J;
+		//[SerializeField] KeyCode m_rotateYawPosKey = KeyCode.L;
+		//[SerializeField] KeyCode m_rotateYawNegKey = KeyCode.J;
 
 		[Header("Grab properties")]
 
@@ -27,9 +27,9 @@ public class GrabObjectProperties{
 		[Range(4, 50)]
 		float m_grabSpeed = 7;
 
-		[SerializeField]
-		[Range(0.1f, 5)]
-		float m_grabMinDistance = 1;
+		//[SerializeField]
+		//[Range(0.1f, 5)]
+		//float m_grabMinDistance = 1;
 
 		[SerializeField]
 		[Range(4, 25)]

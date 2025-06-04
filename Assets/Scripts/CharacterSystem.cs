@@ -35,6 +35,10 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager josieD1G1BP1;
     public DialogueManager josieD1G1CP1;
     public DialogueManager josieD3Lotest;
+    public DialogueManager josieKalin1;
+    public DialogueManager josieKalin2;
+    public DialogueManager josieKalinEGive;
+    public DialogueManager josieKalinERefuse;
 
     [Header("Greg")]
     public DialogueManager gregD1P1;
@@ -202,6 +206,12 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager ZetoP2QBGMinus;
     public DialogueManager ZetoP2QBGEquals;
     public DialogueManager ZetoP2QBGPlus;
+
+    [Header("Kalin")]
+    public DialogueManager KalinP1;
+    public DialogueManager KalinQ1AGMinus;
+    public DialogueManager KalinQ1AGEquals;
+    public DialogueManager KalinQ1AGPlus;
 
 
     [Header("Dialogue History")]
@@ -452,6 +462,11 @@ public class CharacterSystem : MonoBehaviour
             zekeD3Feed.StartNewDialogue(dialogueTriggerScript);
             currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
         }
+
+        if (currentCharacter.characterName == "Josie")
+        {
+            josieKalinEGive.StartNewDialogue(dialogueTriggerScript);
+        }
     }
     public void ItemBDialogue()
     {
@@ -519,6 +534,8 @@ public class CharacterSystem : MonoBehaviour
             LotestScript.instance.skipJosie = false;
             Debug.Log("Lotest skip");
         }
+
+        //JOSIE NONSENSE
         if (currentCharacter.characterName == "Josie" && LotestScript.instance.skipJosie && LotestScript.instance.partOneComplete) //if josies turn, lotest was not skipped on his quest return, skip Josie
         {
             characterCount++;
@@ -526,6 +543,8 @@ public class CharacterSystem : MonoBehaviour
             currentCharacterObject = characterObjects[characterCount];
             Debug.Log("Josie Skip");
         }
+
+        //ANDY NONSENSE
         if (currentCharacter.characterName == "Andy" && AndyScript.instance.partThreeComplete && currentCharacter.choseQuestB) //skip andy on his final day
         {
             characterCount++;
@@ -541,6 +560,8 @@ public class CharacterSystem : MonoBehaviour
             AndyScript.instance.partThreeComplete = true;
             Debug.Log("andy skip 3rd day");
         }
+
+
         if (currentCharacter.characterName == "Jolene" && JoleneScript.instance.joleneDead && JoleneScript.instance.partOneComplete) //skip jolene if she died
         {
             characterCount++;

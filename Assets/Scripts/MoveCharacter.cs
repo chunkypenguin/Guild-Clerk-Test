@@ -39,6 +39,7 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] VanelleScript vanelleS;
     [SerializeField] NomiraScript nomiraS;
     [SerializeField] ZetoScript zetoS;
+    [SerializeField] KalinScript kalinS;
 
     [SerializeField] DaySystem ds;
 
@@ -60,6 +61,11 @@ public class MoveCharacter : MonoBehaviour
         transform.position = endPos;
 
         //endPos.transform.position = startPos.transform.position + new Vector3(10.5f, 0, 0);
+    }
+
+    private void Start()
+    {
+        kalinS = KalinScript.instance;
     }
 
     private void Update()
@@ -369,6 +375,11 @@ public class MoveCharacter : MonoBehaviour
                     Debug.Log("start nomira dialogue");
                 }
 
+                if (cs.currentCharacter.characterName == "Kalin")
+                {
+                    kalinS.StartDialogue();
+                    Debug.Log("start Kalin dialogue");
+                }
             });
         }
     }
@@ -473,6 +484,30 @@ public class MoveCharacter : MonoBehaviour
         transform.DOMove(startPos, moveSpeed).OnComplete(() =>
         {
             cs.nomiraP2QAArcaneFocus2.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+
+    public void JosieMoveToEndKalin()
+    {
+        transform.DOMove(endPos, moveSpeed).OnComplete(() =>
+        {
+            if (kalinS.gaveGold)
+            {
+                cs.josieKalin1.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else
+            {
+                cs.StartNewCharacter();
+            }
+            
+        });
+    }
+
+    public void JosieCompleteEnter()
+    {
+        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+        {
+            cs.josieKalin2.StartNewDialogue(cs.dialogueTriggerScript);
         });
     }
 }

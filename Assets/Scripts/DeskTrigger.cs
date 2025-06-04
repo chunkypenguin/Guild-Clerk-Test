@@ -24,6 +24,7 @@ public class DeskTrigger : MonoBehaviour
     [SerializeField] VanelleScript vanelleS;
     [SerializeField] NomiraScript nomiraS;
     [SerializeField] ZetoScript zetoS;
+    [SerializeField] KalinScript kalinS;
 
     [SerializeField] YarnScript yarnS;
     [SerializeField] RaspberriesScript raspS;
@@ -44,6 +45,7 @@ public class DeskTrigger : MonoBehaviour
         vanelleS = VanelleScript.instance;
         zetoS = ZetoScript.instance;
         nomiraS = NomiraScript.instance;
+        kalinS = KalinScript.instance;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -260,6 +262,12 @@ public class DeskTrigger : MonoBehaviour
             cs.IsIdle();
         }
 
+        if (cs.currentCharacter.characterName == "Kalin")
+        {
+            kalinS.CheckForReward();
+            cs.IsIdle();
+        }
+
         if (movecamScript.bottom)
         {
             movecamScript.UpButton();//move button up
@@ -372,6 +380,27 @@ public class DeskTrigger : MonoBehaviour
                     }
                     cs.IsIdle();
                 }
+            }
+        }
+
+        else if (cs.currentCharacter.characterName == "Josie")
+        {
+            if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+            {
+                GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);
+                itemS.GetItemRb(itemRB);
+                cs.currentCharacter.choseItemA = true;
+                cs.currentCharacter.choseItemB = false;
+                cs.ItemADialogue();
+                cs.IsIdle();
+            }
+
+            else
+            {
+                //refuse
+                cs.josieKalinERefuse.StartNewDialogue(cs.dialogueTriggerScript);
+                itemScript.ItemGlowOff();
+                cs.IsIdle();
             }
         }
 

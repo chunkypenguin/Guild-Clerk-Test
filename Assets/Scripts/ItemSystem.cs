@@ -24,11 +24,13 @@ public class ItemSystem : MonoBehaviour
     [SerializeField] LotestScript lotestScript;
     [SerializeField] ZekeScript zekeScript;
     [SerializeField] NomiraScript nomiraScript;
+    [SerializeField] TutorialScript tutorialScript;
 
 
     private void Start()
     {
         nomiraScript = NomiraScript.instance;
+        tutorialScript = TutorialScript.instance;
     }
     private void FixedUpdate()
     {
@@ -87,7 +89,7 @@ public class ItemSystem : MonoBehaviour
 
     public void ItemGlow()
     {
-        Debug.Log("glow");
+        //Debug.Log("glow");
         if (!LorneScript.instance.partOneComplete)
         {
             if(cs.currentCharacter.characterName == "Lorne")
@@ -127,7 +129,10 @@ public class ItemSystem : MonoBehaviour
             }
 
         }
-
+        if (cs.currentCharacter.characterName == "Josie")
+        {
+            tutorialScript.goldBundleGlow.SetActive(true);
+        }
     }
 
     public void ItemGlowOff()
@@ -150,6 +155,10 @@ public class ItemSystem : MonoBehaviour
             nomiraScript.divineStaffGlow.SetActive(false);
             nomiraScript.cosmicStaffGlow.SetActive(false);
             nomiraScript.weaponGlow.SetActive(false);
+        }
+        if (cs.currentCharacter.characterName == "Josie")
+        {
+            tutorialScript.goldBundleGlow.SetActive(false);
         }
     }
 }

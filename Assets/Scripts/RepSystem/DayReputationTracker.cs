@@ -84,6 +84,14 @@ public class DayReputationTracker : MonoBehaviour
     public void AddCoins(int amount) {
         _playerGold += amount + 10; //rep amount plus daily wage
 
+        //CHECK IF PLAYER KEEPS JOSIES GOLD BUNDLE, MAKE SURE TO SET GOLD BUNDLE TO SET ACTIVE FALSE AFTER
+        TutorialScript.instance.GoldCheck();
+        if (TutorialScript.instance.hasGoldBundle)
+        {
+            _playerGold += 25;
+            Debug.Log("add25gold");
+        }
+
         _reputationVisualizer.TotalUpdateCoinUI();
     }
 

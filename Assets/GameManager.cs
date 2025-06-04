@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] DialogueCharacter zetoCharacter;
     [SerializeField] DialogueCharacter vanelleCharacter;
     [SerializeField] DialogueCharacter lotestCharacter;
+    [SerializeField] DialogueCharacter kalinCharacter;
 
     public static GameManager instance;
     private void Awake()
@@ -43,6 +44,8 @@ public class GameManager : MonoBehaviour
         zetoCharacter.choseQuestA = true; // zeto
 
         vanelleCharacter.choseQuestA = true; // Vanelle
+
+        kalinCharacter.choseQuestA = true; // Kalin
 
     }
 

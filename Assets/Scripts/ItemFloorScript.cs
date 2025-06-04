@@ -56,7 +56,7 @@ public class ItemFloorScript : MonoBehaviour
     {
         if (gameObject.CompareTag("Quest"))
         {
-            if (gameObject.name == "QuestReturn")
+            if (gameObject.name == "QuestReturn" || gameObject.name == "BloodyQuestReturn")
             {
                 prb = gameObject.transform.parent.GetComponent<Rigidbody>();
 

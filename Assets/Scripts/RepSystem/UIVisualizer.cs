@@ -49,6 +49,7 @@ public class UIVisualizer : MonoBehaviour {
 
     [SerializeField] private GameObject _newCoinText;
     [SerializeField] private GameObject _totalCoinText;
+    [SerializeField] private TMP_Text dailyTotalText;
 
     // Unity automatically calls Awake when the game starts. This is called before Start().
     // I use this to set up the initial state of the script.
@@ -67,7 +68,7 @@ public class UIVisualizer : MonoBehaviour {
             }
 
             // Automatically calls the UpdateCharRepVisual function when the reputation changes
-            rep.onReputationChanged.AddListener((int repValue) => UpdateCharRepVisual(repValue, true));
+            rep.onReputationChanged.AddListener((int repValue, int gainedRep) => UpdateCharRepVisual(repValue, gainedRep, true));
         }
 
         // If you checked to disable the heart visual for NPCs, this will set all of the heart slots to inactive at the start of the game
@@ -94,10 +95,15 @@ public class UIVisualizer : MonoBehaviour {
 
     // This updates the UI heart visuals for each NPC's rep.
     // You can turn this off if you want by checking Disable Heart Visual in the inspector.
-    public void UpdateCharRepVisual(int currentRep, bool playFX = true) {
+    public void UpdateCharRepVisual(int currentRep, int gainedRep, bool playFX = true) {
         // Play the heart FX when NPC's rep changes
         if (playFX) {
-            PlayHeartFX(currentRep);
+
+            if(gainedRep != 0)
+            {
+                PlayHeartFX(currentRep);
+            }
+
         }
 
         // If the heart visual is disabled, return.
@@ -337,7 +343,20 @@ public class UIVisualizer : MonoBehaviour {
 
         // Update the text to show the new amount of coins
         int coinAmount = coins;
-        coinTextComponent.text = coinAmount.ToString();
+
+        if (coinAmount <= 0)
+        {
+            coinAmount = 0;
+        }
+        coinTextComponent.text = "+ " + coinAmount.ToString();
+
+        TutorialScript.instance.GoldCheck();
+        if (TutorialScript.instance.hasGoldBundle)
+        {
+            coinAmount += 25;
+            Debug.Log("add25gold");
+        }
+        dailyTotalText.text = (coinAmount + 10).ToString();
     }
 
     public void TotalUpdateCoinUI()
@@ -363,8 +382,12 @@ public class UIVisualizer : MonoBehaviour {
             return;
         }
 
-        // Update the text to show the new amount of coins
+        // Update the text to show the total amount of coins
         int coinAmount = DayReputationTracker.Instance.GetGold();
+        if(coinAmount <= 0)
+        {
+            coinAmount = 0;
+        }
         coinTextComponent.text = coinAmount.ToString();
     }
 }

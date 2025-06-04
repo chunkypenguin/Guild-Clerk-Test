@@ -31,6 +31,8 @@ public class DaySystem : MonoBehaviour
     [SerializeField] TMP_Text dayText;
     [SerializeField] TMP_Text descriptionText;
     [SerializeField] GameObject nextDayText;
+    [SerializeField] GameObject goldBundleText;
+    [SerializeField] GameObject nextDayButton;
 
     [TextArea(10, 15)]
     [SerializeField] string[] dayDescription;
@@ -115,17 +117,18 @@ public class DaySystem : MonoBehaviour
                 canStartNextDay = true;
                 cs.currentCharacterObject.GetComponent<MoveCharacter>().MoveEndDay();
 
-                //remove return items
-                foreach (GameObject obj in returnItems)
-                {
-                    obj.SetActive(false);
-                }
 
                 //new stuff
                 _reputationVisualizer.ShowEndOfDay();
                 Debug.Log("should do end of day stuff");
                 EndOfDayScreen();
 
+
+                //remove return items
+                foreach (GameObject obj in returnItems)
+                {
+                    obj.SetActive(false);
+                }
             });
 
 
@@ -140,13 +143,20 @@ public class DaySystem : MonoBehaviour
 
     public void NewDay()
     {
+        canStartNextDay = false;//for the space bar option i guess
+
+        TutorialScript.instance.hasGoldBundle = false;
+
         dayOneTextObject.SetActive(false);
         dayTwoTextObject.SetActive(false);
 
         dayText.gameObject.SetActive(false);
         descriptionText.gameObject.SetActive(false);
 
-        nextDayText.gameObject.SetActive(false);
+        //nextDayText.gameObject.SetActive(false);
+        nextDayButton.SetActive(false);
+
+        goldBundleText.SetActive(false);
 
         _reputationVisualizer.ShowHeartVisual(false);
 
@@ -173,11 +183,16 @@ public class DaySystem : MonoBehaviour
     {
         dayText.gameObject.SetActive(true);
         descriptionText.gameObject.SetActive(true);
-        nextDayText.SetActive(true);
+        //nextDayText.SetActive(true);
+        nextDayButton.SetActive(true);
         coinText.SetActive(true);
         dayText.text = "Day " + dayCount.ToString();
         descriptionText.text = dayDescription[dayCount].ToString(); 
 
+        if(TutorialScript.instance.goldBundle.activeSelf)
+        {
+            goldBundleText.SetActive(true);
+        }
         
     }
 }

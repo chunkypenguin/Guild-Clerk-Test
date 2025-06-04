@@ -17,10 +17,13 @@ MonoBehaviour:
   quest:
   - {fileID: 11400000, guid: 607944331b544bb4fbbcd6bad21275f4, type: 2}
   - {fileID: 11400000, guid: 1d2fbb86a94ff6340aa8ebc4728db365, type: 2}
-  ItemAName: 
+  ItemAName: GoldBundle
   ItemBName: 
-  choseQuestA: 1
-  choseQuestB: 0
+  ItemANameA: 
+  ItemBNameB: 
+  choseQuestA: 0
+  choseQuestB: 1
   choseItemA: 0
   choseItemB: 0
+  choseItemAA: 0
   textColor: {r: 0.36927217, g: 0.24518654, b: 0.033343967, a: 1}
