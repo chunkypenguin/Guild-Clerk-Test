@@ -220,6 +220,12 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager achillesQ1A;
     public DialogueManager achillesQ1B;
 
+    [Header("Ishizu")]
+    public DialogueManager ishizuP1;
+    public DialogueManager ishizuRed1;
+    public DialogueManager ishizuTeal1;
+    public DialogueManager ishizuRed2;
+
 
     [Header("Dialogue History")]
     public DialogueManager dialogueHistory;
@@ -484,6 +490,11 @@ public class CharacterSystem : MonoBehaviour
         {
             josieKalinEGive.StartNewDialogue(dialogueTriggerScript);
         }
+
+        if (currentCharacter.characterName == "Ishizu")
+        {
+            ishizuRed1.StartNewDialogue(dialogueTriggerScript);
+        }
     }
     public void ItemBDialogue()
     {
@@ -510,6 +521,11 @@ public class CharacterSystem : MonoBehaviour
         {
             lotestD1ItemB1.StartNewDialogue(dialogueTriggerScript);
             currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
+        }
+
+        if (currentCharacter.characterName == "Ishizu")
+        {
+            ishizuTeal1.StartNewDialogue(dialogueTriggerScript);
         }
     }
 

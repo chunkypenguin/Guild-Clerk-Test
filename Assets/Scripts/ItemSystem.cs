@@ -25,12 +25,19 @@ public class ItemSystem : MonoBehaviour
     [SerializeField] ZekeScript zekeScript;
     [SerializeField] NomiraScript nomiraScript;
     [SerializeField] TutorialScript tutorialScript;
+    [SerializeField] IshizuScript ishizuScript;
 
+    public static ItemSystem instance;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
         nomiraScript = NomiraScript.instance;
         tutorialScript = TutorialScript.instance;
+        ishizuScript = IshizuScript.instance;
     }
     private void FixedUpdate()
     {
@@ -133,6 +140,12 @@ public class ItemSystem : MonoBehaviour
         {
             tutorialScript.goldBundleGlow.SetActive(true);
         }
+
+        if (cs.currentCharacter.characterName == "Ishizu")
+        {
+            ishizuScript.redHerbGlow.SetActive(true);
+            ishizuScript.tealHerbGlow.SetActive(true);
+        }
     }
 
     public void ItemGlowOff()
@@ -159,6 +172,11 @@ public class ItemSystem : MonoBehaviour
         if (cs.currentCharacter.characterName == "Josie")
         {
             tutorialScript.goldBundleGlow.SetActive(false);
+        }
+        if (cs.currentCharacter.characterName == "Ishizu")
+        {
+            ishizuScript.redHerbGlow.SetActive(false);
+            ishizuScript.tealHerbGlow.SetActive(false);
         }
     }
 }
