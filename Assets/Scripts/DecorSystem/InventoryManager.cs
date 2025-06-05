@@ -34,6 +34,11 @@ public class InventoryManager : MonoBehaviour
         //InitializeSlots(clerkSlots);
         //InitializeSlots(knickKnackSlots);
         //InitializeSlots(ceilingSlots);
+
+        InitializePreFilledSlots(textureSlots, ItemType.Texture);
+        InitializePreFilledSlots(clerkSlots, ItemType.Clerk);
+        InitializePreFilledSlots(knickKnackSlots, ItemType.KnickKnack);
+        InitializePreFilledSlots(ceilingSlots, ItemType.Ceiling);
     }
 
     // void InitializeSlots(List<InventorySlot> slots)
@@ -43,6 +48,22 @@ public class InventoryManager : MonoBehaviour
     //         slot.SetLocked(lockedIcon);
     //     }
     // }
+
+    void InitializePreFilledSlots(List<InventorySlot> slots, ItemType type)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.isFilled)
+            {
+                BoothItem data = slot.GetComponent<BoothItem>();
+                slot.SetItem(data.icon,
+                onSelect: () => HandleSelection(slot, data),
+                onCancel: () => HandleDeselection(slot, data));
+
+                selectedBoothItems.Add(slot.gameObject);
+            }
+        }
+    }
 
     public void AddItem(GameObject boothItem)
     {
@@ -69,26 +90,6 @@ public class InventoryManager : MonoBehaviour
         selectedBoothItems.Add(boothItem);
 
         Debug.Log("Added item: " + data);
-        //Destroy(boothItem);
-    }
-
-    public void PurchaseSelectedItems()
-    {
-        if (selectedBoothItems.Count == 0) return;
-
-        BoothItem firstItem = selectedBoothItems[0].GetComponent<BoothItem>();
-        if (firstItem != null && tabManager != null)
-        {
-            tabManager.OpenTabByType(firstItem.type);
-        }
-
-        List<GameObject> toPurchase = new(selectedBoothItems);
-        foreach (GameObject item in toPurchase)
-        {
-            BoothManager.Instance.FinalizePurchase(item);
-            Destroy(item);
-        }
-        selectedBoothItems.Clear();
     }
 
     void HandleSelection(InventorySlot slot, BoothItem data)
@@ -106,13 +107,12 @@ public class InventoryManager : MonoBehaviour
 
     void HandleDeselection(InventorySlot slot, BoothItem data)
     {
-        //slot.ClearSlot(lockedIcon);
-
         if (activeItems.TryGetValue(data.type.ToString(), out GameObject visual))
         {
             Destroy(visual);
             activeItems.Remove(data.type.ToString());
         }
+        slot.GetComponent<Image>().color = Color.white;
     }
 
     List<InventorySlot> GetSlotList(ItemType type)

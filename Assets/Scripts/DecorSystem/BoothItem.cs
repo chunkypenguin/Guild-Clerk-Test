@@ -5,19 +5,8 @@ using UnityEngine;
 public class BoothItem : MonoBehaviour
 {
     public string itemName;
+    public int cost;
     public Sprite icon;
     public InventoryManager.ItemType type;
     public GameObject visualPrefab;
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("CheckoutBox"))
-        {
-            InventoryManager inventory = FindObjectOfType<InventoryManager>();
-            if (inventory != null)
-            {
-                inventory.AddItem(gameObject);
-            }
-        }
-    }
 }
