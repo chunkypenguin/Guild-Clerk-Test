@@ -13149,6 +13149,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
@@ -13896,6 +13908,18 @@ MonoBehaviour:
       - m_Target: {fileID: 726354694}
         m_TargetAssemblyTypeName: DaySystem, Assembly-CSharp
         m_MethodName: EndDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22207,24 +22231,8 @@ MonoBehaviour:
     a tinge of happiness. You know that whatever comes next in the future, it\u2019s
     going to be just as fun and exciting as the days before. You simply can\u2019t
     imagine the job getting boring after all. \r"
-  - "The end of your shift comes and you start to pack up. You take a look at your
-    station and can\u2019t help but smile. Sure, thus far it\u2019s been the most
-    violent pendulum swing of either the nicest people you've ever met to the craziest
-    people the guild could legally call an adventurer\u2014but it\u2019s kind of
-    fun in an odd way. \r\n\r\nYou finish packing stuff in your bag and walk out
-    the doors. After a couple of steps you look back at the big guild house and feel
-    a tinge of happiness. You know that whatever comes next in the future, it\u2019s
-    going to be just as fun and exciting as the days before. You simply can\u2019t
-    imagine the job getting boring after all. \r"
-  - "The end of your shift comes and you start to pack up. You take a look at your
-    station and can\u2019t help but smile. Sure, thus far it\u2019s been the most
-    violent pendulum swing of either the nicest people you've ever met to the craziest
-    people the guild could legally call an adventurer\u2014but it\u2019s kind of
-    fun in an odd way. \r\n\r\nYou finish packing stuff in your bag and walk out
-    the doors. After a couple of steps you look back at the big guild house and feel
-    a tinge of happiness. You know that whatever comes next in the future, it\u2019s
-    going to be just as fun and exciting as the days before. You simply can\u2019t
-    imagine the job getting boring after all. \r"
+  - Day 4 Description
+  - Day 5 Description
   _reputationVisualizer: {fileID: 978439109}
   coinText: {fileID: 271905013}
 --- !u!4 &726354695
@@ -26932,7 +26940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Reward: 50 Gold'
+  m_text: 'Reward: 85 Gold'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
@@ -28832,6 +28840,7 @@ MonoBehaviour:
   goldBundle: {fileID: 1735427242}
   hasGoldBundle: 0
   lotestJosieStarted: 0
+  josieDayOneComplete: 0
 --- !u!114 &973462386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41769,6 +41778,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
@@ -50908,7 +50929,7 @@ MonoBehaviour:
           m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
     sentence: It's too bad I lost my quest contract during glorius battle but I'm
-      pretty sure you owe me 50 gold for this beast's head!
+      pretty sure you owe me big time!
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -58241,6 +58262,18 @@ MonoBehaviour:
       - m_Target: {fileID: 726354694}
         m_TargetAssemblyTypeName: DaySystem, Assembly-CSharp
         m_MethodName: EndDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -66111,6 +66144,18 @@ MonoBehaviour:
       - m_Target: {fileID: 726354694}
         m_TargetAssemblyTypeName: DaySystem, Assembly-CSharp
         m_MethodName: EndDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1937845691}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

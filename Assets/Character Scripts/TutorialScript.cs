@@ -42,6 +42,7 @@ public class TutorialScript : MonoBehaviour
 
     //Lotest check
     public bool lotestJosieStarted;
+    public bool josieDayOneComplete;
 
     public static TutorialScript instance;
 
@@ -239,6 +240,7 @@ public class TutorialScript : MonoBehaviour
             else
             {
                 cs.josieD1P5.StartNewDialogue(cs.dialogueTriggerScript);
+                josieDayOneComplete = true;
             }
         }
     }

@@ -578,7 +578,7 @@ public class CharacterSystem : MonoBehaviour
         }
 
         //JOSIE NONSENSE
-        if (currentCharacter.characterName == "Josie" && LotestScript.instance.skipJosie && LotestScript.instance.partOneComplete) //if josies turn, lotest was not skipped on his quest return, skip Josie
+        if (currentCharacter.characterName == "Josie" && LotestScript.instance.skipJosie && LotestScript.instance.partOneComplete && TutorialScript.instance.josieDayOneComplete) //if josies turn, lotest was not skipped on his quest return, skip Josie
         {
             characterCount++;
             currentCharacter = characters[characterCount];

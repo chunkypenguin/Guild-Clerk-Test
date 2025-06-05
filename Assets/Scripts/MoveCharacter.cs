@@ -99,7 +99,7 @@ public class MoveCharacter : MonoBehaviour
 
                 if (cs.currentCharacter.characterName == "Andy" && !AndyScript.instance.partOneComplete)
                 {
-                    if (cs.currentCharacter.choseQuestB && cs.D1)
+                    if (cs.currentCharacter.choseQuestB)
                     {
                         andyS.AndyAngry();
                     }
@@ -108,6 +108,21 @@ public class MoveCharacter : MonoBehaviour
                         andyS.ChangeToMom();
                     }
                     AndyScript.instance.partOneComplete = true;
+                }
+                else if(cs.currentCharacter.characterName == "Andy" && AndyScript.instance.partOneComplete) //MOVED FROM END OF DAY FUNCTION
+                {
+                    if (AndyScript.instance.andyMomVisited)
+                    {
+                        andyS.ChangeToAndy();
+                        andyS.AndyInjuiredIdle();
+
+                    }
+                    else
+                    {
+                        andyS.ChangeToMom();
+                    }
+
+                    AndyScript.instance.partTwoComplete = true;
                 }
                 cs.StartNewCharacter();
             });
@@ -229,28 +244,28 @@ public class MoveCharacter : MonoBehaviour
 
     public void MoveEndDay()
     {
-        transform.position = endPos;
+        //transform.position = endPos;
 
-        if(cs.currentCharacter.characterName == "Andy")// if andy on endy of day, if quest A (dragon) andy mom appears the next day, if quest B(fetch) andy does not show up again
-        {
-            if (!AndyScript.instance.partTwoComplete)
-            {
+        //if(cs.currentCharacter.characterName == "Andy")// if andy on endy of day, if quest A (dragon) andy mom appears the next day, if quest B(fetch) andy does not show up again
+        //{
+        //    if (!AndyScript.instance.partTwoComplete)
+        //    {
 
 
-            }
-            if (AndyScript.instance.andyMomVisited)
-            {
-                andyS.ChangeToAndy();
-                andyS.AndyInjuiredIdle();
+        //    }
+        //    if (AndyScript.instance.andyMomVisited)
+        //    {
+        //        andyS.ChangeToAndy();
+        //        andyS.AndyInjuiredIdle();
 
-            }
-            else
-            {
-                andyS.ChangeToMom();
-            }
+        //    }
+        //    else
+        //    {
+        //        andyS.ChangeToMom();
+        //    }
 
-            AndyScript.instance.partTwoComplete = true;
-        }
+        //    AndyScript.instance.partTwoComplete = true;
+        //}
     }
 
     public void MoveToStart()
