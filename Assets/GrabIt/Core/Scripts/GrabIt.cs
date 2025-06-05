@@ -141,7 +141,7 @@ public class GrabObjectProperties{
                     }
 
 				} else if (Input.GetMouseButtonDown(1)) {
-					m_applyImpulse = true;
+					//m_applyImpulse = true;
 				}
 			}
 			else //if not holding an object

@@ -118,17 +118,17 @@ public class AndyScript : MonoBehaviour
         {
             cs.andyD2Q1BP2.StartNewDialogue(cs.dialogueTriggerScript);
         }
-        else if(gs.goldAmount == 50)
+        else if(gs.goldAmount == 85)
         {
             cs.andyD3G1B.StartNewDialogue(cs.dialogueTriggerScript);
             rep = 1;
         }
-        else if (gs.goldAmount > 50)
+        else if (gs.goldAmount > 85)
         {
             cs.andyD3G1B.StartNewDialogue(cs.dialogueTriggerScript);
             rep = 2;
         }
-        else if(gs.goldAmount < 50)
+        else if(gs.goldAmount < 85)
         {
             cs.andyD3G1A.StartNewDialogue(cs.dialogueTriggerScript);
             rep = -1;

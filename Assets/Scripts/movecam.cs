@@ -29,6 +29,7 @@ public class movecam : MonoBehaviour
 
     //TUTORIAL STUFF
     public bool tutorial;
+    bool rightTut;
     //[SerializeField] bool turnedRight;
     //[SerializeField] bool turnedLeft;
     [SerializeField] public bool dontFlash;
@@ -48,9 +49,47 @@ public class movecam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+
+        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) //LEFT
         {
-            //ButtonFlashUp();
+            if(!lockLeft)
+            {
+                LeftButton();
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) //RIGHT
+        {
+            if (!lockRight)
+            {
+                RightButton();
+                if (!rightTut)
+                {
+                    TutorialScript.instance.JosieTutDialogue(CharacterSystem.instance.josieD1P4);
+                    rightTut = true;
+                }
+
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) //UP
+        {
+            if (canOpenDrawer)
+            {
+                UpButton();
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) //DOWN
+        {
+            if (canOpenDrawer)
+            {
+                BottomButton();
+            }
+
         }
 
         //else if (Input.GetKeyDown(KeyCode.A))

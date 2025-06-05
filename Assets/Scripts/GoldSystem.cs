@@ -32,6 +32,11 @@ public class GoldSystem : MonoBehaviour
 
     public static GoldSystem instance;
 
+    //NEW CLICK/HOLD
+    private Coroutine holdCoroutine;
+    int upDown;
+
+
     private void Awake()
     {
         instance = this; 
@@ -76,7 +81,7 @@ public class GoldSystem : MonoBehaviour
                 if (col != null) col.enabled = false;
 
                 Vector3 direction = (cs.currentCharacterObject.transform.position - coin.transform.position).normalized;
-                rb.AddForce(direction * suckForce, ForceMode.Acceleration);
+                rb.AddForce(direction * suckForce, ForceMode.Force); //was acceleration
                 rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
             }
 
@@ -85,6 +90,49 @@ public class GoldSystem : MonoBehaviour
             {
                 CollectCoin(coin);
             }
+        }
+    }
+
+    public void PointerDown(int updown)
+    {
+        upDown = updown;
+        holdCoroutine = StartCoroutine(RepeatAction());
+    }
+
+    public void PointerUp()
+    {
+        StopHold();
+
+    }
+
+    public void PointerExit()
+    {
+        StopHold();
+    }
+
+    private void StopHold()
+    {
+        if (holdCoroutine != null)
+        {
+            StopCoroutine(holdCoroutine);
+            holdCoroutine = null;
+        }
+    }
+
+    private IEnumerator RepeatAction()
+    {
+        while (true)
+        {
+            if(upDown == 0)
+            {
+                PressedDown();
+            }
+            else if (upDown == 1)
+            {
+                PressedUp();
+            }
+
+            yield return new WaitForSeconds(0.15f);
         }
     }
 
@@ -118,7 +166,7 @@ public class GoldSystem : MonoBehaviour
         {
             addedGold = true;
         }
-        if (goldAmount < 50) // Cap at 50
+        if (goldAmount < 100) // Cap at 100
         {
             goldAmount++;
             goldText.text = goldAmount.ToString();
