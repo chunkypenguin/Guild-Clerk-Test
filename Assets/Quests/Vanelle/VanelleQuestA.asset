@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
   m_Name: VanelleQuestA
   m_EditorClassIdentifier: 
-  questTitle: Forage for 5 Mandrakes in the Under Root Woods
+  questTitle: Forage for 3 Mandrakes in the Under Root Woods
   questDescription: "\u201CI\u2019m experimenting on a new spell I created, but I
     need more material components to do further research. I am too occupied to fetch
     more mandrakes myself, so if any capable adventurer could gather these for me,
