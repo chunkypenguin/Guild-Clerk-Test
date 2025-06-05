@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class CharacterSystem : MonoBehaviour
 {
-    public DialogueCharacter[] characters; //for example, Josie character
+    //public DialogueCharacter[] characters; //for example, Josie character
+    public List<DialogueCharacter> characters;
     public DialogueCharacter currentCharacter;
 
-    public GameObject[] characterObjects;
+    //public GameObject[] characterObjects;
+    public List<GameObject> characterObjects;
     public GameObject currentCharacterObject;
 
     public DialogueTrigger dialogueTriggerScript;
@@ -33,6 +35,12 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager josieD1G1BP1;
     public DialogueManager josieD1G1CP1;
     public DialogueManager josieD3Lotest;
+    public DialogueManager josieKalin1;
+    public DialogueManager josieKalin2;
+    public DialogueManager josieKalinEGive;
+    public DialogueManager josieKalinERefuse;
+    public DialogueManager josieAchillesQ1A;
+    public DialogueManager josieAchillesQ1B;
 
     [Header("Greg")]
     public DialogueManager gregD1P1;
@@ -141,6 +149,83 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager zekeD3Refuse1;
     public DialogueManager zekeD3Refuse2;
 
+    [Header("Vanelle")]
+    public DialogueManager vanelleD1P1;
+    public DialogueManager VanelleD1Q1AP1;
+    public DialogueManager VanelleD1Q1BP1;
+    public DialogueManager VanelleD1Q1BP2;
+    public DialogueManager VanelleD1Q1BRefuse;
+    public DialogueManager VanelleD2Q1A;
+    public DialogueManager VanelleD2Q1AGA;
+    public DialogueManager VanelleD2Q1AGB;
+    public DialogueManager VanelleD2Q1AGC;
+    public DialogueManager vanelleD2Q1AGPlusRefuse;
+    public DialogueManager vanelleD2Q1AGPlusGive;
+    public DialogueManager vanelleD2Q1AGMinusRefuse;
+    public DialogueManager vanelleD2Q1AGMinusGive;
+
+    [Header("Nomira")]
+    public DialogueManager nomiraD1P1;
+    public DialogueManager nomiraD1P2;
+    public DialogueManager nomiraD1Q1AP1;
+    public DialogueManager nomiraD1Q1AP2;
+    public DialogueManager nomiraD1Q1AEWeapon;
+    public DialogueManager nomiraD1Q1BP1;
+    public DialogueManager nomiraD1Q1BP2;
+    public DialogueManager nomiraD1Q1BEDivine;
+    public DialogueManager nomiraD1Q1AB;
+    public DialogueManager nomiraD1Q1AB2;
+    public DialogueManager nomiraD1Q1AB3;
+    public DialogueManager nomiraD1Q1ABEOther;
+    public DialogueManager NomiraD1QOw;
+    public DialogueManager nomiraP2QAWeapon;
+    public DialogueManager nomiraP2QAArcaneFocus1;
+    public DialogueManager nomiraP2QAArcaneFocus2;
+    public DialogueManager nomiraP2QAGWeaponMinus;
+    public DialogueManager nomiraP2QAGWeaponEquals;
+    public DialogueManager nomiraP2QAGWeaponPlus;
+    public DialogueManager nomiraP2QAGArcaneFoucosMinus;
+    public DialogueManager nomiraP2QAGArcaneFoucosEquals;
+    public DialogueManager nomiraP2QAGArcaneFoucosPlus;
+    public DialogueManager nomiraP2QBDivineFocus1;
+    public DialogueManager nomiraP2QBDivineFocus2;
+    public DialogueManager nomiraP2QBOtherFocus;
+    public DialogueManager nomiraP2QBGDivineFocusMinus;
+    public DialogueManager nomiraP2QBGDivineFocusEquals;
+    public DialogueManager nomiraP2QBGDivineFocusPlus;
+
+    [Header("Zeto")]
+    public DialogueManager zetoD1P1;
+    public DialogueManager zetoD1QAGMinus;
+    public DialogueManager zetoD1QAGEquals;
+    public DialogueManager zetoD1QAGPlus;
+    public DialogueManager zetonomiraD1P1;
+    public DialogueManager zetoD1ASteal;
+    public DialogueManager zetoD1BSteal;
+    public DialogueManager zetoP2QA1;
+    public DialogueManager zetoP2QAG;
+    public DialogueManager ZetoP2QB1;
+    public DialogueManager ZetoP2QBGMinus;
+    public DialogueManager ZetoP2QBGEquals;
+    public DialogueManager ZetoP2QBGPlus;
+
+    [Header("Kalin")]
+    public DialogueManager KalinP1;
+    public DialogueManager KalinQ1AGMinus;
+    public DialogueManager KalinQ1AGEquals;
+    public DialogueManager KalinQ1AGPlus;
+
+    [Header("Achilles")]
+    public DialogueManager achillesP1;
+    public DialogueManager achillesQ1A;
+    public DialogueManager achillesQ1B;
+
+    [Header("Ishizu")]
+    public DialogueManager ishizuP1;
+    public DialogueManager ishizuRed1;
+    public DialogueManager ishizuTeal1;
+    public DialogueManager ishizuRed2;
+
 
     [Header("Dialogue History")]
     public DialogueManager dialogueHistory;
@@ -153,6 +238,7 @@ public class CharacterSystem : MonoBehaviour
     [SerializeField] DialogueUI duiScript;
 
     [SerializeField] DialogueCharacter tahmasCharacter;
+    public DialogueCharacter zetoCharacter;
 
     public bool isQuest;
     public bool isReward;
@@ -221,7 +307,7 @@ public class CharacterSystem : MonoBehaviour
     public void StartNewCharacter()
     {
         characterCount++;
-        if (characterCount == characters.Length)
+        if (characterCount == characters.Count) //characters.Length
         {
             Debug.Log("no more");
         }
@@ -230,13 +316,14 @@ public class CharacterSystem : MonoBehaviour
             currentCharacter = characters[characterCount];
             currentCharacterObject = characterObjects[characterCount];
 
+            SkipCharacter();
+
             //NEW SHIT for rep system
             PlayerRepTrackerCharacter.instance.ActivateNpc(characterCount);
 
             currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
             ChangeTextColor();
         }
-
     }
 
     public void QuestADialogue()
@@ -256,7 +343,7 @@ public class CharacterSystem : MonoBehaviour
         if(currentCharacter.characterName == "Andy")
         {
             //when dragon quest it given
-            if (D1)
+            if (!AndyScript.instance.partOneComplete)
             {
                 andyD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
                 
@@ -285,6 +372,28 @@ public class CharacterSystem : MonoBehaviour
             currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
         }
 
+        if (currentCharacter.characterName == "Vanelle")
+        {
+            VanelleD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+        }
+
+        if (currentCharacter.characterName == "Nomira")
+        {
+            if (!NomiraScript.instance.brokeStaff)
+            {
+                nomiraD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
+            }
+            else
+            {
+                nomiraD1Q1AB2.StartNewDialogue(dialogueTriggerScript);
+            }
+
+        }
+
+        if (currentCharacter.characterName == "Achilles")
+        {
+            achillesQ1A.StartNewDialogue(dialogueTriggerScript);
+        }
     }
 
     public void QuestBDialogue()
@@ -302,7 +411,7 @@ public class CharacterSystem : MonoBehaviour
         }
         if(currentCharacter.characterName == "Andy")
         {
-            if (D1)
+            if (!AndyScript.instance.partOneComplete)
             {
                 andyD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
                 currentCharacterObject.GetComponent<CharacterReputation>().RemoveReputation(1);
@@ -328,6 +437,29 @@ public class CharacterSystem : MonoBehaviour
             tahmasCharacter.choseQuestB = true;
             currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
         }
+
+        if (currentCharacter.characterName == "Vanelle")
+        {
+            VanelleD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+        }
+
+        if (currentCharacter.characterName == "Nomira")
+        {
+            if (!NomiraScript.instance.brokeStaff)
+            {
+                nomiraD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
+            }
+            else
+            {
+                nomiraD1Q1AB2.StartNewDialogue(dialogueTriggerScript);
+            }
+            
+        }
+
+        if (currentCharacter.characterName == "Achilles")
+        {
+            achillesQ1B.StartNewDialogue(dialogueTriggerScript);
+        }
     }
 
     public void ItemADialogue()
@@ -340,7 +472,6 @@ public class CharacterSystem : MonoBehaviour
                 //D1 = false;
                 //D2 = true;
             }
-
         }
 
         if (currentCharacter.characterName == "Lotest") //drab
@@ -353,6 +484,16 @@ public class CharacterSystem : MonoBehaviour
         {
             zekeD3Feed.StartNewDialogue(dialogueTriggerScript);
             currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
+        }
+
+        if (currentCharacter.characterName == "Josie")
+        {
+            josieKalinEGive.StartNewDialogue(dialogueTriggerScript);
+        }
+
+        if (currentCharacter.characterName == "Ishizu")
+        {
+            ishizuRed1.StartNewDialogue(dialogueTriggerScript);
         }
     }
     public void ItemBDialogue()
@@ -381,6 +522,11 @@ public class CharacterSystem : MonoBehaviour
             lotestD1ItemB1.StartNewDialogue(dialogueTriggerScript);
             currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
         }
+
+        if (currentCharacter.characterName == "Ishizu")
+        {
+            ishizuTeal1.StartNewDialogue(dialogueTriggerScript);
+        }
     }
 
     public void ChangeTextColor()
@@ -396,5 +542,74 @@ public class CharacterSystem : MonoBehaviour
         dialogueHistory.sentences[dialogueHistory.currentSentence].sentence = duiScript.lastMessage;
         dialogueHistory.sentences[dialogueHistory.currentSentence].dialogueCharacter = currentCharacter;
         dialogueHistory.StartNewDialogue(dialogueTriggerScript);
+    }
+
+    private void SkipCharacter()
+    {
+        //new shit for reodering characters
+        if (currentCharacter.characterName == "Vanelle" && !currentCharacter.choseQuestA) //if you refused vanelle any quest
+        {
+            characterCount++; //SKIP VANELLE
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+        }
+        if (currentCharacter.characterName == "Lorne" && !LorneScript.instance.gaveYarn && LorneScript.instance.partTwoComplete) //if you've already talked to Lorne two times and didn't give them Yarn...
+        {
+            characterCount++; //SKIP LORNE
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+        }
+        if (currentCharacter.characterName == "Lotest" && currentCharacter.choseItemB && LotestScript.instance.partOneComplete) //if player gave exploding beans, after part one, skip lotest to Josie
+        {
+            characterCount++; 
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            LotestScript.instance.skipJosie = false;
+            Debug.Log("Lotest skip");
+        }
+
+        //JOSIE NONSENSE
+        if (currentCharacter.characterName == "Josie" && LotestScript.instance.skipJosie && LotestScript.instance.partOneComplete) //if josies turn, lotest was not skipped on his quest return, skip Josie
+        {
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            Debug.Log("Josie Skip");
+        }
+
+        //ANDY NONSENSE
+        if (currentCharacter.characterName == "Andy" && AndyScript.instance.partThreeComplete && currentCharacter.choseQuestB) //skip andy on his final day
+        {
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            Debug.Log("andy skip final day");
+        }
+        else if (currentCharacter.characterName == "Andy" && (currentCharacter.choseQuestB || AndyScript.instance.andyMomVisited) && AndyScript.instance.partTwoComplete && !AndyScript.instance.partThreeComplete) //skip andy on his third day if quest b was chosen twice or andys mom has already visited
+        {
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            AndyScript.instance.partThreeComplete = true;
+            Debug.Log("andy skip 3rd day");
+        }
+
+
+        if (currentCharacter.characterName == "Jolene" && JoleneScript.instance.joleneDead && JoleneScript.instance.partOneComplete) //skip jolene if she died
+        {
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            Debug.Log("Jolene Skip");
+        }
+        if (currentCharacter.characterName == "Tahmas" && !JoleneScript.instance.gaveJoleneMoreGold && !JoleneScript.instance.joleneDead) //skip tahmas if jolene is alive and player didn't give jolene extra gold
+        {
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            Debug.Log("Tahmas Skip");
+        }
+
+
     }
 }

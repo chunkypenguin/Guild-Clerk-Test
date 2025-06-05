@@ -16,18 +16,15 @@ public class TahmasScript : MonoBehaviour
     }
     public void StartDialogue()
     {
-        if (!cs.D2 && cs.D3)
+        if (cs.currentCharacter.choseQuestA)
         {
-            if (cs.currentCharacter.choseQuestA)
-            {
-                cs.tahmasD3JoleneQA3.StartNewDialogue(cs.dialogueTriggerScript);
-                Debug.Log("tahmas A");
-            }
-            else
-            {
-                cs.tahmasD3JoleneB.StartNewDialogue(cs.dialogueTriggerScript);
-                Debug.Log("tahmas B");
-            }
+            cs.tahmasD3JoleneQA3.StartNewDialogue(cs.dialogueTriggerScript);
+            Debug.Log("tahmas A");
+        }
+        else
+        {
+            cs.tahmasD3JoleneB.StartNewDialogue(cs.dialogueTriggerScript);
+            Debug.Log("tahmas B");
         }
     }
 

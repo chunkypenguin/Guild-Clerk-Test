@@ -17,6 +17,8 @@ public class GregScript : MonoBehaviour
     [SerializeField] Material gregHappy;
     [SerializeField] Material gregArrow;
 
+    public bool partOneComplete;
+
     //bool D1 = true;
     //bool D2 = false;
 
@@ -29,11 +31,12 @@ public class GregScript : MonoBehaviour
 
     public void StartDialogue()
     {
-        if(cs.D1 && !cs.D2)
+        if(!partOneComplete)
         {
             cs.gregD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+            partOneComplete = true;
         }
-        else if(!cs.D1 && cs.D2)
+        else
         {
             int rep = 0;
             if (cs.currentCharacter.choseQuestA)

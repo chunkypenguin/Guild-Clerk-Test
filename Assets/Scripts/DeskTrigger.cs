@@ -21,6 +21,10 @@ public class DeskTrigger : MonoBehaviour
     [SerializeField] TahmasScript tahmasS;
     [SerializeField] LotestScript lotestS;
     [SerializeField] LorneScript lorneS;
+    [SerializeField] VanelleScript vanelleS;
+    [SerializeField] NomiraScript nomiraS;
+    [SerializeField] ZetoScript zetoS;
+    [SerializeField] KalinScript kalinS;
 
     [SerializeField] YarnScript yarnS;
     [SerializeField] RaspberriesScript raspS;
@@ -29,6 +33,20 @@ public class DeskTrigger : MonoBehaviour
 
     [SerializeField] ItemSystem itemScript;
     [SerializeField] movecam movecamScript;
+
+    public static DeskTrigger instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    private void Start()
+    {
+        vanelleS = VanelleScript.instance;
+        zetoS = ZetoScript.instance;
+        nomiraS = NomiraScript.instance;
+        kalinS = KalinScript.instance;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -72,34 +90,64 @@ public class DeskTrigger : MonoBehaviour
         //Quest A
         if ((items.Find(item => item.name == "QuestA") != null) && items.Find(item => item.name == "QuestB") == null)
         {
-            GameObject questRB = items.Find(item => item.name == "QuestA");
-            qs.GetQuestRB(questRB);
-            cs.currentCharacter.choseQuestA = true;
-            cs.currentCharacter.choseQuestB = false;
-            //Debug.Log("QuestA found! Performing action...");
-            // Add your action here
-            cs.QuestADialogue();
-            cs.pickedQ1A = true;
+            //nomira stuff
+            if (cs.currentCharacter.characterName == "Nomira" && !nomiraS.brokeStaff)
+            {
+                cs.nomiraD1Q1AP1.StartNewDialogue(cs.dialogueTriggerScript);
 
-            cs.IsIdle();// go back to idle task
+                cs.currentCharacter.choseQuestA = true;
+                cs.currentCharacter.choseQuestB = false;
+                cs.zetoCharacter.choseQuestA = true;
+                cs.zetoCharacter.choseQuestB = false;
 
+                zetoS.zetoQuest = items.Find(item => item.name == "QuestA");
+                cs.IsIdle();
+                //nomiraS.brokeStaff = true;
+            }
+            else //everyone else
+            {
+                GameObject questRB = items.Find(item => item.name == "QuestA");
+                qs.GetQuestRB(questRB);
+                cs.currentCharacter.choseQuestA = true;
+                cs.currentCharacter.choseQuestB = false;
+                //Debug.Log("QuestA found! Performing action...");
+                // Add your action here
+                cs.QuestADialogue();
+                cs.pickedQ1A = true;
 
-
+                cs.IsIdle();// go back to idle task
+            }
         }
         //Quest B
         else if ((items.Find(item => item.name == "QuestB") != null) && items.Find(item => item.name == "QuestA") == null)
         {
-            GameObject questRB = items.Find(item => item.name == "QuestB");
-            qs.GetQuestRB(questRB);
-            cs.currentCharacter.choseQuestB = true;
-            cs.currentCharacter.choseQuestA = false;
-            //Debug.Log("QuestB found! Performing action...");
-            // Add your action here
-            cs.QuestBDialogue();
-            cs.pickedQ1B = true;
+            //nomira stuff
+            if (cs.currentCharacter.characterName == "Nomira" && !nomiraS.brokeStaff)
+            {
+                cs.nomiraD1Q1BP1.StartNewDialogue(cs.dialogueTriggerScript);
 
-            cs.IsIdle();// go back to idle task
+                cs.currentCharacter.choseQuestB = true;
+                cs.currentCharacter.choseQuestA = false;
+                cs.zetoCharacter.choseQuestB = true;
+                cs.zetoCharacter.choseQuestA = false;
 
+                zetoS.zetoQuest = items.Find(item => item.name == "QuestB");
+                cs.IsIdle();
+                //nomiraS.brokeStaff = true;
+            }
+            else //everyone else
+            {
+                GameObject questRB = items.Find(item => item.name == "QuestB");
+                qs.GetQuestRB(questRB);
+                cs.currentCharacter.choseQuestB = true;
+                cs.currentCharacter.choseQuestA = false;
+                //Debug.Log("QuestB found! Performing action...");
+                // Add your action here
+                cs.QuestBDialogue();
+                cs.pickedQ1B = true;
+
+                cs.IsIdle();// go back to idle task
+            }
         }
 
         else
@@ -112,17 +160,7 @@ public class DeskTrigger : MonoBehaviour
     {
         if(gs.coins.Count > 0)
         {
-
-            if (cs.currentCharacter.characterName != "Finch")
-            {
-                gs.isSuctionActive = true;
-                //GameObject questRB = items.Find(item => item.name == "QuestReturn");
-                //qs.GetQuestRB(questRB);
-                Debug.Log("not finch");
-                cs.IsIdle();
-
-            }
-            else
+            if (cs.currentCharacter.characterName == "Finch")
             {
                 if (!finchS.askingForGold)
                 {
@@ -138,7 +176,15 @@ public class DeskTrigger : MonoBehaviour
                     gs.isSuctionActive = true;
                 }
             }
-
+            else
+            {
+                gs.isSuctionActive = true;
+                //GameObject questRB = items.Find(item => item.name == "QuestReturn");
+                //qs.GetQuestRB(questRB);
+                Debug.Log("not finch");
+                //cs.IsIdle();
+            }
+            cs.IsIdle();
         }
 
         //always take return quest
@@ -165,6 +211,7 @@ public class DeskTrigger : MonoBehaviour
         {
             finchS.CheckForReward();
             Debug.Log("Finch Reward call");
+            cs.IsIdle();
         }
 
         if (cs.currentCharacter.characterName == "Andy")
@@ -197,6 +244,30 @@ public class DeskTrigger : MonoBehaviour
             cs.IsIdle();
         }
 
+        if (cs.currentCharacter.characterName == "Vanelle")
+        {
+            vanelleS.CheckForReward();
+            cs.IsIdle();
+        }
+
+        if(cs.currentCharacter.characterName == "Zeto Storma")
+        {
+            zetoS.CheckForReward();
+            cs.IsIdle();
+        }
+
+        if (cs.currentCharacter.characterName == "Nomira")
+        {
+            nomiraS.CheckForReward();
+            cs.IsIdle();
+        }
+
+        if (cs.currentCharacter.characterName == "Kalin")
+        {
+            kalinS.CheckForReward();
+            cs.IsIdle();
+        }
+
         if (movecamScript.bottom)
         {
             movecamScript.UpButton();//move button up
@@ -214,7 +285,7 @@ public class DeskTrigger : MonoBehaviour
         //CHECK TO SEE FOR LORNE STUFF
         if (cs.currentCharacter.characterName == "Lorne")
         {
-            if (cs.D1)
+            if (!LorneScript.instance.partOneComplete)
             {
                 if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
                 {
@@ -229,10 +300,12 @@ public class DeskTrigger : MonoBehaviour
                     cs.ItemADialogue();
                     //cs.pickedQ1A = true;
                     cs.IsIdle();
+
+                    LorneScript.instance.partOneComplete = true;
                 }
             }
 
-            else if (cs.D2)
+            else if (!LorneScript.instance.partTwoComplete)
             {
                 //If lorne gets yarn
                 if ((items.Find(item => item.name == cs.currentCharacter.ItemBName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemAName) == null)
@@ -248,6 +321,8 @@ public class DeskTrigger : MonoBehaviour
                     //cs.pickedQ1A = true;
                     cs.IsIdle();
                     lorneS.gaveYarn = true;
+
+                    LorneScript.instance.partTwoComplete = true;
                 }
 
                 else
@@ -258,8 +333,12 @@ public class DeskTrigger : MonoBehaviour
                         cs.lorneD2ItemRefuse.StartNewDialogue(cs.dialogueTriggerScript);
                         itemScript.ItemGlowOff();
                         cs.IsIdle();
+
+                        LorneScript.instance.partTwoComplete = true;
                     }
                 }
+
+                
             }
 
 
@@ -304,7 +383,85 @@ public class DeskTrigger : MonoBehaviour
             }
         }
 
+        else if (cs.currentCharacter.characterName == "Josie")
+        {
+            if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+            {
+                GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);
+                itemS.GetItemRb(itemRB);
+                cs.currentCharacter.choseItemA = true;
+                cs.currentCharacter.choseItemB = false;
+                cs.ItemADialogue();
+                cs.IsIdle();
+            }
+
+            else
+            {
+                //refuse
+                cs.josieKalinERefuse.StartNewDialogue(cs.dialogueTriggerScript);
+                itemScript.ItemGlowOff();
+                cs.IsIdle();
+            }
+        }
+
+        else if (cs.currentCharacter.characterName == "Nomira")
+        {
+            if (cs.currentCharacter.choseQuestB) //QUEST B (GOLEM)
+            {
+                //weapon
+                if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null && items.Find(item => item.name == cs.currentCharacter.ItemANameA) == null)
+                {
+                    cs.nomiraD1Q1AEWeapon.StartNewDialogue(cs.dialogueTriggerScript);
+                    cs.currentCharacter.choseItemA = true;
+                    GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);
+                    itemS.GetItemRb(itemRB);
+                    cs.IsIdle();
+                }
+                //divine arcane focus
+                else if ((items.Find(item => item.name == cs.currentCharacter.ItemBName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemAName) == null && items.Find(item => item.name == cs.currentCharacter.ItemANameA) == null)
+                {
+                    cs.nomiraD1Q1BEDivine.StartNewDialogue(cs.dialogueTriggerScript);
+                    cs.currentCharacter.choseItemB = true;
+                    GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemBName);
+                    itemS.GetItemRb(itemRB);
+                    cs.IsIdle();
+                }
+                //arcane focus
+                else if ((items.Find(item => item.name == cs.currentCharacter.ItemANameA) != null) && items.Find(item => item.name == cs.currentCharacter.ItemAName) == null && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+                {
+                    cs.nomiraD1Q1ABEOther.StartNewDialogue(cs.dialogueTriggerScript);
+                    cs.currentCharacter.choseItemAA = true;
+                    GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemANameA);
+                    itemS.GetItemRb(itemRB);
+                    cs.IsIdle();
+                }
+
+            }
+            else if (cs.currentCharacter.choseQuestA) //QUEST A (RUINS)
+            {
+                //arcane focus
+                if ((items.Find(item => item.name == cs.currentCharacter.ItemANameA) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+                {
+                    cs.nomiraD1Q1ABEOther.StartNewDialogue(cs.dialogueTriggerScript);
+                    cs.currentCharacter.choseItemAA = true;
+                    GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemANameA);
+                    itemS.GetItemRb(itemRB);
+                    cs.IsIdle();
+                }
+                //divine arcane focus
+                else if ((items.Find(item => item.name == cs.currentCharacter.ItemBName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemANameA) == null)
+                {
+                    cs.nomiraD1Q1BEDivine.StartNewDialogue(cs.dialogueTriggerScript);
+                    cs.currentCharacter.choseItemB = true;
+                    GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemBName);
+                    itemS.GetItemRb(itemRB);
+                    cs.IsIdle();
+                }
+            }
+        }
+
         //REGULAR STUFF FOR OTHER CHARACTERS
+        //item a
         else if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
         {
 
@@ -319,7 +476,7 @@ public class DeskTrigger : MonoBehaviour
             //cs.pickedQ1A = true;
             cs.IsIdle();
         }
-
+        //ietm b
         else if ((items.Find(item => item.name == cs.currentCharacter.ItemBName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemAName) == null)
         {
             GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemBName);

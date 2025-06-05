@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
   m_Name: AndyQ2B
   m_EditorClassIdentifier: 
-  questTitle: Gather worms for Angler Dusty (5 gold per worm)
+  questTitle: Gather worms for Angler Dusty (1 gold per worm)
   questDescription: "\u201CLookin\u2019 for a chipper fellow to fetch me more worms.
     Grab as many as you can find, I got the gold to cover it!\u201D"
   questReward: 'Reward: Conditional'

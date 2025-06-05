@@ -23,7 +23,7 @@ public class CharacterReputation : MonoBehaviour
     public int ReputationPoints => _reputationPoints;    // when you call for ReputationPoints, it returns _reputationPoints.
 
     [Tooltip("Triggered at any point when the reputation changes. The int parameter is the new reputation score.")]
-    public UnityEvent<int> onReputationChanged;
+    public UnityEvent<int, int> onReputationChanged;
 
     // This function can be called to change the reputation by any amount.
     // The 'int amount' parameter is the amount to change the reputation by. It can be positive or negative.
@@ -35,7 +35,7 @@ public class CharacterReputation : MonoBehaviour
         _reputationPoints = Mathf.Clamp(_reputationPoints, MIN_REPUTATION, MAX_REPUTATION);
 
         // This triggers the "onReputationChanged" event, telling other parts of the game that the reputation has been changed.
-        onReputationChanged?.Invoke(_reputationPoints);
+        onReputationChanged?.Invoke(_reputationPoints, amount);
     }
 
     // This function is used to add reputation points.

@@ -1,7 +1,9 @@
+using Lightbug.GrabIt;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MousePos3D : MonoBehaviour
 {
@@ -20,9 +22,41 @@ public class MousePos3D : MonoBehaviour
     [SerializeField] QuestSystem questSystem;
     [SerializeField] CharacterSystem cs;
     [SerializeField] movecam mc;
+
+    //MOUSE CURSOR STUFF
+    //[SerializeField] Texture2D currentCursorTexture;
+    //[SerializeField] Texture2D cursorTexture;
+    [SerializeField] GameObject cursorUIObject;
+    [SerializeField] Image cursorImage;
+    [SerializeField] Sprite cursorPoint;
+    [SerializeField] Sprite cursorClick;
+    [SerializeField] Sprite cursorCanGrab;
+    [SerializeField] Sprite cursorGrab;
+
+    [SerializeField] GrabIt grabItScript;
+
+    public bool clicking;
+
+    Vector2 cursorHotSpot;
+
+    private void Start()
+    {
+        //cursorHotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
+        //Cursor.SetCursor(cursorTexture, cursorHotSpot, CursorMode.ForceSoftware);
+        Cursor.visible = false;
+        cursorImage = cursorUIObject.GetComponent<Image>();
+        cursorImage.sprite = cursorPoint;
+
+        grabItScript = GrabIt.instance;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        //MOUSE STUFF
+        CursorStuff();
+        cursorUIObject.transform.position = Input.mousePosition + new Vector3(18, -25, 0);
+
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, guideLayer))
         {
@@ -145,5 +179,33 @@ public class MousePos3D : MonoBehaviour
         //    pickedUp = false;
         //    pickUpObject.layer = LayerMask.NameToLayer("GuideLayer");
         //}
+    }
+
+    private void CursorStuff()
+    {
+        if (grabItScript.m_grabbing)
+        {
+            cursorImage.sprite = cursorGrab;
+        }
+        else if (grabItScript.m_hoveringGrab)
+        {
+            cursorImage.sprite = cursorCanGrab;
+        }
+        else if(Input.GetMouseButtonDown(0))
+        {
+            clicking = true;
+            cursorImage.sprite = cursorClick;
+            StartCoroutine(ClickDelay());
+        }
+        else if(!clicking)
+        {
+            cursorImage.sprite = cursorPoint;
+        }
+    }
+
+    private IEnumerator ClickDelay()
+    {
+        yield return new WaitForSeconds(0.15f);
+        clicking = false;
     }
 }

@@ -2,6 +2,7 @@ using HeneGames.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.ShaderData;
 
 public class TutorialScript : MonoBehaviour
 {
@@ -31,9 +32,23 @@ public class TutorialScript : MonoBehaviour
 
     bool flashBell;
 
+    [SerializeField] KarinJosieGoldBundle kJGoldBundle;
+    [SerializeField] GameObject refuseTag;
+    public GameObject goldBundleGlow;
+    public GameObject goldBundle;
+    bool tagSystem;
+    bool tagOn;
+    public bool hasGoldBundle;
+
+    //Lotest check
+    public bool lotestJosieStarted;
+
+    public static TutorialScript instance;
+
     public void Start()
     {
         gs = GoldSystem.instance;
+        instance = this;
     }
     public void JosieTutDialogue(DialogueManager dialogue)
     {
@@ -51,16 +66,45 @@ public class TutorialScript : MonoBehaviour
 
     public void StartDialogue()
     {
-        if (cs.D3)
+        if (LotestScript.instance.partOneComplete)
         {
             Debug.Log("josie talks about magenta bag");
             cs.josieD3Lotest.StartNewDialogue(cs.dialogueTriggerScript);
         }
     }
 
+    public void AchillesDialogue()
+    {
+        if (AchillesScript.instance.achillesCharacter.choseQuestA)
+        {
+            cs.josieAchillesQ1A.StartNewDialogue(cs.dialogueTriggerScript);
+
+        }
+        else if (AchillesScript.instance.achillesCharacter.choseQuestB)
+        {
+            cs.josieAchillesQ1B.StartNewDialogue(cs.dialogueTriggerScript);
+
+        }
+    }
+
     private void Update()
     {
-        if(questA.onBoard && questB.onBoard)
+        //tag system for kalin
+        if (tagSystem)
+        {
+            if (!kJGoldBundle.goldBundleOnDesk && !tagOn)
+            {
+                refuseTag.SetActive(true);
+                tagOn = true;
+            }
+            else if (kJGoldBundle.goldBundleOnDesk && tagOn)
+            {
+                refuseTag.SetActive(false);
+                tagOn = false;
+            }
+        }
+
+        if (questA.onBoard && questB.onBoard)
         {
             questsOnBoard = true;
         }
@@ -164,12 +208,10 @@ public class TutorialScript : MonoBehaviour
             tutP2 = false;
             mc.TurnFlashOff();
         }
-
     }
 
     public void TutorialMoveDesk()
     {
-
         if (!josieStarted)
         {
             cs.josieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
@@ -198,9 +240,6 @@ public class TutorialScript : MonoBehaviour
             {
                 cs.josieD1P5.StartNewDialogue(cs.dialogueTriggerScript);
             }
-
-
-
         }
     }
 
@@ -246,23 +285,28 @@ public class TutorialScript : MonoBehaviour
         }
     }
 
-    public void JosieIdle()
+    public void TagSystemOn()
     {
-        //mr.material = josieIdle;
+        tagSystem = true;
     }
 
-    public void JosieFun()
+    public void TagSystemOff()
     {
-        //mr.material = josieFun;
-    }
-
-    public void JosieSassy()
-    {
-        //mr.material = josieSassy;
+        tagSystem = false;
+        refuseTag.SetActive(false);
     }
 
     public void ChangeEmote(Material emote)
     {
         mr.material = emote;
+    }
+
+    public void GoldCheck()
+    {
+        if(goldBundle.activeSelf == true)
+        {
+            hasGoldBundle = true;
+            Debug.Log("goldhas");
+        }
     }
 }

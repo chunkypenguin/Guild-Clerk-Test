@@ -15,17 +15,25 @@ public class JoleneScript : MonoBehaviour
 
     public bool gaveJoleneMoreGold;
 
+    public bool partOneComplete;
+
+    public static JoleneScript instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         gs = GoldSystem.instance;
     }
     public void StartDialogue()
     {
-        if (!cs.D1 && cs.D2)
+        if (!partOneComplete)
         {
             cs.joleneD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+            partOneComplete = true;
         }
-        else if (!cs.D2 && cs.D3)
+        else
         {
             if (cs.currentCharacter.choseQuestA)
             {

@@ -55,16 +55,23 @@ public class QuestSystem : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] Rigidbody rb2;
     [SerializeField] bool isSuctionActive = false;
-    [SerializeField] Transform vacuumPoint; // The position coins should be sucked toward
+    [SerializeField] Vector3 vacuumPoint; // The position coins should be sucked toward
     [SerializeField] float suckForce = 20f;
     [SerializeField] float maxSpeed = 10f;
     [SerializeField] float collectDistance = 0.5f;
     private Vector3 startScale; // Store initial scale
     private float initialDistance;
 
+    public static QuestSystem instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         //UpdateQuests();
+        cs = CharacterSystem.instance;
     }
 
     private void FixedUpdate()
@@ -78,17 +85,17 @@ public class QuestSystem : MonoBehaviour
         Collider col = rb.gameObject.GetComponent<Collider>();
         if (col != null) col.enabled = false;
 
-        Vector3 direction = (cs.currentCharacterObject.transform.position - rb.transform.position).normalized;
+        Vector3 direction = (vacuumPoint - rb.transform.position).normalized;
         rb.AddForce(direction * suckForce, ForceMode.Acceleration);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
 
         // Shrink the object as it moves towards the vacuum point
-        float distance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position);
+        float distance = Vector3.Distance(rb.transform.position, vacuumPoint);
         float shrinkFactor = Mathf.Clamp01(distance / initialDistance); // Normalize shrink between 1 and 0
         rb.transform.localScale = startScale * shrinkFactor; // Apply scale reduction
 
         // Check if close enough to be collected
-        if (Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position) < collectDistance)
+        if (Vector3.Distance(rb.transform.position, vacuumPoint) < collectDistance)
         {
             CollectQuest();
         }
@@ -96,16 +103,28 @@ public class QuestSystem : MonoBehaviour
 
     public void GetQuestRB(GameObject questObject)
     {
+        //nomira stuff
+        if(cs.currentCharacter.characterName == "Nomira" && !NomiraScript.instance.brokeStaff)
+        {
+            vacuumPoint = ZetoScript.instance.zetoTransform.position; //move quest to zeto
+            Debug.Log("whoa");
+           // NomiraScript.instance.brokeStaff = true;
+        }
+        else
+        {
+            vacuumPoint = cs.currentCharacterObject.transform.position;
+        }
+
         rb = questObject.GetComponent<Rigidbody>();
         rb2 = rb.transform.parent.gameObject.GetComponent<Rigidbody>();
         startScale = rb.transform.localScale; // Store initial scale
-        initialDistance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position); // Get starting distance
+        initialDistance = Vector3.Distance(rb.transform.position, vacuumPoint); // Get starting distance
         isSuctionActive = true;
 
         Invoke(nameof(CollectQuest), 2f); //prevent quest getting stuck
     }
 
-    private void CollectQuest()
+    private void CollectQuest() //once quest dissapears/is taken...
     {
         isSuctionActive = false;
 
@@ -123,6 +142,45 @@ public class QuestSystem : MonoBehaviour
 
         rb.gameObject.GetComponent<ItemFloorScript>().ResetItem();
 
+
+        //UNIQUE VANELLE INTERACTION
+        //if current character is vanelle and quest b was just chosen...
+        if(cs.currentCharacter.name == "Vanelle" && cs.currentCharacter.choseQuestB)
+        {
+            Debug.Log("vanelle chose B");
+            //turn back choseQuestB to false
+            cs.currentCharacter.choseQuestB = false;
+            //swap to vanelle eat emote
+            //play chomp sound
+
+            //continue dialogue
+            cs.currentCharacterObject.GetComponent<VanelleScript>().EatQuestBDialogue();
+            //go from idle to quest task
+            //cs.IsQuest();
+            //turn off quest visuals
+            visualQuests.SetActive(false);
+            //make sure quest A is still available
+            questAHolder.SetActive(true);
+        }
+
+        if (cs.currentCharacter.name == "Nomira" && !NomiraScript.instance.brokeStaff)
+        {
+            if (cs.currentCharacter.choseQuestA)
+            {
+                visualQuests.SetActive(false);
+                //make sure quest A is still available
+                questBHolder.SetActive(true);
+                cs.zetoD1ASteal.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else if (cs.currentCharacter.choseQuestB)
+            {
+                visualQuests.SetActive(false);
+                //make sure quest A is still available
+                questAHolder.SetActive(true);
+                cs.zetoD1BSteal.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            NomiraScript.instance.brokeStaff = true;
+        }
     }
 
     public void DropQuest(GameObject questObject)
@@ -179,7 +237,25 @@ public class QuestSystem : MonoBehaviour
 
         if (cs.isQuest)
         {
-            dt.CheckForQuest();
+            
+            if(cs.currentCharacter.characterName == "Vanelle" && VanelleScript.instance.questTagSystem)
+            {
+                if (!VanelleQuestAScript.instance.questAOnDesk) //if the quest is not on the desk...
+                {
+                    //refuse
+                    Debug.Log("refused");
+                    cs.VanelleD1Q1BRefuse.StartNewDialogue(cs.dialogueTriggerScript);
+                }
+                else
+                {
+                    dt.CheckForQuest();
+                }
+            }
+            else //for everyone else...
+            {
+                dt.CheckForQuest();
+            }
+
         }
 
         else if (cs.isReward)
@@ -248,9 +324,20 @@ public class QuestSystem : MonoBehaviour
     {
         if (cs.currentCharacter.choseQuestA)
         {
-            if(cs.currentCharacter.characterName != "Andy")
+
+            if(cs.currentCharacter.characterName == "Zeto Storma" && ZetoScript.instance.partOneComplete)
             {
-                Debug.Log("throw out Quest A");
+                Debug.Log("zeto throw out Quest A");
+                returnQuest.SetActive(true);
+                returnQuest.transform.position = returnPoint.position;
+                //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
+                questRTitle.text = cs.currentCharacter.quest[b].questTitle;
+                questRDescription.text = cs.currentCharacter.quest[b].questDescription;
+                questRReward.text = cs.currentCharacter.quest[b].questReward;
+            }
+            else if(cs.currentCharacter.characterName != "Andy")
+            {
+                Debug.Log("everyone else throw out Quest A");
                 returnQuest.SetActive(true);
                 returnQuest.transform.position = returnPoint.position;
                 //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
@@ -258,9 +345,9 @@ public class QuestSystem : MonoBehaviour
                 questRDescription.text = cs.currentCharacter.quest[a].questDescription;
                 questRReward.text = cs.currentCharacter.quest[a].questReward;
             }
-            else
+            else if (cs.currentCharacter.characterName == "Andy")
             {
-                Debug.Log("throw out Quest A");
+                Debug.Log("Andy throw out Quest A");
                 bloodyReturnQuest.SetActive(true);
                 bloodyReturnQuest.transform.position = returnPoint.position;
                 //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
@@ -270,16 +357,31 @@ public class QuestSystem : MonoBehaviour
             }
 
 
+
         }
         else if (cs.currentCharacter.choseQuestB)
         {
-            Debug.Log("throw out Quest B");
-            returnQuest.SetActive(true);
-            returnQuest.transform.position = returnPoint.position;
-            //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
-            questRTitle.text = cs.currentCharacter.quest[b].questTitle;
-            questRDescription.text = cs.currentCharacter.quest[b].questDescription;
-            questRReward.text = cs.currentCharacter.quest[b].questReward;
+            if(cs.currentCharacter.characterName == "Zeto Storma" && ZetoScript.instance.partOneComplete)
+            {
+                Debug.Log("zeto throw out Quest B");
+                returnQuest.SetActive(true);
+                returnQuest.transform.position = returnPoint.position;
+                //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
+                questRTitle.text = cs.currentCharacter.quest[c].questTitle;
+                questRDescription.text = cs.currentCharacter.quest[c].questDescription;
+                questRReward.text = cs.currentCharacter.quest[c].questReward;
+            }
+            else
+            {
+                Debug.Log("throw out Quest B");
+                returnQuest.SetActive(true);
+                returnQuest.transform.position = returnPoint.position;
+                //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
+                questRTitle.text = cs.currentCharacter.quest[b].questTitle;
+                questRDescription.text = cs.currentCharacter.quest[b].questDescription;
+                questRReward.text = cs.currentCharacter.quest[b].questReward;
+            }
+
         }
     }
 }

@@ -36,6 +36,11 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] LotestScript lotestS;
     [SerializeField] TahmasScript tahmasS;
     [SerializeField] ZekeScript zekeS;
+    [SerializeField] VanelleScript vanelleS;
+    [SerializeField] NomiraScript nomiraS;
+    [SerializeField] ZetoScript zetoS;
+    [SerializeField] KalinScript kalinS;
+    [SerializeField] AchillesScript achillesS;
 
     [SerializeField] DaySystem ds;
 
@@ -50,7 +55,7 @@ public class MoveCharacter : MonoBehaviour
         else
         {
             startPos = transform.position;
-            endPos = startPos + new Vector3(0, -5, 1);
+            endPos = startPos + new Vector3(-5, -6, 1);
         }
 
 
@@ -59,25 +64,48 @@ public class MoveCharacter : MonoBehaviour
         //endPos.transform.position = startPos.transform.position + new Vector3(10.5f, 0, 0);
     }
 
+    private void Start()
+    {
+        kalinS = KalinScript.instance;
+        achillesS = AchillesScript.instance;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            if (cs.currentCharacter.characterName == "Nomira")
+            {
+                //NomiraHit();
+                //ZetoJumpAcross();
+                NomiraSlowEnter();
+            }
+        }
+    }
+
 
     public void MoveToEnd() //move character out of sight
     {
-        if (cs.currentCharacter.characterName == "Andy")
+        if (cs.currentCharacter.characterName == "Andy" || cs.currentCharacter.characterName == "Zeto Storma" || cs.currentCharacter.characterName == "Achilles")
         {
             transform.DOJump(endPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
             {
-
-                if (cs.currentCharacter.characterName == "Andy" && cs.D1)
+                if (cs.currentCharacter.characterName == "Zeto Storma")
                 {
-                    andyS.ChangeToMom();
+                    zetoS.ZetoDefault(); //return back to default
                 }
 
-                if (cs.currentCharacter.characterName == "Andy")
+                if (cs.currentCharacter.characterName == "Andy" && !AndyScript.instance.partOneComplete)
                 {
                     if (cs.currentCharacter.choseQuestB && cs.D1)
                     {
                         andyS.AndyAngry();
                     }
+                    else
+                    {
+                        andyS.ChangeToMom();
+                    }
+                    AndyScript.instance.partOneComplete = true;
                 }
                 cs.StartNewCharacter();
             });
@@ -100,14 +128,14 @@ public class MoveCharacter : MonoBehaviour
                 {
                     if(joleneS.joleneDead && cs.D3) //if day 3 and jolene has died
                     {
-                        cs.characterCount++;//skip jolene
+                        //cs.characterCount++;//skip jolene
                     }
                 }
                 if (cs.currentCharacter.characterName == "Jolene")
                 {
                     if(!joleneS.gaveJoleneMoreGold && cs.D3) //if player did not give jolene more gold, skip tahmas
                     {
-                        cs.characterCount++;
+                        //cs.characterCount++;
                     }
                 }
 
@@ -115,12 +143,12 @@ public class MoveCharacter : MonoBehaviour
                 {
                     if (!lorneS.gaveYarn && cs.D3) //skip lorne if didnt give yarn
                     {
-                        cs.characterCount++;
+                        //cs.characterCount++;
                         lorneS.StealYarn();
 
                         if (lotestS.lotestCharacter.choseItemB) //skip lotest as well if lotest given valvet pouch of seeds
                         {
-                            cs.characterCount++; //skip to josie
+                            //cs.characterCount++; //skip to josie
                         }
                     }
 
@@ -128,11 +156,11 @@ public class MoveCharacter : MonoBehaviour
 
                 if (cs.currentCharacter.characterName == "Lorne")
                 {
-                    if (lorneS.gaveYarn && cs.D3)
+                    if (lorneS.gaveYarn && cs.D3) //if lorne is leaving on day 3...
                     {
-                        if (lotestS.lotestCharacter.choseItemB)//skip lotest, else stay with lotest
+                        if (lotestS.lotestCharacter.choseItemB)//skip lotest if they chose the bomb beans, else stay with lotest
                         {
-                            cs.characterCount++;
+                            //cs.characterCount++;
                         }
                     }
                 }
@@ -141,10 +169,10 @@ public class MoveCharacter : MonoBehaviour
                 {
                     if (cs.D3)
                     {
-                        cs.characterCount++; //skip josie
+                        //cs.characterCount++; //skip josie
                         if (!andyS.andyCharacter.choseQuestA)
                         {
-                            cs.characterCount++; //skip Andy
+                            //cs.characterCount++; //skip Andy
                             //END GAME
                             ds.EndDay();
                         }
@@ -159,6 +187,38 @@ public class MoveCharacter : MonoBehaviour
                     }
                 }
 
+                if(cs.currentCharacter.characterName == "Nomira")
+                {
+                    if (!nomiraS.partOneComplete)
+                    {
+                        nomiraS.partOneComplete = true;
+                    }
+
+                    if (nomiraS.nomiraCharacter.choseQuestA) //RUINS
+                    {
+                        if(nomiraS.nomiraCharacter.choseItemB) //Divine
+                        {
+                            nomiraS.NomiraPeek();
+                        }
+                        else if(nomiraS.nomiraCharacter.choseItemAA) //Other
+                        {
+                            nomiraS.NomiraPosessed();
+                        }
+                    }
+                    else if (nomiraS.nomiraCharacter.choseQuestB) //GOLEM
+                    {
+                        if (nomiraS.nomiraCharacter.choseItemA) //Weapon
+                        {
+                            nomiraS.NomiraWickedSmile();
+                        }
+                        else if (nomiraS.nomiraCharacter.choseItemAA || nomiraS.nomiraCharacter.choseItemB) //Other
+                        {
+                            nomiraS.NomiraPeek();
+                        }
+                    }
+
+                }
+
                     cs.StartNewCharacter();
             });
         }
@@ -169,13 +229,25 @@ public class MoveCharacter : MonoBehaviour
     {
         transform.position = endPos;
 
-        if(cs.currentCharacter.characterName == "Andy")
+        if(cs.currentCharacter.characterName == "Andy")// if andy on endy of day, if quest A (dragon) andy mom appears the next day, if quest B(fetch) andy does not show up again
         {
-            andyS.ChangeToAndy();
+            if (!AndyScript.instance.partTwoComplete)
+            {
 
 
-            andyS.AndyInjuiredIdle();
+            }
+            if (AndyScript.instance.andyMomVisited)
+            {
+                andyS.ChangeToAndy();
+                andyS.AndyInjuiredIdle();
 
+            }
+            else
+            {
+                andyS.ChangeToMom();
+            }
+
+            AndyScript.instance.partTwoComplete = true;
         }
     }
 
@@ -189,7 +261,6 @@ public class MoveCharacter : MonoBehaviour
             {
                 josieS.ChangeEmote(josieS.josieDisguise);
             }
-
         });
         
     }
@@ -197,15 +268,70 @@ public class MoveCharacter : MonoBehaviour
     public void MoveToDesk()
     {
 
-        if (cs.currentCharacter.characterName == "Andy")
+        if (cs.currentCharacter.characterName == "Andy" || cs.currentCharacter.characterName == "Zeto Storma" || cs.currentCharacter.characterName == "Achilles")
         {
+
+
             transform.DOJump(startPos, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
             {
-                andyS.StartDialogue();
+                if (cs.currentCharacter.characterName == "Andy")
+                {
+                    andyS.StartDialogue();
+                }
+                else if (cs.currentCharacter.characterName == "Zeto Storma")
+                {
+                    zetoS.StartDialogue();
+                }
+                else if (cs.currentCharacter.characterName == "Achilles")
+                {
+                    achillesS.StartDialogue();
+                }
+
             });
 
         }
+        else if(cs.currentCharacter.characterName == "Nomira")
+        {
+            if(!nomiraS.partOneComplete)
+            {
+                NomiraSlowEnter();
+            }
+            else 
+            {
+                if(cs.currentCharacter.choseQuestB) //QUEST B GOLEM
+                {
+                    if(cs.currentCharacter.choseItemB || cs.currentCharacter.choseItemAA)
+                    {
+                        //divine and arcane focus
+                        //peak
+                        NomiraSlowEnterOtherArcaneFocus();
+                    }
+                    else if(cs.currentCharacter.choseItemA) //weapon
+                    {
+                        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+                        {
+                            cs.nomiraP2QAWeapon.StartNewDialogue(cs.dialogueTriggerScript);
+                        });
+                    }
+                }
+                else if (cs.currentCharacter.choseQuestA) //QUEST A RUINS
+                {
+                    if (cs.currentCharacter.choseItemB) //divine focus
+                    {
+                        //peak
+                        NomiraSlowEnterDivineFocus();
+                    }
+                    else if(cs.currentCharacter.choseItemAA) // other arcane focus
+                    {
+                        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+                        {
+                            cs.nomiraP2QBOtherFocus.StartNewDialogue(cs.dialogueTriggerScript);
+                        });
+                    }
+                }
+            }
 
+        }
         else
         {
             transform.DOMove(startPos, moveSpeed).OnComplete(() =>
@@ -217,11 +343,15 @@ public class MoveCharacter : MonoBehaviour
                         josieS.TutorialMoveDesk();
                         
                     }
-                    else if (cs.D3)
+                    else if (LotestScript.instance.partOneComplete && !josieS.lotestJosieStarted) //lotest portion goes first
                     {
                         josieS.StartDialogue();
+                        josieS.lotestJosieStarted = true;
                     }
-
+                    else //should be for achilles
+                    {
+                        josieS.AchillesDialogue();
+                    }
                 }
 
                 if (cs.currentCharacter.characterName == "Greg")
@@ -266,9 +396,151 @@ public class MoveCharacter : MonoBehaviour
                     Debug.Log("start zeke dialogue");
                 }
 
+                if (cs.currentCharacter.characterName == "Vanelle")
+                {
+                    vanelleS.StartDialogue();
+                    Debug.Log("start vanelle dialogue");
+                }
+
+                if (cs.currentCharacter.characterName == "Nomira")
+                {
+                    //nomiraS.StartDialogue();
+                    Debug.Log("start nomira dialogue");
+                }
+
+                if (cs.currentCharacter.characterName == "Kalin")
+                {
+                    kalinS.StartDialogue();
+                    Debug.Log("start Kalin dialogue");
+                }
             });
         }
+    }
 
+    //ZETO AND NOMIRA STUFF
+    public void ZetoJumpUp()
+    {
+        transform.DOJump(startPos, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
+        {
+            cs.zetonomiraD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
 
+    public void ZetoJumpDown()
+    {
+        transform.DOJump(endPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
+        {
+            //resume nomari dialogue
+            cs.nomiraD1Q1AB.StartNewDialogue(cs.dialogueTriggerScript);
+
+            if (cs.zetoCharacter.choseQuestA)
+            {
+                zetoS.ZetoCursedDefault();
+            }
+            else if (cs.zetoCharacter.choseQuestB)
+            {
+                zetoS.ZetoBurnedDefault();
+            }
+        });
+    }
+
+    public void ZetoJumpAcross()
+    {
+        transform.DOJump(transform.position + new Vector3(5, 0, 0), jumpSpeed, 3, 0.75f).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            nomiraS.NomiraHit();
+        });
+    }
+
+    public void NomiraMoveToEndFake()
+    {
+        transform.DOMove(endPos, moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraD1Q1AB3.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+    public void NomiraMoveBackToDesk()
+    {
+        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+        {
+            if (cs.currentCharacter.choseQuestA)
+            {
+                cs.nomiraD1Q1AP2.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else if (cs.currentCharacter.choseQuestB)
+            {
+                cs.nomiraD1Q1BP2.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+        });
+    }
+
+    public void NomiraSlowEnter()
+    {
+        transform.DOMove(startPos - new Vector3(8, 0, 0), moveSpeed).OnComplete(() =>
+        {
+            nomiraS.StartDialogue();
+        });
+    }
+
+    public void NomiraSlowEnterOtherArcaneFocus()
+    {
+        transform.DOMove(startPos - new Vector3(8, 0, 0), moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraP2QAArcaneFocus1.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+    public void NomiraSlowEnterDivineFocus()
+    {
+        transform.DOMove(startPos - new Vector3(8, 0, 0), moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraP2QBDivineFocus1.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+    public void NomiraCompleteEnter()
+    {
+        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraD1P2.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+
+    public void NomiraCompleteEnterDivineFocus()
+    {
+        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraP2QBDivineFocus2.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+
+    public void NomiraCompleteEnterOtherArcaneFocus()
+    {
+        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+        {
+            cs.nomiraP2QAArcaneFocus2.StartNewDialogue(cs.dialogueTriggerScript);
+        });
+    }
+
+    public void JosieMoveToEndKalin()
+    {
+        transform.DOMove(endPos, moveSpeed).OnComplete(() =>
+        {
+            if (kalinS.gaveGold)
+            {
+                cs.josieKalin1.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else
+            {
+                cs.StartNewCharacter();
+            }
+            
+        });
+    }
+
+    public void JosieCompleteEnter()
+    {
+        transform.DOMove(startPos, moveSpeed).OnComplete(() =>
+        {
+            cs.josieKalin2.StartNewDialogue(cs.dialogueTriggerScript);
+        });
     }
 }

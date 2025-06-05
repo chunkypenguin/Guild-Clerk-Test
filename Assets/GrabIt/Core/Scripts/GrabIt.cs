@@ -18,8 +18,8 @@ public class GrabObjectProperties{
 		[Header("Input")]
 		[SerializeField] KeyCode m_rotatePitchPosKey = KeyCode.I;
 		[SerializeField] KeyCode m_rotatePitchNegKey = KeyCode.K;
-		[SerializeField] KeyCode m_rotateYawPosKey = KeyCode.L;
-		[SerializeField] KeyCode m_rotateYawNegKey = KeyCode.J;
+		//[SerializeField] KeyCode m_rotateYawPosKey = KeyCode.L;
+		//[SerializeField] KeyCode m_rotateYawNegKey = KeyCode.J;
 
 		[Header("Grab properties")]
 
@@ -27,9 +27,9 @@ public class GrabObjectProperties{
 		[Range(4, 50)]
 		float m_grabSpeed = 7;
 
-		[SerializeField]
-		[Range(0.1f, 5)]
-		float m_grabMinDistance = 1;
+		//[SerializeField]
+		//[Range(0.1f, 5)]
+		//float m_grabMinDistance = 1;
 
 		[SerializeField]
 		[Range(4, 25)]
@@ -67,7 +67,8 @@ public class GrabObjectProperties{
 		GameObject m_hitPointObject;
 		float m_targetDistance;
 
-		bool m_grabbing = false;
+		public bool m_grabbing = false;
+		public bool m_hoveringGrab = false;
 		bool m_applyImpulse = false;
 		bool m_isHingeJoint = false;
 
@@ -84,8 +85,12 @@ public class GrabObjectProperties{
 
 		private float scroll;
 
+		public static GrabIt instance;
+
 		void Awake()
 		{
+			instance = this;
+
 			//m_transform = transform;
 			m_transform = mouseScript.mousePos;
 			m_hitPointObject = new GameObject("Point");
@@ -96,6 +101,8 @@ public class GrabObjectProperties{
 
 		void Update()
 		{
+			canGrabCheck();
+
 			if (m_grabbing)//if already holding an object
 			{
                 //m_targetDistance += Input.GetAxisRaw("Mouse ScrollWheel") * m_scrollWheelSpeed;
@@ -139,6 +146,7 @@ public class GrabObjectProperties{
 			}
 			else //if not holding an object
 			{
+
 				if (Input.GetMouseButtonDown(0))
 				{
 					mouseButtonUp = false; //my code
@@ -422,6 +430,24 @@ public class GrabObjectProperties{
             }
         }
 
-}
+		private void canGrabCheck()
+		{
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // send out ray at position of mouse
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray, out hitInfo, m_grabMaxDistance, m_collisionMask))
+            {
+				//hovering grabable object!
+				if (!m_grabbing)
+				{
+                    m_hoveringGrab = true;
+                }
+
+            }
+            else
+            {
+                m_hoveringGrab = false;
+            }
+        }
+	}
 
 }

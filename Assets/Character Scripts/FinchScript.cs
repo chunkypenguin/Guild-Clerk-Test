@@ -12,7 +12,7 @@ public class FinchScript : MonoBehaviour
     [SerializeField] GameObject refuseTag;
     bool tagOn;
 
-    bool gaveGold;
+    public bool gaveGold;
     bool tagSystem;
     int goldRequestCount;
 
@@ -25,8 +25,11 @@ public class FinchScript : MonoBehaviour
 
     public bool askingForGold;
 
+    int repCount;
+
     private void Start()
     {
+        repCount = 0;
         gs = GoldSystem.instance;
     }
 
@@ -54,8 +57,11 @@ public class FinchScript : MonoBehaviour
 
     public void CheckForReward()
     {
-        if (cs.pickedQ1A && !gaveGold)
+        Debug.Log("check for reward");
+        //if (cs.pickedQ1A && !gaveGold)
+        if (!gaveGold)
         {
+            Debug.Log("went to this");
             if (gs.goldAmount == 15)
             {
                 //Do this
@@ -71,13 +77,14 @@ public class FinchScript : MonoBehaviour
             {
                 //do this
                 cs.finchD1G1AP1.StartNewDialogue(cs.dialogueTriggerScript);
+                Debug.Log("Doing something here");
             }
 
             gaveGold = true;
         }
         else if (gaveGold)
         {
-            if(gs.goldAmount > 0)
+            if(gs.goldAmount > 0) //when you give finch gold
             {
                 if(!pickedA)
                 {
@@ -101,11 +108,11 @@ public class FinchScript : MonoBehaviour
 
                 ChooseDialogue();
 
+                repCount++; //Gain rep with finch when you give them gold
             }
             else
             {
                 Refuse();
-
             }
         }
     }
@@ -127,18 +134,22 @@ public class FinchScript : MonoBehaviour
         else if (a == 1 && b == 1 && c == 1 && d == 1)
         {
             cs.finchD1GR4.StartNewDialogue(cs.dialogueTriggerScript);
+            gameObject.GetComponent<CharacterReputation>().ModifyReputation(2); //postive
         }
         else if (a == 1 && b == 1 && c == 1 && d == -1)
         {
             cs.finchD1GR5.StartNewDialogue(cs.dialogueTriggerScript);
+            gameObject.GetComponent<CharacterReputation>().ModifyReputation(1); //positive
         }
         else if (a == 1 && b == 1 && c == -1 && d == 0)
         {
             cs.finchD1GR6.StartNewDialogue(cs.dialogueTriggerScript);
+            gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1); 
         }
         else if (a == 1 && b == -1 && c == 0 && d == 0)
         {
             cs.finchD1GR6.StartNewDialogue(cs.dialogueTriggerScript);
+            gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
         }
         else if (a == -1 && b == 0 && c == 0 && d == 0)
         {
@@ -147,7 +158,6 @@ public class FinchScript : MonoBehaviour
         else if (a == -1 && b == 1 && c == 0 && d == 0)
         {
             cs.finchD1GR2.StartNewDialogue(cs.dialogueTriggerScript);
-
         }
         else if (a == -1 && b == 1 && c == 1 && d == 0)
         {
@@ -156,10 +166,12 @@ public class FinchScript : MonoBehaviour
         else if (a == -1 && b == 1 && c == 1 && d == 1)
         {
             cs.finchD1GR8.StartNewDialogue(cs.dialogueTriggerScript);
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(repCount);
         }
         else if (a == -1 && b == 1 && c == 1 && d == -1)
         {
             cs.finchD1GR9.StartNewDialogue(cs.dialogueTriggerScript);
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(repCount);
         }
         else if (a == -1 && b == 1 && c == -1 && d == 0)
         {
@@ -168,15 +180,19 @@ public class FinchScript : MonoBehaviour
         else if (a == -1 && b == 1 && c == -1 && d == 1)
         {
             cs.finchD1GR11.StartNewDialogue(cs.dialogueTriggerScript);
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(repCount);
         }
         else if (a == -1 && b == 1 && c == -1 && d == -1)
         {
             cs.finchD1GR12.StartNewDialogue(cs.dialogueTriggerScript);
+            gameObject.GetComponent<CharacterReputation>().ModifyReputation(-2);
         }
         else if (a == -1 && b == -1 && c == 0 && d == 0)
         {
             cs.finchD1GR12.StartNewDialogue(cs.dialogueTriggerScript);
+            gameObject.GetComponent<CharacterReputation>().ModifyReputation(-2);
         }
+        
     }
 
     public void Refuse()
@@ -201,6 +217,8 @@ public class FinchScript : MonoBehaviour
             d--;
         }
         ChooseDialogue();
+
+        repCount--; //subtract rep gained with Finch when refused
     }
 
     public void TagSystemOn()

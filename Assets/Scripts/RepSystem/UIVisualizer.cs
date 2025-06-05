@@ -4,6 +4,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class UIVisualizer : MonoBehaviour {
     // Assign NPCs in the inspector
@@ -46,6 +47,10 @@ public class UIVisualizer : MonoBehaviour {
     [Tooltip("Drag the 'CoinText' GameObject here")]
     [SerializeField] private GameObject _coinText;
 
+    [SerializeField] private GameObject _newCoinText;
+    [SerializeField] private GameObject _totalCoinText;
+    [SerializeField] private TMP_Text dailyTotalText;
+
     // Unity automatically calls Awake when the game starts. This is called before Start().
     // I use this to set up the initial state of the script.
     private void Awake() {
@@ -63,7 +68,7 @@ public class UIVisualizer : MonoBehaviour {
             }
 
             // Automatically calls the UpdateCharRepVisual function when the reputation changes
-            rep.onReputationChanged.AddListener((int repValue) => UpdateCharRepVisual(repValue, true));
+            rep.onReputationChanged.AddListener((int repValue, int gainedRep) => UpdateCharRepVisual(repValue, gainedRep, true));
         }
 
         // If you checked to disable the heart visual for NPCs, this will set all of the heart slots to inactive at the start of the game
@@ -73,7 +78,7 @@ public class UIVisualizer : MonoBehaviour {
     }
 
     // This function just shows or hides the heart visual in the UI.
-    private void ShowHeartVisual(bool showVisual) {
+    public void ShowHeartVisual(bool showVisual) {
         if (showVisual) {
             // Enable all of the heart slots in the canvas
             foreach (var slot in charHeartSlots) {
@@ -90,10 +95,15 @@ public class UIVisualizer : MonoBehaviour {
 
     // This updates the UI heart visuals for each NPC's rep.
     // You can turn this off if you want by checking Disable Heart Visual in the inspector.
-    public void UpdateCharRepVisual(int currentRep, bool playFX = true) {
+    public void UpdateCharRepVisual(int currentRep, int gainedRep, bool playFX = true) {
         // Play the heart FX when NPC's rep changes
         if (playFX) {
-            PlayHeartFX(currentRep);
+
+            if(gainedRep != 0)
+            {
+                PlayHeartFX(currentRep);
+            }
+
         }
 
         // If the heart visual is disabled, return.
@@ -173,11 +183,11 @@ public class UIVisualizer : MonoBehaviour {
 
             bool showFull = absValue >= i + 1f;
             bool showHalf = !showFull && absValue >= i + 0.5f;
-            bool showEmpty = !showFull && !showHalf;
+            //bool showEmpty = !showFull && !showHalf;
 
             // Similar to UpdateCharRepVisual
-            slot.GetChild(0).gameObject.SetActive(showEmpty); // Empty1
-            slot.GetChild(1).gameObject.SetActive(showEmpty); // Empty2
+            //slot.GetChild(0).gameObject.SetActive(showEmpty); // Empty1
+            //slot.GetChild(1).gameObject.SetActive(showEmpty); // Empty2
 
             slot.GetChild(2).gameObject.SetActive(isPositive && showFull); // Pos1
             slot.GetChild(3).gameObject.SetActive(isPositive && showFull); // Pos2
@@ -189,11 +199,11 @@ public class UIVisualizer : MonoBehaviour {
             if (showHalf) {
                 if (isPositive) {
                     slot.GetChild(2).gameObject.SetActive(true); // Pos1
-                    slot.GetChild(1).gameObject.SetActive(true); // Empty2
+                    //slot.GetChild(1).gameObject.SetActive(true); // Empty2
                 }
                 else {
                     slot.GetChild(4).gameObject.SetActive(true); // Neg1
-                    slot.GetChild(1).gameObject.SetActive(true); // Empty2
+                    //slot.GetChild(1).gameObject.SetActive(true); // Empty2
                 }
             }
         }
@@ -284,7 +294,7 @@ public class UIVisualizer : MonoBehaviour {
         UpdateEodHeartVisuals(averageRep);
     }
 
-    public void UpdateCoinUI() {
+    public void OldUpdateCoinUI() {
 
         if (_coinText == null) {
             Debug.LogWarning("CoinText is not assigned in the inspector.");
@@ -305,6 +315,79 @@ public class UIVisualizer : MonoBehaviour {
 
         // Update the text to show the new amount of coins
         int coinAmount = DayReputationTracker.Instance.GetGold();
+        coinTextComponent.text = coinAmount.ToString();
+    }
+
+    public void UpdateCoinUI(int coins)
+    {
+
+        if (_newCoinText == null)
+        {
+            Debug.LogWarning("CoinText is not assigned in the inspector.");
+            return;
+        }
+
+        Transform coinNum = _newCoinText.transform.Find("RepCoinNum");
+        if (coinNum == null)
+        {
+            Debug.LogWarning("CoinNum is not found in the CoinText GameObject.");
+            return;
+        }
+
+        TMP_Text coinTextComponent = coinNum.GetComponent<TMP_Text>();
+        if (coinTextComponent == null)
+        {
+            Debug.LogWarning("CoinNum does not have a Text component.");
+            return;
+        }
+
+        // Update the text to show the new amount of coins
+        int coinAmount = coins;
+
+        if (coinAmount <= 0)
+        {
+            coinAmount = 0;
+        }
+        coinTextComponent.text = "+ " + coinAmount.ToString();
+
+        TutorialScript.instance.GoldCheck();
+        if (TutorialScript.instance.hasGoldBundle)
+        {
+            coinAmount += 25;
+            Debug.Log("add25gold");
+        }
+        dailyTotalText.text = (coinAmount + 10).ToString();
+    }
+
+    public void TotalUpdateCoinUI()
+    {
+
+        if (_totalCoinText == null)
+        {
+            Debug.LogWarning("CoinText is not assigned in the inspector.");
+            return;
+        }
+
+        Transform coinNum = _totalCoinText.transform.Find("TotalCoinNum");
+        if (coinNum == null)
+        {
+            Debug.LogWarning("CoinNum is not found in the CoinText GameObject.");
+            return;
+        }
+
+        TMP_Text coinTextComponent = coinNum.GetComponent<TMP_Text>();
+        if (coinTextComponent == null)
+        {
+            Debug.LogWarning("CoinNum does not have a Text component.");
+            return;
+        }
+
+        // Update the text to show the total amount of coins
+        int coinAmount = DayReputationTracker.Instance.GetGold();
+        if(coinAmount <= 0)
+        {
+            coinAmount = 0;
+        }
         coinTextComponent.text = coinAmount.ToString();
     }
 }

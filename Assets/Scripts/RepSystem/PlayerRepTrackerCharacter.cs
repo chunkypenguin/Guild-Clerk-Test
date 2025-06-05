@@ -63,6 +63,8 @@ public class PlayerRepTrackerCharacter : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        //if (CharacterSystem.instance == null) return; //this code fixes destroy on load stuff when swapping to menu scene
+
         _currentTarget = CharacterSystem.instance.characterObjects[CharacterSystem.instance.characterCount].GetComponent<CharacterReputation>();
 
         // Make sure you assign the characters in the inspector
@@ -73,18 +75,18 @@ public class PlayerRepTrackerCharacter : MonoBehaviour {
 
         // If the player presses the 'up arrow' key, go to the next character in the list.
         if (Input.GetKeyDown(nextNPC)) {
-            CycleNpc(1);
+            //CycleNpc(1);
         }
 
         // If the player presses the 'down arrow' key, go to the previous character in the list.
         if (Input.GetKeyDown(previousNPC)) {
-            CycleNpc(-1);
+            //CycleNpc(-1);
         }
 
         // If the player does something good (for now just pressing 'backspace' key), increase the target character's reputation points.
         if (Input.GetKeyDown(increaseRepKey) && _currentTarget != null) {
             // Increase their rep points by 1
-            _currentTarget.AddReputation(1);
+            //_currentTarget.AddReputation(1);
 
             // Print the new reputation points to the console
             Debug.Log($"Increased {_currentTarget.name}'s reputation to {_currentTarget.ReputationPoints}");
@@ -93,7 +95,7 @@ public class PlayerRepTrackerCharacter : MonoBehaviour {
         // If the player does something bad (for now just pressing 'delete' key), decrease the target character's reputation points.
         if (Input.GetKeyDown(decreaseRepKey) && _currentTarget != null) {
             // Decrease their rep points by 1
-            _currentTarget.RemoveReputation(1);
+            //_currentTarget.RemoveReputation(1);
 
             // Print the new reputation points to the console
             Debug.Log($"Decreased {_currentTarget.name}'s reputation to {_currentTarget.ReputationPoints}");
@@ -101,12 +103,12 @@ public class PlayerRepTrackerCharacter : MonoBehaviour {
 
         // When the player gets to the end of the day (for now just pressing 'space' key), show the end of day reputation visual.
         if (Input.GetKeyDown(showEodRepVisual)) {
-            _reputationVisualizer.ShowEndOfDay();
+            //_reputationVisualizer.ShowEndOfDay();
         }
 
         // When a new day starts, clear the list (for now just pressing 'C' key) of characters the player has interacted with.
         if (Input.GetKeyDown(clearList)) {
-            DayReputationTracker.Instance.NewDayClearList();
+            //DayReputationTracker.Instance.NewDayClearList();
             Debug.Log("Cleared the list of characters visited today.");
         }
     }

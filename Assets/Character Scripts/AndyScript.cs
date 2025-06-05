@@ -31,6 +31,17 @@ public class AndyScript : MonoBehaviour
 
     [SerializeField] MeshRenderer mr;
 
+    public bool partOneComplete;
+    public bool partTwoComplete;
+    public bool partThreeComplete;
+
+    public bool andyMomVisited;
+
+    public static AndyScript instance;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -38,23 +49,40 @@ public class AndyScript : MonoBehaviour
     }
     public void StartDialogue()
     {
-        if (cs.D1 && !cs.D2)
+        if (!partOneComplete)
         {
             cs.andyD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+            //partOneComplete = true;
         }
-        else if (!cs.D1 && cs.D2)
+        else if (!partTwoComplete)
         {
             if (cs.currentCharacter.choseQuestA)//dragon quest (andys mom)
             {
                 cs.andyD2Q1A.StartNewDialogue(cs.dialogueTriggerScript);
+                andyMomVisited = true;
             }
             else // fetch quest
             {
                 cs.andyD2Q1B.StartNewDialogue(cs.dialogueTriggerScript);
                 gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
             }
+            
         }
-        else if (cs.D3) 
+        else if (!partThreeComplete)
+        {
+            if (!andyMomVisited)
+            {
+                if (cs.currentCharacter.choseQuestA)//dragon quest (andys mom)
+                {
+                    cs.andyD2Q1A.StartNewDialogue(cs.dialogueTriggerScript);
+                    andyMomVisited = true;
+                }
+            }
+
+            partThreeComplete = true;
+            Debug.Log("day 3 over");
+        }
+        else
         {
             cs.andyD3P1.StartNewDialogue(cs.dialogueTriggerScript);
             gameObject.GetComponent<CharacterReputation>().ModifyReputation(3);
@@ -86,7 +114,7 @@ public class AndyScript : MonoBehaviour
     public void CheckForReward()
     {
         int rep = 0;
-        if (!cs.D3)
+        if (!partTwoComplete) //!cs.D3
         {
             cs.andyD2Q1BP2.StartNewDialogue(cs.dialogueTriggerScript);
         }

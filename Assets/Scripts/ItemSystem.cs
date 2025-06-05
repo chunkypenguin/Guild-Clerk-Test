@@ -23,7 +23,22 @@ public class ItemSystem : MonoBehaviour
     [SerializeField] LorneScript lorneScript;
     [SerializeField] LotestScript lotestScript;
     [SerializeField] ZekeScript zekeScript;
+    [SerializeField] NomiraScript nomiraScript;
+    [SerializeField] TutorialScript tutorialScript;
+    [SerializeField] IshizuScript ishizuScript;
 
+    public static ItemSystem instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    private void Start()
+    {
+        nomiraScript = NomiraScript.instance;
+        tutorialScript = TutorialScript.instance;
+        ishizuScript = IshizuScript.instance;
+    }
     private void FixedUpdate()
     {
         if (!isSuctionActive) return;
@@ -76,40 +91,61 @@ public class ItemSystem : MonoBehaviour
     public void ReturnItem(GameObject item)
     {
         item.SetActive(true);
-        item.transform.position = ReturnItemPoint.position;
+        //item.transform.position = ReturnItemPoint.position;
     }
 
     public void ItemGlow()
     {
-        Debug.Log("glow");
-        if (cs.D1)
+        //Debug.Log("glow");
+        if (!LorneScript.instance.partOneComplete)
         {
             if(cs.currentCharacter.characterName == "Lorne")
             {
                 lorneScript.purplePackageGlow.SetActive(true);
                 lorneScript.blackPackageGlow.SetActive(true);
             }
-
         }
-        else if(cs.D2)
+        else
         {
             if (cs.currentCharacter.characterName == "Lorne")
             {
                 lorneScript.yarnGlow.SetActive(true);
             }
-
-            if (cs.currentCharacter.characterName == "Lotest")
-            {
-                lotestScript.greenGlow.SetActive(true);
-                lotestScript.velvetGlow.SetActive(true);
-            }
         }
-        
-        if(cs.currentCharacter.characterName == "Zeke")
+
+        if (cs.currentCharacter.characterName == "Lotest")
+        {
+            lotestScript.greenGlow.SetActive(true);
+            lotestScript.velvetGlow.SetActive(true);
+        }
+
+        if (cs.currentCharacter.characterName == "Zeke")
         {
             zekeScript.raspberriesGlow.SetActive(true);
         }
 
+        if (cs.currentCharacter.characterName == "Nomira")
+        {
+            nomiraScript.druidStaffGlow.SetActive(true);
+            nomiraScript.divineStaffGlow.SetActive(true);
+            nomiraScript.cosmicStaffGlow.SetActive(true);
+
+            if (cs.currentCharacter.choseQuestB) //if its the golem quest
+            {
+                nomiraScript.weaponGlow.SetActive(true);
+            }
+
+        }
+        if (cs.currentCharacter.characterName == "Josie")
+        {
+            tutorialScript.goldBundleGlow.SetActive(true);
+        }
+
+        if (cs.currentCharacter.characterName == "Ishizu")
+        {
+            ishizuScript.redHerbGlow.SetActive(true);
+            ishizuScript.tealHerbGlow.SetActive(true);
+        }
     }
 
     public void ItemGlowOff()
@@ -125,5 +161,22 @@ public class ItemSystem : MonoBehaviour
 
         //zeke
         zekeScript.raspberriesGlow.SetActive(false);
+
+        if (cs.currentCharacter.characterName == "Nomira")
+        {
+            nomiraScript.druidStaffGlow.SetActive(false);
+            nomiraScript.divineStaffGlow.SetActive(false);
+            nomiraScript.cosmicStaffGlow.SetActive(false);
+            nomiraScript.weaponGlow.SetActive(false);
+        }
+        if (cs.currentCharacter.characterName == "Josie")
+        {
+            tutorialScript.goldBundleGlow.SetActive(false);
+        }
+        if (cs.currentCharacter.characterName == "Ishizu")
+        {
+            ishizuScript.redHerbGlow.SetActive(false);
+            ishizuScript.tealHerbGlow.SetActive(false);
+        }
     }
 }
