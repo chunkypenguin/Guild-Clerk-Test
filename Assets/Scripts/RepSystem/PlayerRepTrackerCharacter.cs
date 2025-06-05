@@ -64,6 +64,10 @@ public class PlayerRepTrackerCharacter : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         //if (CharacterSystem.instance == null) return; //this code fixes destroy on load stuff when swapping to menu scene
+        if(CharacterSystem.instance.currentCharacter.characterName == "End Of Day")
+        {
+            return;
+        }
 
         _currentTarget = CharacterSystem.instance.characterObjects[CharacterSystem.instance.characterCount].GetComponent<CharacterReputation>();
 

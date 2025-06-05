@@ -88,14 +88,69 @@ public class DaySystem : MonoBehaviour
 
     public void EndDay()
     {
+        //targetImage.gameObject.SetActive(true);
+        //if (targetImage != null)
+        //{
+        //    // Fade in effect
+        //    targetImage.DOFade(1f, fadeDuration).OnComplete(() =>
+        //    {
+
+        //        if(dayCount == 1)
+        //        {
+        //            //dayOneTextObject.SetActive(true);
+        //            cs.D2 = true;
+        //            cs.D1 = false;
+        //        }
+        //        else if (dayCount == 2)
+        //        {
+        //            //dayTwoTextObject.SetActive(true);
+        //            cs.D3 = true;
+        //            cs.D2 = false;
+        //            cs.D1 = false;
+        //        }
+        //        else
+        //        {
+        //            //dayThreeTextObject.SetActive(true);
+        //            endGame = true;
+        //        }
+
+        //        canStartNextDay = true;
+        //        cs.currentCharacterObject.GetComponent<MoveCharacter>().MoveEndDay();
+
+
+        //        //new stuff
+        //        _reputationVisualizer.ShowEndOfDay();
+        //        Debug.Log("should do end of day stuff");
+        //        EndOfDayScreen();
+
+
+        //        //remove return items
+        //        foreach (GameObject obj in returnItems)
+        //        {
+        //            obj.SetActive(false);
+        //        }
+        //    });
+
+
+        //}
+        //else
+        //{
+        //    Debug.LogError("No Image assigned to FadeImage script!");
+        //}
+
+        Debug.Log("old End Day Call");
+    }
+
+    public void NewEndDay()
+    {
         targetImage.gameObject.SetActive(true);
         if (targetImage != null)
         {
             // Fade in effect
             targetImage.DOFade(1f, fadeDuration).OnComplete(() =>
             {
-                
-                if(dayCount == 1)
+
+                if (dayCount == 1)
                 {
                     //dayOneTextObject.SetActive(true);
                     cs.D2 = true;
@@ -115,7 +170,11 @@ public class DaySystem : MonoBehaviour
                 }
 
                 canStartNextDay = true;
-                cs.currentCharacterObject.GetComponent<MoveCharacter>().MoveEndDay();
+
+                if(cs.currentCharacter.characterName != "End Of Day")
+                {
+                    cs.currentCharacterObject.GetComponent<MoveCharacter>().MoveEndDay();
+                }
 
 
                 //new stuff

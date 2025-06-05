@@ -318,11 +318,20 @@ public class CharacterSystem : MonoBehaviour
 
             SkipCharacter();
 
-            //NEW SHIT for rep system
-            PlayerRepTrackerCharacter.instance.ActivateNpc(characterCount);
+            //Create an "End Of Day" Character/Object to be placed in character list
+            if(currentCharacter.characterName == "End Of Day")
+            {
+                //End of Day activation
+                DaySystem.instance.NewEndDay();
+            }
+            else
+            {
+                //NEW SHIT for rep system
+                PlayerRepTrackerCharacter.instance.ActivateNpc(characterCount);
 
-            currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
-            ChangeTextColor();
+                currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
+                ChangeTextColor();
+            }
         }
     }
 

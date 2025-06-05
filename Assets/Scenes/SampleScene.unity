@@ -11215,6 +11215,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 973462377}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
@@ -11264,6 +11276,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: 'Oh wow! Look at the time, looks like we better close up shop. '
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: I hope you enjoyed your first day! I'll see you soon {0}, take care!
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &443420849
 GameObject:
   m_ObjectHideFlags: 0
@@ -20073,67 +20099,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
-  - {fileID: 11400000, guid: d7e1d710f6ecf8143aa6b18654a8d285, type: 2}
-  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
-  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
-  - {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
-  - {fileID: 11400000, guid: 4e13e4d02a85ab64a9a0d8c2fb12fde1, type: 2}
-  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
-  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
-  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
-  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
-  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
-  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
-  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
-  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
-  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
-  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
-  - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
-  - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
-  - {fileID: 11400000, guid: 7c165361cb2abed4dbbae5062f5c38cd, type: 2}
-  - {fileID: 11400000, guid: 6dc1457b030e3a74e899061c38af5fc1, type: 2}
-  - {fileID: 11400000, guid: 6dc1457b030e3a74e899061c38af5fc1, type: 2}
-  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
-  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   - {fileID: 11400000, guid: ba92c459036ee654389f6b7275c527a7, type: 2}
   - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
+  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
+  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
+  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: 9bc3a77f3f4db3e4bbd28cdb158cba23, type: 2}
+  - {fileID: 11400000, guid: 6dc1457b030e3a74e899061c38af5fc1, type: 2}
+  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
+  - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
   - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
-  - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
-  - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
+  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
+  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
+  - {fileID: 11400000, guid: 9bc3a77f3f4db3e4bbd28cdb158cba23, type: 2}
+  - {fileID: 11400000, guid: 6dc1457b030e3a74e899061c38af5fc1, type: 2}
+  - {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
+  - {fileID: 11400000, guid: d7e1d710f6ecf8143aa6b18654a8d285, type: 2}
+  - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
+  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
+  - {fileID: 11400000, guid: 9bc3a77f3f4db3e4bbd28cdb158cba23, type: 2}
+  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
+  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
   - {fileID: 11400000, guid: 9c17a12bb6e19e543a4c7753e4d92473, type: 2}
+  - {fileID: 11400000, guid: 4e13e4d02a85ab64a9a0d8c2fb12fde1, type: 2}
+  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
+  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: d7e1d710f6ecf8143aa6b18654a8d285, type: 2}
+  - {fileID: 11400000, guid: 9bc3a77f3f4db3e4bbd28cdb158cba23, type: 2}
+  - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
+  - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
+  - {fileID: 11400000, guid: 7c165361cb2abed4dbbae5062f5c38cd, type: 2}
+  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
+  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
+  - {fileID: 11400000, guid: 9bc3a77f3f4db3e4bbd28cdb158cba23, type: 2}
   currentCharacter: {fileID: 0}
   characterObjects:
   - {fileID: 973462376}
-  - {fileID: 503943525}
-  - {fileID: 973462376}
-  - {fileID: 973462376}
-  - {fileID: 1360589653}
-  - {fileID: 2018879322}
-  - {fileID: 306266341}
-  - {fileID: 156297922}
-  - {fileID: 156297922}
-  - {fileID: 1937845689}
-  - {fileID: 1196896048}
-  - {fileID: 1937845689}
-  - {fileID: 517612217}
-  - {fileID: 306266341}
-  - {fileID: 1196896048}
-  - {fileID: 1168836904}
-  - {fileID: 1168836904}
-  - {fileID: 1580913493}
-  - {fileID: 1898575738}
-  - {fileID: 1898575738}
-  - {fileID: 1937845689}
   - {fileID: 1298240868}
-  - {fileID: 1937845689}
   - {fileID: 1086671382}
   - {fileID: 1066098676}
+  - {fileID: 1937845689}
+  - {fileID: 1196896048}
+  - {fileID: 973462376}
+  - {fileID: 693860251}
+  - {fileID: 1898575738}
+  - {fileID: 306266341}
+  - {fileID: 1066098676}
   - {fileID: 1298240868}
-  - {fileID: 1066098676}
-  - {fileID: 1066098676}
+  - {fileID: 156297922}
+  - {fileID: 1937845689}
+  - {fileID: 693860251}
+  - {fileID: 1898575738}
+  - {fileID: 1360589653}
+  - {fileID: 517612217}
+  - {fileID: 503943525}
+  - {fileID: 1168836904}
+  - {fileID: 1937845689}
+  - {fileID: 693860251}
+  - {fileID: 306266341}
   - {fileID: 517612217}
   - {fileID: 1486805168}
+  - {fileID: 2018879322}
+  - {fileID: 1196896048}
+  - {fileID: 973462376}
+  - {fileID: 503943525}
+  - {fileID: 693860251}
+  - {fileID: 1066098676}
+  - {fileID: 1168836904}
+  - {fileID: 1580913493}
+  - {fileID: 156297922}
+  - {fileID: 973462376}
+  - {fileID: 1937845689}
+  - {fileID: 693860251}
   currentCharacterObject: {fileID: 0}
   dialogueTriggerScript: {fileID: 973462384}
   joleneS: {fileID: 1168836910}
@@ -20873,6 +20913,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692327540}
   m_CullTransparentMesh: 1
+--- !u!1 &693860251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693860252}
+  m_Layer: 0
+  m_Name: End Of Day Object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693860252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693860251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1989573862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &694138050
 GameObject:
   m_ObjectHideFlags: 0
@@ -22113,20 +22184,38 @@ MonoBehaviour:
   nextDayButton: {fileID: 689516834}
   dayDescription:
   - This is sample text
-  - "Your day comes to an end. You go home and wake up the next morning.\n\nAfter
-    a full nights rest, you start your walk towards the Guild House before it opens.
+  - "Your day comes to an end. You go home and wake up the next morning.\r\n\r\nAfter
+    a full night's rest, you start your walk towards the Guild House before it opens.
     The walk is blissful and you recognize a few faces of other guild clerks on their
     way to the Guild House, but you decide to hold yourself back from walking to
-    them to say hi out of fear of embarassing yourself.\r\n\nAs you walk into the
-    Guild House, you see a few guild clerks already here\u2014just chatting with
+    them to say hi out of fear of embarrassing yourself.\r\n\r\nAs you walk into
+    the Guild House, you see a few guild clerks already here\u2014just chatting with
     one another before the day starts. You walk to your station, tidy up your counter,
-    and await the next adventurer."
+    and await the next adventurer.\r"
   - 'Adventurers grumble and filter out of the Guild. You wipe the sweat off your
     forehead and sigh. Today was rough, but you made it through just fine. You pack
     up your stuff and head out.
 
 
     Tommorow is a new day.'
+  - "The end of your shift comes and you start to pack up. You take a look at your
+    station and can\u2019t help but smile. Sure, thus far it\u2019s been the most
+    violent pendulum swing of either the nicest people you've ever met to the craziest
+    people the guild could legally call an adventurer\u2014but it\u2019s kind of
+    fun in an odd way. \r\n\r\nYou finish packing stuff in your bag and walk out
+    the doors. After a couple of steps you look back at the big guild house and feel
+    a tinge of happiness. You know that whatever comes next in the future, it\u2019s
+    going to be just as fun and exciting as the days before. You simply can\u2019t
+    imagine the job getting boring after all. \r"
+  - "The end of your shift comes and you start to pack up. You take a look at your
+    station and can\u2019t help but smile. Sure, thus far it\u2019s been the most
+    violent pendulum swing of either the nicest people you've ever met to the craziest
+    people the guild could legally call an adventurer\u2014but it\u2019s kind of
+    fun in an odd way. \r\n\r\nYou finish packing stuff in your bag and walk out
+    the doors. After a couple of steps you look back at the big guild house and feel
+    a tinge of happiness. You know that whatever comes next in the future, it\u2019s
+    going to be just as fun and exciting as the days before. You simply can\u2019t
+    imagine the job getting boring after all. \r"
   - "The end of your shift comes and you start to pack up. You take a look at your
     station and can\u2019t help but smile. Sure, thus far it\u2019s been the most
     violent pendulum swing of either the nicest people you've ever met to the craziest
@@ -61452,6 +61541,7 @@ Transform:
   - {fileID: 1011881218}
   - {fileID: 1305821476}
   - {fileID: 714989458}
+  - {fileID: 693860252}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994997386
