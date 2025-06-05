@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1343459851986180946}
   - component: {fileID: 2792263602944352061}
   - component: {fileID: 2808030301532726316}
+  - component: {fileID: 6183955373417989729}
   m_Layer: 7
   m_Name: Coin
   m_TagString: Untagged
@@ -182,6 +183,19 @@ MonoBehaviour:
   suckForce: 20
   maxSpeed: 15
   collectDistance: 0.5
+--- !u!114 &6183955373417989729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5840946704655884335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipText: Gold Coin
 --- !u!1 &6430532404424654680
 GameObject:
   m_ObjectHideFlags: 0
