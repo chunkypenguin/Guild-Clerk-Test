@@ -6,6 +6,11 @@ public class TooltipUI : MonoBehaviour
     public static TooltipUI Instance;       // quick singleton
 
     [SerializeField] TextMeshProUGUI text;
+
+
+    [SerializeField] Vector2 cursorOffset = new Vector2(20, -16);   
+    [SerializeField] bool clampToScreen = true;
+
     RectTransform rect;
 
     void Awake()
@@ -22,8 +27,8 @@ public class TooltipUI : MonoBehaviour
         Vector2 pos = Input.mousePosition;
 
         // put tooltip 12 px right & 16 px down from the cursor
-        rect.pivot = new Vector2(0, 1);          // top?left corner of panel
-        rect.position = pos + new Vector2(12f, -16f);
+        rect.pivot = new Vector2(0, 1);         
+        rect.position = pos + cursorOffset;
 
         // --- optional screen?edge clamp ---
         float w = rect.rect.width;
