@@ -4572,6 +4572,7 @@ MonoBehaviour:
   nomiraS: {fileID: 156297929}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!23 &156297927
 MeshRenderer:
@@ -6393,6 +6394,211 @@ Transform:
   m_Children: []
   m_Father: {fileID: 731164323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &243292063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243292064}
+  - component: {fileID: 243292065}
+  m_Layer: 0
+  m_Name: AchillesQ1A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &243292064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243292063}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.22133, y: -7.190257, z: -3.379711}
+  m_LocalScale: {x: 1.6048354, y: 2.8943188, z: 1.9376842}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1360589654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &243292065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243292063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSentence: 0
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1360589658}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "Lindinburrow?! \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "That\u2019s\u2026 OH WOW! That\u2019s where I grew up.\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "I haven\u2019t been back since I left for the conservatory in Crickfield.
+      Didn\u2019t finish though, turns out tuition isn\u2019t just a suggestion!\r\n"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "My mom always said I\u2019d come back with my hurdy-gurdy and a dream!\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "\u2026\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "She might\u2019ve meant that as an insult."
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "But hey! I can't wait to see her again!\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &258388546
 GameObject:
   m_ObjectHideFlags: 0
@@ -7955,6 +8161,7 @@ MonoBehaviour:
   nomiraS: {fileID: 156297929}
   zetoS: {fileID: 306266348}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!23 &306266346
 MeshRenderer:
@@ -9319,7 +9526,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 34e03f7aaea8a76449abddbca669c055, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -9338,7 +9545,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 3544b46485c2bf045b6911c10b2b89f4, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -9395,7 +9602,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 3544b46485c2bf045b6911c10b2b89f4, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -9408,19 +9615,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 973462385}
-          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: I better teach 'em a lesson or two about repaying debts...
     skipDelayTime: 0
@@ -9452,7 +9647,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 34e03f7aaea8a76449abddbca669c055, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -9471,7 +9666,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 3544b46485c2bf045b6911c10b2b89f4, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -12141,6 +12336,46 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2018879330}
+          m_TargetAssemblyTypeName: KalinScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: af8b08afba3192d44a1db76555d0ad2a, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
+    sentence: 'It was a basic bandit outpost. Twelve of ''em.
+
+'
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2018879330}
+          m_TargetAssemblyTypeName: KalinScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 9c0104cb55d133741bb3f19583e11d75, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
+    sentence: "One lucky hit to the ribs, but I returned the favor.\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
     sentence: "What\u2019s the payout?\r"
@@ -12148,7 +12383,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2018879330}
+          m_TargetAssemblyTypeName: KalinScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: a9945ba8f173d7344937427255777bf4, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &477224884
 GameObject:
   m_ObjectHideFlags: 0
@@ -13463,6 +13710,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!23 &517612222
 MeshRenderer:
@@ -13609,14 +13857,38 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2018879330}
+          m_TargetAssemblyTypeName: KalinScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 9c0104cb55d133741bb3f19583e11d75, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
     sentence: Wasn't worth that much. Not from me.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2018879330}
+          m_TargetAssemblyTypeName: KalinScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 9ff1ddf9f558e2f4db47f403b2ea5985, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
     sentence: Give that extra to someone who aactually deserves it.
     skipDelayTime: 0
@@ -18267,19 +18539,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
-  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
-  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
-  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
-  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
-  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
-  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
-  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
-  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
-  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
+  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
   - {fileID: 11400000, guid: 4e13e4d02a85ab64a9a0d8c2fb12fde1, type: 2}
+  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
+  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
+  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
+  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
-  - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
+  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
+  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
+  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
+  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
   - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
   - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
   - {fileID: 11400000, guid: 7c165361cb2abed4dbbae5062f5c38cd, type: 2}
@@ -18297,6 +18570,10 @@ MonoBehaviour:
   currentCharacter: {fileID: 0}
   characterObjects:
   - {fileID: 973462376}
+  - {fileID: 973462376}
+  - {fileID: 1360589653}
+  - {fileID: 973462376}
+  - {fileID: 2018879322}
   - {fileID: 306266341}
   - {fileID: 156297922}
   - {fileID: 156297922}
@@ -18306,9 +18583,6 @@ MonoBehaviour:
   - {fileID: 517612217}
   - {fileID: 306266341}
   - {fileID: 1196896048}
-  - {fileID: 2018879322}
-  - {fileID: 973462376}
-  - {fileID: 973462376}
   - {fileID: 1168836904}
   - {fileID: 1168836904}
   - {fileID: 1580913493}
@@ -18346,6 +18620,8 @@ MonoBehaviour:
   josieKalin2: {fileID: 1775419972}
   josieKalinEGive: {fileID: 382223288}
   josieKalinERefuse: {fileID: 1044580330}
+  josieAchillesQ1A: {fileID: 1715454362}
+  josieAchillesQ1B: {fileID: 1715475849}
   gregD1P1: {fileID: 215668413}
   gregD1Q1AP1: {fileID: 1311710834}
   gregD1Q1BP1: {fileID: 2016044845}
@@ -18485,6 +18761,9 @@ MonoBehaviour:
   KalinQ1AGMinus: {fileID: 1061846603}
   KalinQ1AGEquals: {fileID: 1590838733}
   KalinQ1AGPlus: {fileID: 518263718}
+  achillesP1: {fileID: 1212981746}
+  achillesQ1A: {fileID: 243292065}
+  achillesQ1B: {fileID: 981289784}
   dialogueHistory: {fileID: 1305821477}
   questDialogue: {fileID: 357877040}
   equipmentDialogue: {fileID: 2096946931}
@@ -25829,7 +26108,7 @@ MonoBehaviour:
   flashOn: 0
   flashWasOn: 0
   drawerOpen: 0
-  canOpenDrawer: 0
+  canOpenDrawer: 1
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26443,6 +26722,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 726354694}
 --- !u!23 &973462379
 MeshRenderer:
@@ -26524,6 +26804,8 @@ Transform:
   - {fileID: 1775419971}
   - {fileID: 382223287}
   - {fileID: 1044580329}
+  - {fileID: 1715454361}
+  - {fileID: 1715475848}
   m_Father: {fileID: 1989573862}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
 --- !u!65 &973462382
@@ -26599,6 +26881,7 @@ MonoBehaviour:
   goldBundleGlow: {fileID: 110662035}
   goldBundle: {fileID: 1735427242}
   hasGoldBundle: 0
+  lotestJosieStarted: 0
 --- !u!114 &973462386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26626,6 +26909,196 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b893c84db8b73884082835906204f221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &981289782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 981289783}
+  - component: {fileID: 981289784}
+  m_Layer: 0
+  m_Name: AchillesQ1B
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &981289783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981289782}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.22133, y: -7.190257, z: -3.379711}
+  m_LocalScale: {x: 1.6048354, y: 2.8943188, z: 1.9376842}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1360589654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &981289784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981289782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSentence: 0
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1360589658}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: 'Heldom Dam?!
+
+'
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "That\u2019s where my fianc\xE9e lives!\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "We\u2019ve been writing letters ever since I busked outside her window
+      during a thunderstorm.\r\n"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "...She wasn\u2019t thrilled at the time. But she kept the soggy lyric
+      sheet!\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "Anyway, she\u2019s never seen me perform on a real stage. This is
+      gonna be big.\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "Thank you so much! I\u2019ll be sure to shout you out at the performance!\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &984339891
 GameObject:
   m_ObjectHideFlags: 0
@@ -29189,7 +29662,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2018879330}
+          m_TargetAssemblyTypeName: KalinScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 9c0104cb55d133741bb3f19583e11d75, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
     sentence: "Whatever. It\u2019s fine.\r"
     skipDelayTime: 0
@@ -29523,6 +30008,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!23 &1066098681
 MeshRenderer:
@@ -30234,6 +30720,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!23 &1086671386
 MeshRenderer:
@@ -33031,6 +33518,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!23 &1168836908
 MeshRenderer:
@@ -33506,6 +33994,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!23 &1196896053
 MeshRenderer:
@@ -34302,6 +34791,224 @@ MonoBehaviour:
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
+--- !u!1 &1212981744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1212981745}
+  - component: {fileID: 1212981746}
+  m_Layer: 0
+  m_Name: AchillesP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1212981745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212981744}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.22133, y: -7.190257, z: -3.379711}
+  m_LocalScale: {x: 1.6048354, y: 2.8943188, z: 1.9376842}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1360589654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1212981746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212981744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSentence: 0
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 655475413}
+        m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
+        m_MethodName: IsQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1287477355}
+        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
+        m_MethodName: UpdateQuests
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 0
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "H-Hi there!! Achilles, Bard-for-hire, tuning in!  \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "This is kinda my first real tour stop actually.\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: Well, second, if you count the time I played for two horses and a sleeping
+      merchant.
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "But I\u2019m ready for something bigger!\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "I just want to help people feel something, y\u2019know? \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "Joy! Nostalgia! Moderate to severe awe!\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+    sentence: "Any quests with towns in need of music? With the harvest festival
+      around the corner, I feel like this could be my big break!\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1360589655}
+          m_TargetAssemblyTypeName: AchillesScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 46b93311dba215240b70e758ae6b3a61, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1213705547
 GameObject:
   m_ObjectHideFlags: 0
@@ -37197,6 +37904,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!23 &1298240873
 MeshRenderer:
@@ -39078,6 +39786,186 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344791441}
   m_CullTransparentMesh: 1
+--- !u!1 &1360589653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1360589654}
+  - component: {fileID: 1360589660}
+  - component: {fileID: 1360589659}
+  - component: {fileID: 1360589658}
+  - component: {fileID: 1360589657}
+  - component: {fileID: 1360589656}
+  - component: {fileID: 1360589655}
+  m_Layer: 0
+  m_Name: Achilles
+  m_TagString: Character
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1360589654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360589653}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
+  m_LocalPosition: {x: 8.5, y: 0, z: -1.016}
+  m_LocalScale: {x: 0.6591, y: 0.40847063, z: 0.6591}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1212981745}
+  - {fileID: 243292064}
+  - {fileID: 981289783}
+  m_Father: {fileID: 1989573862}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+--- !u!114 &1360589655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360589653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed50820531f8951429e2431e3ba5b7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cs: {fileID: 0}
+  gs: {fileID: 0}
+  mr: {fileID: 0}
+  achillesCharacter: {fileID: 11400000, guid: fd6ada4de57054f4fb8559289ccadb78, type: 2}
+--- !u!114 &1360589656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360589653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3197d36e590067c4391c75b1f4b089f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reputationPoints: 0
+  onReputationChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1360589657
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360589653}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 0.5, z: 7.7487154}
+  m_Center: {x: 1.0987194e-17, y: 2.4815024e-13, z: 0.24471979}
+--- !u!114 &1360589658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360589653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8871c91988a1f5144814100a3d83a9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  startPos: {x: 0, y: 0, z: 0}
+  endPos: {x: 0, y: 0, z: 0}
+  jumping: 1
+  jumpPoint: {fileID: 714989458}
+  jumpSpeed: 2
+  jumpCount: 1
+  jumpDuration: 0.75
+  cs: {fileID: 655475413}
+  josieS: {fileID: 973462385}
+  gregS: {fileID: 1298240875}
+  finchS: {fileID: 1086671388}
+  andyS: {fileID: 0}
+  lorneS: {fileID: 1066098683}
+  maggieS: {fileID: 1898575744}
+  joleneS: {fileID: 1168836910}
+  lotestS: {fileID: 1196896050}
+  tahmasS: {fileID: 1580913499}
+  zekeS: {fileID: 1486805174}
+  vanelleS: {fileID: 517612224}
+  nomiraS: {fileID: 156297929}
+  zetoS: {fileID: 0}
+  kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
+  ds: {fileID: 0}
+--- !u!23 &1360589659
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360589653}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ddf3c08581907374bbb61e98aff7e0c1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1360589660
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360589653}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1371107052
 GameObject:
   m_ObjectHideFlags: 0
@@ -42023,6 +42911,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!65 &1486805171
 BoxCollider:
@@ -44255,6 +45144,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!23 &1580913497
 MeshRenderer:
@@ -44640,6 +45530,13 @@ MonoBehaviour:
         m_CallState: 2
   triggerState: 0
   sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
+    sentence: "Here.\r"
+    skipDelayTime: 1
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
     sentence: "Give that to Josie.\r"
     skipDelayTime: 0
@@ -48275,6 +49172,578 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downForce: 0
   poofFX: {fileID: 0}
+--- !u!1 &1715454360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1715454361}
+  - component: {fileID: 1715454362}
+  m_Layer: 0
+  m_Name: JosieAchillesQ1A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1715454361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715454360}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 973462381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715454362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715454360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSentence: 0
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 973462377}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 1
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "Oh my gosh! \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "{0}, have you heard the news?\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "There was a huge accident at Lindenburrow, and one of our adventurers
+      died! \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "It happened just yesterday, so they haven't released who it was, but
+      I am pretty sure it was that musician who was in here yesterday. \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "Rumors say people heard arguments coming from a small home, when suddenly
+      the victim rushed outside in anger... \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "But then someone chased after him and threw a cake at his face! \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "The cake was too heavy for his small hamster body and he fell down
+      into a well. \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "They never recovered the body\u2026 "
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "And the cake thrower got life in prison\u2026 \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "His whole family watched it happen, those poor people\u2026 \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &1715475847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1715475848}
+  - component: {fileID: 1715475849}
+  m_Layer: 0
+  m_Name: JosieAchillesQ1B
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1715475848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715475847}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 973462381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715475849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715475847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b2c8d34df52d4e89cba040401d38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSentence: 0
+  UIManagerScript: {fileID: 1460095399}
+  playerName: 
+  audioSource: {fileID: 1821416493}
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 973462377}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerState: 1
+  sentences:
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "Oh my gosh\u2014did you hear what happened?!\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "That musician\u2014Achilles? \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "He\u2026 he died. \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "It\u2019s all over the news. Everyone at the festival saw what happened.
+      \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "During his performance, he was performing as per usual, then in his
+      finale, there was a large flash that beamed somewhere from the audience and
+      his hurdy gurdy turned into a bunch of snakes! \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "When he tried to run away, the snakes grabbed him, holding him down.
+      \r\n"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "Then the fireworks all went off all at once, causing the roof to fall
+      on top of him. \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "When they lifted up the rubble...\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "...\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "Let\u2019s just say the family will likely have a closed casket funeral.
+      \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "His fianc\xE9e was so distraught, she immediately sold her engagement
+      ring and fled town.\r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+    sentence: "How does something like that even happen? Was the poor fella cursed?
+      \r"
+    skipDelayTime: 0
+    sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
+    sentenceEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1723499194
 GameObject:
   m_ObjectHideFlags: 0
@@ -52116,6 +53585,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!23 &1898575742
 MeshRenderer:
@@ -52929,6 +54399,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 0}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!65 &1937845693
 BoxCollider:
@@ -55335,6 +56806,7 @@ Transform:
   - {fileID: 1937845690}
   - {fileID: 156297923}
   - {fileID: 306266342}
+  - {fileID: 1360589654}
   - {fileID: 1066098677}
   - {fileID: 1580913494}
   - {fileID: 1196896049}
@@ -57000,8 +58472,8 @@ Transform:
   m_GameObject: {fileID: 2018879322}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
-  m_LocalPosition: {x: 11.28, y: -0.11, z: 0}
-  m_LocalScale: {x: 0.471412, y: 0.40897554, z: 0.6134633}
+  m_LocalPosition: {x: 10.95, y: 0.93, z: 0}
+  m_LocalScale: {x: 0.9089301, y: 0.59654146, z: 0.8948121}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 477200479}
@@ -57030,7 +58502,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dedd9af6a4d55124b9d667fc63aa695f, type: 2}
+  - {fileID: 2100000, guid: a9945ba8f173d7344937427255777bf4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -57087,8 +58559,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.000001, y: 1.507277, z: 10}
-  m_Center: {x: -3.8976197e-14, y: 0.2536392, z: -5.3570714e-14}
+  m_Size: {x: 7.2779665, y: 1.507277, z: 8.798193}
+  m_Center: {x: 0.10668543, y: 0.25363916, z: 0.600889}
 --- !u!114 &2018879328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57124,6 +58596,7 @@ MonoBehaviour:
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
   kalinS: {fileID: 2018879330}
+  achillesS: {fileID: 0}
   ds: {fileID: 0}
 --- !u!33 &2018879329
 MeshFilter:
@@ -57147,6 +58620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cs: {fileID: 0}
   gs: {fileID: 0}
+  mr: {fileID: 0}
   gaveGold: 0
 --- !u!1 &2023330690
 GameObject:

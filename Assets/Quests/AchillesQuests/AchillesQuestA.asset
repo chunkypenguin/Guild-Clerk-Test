@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
+  m_Name: AchillesQuestA
+  m_EditorClassIdentifier: 
+  questTitle: "Play Music for the Harvest Festival at Lindinburrow\r"
+  questDescription: "\u201CThe folks at Lindinburrow have been working hard all season,
+    and now it\u2019s time to celebrate with food, dancing, and some much-needed
+    fiddle solos. The only problem? Their regular bard caught a nasty case of hay
+    fever. Grab an instrument and bring some much-needed tunes to the festival before
+    the locals start trying to clap in unison. Nobody wants that. We promise a basket
+    of assorted pies made by our very own Ms. Mauta!\u201D\r\n"
+  questReward: "Reward: 12 Gold\r"

@@ -39,6 +39,8 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager josieKalin2;
     public DialogueManager josieKalinEGive;
     public DialogueManager josieKalinERefuse;
+    public DialogueManager josieAchillesQ1A;
+    public DialogueManager josieAchillesQ1B;
 
     [Header("Greg")]
     public DialogueManager gregD1P1;
@@ -213,6 +215,11 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager KalinQ1AGEquals;
     public DialogueManager KalinQ1AGPlus;
 
+    [Header("Achilles")]
+    public DialogueManager achillesP1;
+    public DialogueManager achillesQ1A;
+    public DialogueManager achillesQ1B;
+
 
     [Header("Dialogue History")]
     public DialogueManager dialogueHistory;
@@ -376,6 +383,11 @@ public class CharacterSystem : MonoBehaviour
             }
 
         }
+
+        if (currentCharacter.characterName == "Achilles")
+        {
+            achillesQ1A.StartNewDialogue(dialogueTriggerScript);
+        }
     }
 
     public void QuestBDialogue()
@@ -436,6 +448,11 @@ public class CharacterSystem : MonoBehaviour
                 nomiraD1Q1AB2.StartNewDialogue(dialogueTriggerScript);
             }
             
+        }
+
+        if (currentCharacter.characterName == "Achilles")
+        {
+            achillesQ1B.StartNewDialogue(dialogueTriggerScript);
         }
     }
 

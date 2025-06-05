@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14f72617d3ee4448c49cb588554f71, type: 3}
+  m_Name: AchillesQuestB
+  m_EditorClassIdentifier: 
+  questTitle: 'Play Music for the Harvest Festival at Heldom Dam
+
+'
+  questDescription: "\u201CThe Harvest festival at Heldom Dam is a big deal\u2013literally.
+    The whole celebration takes place right on the dam itself. It\u2019s scenic,
+    festive, and mildly terrifying if you don\u2019t like heights. The villagers
+    are counting on someone being there to keep the music lively and the dancers
+    from thinking about the \u2018bottomless abyss\u2019 part of the venue. Be sure
+    not to drop your instrument over the edge!\r\n"
+  questReward: "Reward: 17 Gold\r"

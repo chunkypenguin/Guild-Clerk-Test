@@ -40,6 +40,9 @@ public class TutorialScript : MonoBehaviour
     bool tagOn;
     public bool hasGoldBundle;
 
+    //Lotest check
+    public bool lotestJosieStarted;
+
     public static TutorialScript instance;
 
     public void Start()
@@ -67,6 +70,20 @@ public class TutorialScript : MonoBehaviour
         {
             Debug.Log("josie talks about magenta bag");
             cs.josieD3Lotest.StartNewDialogue(cs.dialogueTriggerScript);
+        }
+    }
+
+    public void AchillesDialogue()
+    {
+        if (AchillesScript.instance.achillesCharacter.choseQuestA)
+        {
+            cs.josieAchillesQ1A.StartNewDialogue(cs.dialogueTriggerScript);
+
+        }
+        else if (AchillesScript.instance.achillesCharacter.choseQuestB)
+        {
+            cs.josieAchillesQ1B.StartNewDialogue(cs.dialogueTriggerScript);
+
         }
     }
 

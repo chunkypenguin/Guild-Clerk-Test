@@ -40,6 +40,7 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] NomiraScript nomiraS;
     [SerializeField] ZetoScript zetoS;
     [SerializeField] KalinScript kalinS;
+    [SerializeField] AchillesScript achillesS;
 
     [SerializeField] DaySystem ds;
 
@@ -66,6 +67,7 @@ public class MoveCharacter : MonoBehaviour
     private void Start()
     {
         kalinS = KalinScript.instance;
+        achillesS = AchillesScript.instance;
     }
 
     private void Update()
@@ -84,7 +86,7 @@ public class MoveCharacter : MonoBehaviour
 
     public void MoveToEnd() //move character out of sight
     {
-        if (cs.currentCharacter.characterName == "Andy" || cs.currentCharacter.characterName == "Zeto Storma")
+        if (cs.currentCharacter.characterName == "Andy" || cs.currentCharacter.characterName == "Zeto Storma" || cs.currentCharacter.characterName == "Achilles")
         {
             transform.DOJump(endPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
             {
@@ -266,7 +268,7 @@ public class MoveCharacter : MonoBehaviour
     public void MoveToDesk()
     {
 
-        if (cs.currentCharacter.characterName == "Andy" || cs.currentCharacter.characterName == "Zeto Storma")
+        if (cs.currentCharacter.characterName == "Andy" || cs.currentCharacter.characterName == "Zeto Storma" || cs.currentCharacter.characterName == "Achilles")
         {
 
 
@@ -279,6 +281,10 @@ public class MoveCharacter : MonoBehaviour
                 else if (cs.currentCharacter.characterName == "Zeto Storma")
                 {
                     zetoS.StartDialogue();
+                }
+                else if (cs.currentCharacter.characterName == "Achilles")
+                {
+                    achillesS.StartDialogue();
                 }
 
             });
@@ -337,11 +343,15 @@ public class MoveCharacter : MonoBehaviour
                         josieS.TutorialMoveDesk();
                         
                     }
-                    else if (LotestScript.instance.partOneComplete)
+                    else if (LotestScript.instance.partOneComplete && !josieS.lotestJosieStarted) //lotest portion goes first
                     {
                         josieS.StartDialogue();
+                        josieS.lotestJosieStarted = true;
                     }
-
+                    else //should be for achilles
+                    {
+                        josieS.AchillesDialogue();
+                    }
                 }
 
                 if (cs.currentCharacter.characterName == "Greg")

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4a308dae7ffd048a8b0eb8d5ae4a02, type: 3}
+  m_Name: Achilles
+  m_EditorClassIdentifier: 
+  characterPhoto: {fileID: 0}
+  characterName: Achilles
+  quest:
+  - {fileID: 11400000, guid: ffcf08bedc98a6742b4f02e132b9d28c, type: 2}
+  - {fileID: 11400000, guid: 30ae67f432367a64182c279a0d8f95bf, type: 2}
+  ItemAName: 
+  ItemBName: 
+  ItemANameA: 
+  ItemBNameB: 
+  choseQuestA: 0
+  choseQuestB: 0
+  choseItemA: 0
+  choseItemB: 0
+  choseItemAA: 0
+  textColor: {r: 0, g: 0, b: 0, a: 1}

@@ -6,6 +6,7 @@ public class KalinScript : MonoBehaviour
 {
     [SerializeField] CharacterSystem cs;
     [SerializeField] GoldSystem gs;
+    [SerializeField] MeshRenderer mr;
 
     public bool gaveGold;
 
@@ -20,6 +21,7 @@ public class KalinScript : MonoBehaviour
     {
         cs = CharacterSystem.instance;
         gs = GoldSystem.instance;
+        mr = gameObject.GetComponent<MeshRenderer>();
     }
 
     public void StartDialogue()
@@ -59,5 +61,15 @@ public class KalinScript : MonoBehaviour
     public void GaveGold(bool gold)
     {
         gaveGold = gold;
+    }
+
+    public void ChangeEmote(Material emote)
+    {
+        if (emote == null)
+        {
+            Debug.Log("No material assigned");
+            return;
+        }
+        mr.material = emote;
     }
 }
