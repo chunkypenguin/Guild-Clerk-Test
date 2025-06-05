@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using HeneGames.DialogueSystem;
 
 public class NomiraScript : MonoBehaviour
 {
@@ -21,6 +22,13 @@ public class NomiraScript : MonoBehaviour
     public GameObject divineStaffGlow;
     public GameObject cosmicStaffGlow;
     public GameObject weaponGlow;
+
+    //emotes
+    [SerializeField] Material peekMat;
+    [SerializeField] Material posessedMat;
+    [SerializeField] Material wickedSmileMat;
+
+    public DialogueCharacter nomiraCharacter;
 
     private void Awake()
     {
@@ -71,7 +79,7 @@ public class NomiraScript : MonoBehaviour
         }
         else if (cs.currentCharacter.choseQuestB) //GOLEM
         {
-            if (cs.currentCharacter.choseItemAA) //weapon
+            if (cs.currentCharacter.choseItemA) //weapon
             {
                 if (gs.goldAmount == 35) //=
                 {
@@ -139,4 +147,20 @@ public class NomiraScript : MonoBehaviour
 
         cs.NomiraD1QOw.StartNewDialogue(cs.dialogueTriggerScript);
     }
+
+    public void NomiraPeek()
+    {
+        ChangeEmote(peekMat);
+    }
+
+    public void NomiraPosessed()
+    {
+        ChangeEmote(posessedMat);
+    }
+
+    public void NomiraWickedSmile()
+    {
+        ChangeEmote(wickedSmileMat);
+    }
+
 }

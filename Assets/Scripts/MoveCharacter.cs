@@ -192,6 +192,29 @@ public class MoveCharacter : MonoBehaviour
                         nomiraS.partOneComplete = true;
                     }
 
+                    if (nomiraS.nomiraCharacter.choseQuestA) //RUINS
+                    {
+                        if(nomiraS.nomiraCharacter.choseItemB) //Divine
+                        {
+                            nomiraS.NomiraPeek();
+                        }
+                        else if(nomiraS.nomiraCharacter.choseItemAA) //Other
+                        {
+                            nomiraS.NomiraPosessed();
+                        }
+                    }
+                    else if (nomiraS.nomiraCharacter.choseQuestB) //GOLEM
+                    {
+                        if (nomiraS.nomiraCharacter.choseItemA) //Weapon
+                        {
+                            nomiraS.NomiraWickedSmile();
+                        }
+                        else if (nomiraS.nomiraCharacter.choseItemAA || nomiraS.nomiraCharacter.choseItemB) //Other
+                        {
+                            nomiraS.NomiraPeek();
+                        }
+                    }
+
                 }
 
                     cs.StartNewCharacter();

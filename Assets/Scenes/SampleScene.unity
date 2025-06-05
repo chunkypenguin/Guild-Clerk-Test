@@ -423,7 +423,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 609574c1d1b0c694d8fc0dfb808bb6d2, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -448,19 +448,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: Honestly, I went to school to learn the secrets of magic, but to think
       THIS is what I learned...
@@ -468,95 +456,35 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: ...
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: The ruins were crused by a spider, and that spider created a web...
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: That web showed me everything...
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: ...
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: Magic isn't real, non of us are, and to a certain extent, neither are
       you...
@@ -564,114 +492,42 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: Or at least this version of you.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: I'm sure you are real somewhere out there.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: But I am in here...
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: I am just going to leave now.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: Good luck.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &13039506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +985,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: d0b500c85e97d8847b7e13b1813290de, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &28822890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,7 +1892,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: d0b500c85e97d8847b7e13b1813290de, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -2037,38 +1905,14 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: I'm sorry...
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &61969388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,6 +2204,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: cd0653efaab91884c97249254accb447, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4433,7 +4289,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: 'My name is Nomira. I recently got my adventurer''s license, and I
       was hoping to work as an adventurer for a while. '
@@ -4449,7 +4317,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 0e8b350c0d5d7d749acd26f2e5ab45d0, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "I\u2019ll stop rambling now, sorry to waste some of your precious
       time. I\u2019ll take any quest\u2026\r"
@@ -4713,7 +4593,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+  - {fileID: 2100000, guid: 345fc37a4da015c4fa7bb4aa0c287eb5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4764,6 +4644,10 @@ MonoBehaviour:
   divineStaffGlow: {fileID: 1876336605}
   cosmicStaffGlow: {fileID: 1263067541}
   weaponGlow: {fileID: 1885727009}
+  peekMat: {fileID: 2100000, guid: 345fc37a4da015c4fa7bb4aa0c287eb5, type: 2}
+  posessedMat: {fileID: 2100000, guid: 609574c1d1b0c694d8fc0dfb808bb6d2, type: 2}
+  wickedSmileMat: {fileID: 2100000, guid: 5aa99d98340959e4991ee45ce739f60b, type: 2}
+  nomiraCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
 --- !u!224 &180265327 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6449296285370776043, guid: 66a0aba2ba55058439c92574558222ac, type: 3}
@@ -4801,7 +4685,7 @@ AudioSource:
   m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -5141,7 +5025,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1b9bbd686b6c09640b4827f7170b2604, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &187964145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e6203c354686c5b429c4432735ee287b, type: 3}
@@ -5626,7 +5522,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 04f2ea0ec2fe5ac48832c5110a206f38, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -5646,7 +5542,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -5665,7 +5561,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -9764,7 +9660,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "That quest was so much fun! I was able to deactivate the golem and
       removed its core so it won\u2019t be reactivating anytime soon. "
@@ -9797,6 +9705,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1b9bbd686b6c09640b4827f7170b2604, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "\rI have only ever read about golems, so this was the first time I
       have ever really seen one up close like that! \r"
@@ -9804,7 +9724,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "\rI even spent some time studying it after I removed it and found
       some interesting stuff\u2026"
@@ -9820,7 +9752,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: e38f4a9d666b1d441bc24e4a9b037368, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "\r\u201CFurthermore, if this golem is subjected to enough lightning,
       its protocol states it must immediately use the additional energy\u201D.  \r"
@@ -9836,7 +9780,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "\rOh, I am so sorry. Sometimes I just get too excited and forget that
       what I am saying might be boring to people. \r\r  \r"
@@ -9844,7 +9800,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 0e8b350c0d5d7d749acd26f2e5ab45d0, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "\r\rI don\u2019t want to take up anymore of your time, how much was
       the reward again? \r \r\r  \r"
@@ -10687,7 +10655,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 04f2ea0ec2fe5ac48832c5110a206f38, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -10707,7 +10675,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -10726,7 +10694,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 1b9bbd686b6c09640b4827f7170b2604, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -14248,7 +14216,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 04f2ea0ec2fe5ac48832c5110a206f38, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "This sounds like a good challenge! \r"
     skipDelayTime: 0
@@ -14263,6 +14243,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1b9bbd686b6c09640b4827f7170b2604, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -14807,6 +14799,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 156297929}
+        m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+        m_MethodName: ChangeEmote
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
@@ -14815,7 +14819,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 345fc37a4da015c4fa7bb4aa0c287eb5, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
     sentence: ...
     skipDelayTime: 0
@@ -16536,6 +16552,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 156297929}
+        m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+        m_MethodName: ChangeEmote
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
@@ -17070,7 +17098,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: d0b500c85e97d8847b7e13b1813290de, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "I won\u2019t be able to investigate the ruins without an arcane focus...\r\r"
     skipDelayTime: 0
@@ -17084,7 +17124,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &623879818
 GameObject:
   m_ObjectHideFlags: 0
@@ -17180,7 +17232,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: d0b500c85e97d8847b7e13b1813290de, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -17193,38 +17245,14 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "I'm sorry...\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &629225126 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4940536292361913307, guid: eb91f76b31fd480419a8368fb51eed82, type: 3}
@@ -18238,12 +18266,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
-  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
+  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
+  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
+  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
+  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
+  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
+  - {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
+  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
+  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
+  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
   - {fileID: 11400000, guid: 4e13e4d02a85ab64a9a0d8c2fb12fde1, type: 2}
-  - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
   - {fileID: 11400000, guid: 0502fadcfa4bed645a9e2ceb640b1247, type: 2}
   - {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
   - {fileID: 11400000, guid: d20233b5c0088344ab21a20469968e69, type: 2}
@@ -18259,22 +18293,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a0c63e047a777ec46a4b58724492d5cd, type: 2}
   - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
   - {fileID: 11400000, guid: d1bfe74f08dd145429bc6c41f1c4283a, type: 2}
-  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
-  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
-  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
-  - {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
-  - {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
   - {fileID: 11400000, guid: 9c17a12bb6e19e543a4c7753e4d92473, type: 2}
-  - {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
   currentCharacter: {fileID: 0}
   characterObjects:
-  - {fileID: 1937845689}
-  - {fileID: 1937845689}
   - {fileID: 973462376}
-  - {fileID: 973462376}
+  - {fileID: 306266341}
+  - {fileID: 156297922}
+  - {fileID: 156297922}
+  - {fileID: 1937845689}
+  - {fileID: 1196896048}
+  - {fileID: 1937845689}
+  - {fileID: 517612217}
+  - {fileID: 306266341}
+  - {fileID: 1196896048}
   - {fileID: 2018879322}
-  - {fileID: 1196896048}
-  - {fileID: 1196896048}
+  - {fileID: 973462376}
   - {fileID: 973462376}
   - {fileID: 1168836904}
   - {fileID: 1168836904}
@@ -18289,13 +18322,8 @@ MonoBehaviour:
   - {fileID: 1298240868}
   - {fileID: 1066098676}
   - {fileID: 1066098676}
-  - {fileID: 306266341}
-  - {fileID: 156297922}
-  - {fileID: 517612217}
-  - {fileID: 306266341}
   - {fileID: 517612217}
   - {fileID: 1486805168}
-  - {fileID: 156297922}
   currentCharacterObject: {fileID: 0}
   dialogueTriggerScript: {fileID: 973462384}
   joleneS: {fileID: 1168836910}
@@ -20710,7 +20738,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 5aa99d98340959e4991ee45ce739f60b, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -20724,38 +20752,14 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "Anyway, thank you {0} for the awesome weapon and fascinating quest!\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &740169017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4301826308938280608, guid: eb91f76b31fd480419a8368fb51eed82, type: 3}
@@ -21205,7 +21209,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 5aa99d98340959e4991ee45ce739f60b, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -21218,19 +21222,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &763862908
 GameObject:
   m_ObjectHideFlags: 0
@@ -23610,7 +23602,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: f5d86692459355a45a3574204d8c1c8a, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -23623,38 +23615,14 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "I'm sorry...\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &878548060
 GameObject:
   m_ObjectHideFlags: 0
@@ -25861,7 +25829,7 @@ MonoBehaviour:
   flashOn: 0
   flashWasOn: 0
   drawerOpen: 0
-  canOpenDrawer: 1
+  canOpenDrawer: 0
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32429,7 +32397,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1132536605
 GameObject:
   m_ObjectHideFlags: 0
@@ -32907,7 +32887,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 04f2ea0ec2fe5ac48832c5110a206f38, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: This seems interesting!
     skipDelayTime: 0
@@ -32922,6 +32914,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1b9bbd686b6c09640b4827f7170b2604, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -39406,7 +39410,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -39425,7 +39429,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 1b9bbd686b6c09640b4827f7170b2604, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -41663,6 +41667,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 0e8b350c0d5d7d749acd26f2e5ab45d0, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
     sentence: ZETO STORMA!!!
     skipDelayTime: 0
@@ -42654,7 +42670,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -42673,7 +42689,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 1b9bbd686b6c09640b4827f7170b2604, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -43723,21 +43739,57 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "I guess I can\u2019t go on that quest anymore\u2026 \r\n"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: d0b500c85e97d8847b7e13b1813290de, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "Would it be ok if I take the other quest? \r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1576335778
 GameObject:
   m_ObjectHideFlags: 0
@@ -44019,7 +44071,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 5aa99d98340959e4991ee45ce739f60b, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: I destroyed the golem!
     skipDelayTime: 0
@@ -45475,14 +45539,38 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 04f2ea0ec2fe5ac48832c5110a206f38, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "A sword\u2026?\r\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 0e8b350c0d5d7d749acd26f2e5ab45d0, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "They didn\u2019t have any sword training classes at the academy\u2026\r\r\r"
     skipDelayTime: 0
@@ -45496,21 +45584,57 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1b9bbd686b6c09640b4827f7170b2604, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "Yup\u2026!\r\r\r\r\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 0e8b350c0d5d7d749acd26f2e5ab45d0, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "...\r\r\r\r\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1628780091
 GameObject:
   m_ObjectHideFlags: 0
@@ -50318,7 +50442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1799022099
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50695,7 +50819,7 @@ AudioSource:
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -52497,7 +52621,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -52511,18 +52635,6 @@ MonoBehaviour:
     sentenceEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 1287477355}
           m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
           m_MethodName: UpdateReturnQuest
@@ -52542,19 +52654,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "After purifying the curse, I set up a few divine rituals in order
       to understand the source of the curse. \r\n\r"
@@ -52568,7 +52668,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: e38f4a9d666b1d441bc24e4a9b037368, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -52582,19 +52682,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "It spun some web all around the world, but it seemed concentrated
       in those ruins. \r"
@@ -52602,19 +52690,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "I sure am relieved, though. If a different adventurer got this quest
       or had a different arcane focus, things might have turned out way worse. \r"
@@ -52628,7 +52704,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -52660,7 +52736,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 0e8b350c0d5d7d749acd26f2e5ab45d0, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -52674,19 +52750,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 156297929}
-          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 62cd51158ce00ea49b2ad67c1fda8107, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &1931311218
 GameObject:
   m_ObjectHideFlags: 0
@@ -53658,6 +53722,18 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2093739991048211237, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093739991048211237, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093739991048211237, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093739991048211237, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -53691,7 +53767,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2120851903778076601, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: _lifetime
-      value: 1.2
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120851903778076601, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
+      propertyPath: _fadeStartPercent
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2445774090929801072, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: m_IsActive
@@ -53838,6 +53918,18 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5307259540992506856, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307259540992506856, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307259540992506856, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307259540992506856, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -53900,6 +53992,10 @@ PrefabInstance:
     - target: {fileID: 5918338433154441748, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014895125179950957, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
+      propertyPath: _lifetime
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6102438949265350881, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: m_Sprite
@@ -55800,7 +55896,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1b9bbd686b6c09640b4827f7170b2604, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "Requesting equipment has never been so easy.\r\r\n\r\n"
     skipDelayTime: 0
@@ -55814,7 +55922,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "...\r"
     skipDelayTime: 0
@@ -55828,7 +55948,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 0e8b350c0d5d7d749acd26f2e5ab45d0, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "Thank you!\r\r\r"
     skipDelayTime: 0
@@ -55842,7 +55974,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2005194535
 GameObject:
   m_ObjectHideFlags: 0
@@ -56979,7 +57123,7 @@ MonoBehaviour:
   vanelleS: {fileID: 0}
   nomiraS: {fileID: 0}
   zetoS: {fileID: 0}
-  kalinS: {fileID: 0}
+  kalinS: {fileID: 2018879330}
   ds: {fileID: 0}
 --- !u!33 &2018879329
 MeshFilter:
@@ -57597,21 +57741,57 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "This is perfect.\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1b9bbd686b6c09640b4827f7170b2604, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "I appreciate your help today clerk {0}!..\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: ...
     skipDelayTime: 0
@@ -57625,7 +57805,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 0e8b350c0d5d7d749acd26f2e5ab45d0, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
     sentence: "Goodbye! Thanks- ah! I\u2019ve said that already\u2026\r\n"
     skipDelayTime: 0
@@ -57639,7 +57831,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 156297929}
+          m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2049061824
 GameObject:
   m_ObjectHideFlags: 0
@@ -60877,6 +61081,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 156297929}
+        m_TargetAssemblyTypeName: NomiraScript, Assembly-CSharp
+        m_MethodName: ChangeEmote
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 20f16e95c9e6a714ba336aaab80186bf, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
@@ -60905,7 +61121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2136788831
 RectTransform:
   m_ObjectHideFlags: 0
