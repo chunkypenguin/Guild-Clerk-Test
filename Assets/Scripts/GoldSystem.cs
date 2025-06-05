@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
-using UnityEngine.EventSystems;
 
 public class GoldSystem : MonoBehaviour
 {
@@ -33,8 +32,10 @@ public class GoldSystem : MonoBehaviour
 
     public static GoldSystem instance;
 
-    //Hold
-    Coroutine holdRoutine;
+    //NEW CLICK/HOLD
+    private Coroutine holdCoroutine;
+    int upDown;
+
 
     private void Awake()
     {
@@ -80,7 +81,7 @@ public class GoldSystem : MonoBehaviour
                 if (col != null) col.enabled = false;
 
                 Vector3 direction = (cs.currentCharacterObject.transform.position - coin.transform.position).normalized;
-                rb.AddForce(direction * suckForce, ForceMode.Acceleration);
+                rb.AddForce(direction * suckForce, ForceMode.Force); //was acceleration
                 rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
             }
 
@@ -89,6 +90,49 @@ public class GoldSystem : MonoBehaviour
             {
                 CollectCoin(coin);
             }
+        }
+    }
+
+    public void PointerDown(int updown)
+    {
+        upDown = updown;
+        holdCoroutine = StartCoroutine(RepeatAction());
+    }
+
+    public void PointerUp()
+    {
+        StopHold();
+
+    }
+
+    public void PointerExit()
+    {
+        StopHold();
+    }
+
+    private void StopHold()
+    {
+        if (holdCoroutine != null)
+        {
+            StopCoroutine(holdCoroutine);
+            holdCoroutine = null;
+        }
+    }
+
+    private IEnumerator RepeatAction()
+    {
+        while (true)
+        {
+            if(upDown == 0)
+            {
+                PressedDown();
+            }
+            else if (upDown == 1)
+            {
+                PressedUp();
+            }
+
+            yield return new WaitForSeconds(0.15f);
         }
     }
 
@@ -122,7 +166,7 @@ public class GoldSystem : MonoBehaviour
         {
             addedGold = true;
         }
-        if (goldAmount < 50) // Cap at 50
+        if (goldAmount < 100) // Cap at 100
         {
             goldAmount++;
             goldText.text = goldAmount.ToString();
@@ -186,61 +230,6 @@ public class GoldSystem : MonoBehaviour
         for (int i = 0; i < 5; i++) // Calls the function 5 times
         {
             PressedUp();
-        }
-    }
-
-    public void StartAddingContinuously()
-    {
-        if (holdRoutine == null)
-            holdRoutine = StartCoroutine(AddLoop());
-    }
-
-    public void StopAddingContinuously()
-    {
-        if (holdRoutine != null)
-        {
-            StopCoroutine(holdRoutine);
-            holdRoutine = null;
-        }
-    }
-
-
-    public void StartSubtractingContinuously()
-    {
-        if (holdRoutine == null)
-            holdRoutine = StartCoroutine(SubLoop());
-    }
-
-    public void StopSubtractingContinuously()
-    {
-        if (holdRoutine != null)
-        {
-            StopCoroutine(holdRoutine);
-            holdRoutine = null;
-        }
-    }
-
-    IEnumerator AddLoop()
-    {
-        // initial delay feels nicer; tweak as needed
-        yield return new WaitForSeconds(0.25f);
-
-        while (goldAmount < 50)
-        {
-            PressedUp();
-            yield return new WaitForSeconds(0.12f);
-        }
-    }
-
-    IEnumerator SubLoop()
-    {
-        // initial delay feels nicer; tweak as needed
-        yield return new WaitForSeconds(0.25f);
-
-        while (goldAmount >= 0)
-        {
-            PressedDown();
-            yield return new WaitForSeconds(0.12f);
         }
     }
 }

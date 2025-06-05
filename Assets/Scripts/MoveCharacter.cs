@@ -41,6 +41,7 @@ public class MoveCharacter : MonoBehaviour
     [SerializeField] ZetoScript zetoS;
     [SerializeField] KalinScript kalinS;
     [SerializeField] AchillesScript achillesS;
+    [SerializeField] IshizuScript ishizuS;
 
     [SerializeField] DaySystem ds;
 
@@ -68,6 +69,7 @@ public class MoveCharacter : MonoBehaviour
     {
         kalinS = KalinScript.instance;
         achillesS = AchillesScript.instance;
+        ishizuS = IshizuScript.instance;
     }
 
     private void Update()
@@ -411,6 +413,12 @@ public class MoveCharacter : MonoBehaviour
                 if (cs.currentCharacter.characterName == "Kalin")
                 {
                     kalinS.StartDialogue();
+                    Debug.Log("start Kalin dialogue");
+                }
+
+                if (cs.currentCharacter.characterName == "Ishizu")
+                {
+                    ishizuS.StartDialogue();
                     Debug.Log("start Kalin dialogue");
                 }
             });
