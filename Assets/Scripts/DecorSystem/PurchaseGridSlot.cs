@@ -32,9 +32,10 @@ public class PurchaseGridSlot : MonoBehaviour
 
     public void OnSlotToggleChanged(bool isOn)
     {
-        if (gridManager != null)
+        if (gridManager != null && bought == false)
         {
             gridManager.RecalculateTotalCost();
+            bought = true;
         }
     }
 }
