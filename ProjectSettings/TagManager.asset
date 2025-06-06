@@ -17,6 +17,7 @@ TagManager:
   - YarnTrigger
   - YarnOutTrigger
   - Character
+  - CheckoutBox
   layers:
   - Default
   - TransparentFX
