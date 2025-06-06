@@ -2,7 +2,6 @@ using HeneGames.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.ShaderData;
 
 public class TutorialScript : MonoBehaviour
 {

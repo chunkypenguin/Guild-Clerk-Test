@@ -61,22 +61,24 @@ public class DaySystem : MonoBehaviour
             //EndDay();
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && canStartNextDay)
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(!endGame)
-            {
-                canStartNextDay = false;
-                NewDay();
-            }
-            else
-            {
-                credits.SetActive(true);
+            //if(!endGame)
+            //{
+            //    canStartNextDay = false;
+            //    NewDay();
+            //}
+            //else
+            //{
+            //    credits.SetActive(true);
 
-                gameEnd = true;
+            //    gameEnd = true;
 
-                bgMusic.DOFade(0, 7);
-                creditSceneMusic.DOFade(0.5f, 10);
-            }
+            //    bgMusic.DOFade(0, 7);
+            //    creditSceneMusic.DOFade(0.5f, 10);
+            //}
+
+            NextDayButton();
 
         }
         if(Input.GetKeyDown(KeyCode.Escape) && gameEnd)
@@ -141,6 +143,8 @@ public class DaySystem : MonoBehaviour
         Debug.Log("old End Day Call");
     }
 
+
+
     public void NewEndDay()
     {
         targetImage.gameObject.SetActive(true);
@@ -163,7 +167,15 @@ public class DaySystem : MonoBehaviour
                     cs.D2 = false;
                     cs.D1 = false;
                 }
-                else
+                else if(dayCount == 3)
+                {
+                    //dayThreeTextObject.SetActive(true);
+                }
+                else if (dayCount == 4)
+                {
+                    //dayThreeTextObject.SetActive(true);
+                }
+                else if (dayCount == 5)
                 {
                     //dayThreeTextObject.SetActive(true);
                     endGame = true;
@@ -199,10 +211,30 @@ public class DaySystem : MonoBehaviour
 
 
     }
+    public void NextDayButton()
+    {
+        if (canStartNextDay)
+        {
+            if (!endGame)
+            {
+                canStartNextDay = false;
+                NewDay();
+            }
+            else
+            {
+                credits.SetActive(true);
+
+                gameEnd = true;
+
+                bgMusic.DOFade(0, 7);
+                creditSceneMusic.DOFade(0.5f, 10);
+            }
+        }
+    }
 
     public void NewDay()
     {
-        canStartNextDay = false;//for the space bar option i guess
+        //canStartNextDay = false;//for the space bar option i guess
 
         TutorialScript.instance.hasGoldBundle = false;
 
