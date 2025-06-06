@@ -33,13 +33,58 @@ public class AlexDecoSystemScript : MonoBehaviour
     [SerializeField] List<int> deskBellCosts; //object pricing
 
     [Header("Quest Board Mats")]
-    [SerializeField] MeshRenderer YGCRenderer;
+    [SerializeField] MeshRenderer questYGCRenderer;
+    [SerializeField] List<Material> baseQuestBoardMats;
     [SerializeField] List<Material> frameQuestBoardMats;
     [SerializeField] List<Material> corkQuestBoardMats;
     [SerializeField] List<GameObject> questBoardButtons;
     [SerializeField] List<bool> questBoardLocked; //lock bools 
     [SerializeField] List<bool> questBoardActive; //active bools 
     [SerializeField] List<int> questBoardCosts; //object pricing
+
+    [Header("Table Cloth")]
+    [SerializeField] List<GameObject> tableClothObjects; //decoration to be activated
+    [SerializeField] List<GameObject> tableClothButtons;
+    [SerializeField] List<bool> tableClothLocked; //lock bools 
+    [SerializeField] List<int> tableClothCosts; //object pricing
+
+    [Header("Textures")]
+
+    [SerializeField] MeshRenderer mainYGCRenderer;
+
+    [Header("Wood Grain")]
+    [SerializeField] MeshRenderer doorRenderer;
+    [SerializeField] List<Material> woodGrainTextures;
+    [SerializeField] List<Material> pillarMats;
+    [SerializeField] List<Material> counterTopMats;
+    [SerializeField] List<Material> doorMats;
+    [SerializeField] List<GameObject> woodGrainButtons;
+    [SerializeField] List<bool> woodGrainLocked; //lock bools 
+    [SerializeField] List<bool> woodGrainActive; //active bools 
+    [SerializeField] List<int> woodGrainCosts; //object pricing
+
+    [Header("Planks")]
+    [SerializeField] MeshRenderer shelfRenderer;
+    [SerializeField] MeshRenderer drawerRenderer;
+    [SerializeField] MeshRenderer questCounterRenderer;
+    [SerializeField] List<Material> plankTextures;
+    [SerializeField] List<Material> counterMats;
+    [SerializeField] List<Material> shelfMats;
+    [SerializeField] List<Material> drawerMats;
+    [SerializeField] List<Material> questCounterMats;
+    [SerializeField] List<GameObject> planksButtons;
+    [SerializeField] List<bool> planksLocked; //lock bools 
+    [SerializeField] List<bool> planksActive; //active bools 
+    [SerializeField] List<int> planksCosts; //object pricing
+
+    [Header("Walls")]
+    [SerializeField] List<Material> baseWallMats;
+    [SerializeField] List<Material> wallMats;
+    [SerializeField] List<GameObject> wallsButtons;
+    [SerializeField] List<bool> wallsLocked; //lock bools 
+    [SerializeField] List<bool> wallsActive; //active bools 
+    [SerializeField] List<int> wallsCosts; //object pricing
+
 
     int playerGold;
 
@@ -139,6 +184,8 @@ public class AlexDecoSystemScript : MonoBehaviour
     }
 
     //CLERK AMENITIES
+
+    //DESK BELL MATS
     public void DeskBellButtonClick(int x) //on click of button
     {
         //check if locked
@@ -200,6 +247,7 @@ public class AlexDecoSystemScript : MonoBehaviour
         deskBellActive[x] = true;
     }
 
+    //QUEST BOARD MATS
     public void QuestBoardButtonClick(int x) //on click of button
     {
         //check if locked
@@ -222,14 +270,315 @@ public class AlexDecoSystemScript : MonoBehaviour
             if (questBoardActive[x]) //if decor is active
             {
                 //Deactivate
-                DeskBellDeactivate(x);
+                QuestBoardDeactivate(x);
             }
             else //if decor is inactive
             {
-                DeskBellDeactivate(x);
+                QuestBoardDeactivate(x);
                 //activate
-                DeskBellActivate(x);
+                QuestBoardActivate(x);
             }
         }
+    }
+
+    public void QuestBoardDeactivate(int x)
+    {
+        var mats = questYGCRenderer.materials;
+        mats[6] = baseQuestBoardMats[0];
+        mats[7] = baseQuestBoardMats[1];
+        questYGCRenderer.materials = mats;
+
+        foreach (GameObject item in questBoardButtons) //set all highlights inactive
+        {
+            item.transform.Find("Highlight").gameObject.SetActive(false);
+
+        }
+        //deskBellActive[x] = false; //not active
+        questBoardActive[0] = false;
+        questBoardActive[1] = false;
+    }
+
+    public void QuestBoardActivate(int x)
+    {
+        var mats = questYGCRenderer.materials;  // copy
+        mats[6] = new Material(frameQuestBoardMats[x]);     // optional instantiate
+        mats[7] = new Material(corkQuestBoardMats[x]);
+        questYGCRenderer.materials = mats;// apply
+
+        questBoardButtons[x].transform.Find("Highlight").gameObject.SetActive(true);
+        questBoardActive[x] = true;
+    }
+
+    //TABLE CLOTH
+    public void TableClothButtonClick(int x) //on click of button
+    {
+        //check if locked
+        if (tableClothLocked[x])
+        {
+            //check if has enough gold to purchase unlock
+            playerGold = DayReputationTracker.Instance.GetGold();
+            if (playerGold >= tableClothCosts[x])
+            {
+                tableClothLocked[x] = false; //unlock item
+                tableClothButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+            }
+            else
+            {
+                //Do nothing
+            }
+        }
+        else
+        {
+            //Deactivate all other decoration objects and their highlights
+            TableClothDeactivate();
+            //activate this buttons corresponding decoration and highlight
+            TableClothActivate(x);
+        }
+    }
+
+    public void TableClothDeactivate()
+    {
+        foreach (GameObject item in tableClothObjects) //set all decor inactive
+        {
+            item.SetActive(false);
+        }
+        foreach (GameObject item in tableClothButtons) //set all highlights inactive
+        {
+            item.transform.Find("Highlight").gameObject.SetActive(false);
+        }
+    }
+
+    public void TableClothActivate(int x)
+    {
+        tableClothObjects[x].SetActive(true); //turn on corresponding object
+        tableClothButtons[x].transform.Find("Highlight").gameObject.SetActive(true); //turn on corresponding button highlight
+
+    }
+
+    //TEXTURES
+
+    //wood grain
+    public void WGTexturesButtonClick(int x) //on click of button
+    {
+        //check if locked
+        if (woodGrainLocked[x])
+        {
+            //check if has enough gold to purchase unlock
+            playerGold = DayReputationTracker.Instance.GetGold();
+            if (playerGold >= woodGrainCosts[x])
+            {
+                woodGrainLocked[x] = false; //unlock item
+                woodGrainButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+            }
+            else
+            {
+                //Do nothing
+            }
+        }
+        else
+        {
+            if (woodGrainActive[x]) //if decor is active
+            {
+                //Deactivate
+                WGTexturesDeactivate(x);
+            }
+            else //if decor is inactive
+            {
+                WGTexturesDeactivate(x);
+                //activate
+                WGTexturesActivate(x);
+            }
+        }
+    }
+
+    public void WGTexturesDeactivate(int x)
+    {
+        var mats = mainYGCRenderer.materials;
+        mats[0] = woodGrainTextures[0];
+        mats[3] = woodGrainTextures[1];
+        mainYGCRenderer.materials = mats;
+
+        var doormats = doorRenderer.materials;
+        doormats[0] = woodGrainTextures[2];
+        doorRenderer.materials = doormats;
+
+        foreach (GameObject item in woodGrainButtons) //set all highlights inactive
+        {
+            item.transform.Find("Highlight").gameObject.SetActive(false);
+
+        }
+
+        woodGrainActive[0] = false;
+        woodGrainActive[1] = false;
+    }
+
+    public void WGTexturesActivate(int x)
+    {
+        //ygc
+        var mats = mainYGCRenderer.materials;  // copy
+        mats[0] = new Material(pillarMats[x]);     // pillars
+        mats[3] = new Material(counterTopMats[x]); //counter tops
+        mainYGCRenderer.materials = mats;// apply
+
+        //door
+        var doormats = doorRenderer.materials;
+        doormats[0] = new Material(doorMats[x]);
+        doorRenderer.materials = doormats;
+
+        woodGrainButtons[x].transform.Find("Highlight").gameObject.SetActive(true);
+        woodGrainActive[x] = true;
+    }
+
+    //PLANKS
+    public void PlankTexturesButtonClick(int x) //on click of button
+    {
+        //check if locked
+        if (planksLocked[x])
+        {
+            //check if has enough gold to purchase unlock
+            playerGold = DayReputationTracker.Instance.GetGold();
+            if (playerGold >= planksCosts[x])
+            {
+                planksLocked[x] = false; //unlock item
+                planksButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+            }
+            else
+            {
+                //Do nothing
+            }
+        }
+        else
+        {
+            if (planksActive[x]) //if decor is active
+            {
+                //Deactivate
+                PlankTexturesDeactivate(x);
+            }
+            else //if decor is inactive
+            {
+                PlankTexturesDeactivate(x);
+                //activate
+                PlankTexturesActivate(x);
+            }
+        }
+    }
+
+    public void PlankTexturesDeactivate(int x)
+    {
+        var mats = mainYGCRenderer.materials;
+        mats[1] = plankTextures[0];
+        mats[5] = plankTextures[1];
+        mainYGCRenderer.materials = mats;
+
+        var drawermats = drawerRenderer.materials;
+        drawermats[1] = plankTextures[2];
+        drawerRenderer.materials = drawermats;
+
+        //shelf
+        var shelfmats = shelfRenderer.materials;
+        shelfmats[0] = plankTextures[3];
+        shelfRenderer.materials = shelfmats;
+
+        //quest counter
+        var qcmats = questCounterRenderer.materials;
+        qcmats[0] = plankTextures[4];
+        questCounterRenderer.materials = qcmats;
+
+        foreach (GameObject item in planksButtons) //set all highlights inactive
+        {
+            item.transform.Find("Highlight").gameObject.SetActive(false);
+
+        }
+
+        planksActive[0] = false;
+        planksActive[1] = false;
+    }
+
+    public void PlankTexturesActivate(int x)
+    {
+        //ygc
+        var mats = mainYGCRenderer.materials;  // copy
+        mats[1] = new Material(counterMats[x]); // pillars
+        mats[5] = new Material(counterMats[x]); //counter tops
+        mainYGCRenderer.materials = mats;// apply
+
+        //drawer
+        var drawermats = drawerRenderer.materials;
+        drawermats[1] = new Material(drawerMats[x]);
+        drawerRenderer.materials = drawermats;
+
+        //shelf
+        var shelfmats = shelfRenderer.materials;
+        shelfmats[0] = new Material(shelfMats[x]);
+        shelfRenderer.materials = shelfmats;
+
+        //quest counter
+        var qcmats = questCounterRenderer.materials;
+        qcmats[0] = new Material(questCounterMats[x]);
+        questCounterRenderer.materials = qcmats;
+
+        planksButtons[x].transform.Find("Highlight").gameObject.SetActive(true);
+        planksActive[x] = true;
+    }
+
+    //walls
+    public void WallsTexturesButtonClick(int x) //on click of button
+    {
+        //check if locked
+        if (wallsLocked[x])
+        {
+            //check if has enough gold to purchase unlock
+            playerGold = DayReputationTracker.Instance.GetGold();
+            if (playerGold >= wallsCosts[x])
+            {
+                wallsLocked[x] = false; //unlock item
+                wallsButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+            }
+            else
+            {
+                //Do nothing
+            }
+        }
+        else
+        {
+            if (wallsActive[x]) //if decor is active
+            {
+                //Deactivate
+                WallsTexturesDeactivate(x);
+            }
+            else //if decor is inactive
+            {
+                WallsTexturesDeactivate(x);
+                //activate
+                WallsTexturesActivate(x);
+            }
+        }
+    }
+
+    public void WallsTexturesDeactivate(int x)
+    {
+        var mats = mainYGCRenderer.materials;
+        mats[2] = baseWallMats[0];
+        mainYGCRenderer.materials = mats;
+
+        foreach (GameObject item in wallsButtons) //set all highlights inactive
+        {
+            item.transform.Find("Highlight").gameObject.SetActive(false);
+
+        }
+
+        wallsActive[0] = false;
+        wallsActive[1] = false;
+    }
+
+    public void WallsTexturesActivate(int x)
+    {
+        //ygc
+        var mats = mainYGCRenderer.materials;  // copy
+        mats[2] = new Material(wallMats[x]); // pillars
+        mainYGCRenderer.materials = mats;// apply
+
+        wallsButtons[x].transform.Find("Highlight").gameObject.SetActive(true);
+        wallsActive[x] = true;
     }
 }
