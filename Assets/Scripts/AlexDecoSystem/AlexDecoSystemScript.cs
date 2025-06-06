@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-using static UnityEditor.Progress;
 
 public class AlexDecoSystemScript : MonoBehaviour
 {
@@ -98,6 +97,9 @@ public class AlexDecoSystemScript : MonoBehaviour
             playerGold = DayReputationTracker.Instance.GetGold();
             if(playerGold >= ceilingDecorCosts[x])
             {
+                //spend
+                DayReputationTracker.Instance.SpendGold(ceilingDecorCosts[x]);
+
                 ceilingDecorLocked[x] = false; //unlock item
                 ceilingDecorButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
             }
@@ -145,6 +147,7 @@ public class AlexDecoSystemScript : MonoBehaviour
             playerGold = DayReputationTracker.Instance.GetGold();
             if (playerGold >= knickKnackCosts[x])
             {
+                DayReputationTracker.Instance.SpendGold(knickKnackCosts[x]);
                 knickKnackLocked[x] = false; //unlock item
                 knickKnackButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
             }
@@ -195,6 +198,7 @@ public class AlexDecoSystemScript : MonoBehaviour
             playerGold = DayReputationTracker.Instance.GetGold();
             if (playerGold >= deskBellCosts[x])
             {
+                DayReputationTracker.Instance.SpendGold(deskBellCosts[x]);
                 deskBellLocked[x] = false; //unlock item
                 deskBellButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
             }
@@ -257,6 +261,7 @@ public class AlexDecoSystemScript : MonoBehaviour
             playerGold = DayReputationTracker.Instance.GetGold();
             if (playerGold >= questBoardCosts[x])
             {
+                DayReputationTracker.Instance.SpendGold(questBoardCosts[x]);
                 questBoardLocked[x] = false; //unlock item
                 questBoardButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
             }
@@ -319,6 +324,7 @@ public class AlexDecoSystemScript : MonoBehaviour
             playerGold = DayReputationTracker.Instance.GetGold();
             if (playerGold >= tableClothCosts[x])
             {
+                DayReputationTracker.Instance.SpendGold(tableClothCosts[x]);
                 tableClothLocked[x] = false; //unlock item
                 tableClothButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
             }
@@ -367,6 +373,7 @@ public class AlexDecoSystemScript : MonoBehaviour
             playerGold = DayReputationTracker.Instance.GetGold();
             if (playerGold >= woodGrainCosts[x])
             {
+                DayReputationTracker.Instance.SpendGold(woodGrainCosts[x]);
                 woodGrainLocked[x] = false; //unlock item
                 woodGrainButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
             }
@@ -439,6 +446,7 @@ public class AlexDecoSystemScript : MonoBehaviour
             playerGold = DayReputationTracker.Instance.GetGold();
             if (playerGold >= planksCosts[x])
             {
+                DayReputationTracker.Instance.SpendGold(planksCosts[x]);
                 planksLocked[x] = false; //unlock item
                 planksButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
             }
@@ -531,6 +539,7 @@ public class AlexDecoSystemScript : MonoBehaviour
             playerGold = DayReputationTracker.Instance.GetGold();
             if (playerGold >= wallsCosts[x])
             {
+                DayReputationTracker.Instance.SpendGold(wallsCosts[x]);
                 wallsLocked[x] = false; //unlock item
                 wallsButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
             }

@@ -30,6 +30,7 @@ public class AndyScript : MonoBehaviour
     [SerializeField] GameObject AndyMomImage;
 
     [SerializeField] MeshRenderer mr;
+    [SerializeField] MeshRenderer momMr;
 
     public bool partOneComplete;
     public bool partTwoComplete;
@@ -209,5 +210,25 @@ public class AndyScript : MonoBehaviour
     public void AndyWarCryInjured()
     {
         mr.material = andyWarCryInjuredImage;
+    }
+
+    public void ChangeEmote(Material emote)
+    {
+        if (emote == null)
+        {
+            Debug.Log("No material assigned");
+            return;
+        }
+        mr.material = emote;
+    }
+
+    public void MomChangeEmote(Material emote)
+    {
+        if (emote == null)
+        {
+            Debug.Log("No material assigned");
+            return;
+        }
+        momMr.material = emote;
     }
 }

@@ -261,7 +261,10 @@ public class DaySystem : MonoBehaviour
             targetImage.DOFade(0f, fadeDuration).OnComplete(() =>
             {
                 targetImage.gameObject.SetActive(false);
-                cs.StartNewCharacter();
+
+                //PROMPT DECORATION INSTEAD
+                AlexTabScript.instance.ShowDecorUI();
+                //cs.StartNewCharacter();
             });
         }
         else

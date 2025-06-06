@@ -26,6 +26,14 @@ public class AlexTabScript : MonoBehaviour
     [SerializeField] TMP_Text goldCount;
     int goldAmount;
 
+    [SerializeField] GameObject decoTutorialUI;
+    bool showedTut;
+
+    public static AlexTabScript instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         startPos = decorUI.transform.position;
@@ -73,6 +81,11 @@ public class AlexTabScript : MonoBehaviour
         decorUI.transform.DOMove(startPos, moveSpeed).onComplete = () =>
         {
             goldObject.SetActive(true);
+            if (!showedTut)
+            {
+                decoTutorialUI.SetActive(true);
+                showedTut = true;
+            }
         };
     }
 
@@ -80,6 +93,7 @@ public class AlexTabScript : MonoBehaviour
     {
         decorUI.transform.DOMove(endPos, moveSpeed);
         goldObject.SetActive(false);
+        ExitDecoTut();
     }
 
     public void DisplayDecorUI()
@@ -94,5 +108,10 @@ public class AlexTabScript : MonoBehaviour
             HideDecorUI();
             isShown= false;
         }
+    }
+
+    public void ExitDecoTut()
+    {
+        decoTutorialUI.SetActive(false);
     }
 }
