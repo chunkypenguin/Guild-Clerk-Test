@@ -14,6 +14,11 @@ public class LightSystem : MonoBehaviour
     public float duration = 2f; // How long the fade should take
     public float targetIntensity = 0f; // The final intensity
 
+    public static LightSystem instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         lightColor = light1.color;

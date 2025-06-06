@@ -236,7 +236,15 @@ public class MoveCharacter : MonoBehaviour
 
                 }
 
-                    cs.StartNewCharacter();
+                if (cs.currentCharacter.characterName == "Ishizu")
+                {
+                    if (ishizuS.ishizuCharacter.choseItemB) // chose teal herb
+                    {
+                        ishizuS.GhostMat();
+                    }
+                }
+
+                cs.StartNewCharacter();
             });
         }
 

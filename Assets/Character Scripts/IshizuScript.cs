@@ -13,7 +13,9 @@ public class IshizuScript : MonoBehaviour
     public GameObject tealHerbGlow;
     public GameObject yourNextLetter;
 
-    [SerializeField] DialogueCharacter ishizuCharacter;
+    [SerializeField] Material ghostMat;
+
+    public DialogueCharacter ishizuCharacter;
 
     public static IshizuScript instance;
 
@@ -40,6 +42,9 @@ public class IshizuScript : MonoBehaviour
         {
             //Drop Bad Omen
             ItemSystem.instance.ReturnItem(yourNextLetter);
+            LightSystem.instance.DimLights();
+            Invoke(nameof(GhostLeave), 2);
+            gameObject.GetComponent<CharacterReputation>().ModifyReputation(-2);
             //Reverse music, stall for a few seconds then Ishizu ghost leaves
         }
         else //start with this
@@ -57,5 +62,16 @@ public class IshizuScript : MonoBehaviour
             return;
         }
         mr.material = emote;
+    }
+
+    public void GhostMat()
+    {
+        mr.material = ghostMat;
+    }
+
+    void GhostLeave()
+    {
+        gameObject.GetComponent<MoveCharacter>().MoveEndDay();
+        LightSystem.instance.UndimLights();
     }
 }

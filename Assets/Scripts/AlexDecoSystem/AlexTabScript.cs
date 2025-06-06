@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class AlexTabScript : MonoBehaviour
 {
@@ -20,11 +21,22 @@ public class AlexTabScript : MonoBehaviour
     [SerializeField] int distance;
     bool isShown;
 
+    //UI
+    [SerializeField] GameObject goldObject;
+    [SerializeField] TMP_Text goldCount;
+    int goldAmount;
+
     private void Start()
     {
         startPos = decorUI.transform.position;
         decorUI.transform.position = startPos - new Vector3(0, distance, 0);
         endPos = decorUI.transform.position;
+    }
+
+    private void Update()
+    {
+        goldAmount = DayReputationTracker.Instance.GetGold();
+        goldCount.text = goldAmount.ToString();
     }
 
     public void TextureTab()
@@ -58,12 +70,16 @@ public class AlexTabScript : MonoBehaviour
 
     public void ShowDecorUI()
     {
-        decorUI.transform.DOMove(startPos, moveSpeed);
+        decorUI.transform.DOMove(startPos, moveSpeed).onComplete = () =>
+        {
+            goldObject.SetActive(true);
+        };
     }
 
     public void HideDecorUI()
     {
         decorUI.transform.DOMove(endPos, moveSpeed);
+        goldObject.SetActive(false);
     }
 
     public void DisplayDecorUI()
