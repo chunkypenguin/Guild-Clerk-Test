@@ -74,10 +74,11 @@ public class PurchaseGridManager : MonoBehaviour
         // Add items to inventory
         foreach (var slot in gridSlots)
         {
-            if (slot.IsSelected && slot.boothItem != null)
+            if (slot.IsSelected && slot.bought != false && slot.boothItem != null)
             {
                 itemsToBuy.Add(slot.boothItem);
                 inventoryManager.AddItem(slot.boothItem.gameObject);
+                slot.bought = true;
 
                 // Clear slot
                 Destroy(slot.boothItem.gameObject);

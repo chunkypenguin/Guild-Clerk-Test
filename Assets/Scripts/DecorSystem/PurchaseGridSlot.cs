@@ -11,6 +11,7 @@ public class PurchaseGridSlot : MonoBehaviour
     public TMP_Text costText;
     public BoothItem boothItem;
     public bool IsSelected => toggle.isOn;
+    public bool bought = false;
     private PurchaseGridManager gridManager;
 
     private void Start()
