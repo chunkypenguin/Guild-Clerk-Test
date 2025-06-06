@@ -9,7 +9,7 @@ public class TooltipUI : MonoBehaviour
 
 
     [SerializeField] Vector2 cursorOffset = new Vector2(20, -16);   
-    [SerializeField] bool clampToScreen = true;
+    //[SerializeField] bool clampToScreen = true;
 
     RectTransform rect;
 

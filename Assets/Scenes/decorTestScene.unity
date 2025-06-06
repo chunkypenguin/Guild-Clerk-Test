@@ -29865,6 +29865,8 @@ MonoBehaviour:
   dontFlash: 0
   flashOn: 0
   flashWasOn: 0
+  peekOffset: -0.6
+  peekSpeed: 0.2
   drawerOpen: 0
   canOpenDrawer: 1
 --- !u!114 &963194230
@@ -30651,6 +30653,7 @@ MonoBehaviour:
   goldBundle: {fileID: 0}
   hasGoldBundle: 0
   lotestJosieStarted: 0
+  josieDayOneComplete: 0
 --- !u!114 &973462386
 MonoBehaviour:
   m_ObjectHideFlags: 0
