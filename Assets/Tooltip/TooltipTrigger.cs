@@ -26,4 +26,28 @@ public class TooltipTrigger : MonoBehaviour
         // optional: immediately show again if the cursor is still over us
         // TooltipUI.Instance?.Show(tooltipText);
     }
+
+
+    //MORE UI ELEMENTS/BUTTONS
+    public void CursorEnter()
+    {
+        if (!dragging)            // only show if we’re NOT dragging
+            TooltipUI.Instance?.Show(tooltipText);
+    }
+
+    public void CursorExit()
+    {
+        TooltipUI.Instance?.Hide();
+    }
+
+    public void CursorDown()
+    {
+        dragging = true;
+        TooltipUI.Instance?.Hide();
+    }
+
+    public void CursorUp()
+    {
+        dragging = false;
+    }
 }
