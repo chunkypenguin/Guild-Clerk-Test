@@ -51,7 +51,7 @@ public class MoveCharacter : MonoBehaviour
         if (!jumping)
         {
             startPos = transform.position;
-            endPos = startPos - new Vector3(12f, 0, 0);
+            endPos = startPos - new Vector3(15f, 0, 0);
         }
         else
         {
@@ -115,7 +115,6 @@ public class MoveCharacter : MonoBehaviour
                     {
                         andyS.ChangeToAndy();
                         andyS.AndyInjuiredIdle();
-
                     }
                     else
                     {

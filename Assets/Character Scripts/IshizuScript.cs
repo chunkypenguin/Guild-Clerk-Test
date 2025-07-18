@@ -71,7 +71,7 @@ public class IshizuScript : MonoBehaviour
 
     void GhostLeave()
     {
-        gameObject.GetComponent<MoveCharacter>().MoveEndDay();
+        gameObject.GetComponent<MoveCharacter>().MoveToEnd();
         LightSystem.instance.UndimLights();
     }
 }
