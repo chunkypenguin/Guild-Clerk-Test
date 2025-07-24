@@ -306,6 +306,7 @@ public class CharacterSystem : MonoBehaviour
 
     public void StartNewCharacter()
     {
+        Debug.Log("start new character");
         characterCount++;
         if (characterCount == characters.Count) //characters.Length
         {

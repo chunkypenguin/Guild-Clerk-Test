@@ -123,6 +123,7 @@ public class MoveCharacter : MonoBehaviour
 
                     AndyScript.instance.partTwoComplete = true;
                 }
+                Debug.Log("MoveCharacter 1");
                 cs.StartNewCharacter();
             });
         }
@@ -242,7 +243,7 @@ public class MoveCharacter : MonoBehaviour
                         ishizuS.GhostMat();
                     }
                 }
-
+                Debug.Log("MoveCharacter 2");
                 cs.StartNewCharacter();
             });
         }
@@ -560,6 +561,7 @@ public class MoveCharacter : MonoBehaviour
             }
             else
             {
+                Debug.Log("MoveCharacter 3");
                 cs.StartNewCharacter();
             }
             

@@ -17,11 +17,11 @@ public class PlayerRepTrackerGuild : MonoBehaviour {
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            GiveGold(10);
+            //GiveGold(10);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2)) {
-            EvalDayAndReset();
+            //EvalDayAndReset();
         }
     }
 

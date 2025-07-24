@@ -11166,6 +11166,7 @@ MonoBehaviour:
   maxSpeed: 10
   collectDistance: 0.5
   mc: {fileID: 963194229}
+  upDown: 0
 --- !u!1 &264187179
 GameObject:
   m_ObjectHideFlags: 0
@@ -55639,6 +55640,7 @@ MonoBehaviour:
   maxSpeed: 10
   collectDistance: 0.5
   mc: {fileID: 963194229}
+  upDown: 0
 --- !u!64 &1118656745
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -90552,6 +90554,7 @@ MonoBehaviour:
   maxSpeed: 10
   collectDistance: 0.5
   mc: {fileID: 963194229}
+  upDown: 0
 --- !u!23 &1803349241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -106528,7 +106531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}

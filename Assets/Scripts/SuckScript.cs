@@ -33,15 +33,15 @@ public class SuckScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            isSucking = true;
-            col.enabled = false; // Disable collider
-            rb.useGravity = false; // Disable gravity
+            //isSucking = true;
+            //col.enabled = false; // Disable collider
+            //rb.useGravity = false; // Disable gravity
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
-            isSucking = false;
-            col.enabled = true; // Enable collider
-            rb.useGravity = true; // Re-enable gravity
+            //isSucking = false;
+            //col.enabled = true; // Enable collider
+            //rb.useGravity = true; // Re-enable gravity
         }
     }
 

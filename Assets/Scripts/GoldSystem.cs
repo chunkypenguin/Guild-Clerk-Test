@@ -34,7 +34,8 @@ public class GoldSystem : MonoBehaviour
 
     //NEW CLICK/HOLD
     private Coroutine holdCoroutine;
-    int upDown;
+    public int upDown;
+    bool isHolding;
 
 
     private void Awake()
@@ -93,16 +94,62 @@ public class GoldSystem : MonoBehaviour
         }
     }
 
+    //original gold button system
+    //public void PointerDown(int updown)
+    //{
+    //    upDown = updown;
+    //    holdCoroutine = StartCoroutine(RepeatAction());
+    //}
+
+    //public void PointerUp()
+    //{
+    //    StopHold();
+
+    //}
+
+    //public void PointerExit()
+    //{
+    //    StopHold();
+    //}
+
+    //private void StopHold()
+    //{
+    //    if (holdCoroutine != null)
+    //    {
+    //        StopCoroutine(holdCoroutine);
+    //        holdCoroutine = null;
+    //    }
+    //}
+
+    //private IEnumerator RepeatAction()
+    //{
+    //    while (true)
+    //    {
+    //        if(upDown == 0)
+    //        {
+    //            PressedDown();
+    //        }
+    //        else if (upDown == 1)
+    //        {
+    //            PressedUp();
+    //        }
+
+    //        yield return new WaitForSeconds(0.15f);
+    //    }
+    //}
+
     public void PointerDown(int updown)
     {
+        if (isHolding) return; // prevent double-starting
+
         upDown = updown;
+        isHolding = true;
         holdCoroutine = StartCoroutine(RepeatAction());
     }
 
     public void PointerUp()
     {
         StopHold();
-
     }
 
     public void PointerExit()
@@ -112,6 +159,10 @@ public class GoldSystem : MonoBehaviour
 
     private void StopHold()
     {
+        if (!isHolding) return;
+
+        isHolding = false;
+
         if (holdCoroutine != null)
         {
             StopCoroutine(holdCoroutine);
@@ -121,9 +172,9 @@ public class GoldSystem : MonoBehaviour
 
     private IEnumerator RepeatAction()
     {
-        while (true)
+        while (isHolding)
         {
-            if(upDown == 0)
+            if (upDown == 0)
             {
                 PressedDown();
             }
@@ -135,7 +186,6 @@ public class GoldSystem : MonoBehaviour
             yield return new WaitForSeconds(0.15f);
         }
     }
-
     void CollectCoin(GameObject coin)
     {
         Debug.Log(coin.name + " collected!");

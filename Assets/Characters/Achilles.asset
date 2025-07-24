@@ -26,4 +26,4 @@ MonoBehaviour:
   choseItemA: 0
   choseItemB: 0
   choseItemAA: 0
-  textColor: {r: 0, g: 0, b: 0, a: 1}
+  textColor: {r: 0.40784317, g: 0.10196079, b: 0.52156866, a: 1}

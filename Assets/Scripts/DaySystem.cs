@@ -63,22 +63,7 @@ public class DaySystem : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            //if(!endGame)
-            //{
-            //    canStartNextDay = false;
-            //    NewDay();
-            //}
-            //else
-            //{
-            //    credits.SetActive(true);
-
-            //    gameEnd = true;
-
-            //    bgMusic.DOFade(0, 7);
-            //    creditSceneMusic.DOFade(0.5f, 10);
-            //}
-
-            NextDayButton();
+            NextDayButton(); //TURN THIS BACK ON
 
         }
         if(Input.GetKeyDown(KeyCode.Escape) && gameEnd)
@@ -215,6 +200,7 @@ public class DaySystem : MonoBehaviour
     {
         if (canStartNextDay)
         {
+            Debug.Log("Passed next day bool");
             if (!endGame)
             {
                 canStartNextDay = false;
@@ -229,11 +215,14 @@ public class DaySystem : MonoBehaviour
                 bgMusic.DOFade(0, 7);
                 creditSceneMusic.DOFade(0.5f, 10);
             }
+
+            // = false; //trying to fix adding a bunch of characters to screen inbetween days DID NOT FIX
         }
     }
 
     public void NewDay()
     {
+        Debug.Log("New Day");
         //canStartNextDay = false;//for the space bar option i guess
 
         TutorialScript.instance.hasGoldBundle = false;
