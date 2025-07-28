@@ -7885,7 +7885,6 @@ RectTransform:
   - {fileID: 116928910}
   - {fileID: 1984450830}
   - {fileID: 827509013}
-  - {fileID: 321939856}
   - {fileID: 1792098965}
   - {fileID: 1322518677}
   - {fileID: 728288743}
@@ -7900,6 +7899,7 @@ RectTransform:
   - {fileID: 1605598442}
   - {fileID: 1764125522}
   - {fileID: 1090790713}
+  - {fileID: 321939856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11957,7 +11957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipText: Tall Plant
+  tooltipText: Slice of Pie
 --- !u!114 &274699112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28569,7 +28569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipText: Basket of Mushrooms
+  tooltipText: Bag of Mushrooms
 --- !u!114 &603594349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63876,7 +63876,6 @@ GameObject:
   - component: {fileID: 1287433121}
   - component: {fileID: 1287433128}
   - component: {fileID: 1287433127}
-  - component: {fileID: 1287433129}
   m_Layer: 7
   m_Name: PurplePotion
   m_TagString: Untagged
@@ -64160,19 +64159,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1287433129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287433119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooltipText: Elixer
 --- !u!1 &1287477354
 GameObject:
   m_ObjectHideFlags: 0
@@ -70185,7 +70171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipText: Bonsai
+  tooltipText: Slice of Pie
 --- !u!114 &1388533772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72414,7 +72400,6 @@ GameObject:
   - component: {fileID: 1454722283}
   - component: {fileID: 1454722286}
   - component: {fileID: 1454722285}
-  - component: {fileID: 1454722287}
   m_Layer: 7
   m_Name: LornePotion
   m_TagString: Untagged
@@ -72699,19 +72684,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1454722287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454722275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooltipText: Mysterious Potion
 --- !u!1 &1456943970
 GameObject:
   m_ObjectHideFlags: 0
@@ -72729,7 +72701,6 @@ GameObject:
   - component: {fileID: 1456943972}
   - component: {fileID: 1456943979}
   - component: {fileID: 1456943978}
-  - component: {fileID: 1456943980}
   m_Layer: 7
   m_Name: HealingPot
   m_TagString: Untagged
@@ -73013,19 +72984,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1456943980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456943970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooltipText: Healing Potion
 --- !u!1001 &1459066362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89935,7 +89893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipText: Succulent
+  tooltipText: Slice of Pie
 --- !u!114 &1796343312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96786,7 +96744,6 @@ GameObject:
   - component: {fileID: 1960486095}
   - component: {fileID: 1960486107}
   - component: {fileID: 1960486106}
-  - component: {fileID: 1960486108}
   m_Layer: 7
   m_Name: AnimalSkull
   m_TagString: Untagged
@@ -97175,19 +97132,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1960486108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1960486093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooltipText: Skull
 --- !u!1001 &1964331573
 PrefabInstance:
   m_ObjectHideFlags: 0
