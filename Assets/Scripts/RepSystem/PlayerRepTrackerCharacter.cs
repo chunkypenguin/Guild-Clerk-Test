@@ -73,7 +73,7 @@ public class PlayerRepTrackerCharacter : MonoBehaviour {
 
         // Make sure you assign the characters in the inspector
         if (_currentTarget == null) {
-            Debug.LogWarning("There isn't a character at this index in the list in the RepSystemManager in the inspector!");
+            //Debug.LogWarning("There isn't a character at this index in the list in the RepSystemManager in the inspector!");
             return;
         }
 
@@ -93,7 +93,7 @@ public class PlayerRepTrackerCharacter : MonoBehaviour {
             //_currentTarget.AddReputation(1);
 
             // Print the new reputation points to the console
-            Debug.Log($"Increased {_currentTarget.name}'s reputation to {_currentTarget.ReputationPoints}");
+            //Debug.Log($"Increased {_currentTarget.name}'s reputation to {_currentTarget.ReputationPoints}");
         }
 
         // If the player does something bad (for now just pressing 'delete' key), decrease the target character's reputation points.
@@ -102,7 +102,7 @@ public class PlayerRepTrackerCharacter : MonoBehaviour {
             //_currentTarget.RemoveReputation(1);
 
             // Print the new reputation points to the console
-            Debug.Log($"Decreased {_currentTarget.name}'s reputation to {_currentTarget.ReputationPoints}");
+            //Debug.Log($"Decreased {_currentTarget.name}'s reputation to {_currentTarget.ReputationPoints}");
         }
 
         // When the player gets to the end of the day (for now just pressing 'space' key), show the end of day reputation visual.
@@ -113,7 +113,7 @@ public class PlayerRepTrackerCharacter : MonoBehaviour {
         // When a new day starts, clear the list (for now just pressing 'C' key) of characters the player has interacted with.
         if (Input.GetKeyDown(clearList)) {
             //DayReputationTracker.Instance.NewDayClearList();
-            Debug.Log("Cleared the list of characters visited today.");
+            //Debug.Log("Cleared the list of characters visited today.");
         }
     }
 

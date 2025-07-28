@@ -11957,7 +11957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipText: Slice of Pie
+  tooltipText: Tall Plant
 --- !u!114 &274699112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70171,7 +70171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipText: Slice of Pie
+  tooltipText: Bonsai
 --- !u!114 &1388533772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89893,7 +89893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipText: Slice of Pie
+  tooltipText: Succulent
 --- !u!114 &1796343312
 MonoBehaviour:
   m_ObjectHideFlags: 0
