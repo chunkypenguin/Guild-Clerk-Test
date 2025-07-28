@@ -27,7 +27,7 @@ public class TooltipUI : MonoBehaviour
         Vector2 pos = Input.mousePosition;
 
         // put tooltip 12 px right & 16 px down from the cursor
-        rect.pivot = new Vector2(0, 1);         
+        rect.pivot = new Vector2(0, 1);   
         rect.position = pos + cursorOffset;
 
         // --- optional screen?edge clamp ---
@@ -35,7 +35,7 @@ public class TooltipUI : MonoBehaviour
         float h = rect.rect.height;
 
         float x = Mathf.Min(rect.position.x, Screen.width - w);
-        float y = Mathf.Max(rect.position.y, h);          // keep above bottom edge
+        float y = Mathf.Max(rect.position.y, h);// keep above bottom edge
         rect.position = new Vector2(x, y);
     }
 
