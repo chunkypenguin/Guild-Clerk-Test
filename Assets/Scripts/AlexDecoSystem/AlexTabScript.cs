@@ -36,7 +36,7 @@ public class AlexTabScript : MonoBehaviour
     }
     private void Start()
     {
-        startPos = decorUI.transform.position;
+        startPos = new Vector3(0, decorUI.transform.position.y, 0);
         decorUI.transform.position = startPos - new Vector3(0, distance, 0);
         endPos = decorUI.transform.position;
     }
