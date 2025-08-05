@@ -24,6 +24,7 @@ public class CollisionSound : MonoBehaviour
         {
             float volume = Mathf.Clamp01(impactStrength / 10f);
             audioSource.PlayOneShot(collisionClip, volume);
+            //audioSource.PlayOneShot(collisionClip);
         }
     }
 }

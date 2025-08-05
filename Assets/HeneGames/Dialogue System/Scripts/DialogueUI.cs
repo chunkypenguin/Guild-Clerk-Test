@@ -14,15 +14,16 @@ namespace HeneGames.DialogueSystem
 
         private void Awake()
         {
-            if (instance == null)
-            {
-                instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            instance = this;
+            //if (instance == null)
+            //{
+            //    instance = this;
+            //    DontDestroyOnLoad(gameObject);
+            //}
+            //else
+            //{
+            //    Destroy(gameObject);
+            //}
 
             //Hide dialogue and interaction UI at awake
             dialogueWindow.SetActive(false);

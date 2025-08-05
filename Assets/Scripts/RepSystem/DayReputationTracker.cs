@@ -22,14 +22,14 @@ public class DayReputationTracker : MonoBehaviour
     private void Awake() {
         // This makes sure there's only one instance of this script.
         if (Instance != null && Instance != this) {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             return;
         }
 
         Instance = this;
         // This line makes sure this object doesn't get destroyed when changing scenes.
         // Don't use this if you want to reset the list when changing scenes.
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     // This function is called the first time you interact with a character in the day.

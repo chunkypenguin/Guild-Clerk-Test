@@ -132,13 +132,15 @@ public class DaySystem : MonoBehaviour
 
     public void NewEndDay()
     {
+        Debug.Log("NewEndDay");
         targetImage.gameObject.SetActive(true);
         if (targetImage != null)
         {
+            Debug.Log("Start Fade");
             // Fade in effect
             targetImage.DOFade(1f, fadeDuration).OnComplete(() =>
             {
-
+                Debug.Log("Fade Complete");
                 if (dayCount == 1)
                 {
                     //dayOneTextObject.SetActive(true);
@@ -208,6 +210,8 @@ public class DaySystem : MonoBehaviour
             }
             else
             {
+                canStartNextDay = false;
+
                 credits.SetActive(true);
 
                 gameEnd = true;
@@ -264,6 +268,8 @@ public class DaySystem : MonoBehaviour
 
     public void EndOfDayScreen()
     {
+        Debug.Log("end of day screen activated");
+
         dayText.gameObject.SetActive(true);
         descriptionText.gameObject.SetActive(true);
         //nextDayText.SetActive(true);
