@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.UI;
 
 public class AlexTabScript : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class AlexTabScript : MonoBehaviour
 
     [SerializeField] GameObject decoTutorialUI;
     bool showedTut;
+    [SerializeField] List<Image> imageList;
+    [SerializeField] Color defaultColor;
+    [SerializeField] Color highlightColor;
 
     public static AlexTabScript instance;
     private void Awake()
@@ -45,6 +49,32 @@ public class AlexTabScript : MonoBehaviour
     {
         goldAmount = DayReputationTracker.Instance.GetGold();
         goldCount.text = goldAmount.ToString();
+    }
+
+    public void SetTabColorSelect(Image currentImage)
+    {
+        foreach(var image in imageList)
+        {
+            image.color = defaultColor;
+        }
+
+        currentImage.color = Color.white;
+    }
+
+    public void SetTabColorHighlight(Image currentImage)
+    {
+        if(currentImage.color != Color.white)
+        {
+            currentImage.color = highlightColor;
+        }
+    }
+
+    public void SetTabColorDefault(Image currentImage)
+    {
+        if (currentImage.color != Color.white)
+        {
+            currentImage.color = defaultColor;
+        }
     }
 
     public void TextureTab()

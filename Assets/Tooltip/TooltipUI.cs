@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TooltipUI : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class TooltipUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
 
 
-    [SerializeField] Vector2 cursorOffset = new Vector2(20, -16);   
+    [SerializeField] Vector2 cursorOffset = new Vector2(20, -16); 
     //[SerializeField] bool clampToScreen = true;
 
     RectTransform rect;
@@ -22,6 +23,16 @@ public class TooltipUI : MonoBehaviour
 
     void Update()
     {
+        //future code so tooltip does not show up when hovering over dialogue/pause menu
+        //get a bool from a raycast (maybe from mousepos script) that states when the players
+        //mouse is hovering over the pause menu/dialogue UI
+        //if(hovering) return; + Hide();
+        //if (DialogueBoxMouse.instance.hoveringDiaBox)
+        //{
+        //    Hide();
+        //    return;
+        //}
+
         if (!gameObject.activeSelf) return;
 
         Vector2 pos = Input.mousePosition;

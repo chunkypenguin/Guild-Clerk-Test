@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TooltipTrigger : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class TooltipTrigger : MonoBehaviour
 
     void OnMouseEnter()
     {
+        //TESTING FOR CURSOR STUFF & TOOLTIP  STUFF
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         if (!dragging)            // only show if we’re NOT dragging
             TooltipUI.Instance?.Show(tooltipText);
     }
@@ -31,6 +36,10 @@ public class TooltipTrigger : MonoBehaviour
     //MORE UI ELEMENTS/BUTTONS
     public void CursorEnter()
     {
+        //TESTING FOR CURSOR STUFF & TOOLTIP  STUFF
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         if (!dragging)            // only show if we’re NOT dragging
             TooltipUI.Instance?.Show(tooltipText);
     }

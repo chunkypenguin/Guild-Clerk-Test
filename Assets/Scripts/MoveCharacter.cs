@@ -453,6 +453,8 @@ public class MoveCharacter : MonoBehaviour
     {
         transform.DOJump(startPos, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
         {
+            //CHANGE ZETO TEXT COLOR
+            cs.ChangeZetoTextColor();
             cs.zetonomiraD1P1.StartNewDialogue(cs.dialogueTriggerScript);
         });
     }
@@ -461,6 +463,9 @@ public class MoveCharacter : MonoBehaviour
     {
         transform.DOJump(endPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
         {
+            //CHANGE TEXT COLOR BACK TO NOMIRA
+            cs.ChangeTextColor();
+
             //resume nomari dialogue
             cs.nomiraD1Q1AB.StartNewDialogue(cs.dialogueTriggerScript);
 

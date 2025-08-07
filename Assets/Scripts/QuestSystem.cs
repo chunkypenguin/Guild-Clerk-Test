@@ -165,11 +165,13 @@ public class QuestSystem : MonoBehaviour
 
         if (cs.currentCharacter.name == "Nomira" && !NomiraScript.instance.brokeStaff)
         {
+
             if (cs.currentCharacter.choseQuestA)
             {
                 visualQuests.SetActive(false);
                 //make sure quest A is still available
                 questBHolder.SetActive(true);
+
                 cs.zetoD1ASteal.StartNewDialogue(cs.dialogueTriggerScript);
             }
             else if (cs.currentCharacter.choseQuestB)

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Lightbug.GrabIt
 {
@@ -9,7 +10,7 @@ public class GrabObjectProperties{
 	public bool m_useGravity = false;
 	public float m_drag = 10;
 	public float m_angularDrag = 10;
-	public RigidbodyConstraints m_constraints = RigidbodyConstraints.FreezeRotation;		
+	public RigidbodyConstraints m_constraints = RigidbodyConstraints.FreezeRotation;	
 
 }
 
@@ -101,9 +102,13 @@ public class GrabObjectProperties{
 
 		void Update()
 		{
-			canGrabCheck();
+            //TESTING FOR CURSOR STUFF & TOOLTIP  STUFF
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
 
-			if (m_grabbing)//if already holding an object
+            canGrabCheck();
+
+            if (m_grabbing)//if already holding an object
 			{
                 //m_targetDistance += Input.GetAxisRaw("Mouse ScrollWheel") * m_scrollWheelSpeed;
                 //m_targetDistance = Mathf.Clamp(m_targetDistance, m_grabMinDistance, m_grabMaxDistance);

@@ -545,6 +545,12 @@ public class CharacterSystem : MonoBehaviour
         dui.nameText.color = currentCharacter.textColor;
     }
 
+    public void ChangeZetoTextColor()
+    {
+        dui.messageText.color = zetoCharacter.textColor;
+        dui.nameText.color = zetoCharacter.textColor;
+    }
+
     public void TextHistory()
     {
         Debug.Log("text history");
