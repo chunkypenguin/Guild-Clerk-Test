@@ -39,6 +39,8 @@ public class MousePos3D : MonoBehaviour
 
     Vector2 cursorHotSpot;
 
+    public bool questText;
+
     private void Start()
     {
         //cursorHotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
@@ -89,13 +91,19 @@ public class MousePos3D : MonoBehaviour
 
             if (questraycastHit.collider.CompareTag("Quest"))
             {
-                GameObject quest = questraycastHit.transform.gameObject;
-                questSystem.ShowQuestDescription(quest);
+                if (!questText)
+                {
+                    GameObject quest = questraycastHit.transform.gameObject;
+                    questSystem.ShowQuestDescription(quest);
+                    questText = true;
+                }
+
             }
 
             else //COULD BE OPTIMIZED WITH BOOL
             {
                 questSystem.HideQuestDescription();
+                questText = false;
             }
 
             if (EventSystem.current.IsPointerOverGameObject())

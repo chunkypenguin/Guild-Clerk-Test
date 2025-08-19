@@ -202,6 +202,10 @@ public class MoveCharacter : MonoBehaviour
                     {
                         josieS.ChangeEmote(josieS.josieRegular);
                     }
+                    if(DaySystem.instance.dayCount == 5)
+                    {
+
+                    }
                 }
 
                 if(cs.currentCharacter.characterName == "Nomira")

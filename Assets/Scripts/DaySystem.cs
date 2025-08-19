@@ -248,6 +248,13 @@ public class DaySystem : MonoBehaviour
 
         dayCount++;
 
+        //for josie final emote change
+        if(dayCount == 5)
+        {
+            TutorialScript.instance.ChangeEmote(TutorialScript.instance.josieShocked);
+            Debug.Log("Josie Shocked");
+        }
+
         if (targetImage != null)
         {
             // Fade in effect

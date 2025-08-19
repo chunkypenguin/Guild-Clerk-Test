@@ -21,6 +21,8 @@ public class TutorialScript : MonoBehaviour
     //[SerializeField] Material josieSassy;
     public Material josieDisguise;
     public Material josieRegular;
+    public Material josieSad;
+    public Material josieShocked;
 
     [SerializeField] QuestBoardCheck questA;
     [SerializeField] QuestBoardCheck questB;

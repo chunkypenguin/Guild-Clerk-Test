@@ -582,6 +582,9 @@ public class CharacterSystem : MonoBehaviour
             currentCharacterObject = characterObjects[characterCount];
             LotestScript.instance.skipJosie = false;
             Debug.Log("Lotest skip");
+
+            //Change Josie Emote before you comes out
+            TutorialScript.instance.ChangeEmote(TutorialScript.instance.josieSad);
         }
 
         //JOSIE NONSENSE
