@@ -908,14 +908,14 @@ RectTransform:
   m_GameObject: {fileID: 24503831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 362399381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.7}
   m_SizeDelta: {x: 160, y: 27.4437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &24503833
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4239,6 +4239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Quest Board 0
+  isDecorUI: 1
 --- !u!114 &102295885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6526,7 +6527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &148462577
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6536,7 +6537,7 @@ RectTransform:
   m_GameObject: {fileID: 148462576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1874194183}
@@ -6559,7 +6560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7523,6 +7524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Banners
+  isDecorUI: 1
 --- !u!114 &172420826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7805,7 +7807,7 @@ GameObject:
   - component: {fileID: 184499394}
   - component: {fileID: 184499393}
   m_Layer: 0
-  m_Name: MusicSource
+  m_Name: DefaultMusicSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8979,6 +8981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Dark Walls
+  isDecorUI: 1
 --- !u!114 &194633323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9100,7 +9103,7 @@ RectTransform:
   m_GameObject: {fileID: 194831267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1151209268}
@@ -10293,14 +10296,14 @@ RectTransform:
   m_GameObject: {fileID: 229807374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 554421622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.7}
   m_SizeDelta: {x: 160, y: 27.4437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229807376
@@ -10316,7 +10319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12197,6 +12200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Tall Plant
+  isDecorUI: 0
 --- !u!114 &274699112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12463,7 +12467,7 @@ RectTransform:
   m_GameObject: {fileID: 275138430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1888319110}
@@ -12486,7 +12490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13051,6 +13055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Vines
+  isDecorUI: 1
 --- !u!114 &288095811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15606,7 +15611,7 @@ RectTransform:
   m_GameObject: {fileID: 359429181}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 596114292}
@@ -15974,6 +15979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bonsai
+  isDecorUI: 1
 --- !u!114 &362399384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16067,6 +16073,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362399380}
+  m_CullTransparentMesh: 1
+--- !u!1 &363474468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363474469}
+  - component: {fileID: 363474471}
+  - component: {fileID: 363474470}
+  m_Layer: 5
+  m_Name: Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &363474469
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363474468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1625421843}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 19.3141}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &363474470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363474468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 552b28951f42b6944b6a24798df2f540, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &363474471
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363474468}
   m_CullTransparentMesh: 1
 --- !u!1001 &365431034
 PrefabInstance:
@@ -17686,6 +17767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Fiery Herb
+  isDecorUI: 0
 --- !u!114 &407252484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19055,6 +19137,82 @@ MonoBehaviour:
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
+--- !u!1 &435543814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 435543815}
+  - component: {fileID: 435543817}
+  - component: {fileID: 435543816}
+  m_Layer: 5
+  m_Name: Lock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &435543815
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435543814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1909266069}
+  m_Father: {fileID: 1625421843}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 19.3141}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &435543816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435543814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ddaef68825bab2d4abddff375e6f95f4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &435543817
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435543814}
+  m_CullTransparentMesh: 1
 --- !u!1 &439860596
 GameObject:
   m_ObjectHideFlags: 0
@@ -19883,6 +20041,7 @@ MonoBehaviour:
   - {fileID: 288095805}
   - {fileID: 846984793}
   ceilingDecorLocked: 010101
+  ceilingDecorActive: 000000
   ceilingDecorCosts: 040000000600000005000000
   knickKnackObjects:
   - {fileID: 1796343309}
@@ -19895,6 +20054,13 @@ MonoBehaviour:
   knickKnackLocked: 010101
   knickKnackActive: 000000
   knickKnackCosts: 050000000500000005000000
+  recordButton: {fileID: 1625421842}
+  defaultRecordAudioSource: {fileID: 184499393}
+  newRecordAudioSource: {fileID: 1599521791}
+  recordLocked: 1
+  recordActive: 0
+  recordCost: 10
+  fadeTime: 3
   deskBellRenderer: {fileID: 911379713}
   baseDeskBellMats:
   - {fileID: -3846018093981099296, guid: 2bd63e808b77f2a45906d8b3b071d328, type: 3}
@@ -19935,6 +20101,7 @@ MonoBehaviour:
   tableClothButtons:
   - {fileID: 1719281484}
   tableClothLocked: 01
+  tableClothActive: 00
   tableClothCosts: 05000000
   mainYGCRenderer: {fileID: 1527486560}
   doorRenderer: {fileID: 185727912}
@@ -20447,6 +20614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Druidic Staff
+  isDecorUI: 0
 --- !u!114 &461985474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20740,6 +20908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Purple Package
+  isDecorUI: 0
 --- !u!114 &465013815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21449,6 +21618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Mystic Mushroom
+  isDecorUI: 0
 --- !u!114 &477418207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25067,6 +25237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bone
+  isDecorUI: 0
 --- !u!114 &543698584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25454,6 +25625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Tall Plant
+  isDecorUI: 1
 --- !u!114 &554421625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25923,6 +26095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Succulent
+  isDecorUI: 1
 --- !u!114 &562761376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28200,6 +28373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bell 2
+  isDecorUI: 1
 --- !u!114 &595779997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29175,6 +29349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bag of Mushrooms
+  isDecorUI: 0
 --- !u!114 &603594349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30521,7 +30696,7 @@ RectTransform:
   m_GameObject: {fileID: 626160328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1621152386}
@@ -30544,7 +30719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -30804,7 +30979,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086671388}
+        m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+        m_MethodName: TagSystemOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -30814,6 +31001,18 @@ MonoBehaviour:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1086671388}
+        m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+        m_MethodName: TagSystemOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31026,6 +31225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Golem Core
+  isDecorUI: 0
 --- !u!114 &639089131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31511,6 +31711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Slice of Pie
+  isDecorUI: 0
 --- !u!114 &640878489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31870,6 +32071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Mandrake
+  isDecorUI: 0
 --- !u!114 &641594273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32966,6 +33168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Quest Board 0
+  isDecorUI: 1
 --- !u!114 &656768106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33322,7 +33525,7 @@ RectTransform:
   m_GameObject: {fileID: 671892053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 194633320}
@@ -33345,7 +33548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -35024,6 +35227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Goblin Head
+  isDecorUI: 0
 --- !u!114 &699433223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36644,7 +36848,7 @@ RectTransform:
   m_GameObject: {fileID: 727789554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1295238342}
@@ -36667,7 +36871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -37075,6 +37279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Chewed Mandrake
+  isDecorUI: 0
 --- !u!114 &731164333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37533,6 +37738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Banana Scimitar
+  isDecorUI: 0
 --- !u!114 &742614220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37918,7 +38124,7 @@ RectTransform:
   m_GameObject: {fileID: 762299375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2087167183}
@@ -37941,7 +38147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -40553,7 +40759,7 @@ RectTransform:
   m_GameObject: {fileID: 821903088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1719281485}
@@ -40576,7 +40782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -41220,7 +41426,6 @@ GameObject:
   m_Component:
   - component: {fileID: 837382756}
   - component: {fileID: 837382757}
-  - component: {fileID: 837382758}
   m_Layer: 5
   m_Name: DecorUIparent
   m_TagString: Untagged
@@ -41259,19 +41464,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837382755}
   m_CullTransparentMesh: 1
---- !u!114 &837382758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837382755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e918dce464c51e4d9c4b7745f053b55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myButton: {fileID: 1571363526}
 --- !u!1001 &840272092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41741,6 +41933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: String Lights
+  isDecorUI: 1
 --- !u!114 &846984799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41921,7 +42114,7 @@ RectTransform:
   m_GameObject: {fileID: 852078071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 595780000}
@@ -41944,7 +42137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -42299,6 +42492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bundle of Beans
+  isDecorUI: 0
 --- !u!114 &868468441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44754,7 +44948,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086671388}
+        m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+        m_MethodName: TagSystemOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -44764,6 +44970,18 @@ MonoBehaviour:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1086671388}
+        m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+        m_MethodName: TagSystemOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45979,6 +46197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Harpy Talon
+  isDecorUI: 0
 --- !u!114 &943334287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47596,7 +47815,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3544b46485c2bf045b6911c10b2b89f4, type: 2}
+  - {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -47635,7 +47854,7 @@ Transform:
   m_GameObject: {fileID: 973462376}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
-  m_LocalPosition: {x: 11.09, y: 0.11, z: 0}
+  m_LocalPosition: {x: 11.24, y: 0.11, z: 0}
   m_LocalScale: {x: 0.47302365, y: 0.44738832, z: 0.67108244}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48854,6 +49073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Purple Package
+  isDecorUI: 0
 --- !u!114 &991389763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51209,6 +51429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bundle of Grains
+  isDecorUI: 0
 --- !u!114 &1045068399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51801,6 +52022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Chewed Mandrake
+  isDecorUI: 0
 --- !u!114 &1050654667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53895,7 +54117,7 @@ RectTransform:
   m_GameObject: {fileID: 1078218620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 172420821}
@@ -53925,7 +54147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 552b28951f42b6944b6a24798df2f540, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9b1f25776958ce449980fbe1efbc69d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -54957,6 +55179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Minty Herb
+  isDecorUI: 0
 --- !u!114 &1089445667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55740,6 +55963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bone
+  isDecorUI: 0
 --- !u!114 &1098135613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56507,6 +56731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Harpy Talon
+  isDecorUI: 0
 --- !u!114 &1115274030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57478,6 +57703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bone
+  isDecorUI: 0
 --- !u!114 &1126368386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58259,6 +58485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Josie's Yam
+  isDecorUI: 0
 --- !u!114 &1132536614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58951,7 +59178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -58985,14 +59212,14 @@ RectTransform:
   m_GameObject: {fileID: 1159215982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 846984794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.7}
   m_SizeDelta: {x: 160, y: 27.4437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1159364811
@@ -60725,7 +60952,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: c2f7e65f06bf369409cb1cc4110e60bc, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 5ade7ea86540fb141aaa186e83049d19, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -60752,6 +60979,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "The board may look overwhelming to you right now, and it's kinda maybe
       the only reason why we lost the last person before you\u2026"
@@ -60759,19 +60998,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 973462385}
-          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 3544b46485c2bf045b6911c10b2b89f4, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "Poor Alex\u2026 "
     skipDelayTime: 0
@@ -60796,7 +61023,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 40c81746c65eb684e9075819a21b52de, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -60815,7 +61042,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 34e03f7aaea8a76449abddbca669c055, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 3ff98b1e478cc7c49824f6c941ff8e04, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -60834,7 +61061,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 3544b46485c2bf045b6911c10b2b89f4, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -60875,7 +61102,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1fe2be9430f19b24592ba9e3c700e75a, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "The items are enchanted to glow based on what the adventurer will
       need\u2014if you see multiple glowing, just choose one of the items!\r\n\r"
@@ -60883,7 +61122,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: 'You can also store any retrieved quest items on this wall.
 
@@ -60913,6 +61164,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1fe2be9430f19b24592ba9e3c700e75a, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: Quite simple really, just count how much gold the contract states,
       put it on the counter, then send them on their way!
@@ -60920,7 +61183,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "If an adventurer does a good job, a little extra gold can go a long
       way in making their day!\r"
@@ -60928,14 +61203,38 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1fe2be9430f19b24592ba9e3c700e75a, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "And on the other hand...\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "\rSometimes you\u2019ll get the occasional adventurer that oughta\u2019
       to be humbled- giving them a little less gold might teach them a lesson or
@@ -60944,7 +61243,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: c44a0f85c7ee7074d8a4378aaf9c3b5c, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "But you didn\u2019t hear that from me!\r\n\r\n\r\n"
     skipDelayTime: 0
@@ -60957,7 +61268,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 34e03f7aaea8a76449abddbca669c055, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 4bea5c2d11665d148882c4925f072827, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -60988,7 +61299,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 3544b46485c2bf045b6911c10b2b89f4, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -61001,14 +61312,38 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1fe2be9430f19b24592ba9e3c700e75a, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "Watch this, and pretend I\u2019m an adventurer."
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1206941359
 GameObject:
   m_ObjectHideFlags: 0
@@ -61602,6 +61937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Cosmic Staff
+  isDecorUI: 0
 --- !u!82 &1214122929
 AudioSource:
   m_ObjectHideFlags: 0
@@ -62978,6 +63314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Dragon Head
+  isDecorUI: 0
 --- !u!114 &1239005589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63672,6 +64009,7 @@ RectTransform:
   - {fileID: 562761373}
   - {fileID: 554421622}
   - {fileID: 362399381}
+  - {fileID: 1625421843}
   m_Father: {fileID: 997892771}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -64187,6 +64525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Malicious Great Sword
+  isDecorUI: 0
 --- !u!114 &1246817926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64591,7 +64930,7 @@ RectTransform:
   m_GameObject: {fileID: 1255308401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1364090637}
@@ -64614,7 +64953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -65542,6 +65881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Purple Potion
+  isDecorUI: 0
 --- !u!1 &1287477354
 GameObject:
   m_ObjectHideFlags: 0
@@ -66092,6 +66432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bone
+  isDecorUI: 0
 --- !u!114 &1291156571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66554,6 +66895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Dark Wood Grain
+  isDecorUI: 1
 --- !u!114 &1295238345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66821,6 +67163,7 @@ Transform:
   - {fileID: 131212010}
   - {fileID: 1821416494}
   - {fileID: 184499394}
+  - {fileID: 1599521790}
   - {fileID: 1651351514}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -70579,6 +70922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Light Walls
+  isDecorUI: 1
 --- !u!114 &1364090640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71199,6 +71543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Light Plank
+  isDecorUI: 1
 --- !u!114 &1371538235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71701,6 +72046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bonsai
+  isDecorUI: 0
 --- !u!114 &1388533772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74227,6 +74573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Lorne's Elixer
+  isDecorUI: 0
 --- !u!1 &1456943970
 GameObject:
   m_ObjectHideFlags: 0
@@ -74541,6 +74888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Red Potion
+  isDecorUI: 0
 --- !u!1001 &1459066362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75435,7 +75783,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086671388}
+        m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+        m_MethodName: TagSystemOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -75445,6 +75805,18 @@ MonoBehaviour:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1086671388}
+        m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+        m_MethodName: TagSystemOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -76296,7 +76668,7 @@ RectTransform:
   m_GameObject: {fileID: 1488096705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 102295888}
@@ -76319,7 +76691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -76891,14 +77263,14 @@ RectTransform:
   m_GameObject: {fileID: 1510776595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 562761373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.7}
   m_SizeDelta: {x: 160, y: 27.4437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1510776597
@@ -76914,7 +77286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -77501,7 +77873,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5ed512dd2fa6fcf45a01995346eb7861, type: 2}
     - target: {fileID: -8210781488338002618, guid: b858a95c10f355140acf41eff8103033, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7493793245135421032, guid: b858a95c10f355140acf41eff8103033, type: 3}
       propertyPath: m_CastShadows
@@ -78902,7 +79274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7176471, g: 0.7176471, b: 0.7176471, a: 1}
+  m_Color: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -79600,6 +79972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Josie's Yarn
+  isDecorUI: 0
 --- !u!114 &1576335789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80664,6 +81037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Raspberries
+  isDecorUI: 0
 --- !u!114 &1587623438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81268,6 +81642,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599124905}
   m_CullTransparentMesh: 1
+--- !u!1 &1599521789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1599521790}
+  - component: {fileID: 1599521791}
+  m_Layer: 0
+  m_Name: NewMusicSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1599521790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599521789}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0015049558, y: -0, z: -0, w: 0.99999887}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1297462018}
+  m_LocalEulerAnglesHint: {x: 0.172, y: 0, z: 0}
+--- !u!82 &1599521791
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599521789}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2207674367915726253, guid: 07b29722f86a03c468e2a6f7d5023461, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 0f35087ec77d9c4448aaeb2bc2223c55, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1599678371
 GameObject:
   m_ObjectHideFlags: 0
@@ -81958,6 +82460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Rusty Long Sword
+  isDecorUI: 0
 --- !u!114 &1608650973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82315,6 +82818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Light Wood Grain
+  isDecorUI: 1
 --- !u!114 &1621152389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82681,6 +83185,234 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1625421842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1625421843}
+  - component: {fileID: 1625421848}
+  - component: {fileID: 1625421847}
+  - component: {fileID: 1625421846}
+  - component: {fileID: 1625421845}
+  - component: {fileID: 1625421844}
+  m_Layer: 5
+  m_Name: 3Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1625421843
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625421842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.056341305, y: 2.2493, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2038511617}
+  - {fileID: 363474469}
+  - {fileID: 435543815}
+  m_Father: {fileID: 1243282764}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 21.5, y: 5}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1625421844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625421842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1625421845}
+          m_TargetAssemblyTypeName: TooltipTrigger, Assembly-CSharp
+          m_MethodName: CursorEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1625421845}
+          m_TargetAssemblyTypeName: TooltipTrigger, Assembly-CSharp
+          m_MethodName: CursorExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1625421845}
+          m_TargetAssemblyTypeName: TooltipTrigger, Assembly-CSharp
+          m_MethodName: CursorDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1625421845}
+          m_TargetAssemblyTypeName: TooltipTrigger, Assembly-CSharp
+          m_MethodName: CursorUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1625421845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625421842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipText: 'Music Record '
+  isDecorUI: 1
+--- !u!114 &1625421846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625421842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1625421847}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 454967644}
+        m_TargetAssemblyTypeName: AlexDecoSystemScript, Assembly-CSharp
+        m_MethodName: MusicRecordButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1625421847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625421842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9081653, g: 0.92452824, b: 0.23798496, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1625421848
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625421842}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1626675432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83130,6 +83862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Lucky Coin
+  isDecorUI: 0
 --- !u!114 &1629087404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83566,7 +84299,7 @@ MonoBehaviour:
         m_CallState: 2
   triggerState: 0
   sentences:
-  - dialogueCharacter: {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
+  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
     sentence: ...
     skipDelayTime: 2
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
@@ -85268,6 +86001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Broken Staff
+  isDecorUI: 0
 --- !u!114 &1677775313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85921,6 +86655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Grim Note
+  isDecorUI: 0
 --- !u!114 &1687352364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86214,6 +86949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Black Package
+  isDecorUI: 0
 --- !u!114 &1689363539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86760,6 +87496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Harpy Talon
+  isDecorUI: 0
 --- !u!114 &1704317921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87242,6 +87979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Broken Staff
+  isDecorUI: 0
 --- !u!114 &1705546187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88528,6 +89266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Quest Board 0
+  isDecorUI: 1
 --- !u!114 &1719281488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89393,7 +90132,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086671388}
+        m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+        m_MethodName: TagSystemOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -89403,6 +90154,18 @@ MonoBehaviour:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1086671388}
+        m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+        m_MethodName: TagSystemOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -89786,6 +90549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bundle of 25 Gold
+  isDecorUI: 0
 --- !u!114 &1735427252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90842,7 +91606,7 @@ RectTransform:
   m_GameObject: {fileID: 1759684614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 940904568}
@@ -91178,7 +91942,7 @@ RectTransform:
   m_GameObject: {fileID: 1774627079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1371538232}
@@ -91201,7 +91965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -91731,7 +92495,7 @@ RectTransform:
   m_GameObject: {fileID: 1790137225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94949, y: 0.94949, z: 0.94949}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 656768103}
@@ -91754,7 +92518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -92026,6 +92790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Succulent
+  isDecorUI: 0
 --- !u!114 &1796343312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95284,6 +96049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bell 0
+  isDecorUI: 1
 --- !u!114 &1874194186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95644,6 +96410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bell 1
+  isDecorUI: 1
 --- !u!114 &1888319113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95856,7 +96623,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086671388}
+        m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+        m_MethodName: TagSystemOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -95866,6 +96645,18 @@ MonoBehaviour:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1086671388}
+        m_TargetAssemblyTypeName: FinchScript, Assembly-CSharp
+        m_MethodName: TagSystemOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -96460,6 +97251,140 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905255342}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1909266068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1909266069}
+  - component: {fileID: 1909266071}
+  - component: {fileID: 1909266070}
+  m_Layer: 5
+  m_Name: Price
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1909266069
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909266068}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.24999914, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 435543815}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -3}
+  m_SizeDelta: {x: 100, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1909266070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909266068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 10g
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_sharedMaterial: {fileID: 3004588068592359487, guid: 63e91425008032e4ca5d00a4bd7175ad, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281066476
+  m_fontColor: {r: 0.92452824, g: 0.89190274, b: 0.16820924, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 48
+  m_fontSizeBase: 48
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1909266071
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909266068}
+  m_CullTransparentMesh: 1
 --- !u!1 &1910802924
 GameObject:
   m_ObjectHideFlags: 0
@@ -96761,6 +97686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bone
+  isDecorUI: 0
 --- !u!114 &1910839427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97378,14 +98304,14 @@ RectTransform:
   m_GameObject: {fileID: 1927714414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 172420821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.7}
   m_SizeDelta: {x: 160, y: 27.4437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927714416
@@ -97401,7 +98327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -99484,6 +100410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Animal Skull
+  isDecorUI: 0
 --- !u!1 &1961895423
 GameObject:
   m_ObjectHideFlags: 0
@@ -101467,6 +102394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Chewed Mandrake
+  isDecorUI: 0
 --- !u!114 &1973244536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101885,7 +102813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4583d04fc20a7b54797b0d4e291b159d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34a931175c3025249a1204e2d1e403eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -102203,6 +103131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Black Package
+  isDecorUI: 0
 --- !u!114 &1994997394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103225,6 +104154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Bone
+  isDecorUI: 0
 --- !u!114 &2008726564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104771,7 +105701,7 @@ RectTransform:
   m_GameObject: {fileID: 2027318501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 288095806}
@@ -104801,7 +105731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 552b28951f42b6944b6a24798df2f540, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3064a08396032594993521ded6085bc3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -104846,7 +105776,7 @@ RectTransform:
   m_GameObject: {fileID: 2038504648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 846984794}
@@ -104876,7 +105806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 552b28951f42b6944b6a24798df2f540, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 753eb37c5ae7cea44be1fdd879d8cbcb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -104893,6 +105823,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038504648}
+  m_CullTransparentMesh: 1
+--- !u!1 &2038511616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038511617}
+  - component: {fileID: 2038511619}
+  - component: {fileID: 2038511618}
+  m_Layer: 5
+  m_Name: Highlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2038511617
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038511616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1625421843}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.7}
+  m_SizeDelta: {x: 160, y: 27.4437}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2038511618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038511616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2038511619
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038511616}
   m_CullTransparentMesh: 1
 --- !u!1 &2045804095
 GameObject:
@@ -105248,6 +106253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Mandrake
+  isDecorUI: 0
 --- !u!114 &2047463675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107822,6 +108828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Basket of Tulips
+  isDecorUI: 0
 --- !u!114 &2079533777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108867,6 +109874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Dark Plank
+  isDecorUI: 1
 --- !u!114 &2087167186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108993,14 +110001,14 @@ RectTransform:
   m_GameObject: {fileID: 2096049213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 288095806}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.7}
   m_SizeDelta: {x: 160, y: 27.4437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2096049215
@@ -109016,7 +110024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.5411765}
+  m_Color: {r: 0.9946091, g: 0.97338414, b: 0.3257277, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -109523,7 +110531,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: c2f7e65f06bf369409cb1cc4110e60bc, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 5ade7ea86540fb141aaa186e83049d19, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -109542,7 +110550,7 @@ MonoBehaviour:
           m_MethodName: ChangeEmote
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 3544b46485c2bf045b6911c10b2b89f4, type: 2}
+            m_ObjectArgument: {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -109555,28 +110563,76 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: cb2ba89942ec8e844a7edc8fe77335a1, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: But don't worry!
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1fe2be9430f19b24592ba9e3c700e75a, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "Here\u2026"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: You look just like me on my first day.
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 1fe2be9430f19b24592ba9e3c700e75a, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: 'Just sign your name here and you can officially call yourself a guild
       clerk.
@@ -109586,7 +110642,19 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 973462385}
+          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
+          m_MethodName: ChangeEmote
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 3c9bcdb0fb85d1248a01ee9555446e80, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2116614732
 GameObject:
   m_ObjectHideFlags: 0
@@ -110125,6 +111193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Divine Staff
+  isDecorUI: 0
 --- !u!114 &2120784473
 MonoBehaviour:
   m_ObjectHideFlags: 0

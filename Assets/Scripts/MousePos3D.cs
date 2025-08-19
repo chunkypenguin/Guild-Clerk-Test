@@ -53,7 +53,6 @@ public class MousePos3D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //MOUSE STUFF
         CursorStuff();
         cursorUIObject.transform.position = Input.mousePosition + new Vector3(18, -25, 0);

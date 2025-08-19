@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using DG.Tweening;
 
 public class AlexDecoSystemScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class AlexDecoSystemScript : MonoBehaviour
     [SerializeField] List<GameObject> ceilingDecorObjects; //decoration to be activated
     [SerializeField] List<GameObject> ceilingDecorButtons; //reference to buttons
     [SerializeField] List<bool> ceilingDecorLocked; //lock bools 
+    [SerializeField] List<bool> ceilingDecorActive; //active bools 
     [SerializeField] List<int> ceilingDecorCosts; //object pricing
 
     [Header("Knick Knacks")]
@@ -18,6 +20,15 @@ public class AlexDecoSystemScript : MonoBehaviour
     [SerializeField] List<bool> knickKnackLocked; //lock bools 
     [SerializeField] List<bool> knickKnackActive; //active bools 
     [SerializeField] List<int> knickKnackCosts; //object pricing
+
+    [Header("Music Record")]
+    [SerializeField] GameObject recordButton;
+    [SerializeField] AudioSource defaultRecordAudioSource;
+    [SerializeField] AudioSource newRecordAudioSource;
+    [SerializeField] bool recordLocked;
+    [SerializeField] bool recordActive;
+    [SerializeField] int recordCost;
+    [SerializeField] float fadeTime;
 
     [Header("Clerk Amenities")]
 
@@ -45,6 +56,7 @@ public class AlexDecoSystemScript : MonoBehaviour
     [SerializeField] List<GameObject> tableClothObjects; //decoration to be activated
     [SerializeField] List<GameObject> tableClothButtons;
     [SerializeField] List<bool> tableClothLocked; //lock bools 
+    [SerializeField] List<bool> tableClothActive; //active bools
     [SerializeField] List<int> tableClothCosts; //object pricing
 
     [Header("Textures")]
@@ -95,7 +107,7 @@ public class AlexDecoSystemScript : MonoBehaviour
         {
             //check if has enough gold to purchase unlock
             playerGold = DayReputationTracker.Instance.GetGold();
-            if(playerGold >= ceilingDecorCosts[x])
+            if (playerGold >= ceilingDecorCosts[x])
             {
                 //spend
                 DayReputationTracker.Instance.SpendGold(ceilingDecorCosts[x]);
@@ -110,14 +122,24 @@ public class AlexDecoSystemScript : MonoBehaviour
         }
         else
         {
-            //Deactivate all other decoration objects and their highlights
-            CeilingDecorDeactivate();
-            //activate this buttons corresponding decoration and highlight
-            CeilingDecorActivate(x);
+            if (ceilingDecorActive[x]) //if decor is active
+            {
+                //Deactivate
+                CeilingDecorDeactivate(x);
+            }
+            else //if decor is inactive
+            {
+                //Deactivate all other decoration objects and their highlights
+                CeilingDecorDeactivate(x);
+                //activate this buttons corresponding decoration and highlight
+                CeilingDecorActivate(x);
+            }
+
+
         }
     }
 
-    public void CeilingDecorDeactivate()
+    public void CeilingDecorDeactivate(int x)
     {
         foreach (GameObject item in ceilingDecorObjects) //set all decor inactive
         {
@@ -127,6 +149,10 @@ public class AlexDecoSystemScript : MonoBehaviour
         {
             item.transform.Find("Highlight").gameObject.SetActive(false);
         }
+        for (int i = 0; i < ceilingDecorActive.Count; i++)
+        {
+            ceilingDecorActive[i] = false;
+        }
     }
 
     public void CeilingDecorActivate(int x)
@@ -134,7 +160,7 @@ public class AlexDecoSystemScript : MonoBehaviour
         ceilingDecorObjects[x].SetActive(true); //turn on corresponding object
         ceilingDecorButtons[x].transform.Find("Highlight").gameObject.SetActive(true); //turn on corresponding button highlight
         //ceilingDecorHighlights[x].SetActive(true); //turn on corresponding butto highlight
-
+        ceilingDecorActive[x] = true;
     }
 
     //KNICK KNACKS
@@ -184,6 +210,50 @@ public class AlexDecoSystemScript : MonoBehaviour
         knickKnackButtons[x].transform.Find("Highlight").gameObject.SetActive(true); //turn on corresponding button highlight
         knickKnackActive[x] = true;
 
+    }
+
+    //MUSIC RECORD
+    public void MusicRecordButtonClick()
+    {
+        if (recordLocked)
+        {
+            playerGold = DayReputationTracker.Instance.GetGold();
+            if(playerGold >= recordCost)
+            {
+                DayReputationTracker.Instance.SpendGold(recordCost);
+                recordLocked = false;
+                recordButton.transform.Find("Lock").gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            if(recordActive)
+            {
+                //deactivate
+                recordButton.transform.Find("Highlight").gameObject.SetActive(false);
+                TransitionToDefault();
+                recordActive = false;
+            }
+            else
+            {
+                //activate
+                //deactivate
+                recordButton.transform.Find("Highlight").gameObject.SetActive(true);
+                TransitionToNew();
+                recordActive = true;
+            }
+        }
+    }
+
+    void TransitionToNew()
+    {
+        defaultRecordAudioSource.DOFade(0f, fadeTime);
+        newRecordAudioSource.DOFade(0.75f, fadeTime);
+    }
+    void TransitionToDefault()
+    {
+        defaultRecordAudioSource.DOFade(0.75f, fadeTime);
+        newRecordAudioSource.DOFade(0f, fadeTime);
     }
 
     //CLERK AMENITIES
@@ -335,14 +405,26 @@ public class AlexDecoSystemScript : MonoBehaviour
         }
         else
         {
-            //Deactivate all other decoration objects and their highlights
-            TableClothDeactivate();
-            //activate this buttons corresponding decoration and highlight
-            TableClothActivate(x);
+            if (tableClothActive[x]) //if decor is active
+            {
+                //Deactivate
+                TableClothDeactivate(x);
+            }
+            else //if decor is inactive
+            {
+                //Deactivate all other decoration objects and their highlights
+                TableClothDeactivate(x);
+                //activate this buttons corresponding decoration and highlight
+                TableClothActivate(x);
+            }
+            ////Deactivate all other decoration objects and their highlights
+            //TableClothDeactivate();
+            ////activate this buttons corresponding decoration and highlight
+            //TableClothActivate(x);
         }
     }
 
-    public void TableClothDeactivate()
+    public void TableClothDeactivate(int x)
     {
         foreach (GameObject item in tableClothObjects) //set all decor inactive
         {
@@ -352,12 +434,15 @@ public class AlexDecoSystemScript : MonoBehaviour
         {
             item.transform.Find("Highlight").gameObject.SetActive(false);
         }
+
+        tableClothActive[x] = false;
     }
 
     public void TableClothActivate(int x)
     {
         tableClothObjects[x].SetActive(true); //turn on corresponding object
         tableClothButtons[x].transform.Find("Highlight").gameObject.SetActive(true); //turn on corresponding button highlight
+        tableClothActive[x] = true;
 
     }
 

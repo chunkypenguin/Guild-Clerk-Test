@@ -7,11 +7,14 @@ public class TooltipTrigger : MonoBehaviour
 
     bool dragging;                // ? track whether the player is holding the object
 
+    [SerializeField] bool isDecorUI;
+
     void OnMouseEnter()
     {
         //TESTING FOR CURSOR STUFF & TOOLTIP  STUFF
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject() && !isDecorUI)
             return;
+        
 
         if (!dragging)            // only show if we’re NOT dragging
             TooltipUI.Instance?.Show(tooltipText);
@@ -37,7 +40,7 @@ public class TooltipTrigger : MonoBehaviour
     public void CursorEnter()
     {
         //TESTING FOR CURSOR STUFF & TOOLTIP  STUFF
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject() && !isDecorUI)
             return;
 
         if (!dragging)            // only show if we’re NOT dragging

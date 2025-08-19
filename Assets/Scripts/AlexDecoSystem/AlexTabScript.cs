@@ -43,6 +43,8 @@ public class AlexTabScript : MonoBehaviour
         startPos = decorUI.transform.position;
         decorUI.transform.position = startPos - new Vector3(0, distance, 0);
         endPos = decorUI.transform.position;
+
+        SetTabColorSelect(imageList[0]);
     }
 
     private void Update()
