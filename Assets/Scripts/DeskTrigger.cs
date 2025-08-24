@@ -186,12 +186,16 @@ public class DeskTrigger : MonoBehaviour
             }
             cs.IsIdle();
         }
+        else //if no gold rewarded, still make poof return quest
+        {
+            GoldSystem.instance.QuestPoof();
+        }
 
         //always take return quest
         GameObject questRB = items.Find(item => item.name == "QuestReturn");
         if(questRB != null)
         {
-            qs.GetQuestRB(questRB);
+            //qs.GetQuestRB(questRB); //commenting to instead *POOF* away quest
         }
        
 

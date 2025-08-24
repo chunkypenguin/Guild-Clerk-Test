@@ -103,8 +103,21 @@ public class GrabObjectProperties{
 		void Update()
 		{
             //TESTING FOR CURSOR STUFF & TOOLTIP  STUFF
-            if (EventSystem.current.IsPointerOverGameObject())
+			//quests can be picked up as before to avoid not being able to pick up quests beneath their text UI
+            if (EventSystem.current.IsPointerOverGameObject() && !MousePos3D.instance.isHoveringQuest)
+			{
+                //can drop objects beneath UI, can't pick them up though
+				if(m_grabbing)
+				{
+					if(Input.GetMouseButtonUp(0))
+					{
+						Reset();
+						m_grabbing = false;
+					}
+				}
+
                 return;
+			}
 
             canGrabCheck();
 

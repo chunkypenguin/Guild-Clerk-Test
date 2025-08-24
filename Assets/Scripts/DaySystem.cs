@@ -23,6 +23,7 @@ public class DaySystem : MonoBehaviour
     [SerializeField] GameObject credits;
 
     public AudioSource bgMusic;
+    public AudioSource otherBGMusic;
     public AudioSource creditSceneMusic;
 
     bool gameEnd;
@@ -217,6 +218,7 @@ public class DaySystem : MonoBehaviour
                 gameEnd = true;
 
                 bgMusic.DOFade(0, 7);
+                otherBGMusic.DOFade(0, 7);
                 creditSceneMusic.DOFade(0.5f, 10);
             }
 

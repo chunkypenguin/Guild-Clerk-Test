@@ -1372,7 +1372,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1486805174}
+        m_TargetAssemblyTypeName: ZekeScript, Assembly-CSharp
+        m_MethodName: TagSystemOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1382,6 +1394,18 @@ MonoBehaviour:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsEquipment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1486805174}
+        m_TargetAssemblyTypeName: ZekeScript, Assembly-CSharp
+        m_MethodName: TagSystemOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11432,6 +11456,9 @@ MonoBehaviour:
   collectDistance: 0.5
   mc: {fileID: 963194229}
   upDown: 0
+  questReturnHolder: {fileID: 0}
+  questReturn: {fileID: 0}
+  onBoardChecker: {fileID: 0}
 --- !u!1 &264187179
 GameObject:
   m_ObjectHideFlags: 0
@@ -13381,9 +13408,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "At the start of each day you'll be able to decorate your clerk desk! \n\nUtilize
-    your gold earnings (top right of screen) to purchase decor below.\n\nWhen you're
-    done decorating, press the \"Done\" tab to start your shift.\n\nGet creative
-    and enjoy!"
+    your gold earnings to purchase decor below.\n\nWhen you're done decorating, press
+    the \"Done\" tab to start your shift.\n\nGet creative and enjoy!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
   m_sharedMaterial: {fileID: 6365034640609171175, guid: afdb41a5d38687b4a925868509af8e19, type: 2}
@@ -36805,6 +36831,7 @@ MonoBehaviour:
   - {fileID: 2079533769}
   credits: {fileID: 1764125521}
   bgMusic: {fileID: 184499393}
+  otherBGMusic: {fileID: 1599521791}
   creditSceneMusic: {fileID: 1651351513}
   dayText: {fileID: 728288744}
   descriptionText: {fileID: 272414237}
@@ -38646,16 +38673,10 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
-  nextSentenceDialogueEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  endDialogueEvent:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1486805170}
-        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
-        m_MethodName: MoveToEnd
+      - m_Target: {fileID: 1486805174}
+        m_TargetAssemblyTypeName: ZekeScript, Assembly-CSharp
+        m_MethodName: TagSystemOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38665,9 +38686,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1486805174}
-        m_TargetAssemblyTypeName: ZekeScript, Assembly-CSharp
-        m_MethodName: TagSystemOff
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1486805170}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50357,6 +50384,8 @@ MonoBehaviour:
   cursorGrab: {fileID: 21300000, guid: ab42cde89175e4a43a53af4765eb1cf6, type: 3}
   grabItScript: {fileID: 0}
   clicking: 0
+  questText: 0
+  isHoveringQuest: 0
 --- !u!23 &1018871381
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57211,6 +57240,9 @@ MonoBehaviour:
   collectDistance: 0.5
   mc: {fileID: 963194229}
   upDown: 0
+  questReturnHolder: {fileID: 1331057228}
+  questReturn: {fileID: 597950597}
+  onBoardChecker: {fileID: 1789104662}
 --- !u!64 &1118656745
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60162,7 +60194,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 7c165361cb2abed4dbbae5062f5c38cd, type: 2}
-    sentence: "This \u201C{0}\u201D person says they hate veterans like me!\r\n"
+    sentence: 'This {0} person says they hate veterans like me!
+
+'
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -91744,16 +91778,10 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
-  nextSentenceDialogueEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  endDialogueEvent:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1486805170}
-        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
-        m_MethodName: MoveToEnd
+      - m_Target: {fileID: 1486805174}
+        m_TargetAssemblyTypeName: ZekeScript, Assembly-CSharp
+        m_MethodName: TagSystemOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -91763,9 +91791,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1486805174}
-        m_TargetAssemblyTypeName: ZekeScript, Assembly-CSharp
-        m_MethodName: TagSystemOff
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1486805170}
+        m_TargetAssemblyTypeName: MoveCharacter, Assembly-CSharp
+        m_MethodName: MoveToEnd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -93491,6 +93525,9 @@ MonoBehaviour:
   collectDistance: 0.5
   mc: {fileID: 963194229}
   upDown: 0
+  questReturnHolder: {fileID: 0}
+  questReturn: {fileID: 0}
+  onBoardChecker: {fileID: 0}
 --- !u!23 &1803349241
 MeshRenderer:
   m_ObjectHideFlags: 0

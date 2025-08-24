@@ -41,6 +41,14 @@ public class MousePos3D : MonoBehaviour
 
     public bool questText;
 
+    public static MousePos3D instance;
+
+    public bool isHoveringQuest;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         //cursorHotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
@@ -98,12 +106,15 @@ public class MousePos3D : MonoBehaviour
                     questText = true;
                 }
 
+                isHoveringQuest = true;
             }
 
             else //COULD BE OPTIMIZED WITH BOOL
             {
                 questSystem.HideQuestDescription();
                 questText = false;
+
+                isHoveringQuest = false;
             }
 
             if (EventSystem.current.IsPointerOverGameObject())

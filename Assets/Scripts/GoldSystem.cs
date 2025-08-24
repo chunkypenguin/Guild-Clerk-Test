@@ -37,6 +37,9 @@ public class GoldSystem : MonoBehaviour
     public int upDown;
     bool isHolding;
 
+    [SerializeField] GameObject questReturnHolder;
+    [SerializeField] GameObject questReturn;
+    [SerializeField] GameObject onBoardChecker;
 
     private void Awake()
     {
@@ -60,6 +63,8 @@ public class GoldSystem : MonoBehaviour
         {
             isSuctionActive = false;
             Debug.Log("All coins collected! Suction stopped.");
+
+            QuestPoof();
         }
     }
 
@@ -137,6 +142,18 @@ public class GoldSystem : MonoBehaviour
     //        yield return new WaitForSeconds(0.15f);
     //    }
     //}
+
+    public void QuestPoof()
+    {
+        if(questReturnHolder.activeSelf)
+        {
+            //*POOF* away completed quest contract
+            questReturnHolder.SetActive(false);
+            onBoardChecker.GetComponent<QuestBoardCheck>().onBoard = false;
+            questReturn.GetComponent<ItemFloorScript>().ClearReturnQuest();
+        }
+
+    }
 
     public void PointerDown(int updown)
     {

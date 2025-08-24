@@ -52,6 +52,36 @@ public class ItemFloorScript : MonoBehaviour
         }
     }
 
+    public void ClearReturnQuest()
+    {
+        prb = gameObject.transform.parent.GetComponent<Rigidbody>();
+
+        poofFX.transform.position = rb.transform.position;
+        poofFX.Play();
+
+        gameObject.GetComponent<BoxCollider>().isTrigger = false;
+        prb.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        rb.useGravity = true;
+        prb.useGravity = true;
+        prb.isKinematic = true;
+        prb.transform.position = startPos;
+        prb.transform.rotation = startRotation;
+        transform.localScale = startScale;
+        prb.isKinematic = false;
+
+        prb.constraints = RigidbodyConstraints.FreezePositionZ |
+        RigidbodyConstraints.FreezeRotation;
+
+        // Get all colliders attached to this GameObject
+        Collider[] colliderz = gameObject.GetComponents<Collider>();
+
+        // Disable each collider
+        foreach (Collider col in colliderz)
+        {
+            col.enabled = true;
+        }
+    }
+
     public void ResetItem()
     {
         if (gameObject.CompareTag("Quest"))
