@@ -55,9 +55,11 @@ public class GregScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        gs.totalGoldGiven = gs.goldAmount;
         int rep = 0;
         if (cs.currentCharacter.choseQuestA) //Slay Quest
         {
+            gs.goldWanted = 8;
             if (gs.goldAmount == 8)
             {
                 //do this
@@ -81,6 +83,7 @@ public class GregScript : MonoBehaviour
         }
         else if (cs.currentCharacter.choseQuestB) //Mushroom Quest
         {
+            gs.goldWanted = 2;
             if (gs.goldAmount == 2)
             {
                 //do this

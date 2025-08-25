@@ -41,6 +41,11 @@ public class GoldSystem : MonoBehaviour
     [SerializeField] GameObject questReturn;
     [SerializeField] GameObject onBoardChecker;
 
+    //Gold Give Back
+    public int totalGoldGiven;
+    public int goldWanted;
+    int extraGold;
+
     private void Awake()
     {
         instance = this; 
@@ -294,9 +299,21 @@ public class GoldSystem : MonoBehaviour
 
     public void GiveBackGold()
     {
-        for (int i = 0; i < 5; i++) // Calls the function 5 times
+        extraGold = totalGoldGiven - goldWanted;
+
+        if(extraGold > 0)
+        {
+            StartCoroutine(ExecuteDelayedLoop());
+        }
+
+    }
+
+    IEnumerator ExecuteDelayedLoop()
+    {
+        for (int i = 0; i < extraGold; i++) // Calls the function 5 times
         {
             PressedUp();
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }

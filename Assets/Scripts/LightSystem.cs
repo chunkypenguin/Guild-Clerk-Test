@@ -7,6 +7,7 @@ public class LightSystem : MonoBehaviour
 {
     [SerializeField] Light light1;
     [SerializeField] Light light2;
+    [SerializeField] Light light3;
 
     [SerializeField] Color lightColor;
     [SerializeField] float startIntensity;
@@ -29,17 +30,21 @@ public class LightSystem : MonoBehaviour
     {
         light1.DOIntensity(targetIntensity, duration);
         light2.DOIntensity(targetIntensity, duration);
+        light3.DOIntensity(targetIntensity, duration);
 
         light1.DOColor(Color.blue, duration); // Changes light color over time
         light2.DOColor(Color.blue, duration); // Changes light color over time
+        light3.DOColor(Color.blue, duration); // Changes light color over time
     }
 
     public void UndimLights()
     {
         light1.DOIntensity(startIntensity, duration);
         light2.DOIntensity(startIntensity, duration);
+        light3.DOIntensity(startIntensity, duration);
 
         light1.DOColor(lightColor, duration); // Changes light color over time
         light2.DOColor(lightColor, duration); // Changes light color over time
+        light3.DOColor(lightColor, duration); // Changes light color over time
     }
 }

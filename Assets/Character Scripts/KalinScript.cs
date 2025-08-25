@@ -31,9 +31,11 @@ public class KalinScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        gs.totalGoldGiven = gs.goldAmount;
         int rep = 0;
         if (cs.currentCharacter.choseQuestA) 
         {
+            gs.goldWanted = 30;
             if (gs.goldAmount == 30)
             {
                 //do this
