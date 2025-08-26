@@ -26,6 +26,8 @@ namespace HeneGames.DialogueSystem
 
         public Color textColor;
 
+        public float textAudioPitch;
+
         public void ResetBools()
         {
             choseQuestA = false;

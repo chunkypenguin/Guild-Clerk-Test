@@ -27,3 +27,4 @@ MonoBehaviour:
   choseItemB: 0
   choseItemAA: 0
   textColor: {r: 0.5921569, g: 0.26666668, b: 0.14509805, a: 1}
+  textAudioPitch: 1.1

@@ -244,6 +244,7 @@ public class CharacterSystem : MonoBehaviour
     public bool isReward;
     public bool isEquipment;
     public bool isIdle;
+    public bool newQuests;
 
     public bool pickedQ1A;
     public bool pickedQ1B;
@@ -254,6 +255,9 @@ public class CharacterSystem : MonoBehaviour
     public bool D1 = true;
     public bool D2 = false;
     public bool D3 = false;
+
+    //text audio
+    [SerializeField] AudioSource textAudioSource;
 
     [SerializeField] DialogueUI dui;
 
@@ -273,6 +277,23 @@ public class CharacterSystem : MonoBehaviour
     }
 
     public void IsQuest()
+    {
+        isQuest = true;
+        isReward = false;
+        isEquipment = false;
+        isIdle = false;
+
+        if (movecam.instance.right)
+        {
+            QuestSystem.instance.UpdateQuests();
+        }
+        else
+        {
+            newQuests = true;
+        }
+    }
+
+    public void NomiraVanelleIsQuest()
     {
         isQuest = true;
         isReward = false;
@@ -329,6 +350,10 @@ public class CharacterSystem : MonoBehaviour
             {
                 //NEW SHIT for rep system
                 PlayerRepTrackerCharacter.instance.ActivateNpc(characterCount);
+
+                //new text audio pitch
+                //expect problems with zeto/nomira
+                textAudioSource.pitch = currentCharacter.textAudioPitch;
 
                 currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
                 ChangeTextColor();

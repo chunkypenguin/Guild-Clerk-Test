@@ -45,8 +45,14 @@ public class QuestSystem : MonoBehaviour
     [SerializeField] GameObject questAHolder;
     [SerializeField] GameObject questBHolder;
 
+    //trying to move quests a little when they poof in
+    [SerializeField] Rigidbody questARB;
+    [SerializeField] Rigidbody questBRB;
+    [SerializeField] float moveStrength;
+
     [SerializeField] GameObject visualQuests;
     [SerializeField] ParticleSystem poofFX;
+    [SerializeField] AudioSource poofAudio;
 
     public int a = 0;
     public int b = 1;
@@ -72,6 +78,15 @@ public class QuestSystem : MonoBehaviour
     {
         //UpdateQuests();
         cs = CharacterSystem.instance;
+    }
+
+    private void Update()
+    {
+        //TESTING
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            //PushQuests();
+        }
     }
 
     private void FixedUpdate()
@@ -278,14 +293,24 @@ public class QuestSystem : MonoBehaviour
         deskTrigger.items.Clear();
     }
 
+    private void PushQuests()
+    {
+        questARB.AddForce(Vector3.forward * moveStrength, ForceMode.Impulse);
+        questBRB.AddForce(-Vector3.forward * moveStrength, ForceMode.Impulse);
+    }
+
     public void UpdateQuests()
     {
         visualQuests.SetActive(false); //*poof*
         poofFX.Play();
+        poofAudio.Play();
 
         Debug.Log("update quests");
         questAHolder.SetActive(true);
         questBHolder.SetActive(true);
+        
+        //make quests move a little for aesthetic reasons
+        PushQuests();
 
         if (cs.currentCharacter.characterName == "Andy" && cs.currentCharacter.choseQuestB)
         {

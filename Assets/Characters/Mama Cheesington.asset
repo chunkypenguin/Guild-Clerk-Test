@@ -17,8 +17,12 @@ MonoBehaviour:
   quest: []
   ItemAName: 
   ItemBName: 
+  ItemANameA: 
+  ItemBNameB: 
   choseQuestA: 0
   choseQuestB: 0
   choseItemA: 0
   choseItemB: 0
+  choseItemAA: 0
   textColor: {r: 0.703504, g: 0.56413054, b: 0.56413054, a: 1}
+  textAudioPitch: 1.25

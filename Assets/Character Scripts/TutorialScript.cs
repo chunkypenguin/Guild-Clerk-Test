@@ -12,6 +12,7 @@ public class TutorialScript : MonoBehaviour
     bool josieStarted;
     bool josieHasMoved;
     bool dayOneEnd;
+    bool poofed;
 
     [SerializeField] MeshRenderer mr;
 
@@ -110,7 +111,7 @@ public class TutorialScript : MonoBehaviour
         {
             questsOnBoard = true;
         }
-        else
+        else if(poofed)
         {
             questsOnBoard = false;
         }
@@ -311,5 +312,29 @@ public class TutorialScript : MonoBehaviour
             hasGoldBundle = true;
             Debug.Log("goldhas");
         }
+    }
+
+    //1
+    public void TutorialQuestPoof()
+    {
+        if (!poofed)
+        {
+            Invoke(nameof(QuestPoof), 1f);
+            poofed = true;
+            questsOnBoard = true;
+
+        }
+
+    }
+    //2
+    private void QuestPoof()
+    {
+        QuestSystem.instance.UpdateQuests();
+        Invoke(nameof(QuestPoofDia), 0.5f);
+    }
+    //3
+    private void QuestPoofDia()
+    {
+        cs.josieD1P4.StartNewDialogue(cs.dialogueTriggerScript);
     }
 }

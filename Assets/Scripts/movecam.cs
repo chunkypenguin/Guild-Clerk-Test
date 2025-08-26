@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 
 public class movecam : MonoBehaviour
 {
-
     [SerializeField] Vector3 questAngle;
     [SerializeField] Vector3 equipmentAngle;
     [SerializeField] Vector3 centerAngle;
@@ -46,6 +45,17 @@ public class movecam : MonoBehaviour
     public bool drawerOpen;
     public bool canOpenDrawer;
 
+    [SerializeField] AudioSource drawerOpenAudio;
+    [SerializeField] AudioSource drawerCloseAudio;
+    [SerializeField] AudioSource coinsAudio;
+
+    public static movecam instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         //centerPosition = transform.position;
@@ -72,7 +82,8 @@ public class movecam : MonoBehaviour
                 RightButton();
                 if (!rightTut)
                 {
-                    TutorialScript.instance.JosieTutDialogue(CharacterSystem.instance.josieD1P4);
+                    //TutorialScript.instance.JosieTutDialogue(CharacterSystem.instance.josieD1P4);
+                    TutorialScript.instance.TutorialQuestPoof();
                     rightTut = true;
                 }
 
@@ -255,6 +266,7 @@ public class movecam : MonoBehaviour
                 left = true;
                 MoveCamToEquipment();
                 goldSystemScript.CloseGoldDrawer();
+                drawerCloseAudio.Play();
             }
             else if (right)
             {
@@ -309,6 +321,7 @@ public class movecam : MonoBehaviour
                 right = true;
                 MoveCamToQuests();
                 goldSystemScript.CloseGoldDrawer();
+                drawerCloseAudio.Play();
             }
             else if (left)
             {
@@ -370,7 +383,8 @@ public class movecam : MonoBehaviour
                 MoveCamCenter();
 
                 goldSystemScript.CloseGoldDrawer();
-               
+                drawerCloseAudio.Play();
+
             }
 
             else
@@ -386,7 +400,18 @@ public class movecam : MonoBehaviour
     private void MoveCamToQuests()
     {
         canMoveCam = false;
-        transform.DORotate(questAngle, camMoveSpeed).onComplete = grabItScript.CamMoveCheck;
+        //transform.DORotate(questAngle, camMoveSpeed).onComplete = grabItScript.CamMoveCheck;
+        transform.DORotate(questAngle, camMoveSpeed).onComplete = () =>
+        {
+            grabItScript.CamMoveCheck();
+            if (cs.newQuests && !TutorialScript.instance.tutP1 && cs.isQuest)
+            {
+                QuestSystem.instance.UpdateQuests();
+                //cs.newQuests = false;
+            }
+            cs.newQuests = false;
+        };
+
         transform.DOMove(questPosition, camMoveSpeed);
         Invoke(nameof(CanMoveCamera), 0.5f);
 
@@ -414,6 +439,10 @@ public class movecam : MonoBehaviour
         transform.DORotate(rewardsAngle, camMoveSpeed).onComplete = grabItScript.CamMoveCheck;
         transform.DOMove(centerPosition, camMoveSpeed);
         Invoke(nameof(CanMoveCamera), 0.5f);
+
+        //Audio
+        drawerOpenAudio.Play();
+        coinsAudio.Play();
     }
 
     private void CanMoveCamera()

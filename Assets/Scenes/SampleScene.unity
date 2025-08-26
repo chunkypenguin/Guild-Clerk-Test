@@ -3648,18 +3648,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1287477355}
-        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
-        m_MethodName: UpdateQuests
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
@@ -6702,18 +6690,6 @@ MonoBehaviour:
   endDialogueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287477355}
-        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
-        m_MethodName: UpdateQuests
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsQuest
@@ -9499,7 +9475,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
-        m_MethodName: IsQuest
+        m_MethodName: NomiraVanelleIsQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9973,18 +9949,6 @@ MonoBehaviour:
   endDialogueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287477355}
-        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
-        m_MethodName: UpdateQuests
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsQuest
@@ -16971,6 +16935,134 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &384685013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 384685014}
+  - component: {fileID: 384685015}
+  m_Layer: 0
+  m_Name: DrawerCloseAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &384685014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384685013}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1297462018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &384685015
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384685013}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8196658430127071657, guid: 07b29722f86a03c468e2a6f7d5023461, type: 2}
+  m_audioClip: {fileID: 8300000, guid: f343311c45b0cb0418ff43f3a1b5cde5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 0.75
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &390982433
 GameObject:
   m_ObjectHideFlags: 0
@@ -17833,7 +17925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a919612eff950de4e91fd54e81ecfa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionClip: {fileID: 8300000, guid: af07978e1167b1e4789833cb96ab6981, type: 3}
+  collisionClip: {fileID: 8300000, guid: 72c163578032ac4468f321b262eb3b8a, type: 3}
   minImpactVelocity: 1
 --- !u!82 &407252485
 AudioSource:
@@ -19056,7 +19148,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 3d22b3b1a3dd1874cb8eca8f3389fade, type: 2}
-    sentence: Thannk you {0}!
+    sentence: Thank you {0}!
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -23980,18 +24072,6 @@ MonoBehaviour:
   endDialogueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287477355}
-        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
-        m_MethodName: UpdateQuests
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsQuest
@@ -28981,6 +29061,134 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.59841853, y: 0.7294238, z: 0.1699646}
   m_Center: {x: 0.0015704888, y: 0.0012596895, z: 0.024321299}
+--- !u!1 &600623191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600623192}
+  - component: {fileID: 600623193}
+  m_Layer: 0
+  m_Name: PoofAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &600623192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600623191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1297462018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &600623193
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600623191}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8196658430127071657, guid: 07b29722f86a03c468e2a6f7d5023461, type: 2}
+  m_audioClip: {fileID: 8300000, guid: ee4bca94761657d49a5988c9b3383890, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.75
+  m_Pitch: 1.25
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &601891940
 GameObject:
   m_ObjectHideFlags: 0
@@ -30453,6 +30661,134 @@ Transform:
   m_Children: []
   m_Father: {fileID: 742614213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &623300252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623300253}
+  - component: {fileID: 623300254}
+  m_Layer: 0
+  m_Name: CoinsAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &623300253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623300252}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1297462018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &623300254
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623300252}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8196658430127071657, guid: 07b29722f86a03c468e2a6f7d5023461, type: 2}
+  m_audioClip: {fileID: 8300000, guid: b4605af57b9854246b70fb5d488621ed, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.75
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &623575968
 GameObject:
   m_ObjectHideFlags: 0
@@ -33065,6 +33401,7 @@ MonoBehaviour:
   isReward: 0
   isEquipment: 0
   isIdle: 1
+  newQuests: 0
   pickedQ1A: 0
   pickedQ1B: 0
   pickedItemA: 0
@@ -33072,6 +33409,7 @@ MonoBehaviour:
   D1: 1
   D2: 0
   D3: 0
+  textAudioSource: {fileID: 1821416493}
   dui: {fileID: 470124613}
 --- !u!4 &655475414
 Transform:
@@ -37492,6 +37830,134 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &734315373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 734315374}
+  - component: {fileID: 734315375}
+  m_Layer: 0
+  m_Name: DrawerAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &734315374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734315373}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1297462018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &734315375
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734315373}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8196658430127071657, guid: 07b29722f86a03c468e2a6f7d5023461, type: 2}
+  m_audioClip: {fileID: 8300000, guid: c3cfd64a223a98c4f9b9735b20025a76, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &735255195
 GameObject:
   m_ObjectHideFlags: 0
@@ -41400,7 +41866,7 @@ Transform:
   m_GameObject: {fileID: 836519281}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 8.605, y: 7.85, z: 5.5599995}
+  m_LocalPosition: {x: 8.605, y: 7.85, z: 5.28}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47084,6 +47550,9 @@ MonoBehaviour:
   peekSpeed: 0.2
   drawerOpen: 0
   canOpenDrawer: 0
+  drawerOpenAudio: {fileID: 734315375}
+  drawerCloseAudio: {fileID: 384685015}
+  coinsAudio: {fileID: 623300254}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47968,7 +48437,7 @@ Transform:
   m_GameObject: {fileID: 973462376}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
-  m_LocalPosition: {x: 11.24, y: 0.11, z: 0}
+  m_LocalPosition: {x: 11.3, y: 0.11, z: 0}
   m_LocalScale: {x: 0.47302365, y: 0.44738832, z: 0.67108244}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48051,7 +48520,7 @@ MonoBehaviour:
   questDialogue2: 0
   tutP1: 0
   tutP2: 0
-  questsOnBoard: 0
+  questsOnBoard: 1
   holdingQuest: 0
   mr: {fileID: 973462379}
   josieDisguise: {fileID: 2100000, guid: d5b195b4837f66644a7a60da694f0c85, type: 2}
@@ -55299,7 +55768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a919612eff950de4e91fd54e81ecfa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionClip: {fileID: 8300000, guid: af07978e1167b1e4789833cb96ab6981, type: 3}
+  collisionClip: {fileID: 8300000, guid: 72c163578032ac4468f321b262eb3b8a, type: 3}
   minImpactVelocity: 1
 --- !u!82 &1089445668
 AudioSource:
@@ -57940,6 +58409,8 @@ GameObject:
   - component: {fileID: 1126729005}
   - component: {fileID: 1126729004}
   - component: {fileID: 1126729003}
+  - component: {fileID: 1126729009}
+  - component: {fileID: 1126729008}
   m_Layer: 7
   m_Name: QuestB
   m_TagString: Quest
@@ -58115,6 +58586,116 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.59841853, y: 0.7294238, z: 0.1699646}
   m_Center: {x: 0.0015704888, y: 0.0012596895, z: 0.024321299}
+--- !u!82 &1126729008
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126729001}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8196658430127071657, guid: 07b29722f86a03c468e2a6f7d5023461, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.75
+  m_Pitch: 1.75
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1126729009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126729001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a919612eff950de4e91fd54e81ecfa0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionClip: {fileID: 8300000, guid: af07978e1167b1e4789833cb96ab6981, type: 3}
+  minImpactVelocity: 1
 --- !u!1001 &1127553788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58596,7 +59177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d542a8c3b2c14de41b4e12ce1e733b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipText: Josie's Yam
+  tooltipText: Josie's Yarn
   isDecorUI: 0
 --- !u!114 &1132536614
 MonoBehaviour:
@@ -61667,18 +62248,6 @@ MonoBehaviour:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsQuest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1287477355}
-        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
-        m_MethodName: UpdateQuests
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -66054,8 +66623,12 @@ MonoBehaviour:
   dt: {fileID: 1296600103}
   questAHolder: {fileID: 836519281}
   questBHolder: {fileID: 1737869212}
+  questARB: {fileID: 1967980550}
+  questBRB: {fileID: 1126729006}
+  moveStrength: 3
   visualQuests: {fileID: 1292828925}
   poofFX: {fileID: 1726348204}
+  poofAudio: {fileID: 600623193}
   a: 0
   b: 1
   c: 2
@@ -67279,6 +67852,10 @@ Transform:
   - {fileID: 184499394}
   - {fileID: 1599521790}
   - {fileID: 1651351514}
+  - {fileID: 600623192}
+  - {fileID: 734315374}
+  - {fileID: 384685014}
+  - {fileID: 623300253}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1298240868
@@ -71344,18 +71921,6 @@ MonoBehaviour:
   endDialogueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287477355}
-        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
-        m_MethodName: UpdateQuests
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsQuest
@@ -75324,6 +75889,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1293637338}
+          m_TargetAssemblyTypeName: ItemSystem, Assembly-CSharp
+          m_MethodName: ReturnItem
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 639089123}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: 7002e5e6acfd27846be310c1218a6e70, type: 2}
     sentence: "During our fight, it seemed my SUPER AWESOME LIGHTNING only made it
       stronger\u2026 \r"
@@ -75461,18 +76038,6 @@ MonoBehaviour:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsQuest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1287477355}
-        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
-        m_MethodName: UpdateQuests
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -76556,7 +77121,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e50aa041c46048342bbb844eda215b68, type: 2}
+  - {fileID: 2100000, guid: 06af46481579b5741946a7d252b6935c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79821,7 +80386,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
-        m_MethodName: IsQuest
+        m_MethodName: NomiraVanelleIsQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -80424,8 +80989,8 @@ Transform:
   m_GameObject: {fileID: 1580913493}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000020787118, y: -0.70710796, z: 0.70710564, w: 0.0000021308658}
-  m_LocalPosition: {x: 11.13, y: 0.41, z: -0.060341}
-  m_LocalScale: {x: 0.68796486, y: 0.27170563, z: 0.7912904}
+  m_LocalPosition: {x: 11.3, y: 0.41, z: -0.060341}
+  m_LocalScale: {x: 0.728142, y: 0.27170563, z: 0.7912904}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 132775078}
@@ -86599,18 +87164,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1287477355}
-          m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
-          m_MethodName: UpdateQuests
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 973462385}
           m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
           m_MethodName: ChangeEmote
@@ -88838,19 +89391,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 973462385}
-          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "When he tried to run away, the snakes grabbed him, holding him down.
       \r\n"
@@ -88858,19 +89399,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 973462385}
-          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "Then the fireworks all went off all at once, causing the roof to fall
       on top of him. \r"
@@ -88878,19 +89407,7 @@ MonoBehaviour:
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 973462385}
-          m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
-          m_MethodName: ChangeEmote
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 15814d8e6e5b6a0459f1b57e4848923f, type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "When they lifted up the rubble...\r"
     skipDelayTime: 0
@@ -101825,6 +102342,8 @@ GameObject:
   - component: {fileID: 1967980551}
   - component: {fileID: 1967980553}
   - component: {fileID: 1967980554}
+  - component: {fileID: 1967980556}
+  - component: {fileID: 1967980555}
   m_Layer: 7
   m_Name: QuestA
   m_TagString: Quest
@@ -102013,6 +102532,116 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questAOnDesk: 0
+--- !u!82 &1967980555
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967980542}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8196658430127071657, guid: 07b29722f86a03c468e2a6f7d5023461, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.75
+  m_Pitch: 1.75
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1967980556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967980542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a919612eff950de4e91fd54e81ecfa0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionClip: {fileID: 8300000, guid: af07978e1167b1e4789833cb96ab6981, type: 3}
+  minImpactVelocity: 1
 --- !u!1 &1971339088
 GameObject:
   m_ObjectHideFlags: 0
@@ -107885,7 +108514,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: caf23396f05babc4380257c244770fb9, type: 2}
-    sentence: You know, if you walready gave me alittle extra...
+    sentence: You know, if you already gave me a little extra...
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -111671,18 +112300,6 @@ MonoBehaviour:
   endDialogueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287477355}
-        m_TargetAssemblyTypeName: QuestSystem, Assembly-CSharp
-        m_MethodName: UpdateQuests
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 655475413}
         m_TargetAssemblyTypeName: CharacterSystem, Assembly-CSharp
         m_MethodName: IsQuest
@@ -112198,12 +112815,11 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 973462385}
           m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
-          m_MethodName: JosieTutDialogue
-          m_Mode: 2
+          m_MethodName: TutorialQuestPoof
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 602895682}
-            m_ObjectArgumentAssemblyTypeName: HeneGames.DialogueSystem.DialogueManager,
-              Assembly-CSharp
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
