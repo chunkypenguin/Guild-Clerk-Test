@@ -67,6 +67,7 @@ public class ZekeScript : MonoBehaviour
     {
         tagSystem = false;
         refuseTag.SetActive(false);
+        tagOn = false;
     }
 
     public void ChangeEmote(Material emote)

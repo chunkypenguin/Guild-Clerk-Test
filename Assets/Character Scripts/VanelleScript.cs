@@ -177,6 +177,7 @@ public class VanelleScript : MonoBehaviour
     {
         questTagSystem = false;
         refuseTag.SetActive(false);
+        goldTagOn = false;
     }
 
     public void ChangeEmote(Material emote)

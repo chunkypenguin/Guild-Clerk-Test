@@ -51,6 +51,8 @@ public class UIVisualizer : MonoBehaviour {
     [SerializeField] private GameObject _totalCoinText;
     [SerializeField] private TMP_Text dailyTotalText;
 
+    [SerializeField] AudioSource heartAudio;
+
     // Unity automatically calls Awake when the game starts. This is called before Start().
     // I use this to set up the initial state of the script.
     private void Awake() {
@@ -101,7 +103,8 @@ public class UIVisualizer : MonoBehaviour {
 
             if(gainedRep != 0)
             {
-                PlayHeartFX(currentRep);
+                //PlayHeartFX(currentRep);
+                PlayHeartFX(gainedRep);
             }
 
         }
@@ -148,19 +151,32 @@ public class UIVisualizer : MonoBehaviour {
 
     // This function plays the heart FX when the reputation changes.
     private void PlayHeartFX(int currentRep) {
-        if (currentRep > previousRep) {
+        if (currentRep > 0) { // used to be currentRep > previousRep
             if (positiveHeartFX == null) {
                 Debug.LogError("UIVisualizer: No positive heart FX assigned.");
             }
 
             positiveHeartFX.SetActive(true);
+
+            if (heartAudio != null)
+            {
+                heartAudio.pitch = 1.2f;
+                heartAudio.Play();
+            }
+
         }
-        else if (currentRep < previousRep) {
+        else if (currentRep < 0) {
             if (negativeHeartFX == null) {
                 Debug.LogError("UIVisualizer: No positive heart FX assigned.");
             }
 
             negativeHeartFX.SetActive(true);
+
+            if (heartAudio != null)
+            {
+                heartAudio.pitch = 0.5f;
+                heartAudio.Play();
+            }
         }
     }
 

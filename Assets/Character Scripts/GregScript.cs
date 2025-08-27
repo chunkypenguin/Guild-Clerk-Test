@@ -38,18 +38,18 @@ public class GregScript : MonoBehaviour
         }
         else
         {
-            int rep = 0;
+            //int rep = 0;
             if (cs.currentCharacter.choseQuestA)
             {
                 cs.gregD2Q1A.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = -1;
+                //rep = -1;
             }
             else
             {
                 cs.gregD2Q1B.StartNewDialogue(cs.dialogueTriggerScript);
             }
 
-            gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
         }
     }
 

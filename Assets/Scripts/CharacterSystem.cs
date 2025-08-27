@@ -388,7 +388,7 @@ public class CharacterSystem : MonoBehaviour
                 andyD2Q1AP2.StartNewDialogue(dialogueTriggerScript);
             }
 
-            currentCharacterObject.GetComponent<CharacterReputation>().AddReputation(2);
+            //currentCharacterObject.GetComponent<CharacterReputation>().AddReputation(2);
 
         }
 
@@ -442,7 +442,7 @@ public class CharacterSystem : MonoBehaviour
         {
             gregD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
             //Adds reputation
-            currentCharacterObject.GetComponent<CharacterReputation>().AddReputation(1);
+            //currentCharacterObject.GetComponent<CharacterReputation>().AddReputation(1);
         }
         if(currentCharacter.characterName == "Andy")
         {

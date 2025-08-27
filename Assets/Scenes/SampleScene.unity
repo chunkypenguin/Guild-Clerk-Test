@@ -204,7 +204,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517612224}
+        m_TargetAssemblyTypeName: VanelleScript, Assembly-CSharp
+        m_MethodName: TagSystemOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -354,12 +366,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 156297924}
         m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
-        m_MethodName: RemoveReputation
+        m_MethodName: ModifyReputation
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4479,6 +4491,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104814412}
   m_CullTransparentMesh: 1
+--- !u!1 &107348607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 107348608}
+  - component: {fileID: 107348609}
+  m_Layer: 0
+  m_Name: HeartsAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &107348608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107348607}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1297462018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &107348609
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107348607}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8196658430127071657, guid: 07b29722f86a03c468e2a6f7d5023461, type: 2}
+  m_audioClip: {fileID: 8300000, guid: af2fadacf294017499704743b69247fb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &108320618
 GameObject:
   m_ObjectHideFlags: 0
@@ -16807,6 +16947,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 973462386}
+          m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+          m_MethodName: ModifyReputation
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: You don't know how much this-
     skipDelayTime: 0
@@ -22320,7 +22472,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1937845697}
+        m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+        m_MethodName: ModifyReputation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -24762,6 +24926,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1086671389}
+        m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+        m_MethodName: ModifyReputation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -46338,6 +46514,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 973462386}
+          m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+          m_MethodName: ModifyReputation
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "I\u2019ll make sure to do my best during my next \"quest!\"\r\n"
     skipDelayTime: 0
@@ -57545,6 +57733,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1086671389}
+        m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+        m_MethodName: ModifyReputation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -62120,7 +62320,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1298240876}
+        m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+        m_MethodName: ModifyReputation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -67856,6 +68068,7 @@ Transform:
   - {fileID: 734315374}
   - {fileID: 384685014}
   - {fileID: 623300253}
+  - {fileID: 107348608}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1298240868
@@ -68317,12 +68530,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 306266343}
         m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
-        m_MethodName: RemoveReputation
+        m_MethodName: ModifyReputation
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -68634,7 +68847,7 @@ MonoBehaviour:
   triggerState: 0
   sentences:
   - dialogueCharacter: {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
-    sentence: Niiice, that's the cheddar I was looking for!
+    sentence: Nice, that's the cheddar I was looking for!
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -69713,6 +69926,7 @@ MonoBehaviour:
   _newCoinText: {fileID: 1628780091}
   _totalCoinText: {fileID: 2051622655}
   dailyTotalText: {fileID: 1087695157}
+  heartAudio: {fileID: 0}
 --- !u!1 &1322597818
 GameObject:
   m_ObjectHideFlags: 0
@@ -81953,21 +82167,21 @@ MonoBehaviour:
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
-    sentence: "Give that to Josie.\r"
+  - dialogueCharacter: {fileID: 11400000, guid: 4e13e4d02a85ab64a9a0d8c2fb12fde1, type: 2}
+    sentence: "Give that to Josie, from Kalin.\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
+  - dialogueCharacter: {fileID: 11400000, guid: 4e13e4d02a85ab64a9a0d8c2fb12fde1, type: 2}
     sentence: "Part of the arrangement. We\u2019re settling things from a while ago.\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 6d236dd179d7dd24fbed931b033d9489, type: 2}
+  - dialogueCharacter: {fileID: 11400000, guid: 4e13e4d02a85ab64a9a0d8c2fb12fde1, type: 2}
     sentence: "Doesn\u2019t matter.\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
@@ -82033,6 +82247,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1086671389}
+        m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+        m_MethodName: ModifyReputation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -85028,6 +85254,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1937845697}
+          m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+          m_MethodName: ModifyReputation
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: c1a0db0c14bf8a94aaa924c3ff7903eb, type: 2}
     sentence: 'YOU SHOULD HAVE SEEN IT! '
     skipDelayTime: 0
@@ -87899,7 +88137,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 503943528}
         m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
-        m_MethodName: AddReputation
+        m_MethodName: ModifyReputation
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -89109,7 +89347,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
-    sentence: "{0}, have you heard the news?\r"
+    sentence: "{0} have you heard the news?\r"
     skipDelayTime: 0
     sentenceSound: {fileID: 8300000, guid: 4e345749417345e44b0fa7972b7f56f9, type: 3}
     sentenceEvent:
@@ -96144,6 +96382,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 973462386}
+          m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+          m_MethodName: ModifyReputation
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: Nice and easy just as I wanted.
     skipDelayTime: 0
@@ -100479,6 +100729,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 973462386}
+          m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+          m_MethodName: ModifyReputation
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: -1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - dialogueCharacter: {fileID: 11400000, guid: cfe0a142348d70546a7d300f1ba07bac, type: 2}
     sentence: "I guess I didn\u2019t try as hard on this quest, so that makes sense.
       \r\n"
@@ -101384,7 +101646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2120851903778076601, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: _lifetime
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2120851903778076601, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: _fadeStartPercent
@@ -101464,7 +101726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4390604716594610733, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4423948038783740918, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: m_Sprite
@@ -101612,7 +101874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014895125179950957, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: _lifetime
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6102438949265350881, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: m_Sprite
@@ -101730,6 +101992,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7868736745990720832, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
+      propertyPath: heartAudio
+      value: 
+      objectReference: {fileID: 107348609}
     - target: {fileID: 7868736745990720832, guid: 70c0a96582a0b414c9786b573a7e6126, type: 3}
       propertyPath: _newCoinText
       value: 
@@ -105778,7 +106044,19 @@ MonoBehaviour:
   audioSource: {fileID: 1821416493}
   startDialogueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1298240876}
+        m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+        m_MethodName: ModifyReputation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   nextSentenceDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -108029,6 +108307,18 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 2100000, guid: 5cf33dd9aeb323b4f9182e43723172c4, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 973462386}
+          m_TargetAssemblyTypeName: CharacterReputation, Assembly-CSharp
+          m_MethodName: ModifyReputation
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
