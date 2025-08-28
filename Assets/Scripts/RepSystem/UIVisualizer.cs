@@ -195,6 +195,7 @@ public class UIVisualizer : MonoBehaviour {
 
         // This for loop goes through each heart slot and sets the visuals based on the current reputation points.
         for (int i = 0; i < charHeartSlots.Length; i++) {
+            Debug.Log("Another one");
             Transform slot = charHeartSlots[i];
 
             bool showFull = absValue >= i + 1f;
@@ -308,6 +309,7 @@ public class UIVisualizer : MonoBehaviour {
 
         // Show the hearts visual
         UpdateEodHeartVisuals(averageRep);
+        Debug.Log("Average Rep =" + averageRep);
     }
 
     public void OldUpdateCoinUI() {
