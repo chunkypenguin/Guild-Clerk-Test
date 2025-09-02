@@ -75,7 +75,7 @@ public class TahmasScript : MonoBehaviour
                 rep = -2;
             }
         }
-        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+        //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
 
     public void ChangeEmote(Material emote)

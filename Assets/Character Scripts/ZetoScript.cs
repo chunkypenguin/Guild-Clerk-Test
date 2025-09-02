@@ -117,7 +117,7 @@ public class ZetoScript : MonoBehaviour
 
 
 
-        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+        //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
     public void ZetoQuestSteal()
     {

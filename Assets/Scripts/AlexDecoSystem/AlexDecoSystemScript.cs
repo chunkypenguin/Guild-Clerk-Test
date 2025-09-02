@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class AlexDecoSystemScript : MonoBehaviour
 {
@@ -96,8 +97,12 @@ public class AlexDecoSystemScript : MonoBehaviour
     [SerializeField] List<bool> wallsActive; //active bools 
     [SerializeField] List<int> wallsCosts; //object pricing
 
-
+    private Image image;
+    [SerializeField] float iconLockedAlpha;
+    [SerializeField] float iconUnlockedAlpha;
     int playerGold;
+
+    [SerializeField] AudioSource purchaseAudio;
 
     //CEILING DECOR 
     public void CelingDecorButtonClick(int x) //on click of button
@@ -114,6 +119,12 @@ public class AlexDecoSystemScript : MonoBehaviour
 
                 ceilingDecorLocked[x] = false; //unlock item
                 ceilingDecorButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+                image = ceilingDecorButtons[x].transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                Color c = image.color;
+                c.a = 255f;
+                image.color = c;
+
+                purchaseAudio.Play();
             }
             else
             {
@@ -176,6 +187,12 @@ public class AlexDecoSystemScript : MonoBehaviour
                 DayReputationTracker.Instance.SpendGold(knickKnackCosts[x]);
                 knickKnackLocked[x] = false; //unlock item
                 knickKnackButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+                image = knickKnackButtons[x].transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                Color c = image.color;
+                c.a = 255f;
+                image.color = c;
+
+                purchaseAudio.Play();
             }
             else
             {
@@ -223,6 +240,12 @@ public class AlexDecoSystemScript : MonoBehaviour
                 DayReputationTracker.Instance.SpendGold(recordCost);
                 recordLocked = false;
                 recordButton.transform.Find("Lock").gameObject.SetActive(false);
+                image = recordButton.transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                Color c = image.color;
+                c.a = 255f;
+                image.color = c;
+
+                purchaseAudio.Play();
             }
         }
         else
@@ -271,6 +294,11 @@ public class AlexDecoSystemScript : MonoBehaviour
                 DayReputationTracker.Instance.SpendGold(deskBellCosts[x]);
                 deskBellLocked[x] = false; //unlock item
                 deskBellButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+                image = deskBellButtons[x].transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                Color c = image.color;
+                c.a = 255f;
+                image.color = c;
+                purchaseAudio.Play();
             }
             else
             {
@@ -334,6 +362,11 @@ public class AlexDecoSystemScript : MonoBehaviour
                 DayReputationTracker.Instance.SpendGold(questBoardCosts[x]);
                 questBoardLocked[x] = false; //unlock item
                 questBoardButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+                image = questBoardButtons[x].transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                Color c = image.color;
+                c.a = 255f;
+                image.color = c;
+                purchaseAudio.Play();
             }
             else
             {
@@ -397,6 +430,11 @@ public class AlexDecoSystemScript : MonoBehaviour
                 DayReputationTracker.Instance.SpendGold(tableClothCosts[x]);
                 tableClothLocked[x] = false; //unlock item
                 tableClothButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+                image = tableClothButtons[x].transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                Color c = image.color;
+                c.a = 255f;
+                image.color = c;
+                purchaseAudio.Play();
             }
             else
             {
@@ -461,6 +499,11 @@ public class AlexDecoSystemScript : MonoBehaviour
                 DayReputationTracker.Instance.SpendGold(woodGrainCosts[x]);
                 woodGrainLocked[x] = false; //unlock item
                 woodGrainButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+                image = woodGrainButtons[x].transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                Color c = image.color;
+                c.a = 255f;
+                image.color = c;
+                purchaseAudio.Play();
             }
             else
             {
@@ -534,6 +577,11 @@ public class AlexDecoSystemScript : MonoBehaviour
                 DayReputationTracker.Instance.SpendGold(planksCosts[x]);
                 planksLocked[x] = false; //unlock item
                 planksButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+                image = planksButtons[x].transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                Color c = image.color;
+                c.a = 255f;
+                image.color = c;
+                purchaseAudio.Play();
             }
             else
             {
@@ -627,6 +675,11 @@ public class AlexDecoSystemScript : MonoBehaviour
                 DayReputationTracker.Instance.SpendGold(wallsCosts[x]);
                 wallsLocked[x] = false; //unlock item
                 wallsButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+                image = wallsButtons[x].transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                Color c = image.color;
+                c.a = 255f;
+                image.color = c;
+                purchaseAudio.Play();
             }
             else
             {

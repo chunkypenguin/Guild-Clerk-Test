@@ -74,7 +74,10 @@ public class DayReputationTracker : MonoBehaviour
 
         //DAILY WAGE
         //coinsToAdd += 10;
-
+        if(coinsToAdd <= 0)
+        {
+            coinsToAdd = 0;
+        }
         AddCoins(coinsToAdd);
         _reputationVisualizer.UpdateCoinUI(coinsToAdd);
         Debug.Log($"EOD Rep: {rep}, Coins Added: {coinsToAdd}");

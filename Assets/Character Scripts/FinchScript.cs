@@ -134,22 +134,22 @@ public class FinchScript : MonoBehaviour
         else if (a == 1 && b == 1 && c == 1 && d == 1)
         {
             cs.finchD1GR4.StartNewDialogue(cs.dialogueTriggerScript);
-            gameObject.GetComponent<CharacterReputation>().ModifyReputation(2); //postive
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(2); //postive
         }
         else if (a == 1 && b == 1 && c == 1 && d == -1)
         {
             cs.finchD1GR5.StartNewDialogue(cs.dialogueTriggerScript);
-            gameObject.GetComponent<CharacterReputation>().ModifyReputation(1); //positive
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(1); //positive
         }
         else if (a == 1 && b == 1 && c == -1 && d == 0)
         {
             cs.finchD1GR6.StartNewDialogue(cs.dialogueTriggerScript);
-            gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1); 
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1); 
         }
         else if (a == 1 && b == -1 && c == 0 && d == 0)
         {
             cs.finchD1GR6.StartNewDialogue(cs.dialogueTriggerScript);
-            gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
         }
         else if (a == -1 && b == 0 && c == 0 && d == 0)
         {
@@ -185,12 +185,12 @@ public class FinchScript : MonoBehaviour
         else if (a == -1 && b == 1 && c == -1 && d == -1)
         {
             cs.finchD1GR12.StartNewDialogue(cs.dialogueTriggerScript);
-            gameObject.GetComponent<CharacterReputation>().ModifyReputation(-2);
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-2);
         }
         else if (a == -1 && b == -1 && c == 0 && d == 0)
         {
             cs.finchD1GR12.StartNewDialogue(cs.dialogueTriggerScript);
-            gameObject.GetComponent<CharacterReputation>().ModifyReputation(-2);
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-2);
         }
         
     }

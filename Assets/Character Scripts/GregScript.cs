@@ -104,7 +104,17 @@ public class GregScript : MonoBehaviour
             }
         }
 
-        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+        //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+    }
+
+    public void ChangeEmote(Material emote)
+    {
+        if (emote == null)
+        {
+            Debug.Log("No material assigned");
+            return;
+        }
+        mr.material = emote;
     }
 
     public void GregArrow()

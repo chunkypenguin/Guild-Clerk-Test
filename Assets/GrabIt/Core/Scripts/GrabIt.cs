@@ -86,6 +86,8 @@ public class GrabObjectProperties{
 
 		private float scroll;
 
+		[SerializeField] AudioSource pickupSound;
+
 		public static GrabIt instance;
 
 		void Awake()
@@ -134,9 +136,9 @@ public class GrabObjectProperties{
 
 				if (!m_isHingeJoint) { // no need for this 
 					if (Input.GetKey(m_rotatePitchPosKey) || Input.GetKey(m_rotatePitchNegKey)) {
-						m_targetRB.constraints = RigidbodyConstraints.None;
+						//m_targetRB.constraints = RigidbodyConstraints.None;
 					} else {
-						m_targetRB.constraints = m_grabProperties.m_constraints;
+						//m_targetRB.constraints = m_grabProperties.m_constraints;
 					}
 					//Debug.Log("no hinge");
 				}
@@ -221,6 +223,9 @@ public class GrabObjectProperties{
 
 		void Set(Rigidbody target, float distance)
 		{
+			//play audio
+			pickupSound.Play();
+
 			//back to norm
             m_targetRB = target;
 
@@ -255,6 +260,7 @@ public class GrabObjectProperties{
 			else
 			{
                 m_targetRB.gameObject.layer = LayerMask.NameToLayer("PickedUp");
+                m_targetRB.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("PickedUp");
             }
 
 			//m_targetRB.gameObject.GetComponent<BoxCollider>().enabled = false; //THIS WAS THE FIRST COLLIDER CODE
@@ -322,6 +328,7 @@ public class GrabObjectProperties{
 			else
 			{
                 m_targetRB.gameObject.layer = LayerMask.NameToLayer("GrabIt");
+                m_targetRB.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Default"); //for plant pots
             }
 
             //m_targetRB.gameObject.GetComponent<BoxCollider>().enabled = true; //FIRST COLLIDER CODE
@@ -406,9 +413,9 @@ public class GrabObjectProperties{
 		void Rotate()
 		{
             if (Input.GetKey(m_rotatePitchPosKey)) {
-            	m_targetRB.AddTorque(m_transform.right * m_angularSpeed);
+            	//m_targetRB.AddTorque(m_transform.right * m_angularSpeed);
             } else if (Input.GetKey(m_rotatePitchNegKey)) {
-            	m_targetRB.AddTorque(-m_transform.right * m_angularSpeed);
+            	//m_targetRB.AddTorque(-m_transform.right * m_angularSpeed);
             }
 
             //if (Input.GetKey(m_rotateYawPosKey)) {

@@ -97,7 +97,7 @@ public class JoleneScript : MonoBehaviour
                 //cs.maggieD2G2A.StartNewDialogue(cs.dialogueTriggerScript);
             }
         }
-        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+        //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
 
     public void ChangeEmote(Material emote)

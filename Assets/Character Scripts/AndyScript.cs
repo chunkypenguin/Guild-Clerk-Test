@@ -65,7 +65,7 @@ public class AndyScript : MonoBehaviour
             else // fetch quest
             {
                 cs.andyD2Q1B.StartNewDialogue(cs.dialogueTriggerScript);
-                gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
+                //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
             }
             
         }
@@ -86,7 +86,7 @@ public class AndyScript : MonoBehaviour
         else
         {
             cs.andyD3P1.StartNewDialogue(cs.dialogueTriggerScript);
-            gameObject.GetComponent<CharacterReputation>().ModifyReputation(3);
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(3);
         }
     }
 
@@ -134,7 +134,7 @@ public class AndyScript : MonoBehaviour
             cs.andyD3G1A.StartNewDialogue(cs.dialogueTriggerScript);
             rep = -1;
         }
-        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+        //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
 
     public void AndyIdle()

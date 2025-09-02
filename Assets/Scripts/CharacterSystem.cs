@@ -395,7 +395,7 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Maggie") //food
         {
             maggieD1Q1AP1.StartNewDialogue(dialogueTriggerScript);
-            currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
+            //currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
         }
 
         if (currentCharacter.characterName == "Jolene")
@@ -404,7 +404,7 @@ public class CharacterSystem : MonoBehaviour
 
             tahmasCharacter.choseQuestA = true;
 
-            currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
+            //currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
         }
 
         if (currentCharacter.characterName == "Vanelle")
@@ -449,12 +449,12 @@ public class CharacterSystem : MonoBehaviour
             if (!AndyScript.instance.partOneComplete)
             {
                 andyD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
-                currentCharacterObject.GetComponent<CharacterReputation>().RemoveReputation(1);
+               // currentCharacterObject.GetComponent<CharacterReputation>().RemoveReputation(1);
             }
             else
             {
                 andyD2Q1BP3.StartNewDialogue(dialogueTriggerScript);
-                currentCharacterObject.GetComponent<CharacterReputation>().RemoveReputation(2);
+                //currentCharacterObject.GetComponent<CharacterReputation>().RemoveReputation(2);
             }
             
         }
@@ -470,7 +470,7 @@ public class CharacterSystem : MonoBehaviour
             joleneD1Q1BP1.StartNewDialogue(dialogueTriggerScript);
             joleneS.joleneDead = true;
             tahmasCharacter.choseQuestB = true;
-            currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
+            //currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
         }
 
         if (currentCharacter.characterName == "Vanelle")
@@ -512,13 +512,13 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Lotest") //drab
         {
             lotestD1ItemA1.StartNewDialogue(dialogueTriggerScript);
-            currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
+            //currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
         }
 
         if(currentCharacter.characterName == "Zeke")
         {
             zekeD3Feed.StartNewDialogue(dialogueTriggerScript);
-            currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
+            //currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
         }
 
         if (currentCharacter.characterName == "Josie")
@@ -544,7 +544,7 @@ public class CharacterSystem : MonoBehaviour
             else if (!D1 && D2)
             {
                 lorneD2ItemB.StartNewDialogue(dialogueTriggerScript);
-                currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
+                //currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
                 //gave yarn
                 Debug.Log("gave yarn");
                 //lorneS.gaveYarn = true;
@@ -555,7 +555,7 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Lotest") //fancy
         {
             lotestD1ItemB1.StartNewDialogue(dialogueTriggerScript);
-            currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
+            //currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
         }
 
         if (currentCharacter.characterName == "Ishizu")

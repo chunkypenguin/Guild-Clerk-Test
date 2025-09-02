@@ -47,7 +47,7 @@ public class MoveCharacter : MonoBehaviour
 
     private void Awake()
     {
-        moveSpeed = 1.5f;
+        moveSpeed = 2f;
         if (!jumping)
         {
             startPos = transform.position;
@@ -130,8 +130,13 @@ public class MoveCharacter : MonoBehaviour
 
         else
         {
+            if (cs.currentCharacter.characterName == "Greg" && cs.currentCharacter.choseQuestA && cs.D2)
+            {
+                moveSpeed = 5f;
+            }
             transform.DOMove(endPos, moveSpeed).OnComplete(() =>
             {
+                moveSpeed = 2f;
                 if (cs.currentCharacter.characterName == "Greg")
                 {
                     //if chose quest A...
@@ -146,6 +151,14 @@ public class MoveCharacter : MonoBehaviour
                     if(joleneS.joleneDead && cs.D3) //if day 3 and jolene has died
                     {
                         //cs.characterCount++;//skip jolene
+                    }
+                    if (cs.currentCharacter.choseQuestA)
+                    {
+                        maggieS.MaggieSadEmote();
+                    }
+                    else if (cs.currentCharacter.choseQuestB)
+                    {
+                        maggieS.MaggieNeutralEmote();
                     }
                 }
                 if (cs.currentCharacter.characterName == "Jolene")
@@ -361,10 +374,16 @@ public class MoveCharacter : MonoBehaviour
             }
 
         }
+
         else
         {
+            if (cs.currentCharacter.characterName == "Greg" && cs.currentCharacter.choseQuestA)
+            {
+                moveSpeed = 5f;
+            }
             transform.DOMove(startPos, moveSpeed).OnComplete(() =>
             {
+                moveSpeed = 2f;
                 if (cs.currentCharacter.characterName == "Josie")
                 {
                     if (cs.D1 && !cs.D2 && !cs.D3)

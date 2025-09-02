@@ -9,6 +9,8 @@ public class MaggieScript : MonoBehaviour
     [SerializeField] GoldSystem gs;
 
     [SerializeField] MeshRenderer mr;
+    [SerializeField] Material maggieSad;
+    [SerializeField] Material maggieNeutral;
 
     public bool partOneComplete;
     public bool partTwoComplete;
@@ -29,12 +31,12 @@ public class MaggieScript : MonoBehaviour
             if (cs.currentCharacter.choseQuestA) //food
             {
                 cs.maggieD2Q1A.StartNewDialogue(cs.dialogueTriggerScript);
-                gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
+                //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
             }
             else//goblin
             {
                 cs.maggieD2Q1B.StartNewDialogue(cs.dialogueTriggerScript);
-                gameObject.GetComponent<CharacterReputation>().ModifyReputation(1);
+                //gameObject.GetComponent<CharacterReputation>().ModifyReputation(1);
             }
             partTwoComplete = true;
         }
@@ -93,5 +95,15 @@ public class MaggieScript : MonoBehaviour
     public void ChangeEmote(Material emote)
     {
         mr.material = emote;
+    }
+
+    public void MaggieSadEmote()
+    {
+        mr.material = maggieSad;
+    }
+
+    public void MaggieNeutralEmote()
+    {
+        mr.material = maggieNeutral;
     }
 }

@@ -54,7 +54,7 @@ public class ZekeScript : MonoBehaviour
         else
         {
             cs.zekeD3Refuse2.StartNewDialogue(cs.dialogueTriggerScript);
-            gameObject.GetComponent<CharacterReputation>().ModifyReputation(-3); //why isn't this working!
+            //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-3); //why isn't this working!
         }
     }
 

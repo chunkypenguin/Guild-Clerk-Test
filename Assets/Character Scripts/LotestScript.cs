@@ -92,6 +92,6 @@ public class LotestScript : MonoBehaviour
                 //cs.gregD2G2AP1.StartNewDialogue(cs.dialogueTriggerScript);
             }
         }
-        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+        //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
 }
