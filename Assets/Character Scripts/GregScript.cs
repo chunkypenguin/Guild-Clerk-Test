@@ -19,9 +19,15 @@ public class GregScript : MonoBehaviour
 
     public bool partOneComplete;
 
-    //bool D1 = true;
-    //bool D2 = false;
+    public bool gaveMysticMushroom;
+    [SerializeField] GameObject MysticShroom;
 
+    public static GregScript instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -130,6 +136,16 @@ public class GregScript : MonoBehaviour
     public void GregHappy()
     {
         mr.material = gregHappy;
+    }
+
+    public void GiveMushroom()
+    {
+        gaveMysticMushroom = true;
+    }
+
+    public void SpendMushroom()
+    {
+        MysticShroom.SetActive(false);
     }
 
 }

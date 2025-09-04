@@ -132,7 +132,7 @@ public class MoveCharacter : MonoBehaviour
         {
             if (cs.currentCharacter.characterName == "Greg" && cs.currentCharacter.choseQuestA && cs.D2)
             {
-                moveSpeed = 5f;
+                moveSpeed = 7f; //greg slow move speed
             }
             transform.DOMove(endPos, moveSpeed).OnComplete(() =>
             {

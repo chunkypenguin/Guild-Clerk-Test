@@ -23,12 +23,12 @@ public class AlexDecoSystemScript : MonoBehaviour
     [SerializeField] List<int> knickKnackCosts; //object pricing
 
     [Header("Music Record")]
-    [SerializeField] GameObject recordButton;
-    [SerializeField] AudioSource defaultRecordAudioSource;
-    [SerializeField] AudioSource newRecordAudioSource;
-    [SerializeField] bool recordLocked;
-    [SerializeField] bool recordActive;
-    [SerializeField] int recordCost;
+    [SerializeField] List<GameObject> recordButtons;
+    [SerializeField] List<AudioSource> recordAudioSource;
+    [SerializeField] AudioSource previousAudioSource;
+    [SerializeField] List<bool> recordLocked;
+    [SerializeField] List<bool> recordActive;
+    [SerializeField] List<int> recordCost;
     [SerializeField] float fadeTime;
 
     [Header("Clerk Amenities")]
@@ -182,7 +182,23 @@ public class AlexDecoSystemScript : MonoBehaviour
         {
             //check if has enough gold to purchase unlock
             playerGold = DayReputationTracker.Instance.GetGold();
-            if (playerGold >= knickKnackCosts[x])
+
+            if (x == 5)//if is mystic mushroom
+            {
+                if (GregScript.instance.gaveMysticMushroom)
+                {
+                    GregScript.instance.SpendMushroom();
+                    knickKnackLocked[x] = false; //unlock item
+                    knickKnackButtons[x].transform.Find("Lock").gameObject.SetActive(false); //remove lock image from button
+                    image = knickKnackButtons[x].transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                    Color c = image.color;
+                    c.a = 255f;
+                    image.color = c;
+
+                    purchaseAudio.Play();
+                }
+            } 
+            else if (playerGold >= knickKnackCosts[x]) //regular knick knack
             {
                 DayReputationTracker.Instance.SpendGold(knickKnackCosts[x]);
                 knickKnackLocked[x] = false; //unlock item
@@ -230,17 +246,17 @@ public class AlexDecoSystemScript : MonoBehaviour
     }
 
     //MUSIC RECORD
-    public void MusicRecordButtonClick()
+    public void MusicRecordButtonClick(int x)
     {
-        if (recordLocked)
+        if (recordLocked[x])
         {
             playerGold = DayReputationTracker.Instance.GetGold();
-            if(playerGold >= recordCost)
+            if(playerGold >= recordCost[x])
             {
-                DayReputationTracker.Instance.SpendGold(recordCost);
-                recordLocked = false;
-                recordButton.transform.Find("Lock").gameObject.SetActive(false);
-                image = recordButton.transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
+                DayReputationTracker.Instance.SpendGold(recordCost[x]);
+                recordLocked[x] = false;
+                recordButtons[x].transform.Find("Lock").gameObject.SetActive(false);
+                image = recordButtons[x].transform.Find("Icon").gameObject.GetComponent<Image>();//get reference to icon
                 Color c = image.color;
                 c.a = 255f;
                 image.color = c;
@@ -250,33 +266,37 @@ public class AlexDecoSystemScript : MonoBehaviour
         }
         else
         {
-            if(recordActive)
+            if (recordActive[x])
             {
-                //deactivate
-                recordButton.transform.Find("Highlight").gameObject.SetActive(false);
-                TransitionToDefault();
-                recordActive = false;
+                //Do nothing if clicked on an already playing record
             }
             else
             {
-                //activate
-                //deactivate
-                recordButton.transform.Find("Highlight").gameObject.SetActive(true);
-                TransitionToNew();
-                recordActive = true;
+                DeactivateRecords();
+                recordActive[x] = true;
+                recordButtons[x].transform.Find("Highlight").gameObject.SetActive(true);
+                TransitionToNew(x);
+
             }
         }
     }
 
-    void TransitionToNew()
+    void DeactivateRecords()
     {
-        defaultRecordAudioSource.DOFade(0f, fadeTime);
-        newRecordAudioSource.DOFade(0.75f, fadeTime);
+        for(int x = 0; x < recordActive.Count; x++) //set all records inactive
+        {
+            recordActive[x] = false;
+        }
+        foreach(GameObject record in recordButtons) //dehighlight all records
+        {
+            record.transform.Find("Highlight").gameObject.SetActive(false);
+        }
     }
-    void TransitionToDefault()
+    void TransitionToNew(int x)
     {
-        defaultRecordAudioSource.DOFade(0.75f, fadeTime);
-        newRecordAudioSource.DOFade(0f, fadeTime);
+        previousAudioSource.DOFade(0f, fadeTime);
+        recordAudioSource[x].DOFade(0.75f, fadeTime);
+        previousAudioSource = recordAudioSource[x];
     }
 
     //CLERK AMENITIES
