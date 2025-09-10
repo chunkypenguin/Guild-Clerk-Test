@@ -33,11 +33,15 @@ public class AlexTabScript : MonoBehaviour
     [SerializeField] Color defaultColor;
     [SerializeField] Color highlightColor;
 
+    //TESTING
+    bool decorHidden = true;
+
     public static AlexTabScript instance;
     private void Awake()
     {
         instance = this;
     }
+
     private void Start()
     {
         startPos = decorUI.transform.position;
@@ -49,6 +53,22 @@ public class AlexTabScript : MonoBehaviour
 
     private void Update()
     {
+        //FOR TESTING
+        //DELETE
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            if(decorHidden)
+            {
+                ShowDecorUI();
+                decorHidden = false;
+            }
+            else
+            {
+                HideDecorUI();
+                decorHidden = true;
+            }
+        }
+
         goldAmount = DayReputationTracker.Instance.GetGold();
         goldCount.text = goldAmount.ToString();
     }

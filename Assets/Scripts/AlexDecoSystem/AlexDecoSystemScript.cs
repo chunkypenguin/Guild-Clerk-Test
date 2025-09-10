@@ -70,6 +70,9 @@ public class AlexDecoSystemScript : MonoBehaviour
     [SerializeField] List<Material> pillarMats;
     [SerializeField] List<Material> counterTopMats;
     [SerializeField] List<Material> doorMats;
+    [SerializeField] List<Material> doorFrameMats;
+    [SerializeField] List<Material> questBoardFrameMats;
+    [SerializeField] List<Material> questCounterTopMats;
     [SerializeField] List<GameObject> woodGrainButtons;
     [SerializeField] List<bool> woodGrainLocked; //lock bools 
     [SerializeField] List<bool> woodGrainActive; //active bools 
@@ -330,39 +333,35 @@ public class AlexDecoSystemScript : MonoBehaviour
             if (deskBellActive[x]) //if decor is active
             {
                 //Deactivate
-                DeskBellDeactivate(x);
+                //DeskBellDeactivate(x);
             }
             else //if decor is inactive
             {
-                DeskBellDeactivate(x);
+                DeskBellDeactivate();
                 //activate
                 DeskBellActivate(x);
             }
         }
     }
 
-    public void DeskBellDeactivate(int x)
+    public void DeskBellDeactivate()
     {
-        var mats = deskBellRenderer.materials;
-        mats[0] = baseDeskBellMats[0];
-        mats[1] = baseDeskBellMats[1];
-        deskBellRenderer.materials = mats;
-
-        foreach (GameObject item in deskBellButtons) //set all highlights inactive
+        //NEW
+        for (int x = 0; x < deskBellActive.Count; x++) //set all records inactive
         {
-            item.transform.Find("Highlight").gameObject.SetActive(false);
-            deskBellActive[0] = false;
-            deskBellActive[1] = false;
-            deskBellActive[2] = false;
+            deskBellActive[x] = false;
         }
-        //deskBellActive[x] = false; //not active
+        foreach (GameObject bell in deskBellButtons) //dehighlight all records
+        {
+            bell.transform.Find("Highlight").gameObject.SetActive(false);
+        }
     }
 
     public void DeskBellActivate(int x)
     {
         var mats = deskBellRenderer.materials;  // copy
         mats[0] = new Material(topDeskBellMats[x]);       // optional instantiate
-        mats[1] = new Material(botDeskBellMats[x]);
+        //mats[1] = new Material(botDeskBellMats[x]);
         deskBellRenderer.materials = mats;     // apply
 
         deskBellButtons[x].transform.Find("Highlight").gameObject.SetActive(true);
@@ -398,38 +397,34 @@ public class AlexDecoSystemScript : MonoBehaviour
             if (questBoardActive[x]) //if decor is active
             {
                 //Deactivate
-                QuestBoardDeactivate(x);
+                //QuestBoardDeactivate(x);
             }
             else //if decor is inactive
             {
-                QuestBoardDeactivate(x);
+                QuestBoardDeactivate();
                 //activate
                 QuestBoardActivate(x);
             }
         }
     }
 
-    public void QuestBoardDeactivate(int x)
+    public void QuestBoardDeactivate()
     {
-        var mats = questYGCRenderer.materials;
-        mats[6] = baseQuestBoardMats[0];
-        mats[7] = baseQuestBoardMats[1];
-        questYGCRenderer.materials = mats;
-
-        foreach (GameObject item in questBoardButtons) //set all highlights inactive
+        //NEW
+        for (int x = 0; x < questBoardActive.Count; x++) //set all records inactive
         {
-            item.transform.Find("Highlight").gameObject.SetActive(false);
-
+            questBoardActive[x] = false;
         }
-        //deskBellActive[x] = false; //not active
-        questBoardActive[0] = false;
-        questBoardActive[1] = false;
+        foreach (GameObject questboard in questBoardButtons) //dehighlight all records
+        {
+            questboard.transform.Find("Highlight").gameObject.SetActive(false);
+        }
     }
 
     public void QuestBoardActivate(int x)
     {
         var mats = questYGCRenderer.materials;  // copy
-        mats[6] = new Material(frameQuestBoardMats[x]);     // optional instantiate
+        //mats[6] = new Material(frameQuestBoardMats[x]);     // optional instantiate
         mats[7] = new Material(corkQuestBoardMats[x]);
         questYGCRenderer.materials = mats;// apply
 
@@ -466,12 +461,12 @@ public class AlexDecoSystemScript : MonoBehaviour
             if (tableClothActive[x]) //if decor is active
             {
                 //Deactivate
-                TableClothDeactivate(x);
+                TableClothDeactivate();
             }
             else //if decor is inactive
             {
                 //Deactivate all other decoration objects and their highlights
-                TableClothDeactivate(x);
+                TableClothDeactivate();
                 //activate this buttons corresponding decoration and highlight
                 TableClothActivate(x);
             }
@@ -482,7 +477,7 @@ public class AlexDecoSystemScript : MonoBehaviour
         }
     }
 
-    public void TableClothDeactivate(int x)
+    public void TableClothDeactivate()
     {
         foreach (GameObject item in tableClothObjects) //set all decor inactive
         {
@@ -492,8 +487,11 @@ public class AlexDecoSystemScript : MonoBehaviour
         {
             item.transform.Find("Highlight").gameObject.SetActive(false);
         }
-
-        tableClothActive[x] = false;
+        for (int x = 0; x < woodGrainActive.Count; x++) //set all records inactive
+        {
+            tableClothActive[x] = false;
+        }
+        //tableClothActive[x] = false;
     }
 
     public void TableClothActivate(int x)
@@ -535,36 +533,28 @@ public class AlexDecoSystemScript : MonoBehaviour
             if (woodGrainActive[x]) //if decor is active
             {
                 //Deactivate
-                WGTexturesDeactivate(x);
+                //WGTexturesDeactivate();
             }
             else //if decor is inactive
             {
-                WGTexturesDeactivate(x);
+                WGTexturesDeactivate();
                 //activate
                 WGTexturesActivate(x);
             }
         }
     }
 
-    public void WGTexturesDeactivate(int x)
+    public void WGTexturesDeactivate()
     {
-        var mats = mainYGCRenderer.materials;
-        mats[0] = woodGrainTextures[0];
-        mats[3] = woodGrainTextures[1];
-        mainYGCRenderer.materials = mats;
-
-        var doormats = doorRenderer.materials;
-        doormats[0] = woodGrainTextures[2];
-        doorRenderer.materials = doormats;
-
-        foreach (GameObject item in woodGrainButtons) //set all highlights inactive
+        //NEW
+        for (int x = 0; x < woodGrainActive.Count; x++) //set all records inactive
         {
-            item.transform.Find("Highlight").gameObject.SetActive(false);
-
+            woodGrainActive[x] = false;
         }
-
-        woodGrainActive[0] = false;
-        woodGrainActive[1] = false;
+        foreach (GameObject woodgrain in woodGrainButtons) //dehighlight all records
+        {
+            woodgrain.transform.Find("Highlight").gameObject.SetActive(false);
+        }
     }
 
     public void WGTexturesActivate(int x)
@@ -573,12 +563,23 @@ public class AlexDecoSystemScript : MonoBehaviour
         var mats = mainYGCRenderer.materials;  // copy
         mats[0] = new Material(pillarMats[x]);     // pillars
         mats[3] = new Material(counterTopMats[x]); //counter tops
+        mats[4] = new Material(doorFrameMats[x]); //door frame
         mainYGCRenderer.materials = mats;// apply
 
         //door
         var doormats = doorRenderer.materials;
         doormats[0] = new Material(doorMats[x]);
         doorRenderer.materials = doormats;
+
+        //Quest frame
+        var questboardmats = questYGCRenderer.materials;
+        questboardmats[6] = new Material(frameQuestBoardMats[x]);
+        questYGCRenderer.materials = questboardmats;
+
+        //quest counter
+        var qcmats = questCounterRenderer.materials;
+        qcmats[1] = new Material(questCounterTopMats[x]);
+        questCounterRenderer.materials = qcmats;
 
         woodGrainButtons[x].transform.Find("Highlight").gameObject.SetActive(true);
         woodGrainActive[x] = true;
@@ -613,46 +614,28 @@ public class AlexDecoSystemScript : MonoBehaviour
             if (planksActive[x]) //if decor is active
             {
                 //Deactivate
-                PlankTexturesDeactivate(x);
+                //PlankTexturesDeactivate();
             }
             else //if decor is inactive
             {
-                PlankTexturesDeactivate(x);
+                PlankTexturesDeactivate();
                 //activate
                 PlankTexturesActivate(x);
             }
         }
     }
 
-    public void PlankTexturesDeactivate(int x)
+    public void PlankTexturesDeactivate()
     {
-        var mats = mainYGCRenderer.materials;
-        mats[1] = plankTextures[0];
-        mats[5] = plankTextures[1];
-        mainYGCRenderer.materials = mats;
-
-        var drawermats = drawerRenderer.materials;
-        drawermats[1] = plankTextures[2];
-        drawerRenderer.materials = drawermats;
-
-        //shelf
-        var shelfmats = shelfRenderer.materials;
-        shelfmats[0] = plankTextures[3];
-        shelfRenderer.materials = shelfmats;
-
-        //quest counter
-        var qcmats = questCounterRenderer.materials;
-        qcmats[0] = plankTextures[4];
-        questCounterRenderer.materials = qcmats;
-
-        foreach (GameObject item in planksButtons) //set all highlights inactive
+        //NEW
+        for (int x = 0; x < planksActive.Count; x++) //set all records inactive
         {
-            item.transform.Find("Highlight").gameObject.SetActive(false);
-
+            planksActive[x] = false;
         }
-
-        planksActive[0] = false;
-        planksActive[1] = false;
+        foreach (GameObject plank in planksButtons) //dehighlight all records
+        {
+            plank.transform.Find("Highlight").gameObject.SetActive(false);
+        }
     }
 
     public void PlankTexturesActivate(int x)
@@ -711,31 +694,28 @@ public class AlexDecoSystemScript : MonoBehaviour
             if (wallsActive[x]) //if decor is active
             {
                 //Deactivate
-                WallsTexturesDeactivate(x);
+                //WallsTexturesDeactivate();
             }
             else //if decor is inactive
             {
-                WallsTexturesDeactivate(x);
+                WallsTexturesDeactivate();
                 //activate
                 WallsTexturesActivate(x);
             }
         }
     }
 
-    public void WallsTexturesDeactivate(int x)
+    public void WallsTexturesDeactivate()
     {
-        var mats = mainYGCRenderer.materials;
-        mats[2] = baseWallMats[0];
-        mainYGCRenderer.materials = mats;
-
-        foreach (GameObject item in wallsButtons) //set all highlights inactive
+        //NEW
+        for (int x = 0; x < wallsActive.Count; x++) //set all records inactive
         {
-            item.transform.Find("Highlight").gameObject.SetActive(false);
-
+            wallsActive[x] = false;
         }
-
-        wallsActive[0] = false;
-        wallsActive[1] = false;
+        foreach (GameObject wall in wallsButtons) //dehighlight all records
+        {
+            wall.transform.Find("Highlight").gameObject.SetActive(false);
+        }
     }
 
     public void WallsTexturesActivate(int x)

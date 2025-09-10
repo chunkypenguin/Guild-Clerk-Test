@@ -28,6 +28,8 @@ public class NomiraScript : MonoBehaviour
     [SerializeField] Material posessedMat;
     [SerializeField] Material wickedSmileMat;
 
+    [SerializeField] AudioSource audioSource;
+
     public DialogueCharacter nomiraCharacter;
 
     private void Awake()
@@ -138,6 +140,8 @@ public class NomiraScript : MonoBehaviour
 
     public void NomiraHit()
     {
+        audioSource.Play();
+
         transform.DOPunchPosition(
             punch: new Vector3(1f, 0f, 0f),  // direction and strength of the punch
             duration: 0.5f,                 // total time of the punch effect

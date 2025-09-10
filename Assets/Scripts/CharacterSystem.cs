@@ -258,6 +258,7 @@ public class CharacterSystem : MonoBehaviour
 
     //text audio
     [SerializeField] AudioSource textAudioSource;
+    [SerializeField] float previousTextPitch;
 
     [SerializeField] DialogueUI dui;
 
@@ -568,12 +569,18 @@ public class CharacterSystem : MonoBehaviour
     {
         dui.messageText.color = currentCharacter.textColor;
         dui.nameText.color = currentCharacter.textColor;
+
+        //This messes things up
+        //currentCharacter.textAudioPitch = previousTextPitch;
     }
 
     public void ChangeZetoTextColor()
     {
         dui.messageText.color = zetoCharacter.textColor;
         dui.nameText.color = zetoCharacter.textColor;
+        //change pitch too
+        previousTextPitch = currentCharacter.textAudioPitch;
+        currentCharacter.textAudioPitch = zetoCharacter.textAudioPitch;
     }
 
     public void TextHistory()

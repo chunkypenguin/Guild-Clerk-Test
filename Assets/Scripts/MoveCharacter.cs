@@ -488,6 +488,7 @@ public class MoveCharacter : MonoBehaviour
         {
             //CHANGE TEXT COLOR BACK TO NOMIRA
             cs.ChangeTextColor();
+            //change pitch too
 
             //resume nomari dialogue
             cs.nomiraD1Q1AB.StartNewDialogue(cs.dialogueTriggerScript);
