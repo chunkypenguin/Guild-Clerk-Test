@@ -24,6 +24,7 @@ public class DaySystem : MonoBehaviour
 
     public AudioSource bgMusic;
     public AudioSource otherBGMusic;
+    public AudioSource otherOtherBGMusic;
     public AudioSource creditSceneMusic;
 
     bool gameEnd;
@@ -219,6 +220,7 @@ public class DaySystem : MonoBehaviour
 
                 bgMusic.DOFade(0, 7);
                 otherBGMusic.DOFade(0, 7);
+                otherOtherBGMusic.DOFade(0, 7);
                 creditSceneMusic.DOFade(0.5f, 10);
             }
 

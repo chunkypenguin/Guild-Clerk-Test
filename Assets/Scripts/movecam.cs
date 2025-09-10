@@ -71,6 +71,7 @@ public class movecam : MonoBehaviour
             if(!lockLeft)
             {
                 LeftButton();
+                GoldSystem.instance.StopHold();//prevents gold button glitch (when holding up/down and moving cameras using keys)
             }
 
         }
@@ -80,6 +81,7 @@ public class movecam : MonoBehaviour
             if (!lockRight)
             {
                 RightButton();
+                GoldSystem.instance.StopHold(); //prevents gold button glitch (when holding up/down and moving cameras using keys)
                 if (!rightTut)
                 {
                     //TutorialScript.instance.JosieTutDialogue(CharacterSystem.instance.josieD1P4);
@@ -96,6 +98,7 @@ public class movecam : MonoBehaviour
             if (canOpenDrawer)
             {
                 UpButton();
+                GoldSystem.instance.StopHold(); //prevents gold button glitch (when holding up/down and moving cameras using keys)
             }
 
         }
@@ -105,6 +108,7 @@ public class movecam : MonoBehaviour
             if (canOpenDrawer)
             {
                 BottomButton();
+                GoldSystem.instance.StopHold(); //prevents gold button glitch (when holding up/down and moving cameras using keys)
             }
 
         }

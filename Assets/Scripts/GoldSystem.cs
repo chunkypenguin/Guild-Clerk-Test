@@ -179,7 +179,7 @@ public class GoldSystem : MonoBehaviour
         StopHold();
     }
 
-    private void StopHold()
+    public void StopHold()
     {
         if (!isHolding) return;
 
