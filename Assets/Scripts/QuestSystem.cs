@@ -139,6 +139,16 @@ public class QuestSystem : MonoBehaviour
         Invoke(nameof(CollectQuest), 2f); //prevent quest getting stuck
     }
 
+    public void VanelleRefuseCollectQuest()
+    {
+        questAHolder.SetActive(false);
+        questBHolder.SetActive(false);
+
+        visualQuests.SetActive(true);
+
+        rb.gameObject.GetComponent<ItemFloorScript>().ResetItem();
+    }
+
     private void CollectQuest() //once quest dissapears/is taken...
     {
         isSuctionActive = false;
@@ -153,7 +163,7 @@ public class QuestSystem : MonoBehaviour
         questAHolder.SetActive(false); 
         questBHolder.SetActive(false);
 
-        visualQuests.SetActive(true);
+        //visualQuests.SetActive(true);
 
         rb.gameObject.GetComponent<ItemFloorScript>().ResetItem();
 
@@ -178,7 +188,7 @@ public class QuestSystem : MonoBehaviour
             questAHolder.SetActive(true);
         }
 
-        if (cs.currentCharacter.name == "Nomira" && !NomiraScript.instance.brokeStaff)
+        else if (cs.currentCharacter.name == "Nomira" && !NomiraScript.instance.brokeStaff)
         {
 
             if (cs.currentCharacter.choseQuestA)
@@ -197,6 +207,12 @@ public class QuestSystem : MonoBehaviour
                 cs.zetoD1BSteal.StartNewDialogue(cs.dialogueTriggerScript);
             }
             NomiraScript.instance.brokeStaff = true;
+        }
+        else
+        {
+            visualQuests.SetActive(true);
+            poofFX.Play();
+            poofAudio.Play();
         }
     }
 
@@ -262,6 +278,7 @@ public class QuestSystem : MonoBehaviour
                     //refuse
                     Debug.Log("refused");
                     cs.VanelleD1Q1BRefuse.StartNewDialogue(cs.dialogueTriggerScript);
+                    VanelleRefuseCollectQuest();
                 }
                 else
                 {

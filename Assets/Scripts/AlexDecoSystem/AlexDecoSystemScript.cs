@@ -66,6 +66,8 @@ public class AlexDecoSystemScript : MonoBehaviour
 
     [Header("Wood Grain")]
     [SerializeField] MeshRenderer doorRenderer;
+    [SerializeField] MeshRenderer hangingShelfRenderer;
+    [SerializeField] MeshRenderer[] smallHangingShelfRenderer;
     [SerializeField] List<Material> woodGrainTextures;
     [SerializeField] List<Material> pillarMats;
     [SerializeField] List<Material> counterTopMats;
@@ -73,6 +75,8 @@ public class AlexDecoSystemScript : MonoBehaviour
     [SerializeField] List<Material> doorFrameMats;
     [SerializeField] List<Material> questBoardFrameMats;
     [SerializeField] List<Material> questCounterTopMats;
+    [SerializeField] List<Material> hangingShelfMats;
+    [SerializeField] List<Material> smallHangingShelfMats;
     [SerializeField] List<GameObject> woodGrainButtons;
     [SerializeField] List<bool> woodGrainLocked; //lock bools 
     [SerializeField] List<bool> woodGrainActive; //active bools 
@@ -580,6 +584,19 @@ public class AlexDecoSystemScript : MonoBehaviour
         var qcmats = questCounterRenderer.materials;
         qcmats[1] = new Material(questCounterTopMats[x]);
         questCounterRenderer.materials = qcmats;
+
+        //hanging shelf
+        var hangingshelfmats = hangingShelfRenderer.materials;
+        hangingshelfmats[0] = new Material(hangingShelfMats[x]);
+        hangingShelfRenderer.materials = hangingshelfmats;
+
+        //small hanging shelf (each one)
+        var smallshelfmats0 = smallHangingShelfRenderer[0].materials;
+        var smallshelfmats1 = smallHangingShelfRenderer[1].materials;
+        smallshelfmats0[0] = new Material(smallHangingShelfMats[x]);
+        smallshelfmats1[0] = new Material(smallHangingShelfMats[x]);
+        smallHangingShelfRenderer[0].materials = smallshelfmats0;
+        smallHangingShelfRenderer[1].materials = smallshelfmats1;
 
         woodGrainButtons[x].transform.Find("Highlight").gameObject.SetActive(true);
         woodGrainActive[x] = true;
