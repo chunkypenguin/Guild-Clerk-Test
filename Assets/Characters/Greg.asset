@@ -21,10 +21,10 @@ MonoBehaviour:
   ItemBName: 
   ItemANameA: 
   ItemBNameB: 
-  choseQuestA: 0
-  choseQuestB: 1
+  choseQuestA: 1
+  choseQuestB: 0
   choseItemA: 0
   choseItemB: 0
   choseItemAA: 0
-  textColor: {r: 0.3019608, g: 0.49411765, b: 0, a: 1}
+  textColor: {r: 0.3529412, g: 0.5803922, b: 0, a: 1}
   textAudioPitch: 0.9
