@@ -172,6 +172,7 @@ namespace HeneGames.DialogueSystem
         public void ClearText()
         {
             dialogueWindow.SetActive(false);
+            movecam.instance.DrawerLockOut();
         }
 
         public void ShowInteractionUI(bool _value)

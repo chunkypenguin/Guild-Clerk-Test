@@ -165,8 +165,9 @@ public class QuestSystem : MonoBehaviour
 
         //visualQuests.SetActive(true);
 
-        rb.gameObject.GetComponent<ItemFloorScript>().ResetItem();
-
+        //rb.gameObject.GetComponent<ItemFloorScript>().ResetItem(); //resets the turned in quest (i think)
+        questARB.gameObject.GetComponent<ItemFloorScript>().ResetItem();
+        questBRB.gameObject.GetComponent<ItemFloorScript>().ResetItem();
 
         //UNIQUE VANELLE INTERACTION
         //if current character is vanelle and quest b was just chosen...

@@ -183,6 +183,8 @@ public class DaySystem : MonoBehaviour
                 Debug.Log("should do end of day stuff");
                 EndOfDayScreen();
 
+                //Reset cam to center between days
+                movecam.instance.DayCamReset();
 
                 //remove return items
                 foreach (GameObject obj in returnItems)

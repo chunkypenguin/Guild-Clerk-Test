@@ -502,4 +502,22 @@ public class movecam : MonoBehaviour
         canOpenDrawer = true;
 
     }
+
+    public void DrawerLockOut()
+    {
+        //From DialogueUI script, makes it so drawer wont open for a short window after clickign off dialogue to prevent misclicks on drawer open
+        StartCoroutine(SetBoolForSeconds());
+    }
+
+    private IEnumerator SetBoolForSeconds()
+    {
+        lockDrawer = true;
+        yield return new WaitForSeconds(0.3f);
+        lockDrawer = false;
+    }
+
+    public void DayCamReset()
+    {
+        MoveCamCenter();
+    }
 }
