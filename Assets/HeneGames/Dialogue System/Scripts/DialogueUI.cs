@@ -48,7 +48,7 @@ namespace HeneGames.DialogueSystem
         [SerializeField] private bool animateText = true;
 
         [Range(0.1f, 1f)]
-        [SerializeField] private float textAnimationSpeed = 0.5f;
+        [SerializeField] public float textAnimationSpeed = 0.5f;
 
         [Header("Next sentence input")]
         public KeyCode actionInput = KeyCode.Space;
@@ -172,7 +172,8 @@ namespace HeneGames.DialogueSystem
         public void ClearText()
         {
             dialogueWindow.SetActive(false);
-            movecam.instance.DrawerLockOut();
+            movecam.instance.DrawerLockOut();//lock out drawer temporarliy to prevent misclicks
+            MousePos3D.instance.dialogueOpen = false;
         }
 
         public void ShowInteractionUI(bool _value)

@@ -62,7 +62,7 @@ public class GregScript : MonoBehaviour
     public void CheckForReward()
     {
         gs.totalGoldGiven = gs.goldAmount;
-        int rep = 0;
+        //int rep = 0;
         if (cs.currentCharacter.choseQuestA) //Slay Quest
         {
             gs.goldWanted = 8;
@@ -76,14 +76,14 @@ public class GregScript : MonoBehaviour
             {
                 //do this
                 cs.gregD2G1CP1.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = -1;
+                //rep = -1;
             }
 
             else if (gs.goldAmount < 8)
             {
                 //do this
                 cs.gregD2G1AP1.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = -1;
+                //rep = -1;
             }
             
         }
@@ -94,13 +94,13 @@ public class GregScript : MonoBehaviour
             {
                 //do this
                 cs.gregD2G2BP1.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = 1;
+                //rep = 1;
             }
             else if (gs.goldAmount > 2)
             {
                 //do this
                 cs.gregD2G2CP1.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = 2;
+                //rep = 2;
             }
 
             else if (gs.goldAmount < 2)

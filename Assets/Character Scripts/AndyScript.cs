@@ -114,7 +114,7 @@ public class AndyScript : MonoBehaviour
 
     public void CheckForReward()
     {
-        int rep = 0;
+        //int rep = 0;
         if (!partTwoComplete) //!cs.D3
         {
             cs.andyD2Q1BP2.StartNewDialogue(cs.dialogueTriggerScript);
@@ -122,17 +122,17 @@ public class AndyScript : MonoBehaviour
         else if(gs.goldAmount == 85)
         {
             cs.andyD3G1B.StartNewDialogue(cs.dialogueTriggerScript);
-            rep = 1;
+            //rep = 1;
         }
         else if (gs.goldAmount > 85)
         {
             cs.andyD3G1B.StartNewDialogue(cs.dialogueTriggerScript);
-            rep = 2;
+            //rep = 2;
         }
         else if(gs.goldAmount < 85)
         {
             cs.andyD3G1A.StartNewDialogue(cs.dialogueTriggerScript);
-            rep = -1;
+            //rep = -1;
         }
         //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }

@@ -32,7 +32,7 @@ public class KalinScript : MonoBehaviour
     public void CheckForReward()
     {
         gs.totalGoldGiven = gs.goldAmount;
-        int rep = 0;
+        //int rep = 0;
         if (cs.currentCharacter.choseQuestA) 
         {
             gs.goldWanted = 30;
@@ -40,20 +40,20 @@ public class KalinScript : MonoBehaviour
             {
                 //do this
                 cs.KalinQ1AGEquals.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = 1;
+                //rep = 1;
             }
             else if (gs.goldAmount > 30)
             {
                 //do this
                 cs.KalinQ1AGPlus.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = -1;
+                //rep = -1;
             }
 
             else if (gs.goldAmount < 30)
             {
                 //do this
                 cs.KalinQ1AGMinus.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = 0;
+                //rep = 0;
             }
         }
 

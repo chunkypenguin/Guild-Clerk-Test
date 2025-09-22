@@ -133,7 +133,7 @@ public class TutorialScript : MonoBehaviour
             if(mc.flashOn)
             {
                 flashBell = true;
-                Debug.Log("flash off");
+                //Debug.Log("flash off");
                 mc.TurnFlashOff();
                 //mc.flashOn = false;
             }
@@ -142,7 +142,7 @@ public class TutorialScript : MonoBehaviour
         {
             if (mc.flashOn)
             {
-                Debug.Log("flash off");
+                //Debug.Log("flash off");
                 mc.TurnFlashOff();
                 //mc.flashOn = false;
             }
@@ -154,7 +154,7 @@ public class TutorialScript : MonoBehaviour
                 mc.dontFlash = false;
                 mc.ButtonFlashUp(mc.bellButton);
                 //flashBell = false;
-                Debug.Log("bell flash");
+                //Debug.Log("bell flash");
             }
 
         }

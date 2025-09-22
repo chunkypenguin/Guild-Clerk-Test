@@ -113,7 +113,7 @@ public class ItemSystem : MonoBehaviour
             }
         }
 
-        if (cs.currentCharacter.characterName == "Lotest")
+        if (cs.currentCharacter.characterName == "Lotest Altall")
         {
             lotestScript.greenGlow.SetActive(true);
             lotestScript.velvetGlow.SetActive(true);

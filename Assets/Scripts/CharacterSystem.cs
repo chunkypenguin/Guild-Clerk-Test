@@ -79,7 +79,7 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager finchD1GR11;
     public DialogueManager finchD1GR12;
 
-    [Header("Andy")]
+    [Header("Andy Cheesington")]
     public DialogueManager andyD1P1;
     public DialogueManager andyD1Q1AP1;
     public DialogueManager andyD1Q1BP1;
@@ -123,8 +123,10 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager joleneD2G1B;
     public DialogueManager joleneD2G1C;
 
-    [Header("Lotest")]
+    [Header("Lotest Altall")]
     public DialogueManager lotestD1P1;
+    public DialogueManager lotestAhem;
+    public DialogueManager lotestD1P2;
     public DialogueManager lotestD1ItemA1;
     public DialogueManager lotestD1ItemB1;
     public DialogueManager lotestD2Q1A;
@@ -376,7 +378,7 @@ public class CharacterSystem : MonoBehaviour
             //currentCharacterObject.GetComponent<CharacterReputation>().RemoveReputation(1);
         }
 
-        if(currentCharacter.characterName == "Andy")
+        if(currentCharacter.characterName == "Andy Cheesington")
         {
             //when dragon quest it given
             if (!AndyScript.instance.partOneComplete)
@@ -445,7 +447,7 @@ public class CharacterSystem : MonoBehaviour
             //Adds reputation
             //currentCharacterObject.GetComponent<CharacterReputation>().AddReputation(1);
         }
-        if(currentCharacter.characterName == "Andy")
+        if(currentCharacter.characterName == "Andy Cheesington")
         {
             if (!AndyScript.instance.partOneComplete)
             {
@@ -510,7 +512,7 @@ public class CharacterSystem : MonoBehaviour
             }
         }
 
-        if (currentCharacter.characterName == "Lotest") //drab
+        if (currentCharacter.characterName == "Lotest Altall") //drab
         {
             lotestD1ItemA1.StartNewDialogue(dialogueTriggerScript);
             //currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
@@ -553,7 +555,7 @@ public class CharacterSystem : MonoBehaviour
         }
 
 
-        if (currentCharacter.characterName == "Lotest") //fancy
+        if (currentCharacter.characterName == "Lotest Altall") //fancy
         {
             lotestD1ItemB1.StartNewDialogue(dialogueTriggerScript);
             //currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
@@ -607,7 +609,7 @@ public class CharacterSystem : MonoBehaviour
             currentCharacter = characters[characterCount];
             currentCharacterObject = characterObjects[characterCount];
         }
-        if (currentCharacter.characterName == "Lotest" && currentCharacter.choseItemB && LotestScript.instance.partOneComplete) //if player gave exploding beans, after part one, skip lotest to Josie
+        if (currentCharacter.characterName == "Lotest Altall" && currentCharacter.choseItemB && LotestScript.instance.partOneComplete) //if player gave exploding beans, after part one, skip lotest to Josie
         {
             characterCount++; 
             currentCharacter = characters[characterCount];
@@ -629,14 +631,14 @@ public class CharacterSystem : MonoBehaviour
         }
 
         //ANDY NONSENSE
-        if (currentCharacter.characterName == "Andy" && AndyScript.instance.partThreeComplete && currentCharacter.choseQuestB) //skip andy on his final day
+        if (currentCharacter.characterName == "Andy Cheesington" && AndyScript.instance.partThreeComplete && currentCharacter.choseQuestB) //skip andy on his final day
         {
             characterCount++;
             currentCharacter = characters[characterCount];
             currentCharacterObject = characterObjects[characterCount];
             Debug.Log("andy skip final day");
         }
-        else if (currentCharacter.characterName == "Andy" && (currentCharacter.choseQuestB || AndyScript.instance.andyMomVisited) && AndyScript.instance.partTwoComplete && !AndyScript.instance.partThreeComplete) //skip andy on his third day if quest b was chosen twice or andys mom has already visited
+        else if (currentCharacter.characterName == "Andy Cheesington" && (currentCharacter.choseQuestB || AndyScript.instance.andyMomVisited) && AndyScript.instance.partTwoComplete && !AndyScript.instance.partThreeComplete) //skip andy on his third day if quest b was chosen twice or andys mom has already visited
         {
             characterCount++;
             currentCharacter = characters[characterCount];

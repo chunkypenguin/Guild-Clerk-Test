@@ -218,7 +218,7 @@ public class DeskTrigger : MonoBehaviour
             cs.IsIdle();
         }
 
-        if (cs.currentCharacter.characterName == "Andy")
+        if (cs.currentCharacter.characterName == "Andy Cheesington")
         {
             andyS.CheckForReward();
             cs.IsIdle();
@@ -242,7 +242,7 @@ public class DeskTrigger : MonoBehaviour
             cs.IsIdle();
         }
 
-        if (cs.currentCharacter.characterName == "Lotest")
+        if (cs.currentCharacter.characterName == "Lotest Altall")
         {
             lotestS.CheckForReward();
             cs.IsIdle();

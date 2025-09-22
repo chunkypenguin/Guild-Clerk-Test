@@ -272,7 +272,7 @@ public class GoldSystem : MonoBehaviour
         }
 
         coins.Add(coin);
-        Debug.Log(coins.Count);
+        //Debug.Log(coins.Count);
     }
 
     public void RemoveGold()
@@ -282,7 +282,7 @@ public class GoldSystem : MonoBehaviour
             GameObject lastCoin = coins[coins.Count - 1];
             coins.RemoveAt(coins.Count - 1);
             Destroy(lastCoin);
-            Debug.Log(coins.Count);
+            //Debug.Log(coins.Count);
         }
     }
 

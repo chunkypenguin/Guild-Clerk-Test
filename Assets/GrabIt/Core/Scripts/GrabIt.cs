@@ -39,9 +39,9 @@ public class GrabObjectProperties{
 		[SerializeField]
 		float m_scrollWheelSpeed = 5;
 
-		[SerializeField]
-		[Range(50, 500)]
-		float m_angularSpeed = 300;
+		//[SerializeField]
+		//[Range(50, 500)]
+		//float m_angularSpeed = 300;
 
 		[SerializeField]
 		[Range(10, 50)]

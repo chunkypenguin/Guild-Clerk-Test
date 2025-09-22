@@ -56,7 +56,7 @@ public class ZetoScript : MonoBehaviour
 
     public void CheckForReward()
     {
-        int rep = 0;
+        //int rep = 0;
         if (!partOneComplete)
         {
             if (cs.currentCharacter.choseQuestA) //Slay Quest

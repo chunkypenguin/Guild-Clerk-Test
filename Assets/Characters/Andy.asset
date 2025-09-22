@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Andy
   m_EditorClassIdentifier: 
   characterPhoto: {fileID: 0}
-  characterName: Andy
+  characterName: Andy Cheesington
   quest:
   - {fileID: 11400000, guid: 0d3170ca586450746b5f93a64c2f4197, type: 2}
   - {fileID: 11400000, guid: 7376b5e553fda404b8a6d160997ba31b, type: 2}
@@ -23,9 +23,9 @@ MonoBehaviour:
   ItemANameA: 
   ItemBNameB: 
   choseQuestA: 0
-  choseQuestB: 1
+  choseQuestB: 0
   choseItemA: 0
   choseItemB: 0
   choseItemAA: 0
-  textColor: {r: 0, g: 0.6156863, b: 0.7411765, a: 1}
+  textColor: {r: 0, g: 0.4862745, b: 0.58431375, a: 1}
   textAudioPitch: 1.35

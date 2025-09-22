@@ -88,7 +88,7 @@ public class MoveCharacter : MonoBehaviour
 
     public void MoveToEnd() //move character out of sight
     {
-        if (cs.currentCharacter.characterName == "Andy" || cs.currentCharacter.characterName == "Zeto Storma" || cs.currentCharacter.characterName == "Achilles")
+        if (cs.currentCharacter.characterName == "Andy Cheesington" || cs.currentCharacter.characterName == "Zeto Storma" || cs.currentCharacter.characterName == "Achilles")
         {
             transform.DOJump(endPos, jumpSpeed * 2, jumpCount, jumpDuration).OnComplete(() =>
             {
@@ -97,7 +97,7 @@ public class MoveCharacter : MonoBehaviour
                     zetoS.ZetoDefault(); //return back to default
                 }
 
-                if (cs.currentCharacter.characterName == "Andy" && !AndyScript.instance.partOneComplete)
+                if (cs.currentCharacter.characterName == "Andy Cheesington" && !AndyScript.instance.partOneComplete)
                 {
                     if (cs.currentCharacter.choseQuestB)
                     {
@@ -109,7 +109,7 @@ public class MoveCharacter : MonoBehaviour
                     }
                     AndyScript.instance.partOneComplete = true;
                 }
-                else if(cs.currentCharacter.characterName == "Andy" && AndyScript.instance.partOneComplete) //MOVED FROM END OF DAY FUNCTION
+                else if(cs.currentCharacter.characterName == "Andy Cheesington" && AndyScript.instance.partOneComplete) //MOVED FROM END OF DAY FUNCTION
                 {
                     if (AndyScript.instance.andyMomVisited)
                     {
@@ -132,10 +132,11 @@ public class MoveCharacter : MonoBehaviour
         {
             if (cs.currentCharacter.characterName == "Greg" && cs.currentCharacter.choseQuestA && cs.D2)
             {
-                moveSpeed = 7f; //greg slow move speed
+                moveSpeed = 5f; //greg slow move speed
             }
             transform.DOMove(endPos, moveSpeed).OnComplete(() =>
             {
+                DialogueUI.instance.textAnimationSpeed = 0.6f; //back to base speed
                 moveSpeed = 2f;
                 if (cs.currentCharacter.characterName == "Greg")
                 {
@@ -148,7 +149,8 @@ public class MoveCharacter : MonoBehaviour
 
                 if (cs.currentCharacter.characterName == "Maggie")//Maggie is always before day 3 Jolene
                 {
-                    if(joleneS.joleneDead && cs.D3) //if day 3 and jolene has died
+                    
+                    if (joleneS.joleneDead && cs.D3) //if day 3 and jolene has died
                     {
                         //cs.characterCount++;//skip jolene
                     }
@@ -195,7 +197,7 @@ public class MoveCharacter : MonoBehaviour
                     }
                 }
 
-                if (cs.currentCharacter.characterName == "Lotest")
+                if (cs.currentCharacter.characterName == "Lotest Altall")
                 {
                     if (cs.D3)
                     {
@@ -310,13 +312,13 @@ public class MoveCharacter : MonoBehaviour
     public void MoveToDesk()
     {
 
-        if (cs.currentCharacter.characterName == "Andy" || cs.currentCharacter.characterName == "Zeto Storma" || cs.currentCharacter.characterName == "Achilles")
+        if (cs.currentCharacter.characterName == "Andy Cheesington" || cs.currentCharacter.characterName == "Zeto Storma" || cs.currentCharacter.characterName == "Achilles")
         {
 
 
             transform.DOJump(startPos, jumpSpeed, jumpCount, jumpDuration).OnComplete(() =>
             {
-                if (cs.currentCharacter.characterName == "Andy")
+                if (cs.currentCharacter.characterName == "Andy Cheesington")
                 {
                     andyS.StartDialogue();
                 }
@@ -379,11 +381,30 @@ public class MoveCharacter : MonoBehaviour
         {
             if (cs.currentCharacter.characterName == "Greg" && cs.currentCharacter.choseQuestA)
             {
-                moveSpeed = 5f;
+                moveSpeed = 5f; //stays at this speed until new character starts
+                DialogueUI.instance.textAnimationSpeed = 0.3f; //slow speed
             }
+            else if (cs.currentCharacter.characterName == "Maggie")
+            {
+                moveSpeed = 1f;
+                DialogueUI.instance.textAnimationSpeed = 0.8f; //faster speed
+            }
+            else
+            {
+                moveSpeed = 2f; 
+            }
+            if (cs.currentCharacter.characterName == "Lorne")
+            {
+                LightSystem.instance.DimLights();
+            }
+            if(cs.currentCharacter.characterName == "Ishizu" && cs.currentCharacter.choseItemB)
+            {
+                LightSystem.instance.DimLights();
+            }
+
             transform.DOMove(startPos, moveSpeed).OnComplete(() =>
             {
-                moveSpeed = 2f;
+                //moveSpeed = 2f;
                 if (cs.currentCharacter.characterName == "Josie")
                 {
                     if (cs.D1 && !cs.D2 && !cs.D3)
@@ -414,6 +435,7 @@ public class MoveCharacter : MonoBehaviour
 
                 if (cs.currentCharacter.characterName == "Lorne")
                 {
+                    LightSystem.instance.DimLights();
                     lorneS.StartDialogue();
                 }
 
@@ -427,7 +449,7 @@ public class MoveCharacter : MonoBehaviour
                     joleneS.StartDialogue();
                 }
 
-                if (cs.currentCharacter.characterName == "Lotest")
+                if (cs.currentCharacter.characterName == "Lotest Altall")
                 {
                     lotestS.StartDialogue();
                 }

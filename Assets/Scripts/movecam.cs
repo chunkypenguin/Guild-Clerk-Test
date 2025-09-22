@@ -258,25 +258,28 @@ public class movecam : MonoBehaviour
         {
             if (center)
             {
+                MoveCamToEquipment();
                 center = false;
                 bottom = false;
                 left = true;
-                MoveCamToEquipment();
+                
             }
             else if (bottom)
             {
+                MoveCamToEquipment();
                 center = false;
                 bottom = false;
                 left = true;
-                MoveCamToEquipment();
+                
                 goldSystemScript.CloseGoldDrawer();
                 drawerCloseAudio.Play();
             }
             else if (right)
             {
+                MoveCamCenter();
                 right = false;
                 center = true;
-                MoveCamCenter();
+                
 
                 ///Tutorial
                 //if (turnedLeft)
@@ -306,10 +309,11 @@ public class movecam : MonoBehaviour
         {
             if (center)
             {
+                MoveCamToQuests();
                 center = false;
                 bottom = false;
                 right = true;
-                MoveCamToQuests();
+                
 
                 //if (turnedRight)
                 //{
@@ -320,18 +324,20 @@ public class movecam : MonoBehaviour
             }
             else if (bottom)
             {
+                MoveCamToQuests();
                 center = false;
                 bottom = false;
                 right = true;
-                MoveCamToQuests();
+                
                 goldSystemScript.CloseGoldDrawer();
                 drawerCloseAudio.Play();
             }
             else if (left)
             {
+                MoveCamCenter();
                 left = false;
                 center = true;
-                MoveCamCenter();
+                
             }
             else if (right)
             {
@@ -353,11 +359,12 @@ public class movecam : MonoBehaviour
         {
             if (center || left || right)
             {
+                MoveCamRewards();
                 center = false;
                 left = false;
                 right = false;
                 bottom = true;
-                MoveCamRewards();
+                
 
                 goldSystemScript.OpenGoldDrawer();
                 
@@ -382,9 +389,10 @@ public class movecam : MonoBehaviour
         {
             if (bottom)
             {
+                MoveCamCenter();
                 bottom = false;
                 center = true;
-                MoveCamCenter();
+                
 
                 goldSystemScript.CloseGoldDrawer();
                 drawerCloseAudio.Play();

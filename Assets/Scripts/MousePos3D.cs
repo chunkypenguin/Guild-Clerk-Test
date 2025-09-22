@@ -1,3 +1,4 @@
+using HeneGames.DialogueSystem;
 using Lightbug.GrabIt;
 using System.Collections;
 using System.Collections.Generic;
@@ -40,6 +41,7 @@ public class MousePos3D : MonoBehaviour
     Vector2 cursorHotSpot;
 
     public bool questText;
+    public bool dialogueOpen;
 
     public static MousePos3D instance;
 
@@ -143,33 +145,37 @@ public class MousePos3D : MonoBehaviour
             if (questraycastHit.collider.CompareTag("Character") && Input.GetMouseButtonDown(0))
             {
                 //Debug.Log("ClickedCharacter");
-                if (cs.isQuest)
+                if (cs.isQuest && !dialogueOpen)
                 {
                     Debug.Log("I need a quest");
                     cs.TextHistory();
                     //cs.questDialogue.StartNewDialogue(cs.dialogueTriggerScript);
                     //mc.ButtonFlashUp(mc.rightButton);
                     //mc.flashWasOn = true;
+                    dialogueOpen = true;
                 }
-                else if (cs.isEquipment)
+                else if (cs.isEquipment && !dialogueOpen)
                 {
                     Debug.Log("I need equipment");
                     cs.TextHistory();
                     //cs.equipmentDialogue.StartNewDialogue(cs.dialogueTriggerScript);
                     //mc.ButtonFlashUp(mc.leftButton);
                     //mc.flashWasOn = true;
+                    dialogueOpen = true;
                 }
-                else if (cs.isReward)
+                else if (cs.isReward && !dialogueOpen)
                 {
                     Debug.Log("I need a reward");
                     cs.TextHistory();
                     //cs.rewardDialogue.StartNewDialogue(cs.dialogueTriggerScript);
                     //mc.ButtonFlashUp(mc.bottomButton);
                     //mc.flashWasOn = true;
+                    dialogueOpen = true;
                 }
                 else
                 {
                     Debug.Log("idle");
+                    DialogueUI.instance.NextSentenceSoft();
                 }
             }
         }

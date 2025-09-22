@@ -1,3 +1,4 @@
+using HeneGames.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,7 +45,6 @@ public class MaggieScript : MonoBehaviour
 
     public void CheckForReward()
     {
-
         int rep = 0;
         if (cs.currentCharacter.choseQuestA)//food
         {
@@ -105,5 +105,10 @@ public class MaggieScript : MonoBehaviour
     public void MaggieNeutralEmote()
     {
         mr.material = maggieNeutral;
+    }
+
+    public void MaggieSlowDownText()
+    {
+        DialogueUI.instance.textAnimationSpeed = 0.6f;
     }
 }

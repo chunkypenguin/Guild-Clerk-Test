@@ -330,7 +330,7 @@ public class QuestSystem : MonoBehaviour
         //make quests move a little for aesthetic reasons
         PushQuests();
 
-        if (cs.currentCharacter.characterName == "Andy" && cs.currentCharacter.choseQuestB)
+        if (cs.currentCharacter.characterName == "Andy Cheesington" && cs.currentCharacter.choseQuestB)
         {
             Debug.Log("switch to alternative quest B text");
 
@@ -380,7 +380,7 @@ public class QuestSystem : MonoBehaviour
                 questRDescription.text = cs.currentCharacter.quest[b].questDescription;
                 questRReward.text = cs.currentCharacter.quest[b].questReward;
             }
-            else if(cs.currentCharacter.characterName != "Andy")
+            else if(cs.currentCharacter.characterName != "Andy Cheesington")
             {
                 Debug.Log("everyone else throw out Quest A");
                 returnQuest.SetActive(true);
@@ -390,7 +390,7 @@ public class QuestSystem : MonoBehaviour
                 questRDescription.text = cs.currentCharacter.quest[a].questDescription;
                 questRReward.text = cs.currentCharacter.quest[a].questReward;
             }
-            else if (cs.currentCharacter.characterName == "Andy")
+            else if (cs.currentCharacter.characterName == "Andy Cheesington")
             {
                 Debug.Log("Andy throw out Quest A");
                 bloodyReturnQuest.SetActive(true);

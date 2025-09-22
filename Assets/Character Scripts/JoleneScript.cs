@@ -49,7 +49,7 @@ public class JoleneScript : MonoBehaviour
 
     public void CheckForReward()
     {
-        int rep = 0;
+        //int rep = 0;
 
         if (cs.currentCharacter.choseQuestA)
         {
@@ -57,7 +57,7 @@ public class JoleneScript : MonoBehaviour
             {
                 //do this
                 cs.joleneD2G1B.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = -1;
+                //rep = -1;
             }
             else if (gs.goldAmount > 2)
             {
@@ -67,14 +67,14 @@ public class JoleneScript : MonoBehaviour
                 //TAHMAS ENTERS
                 gaveJoleneMoreGold = true;
 
-                rep = 1;
+                //rep = 1;
             }
 
             else if (gs.goldAmount < 2)
             {
                 //do this
                 cs.joleneD2G1A.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = -2;
+                //rep = -2;
             }
         }
         else if (cs.currentCharacter.choseQuestB)

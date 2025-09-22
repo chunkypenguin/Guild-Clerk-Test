@@ -42,7 +42,7 @@ public class IshizuScript : MonoBehaviour
         {
             //Drop Bad Omen
             ItemSystem.instance.ReturnItem(yourNextLetter);
-            LightSystem.instance.DimLights();
+            //LightSystem.instance.DimLights();
             Invoke(nameof(GhostLeave), 2);
             gameObject.GetComponent<CharacterReputation>().ModifyReputation(-2);
             //Reverse music, stall for a few seconds then Ishizu ghost leaves

@@ -21,7 +21,7 @@ public class DaySystem : MonoBehaviour
     bool endGame;
 
     [SerializeField] GameObject credits;
-
+    [SerializeField] Image creditsImage;
     public AudioSource bgMusic;
     public AudioSource otherBGMusic;
     public AudioSource otherOtherBGMusic;
@@ -58,9 +58,10 @@ public class DaySystem : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             //EndDay();
+            CreditsStart();
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
@@ -214,20 +215,45 @@ public class DaySystem : MonoBehaviour
             }
             else
             {
-                canStartNextDay = false;
+                
+                //canStartNextDay = false;
 
-                credits.SetActive(true);
+                CreditsStart();
 
-                gameEnd = true;
+                //gameEnd = true;
 
-                bgMusic.DOFade(0, 7);
-                otherBGMusic.DOFade(0, 7);
-                otherOtherBGMusic.DOFade(0, 7);
-                creditSceneMusic.DOFade(0.5f, 10);
+                //bgMusic.DOFade(0, 7);
+                //otherBGMusic.DOFade(0, 7);
+                //otherOtherBGMusic.DOFade(0, 7);
+                //creditSceneMusic.DOFade(0.5f, 10);
             }
 
             // = false; //trying to fix adding a bunch of characters to screen inbetween days DID NOT FIX
         }
+    }
+
+    private void CreditsStart()
+    {
+        gameEnd = true;
+
+        canStartNextDay = false;
+
+        //credits...
+        credits.SetActive(true);
+        creditsImage.DOFade(1, 5).SetEase(Ease.Linear);
+        Invoke(nameof(CreditsScroll), 5f);
+
+        gameEnd = true;
+
+        bgMusic.DOFade(0, 7);
+        otherBGMusic.DOFade(0, 7);
+        otherOtherBGMusic.DOFade(0, 7);
+        creditSceneMusic.DOFade(0.5f, 10);
+    }
+
+    private void CreditsScroll()
+    {
+        Credits.instance.ScrollToTarget();
     }
 
     public void NewDay()

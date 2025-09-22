@@ -28,6 +28,8 @@ public class VanelleScript : MonoBehaviour
     bool askingForMorePlus;
     bool askingForMoreMinus;
 
+    [SerializeField] AudioSource vanelleChomp;
+
     private void Awake()
     {
         instance = this;
@@ -109,6 +111,7 @@ public class VanelleScript : MonoBehaviour
     public void EatQuestBDialogue()
     {
         cs.VanelleD1Q1BP2.StartNewDialogue(cs.dialogueTriggerScript); //eat quest dialogue
+        vanelleChomp.Play();
     }
 
     public void CheckForReward()
