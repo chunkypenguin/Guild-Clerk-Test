@@ -2,6 +2,15 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using HeneGames.DialogueSystem;
+using System.Collections;
+
+
+[System.Serializable]
+public class DayTexts
+{
+    public TextMeshProUGUI[] ParaTexts;
+}
 
 public class DaySystem : MonoBehaviour
 {
@@ -36,14 +45,29 @@ public class DaySystem : MonoBehaviour
     [SerializeField] GameObject goldBundleText;
     [SerializeField] GameObject nextDayButton;
 
+    //even newer stuff for end of day scrolling text
+    [SerializeField] TextMeshProUGUI dayTextMeshProUGUI;
+
+    [Header("Day Text")]
+    [SerializeField] DayTexts[] dayTexts;
+    [SerializeField] TextMeshProUGUI[] paragraphTextMesh;
+    [SerializeField] GameObject newDayTextObject;
+
     [TextArea(10, 15)]
     [SerializeField] string[] dayDescription;
 
     // This is a reference to the UIVisualizer script. This just changes the visuals of the UI.
     [SerializeField] private UIVisualizer _reputationVisualizer;
 
+    [Header("Gold/Rep Recap")]
+    [SerializeField] GameObject[] recapObjects;
+    [SerializeField] float recapDisplayTime;
+    public bool displayingGold;
+
     //refernce to coin text
     [SerializeField] GameObject coinText;
+
+    bool endOfDay;
 
     public static DaySystem instance;
     private void Awake()
@@ -55,13 +79,16 @@ public class DaySystem : MonoBehaviour
     {
         gameEnd = false;
         dayCount = 1;
+
+        MakeAllInvisible();
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
             //EndDay();
-            CreditsStart();
+            //CreditsStart();
+            EndOfDayScroll();
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
@@ -69,6 +96,12 @@ public class DaySystem : MonoBehaviour
             NextDayButton(); //TURN THIS BACK ON
 
         }
+
+        if(Input.GetMouseButtonDown(0) && endOfDay)
+        {
+            DialogueUI.instance.CompleteDayText();
+        }
+
         if(Input.GetKeyDown(KeyCode.Escape) && gameEnd)
         {
             GameManager.instance.QuitGame();
@@ -135,6 +168,7 @@ public class DaySystem : MonoBehaviour
 
     public void NewEndDay()
     {
+        
         Debug.Log("NewEndDay");
         targetImage.gameObject.SetActive(true);
         if (targetImage != null)
@@ -178,6 +212,8 @@ public class DaySystem : MonoBehaviour
                     cs.currentCharacterObject.GetComponent<MoveCharacter>().MoveEndDay();
                 }
 
+                newDayTextObject.SetActive(true);
+                endOfDay = true;
 
                 //new stuff
                 _reputationVisualizer.ShowEndOfDay();
@@ -258,10 +294,14 @@ public class DaySystem : MonoBehaviour
 
     public void NewDay()
     {
+        endOfDay = false;
+
         Debug.Log("New Day");
         //canStartNextDay = false;//for the space bar option i guess
 
         TutorialScript.instance.hasGoldBundle = false;
+
+        newDayTextObject.SetActive(false);
 
         dayOneTextObject.SetActive(false);
         dayTwoTextObject.SetActive(false);
@@ -309,18 +349,62 @@ public class DaySystem : MonoBehaviour
     {
         Debug.Log("end of day screen activated");
 
-        dayText.gameObject.SetActive(true);
-        descriptionText.gameObject.SetActive(true);
-        //nextDayText.SetActive(true);
-        nextDayButton.SetActive(true);
-        coinText.SetActive(true);
-        dayText.text = "Day " + dayCount.ToString();
-        descriptionText.text = dayDescription[dayCount].ToString(); 
 
+        //OLD
+        //dayText.gameObject.SetActive(true);
+        //descriptionText.gameObject.SetActive(true);
+        //nextDayText.SetActive(true);
+        //nextDayButton.SetActive(true);
+        //coinText.SetActive(true);
+        dayText.text = "Day " + dayCount.ToString();
+        //descriptionText.text = dayDescription[dayCount].ToString(); 
+
+        //THIS WILL HAVE TO CHANGE
         if(TutorialScript.instance.goldBundle.activeSelf)
         {
             goldBundleText.SetActive(true);
         }
-        
+
+        EndOfDayScroll();
+    }
+
+    public void EndOfDayScroll()
+    {
+        Debug.Log("start day scroll");
+        //StartCoroutine(DialogueUI.instance.WriteTextToTextmeshDay(dayDescription[dayCount], dayTextMeshProUGUI));
+        DialogueUI.instance.StartDayTextCoroutine(dayTexts);
+    }
+
+    private void MakeAllInvisible()
+    {
+        foreach (DayTexts day in dayTexts)
+        {
+            foreach (TextMeshProUGUI tmp in day.ParaTexts)
+            {
+                if (tmp != null)
+                {
+                    tmp.ForceMeshUpdate();          // ensure TMP knows character count
+                    tmp.maxVisibleCharacters = 0;   // hide all characters
+                }
+            }
+        }
+    }
+
+    public void GoldRecap()
+    {
+        StartCoroutine(DisplayGoldRecap());
+    }
+
+    private IEnumerator DisplayGoldRecap()
+    {
+        displayingGold = true;
+        foreach(GameObject obj in recapObjects)
+        {
+            obj.SetActive(true);
+
+            yield return new WaitForSeconds(recapDisplayTime);
+        }
+
+        displayingGold = false;
     }
 }

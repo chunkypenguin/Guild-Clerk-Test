@@ -58,18 +58,23 @@ public class Billboard : MonoBehaviour
             {
                 // Lock the position along the global X-axis
                 Vector3 currentPosition = rb.position;
-                rb.position = new Vector3(-8.2f, currentPosition.y, currentPosition.z); // Lock the X value to 0 (or any other fixed value)
+                rb.position = new Vector3(-8.44f, currentPosition.y, currentPosition.z); // Lock the X value to 0 (or any other fixed value)
             }
 
         }
 
         else if (moveCamScript.right)
         {
-            if (isHeld)
+            if (isHeld && !gameObject.CompareTag("Quest")) //if item is not a quest
             {
                 // Lock the position along the global X-axis
                 Vector3 currentPosition = rb.position;
-                rb.position = new Vector3(8.35f, currentPosition.y, currentPosition.z); // Lock the X value to 0 (or any other fixed value)
+                rb.position = new Vector3(8.62f, currentPosition.y, currentPosition.z); // Lock the X value to 0 (or any other fixed value)
+            }
+            else if(isHeld && gameObject.CompareTag("Quest"))
+            {
+                Vector3 currentPosition = rb.position;
+                rb.position = new Vector3(8.82f, currentPosition.y, currentPosition.z);
             }
         }
 
@@ -79,7 +84,8 @@ public class Billboard : MonoBehaviour
             {
                 // Lock the position along the global X-axis
                 Vector3 currentPosition = rb.position;
-                rb.position = new Vector3(currentPosition.x, currentPosition.y, 8.9f); // Lock the X value to 0 (or any other fixed value)
+                rb.position = new Vector3(currentPosition.x, currentPosition.y, 9.12f); // Lock the X value to 0 (or any other fixed value)
+                //old = 8.9f
             }
         }
 

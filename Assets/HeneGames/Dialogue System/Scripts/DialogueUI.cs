@@ -44,6 +44,9 @@ namespace HeneGames.DialogueSystem
         [SerializeField] private GameObject dialogueWindow;
         [SerializeField] private GameObject interactionUI;
 
+        [Header("Day Stuff")]
+        [SerializeField] TextMeshProUGUI dayText;
+
         [Header("Settings")]
         [SerializeField] private bool animateText = true;
 
@@ -58,6 +61,8 @@ namespace HeneGames.DialogueSystem
         public string lastMessage;
 
         [SerializeField] GoldSystem gs;
+
+        int paraCount = 0;
 
         private void Start()
         {
@@ -102,8 +107,12 @@ namespace HeneGames.DialogueSystem
                     typing = false;
                     messageText.text = currentMessage;
 
+                    //NEW
+                    messageText.maxVisibleCharacters = messageText.textInfo.characterCount;
+                    Debug.Log("Complete Sentence Next Sentence");
+
                     //NEW CODE TO TRY AND STOP DIALOGUE SOUND
-                    if(currentDialogueManager.audioSource != null)
+                    if (currentDialogueManager.audioSource != null)
                     {
                         currentDialogueManager.audioSource.Stop();
                     }
@@ -166,6 +175,7 @@ namespace HeneGames.DialogueSystem
             else
             {
                 messageText.text = _message;
+                Debug.Log("Complete Sentence Show Sentence");
             }
         }
 
@@ -204,31 +214,137 @@ namespace HeneGames.DialogueSystem
             return currentDialogueManager.CurrentSentenceLenght();
         }
 
-        IEnumerator WriteTextToTextmesh(string _text, TextMeshProUGUI _textMeshObject)
+        //ORIGNAL
+        //public IEnumerator WriteTextToTextmesh(string _text, TextMeshProUGUI _textMeshObject)
+        //{
+        //    typing = true;
+
+        //    _textMeshObject.text = "";
+        //    char[] _letters = _text.ToCharArray();
+
+        //    float _speed = 1f - textAnimationSpeed;
+
+        //    foreach (char _letter in _letters)
+        //    {
+        //        _textMeshObject.text += _letter;
+
+        //        if (_textMeshObject.text.Length == _letters.Length)
+        //        {
+        //            typing = false;
+        //            //NEW CODE TO TRY AND STOP DIALOGUE SOUND
+        //            if (currentDialogueManager.audioSource != null)
+        //            {
+        //                currentDialogueManager.audioSource.Stop();
+        //            }
+
+        //        }
+
+        //        yield return new WaitForSeconds(0.1f * _speed);
+        //    }
+        //}
+
+        //TEST FOR NEW DIALGOUE SCROLL
+        public IEnumerator WriteTextToTextmesh(string _text, TextMeshProUGUI _textMeshObject)
         {
             typing = true;
 
-            _textMeshObject.text = "";
-            char[] _letters = _text.ToCharArray();
+            // Set the full text immediately (so TMP knows what to generate).
+            _textMeshObject.text = _text;
+
+            // Force TMP to generate mesh/character info *before* counting.
+            _textMeshObject.ForceMeshUpdate();
+
+            // Start with no characters visible.
+            _textMeshObject.maxVisibleCharacters = 0;
 
             float _speed = 1f - textAnimationSpeed;
 
-            foreach(char _letter in _letters)
-            {
-                _textMeshObject.text += _letter;
+            int totalCharacters = _textMeshObject.textInfo.characterCount;
 
-                if(_textMeshObject.text.Length == _letters.Length)
+            for (int i = 0; i <= totalCharacters; i++)
+            {
+                _textMeshObject.maxVisibleCharacters = i;
+
+                if (i == totalCharacters)
                 {
                     typing = false;
-                    //NEW CODE TO TRY AND STOP DIALOGUE SOUND
-                    if(currentDialogueManager.audioSource != null)
+
+                    // NEW CODE TO TRY AND STOP DIALOGUE SOUND
+                    if (currentDialogueManager.audioSource != null)
                     {
                         currentDialogueManager.audioSource.Stop();
                     }
-
                 }
 
                 yield return new WaitForSeconds(0.1f * _speed);
+            }
+        }
+
+
+        //TEST FOR END DAY
+        public IEnumerator WriteTextToTextmeshDay(DayTexts[] day)
+        {
+            Debug.Log("Start Coroutine");
+
+            typing = true;
+
+            day[DaySystem.instance.dayCount].ParaTexts[paraCount].ForceMeshUpdate();
+
+            day[DaySystem.instance.dayCount].ParaTexts[paraCount].maxVisibleCharacters = 0;
+
+            dayText = day[DaySystem.instance.dayCount].ParaTexts[paraCount];
+
+            float _speed = 1f - textAnimationSpeed;
+
+            int totalCharacters = day[DaySystem.instance.dayCount].ParaTexts[paraCount].textInfo.characterCount;
+
+            for (int i = 0; i <= totalCharacters; i++)
+            {
+                day[DaySystem.instance.dayCount].ParaTexts[paraCount].maxVisibleCharacters = i;
+
+                if (i == totalCharacters)
+                {
+                    typing = false;
+
+                    paraCount++;
+                }
+
+                yield return new WaitForSeconds(0.1f * _speed);
+            }
+        }
+
+        public void StartDayTextCoroutine(DayTexts[] day)
+        {
+            if (paraCount >= day[DaySystem.instance.dayCount].ParaTexts.Length)
+            {
+                Debug.Log("No more paratexts");
+                //Display Gold Recap
+                if (!DaySystem.instance.displayingGold)
+                {
+                    DaySystem.instance.GoldRecap();
+                }
+
+            }
+            else
+            {
+                StartCoroutine(WriteTextToTextmeshDay(day));
+            }
+        }
+
+        public void CompleteDayText()
+        {
+            if (typing)
+            {
+                Debug.Log("complete text");
+                StopAllCoroutines();
+                typing = false;
+                //dayText.text = currentMessage;
+                dayText.maxVisibleCharacters = dayText.textInfo.characterCount;
+                paraCount++;
+            }
+            else
+            {
+                DaySystem.instance.EndOfDayScroll();
             }
         }
     }

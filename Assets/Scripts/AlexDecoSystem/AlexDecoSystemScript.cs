@@ -66,7 +66,7 @@ public class AlexDecoSystemScript : MonoBehaviour
 
     [Header("Wood Grain")]
     [SerializeField] MeshRenderer doorRenderer;
-    [SerializeField] MeshRenderer hangingShelfRenderer;
+    [SerializeField] MeshRenderer[] hangingShelfRenderer;
     [SerializeField] MeshRenderer[] smallHangingShelfRenderer;
     [SerializeField] List<Material> woodGrainTextures;
     [SerializeField] List<Material> pillarMats;
@@ -585,10 +585,13 @@ public class AlexDecoSystemScript : MonoBehaviour
         qcmats[1] = new Material(questCounterTopMats[x]);
         questCounterRenderer.materials = qcmats;
 
-        //hanging shelf
-        var hangingshelfmats = hangingShelfRenderer.materials;
-        hangingshelfmats[0] = new Material(hangingShelfMats[x]);
-        hangingShelfRenderer.materials = hangingshelfmats;
+        //hanging shelf (each one)
+        var hangingshelfmats0 = hangingShelfRenderer[0].materials;
+        var hangingshelfmats1 = hangingShelfRenderer[1].materials;
+        hangingshelfmats0[0] = new Material(hangingShelfMats[x]);
+        hangingshelfmats1[0] = new Material(hangingShelfMats[x]);
+        hangingShelfRenderer[0].materials = hangingshelfmats0;
+        hangingShelfRenderer[1].materials = hangingshelfmats1;
 
         //small hanging shelf (each one)
         var smallshelfmats0 = smallHangingShelfRenderer[0].materials;

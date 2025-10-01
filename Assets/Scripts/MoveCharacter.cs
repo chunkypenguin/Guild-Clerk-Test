@@ -199,16 +199,7 @@ public class MoveCharacter : MonoBehaviour
 
                 if (cs.currentCharacter.characterName == "Lotest Altall")
                 {
-                    if (cs.D3)
-                    {
-                        //cs.characterCount++; //skip josie
-                        if (!andyS.andyCharacter.choseQuestA)
-                        {
-                            //cs.characterCount++; //skip Andy
-                            //END GAME
-                            ds.EndDay();
-                        }
-                    }
+
                 }
 
                 if (cs.currentCharacter.characterName == "Josie")
