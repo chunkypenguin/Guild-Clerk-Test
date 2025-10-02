@@ -19,6 +19,7 @@ TagManager:
   - Character
   - CheckoutBox
   - DialogueUI
+  - Coins
   layers:
   - Default
   - TransparentFX

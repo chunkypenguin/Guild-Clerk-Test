@@ -64,6 +64,8 @@ namespace HeneGames.DialogueSystem
 
         int paraCount = 0;
 
+        [SerializeField] AudioSource textAudio;
+
         private void Start()
         {
             gs = GoldSystem.instance;
@@ -286,6 +288,8 @@ namespace HeneGames.DialogueSystem
         {
             Debug.Log("Start Coroutine");
 
+            textAudio.Play();
+
             typing = true;
 
             day[DaySystem.instance.dayCount].ParaTexts[paraCount].ForceMeshUpdate();
@@ -307,6 +311,8 @@ namespace HeneGames.DialogueSystem
                     typing = false;
 
                     paraCount++;
+
+                    textAudio.Stop();
                 }
 
                 yield return new WaitForSeconds(0.1f * _speed);
@@ -322,6 +328,7 @@ namespace HeneGames.DialogueSystem
                 if (!DaySystem.instance.displayingGold)
                 {
                     DaySystem.instance.GoldRecap();
+                    paraCount = 0;
                 }
 
             }
@@ -341,6 +348,7 @@ namespace HeneGames.DialogueSystem
                 //dayText.text = currentMessage;
                 dayText.maxVisibleCharacters = dayText.textInfo.characterCount;
                 paraCount++;
+                textAudio.Stop();
             }
             else
             {

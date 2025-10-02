@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using HeneGames.DialogueSystem;
 using System.Collections;
+using System.Collections.Generic;
 
 
 [System.Serializable]
@@ -43,6 +44,7 @@ public class DaySystem : MonoBehaviour
     [SerializeField] TMP_Text descriptionText;
     [SerializeField] GameObject nextDayText;
     [SerializeField] GameObject goldBundleText;
+    [SerializeField] GameObject goldBundleCoinText;
     [SerializeField] GameObject nextDayButton;
 
     //even newer stuff for end of day scrolling text
@@ -60,9 +62,10 @@ public class DaySystem : MonoBehaviour
     [SerializeField] private UIVisualizer _reputationVisualizer;
 
     [Header("Gold/Rep Recap")]
-    [SerializeField] GameObject[] recapObjects;
+    [SerializeField] public List<GameObject> recapObjects = new List<GameObject>();
     [SerializeField] float recapDisplayTime;
     public bool displayingGold;
+    [SerializeField] AudioSource coinSound;
 
     //refernce to coin text
     [SerializeField] GameObject coinText;
@@ -88,7 +91,8 @@ public class DaySystem : MonoBehaviour
         {
             //EndDay();
             //CreditsStart();
-            EndOfDayScroll();
+            //EndOfDayScroll();
+            NewEndDay();
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
@@ -294,12 +298,17 @@ public class DaySystem : MonoBehaviour
 
     public void NewDay()
     {
-        endOfDay = false;
 
         Debug.Log("New Day");
         //canStartNextDay = false;//for the space bar option i guess
 
         TutorialScript.instance.hasGoldBundle = false;
+
+        MakeAllInvisible();
+
+        displayingGold = false;
+
+        HideGoldRecap();
 
         newDayTextObject.SetActive(false);
 
@@ -316,7 +325,7 @@ public class DaySystem : MonoBehaviour
 
         _reputationVisualizer.ShowHeartVisual(false);
 
-        coinText.SetActive(false);
+        //coinText.SetActive(false);
 
         dayCount++;
 
@@ -351,7 +360,7 @@ public class DaySystem : MonoBehaviour
 
 
         //OLD
-        //dayText.gameObject.SetActive(true);
+        dayText.gameObject.SetActive(true);
         //descriptionText.gameObject.SetActive(true);
         //nextDayText.SetActive(true);
         //nextDayButton.SetActive(true);
@@ -362,7 +371,9 @@ public class DaySystem : MonoBehaviour
         //THIS WILL HAVE TO CHANGE
         if(TutorialScript.instance.goldBundle.activeSelf)
         {
-            goldBundleText.SetActive(true);
+            //goldBundleText.SetActive(true);
+            recapObjects.Insert(5, goldBundleText);
+            recapObjects.Insert(6, goldBundleCoinText);
         }
 
         EndOfDayScroll();
@@ -375,7 +386,7 @@ public class DaySystem : MonoBehaviour
         DialogueUI.instance.StartDayTextCoroutine(dayTexts);
     }
 
-    private void MakeAllInvisible()
+    public void MakeAllInvisible()
     {
         foreach (DayTexts day in dayTexts)
         {
@@ -392,19 +403,31 @@ public class DaySystem : MonoBehaviour
 
     public void GoldRecap()
     {
+        endOfDay = false;
+        displayingGold = true;
         StartCoroutine(DisplayGoldRecap());
     }
 
     private IEnumerator DisplayGoldRecap()
     {
-        displayingGold = true;
         foreach(GameObject obj in recapObjects)
         {
             obj.SetActive(true);
 
+            if (obj.CompareTag("Coins"))
+            {
+                coinSound.Play();
+            }
+
             yield return new WaitForSeconds(recapDisplayTime);
         }
+    }
 
-        displayingGold = false;
+    private void HideGoldRecap()
+    {
+        foreach (GameObject obj in recapObjects)
+        {
+            obj.SetActive(false);
+        }
     }
 }
