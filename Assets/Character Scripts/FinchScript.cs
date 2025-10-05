@@ -27,6 +27,14 @@ public class FinchScript : MonoBehaviour
 
     int repCount;
 
+    public bool finchUpset;
+
+    public static FinchScript instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         repCount = 0;
@@ -235,5 +243,10 @@ public class FinchScript : MonoBehaviour
     public void ChangeEmote(Material emote)
     {
         mr.material = emote;
+    }
+
+    public void FinchUpset()
+    {
+        finchUpset = true;
     }
 }

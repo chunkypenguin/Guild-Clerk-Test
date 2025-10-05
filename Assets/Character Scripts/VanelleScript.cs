@@ -28,6 +28,8 @@ public class VanelleScript : MonoBehaviour
     bool askingForMorePlus;
     bool askingForMoreMinus;
 
+    public bool mandrakeQuestGiven;
+
     [SerializeField] AudioSource vanelleChomp;
 
     private void Awake()
@@ -103,6 +105,7 @@ public class VanelleScript : MonoBehaviour
         }
         else //for when returning quest for gold reward
         {
+            mandrakeQuestGiven = true;
             cs.VanelleD2Q1A.StartNewDialogue(cs.dialogueTriggerScript);
         }
 

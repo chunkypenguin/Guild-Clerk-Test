@@ -19,6 +19,9 @@ public class LotestScript : MonoBehaviour
     bool lotestWillSayName;
     bool lotestWillSayAhem;
 
+    public bool gaveLessGold;
+    public bool gaveEqualOrMoreGold;
+
     public static LotestScript instance;
     private void Awake()
     {
@@ -65,12 +68,14 @@ public class LotestScript : MonoBehaviour
             {
                 //do this
                 cs.lotestD2G1B.StartNewDialogue(cs.dialogueTriggerScript);
+                gaveEqualOrMoreGold = true;
                 //rep = 1;
             }
             else if (gs.goldAmount > 15)
             {
                 //do this
                 cs.lotestD2G1C.StartNewDialogue(cs.dialogueTriggerScript);
+                gaveEqualOrMoreGold = true;
                 //rep = -1;
             }
 
@@ -78,6 +83,7 @@ public class LotestScript : MonoBehaviour
             {
                 //do this
                 cs.lotestD2G1A.StartNewDialogue(cs.dialogueTriggerScript);
+                gaveLessGold = true;
                 //rep = -1;
             }
         }

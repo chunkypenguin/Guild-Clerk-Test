@@ -30,6 +30,11 @@ public class NomiraScript : MonoBehaviour
 
     [SerializeField] AudioSource audioSource;
 
+    public bool curseDivine;
+    public bool curseOther;
+    public bool golemOther;
+    public bool golemSword;
+
     public DialogueCharacter nomiraCharacter;
 
     private void Awake()
@@ -54,6 +59,7 @@ public class NomiraScript : MonoBehaviour
         {
             if (cs.currentCharacter.choseItemB) //divine
             {
+                curseDivine = true;
                 if (gs.goldAmount == 40) //=
                 {
                     //do this
@@ -76,6 +82,7 @@ public class NomiraScript : MonoBehaviour
             }
             else //other
             {
+                curseOther = true;
                 cs.nomiraP2QBOtherFocus.StartNewDialogue(cs.dialogueTriggerScript);
             }
         }
@@ -83,6 +90,7 @@ public class NomiraScript : MonoBehaviour
         {
             if (cs.currentCharacter.choseItemA) //weapon
             {
+                golemSword = true;
                 if (gs.goldAmount == 35) //=
                 {
                     //do this
@@ -105,6 +113,7 @@ public class NomiraScript : MonoBehaviour
             }
             else //arcane staff
             {
+                golemOther = true;
                 if (gs.goldAmount == 35) //=
                 {
                     //do this
