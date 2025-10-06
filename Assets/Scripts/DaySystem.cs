@@ -255,28 +255,21 @@ public class DaySystem : MonoBehaviour
             }
             else
             {
-                
-                //canStartNextDay = false;
+                //CreditsStart();
 
-                CreditsStart();
-
-                //gameEnd = true;
-
-                //bgMusic.DOFade(0, 7);
-                //otherBGMusic.DOFade(0, 7);
-                //otherOtherBGMusic.DOFade(0, 7);
-                //creditSceneMusic.DOFade(0.5f, 10);
+                NewDay();
             }
-
-            // = false; //trying to fix adding a bunch of characters to screen inbetween days DID NOT FIX
         }
     }
 
-    private void CreditsStart()
+    public void CreditsStart()
     {
         gameEnd = true;
 
         canStartNextDay = false;
+
+        //after recap
+        Recap.instance.RecapPage.SetActive(false);
 
         //credits...
         credits.SetActive(true);
@@ -336,6 +329,12 @@ public class DaySystem : MonoBehaviour
             Debug.Log("Josie Shocked");
         }
 
+        if(dayCount > 5)
+        {
+            Recap.instance.RecapPage.SetActive(true);
+            Recap.instance.FadeToRecap();
+        }
+
         if (targetImage != null)
         {
             // Fade in effect
@@ -343,8 +342,12 @@ public class DaySystem : MonoBehaviour
             {
                 targetImage.gameObject.SetActive(false);
 
+                if (dayCount <= 5)
+                {
+                    AlexTabScript.instance.ShowDecorUI();
+                }
                 //PROMPT DECORATION INSTEAD
-                AlexTabScript.instance.ShowDecorUI();
+                //AlexTabScript.instance.ShowDecorUI();
                 //cs.StartNewCharacter();
             });
         }

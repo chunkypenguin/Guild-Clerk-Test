@@ -46,6 +46,9 @@ public class GoldSystem : MonoBehaviour
     public int goldWanted;
     int extraGold;
 
+    [Header("Gold Drawer Locked After Dialogue Timer")]
+    [SerializeField] float drawerLockTime;
+
     private void Awake()
     {
         instance = this; 
@@ -289,7 +292,7 @@ public class GoldSystem : MonoBehaviour
     public void GoldDrawerDisable()
     {
         gameObject.GetComponent<MeshCollider>().enabled = false;
-        Invoke(nameof(GoldDrawerEnable), 0.25f);
+        Invoke(nameof(GoldDrawerEnable), drawerLockTime);
     }
 
     public void GoldDrawerEnable()

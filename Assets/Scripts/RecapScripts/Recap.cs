@@ -3,18 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class Recap : MonoBehaviour
 {
+    public GameObject RecapPage;
+
+    [SerializeField] Image fadeBG;
+
     [SerializeField] DialogueCharacter[] diaCharacter;
 
     int greg = 0, finch = 1, lorne = 2, andy = 3,
         lotest = 4, maggie = 5, zeto = 6, nomira = 7,
-        achilles = 8, vanelle = 9, ishizu = 10, jolene = 11;
+        achilles = 8, vanelle = 9, ishizu = 10, jolene = 11, 
+        zeke = 12, kalin = 13, tahmas = 14;
 
     [System.Serializable]
     public class CharacterRecap
     {
+        public TMP_Text nameDisplay;
+        public string[] name;
+
         public GameObject[] picture;
 
         public TMP_Text textDisplay;
@@ -25,23 +35,18 @@ public class Recap : MonoBehaviour
 
     public CharacterRecap[] characterRecaps;
 
+    public static Recap instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.G))
         {
-            Debug.Log("Greg");
-            Greg();
-            Finch();
-            Lorne();
-            Andy();
-            Lotest();
-            Maggie();
-            Zeto();
-            Nomira();
-            Achilles();
-            Vanelle();
-            Ishizu();
-            Jolene();
+            DisplayRecap();
         }
     }
 
@@ -240,6 +245,54 @@ public class Recap : MonoBehaviour
         }
     }
 
+    public void Zeke()
+    {
+        if(!ZekeScript.instance.zekeRejected) //gave rasperries
+        {
+            Picture(characterRecaps[zeke], 0);
+            DisplayText(characterRecaps[zeke], 0);
+        }
+        else //rejected 
+        {
+            Picture(characterRecaps[zeke], 1);
+            DisplayText(characterRecaps[zeke], 1);
+        }
+    }
+
+    public void Kalin()
+    {
+        if (KalinScript.instance.gaveEqualOrTooMuchGold)
+        {
+            Picture(characterRecaps[kalin], 0);
+            DisplayText(characterRecaps[kalin], 0);
+        }
+        else
+        {
+            Picture(characterRecaps[kalin], 1);
+            DisplayText(characterRecaps[kalin], 1);
+        }
+    }
+
+    public void Tahmas()
+    {
+        if (TahmasScript.instance.gaveMoreGold)
+        {
+            Picture(characterRecaps[tahmas], 0);
+            DisplayText(characterRecaps[tahmas], 0);
+        }
+        else if(TahmasScript.instance.gaveEqualOrLessGold)
+        {
+            Picture(characterRecaps[tahmas], 0);
+            DisplayText(characterRecaps[tahmas], 1);
+        }
+        else //never appeared
+        {
+            DisplayName(characterRecaps[tahmas], 1);
+            Picture(characterRecaps[tahmas], 1);
+            DisplayText(characterRecaps[tahmas], 2);
+        }
+    }
+
     public void Picture(CharacterRecap character, int count)
     {
         foreach(GameObject pic in character.picture)
@@ -252,5 +305,38 @@ public class Recap : MonoBehaviour
     public void DisplayText(CharacterRecap character, int count)
     {
         character.textDisplay.text = character.text[count];
+    }
+
+    public void DisplayName(CharacterRecap character, int count)
+    {
+        character.nameDisplay.text = character.name[count];
+    }
+
+    public void DisplayRecap()
+    {
+        Greg();
+        Finch();
+        Lorne();
+        Andy();
+        Lotest();
+        Maggie();
+        Zeto();
+        Nomira();
+        Achilles();
+        Vanelle();
+        Ishizu();
+        Jolene();
+        Zeke();
+        Kalin();
+        Tahmas();
+    }
+
+    public void FadeToRecap()
+    {
+        DisplayRecap();
+        fadeBG.DOFade(0f, 2f).OnComplete(() =>
+        {
+            fadeBG.gameObject.SetActive(false);
+        });
     }
 }

@@ -10,6 +10,16 @@ public class TahmasScript : MonoBehaviour
 
     [SerializeField] MeshRenderer mr;
 
+    public bool gaveMoreGold;
+    public bool gaveEqualOrLessGold;
+
+    public static TahmasScript instance;
+
+    private void Awake()
+    {
+        instance = this; 
+    }
+
     private void Start()
     {
         gs = GoldSystem.instance;
@@ -35,12 +45,14 @@ public class TahmasScript : MonoBehaviour
         {
             if (gs.goldAmount == 25)
             {
+                gaveEqualOrLessGold = true;
                 //do this
                 cs.tahmasD3G1B.StartNewDialogue(cs.dialogueTriggerScript);
                 //rep = -1;
             }
             else if (gs.goldAmount > 25)
             {
+                gaveMoreGold = true;
                 //do this
                 cs.tahmasD3G1C.StartNewDialogue(cs.dialogueTriggerScript);
                 //rep = 1;
@@ -48,6 +60,7 @@ public class TahmasScript : MonoBehaviour
 
             else if (gs.goldAmount < 25)
             {
+                gaveEqualOrLessGold = true;
                 //do this
                 cs.tahmasD3G1A.StartNewDialogue(cs.dialogueTriggerScript);
                 //rep = -2;
@@ -57,12 +70,14 @@ public class TahmasScript : MonoBehaviour
         {
             if (gs.goldAmount == 25)
             {
+                gaveEqualOrLessGold = true;
                 //do this
                 cs.tahmasD3G2B.StartNewDialogue(cs.dialogueTriggerScript);
 
             }
             else if (gs.goldAmount > 25)
             {
+                gaveMoreGold = true;
                 //do this
                 cs.tahmasD3G2C.StartNewDialogue(cs.dialogueTriggerScript);
                 //rep = 1;
@@ -70,6 +85,7 @@ public class TahmasScript : MonoBehaviour
 
             else if (gs.goldAmount < 25)
             {
+                gaveEqualOrLessGold = true;
                 //do this
                 cs.tahmasD3G2A.StartNewDialogue(cs.dialogueTriggerScript);
                 //rep = -2;

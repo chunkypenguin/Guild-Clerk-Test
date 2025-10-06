@@ -22,7 +22,7 @@ MonoBehaviour:
   ItemANameA: 
   ItemBNameB: 
   choseQuestA: 0
-  choseQuestB: 1
+  choseQuestB: 0
   choseItemA: 0
   choseItemB: 0
   choseItemAA: 0

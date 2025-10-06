@@ -20,7 +20,16 @@ public class ZekeScript : MonoBehaviour
     bool tagSystem;
     bool tagOn;
 
+    public bool zekeRejected;
+
     public bool refusedOnce;
+
+    public static ZekeScript instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Update()
     {
@@ -53,6 +62,7 @@ public class ZekeScript : MonoBehaviour
         }
         else
         {
+            zekeRejected = true;
             cs.zekeD3Refuse2.StartNewDialogue(cs.dialogueTriggerScript);
             //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-3); //why isn't this working!
         }

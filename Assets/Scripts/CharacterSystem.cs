@@ -264,6 +264,8 @@ public class CharacterSystem : MonoBehaviour
 
     [SerializeField] DialogueUI dui;
 
+    [SerializeField] bool josieSkippedOne;
+
     public static CharacterSystem instance;
 
     private void Awake()
@@ -624,10 +626,14 @@ public class CharacterSystem : MonoBehaviour
         //JOSIE NONSENSE
         if (currentCharacter.characterName == "Josie" && LotestScript.instance.skipJosie && LotestScript.instance.partOneComplete && TutorialScript.instance.josieDayOneComplete) //if josies turn, lotest was not skipped on his quest return, skip Josie
         {
-            characterCount++;
-            currentCharacter = characters[characterCount];
-            currentCharacterObject = characterObjects[characterCount];
-            Debug.Log("Josie Skip");
+            if (!josieSkippedOne) //make sure josie comes in to talk about achilles on day 5
+            {
+                characterCount++;
+                currentCharacter = characters[characterCount];
+                currentCharacterObject = characterObjects[characterCount];
+                Debug.Log("Josie Skip");
+                josieSkippedOne = true;
+            }
         }
 
         //ANDY NONSENSE

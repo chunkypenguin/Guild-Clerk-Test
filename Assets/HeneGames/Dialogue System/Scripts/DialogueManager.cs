@@ -9,7 +9,7 @@ namespace HeneGames.DialogueSystem
     {
         public int currentSentence;
         private float coolDownTimer;
-        private bool dialogueIsOn;
+        public bool dialogueIsOn;
         private DialogueTrigger dialogueTrigger;
         public UIManager UIManagerScript;
 
@@ -86,6 +86,11 @@ namespace HeneGames.DialogueSystem
 
         public void StartNewDialogue(DialogueTrigger _trigger)
         {
+            //testing new things for click on character bug
+            //dialogueIsOn = false;
+            //DialogueUI.instance.ClearText();
+
+
             if (!dialogueIsOn)
             {
                 dialogueTrigger = _trigger;
@@ -260,6 +265,7 @@ namespace HeneGames.DialogueSystem
 
         public void StopDialogue()
         {
+            Debug.Log("DiaManager-StopDialogue");
             //Stop dialogue event
             if (dialogueTrigger != null)
             {

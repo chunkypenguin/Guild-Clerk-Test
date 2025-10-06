@@ -183,8 +183,10 @@ namespace HeneGames.DialogueSystem
 
         public void ClearText()
         {
+            Debug.Log("DiaUI-Clear Text");
             dialogueWindow.SetActive(false);
             movecam.instance.DrawerLockOut();//lock out drawer temporarliy to prevent misclicks
+            CharacterSystem.instance.dialogueHistory.dialogueIsOn = false; //might fix texthistory bug
             MousePos3D.instance.dialogueOpen = false;
         }
 

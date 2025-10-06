@@ -10,6 +10,9 @@ public class KalinScript : MonoBehaviour
 
     public bool gaveGold;
 
+    public bool gaveEqualOrTooMuchGold;
+    public bool gaveLessGold;
+
     public static KalinScript instance;
 
     private void Awake()
@@ -38,12 +41,14 @@ public class KalinScript : MonoBehaviour
             gs.goldWanted = 30;
             if (gs.goldAmount == 30)
             {
+                gaveEqualOrTooMuchGold = true;
                 //do this
                 cs.KalinQ1AGEquals.StartNewDialogue(cs.dialogueTriggerScript);
                 //rep = 1;
             }
             else if (gs.goldAmount > 30)
             {
+                gaveEqualOrTooMuchGold = true;
                 //do this
                 cs.KalinQ1AGPlus.StartNewDialogue(cs.dialogueTriggerScript);
                 //rep = -1;
@@ -51,6 +56,7 @@ public class KalinScript : MonoBehaviour
 
             else if (gs.goldAmount < 30)
             {
+                gaveLessGold = true;
                 //do this
                 cs.KalinQ1AGMinus.StartNewDialogue(cs.dialogueTriggerScript);
                 //rep = 0;
