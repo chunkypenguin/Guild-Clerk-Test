@@ -188,12 +188,9 @@ public class MoveCharacter : MonoBehaviour
 
                 if (cs.currentCharacter.characterName == "Lorne")
                 {
-                    if (lorneS.gaveYarn && cs.D3) //if lorne is leaving on day 3...
+                    if (lorneS.gaveYarn) //if lorne is leaving on day 3...
                     {
-                        if (lotestS.lotestCharacter.choseItemB)//skip lotest if they chose the bomb beans, else stay with lotest
-                        {
-                            //cs.characterCount++;
-                        }
+                        lorneS.ChangeEmote();
                     }
                 }
 

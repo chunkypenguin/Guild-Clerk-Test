@@ -13,6 +13,8 @@ public class LorneScript : MonoBehaviour
 
     [SerializeField] GameObject refuseTag;
 
+    [SerializeField] MeshRenderer mr;
+    [SerializeField] Material mat;
 
     [SerializeField] YarnScript yarnS;
     [SerializeField] GameObject yarn;
@@ -42,6 +44,7 @@ public class LorneScript : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        mr = gameObject.GetComponent<MeshRenderer>();
     }
     private void Update()
     {
@@ -132,5 +135,10 @@ public class LorneScript : MonoBehaviour
             itemS.ReturnItem(returnPurpPackage);
         }
 
+    }
+
+    public void ChangeEmote()
+    {
+        mr.material = mat;
     }
 }

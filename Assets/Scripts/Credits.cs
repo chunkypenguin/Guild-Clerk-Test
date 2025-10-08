@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class Credits : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Credits : MonoBehaviour
 
     private RectTransform rectTransform;
 
-    [SerializeField] GameObject returnMenu;
+    [SerializeField] TMP_Text returnMenu;
 
     public bool scroll;
     public float scrollDistance;
@@ -24,6 +25,10 @@ public class Credits : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+
+        Color c = returnMenu.color;
+        c.a = 0f;
+        returnMenu.color = c;
     }
 
     // Update is called once per frame
@@ -41,9 +46,18 @@ public class Credits : MonoBehaviour
         rectTransform.DOAnchorPosY(scrollDistance, scrollSpeed).SetEase(Ease.Linear).OnComplete(() =>
         {
             Debug.Log("Credits end");
-            returnMenu.SetActive(true);
+            FadeReturnMenuText();
             rectTransform.anchoredPosition = new Vector2(0, -800);
             ScrollToTarget();
         });
+    }
+
+    private void FadeReturnMenuText()
+    {
+        Color c = returnMenu.color;
+        c.a = 0f;
+        returnMenu.color = c;
+
+        returnMenu.DOFade(1f, 1.5f).SetEase(Ease.InOutQuad);
     }
 }

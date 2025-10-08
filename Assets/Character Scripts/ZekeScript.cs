@@ -62,7 +62,7 @@ public class ZekeScript : MonoBehaviour
         }
         else
         {
-            zekeRejected = true;
+            //zekeRejected = true;
             cs.zekeD3Refuse2.StartNewDialogue(cs.dialogueTriggerScript);
             //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-3); //why isn't this working!
         }
@@ -83,5 +83,10 @@ public class ZekeScript : MonoBehaviour
     public void ChangeEmote(Material emote)
     {
         mr.material = emote;
+    }
+
+    public void ZekeRejected()
+    {
+        zekeRejected = true;
     }
 }

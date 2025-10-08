@@ -37,7 +37,7 @@ public class DaySystem : MonoBehaviour
     public AudioSource otherOtherBGMusic;
     public AudioSource creditSceneMusic;
 
-    bool gameEnd;
+    public bool gameEnd;
 
     //new stuff for end of day screen
     [SerializeField] TMP_Text dayText;
@@ -108,6 +108,7 @@ public class DaySystem : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape) && gameEnd)
         {
+            Debug.Log("quit");
             GameManager.instance.QuitGame();
         }
 
@@ -276,11 +277,12 @@ public class DaySystem : MonoBehaviour
         creditsImage.DOFade(1, 5).SetEase(Ease.Linear);
         Invoke(nameof(CreditsScroll), 5f);
 
-        gameEnd = true;
+        //gameEnd = true;
 
         bgMusic.DOFade(0, 7);
         otherBGMusic.DOFade(0, 7);
         otherOtherBGMusic.DOFade(0, 7);
+        creditSceneMusic.Play();
         creditSceneMusic.DOFade(0.5f, 10);
     }
 

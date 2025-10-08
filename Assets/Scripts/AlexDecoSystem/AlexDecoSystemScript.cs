@@ -302,7 +302,14 @@ public class AlexDecoSystemScript : MonoBehaviour
     void TransitionToNew(int x)
     {
         previousAudioSource.DOFade(0f, fadeTime);
-        recordAudioSource[x].DOFade(0.75f, fadeTime);
+        if (recordAudioSource[x].CompareTag("EveningTune"))
+        {
+            recordAudioSource[x].DOFade(1, fadeTime);
+        }
+        else
+        {
+            recordAudioSource[x].DOFade(0.75f, fadeTime);
+        }
         previousAudioSource = recordAudioSource[x];
     }
 

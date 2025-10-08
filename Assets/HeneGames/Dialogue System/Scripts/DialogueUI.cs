@@ -290,7 +290,7 @@ namespace HeneGames.DialogueSystem
         {
             Debug.Log("Start Coroutine");
 
-            textAudio.Play();
+            //textAudio.Play();
 
             typing = true;
 
@@ -314,7 +314,7 @@ namespace HeneGames.DialogueSystem
 
                     paraCount++;
 
-                    textAudio.Stop();
+                    //textAudio.Stop();
                 }
 
                 yield return new WaitForSeconds(0.1f * _speed);
@@ -350,7 +350,7 @@ namespace HeneGames.DialogueSystem
                 //dayText.text = currentMessage;
                 dayText.maxVisibleCharacters = dayText.textInfo.characterCount;
                 paraCount++;
-                textAudio.Stop();
+                //textAudio.Stop();
             }
             else
             {

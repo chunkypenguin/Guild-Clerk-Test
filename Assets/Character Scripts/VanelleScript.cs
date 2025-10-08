@@ -114,7 +114,7 @@ public class VanelleScript : MonoBehaviour
     public void EatQuestBDialogue()
     {
         cs.VanelleD1Q1BP2.StartNewDialogue(cs.dialogueTriggerScript); //eat quest dialogue
-        vanelleChomp.Play();
+        //vanelleChomp.Play();
     }
 
     public void CheckForReward()

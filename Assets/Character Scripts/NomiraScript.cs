@@ -82,7 +82,7 @@ public class NomiraScript : MonoBehaviour
             }
             else //other
             {
-                curseOther = true;
+                //curseOther = true; //put this in a function that's called when this dialogue starts, idk why it isn't working otherwise
                 cs.nomiraP2QBOtherFocus.StartNewDialogue(cs.dialogueTriggerScript);
             }
         }
@@ -174,6 +174,11 @@ public class NomiraScript : MonoBehaviour
     public void NomiraWickedSmile()
     {
         ChangeEmote(wickedSmileMat);
+    }
+
+    public void CurseOther()
+    {
+        curseOther = true;
     }
 
 }

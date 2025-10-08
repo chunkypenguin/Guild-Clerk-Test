@@ -626,14 +626,13 @@ public class CharacterSystem : MonoBehaviour
         //JOSIE NONSENSE
         if (currentCharacter.characterName == "Josie" && LotestScript.instance.skipJosie && LotestScript.instance.partOneComplete && TutorialScript.instance.josieDayOneComplete) //if josies turn, lotest was not skipped on his quest return, skip Josie
         {
-            if (!josieSkippedOne) //make sure josie comes in to talk about achilles on day 5
-            {
-                characterCount++;
-                currentCharacter = characters[characterCount];
-                currentCharacterObject = characterObjects[characterCount];
-                Debug.Log("Josie Skip");
-                josieSkippedOne = true;
-            }
+            characterCount++;
+            currentCharacter = characters[characterCount];
+            currentCharacterObject = characterObjects[characterCount];
+            Debug.Log("Josie Skip");
+            //josieSkippedOne = true;
+            LotestScript.instance.skipJosie = false;
+            TutorialScript.instance.lotestJosieStarted = true;
         }
 
         //ANDY NONSENSE
