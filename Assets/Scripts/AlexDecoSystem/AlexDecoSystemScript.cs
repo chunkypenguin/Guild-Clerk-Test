@@ -30,6 +30,7 @@ public class AlexDecoSystemScript : MonoBehaviour
     [SerializeField] List<bool> recordActive;
     [SerializeField] List<int> recordCost;
     [SerializeField] float fadeTime;
+    [SerializeField] GameObject[] pauseRecords;
 
     [Header("Clerk Amenities")]
 
@@ -269,6 +270,9 @@ public class AlexDecoSystemScript : MonoBehaviour
                 image.color = c;
 
                 purchaseAudio.Play();
+
+                //pause menu
+                pauseRecords[x].SetActive(true);
             }
         }
         else
@@ -284,6 +288,9 @@ public class AlexDecoSystemScript : MonoBehaviour
                 recordButtons[x].transform.Find("Highlight").gameObject.SetActive(true);
                 TransitionToNew(x);
 
+                //pause records
+                pauseRecords[x].transform.Find("Highlight").gameObject.SetActive(true);
+
             }
         }
     }
@@ -298,17 +305,21 @@ public class AlexDecoSystemScript : MonoBehaviour
         {
             record.transform.Find("Highlight").gameObject.SetActive(false);
         }
+        foreach (GameObject record in pauseRecords) //dehighlight all pause records
+        {
+            record.transform.Find("Highlight").gameObject.SetActive(false);
+        }
     }
     void TransitionToNew(int x)
     {
-        previousAudioSource.DOFade(0f, fadeTime);
+        previousAudioSource.DOFade(0f, fadeTime).SetUpdate(true);
         if (recordAudioSource[x].CompareTag("EveningTune"))
         {
-            recordAudioSource[x].DOFade(1, fadeTime);
+            recordAudioSource[x].DOFade(1, fadeTime).SetUpdate(true);
         }
         else
         {
-            recordAudioSource[x].DOFade(0.75f, fadeTime);
+            recordAudioSource[x].DOFade(0.75f, fadeTime).SetUpdate(true);
         }
         previousAudioSource = recordAudioSource[x];
     }

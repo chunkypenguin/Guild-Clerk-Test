@@ -12,6 +12,7 @@ public class KalinScript : MonoBehaviour
 
     public bool gaveEqualOrTooMuchGold;
     public bool gaveLessGold;
+    public bool gaveMoreGold;
 
     public static KalinScript instance;
 
@@ -49,6 +50,7 @@ public class KalinScript : MonoBehaviour
             else if (gs.goldAmount > 30)
             {
                 gaveEqualOrTooMuchGold = true;
+                gaveMoreGold = true;
                 //do this
                 cs.KalinQ1AGPlus.StartNewDialogue(cs.dialogueTriggerScript);
                 //rep = -1;

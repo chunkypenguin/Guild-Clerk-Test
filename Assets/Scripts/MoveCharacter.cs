@@ -374,8 +374,15 @@ public class MoveCharacter : MonoBehaviour
             }
             else if (cs.currentCharacter.characterName == "Maggie")
             {
-                moveSpeed = 1f;
-                DialogueUI.instance.textAnimationSpeed = 0.8f; //faster speed
+                moveSpeed = 1.25f;
+                if (!MaggieScript.instance.partOneComplete)
+                {
+                    DialogueUI.instance.textAnimationSpeed = 0.8f; //faster speed
+                }
+                else
+                {
+                    DialogueUI.instance.textAnimationSpeed = 0.6f;
+                }
             }
             else
             {

@@ -527,5 +527,10 @@ public class movecam : MonoBehaviour
     public void DayCamReset()
     {
         MoveCamCenter();
+        goldSystemScript.CloseGoldDrawer();
+        left = false;
+        right = false;
+        bottom = false;
+        center = true;
     }
 }

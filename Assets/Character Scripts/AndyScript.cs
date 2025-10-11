@@ -38,6 +38,9 @@ public class AndyScript : MonoBehaviour
 
     public bool andyMomVisited;
 
+    public bool gaveEqualOrMoreGold;
+    public bool gaveLessGold;
+
     public static AndyScript instance;
     private void Awake()
     {
@@ -230,5 +233,15 @@ public class AndyScript : MonoBehaviour
             return;
         }
         momMr.material = emote;
+    }
+
+    public void EqualMoreGold()
+    {
+        gaveEqualOrMoreGold = true;
+    }
+
+    public void LessGold()
+    {
+        gaveLessGold = true;
     }
 }

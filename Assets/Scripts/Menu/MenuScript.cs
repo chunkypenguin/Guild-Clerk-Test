@@ -13,7 +13,7 @@ public class MenuScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            //Application.Quit();
         }
     }
     public void MainScene()
@@ -36,5 +36,10 @@ public class MenuScript : MonoBehaviour
     {
         creditsObj.SetActive(false);
         menuObj.SetActive(true);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

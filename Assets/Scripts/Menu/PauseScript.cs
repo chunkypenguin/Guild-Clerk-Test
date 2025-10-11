@@ -16,7 +16,8 @@ public class PauseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !DaySystem.instance.gameEnd)
+        //cannot pause if credits, recaps, or end of day screen is active
+        if (Input.GetKeyDown(KeyCode.Escape) && !DaySystem.instance.gameEnd && !Recap.instance.recapOn && !DaySystem.instance.endOfDayCantPause)
         {
             PressPause();
         }
@@ -47,6 +48,7 @@ public class PauseScript : MonoBehaviour
     }
     private void Unpaused()
     {
+        TooltipUI.Instance.Hide();
         pauseOverlay.SetActive(false);
         textAudioSource.volume = 0.5f;
     }

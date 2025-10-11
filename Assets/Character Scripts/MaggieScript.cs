@@ -16,6 +16,13 @@ public class MaggieScript : MonoBehaviour
     public bool partOneComplete;
     public bool partTwoComplete;
 
+    public static MaggieScript instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         gs = GoldSystem.instance;
@@ -45,27 +52,27 @@ public class MaggieScript : MonoBehaviour
 
     public void CheckForReward()
     {
-        int rep = 0;
+        //int rep = 0;
         if (cs.currentCharacter.choseQuestA)//food
         {
             if (gs.goldAmount == 8)
             {
                 //do this
                 cs.maggieD2G1B.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = 1;
+                //rep = 1;
             }
             else if (gs.goldAmount > 8)
             {
                 //do this
                 cs.maggieD2G1C.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = -1;
+                //rep = -1;
             }
 
             else if (gs.goldAmount < 8)
             {
                 //do this
                 cs.maggieD2G1A.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = 0;
+                //rep = 0;
             }
         }
         else if (cs.currentCharacter.choseQuestB)//goblin
@@ -79,7 +86,7 @@ public class MaggieScript : MonoBehaviour
             {
                 //do this
                 cs.maggieD2G2C.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = 1;
+                //rep = 1;
             }
 
             else if (gs.goldAmount < 16)
@@ -89,7 +96,7 @@ public class MaggieScript : MonoBehaviour
             }
         }
 
-        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+        //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
 
     public void ChangeEmote(Material emote)

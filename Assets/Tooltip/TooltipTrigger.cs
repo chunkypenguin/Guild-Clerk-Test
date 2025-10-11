@@ -24,8 +24,12 @@ public class TooltipTrigger : MonoBehaviour
 
     void OnMouseDown()
     {          // click starts a drag
-        dragging = true;
-        TooltipUI.Instance?.Hide();
+        if (!isDecorUI)
+        {
+            dragging = true;
+            TooltipUI.Instance?.Hide();
+        }
+
     }
 
     void OnMouseUp()
@@ -54,8 +58,12 @@ public class TooltipTrigger : MonoBehaviour
 
     public void CursorDown()
     {
-        dragging = true;
-        TooltipUI.Instance?.Hide();
+        if (!isDecorUI)
+        {
+            dragging = true;
+            TooltipUI.Instance?.Hide();
+        }
+
     }
 
     public void CursorUp()

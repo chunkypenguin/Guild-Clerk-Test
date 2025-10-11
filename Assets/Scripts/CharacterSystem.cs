@@ -165,6 +165,7 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager vanelleD2Q1AGPlusGive;
     public DialogueManager vanelleD2Q1AGMinusRefuse;
     public DialogueManager vanelleD2Q1AGMinusGive;
+    public DialogueManager vanelleD2Q1AGMinusGiveMore;
 
     [Header("Nomira")]
     public DialogueManager nomiraD1P1;

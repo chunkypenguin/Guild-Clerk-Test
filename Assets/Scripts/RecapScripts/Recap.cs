@@ -19,6 +19,10 @@ public class Recap : MonoBehaviour
         achilles = 8, vanelle = 9, ishizu = 10, jolene = 11, 
         zeke = 12, kalin = 13, tahmas = 14;
 
+    public bool recapOn;
+
+    [SerializeField] Scrollbar scrollbar;
+
     [System.Serializable]
     public class CharacterRecap
     {
@@ -42,11 +46,16 @@ public class Recap : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        scrollbar.value = 1;
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.G))
         {
-            DisplayRecap();
+            //DisplayRecap();
         }
     }
 
@@ -89,11 +98,13 @@ public class Recap : MonoBehaviour
     {
         if(LorneScript.instance.gaveYarn)
         {
+            DisplayName(characterRecaps[lorne], 0);
             Picture(characterRecaps[lorne], 0);
             DisplayText(characterRecaps[lorne], 0);
         }
         else
         {
+            DisplayName(characterRecaps[lorne], 1);
             Picture(characterRecaps[lorne], 1);
             DisplayText(characterRecaps[lorne], 1);
         }
@@ -103,13 +114,22 @@ public class Recap : MonoBehaviour
     {
         if(AndyScript.instance.andyMomVisited)
         {
-            Picture(characterRecaps[andy], 0);
-            DisplayText(characterRecaps[andy], 0);
+            if (AndyScript.instance.gaveEqualOrMoreGold)
+            {
+                Picture(characterRecaps[andy], 0);
+                DisplayText(characterRecaps[andy], 0);
+            }
+            else if (AndyScript.instance.gaveLessGold)
+            {
+                Picture(characterRecaps[andy], 0);
+                DisplayText(characterRecaps[andy], 1);
+            }
+
         }
         else
         {
             Picture(characterRecaps[andy], 1);
-            DisplayText(characterRecaps[andy], 1);
+            DisplayText(characterRecaps[andy], 2);
         }
     }
 
@@ -261,13 +281,19 @@ public class Recap : MonoBehaviour
 
     public void Kalin()
     {
+
         if (KalinScript.instance.gaveEqualOrTooMuchGold)
         {
+            if (KalinScript.instance.gaveMoreGold)
+            {
+                DisplayName(characterRecaps[kalin], 1);
+            }
             Picture(characterRecaps[kalin], 0);
             DisplayText(characterRecaps[kalin], 0);
         }
         else
         {
+            DisplayName(characterRecaps[kalin], 1);
             Picture(characterRecaps[kalin], 1);
             DisplayText(characterRecaps[kalin], 1);
         }
@@ -333,6 +359,7 @@ public class Recap : MonoBehaviour
 
     public void FadeToRecap()
     {
+        recapOn = true;
         DisplayRecap();
         fadeBG.DOFade(0f, 2f).OnComplete(() =>
         {

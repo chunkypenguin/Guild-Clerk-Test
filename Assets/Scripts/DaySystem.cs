@@ -5,6 +5,7 @@ using TMPro;
 using HeneGames.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
+using Lightbug.GrabIt;
 
 
 [System.Serializable]
@@ -70,7 +71,14 @@ public class DaySystem : MonoBehaviour
     //refernce to coin text
     [SerializeField] GameObject coinText;
 
-    bool endOfDay;
+    [SerializeField] GameObject recapButton;
+
+    public bool endOfDay;
+
+    public bool endOfDayCantPause;
+
+    public bool escTextOn;
+    bool pressedEsc;
 
     public static DaySystem instance;
     private void Awake()
@@ -95,21 +103,34 @@ public class DaySystem : MonoBehaviour
             NewEndDay();
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && endOfDay)
         {
-            NextDayButton(); //TURN THIS BACK ON
+            //NextDayButton(); //TURN THIS BACK ON
+            Debug.Log("space");
+            DialogueUI.instance.CompleteDayText();
 
         }
 
         if(Input.GetMouseButtonDown(0) && endOfDay)
         {
+            Debug.Log("mouse");
             DialogueUI.instance.CompleteDayText();
         }
 
         if(Input.GetKeyDown(KeyCode.Escape) && gameEnd)
         {
-            Debug.Log("quit");
-            GameManager.instance.QuitGame();
+            if (!escTextOn && !pressedEsc)
+            {
+                pressedEsc = true;
+                Credits.instance.FadeReturnMenuText();
+            }
+            else
+            {
+                Debug.Log("quit to main menu");
+                //GameManager.instance.QuitGame();
+                GameManager.instance.MenuScene();
+            }
+
         }
 
     }
@@ -173,7 +194,7 @@ public class DaySystem : MonoBehaviour
 
     public void NewEndDay()
     {
-        
+        endOfDayCantPause = true;
         Debug.Log("NewEndDay");
         targetImage.gameObject.SetActive(true);
         if (targetImage != null)
@@ -342,6 +363,7 @@ public class DaySystem : MonoBehaviour
             // Fade in effect
             targetImage.DOFade(0f, fadeDuration).OnComplete(() =>
             {
+                endOfDayCantPause = false;
                 targetImage.gameObject.SetActive(false);
 
                 if (dayCount <= 5)
@@ -363,6 +385,7 @@ public class DaySystem : MonoBehaviour
     {
         Debug.Log("end of day screen activated");
 
+        GrabIt.instance.m_hoveringGrab = false;
 
         //OLD
         dayText.gameObject.SetActive(true);
@@ -415,17 +438,25 @@ public class DaySystem : MonoBehaviour
 
     private IEnumerator DisplayGoldRecap()
     {
-        foreach(GameObject obj in recapObjects)
+        if(dayCount < 5)
         {
-            obj.SetActive(true);
-
-            if (obj.CompareTag("Coins"))
+            foreach (GameObject obj in recapObjects)
             {
-                coinSound.Play();
-            }
+                obj.SetActive(true);
 
-            yield return new WaitForSeconds(recapDisplayTime);
+                if (obj.CompareTag("Coins"))
+                {
+                    coinSound.Play();
+                }
+
+                yield return new WaitForSeconds(recapDisplayTime);
+            }
         }
+        else
+        {
+            recapButton.SetActive(true);
+        }
+
     }
 
     private void HideGoldRecap()
@@ -434,5 +465,7 @@ public class DaySystem : MonoBehaviour
         {
             obj.SetActive(false);
         }
+
+        recapButton.SetActive(false);
     }
 }

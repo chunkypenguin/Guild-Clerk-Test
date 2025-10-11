@@ -212,7 +212,7 @@ public class MousePos3D : MonoBehaviour
         {
             cursorImage.sprite = cursorGrab;
         }
-        else if (grabItScript.m_hoveringGrab)
+        else if (grabItScript.m_hoveringGrab && !DialogueBoxMouse.instance.hoveringDiaBox)
         {
             cursorImage.sprite = cursorCanGrab;
         }
@@ -230,7 +230,7 @@ public class MousePos3D : MonoBehaviour
 
     private IEnumerator ClickDelay()
     {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.2f);
         clicking = false;
     }
 }

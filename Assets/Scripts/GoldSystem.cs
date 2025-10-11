@@ -67,12 +67,20 @@ public class GoldSystem : MonoBehaviour
         }
 
         // Stop suction when all coins are collected
-        if (isSuctionActive && coins.Count == 0)
+        if (isSuctionActive && coins.Count <= 0)
         {
             isSuctionActive = false;
             Debug.Log("All coins collected! Suction stopped.");
 
-            QuestPoof();
+            if(cs.currentCharacter.characterName == "Vanelle" && VanelleScript.instance.askingForMoreMinus)
+            {
+                //Do nothing when you give 
+            }
+            else
+            {
+                QuestPoof();
+            }
+
         }
     }
 
@@ -213,7 +221,7 @@ public class GoldSystem : MonoBehaviour
     }
     void CollectCoin(GameObject coin)
     {
-        Debug.Log(coin.name + " collected!");
+        //Debug.Log(coin.name + " collected!");
 
         // Remove from the list
         coins.Remove(coin);
@@ -223,6 +231,22 @@ public class GoldSystem : MonoBehaviour
 
         // Destroy the coin
         Destroy(coin);
+    }
+
+    public void CollectCoinsCheck()
+    {
+        Invoke(nameof(CollectAllCoins), 1f);
+    }
+   void CollectAllCoins()
+    {
+        if(coins.Count > 0) //if there are still coins hanging around after turning in, turn them in manually
+        {
+            foreach (GameObject coin in coins)
+            {
+                CollectCoin(coin);
+            }
+        }
+
     }
 
     public void PressedDown()

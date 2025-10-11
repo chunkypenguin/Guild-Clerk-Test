@@ -457,6 +457,7 @@ public class GrabObjectProperties{
 
 		private void canGrabCheck()
 		{
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // send out ray at position of mouse
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, m_grabMaxDistance, m_collisionMask))

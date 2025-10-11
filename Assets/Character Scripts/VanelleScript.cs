@@ -26,9 +26,11 @@ public class VanelleScript : MonoBehaviour
     public static VanelleScript instance;
 
     bool askingForMorePlus;
-    bool askingForMoreMinus;
+    public bool askingForMoreMinus;
 
     public bool mandrakeQuestGiven;
+
+    public int goldDifference;
 
     [SerializeField] AudioSource vanelleChomp;
 
@@ -119,34 +121,36 @@ public class VanelleScript : MonoBehaviour
 
     public void CheckForReward()
     {
-        int rep = 0;
+        //int rep = 0;
         if (cs.currentCharacter.choseQuestA && !askingForMoreMinus && !askingForMorePlus) //first time around
         {
             if (gs.goldAmount == 35)
             {
                 //do this
                 cs.VanelleD2Q1AGB.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = 1;
+                //rep = 1;
             }
             else if (gs.goldAmount > 35)
             {
                 //do this
                 cs.VanelleD2Q1AGA.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = 1;
+                //rep = 1;
                 askingForMorePlus = true;
             }
 
             else if (gs.goldAmount < 35)
             {
+                goldDifference = 35 - gs.goldAmount;
+
                 //do this
                 cs.VanelleD2Q1AGC.StartNewDialogue(cs.dialogueTriggerScript);
 
                 askingForMoreMinus = true;
             }
         }
-        else if(cs.currentCharacter.choseQuestA && askingForMorePlus)//if you give more gold
+        else if(cs.currentCharacter.choseQuestA && askingForMorePlus)//if you give more or equal gold
         {
-            if (gs.goldAmount < 1) //refuse
+            if (gs.goldAmount < 1) //refuse was 1
             {
                 //do this
                 cs.vanelleD2Q1AGPlusRefuse.StartNewDialogue(cs.dialogueTriggerScript);
@@ -154,24 +158,28 @@ public class VanelleScript : MonoBehaviour
             else if (gs.goldAmount > 0) //give more
             {
                 cs.vanelleD2Q1AGPlusGive.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = 1;
+                //rep = 1;
             }
         }
         else if(cs.currentCharacter.choseQuestA && askingForMoreMinus)//if you give less gold
         {
-            if (gs.goldAmount < 1) //refuse
+            if (gs.goldAmount < goldDifference) //refuse
             {
                 //do this
                 cs.vanelleD2Q1AGMinusRefuse.StartNewDialogue(cs.dialogueTriggerScript);
-                rep = -2;
+                //rep = -2;
             }
-            else if (gs.goldAmount > 0) //give more
+            else if (gs.goldAmount == goldDifference) //give exact
             {
                 cs.vanelleD2Q1AGMinusGive.StartNewDialogue(cs.dialogueTriggerScript);
             }
+            else if(gs.goldAmount > goldDifference)
+            {
+                cs.vanelleD2Q1AGMinusGiveMore.StartNewDialogue(cs.dialogueTriggerScript);
+            }
         }
 
-        gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
+        //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
 
     public void TagSystemOn()

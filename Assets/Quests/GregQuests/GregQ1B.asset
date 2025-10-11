@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GregQ1B
   m_EditorClassIdentifier: 
   questTitle: Collect 4 mushrooms from the Under Root Woods (1 gold per 2 mushrooms)
-  questDescription: "\u201CFor the life of me, I can NOT find these elusive mushrooms!
-    It's been weeks already! I\u2019M GONNA GO CRAZY. someone please help me.\u201D"
+  questDescription: "For the life of me, I can NOT find these elusive mushrooms!
+    It's been weeks already! I\u2019M GONNA GO CRAZY. someone please help me."
   questReward: 'Reward: 2 gold'

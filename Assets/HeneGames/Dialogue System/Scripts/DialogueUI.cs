@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Lightbug.GrabIt;
 
 namespace HeneGames.DialogueSystem
 {
@@ -85,7 +86,7 @@ namespace HeneGames.DialogueSystem
         public virtual void InputUpdate()
         {
             //Next dialogue input
-            if (Input.GetKeyDown(actionInput))
+            if (Input.GetKeyDown(actionInput) && !DaySystem.instance.endOfDay)
             {
                 NextSentenceSoft();
             }
@@ -188,6 +189,8 @@ namespace HeneGames.DialogueSystem
             movecam.instance.DrawerLockOut();//lock out drawer temporarliy to prevent misclicks
             CharacterSystem.instance.dialogueHistory.dialogueIsOn = false; //might fix texthistory bug
             MousePos3D.instance.dialogueOpen = false;
+
+            DialogueBoxMouse.instance.hoveringDiaBox = false;
         }
 
         public void ShowInteractionUI(bool _value)

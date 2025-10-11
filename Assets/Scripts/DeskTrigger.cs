@@ -158,38 +158,7 @@ public class DeskTrigger : MonoBehaviour
 
     public void CheckForReward()
     {
-        if(gs.coins.Count > 0)
-        {
-            if (cs.currentCharacter.characterName == "Finch")
-            {
-                if (!finchS.askingForGold)
-                {
-                    cs.pickedQ1A = true;
-                    gs.isSuctionActive = true;
-                    //GameObject questRB = items.Find(item => item.name == "QuestReturn");
-                    //qs.GetQuestRB(questRB);
-                    finchS.askingForGold = true;
-                    Debug.Log("Is Finch");
-                }
-                else
-                {
-                    gs.isSuctionActive = true;
-                }
-            }
-            else
-            {
-                gs.isSuctionActive = true;
-                //GameObject questRB = items.Find(item => item.name == "QuestReturn");
-                //qs.GetQuestRB(questRB);
-                Debug.Log("not finch");
-                //cs.IsIdle();
-            }
-            cs.IsIdle();
-        }
-        else //if no gold rewarded, still make poof return quest
-        {
-            GoldSystem.instance.QuestPoof();
-        }
+
 
         //always take return quest
         GameObject questRB = items.Find(item => item.name == "QuestReturn");
@@ -276,7 +245,45 @@ public class DeskTrigger : MonoBehaviour
         {
             movecamScript.UpButton();//move button up
         }
-        
+
+        //Suck up the gold (WAS UP TOP OF THIS FUNCTION) before 10/11
+        //trying to have vanelles quest stay when you give her less gold
+        if (gs.coins.Count > 0)
+        {
+            if (cs.currentCharacter.characterName == "Finch")
+            {
+                if (!finchS.askingForGold)
+                {
+                    cs.pickedQ1A = true;
+                    gs.isSuctionActive = true;
+                    gs.CollectCoinsCheck();
+                    //GameObject questRB = items.Find(item => item.name == "QuestReturn");
+                    //qs.GetQuestRB(questRB);
+                    finchS.askingForGold = true;
+                    Debug.Log("Is Finch");
+                }
+                else
+                {
+                    gs.isSuctionActive = true;
+                    gs.CollectCoinsCheck();
+                }
+            }
+            else
+            {
+                gs.isSuctionActive = true;
+                gs.CollectCoinsCheck();
+                //GameObject questRB = items.Find(item => item.name == "QuestReturn");
+                //qs.GetQuestRB(questRB);
+                Debug.Log("not finch");
+                //cs.IsIdle();
+            }
+            cs.IsIdle();
+        }
+        else //if no gold rewarded, still make poof return quest
+        {
+            GoldSystem.instance.QuestPoof();
+        }
+
     }
 
     public void CanPressBell()

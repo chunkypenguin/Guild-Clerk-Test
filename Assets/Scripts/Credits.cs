@@ -46,18 +46,24 @@ public class Credits : MonoBehaviour
         rectTransform.DOAnchorPosY(scrollDistance, scrollSpeed).SetEase(Ease.Linear).OnComplete(() =>
         {
             Debug.Log("Credits end");
-            FadeReturnMenuText();
+            if (!DaySystem.instance.escTextOn)
+            {
+                FadeReturnMenuText();
+            }
             rectTransform.anchoredPosition = new Vector2(0, -800);
             ScrollToTarget();
         });
     }
 
-    private void FadeReturnMenuText()
+    public void FadeReturnMenuText()
     {
         Color c = returnMenu.color;
         c.a = 0f;
         returnMenu.color = c;
 
-        returnMenu.DOFade(1f, 1.5f).SetEase(Ease.InOutQuad);
+        returnMenu.DOFade(1f, 1.5f).SetEase(Ease.InOutQuad).OnComplete(() =>
+        {
+            DaySystem.instance.escTextOn = true;
+        });
     }
 }
