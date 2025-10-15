@@ -23,6 +23,10 @@ TagManager:
   - EveningTune
   - LornePotion
   - Breeze
+  - MMButtons
+  - Play
+  - Quit
+  - Options
   layers:
   - Default
   - TransparentFX

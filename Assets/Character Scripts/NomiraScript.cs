@@ -35,6 +35,7 @@ public class NomiraScript : MonoBehaviour
     public bool golemOther;
     public bool golemSword;
 
+    public int nomiraGoldGiven;
     public int nomiraRequestedGold;
 
     public DialogueCharacter nomiraCharacter;
@@ -57,6 +58,7 @@ public class NomiraScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        nomiraGoldGiven = gs.goldAmount;
         if (cs.currentCharacter.choseQuestA) //RUINS
         {
             nomiraRequestedGold = 40;
@@ -185,4 +187,8 @@ public class NomiraScript : MonoBehaviour
         curseOther = true;
     }
 
+    public void NomiraGold()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(nomiraGoldGiven, nomiraRequestedGold);
+    }
 }

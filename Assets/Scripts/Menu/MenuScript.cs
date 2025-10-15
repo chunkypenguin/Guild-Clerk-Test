@@ -9,6 +9,13 @@ public class MenuScript : MonoBehaviour
     [SerializeField] GameObject creditsObj; [SerializeField] GameObject menuObj;
     bool creditsOn;
 
+    public static MenuScript instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))

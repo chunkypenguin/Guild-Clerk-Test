@@ -14,6 +14,7 @@ public class KalinScript : MonoBehaviour
     public bool gaveLessGold;
     public bool gaveMoreGold;
 
+    public int kalinGoldGiven;
     public int kalinRequestedGold;
 
     public static KalinScript instance;
@@ -39,6 +40,7 @@ public class KalinScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        kalinGoldGiven = gs.goldAmount;
         gs.totalGoldGiven = gs.goldAmount;
         //int rep = 0;
         if (cs.currentCharacter.choseQuestA) 
@@ -85,5 +87,10 @@ public class KalinScript : MonoBehaviour
             return;
         }
         mr.material = emote;
+    }
+
+    public void KalinGold()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(kalinGoldGiven, kalinRequestedGold);
     }
 }

@@ -22,7 +22,9 @@ public class LotestScript : MonoBehaviour
     public bool gaveLessGold;
     public bool gaveEqualOrMoreGold;
 
+    public int lotestGoldGiven;
     public int lotestRequestedGold;
+    bool askedForGold;
 
     public static LotestScript instance;
     private void Awake()
@@ -64,6 +66,8 @@ public class LotestScript : MonoBehaviour
     public void CheckForReward()
     {
         //int rep = 0;
+        askedForGold = true;
+        lotestGoldGiven = gs.goldAmount;
         if (cs.currentCharacter.choseQuestA)
         {
             lotestRequestedGold = 25;
@@ -166,5 +170,14 @@ public class LotestScript : MonoBehaviour
     {
         lotestWillSayName = false;
         cs.lotestD1P2.StartNewDialogue(cs.dialogueTriggerScript);
+    }
+
+    public void LotestGold()
+    {
+        if(askedForGold)
+        {
+            ReviewManager.instance.CharacterGoldAccuracyCalculator(lotestGoldGiven, lotestRequestedGold);
+
+        }
     }
 }

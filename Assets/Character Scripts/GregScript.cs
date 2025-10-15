@@ -22,6 +22,7 @@ public class GregScript : MonoBehaviour
     public bool gaveMysticMushroom;
     [SerializeField] GameObject MysticShroom;
 
+    public int gregGoldGiven;
     public int gregRequestedGold;
 
     public static GregScript instance;
@@ -63,6 +64,7 @@ public class GregScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        gregGoldGiven = gs.goldAmount;
         gs.totalGoldGiven = gs.goldAmount;
         //int rep = 0;
         if (cs.currentCharacter.choseQuestA) //Slay Quest
@@ -150,6 +152,11 @@ public class GregScript : MonoBehaviour
     public void SpendMushroom()
     {
         MysticShroom.SetActive(false);
+    }
+
+    public void GregGold()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(gregGoldGiven, gregRequestedGold);
     }
 
 }

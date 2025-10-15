@@ -16,6 +16,7 @@ public class MaggieScript : MonoBehaviour
     public bool partOneComplete;
     public bool partTwoComplete;
 
+    public int maggieGoldGiven;
     public int maggieRequestedGold;
 
     public static MaggieScript instance;
@@ -55,9 +56,12 @@ public class MaggieScript : MonoBehaviour
     public void CheckForReward()
     {
         //int rep = 0;
+        maggieGoldGiven = gs.goldAmount;
+        gs.totalGoldGiven = gs.goldAmount;
         if (cs.currentCharacter.choseQuestA)//food
         {
             maggieRequestedGold = 8;
+            gs.goldWanted = 8;
             if (gs.goldAmount == 8)
             {
                 //do this
@@ -121,5 +125,10 @@ public class MaggieScript : MonoBehaviour
     public void MaggieSlowDownText()
     {
         DialogueUI.instance.textAnimationSpeed = 0.6f;
+    }
+
+    public void MaggieGold()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(maggieGoldGiven, maggieRequestedGold);
     }
 }

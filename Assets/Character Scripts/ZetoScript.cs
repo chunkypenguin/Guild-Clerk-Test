@@ -19,6 +19,7 @@ public class ZetoScript : MonoBehaviour
     [SerializeField] Material burnedEmote;
     [SerializeField] Material cursedEmote;
 
+    public int zetoGoldGiven;
     public int zetoRequestedGold;
 
     public bool partOneComplete;
@@ -59,6 +60,7 @@ public class ZetoScript : MonoBehaviour
     public void CheckForReward()
     {
         //int rep = 0;
+        zetoGoldGiven = gs.goldAmount;
         if (!partOneComplete)
         {
             if (cs.currentCharacter.choseQuestA) //Slay Quest
@@ -146,5 +148,10 @@ public class ZetoScript : MonoBehaviour
     public void ZetoCursedDefault()
     {
         mr.material = cursedEmote;
+    }
+
+    public void ZetoGold()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(zetoGoldGiven, zetoRequestedGold);
     }
 }
