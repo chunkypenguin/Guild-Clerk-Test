@@ -13,6 +13,22 @@ public class ReviewManager : MonoBehaviour
 
     [SerializeField] float averageBias, averageAccuracy;
 
+
+    public static ReviewManager instance;   
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            CallCharacterAccuracy();
+            OverallRep();
+        }
+    }
+
     public void OverallRep()
     {
         overallAverageRep = DayReputationTracker.Instance.OverallAverageRep();
@@ -33,6 +49,24 @@ public class ReviewManager : MonoBehaviour
         + TahmasScript.instance.tahmasRequestedGold
         + VanelleScript.instance.vanelleRequestedGold
         +ZetoScript.instance.zetoRequestedGold;
+    }
+
+    public void CallCharacterAccuracy()
+    {
+        AndyScript.instance.AndyGold();
+        NomiraScript.instance.NomiraGold();
+        ZetoScript.instance.ZetoGold();
+        AchillesScript.instance.AchillesGold();
+        TahmasScript.instance.TahmasGold();
+        LotestScript.instance.LotestGold();
+        FinchScript.instance.FinchGold();
+        GregScript.instance.GregGold();
+        KalinScript.instance.KalinGold();
+        VanelleScript.instance.VanelleGold();
+        MaggieScript.instance.MaggieGold();
+        JoleneScript.instance.JoleneGold();
+
+        CalculateGoldReview();
     }
 
     public void CharacterGoldAccuracyCalculator(int goldGiven, int goldRequested)

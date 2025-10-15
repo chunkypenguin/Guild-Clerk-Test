@@ -17,7 +17,9 @@ public class JoleneScript : MonoBehaviour
 
     public bool partOneComplete;
 
+    public int joleneGoldGiven;
     public int joleneRequestedGold;
+    bool askedForGold;
 
     public static JoleneScript instance;
     private void Awake()
@@ -52,7 +54,8 @@ public class JoleneScript : MonoBehaviour
     public void CheckForReward()
     {
         //int rep = 0;
-
+        askedForGold = true;
+        joleneGoldGiven = gs.goldAmount;
         if (cs.currentCharacter.choseQuestA)
         {
             joleneRequestedGold = 2;
@@ -106,5 +109,14 @@ public class JoleneScript : MonoBehaviour
     public void ChangeEmote(Material emote)
     {
         mr.material = emote;
+    }
+
+    public void JoleneGold()
+    {
+        if (askedForGold)
+        {
+            ReviewManager.instance.CharacterGoldAccuracyCalculator(joleneGoldGiven, joleneRequestedGold);
+
+        }
     }
 }

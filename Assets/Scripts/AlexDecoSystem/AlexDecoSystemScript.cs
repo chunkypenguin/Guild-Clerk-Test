@@ -685,7 +685,7 @@ public class AlexDecoSystemScript : MonoBehaviour
         //ygc
         var mats = mainYGCRenderer.materials;  // copy
         mats[1] = new Material(counterMats[x]); // pillars
-        mats[5] = new Material(counterMats[x]); //counter tops
+        //mats[5] = new Material(counterMats[x]); //counter tops
         mainYGCRenderer.materials = mats;// apply
 
         //drawer

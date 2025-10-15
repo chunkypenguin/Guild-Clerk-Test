@@ -48,6 +48,12 @@ public class TutorialScript : MonoBehaviour
     public bool lotestJosieStarted;
     public bool josieDayOneComplete;
 
+    //achilles check
+    public bool achillesDialogueFinished;
+
+    //review stuff
+
+
     //Fade tutorial diabox text
     [SerializeField] TMP_Text tutSpaceClickText;
 
@@ -93,6 +99,7 @@ public class TutorialScript : MonoBehaviour
             cs.josieAchillesQ1B.StartNewDialogue(cs.dialogueTriggerScript);
 
         }
+        achillesDialogueFinished = true;
     }
 
     private void Update()

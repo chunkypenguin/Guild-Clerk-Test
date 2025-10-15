@@ -13,6 +13,10 @@ public class AchillesScript : MonoBehaviour
 
     public static AchillesScript instance;
 
+    public int achillesGoldGiven;
+    public int achillesRequestedGold;
+    bool askedForGold;
+
     private void Awake()
     {
         instance = this;
@@ -38,5 +42,14 @@ public class AchillesScript : MonoBehaviour
             return;
         }
         mr.material = emote;
+    }
+
+    public void AchillesGold()
+    {
+        if (askedForGold)
+        {
+            ReviewManager.instance.CharacterGoldAccuracyCalculator(achillesGoldGiven, achillesRequestedGold);
+
+        }
     }
 }

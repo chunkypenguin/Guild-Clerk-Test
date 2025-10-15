@@ -29,6 +29,7 @@ public class FinchScript : MonoBehaviour
 
     public bool finchUpset;
 
+    public int finchGoldGiven;
     public int finchRequestedGold;
 
     public static FinchScript instance;
@@ -73,6 +74,7 @@ public class FinchScript : MonoBehaviour
         //if (cs.pickedQ1A && !gaveGold)
         if (!gaveGold)
         {
+            finchGoldGiven = gs.goldAmount;
             Debug.Log("went to this");
             if (gs.goldAmount == 15)
             {
@@ -96,6 +98,7 @@ public class FinchScript : MonoBehaviour
         }
         else if (gaveGold)
         {
+            finchGoldGiven += gs.goldAmount;//add the gold given to finch each time
             if(gs.goldAmount > 0) //when you give finch gold
             {
                 if(!pickedA)
@@ -252,5 +255,10 @@ public class FinchScript : MonoBehaviour
     public void FinchUpset()
     {
         finchUpset = true;
+    }
+
+    public void FinchGold()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(finchGoldGiven, finchRequestedGold);
     }
 }

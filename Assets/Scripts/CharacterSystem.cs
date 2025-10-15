@@ -41,6 +41,7 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager josieKalinERefuse;
     public DialogueManager josieAchillesQ1A;
     public DialogueManager josieAchillesQ1B;
+    public DialogueManager josieReviewP1;
 
     [Header("Greg")]
     public DialogueManager gregD1P1;

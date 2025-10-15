@@ -58,19 +58,19 @@ public class AlexTabScript : MonoBehaviour
     {
         //FOR TESTING
         //DELETE
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    if (decorHidden)
-        //    {
-        //        ShowDecorUI();
-        //        decorHidden = false;
-        //    }
-        //    else
-        //    {
-        //        HideDecorUI();
-        //        decorHidden = true;
-        //    }
-        //}
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (decorHidden)
+            {
+                ShowDecorUI();
+                decorHidden = false;
+            }
+            else
+            {
+                HideDecorUI();
+                decorHidden = true;
+            }
+        }
 
         goldAmount = DayReputationTracker.Instance.GetGold();
         goldCount.text = goldAmount.ToString();

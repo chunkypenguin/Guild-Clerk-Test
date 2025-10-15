@@ -412,9 +412,14 @@ public class MoveCharacter : MonoBehaviour
                         josieS.StartDialogue();
                         josieS.lotestJosieStarted = true;
                     }
-                    else //should be for achilles
+                    else if(!josieS.achillesDialogueFinished)//should be for achilles when achilles comes back or josie says something about him
                     {
                         josieS.AchillesDialogue();
+                        josieS.achillesDialogueFinished = true;
+                    }
+                    else //review time
+                    {
+                        
                     }
                 }
 

@@ -41,7 +41,9 @@ public class AndyScript : MonoBehaviour
     public bool gaveEqualOrMoreGold;
     public bool gaveLessGold;
 
+    public int andyGoldGiven;
     public int andyRequestedGold;
+
 
     public static AndyScript instance;
     private void Awake()
@@ -122,6 +124,7 @@ public class AndyScript : MonoBehaviour
     public void CheckForReward()
     {
         //int rep = 0;
+        andyGoldGiven = gs.goldAmount;
         if (!partTwoComplete) //!cs.D3
         {
             cs.andyD2Q1BP2.StartNewDialogue(cs.dialogueTriggerScript);
@@ -247,5 +250,10 @@ public class AndyScript : MonoBehaviour
     public void LessGold()
     {
         gaveLessGold = true;
+    }
+
+    public void AndyGold()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(andyGoldGiven, andyRequestedGold);
     }
 }

@@ -13,7 +13,9 @@ public class TahmasScript : MonoBehaviour
     public bool gaveMoreGold;
     public bool gaveEqualOrLessGold;
 
+    public int tahmasGoldGiven;
     public int tahmasRequestedGold;
+    bool askedForGold;
 
     public static TahmasScript instance;
 
@@ -43,6 +45,8 @@ public class TahmasScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        askedForGold = true;
+        tahmasGoldGiven = gs.goldAmount;
         //int rep = 0;
         if (cs.currentCharacter.choseQuestA)
         {
@@ -103,4 +107,13 @@ public class TahmasScript : MonoBehaviour
     {
         mr.material = emote;
     }
+    public void TahmasGold()
+    {
+        if(askedForGold)
+        {
+            ReviewManager.instance.CharacterGoldAccuracyCalculator(tahmasGoldGiven, tahmasRequestedGold);
+
+        }
+    }
+
 }

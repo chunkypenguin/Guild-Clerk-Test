@@ -32,7 +32,9 @@ public class VanelleScript : MonoBehaviour
 
     public int goldDifference;
 
+    public int vanelleGoldGiven;
     public int vanelleRequestedGold;
+    bool askedForGold;
 
     [SerializeField] AudioSource vanelleChomp;
 
@@ -123,9 +125,11 @@ public class VanelleScript : MonoBehaviour
 
     public void CheckForReward()
     {
+        askedForGold = true;
         //int rep = 0;
         if (cs.currentCharacter.choseQuestA && !askingForMoreMinus && !askingForMorePlus) //first time around
         {
+            vanelleGoldGiven = gs.goldAmount;
             vanelleRequestedGold = 35;
             if (gs.goldAmount == 35)
             {
@@ -153,6 +157,7 @@ public class VanelleScript : MonoBehaviour
         }
         else if(cs.currentCharacter.choseQuestA && askingForMorePlus)//if you give more or equal gold
         {
+            vanelleGoldGiven += gs.goldAmount;
             if (gs.goldAmount < 1) //refuse was 1
             {
                 //do this
@@ -166,6 +171,7 @@ public class VanelleScript : MonoBehaviour
         }
         else if(cs.currentCharacter.choseQuestA && askingForMoreMinus)//if you give less gold
         {
+            vanelleGoldGiven += gs.goldAmount;
             if (gs.goldAmount < goldDifference) //refuse
             {
                 //do this
@@ -202,5 +208,12 @@ public class VanelleScript : MonoBehaviour
         mr.material = emote;
     }
 
+    public void VanelleGold()
+    {
+        if (askedForGold)
+        {
+            ReviewManager.instance.CharacterGoldAccuracyCalculator(vanelleGoldGiven, vanelleRequestedGold);
+        }
 
+    }
 }
