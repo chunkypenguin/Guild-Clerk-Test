@@ -99,6 +99,13 @@ public class MousePos3D : MonoBehaviour
                 }
             }
 
+            if (questraycastHit.collider.CompareTag("LornePotion") && Input.GetMouseButtonDown(0))
+            {
+                //make room dark and potion glow
+                Debug.Log("potion");
+                LorneScript.instance.LornePotion();
+            }
+
             if (questraycastHit.collider.CompareTag("Quest"))
             {
                 if (!questText)

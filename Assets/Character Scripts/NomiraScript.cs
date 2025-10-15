@@ -35,6 +35,8 @@ public class NomiraScript : MonoBehaviour
     public bool golemOther;
     public bool golemSword;
 
+    public int nomiraRequestedGold;
+
     public DialogueCharacter nomiraCharacter;
 
     private void Awake()
@@ -57,6 +59,7 @@ public class NomiraScript : MonoBehaviour
     {
         if (cs.currentCharacter.choseQuestA) //RUINS
         {
+            nomiraRequestedGold = 40;
             if (cs.currentCharacter.choseItemB) //divine
             {
                 curseDivine = true;
@@ -88,6 +91,7 @@ public class NomiraScript : MonoBehaviour
         }
         else if (cs.currentCharacter.choseQuestB) //GOLEM
         {
+            nomiraRequestedGold = 35;
             if (cs.currentCharacter.choseItemA) //weapon
             {
                 golemSword = true;

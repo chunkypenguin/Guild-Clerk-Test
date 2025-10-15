@@ -84,6 +84,7 @@ public class ItemFloorScript : MonoBehaviour
 
     public void ResetItem()
     {
+        //Debug.Log("poofResetItem");
         if (gameObject.CompareTag("Quest"))
         {
             if (gameObject.name == "QuestReturn" || gameObject.name == "BloodyQuestReturn")
@@ -167,6 +168,99 @@ public class ItemFloorScript : MonoBehaviour
             {
                 poofFX.transform.position = rb.transform.position;
                 poofFX.Play();
+            }
+
+        }
+    }
+
+
+    //created to avoid unintentional poofs
+    public void ResetItemWhenCollected()
+    {
+        //Debug.Log("poofResetItem");
+        if (gameObject.CompareTag("Quest"))
+        {
+            if (gameObject.name == "QuestReturn" || gameObject.name == "BloodyQuestReturn")
+            {
+                prb = gameObject.transform.parent.GetComponent<Rigidbody>();
+
+                rb.useGravity = true;
+                prb.isKinematic = true;
+                prb.transform.position = startPos;
+                prb.transform.rotation = startRotation;
+                transform.localScale = startScale;
+                prb.isKinematic = false;
+
+                if (prb.gameObject.activeInHierarchy)
+                {
+                    //poofFX.transform.position = rb.transform.position;
+                    //poofFX.Play();
+                }
+
+                //prb.useGravity = false;
+
+                //prb.constraints = RigidbodyConstraints.FreezeAll;
+                prb.constraints = RigidbodyConstraints.FreezePositionZ |
+                 RigidbodyConstraints.FreezeRotation;
+
+                // Get all colliders attached to this GameObject
+                Collider[] colliderz = gameObject.GetComponents<Collider>();
+
+                // Disable each collider
+                foreach (Collider col in colliderz)
+                {
+                    col.enabled = true;
+                    //col.isTrigger = true;
+                }
+            }
+
+            else
+            {
+                prb = gameObject.transform.parent.GetComponent<Rigidbody>();
+
+                rb.useGravity = true;
+                prb.isKinematic = true;
+                prb.transform.position = startPos;
+                prb.transform.rotation = startRotation;
+                transform.localScale = startScale;
+                prb.isKinematic = false;
+
+                if (prb.gameObject.activeInHierarchy)
+                {
+                    //poofFX.transform.position = rb.transform.position;
+                    //poofFX.Play();
+                }
+
+                prb.useGravity = false;
+
+                prb.constraints = RigidbodyConstraints.FreezeAll;
+
+                // Get all colliders attached to this GameObject
+                Collider[] colliderz = gameObject.GetComponents<Collider>();
+
+                // Disable each collider
+                foreach (Collider col in colliderz)
+                {
+                    col.enabled = true;
+                    col.isTrigger = true;
+                }
+            }
+
+
+        }
+        else
+        {
+            Debug.Log("hi");
+            rb.isKinematic = true;
+            transform.position = startPos;
+            transform.rotation = startRotation;
+            transform.localScale = startScale;
+            rb.isKinematic = false;
+
+            if (rb.gameObject.activeInHierarchy)
+            {
+                //poofFX.transform.position = rb.transform.position;
+                //poofFX.Play();
             }
 
         }

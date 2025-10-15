@@ -29,6 +29,8 @@ public class FinchScript : MonoBehaviour
 
     public bool finchUpset;
 
+    public int finchRequestedGold;
+
     public static FinchScript instance;
     private void Awake()
     {
@@ -39,6 +41,8 @@ public class FinchScript : MonoBehaviour
     {
         repCount = 0;
         gs = GoldSystem.instance;
+
+        finchRequestedGold = 15;
     }
 
     private void Update()

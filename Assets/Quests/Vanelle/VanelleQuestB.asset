@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: VanelleQuestB
   m_EditorClassIdentifier: 
   questTitle: "Slay the 2 Slimes causing trouble in the Kingdom\u2019s sewers"
-  questDescription: "\u201CCalling all Slime Slayers,\r\n\r\nUnfortunately, we are
-    unable to request the Ultimate Slime Slayer\u2019s help to deal with this issue.
-    A couple of Slimes have recently snuck their way into the Kingdom\u2019s sewer
-    system. They have been clogging toilets and giving unsuspecting civilians slime
-    showers. We worry they will repopulate within the sewers if left unattended.\u201D\r"
+  questDescription: "\"Calling all Slime Slayers,\r\n\r\nUnfortunately, we are unable
+    to request the Ultimate Slime Slayer\u2019s help to deal with this issue. A couple
+    of Slimes have recently snuck their way into the Kingdom\u2019s sewer system.
+    They have been clogging toilets and giving unsuspecting civilians slime showers.
+    We worry they will repopulate within the sewers if left unattended.\"\r"
   questReward: 'Reward: 5 Gold'

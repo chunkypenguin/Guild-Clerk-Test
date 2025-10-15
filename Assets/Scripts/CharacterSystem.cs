@@ -148,6 +148,9 @@ public class CharacterSystem : MonoBehaviour
     [Header("Zeke")]
     public DialogueManager zekeD3P1;
     public DialogueManager zekeD3Feed;
+    public DialogueManager zekeD3FeedLornePotion;
+    public DialogueManager zekeD3FeedMushroom;
+    public DialogueManager zekeD3FeedMushroomP2;
     public DialogueManager zekeD3Refuse1;
     public DialogueManager zekeD3Refuse2;
 
@@ -567,6 +570,12 @@ public class CharacterSystem : MonoBehaviour
         if (currentCharacter.characterName == "Ishizu")
         {
             ishizuTeal1.StartNewDialogue(dialogueTriggerScript);
+        }
+
+        if (currentCharacter.characterName == "Zeke")
+        {
+            zekeD3FeedMushroom.StartNewDialogue(dialogueTriggerScript);
+            //currentCharacterObject.GetComponent<CharacterReputation>().ModifyReputation(1);
         }
     }
 

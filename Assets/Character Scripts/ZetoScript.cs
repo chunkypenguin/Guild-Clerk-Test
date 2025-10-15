@@ -19,6 +19,8 @@ public class ZetoScript : MonoBehaviour
     [SerializeField] Material burnedEmote;
     [SerializeField] Material cursedEmote;
 
+    public int zetoRequestedGold;
+
     public bool partOneComplete;
     private void Awake()
     {
@@ -61,6 +63,7 @@ public class ZetoScript : MonoBehaviour
         {
             if (cs.currentCharacter.choseQuestA) //Slay Quest
             {
+                zetoRequestedGold = 15;
                 if (gs.goldAmount == 15) //=
                 {
                     //do this
@@ -93,6 +96,7 @@ public class ZetoScript : MonoBehaviour
             }
             else if (cs.currentCharacter.choseQuestB)
             {
+                zetoRequestedGold = 35;
                 if (gs.goldAmount == 35) //=
                 {
                     //do this

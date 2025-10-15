@@ -11,6 +11,7 @@ public class QuestSystem : MonoBehaviour
     [SerializeField] GameObject questDescriptionB;
     [SerializeField] GameObject questDescriptionR;
     [SerializeField] GameObject bloodyQuestDescription;
+    [SerializeField] GameObject chewedUpQuestDescription;
 
     [SerializeField] DeskTrigger deskTrigger;
     [SerializeField] GameObject desk;
@@ -37,6 +38,7 @@ public class QuestSystem : MonoBehaviour
 
     [SerializeField] GameObject returnQuest;
     [SerializeField] GameObject bloodyReturnQuest;
+    [SerializeField] GameObject chewedUpReturnQuest;
     [SerializeField] Transform returnPoint;
 
     [SerializeField] CharacterSystem cs;
@@ -52,6 +54,7 @@ public class QuestSystem : MonoBehaviour
 
     [SerializeField] GameObject visualQuests;
     [SerializeField] ParticleSystem poofFX;
+    [SerializeField] ParticleSystem chewedUpQuestPoofFX;
     [SerializeField] AudioSource poofAudio;
 
     public int a = 0;
@@ -242,7 +245,10 @@ public class QuestSystem : MonoBehaviour
         {
             bloodyQuestDescription.SetActive(true);
         }
-        
+        else if(quest.name == "ChewedUpQuestReturn")
+        {
+            chewedUpQuestDescription.SetActive(true);
+        }
     }
 
     public void HideQuestDescription()
@@ -251,6 +257,7 @@ public class QuestSystem : MonoBehaviour
         questDescriptionB.SetActive(false);
         questDescriptionR.SetActive(false);
         bloodyQuestDescription.SetActive(false);
+        chewedUpQuestDescription.SetActive(false);
     }
 
     public void FinalizeItems() //WHEN BELL PRESSED I THINK
@@ -380,6 +387,18 @@ public class QuestSystem : MonoBehaviour
                 questRDescription.text = cs.currentCharacter.quest[b].questDescription;
                 questRReward.text = cs.currentCharacter.quest[b].questReward;
             }
+            else if(cs.currentCharacter.characterName == "Vanelle")
+            {
+                Debug.Log("Andy throw out Quest A");
+                chewedUpReturnQuest.SetActive(true);
+                chewedUpReturnQuest.transform.position = returnPoint.position;
+                //bloodyReturnQuest.SetActive(true);
+                //bloodyReturnQuest.transform.position = returnPoint.position;
+                //returnQuest.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce((Vector3.right * 5f) + Vector3.up * 5f, ForceMode.Impulse);
+                questRTitle.text = cs.currentCharacter.quest[a].questTitle;
+                questRDescription.text = cs.currentCharacter.quest[a].questDescription;
+                questRReward.text = cs.currentCharacter.quest[a].questReward;
+            }
             else if(cs.currentCharacter.characterName != "Andy Cheesington")
             {
                 Debug.Log("everyone else throw out Quest A");
@@ -428,5 +447,13 @@ public class QuestSystem : MonoBehaviour
             }
 
         }
+    }
+
+    public void ChewedReturnQuestPoof()
+    {
+        chewedUpQuestPoofFX.transform.position = chewedUpReturnQuest.transform.position;
+        chewedUpQuestPoofFX.Play();
+        poofAudio.Play();
+        chewedUpReturnQuest.SetActive(false);
     }
 }

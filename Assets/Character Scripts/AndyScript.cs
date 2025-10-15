@@ -41,6 +41,8 @@ public class AndyScript : MonoBehaviour
     public bool gaveEqualOrMoreGold;
     public bool gaveLessGold;
 
+    public int andyRequestedGold;
+
     public static AndyScript instance;
     private void Awake()
     {
@@ -68,6 +70,7 @@ public class AndyScript : MonoBehaviour
             else // fetch quest
             {
                 cs.andyD2Q1B.StartNewDialogue(cs.dialogueTriggerScript);
+                andyRequestedGold = 2;
                 //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
             }
             
@@ -89,6 +92,7 @@ public class AndyScript : MonoBehaviour
         else
         {
             cs.andyD3P1.StartNewDialogue(cs.dialogueTriggerScript);
+            andyRequestedGold = 85;
             //gameObject.GetComponent<CharacterReputation>().ModifyReputation(3);
         }
     }

@@ -14,6 +14,8 @@ public class KalinScript : MonoBehaviour
     public bool gaveLessGold;
     public bool gaveMoreGold;
 
+    public int kalinRequestedGold;
+
     public static KalinScript instance;
 
     private void Awake()
@@ -26,6 +28,8 @@ public class KalinScript : MonoBehaviour
         cs = CharacterSystem.instance;
         gs = GoldSystem.instance;
         mr = gameObject.GetComponent<MeshRenderer>();
+
+        kalinRequestedGold = 30;
     }
 
     public void StartDialogue()

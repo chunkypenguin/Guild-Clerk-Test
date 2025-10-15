@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: VanelleQuestA
   m_EditorClassIdentifier: 
   questTitle: Forage for 3 Mandrakes in the Under Root Woods
-  questDescription: "\u201CI\u2019m experimenting on a new spell I created, but I
-    need more material components to do further research. I am too occupied to fetch
-    more mandrakes myself, so if any capable adventurer could gather these for me,
-    it would be appreciated graciously.\u201D"
+  questDescription: "\"I\u2019m experimenting on a new spell I created, but I need
+    more material components to do further research. I am too occupied to fetch more
+    mandrakes myself, so if any capable adventurer could gather these for me, it
+    would be appreciated graciously.\""
   questReward: 'Reward: 35 Gold'

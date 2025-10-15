@@ -22,6 +22,8 @@ public class LotestScript : MonoBehaviour
     public bool gaveLessGold;
     public bool gaveEqualOrMoreGold;
 
+    public int lotestRequestedGold;
+
     public static LotestScript instance;
     private void Awake()
     {
@@ -64,6 +66,8 @@ public class LotestScript : MonoBehaviour
         //int rep = 0;
         if (cs.currentCharacter.choseQuestA)
         {
+            lotestRequestedGold = 25;
+
             if (gs.goldAmount == 15)
             {
                 //do this

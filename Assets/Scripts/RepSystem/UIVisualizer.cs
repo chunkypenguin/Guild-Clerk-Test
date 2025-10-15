@@ -22,6 +22,7 @@ public class UIVisualizer : MonoBehaviour {
     // Should be already assigned in the prefab
     // This is for the floating heart effect that shows to the right of the NPC when they gain or lose a heart
     [Header("Floating Heart FX")]
+    [SerializeField] private GameObject parentHeartFX;
     [SerializeField] private GameObject positiveHeartFX;
     [SerializeField] private GameObject negativeHeartFX;
 
@@ -99,10 +100,20 @@ public class UIVisualizer : MonoBehaviour {
     // You can turn this off if you want by checking Disable Heart Visual in the inspector.
     public void UpdateCharRepVisual(int currentRep, int gainedRep, bool playFX = true) {
         // Play the heart FX when NPC's rep changes
+        if (!MassChangeRep.instance.canShowRep)
+        {
+            return;
+        }
+
+
+
         if (playFX) {
 
             if(gainedRep != 0)
             {
+
+                Debug.Log("Heart Given");
+                parentHeartFX.transform.position = CharacterSystem.instance.currentCharacterObject.transform.Find("HeartFXPos").transform.position;
                 //PlayHeartFX(currentRep);
                 PlayHeartFX(gainedRep);
             }

@@ -12,6 +12,9 @@ public class AlexTabScript : MonoBehaviour
     [SerializeField] GameObject clerkAmenTab;
     [SerializeField] GameObject knickKnackTab;
     [SerializeField] GameObject ceilingDecorTab;
+    [SerializeField] GameObject premiumItemsTab;
+
+    [SerializeField] Button doneTab;
 
     [Header("Show/Hide")]
 
@@ -34,7 +37,7 @@ public class AlexTabScript : MonoBehaviour
     [SerializeField] Color highlightColor;
 
     //TESTING
-    //bool decorHidden = true;
+    bool decorHidden = true;
 
     public static AlexTabScript instance;
     private void Awake()
@@ -55,9 +58,9 @@ public class AlexTabScript : MonoBehaviour
     {
         //FOR TESTING
         //DELETE
-        //if(Input.GetKeyDown(KeyCode.P))
+        //if (Input.GetKeyDown(KeyCode.P))
         //{
-        //    if(decorHidden)
+        //    if (decorHidden)
         //    {
         //        ShowDecorUI();
         //        decorHidden = false;
@@ -120,18 +123,26 @@ public class AlexTabScript : MonoBehaviour
         ceilingDecorTab.SetActive(true);
     }
 
+    public void PremiumItemsTab()
+    {
+        Deactivate();
+        premiumItemsTab.SetActive(true);
+    }
+
     void Deactivate()
     {
         textureTab.SetActive(false);
         clerkAmenTab.SetActive(false);
         knickKnackTab.SetActive(false);
         ceilingDecorTab.SetActive(false);
+        premiumItemsTab.SetActive(false);
     }
 
     public void ShowDecorUI()
     {
         decorUI.transform.DOMove(startPos, moveSpeed).onComplete = () =>
         {
+            doneTab.enabled = true;
             goldObject.SetActive(true);
             if (!showedTut)
             {
@@ -143,9 +154,13 @@ public class AlexTabScript : MonoBehaviour
 
     public void HideDecorUI()
     {
+        doneTab.enabled = false;
         decorUI.transform.DOMove(endPos, moveSpeed);
         goldObject.SetActive(false);
         ExitDecoTut();
+
+        //FOR DECO UI CURSOR STUFF
+        DialogueBoxMouse.instance.hoveringDiaBox = false;
     }
 
     public void DisplayDecorUI()

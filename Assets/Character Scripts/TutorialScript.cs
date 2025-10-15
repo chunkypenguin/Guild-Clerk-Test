@@ -2,10 +2,12 @@ using HeneGames.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using DG.Tweening;
 
 public class TutorialScript : MonoBehaviour
 {
-    [SerializeField] bool questDialogue1, questDialogue2;
+    public bool questDialogue1, questDialogue2; //was serializefield before
     public bool tutP1, tutP2;
     public bool questsOnBoard;
     public bool holdingQuest;
@@ -45,6 +47,9 @@ public class TutorialScript : MonoBehaviour
     //Lotest check
     public bool lotestJosieStarted;
     public bool josieDayOneComplete;
+
+    //Fade tutorial diabox text
+    [SerializeField] TMP_Text tutSpaceClickText;
 
     public static TutorialScript instance;
 
@@ -336,5 +341,15 @@ public class TutorialScript : MonoBehaviour
     private void QuestPoofDia()
     {
         cs.josieD1P4.StartNewDialogue(cs.dialogueTriggerScript);
+    }
+
+    public void ClickSpaceTextRemoval()
+    {
+        //Color c = tutSpaceClickText.color;
+        //c.a = 1f;
+        //tutSpaceClickText.color = c;
+        //tutSpaceClickText.DOFade(0, 1.5f).SetEase(Ease.InOutQuad);
+
+        tutSpaceClickText.gameObject.SetActive(false);
     }
 }

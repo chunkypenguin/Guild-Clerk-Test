@@ -100,7 +100,7 @@ public class DaySystem : MonoBehaviour
             //EndDay();
             //CreditsStart();
             //EndOfDayScroll();
-            NewEndDay();
+            //NewEndDay();
         }
 
         if(Input.GetKeyDown(KeyCode.Space) && endOfDay)

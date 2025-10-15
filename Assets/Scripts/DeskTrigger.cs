@@ -357,7 +357,7 @@ public class DeskTrigger : MonoBehaviour
 
         else if(cs.currentCharacter.characterName == "Zeke")
         {
-            if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+            if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null && items.Find(item => item.name == cs.currentCharacter.ItemANameA) == null)
             {
 
                 GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);
@@ -365,6 +365,7 @@ public class DeskTrigger : MonoBehaviour
                 itemS.GetItemRb(itemRB);
                 cs.currentCharacter.choseItemA = true;
                 cs.currentCharacter.choseItemB = false;
+                cs.currentCharacter.choseItemAA = false;
                 // Add your action here
                 //cs.QuestADialogue();
                 cs.ItemADialogue();
@@ -372,6 +373,35 @@ public class DeskTrigger : MonoBehaviour
                 cs.IsIdle();
             }
 
+            else if((items.Find(item => item.name == cs.currentCharacter.ItemAName) == null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) != null && items.Find(item => item.name == cs.currentCharacter.ItemANameA) == null)
+            {
+                GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemBName);
+                //qs.GetQuestRB(itemRB);
+                itemS.GetItemRb(itemRB);
+                cs.currentCharacter.choseItemA = false;
+                cs.currentCharacter.choseItemB = true;
+                cs.currentCharacter.choseItemAA = false;
+                // Add your action here
+                //cs.QuestADialogue();
+                cs.ItemBDialogue();
+                //cs.pickedQ1A = true;
+                cs.IsIdle();
+            }
+            else if((items.Find(item => item.name == cs.currentCharacter.ItemAName) == null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null && items.Find(item => item.name == cs.currentCharacter.ItemANameA) != null)
+            {
+                GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemANameA);
+                //qs.GetQuestRB(itemRB);
+                itemS.GetItemRb(itemRB);
+                cs.currentCharacter.choseItemA = false;
+                cs.currentCharacter.choseItemB = false;
+                cs.currentCharacter.choseItemAA = true;
+                // Add your action here
+                //cs.QuestADialogue();
+                //cs.ItemBDialogue();
+                cs.zekeD3FeedLornePotion.StartNewDialogue(cs.dialogueTriggerScript);
+                //cs.pickedQ1A = true;
+                cs.IsIdle();
+            }
             else
             {
                 Debug.Log("two or no quests on desk");

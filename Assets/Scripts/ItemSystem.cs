@@ -81,7 +81,7 @@ public class ItemSystem : MonoBehaviour
         isSuctionActive = false;
 
         //Destroy the quest
-        itemObject.GetComponent<ItemFloorScript>().ResetItem();
+        itemObject.GetComponent<ItemFloorScript>().ResetItemWhenCollected();
         itemObject.SetActive(false);
 
         ItemGlowOff();
@@ -122,6 +122,9 @@ public class ItemSystem : MonoBehaviour
         if (cs.currentCharacter.characterName == "Zeke")
         {
             zekeScript.raspberriesGlow.SetActive(true);
+            zekeScript.magicMushroomGlow.SetActive(true);
+            zekeScript.magicMushroomPotGlow.SetActive(true);
+            zekeScript.lornePotionGlow.SetActive(true);
         }
 
         if (cs.currentCharacter.characterName == "Nomira")
@@ -160,7 +163,14 @@ public class ItemSystem : MonoBehaviour
         lotestScript.velvetGlow.SetActive(false);
 
         //zeke
-        zekeScript.raspberriesGlow.SetActive(false);
+        if (cs.currentCharacter.characterName == "Zeke")
+        {
+            zekeScript.raspberriesGlow.SetActive(false);
+            zekeScript.magicMushroomGlow.SetActive(false);
+            zekeScript.magicMushroomPotGlow.SetActive(false);
+            zekeScript.lornePotionGlow.SetActive(false);
+        }
+
 
         if (cs.currentCharacter.characterName == "Nomira")
         {

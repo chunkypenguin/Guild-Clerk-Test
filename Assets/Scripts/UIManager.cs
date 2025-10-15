@@ -17,6 +17,13 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] CharacterSystem cs;
 
+    public static UIManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -24,8 +31,9 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("Enter");
             PrintInputText();
-            ShowInputField();
-            cs.josieD1P2.StartNewDialogue(cs.dialogueTriggerScript);
+            //ShowInputField();
+            //cs.josieD1P2.StartNewDialogue(cs.dialogueTriggerScript);
+            ContinueDialogue();
         }
     }
 
@@ -48,5 +56,19 @@ public class UIManager : MonoBehaviour
     {
         playerName = inputField.text; // Get the text
         Debug.Log("User input: " + playerName);
+    }
+
+    public void ContinueDialogue()
+    {
+        if(string.IsNullOrWhiteSpace(playerName))
+        {
+            //Do nothing
+        }
+        else
+        {
+            ShowInputField();
+            cs.josieD1P2.StartNewDialogue(cs.dialogueTriggerScript);
+        }
+
     }
 }

@@ -13,6 +13,8 @@ public class TahmasScript : MonoBehaviour
     public bool gaveMoreGold;
     public bool gaveEqualOrLessGold;
 
+    public int tahmasRequestedGold;
+
     public static TahmasScript instance;
 
     private void Awake()
@@ -23,6 +25,7 @@ public class TahmasScript : MonoBehaviour
     private void Start()
     {
         gs = GoldSystem.instance;
+        
     }
     public void StartDialogue()
     {
@@ -43,6 +46,7 @@ public class TahmasScript : MonoBehaviour
         //int rep = 0;
         if (cs.currentCharacter.choseQuestA)
         {
+            tahmasRequestedGold = 25;
             if (gs.goldAmount == 25)
             {
                 gaveEqualOrLessGold = true;
@@ -68,6 +72,7 @@ public class TahmasScript : MonoBehaviour
         }
         else if (cs.currentCharacter.choseQuestB)
         {
+            tahmasRequestedGold = 25;
             if (gs.goldAmount == 25)
             {
                 gaveEqualOrLessGold = true;

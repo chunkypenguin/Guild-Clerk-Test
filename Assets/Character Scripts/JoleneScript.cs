@@ -17,6 +17,8 @@ public class JoleneScript : MonoBehaviour
 
     public bool partOneComplete;
 
+    public int joleneRequestedGold;
+
     public static JoleneScript instance;
     private void Awake()
     {
@@ -53,6 +55,7 @@ public class JoleneScript : MonoBehaviour
 
         if (cs.currentCharacter.choseQuestA)
         {
+            joleneRequestedGold = 2;
             if (gs.goldAmount == 2)
             {
                 //do this

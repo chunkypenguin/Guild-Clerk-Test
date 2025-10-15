@@ -32,6 +32,8 @@ public class VanelleScript : MonoBehaviour
 
     public int goldDifference;
 
+    public int vanelleRequestedGold;
+
     [SerializeField] AudioSource vanelleChomp;
 
     private void Awake()
@@ -116,7 +118,7 @@ public class VanelleScript : MonoBehaviour
     public void EatQuestBDialogue()
     {
         cs.VanelleD1Q1BP2.StartNewDialogue(cs.dialogueTriggerScript); //eat quest dialogue
-        //vanelleChomp.Play();
+        vanelleChomp.Play();
     }
 
     public void CheckForReward()
@@ -124,6 +126,7 @@ public class VanelleScript : MonoBehaviour
         //int rep = 0;
         if (cs.currentCharacter.choseQuestA && !askingForMoreMinus && !askingForMorePlus) //first time around
         {
+            vanelleRequestedGold = 35;
             if (gs.goldAmount == 35)
             {
                 //do this
@@ -198,4 +201,6 @@ public class VanelleScript : MonoBehaviour
     {
         mr.material = emote;
     }
+
+
 }

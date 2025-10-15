@@ -22,6 +22,8 @@ public class GregScript : MonoBehaviour
     public bool gaveMysticMushroom;
     [SerializeField] GameObject MysticShroom;
 
+    public int gregRequestedGold;
+
     public static GregScript instance;
 
     private void Awake()
@@ -65,6 +67,7 @@ public class GregScript : MonoBehaviour
         //int rep = 0;
         if (cs.currentCharacter.choseQuestA) //Slay Quest
         {
+            gregRequestedGold = 8;
             gs.goldWanted = 8;
             if (gs.goldAmount == 8)
             {
@@ -89,6 +92,7 @@ public class GregScript : MonoBehaviour
         }
         else if (cs.currentCharacter.choseQuestB) //Mushroom Quest
         {
+            gregRequestedGold = 2;
             gs.goldWanted = 2;
             if (gs.goldAmount == 2)
             {

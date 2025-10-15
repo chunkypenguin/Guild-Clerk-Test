@@ -16,6 +16,8 @@ public class MaggieScript : MonoBehaviour
     public bool partOneComplete;
     public bool partTwoComplete;
 
+    public int maggieRequestedGold;
+
     public static MaggieScript instance;
 
     private void Awake()
@@ -55,6 +57,7 @@ public class MaggieScript : MonoBehaviour
         //int rep = 0;
         if (cs.currentCharacter.choseQuestA)//food
         {
+            maggieRequestedGold = 8;
             if (gs.goldAmount == 8)
             {
                 //do this
@@ -77,6 +80,7 @@ public class MaggieScript : MonoBehaviour
         }
         else if (cs.currentCharacter.choseQuestB)//goblin
         {
+            maggieRequestedGold = 16;
             if (gs.goldAmount == 16)
             {
                 //do this

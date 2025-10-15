@@ -40,6 +40,11 @@ public class LorneScript : MonoBehaviour
     public bool partOneComplete;
     public bool partTwoComplete;
 
+    bool lightsDimmed;
+    [SerializeField] GameObject potionGlow;
+    [SerializeField] Rigidbody lornePotionRB;
+    float potionSpeed;
+
     public static LorneScript instance;
     private void Awake()
     {
@@ -140,5 +145,22 @@ public class LorneScript : MonoBehaviour
     public void ChangeEmote()
     {
         mr.material = mat;
+    }
+
+    public void LornePotion()
+    {
+        if(!lightsDimmed)
+        {
+            LightSystem.instance.DimLights();
+            potionGlow.SetActive(true);
+            lightsDimmed = true;
+        }
+        else
+        {
+            LightSystem.instance.UndimLights();
+            potionGlow.SetActive(false);
+            lightsDimmed = false;
+        }
+
     }
 }

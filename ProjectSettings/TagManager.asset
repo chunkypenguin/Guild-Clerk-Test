@@ -21,6 +21,8 @@ TagManager:
   - DialogueUI
   - Coins
   - EveningTune
+  - LornePotion
+  - Breeze
   layers:
   - Default
   - TransparentFX

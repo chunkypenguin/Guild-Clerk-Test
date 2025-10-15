@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Credits : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Credits : MonoBehaviour
 
     public bool scroll;
     public float scrollDistance;
+
+    [SerializeField] TMP_Text playerNameText;
 
     public static Credits instance;
 
@@ -43,6 +46,8 @@ public class Credits : MonoBehaviour
 
     public void ScrollToTarget()
     {
+        ThanksPlayerText();
+
         rectTransform.DOAnchorPosY(scrollDistance, scrollSpeed).SetEase(Ease.Linear).OnComplete(() =>
         {
             Debug.Log("Credits end");
@@ -65,5 +70,10 @@ public class Credits : MonoBehaviour
         {
             DaySystem.instance.escTextOn = true;
         });
+    }
+
+    public void ThanksPlayerText()
+    {
+        playerNameText.text = string.Format(playerNameText.text, UIManager.instance.playerName);
     }
 }

@@ -18,8 +18,8 @@ public class AlexDecoSystemScript : MonoBehaviour
     [Header("Knick Knacks")]
     [SerializeField] List<GameObject> knickKnackObjects; //decoration to be activated
     [SerializeField] List<GameObject> knickKnackButtons; //reference to buttons
-    [SerializeField] List<bool> knickKnackLocked; //lock bools 
-    [SerializeField] List<bool> knickKnackActive; //active bools 
+    [SerializeField] List<bool> knickKnackLocked; //lock bools
+    [SerializeField] List<bool> knickKnackActive; //active bools
     [SerializeField] List<int> knickKnackCosts; //object pricing
 
     [Header("Music Record")]
@@ -317,6 +317,10 @@ public class AlexDecoSystemScript : MonoBehaviour
         {
             recordAudioSource[x].DOFade(1, fadeTime).SetUpdate(true);
         }
+        else if (recordAudioSource[x].CompareTag("Breeze"))
+        {
+            recordAudioSource[x].DOFade(0.5f, fadeTime).SetUpdate(true);
+        }
         else
         {
             recordAudioSource[x].DOFade(0.75f, fadeTime).SetUpdate(true);
@@ -509,7 +513,7 @@ public class AlexDecoSystemScript : MonoBehaviour
         {
             item.transform.Find("Highlight").gameObject.SetActive(false);
         }
-        for (int x = 0; x < woodGrainActive.Count; x++) //set all records inactive
+        for (int x = 0; x < tableClothActive.Count; x++) //set all records inactive WAS woodGrainActive.Count before...
         {
             tableClothActive[x] = false;
         }

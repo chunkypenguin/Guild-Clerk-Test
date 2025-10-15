@@ -14,8 +14,17 @@ public class ZekeScript : MonoBehaviour
 
     [SerializeField] GameObject raspberries;
     [SerializeField] RaspberriesScript raspS;
+    [SerializeField] RaspberriesScript mushroomS;
+    [SerializeField] RaspberriesScript mushPottedS;
+    [SerializeField] RaspberriesScript lornePotionS;
+
+    [SerializeField] ParticleSystem zekePoof;
+    [SerializeField] AudioSource zekePoofAudio;
 
     public GameObject raspberriesGlow;
+    public GameObject magicMushroomGlow;
+    public GameObject magicMushroomPotGlow;
+    public GameObject lornePotionGlow;
 
     bool tagSystem;
     bool tagOn;
@@ -23,6 +32,13 @@ public class ZekeScript : MonoBehaviour
     public bool zekeRejected;
 
     public bool refusedOnce;
+
+    [Header("Emote Swapping Gag")]
+    [SerializeField] int emoteRepeatCount;
+    [SerializeField] float interval;
+    [SerializeField] float interval2;
+    [SerializeField] Material zekeReal1;
+    [SerializeField] Material zekeReal2;
 
     public static ZekeScript instance;
 
@@ -35,12 +51,12 @@ public class ZekeScript : MonoBehaviour
     {
         if (tagSystem)
         {
-            if (!raspS.raspberriesOnDesk && !tagOn)
+            if ((!raspS.raspberriesOnDesk && !mushroomS.raspberriesOnDesk && !mushPottedS.raspberriesOnDesk && !lornePotionS.raspberriesOnDesk) && !tagOn)
             {
                 refuseTag.SetActive(true);
                 tagOn = true;
             }
-            else if (raspS.raspberriesOnDesk && tagOn)
+            else if ((raspS.raspberriesOnDesk || mushroomS.raspberriesOnDesk || mushPottedS.raspberriesOnDesk || lornePotionS.raspberriesOnDesk) && tagOn)
             {
                 refuseTag.SetActive(false);
                 tagOn = false;
@@ -88,5 +104,53 @@ public class ZekeScript : MonoBehaviour
     public void ZekeRejected()
     {
         zekeRejected = true;
+    }
+
+    public void ZekePoof()
+    {
+        zekePoofAudio.Play();
+        zekePoof.Play();
+    }
+
+    public void EmoteSwap()
+    {
+        StartCoroutine(AlternateFunctions());
+    }
+
+    private IEnumerator AlternateFunctions()
+    {
+        //phase 1
+        for (int i = 0; i < emoteRepeatCount; i++)
+        {
+            if (i % 2 == 0)
+                ChangeEmote(zekeReal1);
+            else
+                ChangeEmote(zekeReal2);
+
+            yield return new WaitForSeconds(interval);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        //phase 2
+        for (int i = 0; i < emoteRepeatCount; i++)
+        {
+            if (i % 2 == 0)
+                ChangeEmote(zekeReal2);
+            else
+                ChangeEmote(zekeReal1);
+
+            yield return new WaitForSeconds(interval2);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        // After all alternations are done
+        ContinueRealZekeDialogue();
+    }
+
+    void ContinueRealZekeDialogue()
+    {
+        cs.zekeD3FeedMushroomP2.StartNewDialogue(cs.dialogueTriggerScript);
     }
 }

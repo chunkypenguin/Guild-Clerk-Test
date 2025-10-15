@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GregQ1A
   m_EditorClassIdentifier: 
   questTitle: "Drive away the 2 pesky kobolds terrorizing the outskirts of town\r"
-  questDescription: Those stupid kobolds are back again!! We've been havin' trouble
+  questDescription: '"Those stupid kobolds are back again!! We''ve been havin'' trouble
     with the goblins already, but now these morons are back to steal my underwear
-    again!!!
+    again!!!"'
   questReward: 'Reward: 8 gold'

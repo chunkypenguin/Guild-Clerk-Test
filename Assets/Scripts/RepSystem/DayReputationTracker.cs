@@ -16,6 +16,7 @@ public class DayReputationTracker : MonoBehaviour
 
     // This is the list of all the characters the player interacts with in the current day.
     [SerializeField]private List<CharacterReputation> _visitedToday = new List<CharacterReputation>();
+    [SerializeField]private List<CharacterReputation> visitedOverall = new List<CharacterReputation>();
 
     public int _playerGold = 0;
 
@@ -40,6 +41,7 @@ public class DayReputationTracker : MonoBehaviour
         }
         // Add the npc to the list of visited characters.
         _visitedToday.Add(npc);
+        visitedOverall.Add(npc);
     }
 
     // Reference NpcCountToday to get the number of characters the player has interacted with today safely.
@@ -63,6 +65,29 @@ public class DayReputationTracker : MonoBehaviour
 
         // Calculate the average reputation points
         float average = (float)totalRep / NpcCountToday;
+        // Round to the nearest positive half
+        return Mathf.Ceil(average * 2f) / 2f;
+    }
+
+    public float OverallAverageRep()
+    {
+        if (NpcCountToday == 0)
+        {
+            Debug.Log("No npcs interacted with today");
+            return 0f;
+        }
+
+        // Start with 0 total reputation points
+        int totalRep = 0;
+
+        // Add up the reputation points for each NPC
+        foreach (CharacterReputation rep in visitedOverall)
+        {
+            totalRep += rep.ReputationPoints;
+        }
+
+        // Calculate the average reputation points
+        float average = (float)totalRep / visitedOverall.Count;
         // Round to the nearest positive half
         return Mathf.Ceil(average * 2f) / 2f;
     }
