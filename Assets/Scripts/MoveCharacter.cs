@@ -394,7 +394,7 @@ public class MoveCharacter : MonoBehaviour
             }
             if(cs.currentCharacter.characterName == "Ishizu" && cs.currentCharacter.choseItemB)
             {
-                LightSystem.instance.DimLights();
+                LightSystem.instance.DimLightsRed();
             }
 
             transform.DOMove(startPos, moveSpeed).OnComplete(() =>
@@ -435,7 +435,7 @@ public class MoveCharacter : MonoBehaviour
 
                 if (cs.currentCharacter.characterName == "Lorne")
                 {
-                    LightSystem.instance.DimLights();
+                    //LightSystem.instance.DimLights();
                     lorneS.StartDialogue();
                 }
 

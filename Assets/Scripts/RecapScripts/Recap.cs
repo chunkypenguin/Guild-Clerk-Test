@@ -46,10 +46,6 @@ public class Recap : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        scrollbar.value = 1;
-    }
 
     private void Update()
     {
@@ -360,6 +356,7 @@ public class Recap : MonoBehaviour
     public void FadeToRecap()
     {
         recapOn = true;
+        scrollbar.value = 1; //set scrollbar to top of page
         DisplayRecap();
         fadeBG.DOFade(0f, 2f).OnComplete(() =>
         {

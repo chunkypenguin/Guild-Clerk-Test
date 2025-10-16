@@ -40,6 +40,19 @@ public class LightSystem : MonoBehaviour
         light4.DOColor(Color.blue, duration);
     }
 
+    public void DimLightsRed()
+    {
+        light1.DOIntensity(targetIntensity, duration);
+        light2.DOIntensity(targetIntensity, duration);
+        light3.DOIntensity(targetIntensity, duration);
+        light4.DOIntensity(targetIntensity, duration);
+
+        light1.DOColor(Color.red, duration); // Changes light color over time
+        light2.DOColor(Color.red, duration); // Changes light color over time
+        light3.DOColor(Color.red, duration); // Changes light color over time
+        light4.DOColor(Color.red, duration);
+    }
+
     public void UndimLights()
     {
         light1.DOIntensity(startIntensity, duration);
