@@ -298,7 +298,7 @@ public class DeskTrigger : MonoBehaviour
         {
             if (!LorneScript.instance.partOneComplete)
             {
-                if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null)
+                if ((items.Find(item => item.name == cs.currentCharacter.ItemAName) != null))
                 {
 
                     GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);

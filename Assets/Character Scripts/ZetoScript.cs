@@ -19,8 +19,10 @@ public class ZetoScript : MonoBehaviour
     [SerializeField] Material burnedEmote;
     [SerializeField] Material cursedEmote;
 
-    public int zetoGoldGiven;
-    public int zetoRequestedGold;
+    public int zetoGoldGivenSkeleton;
+    public int zetoRequestedGoldSkeleton;
+    public int zetoGoldGivenNomira;
+    public int zetoRequestedGoldNomira;
 
     public bool partOneComplete;
     private void Awake()
@@ -60,12 +62,13 @@ public class ZetoScript : MonoBehaviour
     public void CheckForReward()
     {
         //int rep = 0;
-        zetoGoldGiven = gs.goldAmount;
+        zetoGoldGivenSkeleton = gs.goldAmount;
         if (!partOneComplete)
         {
             if (cs.currentCharacter.choseQuestA) //Slay Quest
             {
-                zetoRequestedGold = 15;
+                zetoGoldGivenSkeleton = gs.goldAmount;
+                zetoRequestedGoldSkeleton = 15;
                 if (gs.goldAmount == 15) //=
                 {
                     //do this
@@ -92,13 +95,15 @@ public class ZetoScript : MonoBehaviour
         }
         else
         {
+            zetoGoldGivenNomira = gs.goldAmount;
             if (cs.currentCharacter.choseQuestA) //Slay Quest
             {
+                zetoRequestedGoldNomira = 40;
                 cs.zetoP2QAG.StartNewDialogue(cs.dialogueTriggerScript);
             }
             else if (cs.currentCharacter.choseQuestB)
             {
-                zetoRequestedGold = 35;
+                zetoRequestedGoldNomira = 35;
                 if (gs.goldAmount == 35) //=
                 {
                     //do this
@@ -152,6 +157,16 @@ public class ZetoScript : MonoBehaviour
 
     public void ZetoGold()
     {
-        ReviewManager.instance.CharacterGoldAccuracyCalculator(zetoGoldGiven, zetoRequestedGold);
+        ZetoGoldSkeleton();
+        ZetoGoldNomira();
     }
+    private void ZetoGoldSkeleton()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(zetoGoldGivenSkeleton, zetoRequestedGoldSkeleton);
+    }
+    private void ZetoGoldNomira()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(zetoGoldGivenNomira, zetoRequestedGoldNomira);
+    }
+
 }

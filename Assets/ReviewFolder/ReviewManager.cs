@@ -8,6 +8,8 @@ public class ReviewManager : MonoBehaviour
     [SerializeField] float overallAverageRep;
 
     [SerializeField] int totalRequestedGold;
+    [SerializeField] int totalGoldGiven;
+    [SerializeField] int totalGoldOverUnder;
 
     [SerializeField] List<float> characterGoldAccuracy;
 
@@ -24,8 +26,8 @@ public class ReviewManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            CallCharacterAccuracy();
-            OverallRep();
+            //CallCharacterAccuracy();
+            //OverallRep();
         }
     }
 
@@ -34,11 +36,11 @@ public class ReviewManager : MonoBehaviour
         overallAverageRep = DayReputationTracker.Instance.OverallAverageRep();
     }
 
-    public void CalculateTotalRequestedGold()
+    public void CalculateTotalRequestedGold() //I DONT THINK WE NEED THIS
     {
         totalRequestedGold =
 
-         AndyScript.instance.andyRequestedGold
+         AndyScript.instance.andyRequestedGoldFetch
         + FinchScript.instance.finchRequestedGold
         + GregScript.instance.gregRequestedGold
         + JoleneScript.instance.joleneRequestedGold
@@ -47,8 +49,8 @@ public class ReviewManager : MonoBehaviour
         + MaggieScript.instance.maggieRequestedGold
         + NomiraScript.instance.nomiraRequestedGold
         + TahmasScript.instance.tahmasRequestedGold
-        + VanelleScript.instance.vanelleRequestedGold
-        +ZetoScript.instance.zetoRequestedGold;
+        + VanelleScript.instance.vanelleRequestedGold;
+        //+ZetoScript.instance.zetoRequestedGold;
     }
 
     public void CallCharacterAccuracy()
@@ -79,10 +81,15 @@ public class ReviewManager : MonoBehaviour
 
         float goldPercentageDifference = (goldGiven -  goldRequested) / (float)goldRequested;
         characterGoldAccuracy.Add(goldPercentageDifference);
+
+        totalRequestedGold += goldRequested;
+        totalGoldGiven += goldGiven;
     }
 
     public void CalculateGoldReview()
     {
+        totalGoldOverUnder = totalGoldGiven - totalRequestedGold; //ex: gave 400 - total 600 = -200 (gave 200 less than asked)
+
         averageBias = characterGoldAccuracy.Average(); //- undergive too little!, + overgive too much!
         averageAccuracy = characterGoldAccuracy.Select(x => 1f - Mathf.Abs(x)).Average(); //how close, ignoring direction
     }
