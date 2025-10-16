@@ -51,6 +51,8 @@ public class TutorialScript : MonoBehaviour
     //achilles check
     public bool achillesDialogueFinished;
 
+    [SerializeField] AudioSource doorEnter;
+
     //review stuff
 
 
@@ -358,5 +360,10 @@ public class TutorialScript : MonoBehaviour
         //tutSpaceClickText.DOFade(0, 1.5f).SetEase(Ease.InOutQuad);
 
         tutSpaceClickText.gameObject.SetActive(false);
+    }
+
+    public void DoorEnter()
+    {
+        doorEnter.Play();
     }
 }

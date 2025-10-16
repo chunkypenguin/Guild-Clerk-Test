@@ -34,6 +34,46 @@ public class AchillesScript : MonoBehaviour
         cs.achillesP1.StartNewDialogue(cs.dialogueTriggerScript);
     }
 
+    public void CheckForReward()
+    {
+        achillesGoldGiven = gs.goldAmount;
+        if (cs.currentCharacter.choseQuestA)
+        {
+            achillesRequestedGold = 12;
+            if (gs.goldAmount == 12)
+            {
+
+            }
+            else if (gs.goldAmount > 12)
+            {
+
+            }
+
+            else if (gs.goldAmount < 12)
+            {
+
+            }
+
+        }
+        else if (cs.currentCharacter.choseQuestB)
+        {
+            achillesRequestedGold = 17;
+            if (gs.goldAmount == 17)
+            {
+                
+            }
+            else if (gs.goldAmount > 17)
+            {
+                
+            }
+
+            else if (gs.goldAmount < 17)
+            {
+                
+            }
+        }
+    }
+
     public void ChangeEmote(Material emote)
     {
         if (emote == null)

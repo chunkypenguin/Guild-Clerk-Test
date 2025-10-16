@@ -1,6 +1,7 @@
 using HeneGames.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AndyScript : MonoBehaviour
@@ -41,8 +42,12 @@ public class AndyScript : MonoBehaviour
     public bool gaveEqualOrMoreGold;
     public bool gaveLessGold;
 
-    public int andyGoldGiven;
-    public int andyRequestedGold;
+    public int andyGoldGivenFetch;
+    public int andyRequestedGoldFetch;
+    public int andyGoldGivenDragon;
+    public int andyRequestedGoldDragon;
+    public bool fetch;
+    public bool dragon;
 
 
     public static AndyScript instance;
@@ -72,7 +77,7 @@ public class AndyScript : MonoBehaviour
             else // fetch quest
             {
                 cs.andyD2Q1B.StartNewDialogue(cs.dialogueTriggerScript);
-                andyRequestedGold = 2;
+                andyRequestedGoldFetch = 2;
                 //gameObject.GetComponent<CharacterReputation>().ModifyReputation(-1);
             }
             
@@ -94,7 +99,7 @@ public class AndyScript : MonoBehaviour
         else
         {
             cs.andyD3P1.StartNewDialogue(cs.dialogueTriggerScript);
-            andyRequestedGold = 85;
+            andyRequestedGoldDragon = 85;
             //gameObject.GetComponent<CharacterReputation>().ModifyReputation(3);
         }
     }
@@ -124,12 +129,13 @@ public class AndyScript : MonoBehaviour
     public void CheckForReward()
     {
         //int rep = 0;
-        andyGoldGiven = gs.goldAmount;
-        if (!partTwoComplete) //!cs.D3
+        if (!partTwoComplete) //!cs.D3 //fetch quest
         {
+            fetch = true;
+            andyGoldGivenFetch = gs.goldAmount;
             cs.andyD2Q1BP2.StartNewDialogue(cs.dialogueTriggerScript);
         }
-        else if(gs.goldAmount == 85)
+        else if(gs.goldAmount == 85) //dragon
         {
             cs.andyD3G1B.StartNewDialogue(cs.dialogueTriggerScript);
             //rep = 1;
@@ -143,6 +149,12 @@ public class AndyScript : MonoBehaviour
         {
             cs.andyD3G1A.StartNewDialogue(cs.dialogueTriggerScript);
             //rep = -1;
+        }
+
+        if (partTwoComplete) //dragon
+        {
+            dragon = true;
+            andyGoldGivenDragon = gs.goldAmount;
         }
         //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
@@ -252,8 +264,26 @@ public class AndyScript : MonoBehaviour
         gaveLessGold = true;
     }
 
+    //calculates whatever quest the player gives gold for
     public void AndyGold()
     {
-        ReviewManager.instance.CharacterGoldAccuracyCalculator(andyGoldGiven, andyRequestedGold);
+        if (fetch) //if was asked for gold for fetch quest
+        {
+            AndyGoldFetch();
+        }
+        if(dragon) //if was asked for gold for dragon quest
+        {
+            AndyGoldDragon();
+        }
+    }
+
+    private void AndyGoldFetch()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(andyGoldGivenFetch, andyRequestedGoldFetch);
+    }
+
+    private void AndyGoldDragon()
+    {
+        ReviewManager.instance.CharacterGoldAccuracyCalculator(andyGoldGivenDragon, andyRequestedGoldDragon);
     }
 }
