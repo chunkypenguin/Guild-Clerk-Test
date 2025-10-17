@@ -11,11 +11,14 @@ public class AchillesScript : MonoBehaviour
 
     public DialogueCharacter achillesCharacter;
 
-    public static AchillesScript instance;
-
     public int achillesGoldGiven;
     public int achillesRequestedGold;
     bool askedForGold;
+
+    public bool achillesCoinGiven;
+    public GameObject coinGlow;
+
+    public static AchillesScript instance;
 
     private void Awake()
     {
@@ -31,7 +34,22 @@ public class AchillesScript : MonoBehaviour
 
     public void StartDialogue()
     {
-        cs.achillesP1.StartNewDialogue(cs.dialogueTriggerScript);
+        if (!achillesCoinGiven)
+        {
+            cs.achillesP1.StartNewDialogue(cs.dialogueTriggerScript);
+        }
+        else
+        {
+            if (cs.currentCharacter.choseQuestA)
+            {
+                cs.achillesQ1AReturn.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else if (cs.currentCharacter.choseQuestB)
+            {
+                cs.achillesQ1BReturn.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+        }
+
     }
 
     public void CheckForReward()
@@ -42,16 +60,16 @@ public class AchillesScript : MonoBehaviour
             achillesRequestedGold = 12;
             if (gs.goldAmount == 12)
             {
-
+                cs.achillesAReturnEquals.StartNewDialogue(cs.dialogueTriggerScript);
             }
             else if (gs.goldAmount > 12)
             {
-
+                cs.achillesAReturnPlus.StartNewDialogue(cs.dialogueTriggerScript);
             }
 
             else if (gs.goldAmount < 12)
             {
-
+                cs.achillesAReturnMinus.StartNewDialogue(cs.dialogueTriggerScript);
             }
 
         }
@@ -60,16 +78,16 @@ public class AchillesScript : MonoBehaviour
             achillesRequestedGold = 17;
             if (gs.goldAmount == 17)
             {
-                
+                cs.achillesBReturnEquals.StartNewDialogue(cs.dialogueTriggerScript);
             }
             else if (gs.goldAmount > 17)
             {
-                
+                cs.achillesBReturnPlus.StartNewDialogue(cs.dialogueTriggerScript);
             }
 
             else if (gs.goldAmount < 17)
             {
-                
+                cs.achillesBReturnMinus.StartNewDialogue(cs.dialogueTriggerScript);
             }
         }
     }

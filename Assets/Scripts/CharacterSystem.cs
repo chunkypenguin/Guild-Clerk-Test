@@ -42,6 +42,8 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager josieAchillesQ1A;
     public DialogueManager josieAchillesQ1B;
     public DialogueManager josieReviewP1;
+    public DialogueManager josieTwoQuestReminder;
+    public DialogueManager josieTwoItemReminder;
 
     [Header("Greg")]
     public DialogueManager gregD1P1;
@@ -224,8 +226,17 @@ public class CharacterSystem : MonoBehaviour
 
     [Header("Achilles")]
     public DialogueManager achillesP1;
+    public DialogueManager achillesP1CoinGiven;
     public DialogueManager achillesQ1A;
     public DialogueManager achillesQ1B;
+    public DialogueManager achillesQ1AReturn;
+    public DialogueManager achillesAReturnPlus;
+    public DialogueManager achillesAReturnEquals;
+    public DialogueManager achillesAReturnMinus;
+    public DialogueManager achillesQ1BReturn;
+    public DialogueManager achillesBReturnPlus;
+    public DialogueManager achillesBReturnEquals;
+    public DialogueManager achillesBReturnMinus;
 
     [Header("Ishizu")]
     public DialogueManager ishizuP1;
@@ -286,13 +297,9 @@ public class CharacterSystem : MonoBehaviour
         ChangeTextColor();
     }
 
-    public void IsQuest()
+    //achilles specific stuff (found at end of first dialogue)
+    public void AchillesIsQuest()
     {
-        isQuest = true;
-        isReward = false;
-        isEquipment = false;
-        isIdle = false;
-
         if (movecam.instance.right)
         {
             QuestSystem.instance.UpdateQuests();
@@ -301,6 +308,34 @@ public class CharacterSystem : MonoBehaviour
         {
             newQuests = true;
         }
+    }
+
+    public void IsQuest()
+    {
+        if(currentCharacter.characterName == "Achilles")
+        {
+            isQuest = false;
+            isReward = false;
+            isEquipment = true;
+            isIdle = false;
+        }
+        else
+        {
+            isQuest = true;
+            isReward = false;
+            isEquipment = false;
+            isIdle = false;
+
+            if (movecam.instance.right)
+            {
+                QuestSystem.instance.UpdateQuests();
+            }
+            else
+            {
+                newQuests = true;
+            }
+        }
+
     }
 
     public void NomiraVanelleIsQuest()
@@ -644,6 +679,36 @@ public class CharacterSystem : MonoBehaviour
             //josieSkippedOne = true;
             LotestScript.instance.skipJosie = false;
             TutorialScript.instance.lotestJosieStarted = true;
+        }
+
+        if(currentCharacter.characterName == "Josie")
+        {
+            //if achilles given coin
+            //if day 5 (easy/quick fix)
+            if(AchillesScript.instance.achillesCoinGiven)
+            {
+                if(DaySystem.instance.dayCount == 5)
+                {
+                    //skip josie on final day
+                    characterCount++;
+                    currentCharacter = characters[characterCount];
+                    currentCharacterObject = characterObjects[characterCount];
+                }
+            }
+        }
+
+        if(currentCharacter.characterName == "Achilles")
+        {
+            if (!AchillesScript.instance.achillesCoinGiven)
+            {
+                if(DaySystem.instance.dayCount == 5)
+                {
+                    //skip achilles on final day
+                    characterCount++;
+                    currentCharacter = characters[characterCount];
+                    currentCharacterObject = characterObjects[characterCount];
+                }
+            }
         }
 
         //ANDY NONSENSE

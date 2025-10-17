@@ -1,6 +1,7 @@
 using HeneGames.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DeskTrigger : MonoBehaviour
@@ -153,6 +154,15 @@ public class DeskTrigger : MonoBehaviour
         else
         {
             Debug.Log("two or no quests on desk");
+
+            //if both quests
+            if((items.Find(item => item.name == "QuestB") != null) && items.Find(item => item.name == "QuestA") != null)
+            {
+                //josie dialogue "remember what josie said..."
+                //set at start of dia is idle, then at end back to is quest
+                cs.josieTwoQuestReminder.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+
         }
     }
 
@@ -238,6 +248,12 @@ public class DeskTrigger : MonoBehaviour
         if (cs.currentCharacter.characterName == "Kalin")
         {
             kalinS.CheckForReward();
+            cs.IsIdle();
+        }
+
+        if(cs.currentCharacter.characterName == "Achilles")
+        {
+            AchillesScript.instance.CheckForReward();
             cs.IsIdle();
         }
 
@@ -500,6 +516,27 @@ public class DeskTrigger : MonoBehaviour
                 }
             }
         }
+        else if (cs.currentCharacter.characterName == "Achilles")
+        {
+            //get coin
+            //dont put into idle, let quest do that
+
+            //if coin is on desk and either quest is on the desk too
+            if(items.Find(item => item.name == cs.currentCharacter.ItemAName) != null)
+            {
+                //suck up coin
+                //say dialogue about coin
+                cs.achillesP1CoinGiven.StartNewDialogue(cs.dialogueTriggerScript); //isQuest and checkquest at end of this dialogue
+                cs.currentCharacter.choseItemA = true;
+                GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemAName);
+                itemS.GetItemRb(itemRB);
+                cs.IsIdle();
+            }
+            else if(items.Find(item => item.name == cs.currentCharacter.ItemAName) == null)
+            {
+                CheckForQuest();
+            }
+        }
 
         //REGULAR STUFF FOR OTHER CHARACTERS
         //item a
@@ -535,6 +572,27 @@ public class DeskTrigger : MonoBehaviour
         else
         {
             Debug.Log("two or no quests on desk");
+
+            CheckForDuplicateItems();
+
+        }
+    }
+
+    private void CheckForDuplicateItems()
+    {
+        string[] targetNames = {
+        cs.currentCharacter.ItemAName,
+        cs.currentCharacter.ItemBName,
+        cs.currentCharacter.ItemANameA,
+        cs.currentCharacter.ItemBNameB
+    };
+
+        // Count how many of the target items exist in the list
+        int totalMatches = items.Count(item => targetNames.Contains(item.name));
+
+        if (totalMatches > 1)
+        {
+            cs.josieTwoItemReminder.StartNewDialogue(cs.dialogueTriggerScript);
         }
     }
 

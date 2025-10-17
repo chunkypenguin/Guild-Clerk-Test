@@ -47,8 +47,14 @@ public class ItemSystem : MonoBehaviour
         {
             // Turn off gravity and collider while getting sucked
             rb.useGravity = false;
-            Collider col = rb.GetComponent<Collider>();
-            if (col != null) col.enabled = false;
+            //Collider col = rb.GetComponent<Collider>(); //OLD
+            //if (col != null) col.enabled = false; //OLD
+            
+            //new
+            foreach (Collider col in rb.GetComponents<Collider>())
+            {
+                col.enabled = false;
+            }
 
             Vector3 direction = (cs.currentCharacterObject.transform.position - rb.transform.position).normalized;
             rb.AddForce(direction * suckForce, ForceMode.Acceleration);
@@ -149,18 +155,31 @@ public class ItemSystem : MonoBehaviour
             ishizuScript.redHerbGlow.SetActive(true);
             ishizuScript.tealHerbGlow.SetActive(true);
         }
+
+        if(cs.currentCharacter.characterName == "Achilles")
+        {
+            AchillesScript.instance.coinGlow.SetActive(true);
+        }
     }
 
     public void ItemGlowOff()
     {
         //Lorne
-        lorneScript.purplePackageGlow.SetActive(false);
-        lorneScript.blackPackageGlow.SetActive(false);
-        lorneScript.yarnGlow.SetActive(false);
+        if(cs.currentCharacter.characterName == "Lorne")
+        {
+            lorneScript.purplePackageGlow.SetActive(false);
+            lorneScript.blackPackageGlow.SetActive(false);
+            lorneScript.yarnGlow.SetActive(false);
+        }
+
 
         //Lotest
-        lotestScript.greenGlow.SetActive(false);
-        lotestScript.velvetGlow.SetActive(false);
+        if(cs.currentCharacter.characterName == "Lotest Altall")
+        {
+            lotestScript.greenGlow.SetActive(false);
+            lotestScript.velvetGlow.SetActive(false);
+        }
+
 
         //zeke
         if (cs.currentCharacter.characterName == "Zeke")
@@ -187,6 +206,10 @@ public class ItemSystem : MonoBehaviour
         {
             ishizuScript.redHerbGlow.SetActive(false);
             ishizuScript.tealHerbGlow.SetActive(false);
+        }
+        if (cs.currentCharacter.characterName == "Achilles")
+        {
+            AchillesScript.instance.coinGlow.SetActive(false);
         }
     }
 }
