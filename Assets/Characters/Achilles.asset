@@ -17,7 +17,7 @@ MonoBehaviour:
   quest:
   - {fileID: 11400000, guid: ffcf08bedc98a6742b4f02e132b9d28c, type: 2}
   - {fileID: 11400000, guid: 30ae67f432367a64182c279a0d8f95bf, type: 2}
-  ItemAName: 
+  ItemAName: BirdCoin
   ItemBName: 
   ItemANameA: 
   ItemBNameB: 
