@@ -419,7 +419,7 @@ public class MoveCharacter : MonoBehaviour
                     }
                     else //review time
                     {
-                        
+                        TutorialScript.instance.ReviewDialogueRepuation();
                     }
                 }
 

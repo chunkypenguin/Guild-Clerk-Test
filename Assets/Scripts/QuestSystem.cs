@@ -71,6 +71,8 @@ public class QuestSystem : MonoBehaviour
     private Vector3 startScale; // Store initial scale
     private float initialDistance;
 
+    public bool questsOnBoard;
+
     public static QuestSystem instance;
     private void Awake()
     {
@@ -214,6 +216,7 @@ public class QuestSystem : MonoBehaviour
         }
         else
         {
+            questsOnBoard = false;
             visualQuests.SetActive(true);
             poofFX.Play();
             poofAudio.Play();
@@ -326,6 +329,9 @@ public class QuestSystem : MonoBehaviour
 
     public void UpdateQuests()
     {
+        //to prevent double poofs
+        questsOnBoard = true;
+
         visualQuests.SetActive(false); //*poof*
         poofFX.Play();
         poofAudio.Play();

@@ -139,7 +139,11 @@ namespace HeneGames.DialogueSystem
             //If last sentence remove current dialogue manager
             if (lastSentence)
             {
-                lastMessage = currentMessage;
+                if((currentMessage != CharacterSystem.instance.josieTwoQuestReminder.sentences[1].sentence) && (currentMessage != CharacterSystem.instance.josieTwoItemReminder.sentences[1].sentence))
+                {
+                    lastMessage = currentMessage;
+                }
+                
                 Debug.Log(lastMessage);
                 currentDialogueManager = null;
                 Debug.Log("dialogue end");

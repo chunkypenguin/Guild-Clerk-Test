@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class TutorialScript : MonoBehaviour
 {
@@ -50,6 +51,8 @@ public class TutorialScript : MonoBehaviour
 
     //achilles check
     public bool achillesDialogueFinished;
+
+    public bool achillesJosieComplete;
 
     [SerializeField] AudioSource doorEnter;
 
@@ -102,6 +105,137 @@ public class TutorialScript : MonoBehaviour
 
         }
         achillesDialogueFinished = true;
+    }
+
+    public void ReviewDialogueRepuation()
+    {
+        //What did the adventureres think of the player?
+
+        //set thresholds
+        if (ReviewManager.instance.overallAverageRep < -2f)
+        {
+            //shitty
+            //they hated you
+        }
+        else if (ReviewManager.instance.overallAverageRep >= -2 && ReviewManager.instance.overallAverageRep < 0f)
+        {
+            //bad
+            //didnt much like you
+        }
+        else if(ReviewManager.instance.overallAverageRep >= 0f && ReviewManager.instance.overallAverageRep < 2f)
+        {
+            //ok
+            //a bit mixed
+        }
+        else if(ReviewManager.instance.overallAverageRep >= 2f && ReviewManager.instance.overallAverageRep < 3.5f)//greater than 2, less than 3.5
+        {
+            //good
+            //like you
+        }
+        else if(ReviewManager.instance.overallAverageRep >= 3.5f && ReviewManager.instance.overallAverageRep < 4.5f)//greater 3.5, less than 4.5
+        {
+            //great
+            //really enjoyed you
+        }
+        else if(ReviewManager.instance.overallAverageRep >= 4.5f)
+        {
+            //perfect
+            //they loved you
+        }
+
+        cs.josieReviewP1.StartNewDialogue(cs.dialogueTriggerScript);
+    }
+
+    public void ReviewDialogueGoldCount()
+    {
+        //how much gold did you lose or keep for the guild??
+
+        //gave perfect
+        if (ReviewManager.instance.totalGoldOverUnder == 0)
+        {
+            //gave exact gold
+        }
+
+        //Gave too much
+        if (ReviewManager.instance.totalGoldOverUnder > 0 && ReviewManager.instance.totalGoldOverUnder <= 15)
+        {
+            //gave a little bit over
+        }
+        if (ReviewManager.instance.totalGoldOverUnder > 15 && ReviewManager.instance.totalGoldOverUnder <= 50)
+        {
+            //gave a good chunk over
+        }
+        if (ReviewManager.instance.totalGoldOverUnder > 50 && ReviewManager.instance.totalGoldOverUnder <= 100)
+        {
+            //gave way over
+        }
+        if (ReviewManager.instance.totalGoldOverUnder > 100)
+        {
+            //gave the guild away
+        }
+
+        //Gave too little
+        if (ReviewManager.instance.totalGoldOverUnder < 0 && ReviewManager.instance.totalGoldOverUnder >= -15)
+        {
+            //gave a little bit under
+        }
+        if (ReviewManager.instance.totalGoldOverUnder < -15 && ReviewManager.instance.totalGoldOverUnder >= -50)
+        {
+            //gave a good chunk under
+        }
+        if (ReviewManager.instance.totalGoldOverUnder < -50 && ReviewManager.instance.totalGoldOverUnder >= -100)
+        {
+            //gave way under
+        }
+        if (ReviewManager.instance.totalGoldOverUnder < -100)
+        {
+            //saved the guild a shit ton of money
+        }
+    }
+
+    public void ReviewDialogueGoldAccuracy()
+    {
+        //How accurate was the the player when handing out gold to adventureres?
+        //I've never seen such an innacurate gold count, im sorry but no other clerk i've trained has been this innacurate
+        //You really oughtta learn how to count!
+        //Well your gold accuracy is a bit off, but i won't judge you too harshly, its part of the job after all, giving a little more, a little less!
+        //Your gold accuracy looks good! Seems like you like to be pretty accurate with the gold!
+        //Wow! You gold accuracy looks great! You really liked giving adventurers the stated gold amount, good for HR!
+
+        if (ReviewManager.instance.averageAccuracy < 0.5f)
+        {
+            //terrible
+        }
+        if (ReviewManager.instance.averageAccuracy >= 0.5f && ReviewManager.instance.averageAccuracy < 0.7f)
+        {
+            //bad
+        }
+        if (ReviewManager.instance.averageAccuracy >= 0.7f && ReviewManager.instance.averageAccuracy < 0.85f)
+        {
+            //ok
+        }
+        if (ReviewManager.instance.averageAccuracy >= 0.85f && ReviewManager.instance.averageAccuracy < 0.95f)
+        {
+            //good
+        }
+        if (ReviewManager.instance.averageAccuracy >= 0.95f)
+        {
+            //great
+        }
+    }
+
+    public void ReviewDialogueBias()
+    {
+        //According to my gold account, it seems like your a giver (bias)! Maybe a bit too much of a giver (accuracy)...You gave away XGold!(count) Now I know told you to be flexible but you've bent over backwards to drain the guid bank dry!
+        //According to my gold account, it seems like your a a bit stingy! You know my managerial side is quite happy about this, You saved us XGold! We'll have enough for x, y, z. But...the adventurers aren't so satisfied, they feel scammed.
+        if(ReviewManager.instance.averageBias > 0)
+        {
+            //tended to give more
+        }
+        else if(ReviewManager.instance.averageBias < 0)
+        {
+            //tended to give less
+        }
     }
 
     private void Update()

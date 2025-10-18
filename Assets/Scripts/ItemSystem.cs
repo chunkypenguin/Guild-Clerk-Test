@@ -80,11 +80,15 @@ public class ItemSystem : MonoBehaviour
 
         initialDistance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position); // Get starting distance
         isSuctionActive = true;
+
+        Invoke(nameof(CollectItem), 2f);
     }
 
     private void CollectItem(GameObject itemObject)
     {
         isSuctionActive = false;
+
+        CancelInvoke(nameof(CollectItem)); //cancel invoke of this function if already done by suction
 
         //Destroy the quest
         itemObject.GetComponent<ItemFloorScript>().ResetItemWhenCollected();

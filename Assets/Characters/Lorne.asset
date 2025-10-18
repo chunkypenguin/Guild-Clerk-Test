@@ -16,13 +16,13 @@ MonoBehaviour:
   characterName: Lorne
   quest: []
   ItemAName: Purple Package
-  ItemBName: Yarn
-  ItemANameA: 
+  ItemBName: BlackPackage
+  ItemANameA: Yarn
   ItemBNameB: 
   choseQuestA: 0
   choseQuestB: 0
-  choseItemA: 1
-  choseItemB: 0
+  choseItemA: 0
+  choseItemB: 1
   choseItemAA: 0
   textColor: {r: 0.08392483, g: 0.41239887, b: 0.26208025, a: 1}
   textAudioPitch: 0.75

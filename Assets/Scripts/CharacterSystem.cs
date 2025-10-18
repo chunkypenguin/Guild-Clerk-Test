@@ -154,6 +154,8 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager zekeD3FeedLornePotion;
     public DialogueManager zekeD3FeedMushroom;
     public DialogueManager zekeD3FeedMushroomP2;
+    public DialogueManager zekeFeedPie;
+    public DialogueManager zekeFeedGrimNote;
     public DialogueManager zekeD3Refuse1;
     public DialogueManager zekeD3Refuse2;
 
@@ -326,14 +328,18 @@ public class CharacterSystem : MonoBehaviour
             isEquipment = false;
             isIdle = false;
 
-            if (movecam.instance.right)
+            if (!QuestSystem.instance.questsOnBoard)
             {
-                QuestSystem.instance.UpdateQuests();
+                if (movecam.instance.right)
+                {
+                    QuestSystem.instance.UpdateQuests();
+                }
+                else
+                {
+                    newQuests = true;
+                }
             }
-            else
-            {
-                newQuests = true;
-            }
+
         }
 
     }
@@ -687,8 +693,9 @@ public class CharacterSystem : MonoBehaviour
             //if day 5 (easy/quick fix)
             if(AchillesScript.instance.achillesCoinGiven)
             {
-                if(DaySystem.instance.dayCount == 5)
+                if(DaySystem.instance.dayCount == 5 && !TutorialScript.instance.achillesJosieComplete)
                 {
+                    TutorialScript.instance.achillesJosieComplete = true;
                     //skip josie on final day
                     characterCount++;
                     currentCharacter = characters[characterCount];
@@ -703,6 +710,8 @@ public class CharacterSystem : MonoBehaviour
             {
                 if(DaySystem.instance.dayCount == 5)
                 {
+                    TutorialScript.instance.achillesDialogueFinished = true;
+                    TutorialScript.instance.achillesJosieComplete = true;
                     //skip achilles on final day
                     characterCount++;
                     currentCharacter = characters[characterCount];

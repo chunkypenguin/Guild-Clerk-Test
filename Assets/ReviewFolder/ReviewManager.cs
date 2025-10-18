@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class ReviewManager : MonoBehaviour
 {
-    [SerializeField] float overallAverageRep;
+    public float overallAverageRep;
 
     [SerializeField] int totalRequestedGold;
     [SerializeField] int totalGoldGiven;
-    [SerializeField] int totalGoldOverUnder;
+    public int totalGoldOverUnder;
 
     [SerializeField] List<float> characterGoldAccuracy;
 
-    [SerializeField] float averageBias, averageAccuracy;
+    public float averageBias, averageAccuracy;
 
 
     public static ReviewManager instance;   
@@ -29,6 +29,12 @@ public class ReviewManager : MonoBehaviour
             //CallCharacterAccuracy();
             //OverallRep();
         }
+    }
+
+    public void GetReview()
+    {
+        CallCharacterAccuracy();
+        OverallRep();
     }
 
     public void OverallRep()

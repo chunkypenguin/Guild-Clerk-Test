@@ -18,11 +18,14 @@ MonoBehaviour:
   ItemAName: Raspberries
   ItemBName: MysticMushroom
   ItemANameA: LornePotion
-  ItemBNameB: 
+  ItemBNameB: Pie
+  ItemCName: GrimNote
   choseQuestA: 0
   choseQuestB: 0
   choseItemA: 0
-  choseItemB: 1
+  choseItemB: 0
   choseItemAA: 0
+  choseItemBB: 0
+  choseItemC: 0
   textColor: {r: 0.20754701, g: 0.19443533, b: 0.066851385, a: 1}
   textAudioPitch: 0.8

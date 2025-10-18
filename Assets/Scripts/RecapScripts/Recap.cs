@@ -242,11 +242,13 @@ public class Recap : MonoBehaviour
     {
         if (diaCharacter[ishizu].choseItemA) 
         {
+            DisplayName(characterRecaps[ishizu], 0);
             Picture(characterRecaps[ishizu], 0);
             DisplayText(characterRecaps[ishizu], 0);
         }
         else if (diaCharacter[ishizu].choseItemB)
         {
+            DisplayName(characterRecaps[ishizu], 1);
             Picture(characterRecaps[ishizu], 1);
             DisplayText(characterRecaps[ishizu], 1);
         }
@@ -273,15 +275,39 @@ public class Recap : MonoBehaviour
 
     public void Zeke()
     {
+
         if(!ZekeScript.instance.zekeRejected) //gave rasperries
         {
-            Picture(characterRecaps[zeke], 0);
-            DisplayText(characterRecaps[zeke], 0);
+            if (diaCharacter[zeke].choseItemA) //raspberries
+            {
+                Picture(characterRecaps[zeke], 0);
+                DisplayText(characterRecaps[zeke], 0);
+            }
+            else if (diaCharacter[zeke].choseItemB) //mushroom
+            {
+                Picture(characterRecaps[zeke], 1);
+                DisplayText(characterRecaps[zeke], 1);
+            }
+            else if (diaCharacter[zeke].choseItemAA) //lorne potion
+            {
+                Picture(characterRecaps[zeke], 2);
+                DisplayText(characterRecaps[zeke], 2);
+            }
+            else if (diaCharacter[zeke].choseItemBB) //pie
+            {
+                Picture(characterRecaps[zeke], 3);
+                DisplayText(characterRecaps[zeke], 3);
+            }
+            else if (diaCharacter[zeke].choseItemC) //grim note
+            {
+                Picture(characterRecaps[zeke], 4);
+                DisplayText(characterRecaps[zeke], 4);
+            }
         }
         else //rejected 
         {
-            Picture(characterRecaps[zeke], 1);
-            DisplayText(characterRecaps[zeke], 1);
+            Picture(characterRecaps[zeke], 5);
+            DisplayText(characterRecaps[zeke], 5);
         }
     }
 

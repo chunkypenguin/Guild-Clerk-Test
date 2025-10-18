@@ -421,6 +421,10 @@ public class movecam : MonoBehaviour
                 QuestSystem.instance.UpdateQuests();
                 //cs.newQuests = false;
             }
+            else if(cs.newQuests && !TutorialScript.instance.tutP1 && cs.currentCharacter.characterName == "Achilles" && cs.isEquipment)
+            {
+                QuestSystem.instance.UpdateQuests();
+            }
             cs.newQuests = false;
         };
 
