@@ -45,4 +45,9 @@ public class CharacterReputation : MonoBehaviour
     // This function is used to remove reputation points.
     // It makes sure the number subtracted is always negative.
     public void RemoveReputation(int amount) => ModifyReputation(-Mathf.Abs(amount));
+
+    public void CharacterDie()
+    {
+        ReviewManager.instance.RemoveCharacter(this);
+    }
 }

@@ -189,7 +189,11 @@ namespace HeneGames.DialogueSystem
         public void ClearText()
         {
             Debug.Log("DiaUI-Clear Text");
-            dialogueWindow.SetActive(false);
+            if(!ReviewManager.instance.reviewInProgress) //since we're skipping a frame it looks bad when the window flickers
+            {
+                dialogueWindow.SetActive(false);
+            }
+
             movecam.instance.DrawerLockOut();//lock out drawer temporarliy to prevent misclicks
             CharacterSystem.instance.dialogueHistory.dialogueIsOn = false; //might fix texthistory bug
             MousePos3D.instance.dialogueOpen = false;
@@ -301,19 +305,19 @@ namespace HeneGames.DialogueSystem
 
             typing = true;
 
-            day[DaySystem.instance.dayCount].ParaTexts[paraCount].ForceMeshUpdate();
+            day[DaySystem.instance.dayCount + ReviewManager.instance.EODHelper].ParaTexts[paraCount].ForceMeshUpdate();
 
-            day[DaySystem.instance.dayCount].ParaTexts[paraCount].maxVisibleCharacters = 0;
+            day[DaySystem.instance.dayCount + ReviewManager.instance.EODHelper].ParaTexts[paraCount].maxVisibleCharacters = 0;
 
-            dayText = day[DaySystem.instance.dayCount].ParaTexts[paraCount];
+            dayText = day[DaySystem.instance.dayCount + ReviewManager.instance.EODHelper].ParaTexts[paraCount];
 
             float _speed = 1f - textAnimationSpeed;
 
-            int totalCharacters = day[DaySystem.instance.dayCount].ParaTexts[paraCount].textInfo.characterCount;
+            int totalCharacters = day[DaySystem.instance.dayCount + ReviewManager.instance.EODHelper].ParaTexts[paraCount].textInfo.characterCount;
 
             for (int i = 0; i <= totalCharacters; i++)
             {
-                day[DaySystem.instance.dayCount].ParaTexts[paraCount].maxVisibleCharacters = i;
+                day[DaySystem.instance.dayCount + ReviewManager.instance.EODHelper].ParaTexts[paraCount].maxVisibleCharacters = i;
 
                 if (i == totalCharacters)
                 {
@@ -330,7 +334,7 @@ namespace HeneGames.DialogueSystem
 
         public void StartDayTextCoroutine(DayTexts[] day)
         {
-            if (paraCount >= day[DaySystem.instance.dayCount].ParaTexts.Length)
+            if (paraCount >= day[DaySystem.instance.dayCount + ReviewManager.instance.EODHelper].ParaTexts.Length)
             {
                 Debug.Log("No more paratexts");
                 //Display Gold Recap
