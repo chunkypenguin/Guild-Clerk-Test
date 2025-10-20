@@ -52,11 +52,16 @@ public class UIVisualizer : MonoBehaviour {
     [SerializeField] private GameObject _totalCoinText;
     [SerializeField] private TMP_Text dailyTotalText;
 
-    [SerializeField] AudioSource heartAudio;
+    public AudioSource heartAudio;
+
+    public static UIVisualizer instance;
 
     // Unity automatically calls Awake when the game starts. This is called before Start().
     // I use this to set up the initial state of the script.
     private void Awake() {
+
+        instance = this;
+
         // Make sure you assign the NPCs in the 'ReputationVisual' in the inspector
         if (trackedReps == null || trackedReps.Count == 0) {
             Debug.LogError("UIVisualizer: No tracked reputations assigned.");
@@ -161,7 +166,11 @@ public class UIVisualizer : MonoBehaviour {
     }
 
     // This function plays the heart FX when the reputation changes.
-    private void PlayHeartFX(int currentRep) {
+    public void PlayHeartFX(int currentRep) {
+
+        //for review
+        ReviewManager.instance.hearts.Add(currentRep);
+
         if (currentRep > 0) { // used to be currentRep > previousRep
             if (positiveHeartFX == null) {
                 Debug.LogError("UIVisualizer: No positive heart FX assigned.");
