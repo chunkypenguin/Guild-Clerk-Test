@@ -135,6 +135,8 @@ public class ItemSystem : MonoBehaviour
             zekeScript.magicMushroomGlow.SetActive(true);
             zekeScript.magicMushroomPotGlow.SetActive(true);
             zekeScript.lornePotionGlow.SetActive(true);
+            zekeScript.maggiePieGlow.SetActive(true);
+            zekeScript.ishizuNoteGlow.SetActive(true);
         }
 
         if (cs.currentCharacter.characterName == "Nomira")
@@ -192,6 +194,8 @@ public class ItemSystem : MonoBehaviour
             zekeScript.magicMushroomGlow.SetActive(false);
             zekeScript.magicMushroomPotGlow.SetActive(false);
             zekeScript.lornePotionGlow.SetActive(false);
+            zekeScript.maggiePieGlow.SetActive(false);
+            zekeScript.ishizuNoteGlow.SetActive(false);
         }
 
 
