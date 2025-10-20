@@ -39,7 +39,7 @@ public class ReputationFX : MonoBehaviour
         startPos = rectTransform.anchoredPosition;
     }
 
-    // This function is called when the object is enabled.
+    // This function is called when the object is enabled. //wait i had no clue you could do something on enable thats rad
     private void OnEnable() {
         // Reset visuals
         canvasGroup.alpha = 1f;
