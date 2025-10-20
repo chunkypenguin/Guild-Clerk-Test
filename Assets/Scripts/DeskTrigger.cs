@@ -394,8 +394,8 @@ public class DeskTrigger : MonoBehaviour
                 //qs.GetQuestRB(itemRB);
                 itemS.GetItemRb(itemRB);
                 cs.currentCharacter.choseItemA = true;
-                cs.currentCharacter.choseItemB = false;
-                cs.currentCharacter.choseItemAA = false;
+                //cs.currentCharacter.choseItemB = false;
+                //cs.currentCharacter.choseItemAA = false;
                 // Add your action here
                 //cs.QuestADialogue();
                 cs.ItemADialogue();
@@ -408,9 +408,9 @@ public class DeskTrigger : MonoBehaviour
                 GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemBName);
                 //qs.GetQuestRB(itemRB);
                 itemS.GetItemRb(itemRB);
-                cs.currentCharacter.choseItemA = false;
+                //cs.currentCharacter.choseItemA = false;
                 cs.currentCharacter.choseItemB = true;
-                cs.currentCharacter.choseItemAA = false;
+                //cs.currentCharacter.choseItemAA = false;
                 // Add your action here
                 //cs.QuestADialogue();
                 cs.ItemBDialogue();
@@ -422,8 +422,8 @@ public class DeskTrigger : MonoBehaviour
                 GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemANameA);
                 //qs.GetQuestRB(itemRB);
                 itemS.GetItemRb(itemRB);
-                cs.currentCharacter.choseItemA = false;
-                cs.currentCharacter.choseItemB = false;
+                //cs.currentCharacter.choseItemA = false;
+                //cs.currentCharacter.choseItemB = false;
                 cs.currentCharacter.choseItemAA = true;
                 // Add your action here
                 //cs.QuestADialogue();
@@ -461,23 +461,31 @@ public class DeskTrigger : MonoBehaviour
             }
             else
             {
-                Debug.Log("two or no quests on desk");
-                if (!raspS.raspberriesOnDesk)
+                if((items.Find(item => item.name == cs.currentCharacter.ItemAName) == null) && items.Find(item => item.name == cs.currentCharacter.ItemBName) == null && items.Find(item => item.name == cs.currentCharacter.ItemANameA) == null && items.Find(item => item.name == cs.currentCharacter.ItemBNameB) == null && items.Find(item => item.name == cs.currentCharacter.ItemCName) == null)
                 {
-
-                    if (!raspS.refusedOnce)
-                    {
-                        cs.zekeD3Refuse1.StartNewDialogue(cs.dialogueTriggerScript);
-                        raspS.refusedOnce = true;
-                    }
-                    else
-                    {
-                        cs.zekeD3Refuse2.StartNewDialogue(cs.dialogueTriggerScript);
-                        itemScript.ItemGlowOff();
-                        
-                    }
+                    ZekeScript.instance.RefuseRaspberries();
                     cs.IsIdle();
                 }
+
+
+                
+                //Debug.Log("two or no quests on desk");
+                //if (!raspS.raspberriesOnDesk)
+                //{
+
+                //    if (!raspS.refusedOnce)
+                //    {
+                //        cs.zekeD3Refuse1.StartNewDialogue(cs.dialogueTriggerScript);
+                //        raspS.refusedOnce = true;
+                //    }
+                //    else
+                //    {
+                //        cs.zekeD3Refuse2.StartNewDialogue(cs.dialogueTriggerScript);
+                //        itemScript.ItemGlowOff();
+                        
+                //    }
+                //    cs.IsIdle();
+                //}
             }
         }
 
@@ -646,8 +654,9 @@ public class DeskTrigger : MonoBehaviour
         cs.currentCharacter.ItemAName,
         cs.currentCharacter.ItemBName,
         cs.currentCharacter.ItemANameA,
-        cs.currentCharacter.ItemBNameB
-    };
+        cs.currentCharacter.ItemBNameB,
+        cs.currentCharacter.ItemCName
+        };
 
         // Count how many of the target items exist in the list
         int totalMatches = items.Count(item => targetNames.Contains(item.name));

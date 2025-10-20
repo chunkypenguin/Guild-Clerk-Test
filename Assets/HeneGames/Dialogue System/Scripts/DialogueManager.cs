@@ -89,7 +89,7 @@ namespace HeneGames.DialogueSystem
             //testing new things for click on character bug
             //dialogueIsOn = false;
             //DialogueUI.instance.ClearText();
-
+            //DialogueUI.instance.NextSentenceHard();
 
             if (!dialogueIsOn)
             {
@@ -311,7 +311,7 @@ namespace HeneGames.DialogueSystem
 
             //NEW TO PUT PLAYER NAME IN SENTENCE
             //Debug.Log($"Player Name: {playerName}"); // Check if playerName is set correctly
-            string formattedSentence = sentences[currentSentence].GetFormattedSentence(playerName);
+            string formattedSentence = sentences[currentSentence].GetFormattedSentence(playerName, ReviewManager.instance.totalRequestedGold.ToString(), ReviewManager.instance.totalGoldGiven.ToString(), ReviewManager.instance.characterCount.ToString(), ReviewManager.instance.likes.ToString());
             //Debug.Log($"Formatted Sentence: {formattedSentence}"); // See what the final string is
 
             if (sentences[currentSentence].dialogueCharacter != null)
@@ -369,9 +369,9 @@ namespace HeneGames.DialogueSystem
 
         public UnityEvent sentenceEvent;
 
-        public string GetFormattedSentence(string playerName)
+        public string GetFormattedSentence(string playerName, string totalGold, string givenGold, string characterCount, string likes)
         {
-            return string.Format(sentence, playerName);
+            return string.Format(sentence, playerName, totalGold, givenGold, characterCount, likes); //{0}, {1}, {2}, {3}, {4}
         }
     }
 }

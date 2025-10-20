@@ -419,13 +419,14 @@ public class movecam : MonoBehaviour
             if (cs.newQuests && !TutorialScript.instance.tutP1 && cs.isQuest)
             {
                 QuestSystem.instance.UpdateQuests();
-                //cs.newQuests = false;
+                cs.newQuests = false;
             }
             else if(cs.newQuests && !TutorialScript.instance.tutP1 && cs.currentCharacter.characterName == "Achilles" && cs.isEquipment)
             {
                 QuestSystem.instance.UpdateQuests();
+                cs.newQuests = false;
             }
-            cs.newQuests = false;
+            //cs.newQuests = false;
         };
 
         transform.DOMove(questPosition, camMoveSpeed);

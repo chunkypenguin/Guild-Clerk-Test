@@ -41,9 +41,37 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager josieKalinERefuse;
     public DialogueManager josieAchillesQ1A;
     public DialogueManager josieAchillesQ1B;
-    public DialogueManager josieReviewP1;
     public DialogueManager josieTwoQuestReminder;
     public DialogueManager josieTwoItemReminder;
+
+    [Header("Josie Review")]
+    public DialogueManager josieReviewP1;
+    [Header("Josie Review Gold")]
+    public DialogueManager gPerfect;
+    public DialogueManager gVeryClose;
+    public DialogueManager gPrettyClose;
+    public DialogueManager gOffMore;
+    public DialogueManager gOffLess;
+    public DialogueManager gWayOffMore;
+    public DialogueManager gWayOffLess;
+    public DialogueManager gTransGood;
+    public DialogueManager gTransMore;
+    public DialogueManager gTransLess;
+    [Header("Josie Review Reputation")]
+    public DialogueManager rP1;
+    public DialogueManager rDeathRes;
+    public DialogueManager rPerfectRes;
+    public DialogueManager rGoodRes;
+    public DialogueManager rBadRes;
+    public DialogueManager rPerfect;
+    public DialogueManager rGreat;
+    public DialogueManager rOkay;
+    public DialogueManager rMeh;
+    public DialogueManager rBad;
+    [Header("Josie Review Conclusions")]
+    public DialogueManager greenConclusion;
+    public DialogueManager orangeConclusion;
+    public DialogueManager redConclusion;
 
     [Header("Greg")]
     public DialogueManager gregD1P1;

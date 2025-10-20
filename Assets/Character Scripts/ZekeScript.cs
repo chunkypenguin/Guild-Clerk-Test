@@ -17,6 +17,8 @@ public class ZekeScript : MonoBehaviour
     [SerializeField] RaspberriesScript mushroomS;
     [SerializeField] RaspberriesScript mushPottedS;
     [SerializeField] RaspberriesScript lornePotionS;
+    [SerializeField] RaspberriesScript maggiePieS;
+    [SerializeField] RaspberriesScript ishizuNoteS;
 
     [SerializeField] ParticleSystem zekePoof;
     [SerializeField] AudioSource zekePoofAudio;
@@ -25,6 +27,8 @@ public class ZekeScript : MonoBehaviour
     public GameObject magicMushroomGlow;
     public GameObject magicMushroomPotGlow;
     public GameObject lornePotionGlow;
+    public GameObject maggiePieGlow;
+    public GameObject ishizuNoteGlow;
 
     bool tagSystem;
     bool tagOn;
@@ -51,12 +55,12 @@ public class ZekeScript : MonoBehaviour
     {
         if (tagSystem)
         {
-            if ((!raspS.raspberriesOnDesk && !mushroomS.raspberriesOnDesk && !mushPottedS.raspberriesOnDesk && !lornePotionS.raspberriesOnDesk) && !tagOn)
+            if ((!raspS.raspberriesOnDesk && !mushroomS.raspberriesOnDesk && !mushPottedS.raspberriesOnDesk && !lornePotionS.raspberriesOnDesk && !maggiePieS.raspberriesOnDesk && !ishizuNoteS.raspberriesOnDesk) && !tagOn)
             {
                 refuseTag.SetActive(true);
                 tagOn = true;
             }
-            else if ((raspS.raspberriesOnDesk || mushroomS.raspberriesOnDesk || mushPottedS.raspberriesOnDesk || lornePotionS.raspberriesOnDesk) && tagOn)
+            else if ((raspS.raspberriesOnDesk || mushroomS.raspberriesOnDesk || mushPottedS.raspberriesOnDesk || lornePotionS.raspberriesOnDesk || maggiePieS.raspberriesOnDesk || ishizuNoteS.raspberriesOnDesk) && tagOn)
             {
                 refuseTag.SetActive(false);
                 tagOn = false;
