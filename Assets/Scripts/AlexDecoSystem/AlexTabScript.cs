@@ -18,9 +18,10 @@ public class AlexTabScript : MonoBehaviour
 
     [Header("Show/Hide")]
 
-    [SerializeField] GameObject decorUI;
-    [SerializeField] Vector3 startPos;
-    [SerializeField] Vector3 endPos;
+    //[SerializeField] GameObject decorUI;
+    [SerializeField] RectTransform decorUI;
+    [SerializeField] Vector2 startPos;
+    [SerializeField] Vector2 endPos;
     [SerializeField] float moveSpeed;
     [SerializeField] int distance;
     bool isShown;
@@ -37,7 +38,7 @@ public class AlexTabScript : MonoBehaviour
     [SerializeField] Color highlightColor;
 
     //TESTING
-    //bool decorHidden = true;
+    bool decorHidden = true;
 
     public static AlexTabScript instance;
     private void Awake()
@@ -47,9 +48,18 @@ public class AlexTabScript : MonoBehaviour
 
     private void Start()
     {
-        startPos = decorUI.transform.position;
-        decorUI.transform.position = startPos - new Vector3(0, distance, 0);
-        endPos = decorUI.transform.position;
+        //new!
+        startPos = decorUI.anchoredPosition;
+
+        // Move it off-screen (above the screen)
+        Canvas canvas = decorUI.GetComponentInParent<Canvas>();
+        float canvasHeight = canvas.GetComponent<RectTransform>().rect.height;
+        endPos = startPos - new Vector2(0, canvasHeight /2);
+        decorUI.anchoredPosition = endPos;
+
+        //startPos = decorUI.transform.position;
+        //decorUI.transform.position = startPos - new Vector3(0, distance, 0);
+        //endPos = decorUI.transform.position;
 
         SetTabColorSelect(imageList[0]);
     }
@@ -60,16 +70,16 @@ public class AlexTabScript : MonoBehaviour
         //DELETE
         if (Input.GetKeyDown(KeyCode.P))
         {
-            //if (decorHidden)
-            //{
-            //    ShowDecorUI();
-            //    decorHidden = false;
-            //}
-            //else
-            //{
-            //    HideDecorUI();
-            //    decorHidden = true;
-            //}
+            if (decorHidden)
+            {
+                ShowDecorUI();
+                decorHidden = false;
+            }
+            else
+            {
+                HideDecorUI();
+                decorHidden = true;
+            }
         }
 
         goldAmount = DayReputationTracker.Instance.GetGold();
@@ -140,7 +150,7 @@ public class AlexTabScript : MonoBehaviour
 
     public void ShowDecorUI()
     {
-        decorUI.transform.DOMove(startPos, moveSpeed).onComplete = () =>
+        decorUI.DOAnchorPos(startPos, moveSpeed).SetEase(Ease.OutQuad).onComplete = () =>
         {
             doneTab.enabled = true;
             goldObject.SetActive(true);
@@ -150,12 +160,15 @@ public class AlexTabScript : MonoBehaviour
                 showedTut = true;
             }
         };
+
+        
     }
 
     public void HideDecorUI()
     {
         doneTab.enabled = false;
-        decorUI.transform.DOMove(endPos, moveSpeed);
+        //decorUI.transform.DOMove(endPos, moveSpeed);
+        decorUI.DOAnchorPos(endPos, moveSpeed).SetEase(Ease.OutQuad);
         goldObject.SetActive(false);
         ExitDecoTut();
 
