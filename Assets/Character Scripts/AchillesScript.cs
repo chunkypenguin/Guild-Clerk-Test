@@ -49,6 +49,7 @@ public class AchillesScript : MonoBehaviour
             {
                 cs.achillesQ1BReturn.StartNewDialogue(cs.dialogueTriggerScript);
             }
+            TutorialScript.instance.achillesDialogueFinished = true; //important to trigger review
         }
 
     }

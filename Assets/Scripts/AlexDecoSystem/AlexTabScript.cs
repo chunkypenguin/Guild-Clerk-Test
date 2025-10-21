@@ -37,7 +37,7 @@ public class AlexTabScript : MonoBehaviour
     [SerializeField] Color highlightColor;
 
     //TESTING
-    bool decorHidden = true;
+    //bool decorHidden = true;
 
     public static AlexTabScript instance;
     private void Awake()
