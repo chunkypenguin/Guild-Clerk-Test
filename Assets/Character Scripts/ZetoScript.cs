@@ -62,7 +62,7 @@ public class ZetoScript : MonoBehaviour
     public void CheckForReward()
     {
         //int rep = 0;
-        zetoGoldGivenSkeleton = gs.goldAmount;
+        //zetoGoldGivenSkeleton = gs.goldAmount;
         if (!partOneComplete)
         {
             if (cs.currentCharacter.choseQuestA) //Slay Quest
@@ -162,10 +162,14 @@ public class ZetoScript : MonoBehaviour
     }
     private void ZetoGoldSkeleton()
     {
+        Debug.Log(zetoGoldGivenSkeleton + ", " + zetoRequestedGoldSkeleton);
+
         ReviewManager.instance.CharacterGoldAccuracyCalculator(zetoGoldGivenSkeleton, zetoRequestedGoldSkeleton);
     }
     private void ZetoGoldNomira()
     {
+        Debug.Log("Zeto: " + zetoGoldGivenNomira + ", " + zetoRequestedGoldNomira);
+
         ReviewManager.instance.CharacterGoldAccuracyCalculator(zetoGoldGivenNomira, zetoRequestedGoldNomira);
     }
 

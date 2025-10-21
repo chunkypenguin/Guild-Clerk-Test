@@ -17,7 +17,7 @@ public class LotestScript : MonoBehaviour
     public bool partOneComplete;
     public bool skipJosie;
     bool lotestWillSayName;
-    bool lotestWillSayAhem;
+    public bool lotestWillSayAhem;
 
     public bool gaveLessGold;
     public bool gaveEqualOrMoreGold;
@@ -25,6 +25,8 @@ public class LotestScript : MonoBehaviour
     public int lotestGoldGiven;
     public int lotestRequestedGold;
     bool askedForGold;
+
+    public bool lotestIsAhem;
 
     public static LotestScript instance;
     private void Awake()
@@ -70,7 +72,7 @@ public class LotestScript : MonoBehaviour
         lotestGoldGiven = gs.goldAmount;
         if (cs.currentCharacter.choseQuestA)
         {
-            lotestRequestedGold = 25;
+            lotestRequestedGold = 15;
 
             if (gs.goldAmount == 15)
             {
@@ -176,8 +178,19 @@ public class LotestScript : MonoBehaviour
     {
         if(askedForGold)
         {
+            Debug.Log("Lotest: " + lotestGoldGiven + ", " + lotestRequestedGold);
             ReviewManager.instance.CharacterGoldAccuracyCalculator(lotestGoldGiven, lotestRequestedGold);
 
         }
+    }
+
+    public void LotestIsAhem()
+    {
+        lotestIsAhem = true;
+    }
+
+    public void LotestIsNotAhem()
+    {
+        lotestIsAhem = false;
     }
 }

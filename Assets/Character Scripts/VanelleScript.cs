@@ -212,6 +212,7 @@ public class VanelleScript : MonoBehaviour
     {
         if (askedForGold)
         {
+            Debug.Log("Vanelle: " + vanelleGoldGiven + ", " + vanelleRequestedGold);
             ReviewManager.instance.CharacterGoldAccuracyCalculator(vanelleGoldGiven, vanelleRequestedGold);
         }
 

@@ -129,6 +129,7 @@ public class MaggieScript : MonoBehaviour
 
     public void MaggieGold()
     {
+        Debug.Log("Maggie: " + maggieGoldGiven + ", " + maggieRequestedGold);
         ReviewManager.instance.CharacterGoldAccuracyCalculator(maggieGoldGiven, maggieRequestedGold);
     }
 }

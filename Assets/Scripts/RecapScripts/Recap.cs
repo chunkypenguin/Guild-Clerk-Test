@@ -314,20 +314,29 @@ public class Recap : MonoBehaviour
     public void Kalin()
     {
 
-        if (KalinScript.instance.gaveEqualOrTooMuchGold)
+        if (KalinScript.instance.gaveEqualGold)
         {
-            if (KalinScript.instance.gaveMoreGold)
+            if(KalinScript.instance.gaveJosieBundle)
             {
-                DisplayName(characterRecaps[kalin], 1);
+                DisplayName(characterRecaps[kalin], 0);
+                Picture(characterRecaps[kalin], 0);
+                DisplayText(characterRecaps[kalin], 0);
             }
-            Picture(characterRecaps[kalin], 0);
-            DisplayText(characterRecaps[kalin], 0);
+            else
+            {
+                DisplayName(characterRecaps[kalin], 0);
+                Picture(characterRecaps[kalin], 1);
+                DisplayText(characterRecaps[kalin], 1);
+            }
+
+
+
         }
         else
         {
             DisplayName(characterRecaps[kalin], 1);
-            Picture(characterRecaps[kalin], 1);
-            DisplayText(characterRecaps[kalin], 1);
+            Picture(characterRecaps[kalin], 2);
+            DisplayText(characterRecaps[kalin], 2);
         }
     }
 

@@ -179,6 +179,11 @@ public class MousePos3D : MonoBehaviour
                     //mc.flashWasOn = true;
                     dialogueOpen = true;
                 }
+                else if (LotestScript.instance.lotestWillSayAhem && !dialogueOpen)
+                {
+                    cs.TextHistory();
+                    dialogueOpen = true;
+                }
                 else
                 {
                     Debug.Log("idle");

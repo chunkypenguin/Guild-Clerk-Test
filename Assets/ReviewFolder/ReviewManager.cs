@@ -237,18 +237,18 @@ public class ReviewManager : MonoBehaviour
 
     public void CallCharacterAccuracy()
     {
-        AndyScript.instance.AndyGold();
-        NomiraScript.instance.NomiraGold();
-        ZetoScript.instance.ZetoGold();
-        AchillesScript.instance.AchillesGold();
-        TahmasScript.instance.TahmasGold();
-        LotestScript.instance.LotestGold();
-        FinchScript.instance.FinchGold();
-        GregScript.instance.GregGold();
-        KalinScript.instance.KalinGold();
-        VanelleScript.instance.VanelleGold();
-        MaggieScript.instance.MaggieGold();
-        JoleneScript.instance.JoleneGold();
+        AndyScript.instance.AndyGold();//
+        NomiraScript.instance.NomiraGold();//
+        ZetoScript.instance.ZetoGold();//
+        AchillesScript.instance.AchillesGold();//
+        TahmasScript.instance.TahmasGold();//
+        LotestScript.instance.LotestGold();//
+        FinchScript.instance.FinchGold();//
+        GregScript.instance.GregGold();//
+        KalinScript.instance.KalinGold();//
+        VanelleScript.instance.VanelleGold();//
+        MaggieScript.instance.MaggieGold();//
+        JoleneScript.instance.JoleneGold();//
 
         CalculateGoldReview();
 
@@ -257,17 +257,20 @@ public class ReviewManager : MonoBehaviour
 
     public void CharacterGoldAccuracyCalculator(int goldGiven, int goldRequested)
     {
-        if (goldRequested == 0)
-        {
-            characterGoldAccuracy.Add(0f);
-            return;
-        }
+        //if (goldRequested == 0)
+        //{
+        //    characterGoldAccuracy.Add(0f);
+        //    return;
+        //}
 
         float goldPercentageDifference = (goldGiven -  goldRequested) / (float)goldRequested;
         characterGoldAccuracy.Add(goldPercentageDifference);
 
         totalRequestedGold += goldRequested;
         totalGoldGiven += goldGiven;
+
+        Debug.Log("Requested: " + totalRequestedGold);
+        Debug.Log("Given: " + totalGoldGiven);
     }
 
     public void CalculateGoldReview()

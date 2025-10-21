@@ -198,6 +198,10 @@ public class ItemSystem : MonoBehaviour
             zekeScript.ishizuNoteGlow.SetActive(false);
         }
 
+        if(cs.currentCharacter.characterName == "Achilles")
+        {
+            AchillesScript.instance.coinGlow.SetActive(false);
+        }
 
         if (cs.currentCharacter.characterName == "Nomira")
         {
