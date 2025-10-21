@@ -53,6 +53,8 @@ public class ReviewManager : MonoBehaviour
     [SerializeField] bool everyoneHatesYou;
     [SerializeField] bool repPerfect, repGreat, repOkay, repMeh, repBad;
 
+    int index;
+
     [SerializeField] List<GameObject> heartFX;
     public List<int> hearts;
     private int heartCount;
@@ -90,11 +92,13 @@ public class ReviewManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             //TestingCharacterGoldReview();
+            StartReview();
 
         }
         if(Input.GetKeyDown(KeyCode.H))
         {
             //HeartDisplay();
+            StartCoroutine(ClipBoardHearts());
         }
     }
 
@@ -116,6 +120,17 @@ public class ReviewManager : MonoBehaviour
         reviewInProgress = true;
     }
 
+    public void ReviewInProgressCheck()
+    {
+        if(reviewInProgress)
+        {
+            reviewInProgress = false;
+        }
+        else
+        {
+            reviewInProgress = true;
+        }
+    }
     //check this first before calculating rep stuff (sets up characters to be removed)
     public void CheckForDeaths()
     {
@@ -133,6 +148,7 @@ public class ReviewManager : MonoBehaviour
                 deathCount++;
                 //remove josie from character rep calculation
                 joleneRep.CharacterDie();
+                RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[14]); //jolene = 0
             }
         }
 
@@ -143,6 +159,7 @@ public class ReviewManager : MonoBehaviour
             deathCount++;
             //remove achilles from character rep calculation
             achillesRep.CharacterDie();
+            RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[3]); //achilles = 1
         }
         else
         {
@@ -155,6 +172,7 @@ public class ReviewManager : MonoBehaviour
             //dead
             deathCount++;
             ishizuRep.CharacterDie();
+            RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[10]); //ishizu = 2
         }
         else
         {
@@ -167,6 +185,7 @@ public class ReviewManager : MonoBehaviour
             //dead
             deathCount++;
             zekeRep.CharacterDie();
+            RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[7]); //zeke = 3
         }
         else
         {
@@ -178,20 +197,57 @@ public class ReviewManager : MonoBehaviour
     {
         characterRep.Remove(character);
     }
+
+    public void RemoveClipBoardIcon(GameObject icon)
+    {
+        icon.SetActive(false);
+        ReviewClipboard.instance.clipBoardIcons.Remove(icon);
+    }
     public void GetCharacterReputations()
     {
         likes = 0;  // Reset count
         foreach (CharacterReputation c in characterRep)
         {
-            if(c.ReputationPoints > baseRep)
+            if(c.ReputationPoints >= baseRep)
             {
                 likes++;
+                //ReviewClipboard.instance.TurnOnHeart(index);
+                //get reputation script, get a gameobject set in each one that corresponds with the clipboard icons
+                //find the object and set the red heart to active
+            }
+            else
+            {
+                //find the object and set the broken heart to active
             }
         }
 
         repPercentageDif = likes / (float)characterRep.Count;
 
         characterCount = characterRep.Count;
+    }
+
+    public IEnumerator ClipBoardHearts()
+    {
+        foreach (CharacterReputation c in characterRep)
+        {
+            if (c.ReputationPoints >= baseRep)
+            {
+                Debug.Log("giev heart");
+                ReviewClipboard.instance.TurnOnHeart(index);
+            }
+            else
+            {
+                Debug.Log("dont give heart");
+                ReviewClipboard.instance.TurnOffHeart(index);
+                //find the object and set the broken heart to active
+            }
+            index++;
+            yield return new WaitForSeconds(0.75f);
+        }
+
+        reviewInProgress = true;
+        ReviewDialogueReputationResults();
+        
     }
 
     public void CharacterReputationDialogue()
@@ -275,6 +331,10 @@ public class ReviewManager : MonoBehaviour
 
     public void CalculateGoldReview()
     {
+        Debug.Log("Gold Fountain Ready");
+
+        CoinFountain.instance.goldGiven = totalGoldGiven;
+
         totalGoldOverUnder = totalGoldGiven - totalRequestedGold; //ex: gave 400 - total 600 = -200 (gave 200 less than asked)
 
         averageBias = characterGoldAccuracy.Average(); //- undergive too little!, + overgive too much!
@@ -436,8 +496,16 @@ public class ReviewManager : MonoBehaviour
         else
         {
             //say rep result dialogue
-            ReviewDialogueReputationResults();
+            //ReviewDialogueReputationResults(); //OLD
+
+            //NEW
+            ClipBoardFunction();
         }
+    }
+
+    public void ClipBoardFunction()
+    {
+        StartCoroutine(ClipBoardHearts());
     }
 
     public void ReviewDialogueReputationResults()

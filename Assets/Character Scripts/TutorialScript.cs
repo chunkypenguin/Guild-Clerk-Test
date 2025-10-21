@@ -367,8 +367,8 @@ public class TutorialScript : MonoBehaviour
         if (!josieStarted)
         {
             //TESTING
-            //cs.josieReviewP1.StartNewDialogue(cs.dialogueTriggerScript);
-            cs.josieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
+            cs.josieReviewP1.StartNewDialogue(cs.dialogueTriggerScript);
+            //cs.josieD1P1.StartNewDialogue(cs.dialogueTriggerScript);
             josieStarted = true;
         }
         else if (!josieHasMoved && josieStarted)
