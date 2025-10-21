@@ -149,18 +149,18 @@ public class LorneScript : MonoBehaviour
 
     public void LornePotion()
     {
-        if(!lightsDimmed)
-        {
-            LightSystem.instance.DimLights();
-            potionGlow.SetActive(true);
-            lightsDimmed = true;
-        }
-        else
-        {
-            LightSystem.instance.UndimLights();
-            potionGlow.SetActive(false);
-            lightsDimmed = false;
-        }
+        //if(!lightsDimmed)
+        //{
+        //    LightSystem.instance.DimLights();
+        //    potionGlow.SetActive(true);
+        //    lightsDimmed = true;
+        //}
+        //else
+        //{
+        //    LightSystem.instance.UndimLights();
+        //    potionGlow.SetActive(false);
+        //    lightsDimmed = false;
+        //}
 
     }
 }

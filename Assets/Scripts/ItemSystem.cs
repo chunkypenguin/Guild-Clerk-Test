@@ -81,7 +81,7 @@ public class ItemSystem : MonoBehaviour
         initialDistance = Vector3.Distance(rb.transform.position, cs.currentCharacterObject.transform.position); // Get starting distance
         isSuctionActive = true;
 
-        Invoke(nameof(CollectItem), 2f);
+        Invoke(nameof(CollectItem), 1.5f);
     }
 
     private void CollectItem(GameObject itemObject)
