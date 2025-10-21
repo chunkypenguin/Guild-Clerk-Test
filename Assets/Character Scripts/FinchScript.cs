@@ -259,6 +259,7 @@ public class FinchScript : MonoBehaviour
 
     public void FinchGold()
     {
+        Debug.Log("Finch: " + finchGoldGiven + ", " + finchRequestedGold);
         ReviewManager.instance.CharacterGoldAccuracyCalculator(finchGoldGiven, finchRequestedGold);
     }
 }

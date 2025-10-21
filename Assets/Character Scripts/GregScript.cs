@@ -156,6 +156,7 @@ public class GregScript : MonoBehaviour
 
     public void GregGold()
     {
+        Debug.Log("Greg: " + gregGoldGiven + ", " + gregRequestedGold);
         ReviewManager.instance.CharacterGoldAccuracyCalculator(gregGoldGiven, gregRequestedGold);
     }
 

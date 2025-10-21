@@ -111,6 +111,7 @@ public class TahmasScript : MonoBehaviour
     {
         if(askedForGold)
         {
+            Debug.Log("Tahmas: " + tahmasGoldGiven + ", " + tahmasRequestedGold);
             ReviewManager.instance.CharacterGoldAccuracyCalculator(tahmasGoldGiven, tahmasRequestedGold);
 
         }

@@ -10,9 +10,10 @@ public class KalinScript : MonoBehaviour
 
     public bool gaveGold;
 
-    public bool gaveEqualOrTooMuchGold;
+    public bool gaveEqualGold;
     public bool gaveLessGold;
     public bool gaveMoreGold;
+    public bool gaveJosieBundle;
 
     public int kalinGoldGiven;
     public int kalinRequestedGold;
@@ -48,14 +49,13 @@ public class KalinScript : MonoBehaviour
             gs.goldWanted = 30;
             if (gs.goldAmount == 30)
             {
-                gaveEqualOrTooMuchGold = true;
+                gaveEqualGold = true;
                 //do this
                 cs.KalinQ1AGEquals.StartNewDialogue(cs.dialogueTriggerScript);
                 //rep = 1;
             }
             else if (gs.goldAmount > 30)
             {
-                gaveEqualOrTooMuchGold = true;
                 gaveMoreGold = true;
                 //do this
                 cs.KalinQ1AGPlus.StartNewDialogue(cs.dialogueTriggerScript);
@@ -91,6 +91,12 @@ public class KalinScript : MonoBehaviour
 
     public void KalinGold()
     {
+        Debug.Log("Kalin: " + kalinGoldGiven + ", " + kalinRequestedGold);
         ReviewManager.instance.CharacterGoldAccuracyCalculator(kalinGoldGiven, kalinRequestedGold);
+    }
+
+    public void GaveJosieBundle()
+    {
+        gaveJosieBundle = true;
     }
 }

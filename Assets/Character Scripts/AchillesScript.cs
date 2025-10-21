@@ -106,6 +106,7 @@ public class AchillesScript : MonoBehaviour
     {
         if (askedForGold)
         {
+            Debug.Log("Achilles: " + achillesGoldGiven + ", " + achillesRequestedGold);
             ReviewManager.instance.CharacterGoldAccuracyCalculator(achillesGoldGiven, achillesRequestedGold);
 
         }

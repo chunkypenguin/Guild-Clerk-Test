@@ -27,6 +27,7 @@ public class TutorialScript : MonoBehaviour
     public Material josieRegular;
     public Material josieSad;
     public Material josieShocked;
+    public Material josieReviewStartMr;
 
     [SerializeField] QuestBoardCheck questA;
     [SerializeField] QuestBoardCheck questB;
@@ -57,7 +58,7 @@ public class TutorialScript : MonoBehaviour
     [SerializeField] AudioSource doorEnter;
 
     //review stuff
-
+    public bool beginReview;
 
     //Fade tutorial diabox text
     [SerializeField] TMP_Text tutSpaceClickText;
@@ -455,6 +456,11 @@ public class TutorialScript : MonoBehaviour
         mr.material = emote;
     }
 
+    public void JosieReviewStartEmote()
+    {
+        ChangeEmote(josieReviewStartMr);
+    }
+
     public void GoldCheck()
     {
         if(goldBundle.activeSelf == true)
@@ -501,5 +507,10 @@ public class TutorialScript : MonoBehaviour
     public void DoorEnter()
     {
         doorEnter.Play();
+    }
+
+    public void ReviewTime()
+    {
+        beginReview = true;
     }
 }

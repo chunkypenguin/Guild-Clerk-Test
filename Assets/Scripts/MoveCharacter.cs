@@ -396,7 +396,10 @@ public class MoveCharacter : MonoBehaviour
             {
                 LightSystem.instance.DimLightsRed();
             }
-
+            if (josieS.beginReview)
+            {
+                josieS.JosieReviewStartEmote();
+            }
             transform.DOMove(startPos, moveSpeed).OnComplete(() =>
             {
                 //moveSpeed = 2f;

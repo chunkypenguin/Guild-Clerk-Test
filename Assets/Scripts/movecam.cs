@@ -65,53 +65,57 @@ public class movecam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) //LEFT
+        if(!DaySystem.instance.gameEnd && !Recap.instance.recapOn && !DaySystem.instance.endOfDayCantPause)
         {
-            if(!lockLeft)
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) //LEFT
             {
-                LeftButton();
-                GoldSystem.instance.StopHold();//prevents gold button glitch (when holding up/down and moving cameras using keys)
-            }
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) //RIGHT
-        {
-            if (!lockRight)
-            {
-                RightButton();
-                GoldSystem.instance.StopHold(); //prevents gold button glitch (when holding up/down and moving cameras using keys)
-                if (!rightTut)
+                if (!lockLeft)
                 {
-                    //TutorialScript.instance.JosieTutDialogue(CharacterSystem.instance.josieD1P4);
-                    TutorialScript.instance.TutorialQuestPoof();
-                    rightTut = true;
+                    LeftButton();
+                    GoldSystem.instance.StopHold();//prevents gold button glitch (when holding up/down and moving cameras using keys)
                 }
 
             }
 
-        }
-
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) //UP
-        {
-            if (canOpenDrawer)
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) //RIGHT
             {
-                UpButton();
-                GoldSystem.instance.StopHold(); //prevents gold button glitch (when holding up/down and moving cameras using keys)
+                if (!lockRight)
+                {
+                    RightButton();
+                    GoldSystem.instance.StopHold(); //prevents gold button glitch (when holding up/down and moving cameras using keys)
+                    if (!rightTut)
+                    {
+                        //TutorialScript.instance.JosieTutDialogue(CharacterSystem.instance.josieD1P4);
+                        TutorialScript.instance.TutorialQuestPoof();
+                        rightTut = true;
+                    }
+
+                }
+
             }
 
-        }
-
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) //DOWN
-        {
-            if (canOpenDrawer)
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) //UP
             {
-                BottomButton();
-                GoldSystem.instance.StopHold(); //prevents gold button glitch (when holding up/down and moving cameras using keys)
+                if (canOpenDrawer)
+                {
+                    UpButton();
+                    GoldSystem.instance.StopHold(); //prevents gold button glitch (when holding up/down and moving cameras using keys)
+                }
+
             }
 
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) //DOWN
+            {
+                if (canOpenDrawer)
+                {
+                    BottomButton();
+                    GoldSystem.instance.StopHold(); //prevents gold button glitch (when holding up/down and moving cameras using keys)
+                }
+
+            }
         }
+
+
 
         //else if (Input.GetKeyDown(KeyCode.A))
         //{

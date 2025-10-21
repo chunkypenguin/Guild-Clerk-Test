@@ -115,6 +115,8 @@ public class JoleneScript : MonoBehaviour
     {
         if (askedForGold)
         {
+            Debug.Log("Jolene: " + joleneGoldGiven + ", " + joleneRequestedGold);
+
             ReviewManager.instance.CharacterGoldAccuracyCalculator(joleneGoldGiven, joleneRequestedGold);
 
         }

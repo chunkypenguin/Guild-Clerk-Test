@@ -70,7 +70,7 @@ public class LotestScript : MonoBehaviour
         lotestGoldGiven = gs.goldAmount;
         if (cs.currentCharacter.choseQuestA)
         {
-            lotestRequestedGold = 25;
+            lotestRequestedGold = 15;
 
             if (gs.goldAmount == 15)
             {
@@ -176,6 +176,7 @@ public class LotestScript : MonoBehaviour
     {
         if(askedForGold)
         {
+            Debug.Log("Lotest: " + lotestGoldGiven + ", " + lotestRequestedGold);
             ReviewManager.instance.CharacterGoldAccuracyCalculator(lotestGoldGiven, lotestRequestedGold);
 
         }

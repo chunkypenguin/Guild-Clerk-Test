@@ -155,6 +155,7 @@ public class AndyScript : MonoBehaviour
         {
             dragon = true;
             andyGoldGivenDragon = gs.goldAmount;
+            Debug.Log("Gold Given Dragon: " + andyGoldGivenDragon);
         }
         //gameObject.GetComponent<CharacterReputation>().ModifyReputation(rep);
     }
@@ -279,11 +280,13 @@ public class AndyScript : MonoBehaviour
 
     private void AndyGoldFetch()
     {
+        Debug.Log(andyGoldGivenFetch + ", " + andyRequestedGoldFetch);
         ReviewManager.instance.CharacterGoldAccuracyCalculator(andyGoldGivenFetch, andyRequestedGoldFetch);
     }
 
     private void AndyGoldDragon()
     {
+        Debug.Log("Andy: " + andyGoldGivenDragon + ", " + andyRequestedGoldDragon);
         ReviewManager.instance.CharacterGoldAccuracyCalculator(andyGoldGivenDragon, andyRequestedGoldDragon);
     }
 }

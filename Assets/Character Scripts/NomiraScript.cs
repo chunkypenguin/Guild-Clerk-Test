@@ -189,6 +189,7 @@ public class NomiraScript : MonoBehaviour
 
     public void NomiraGold()
     {
+        Debug.Log("Nomira: " + nomiraGoldGiven + ", " + nomiraRequestedGold);
         ReviewManager.instance.CharacterGoldAccuracyCalculator(nomiraGoldGiven, nomiraRequestedGold);
     }
 }
