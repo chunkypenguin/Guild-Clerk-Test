@@ -212,15 +212,24 @@ public class Recap : MonoBehaviour
             Picture(characterRecaps[achilles], 1);
             DisplayText(characterRecaps[achilles], 1);
         }
-        else if (diaCharacter[achilles].choseQuestA && AchillesScript.instance.achillesCoinGiven) //Family w/ coin (still dies lol)
+        else if (diaCharacter[achilles].choseQuestA && AchillesScript.instance.achillesCoinGiven) //Family w/ coin ()
         {
-            Picture(characterRecaps[achilles], 0);
+            Picture(characterRecaps[achilles], 2);
             DisplayText(characterRecaps[achilles], 2);
         }
         else if (diaCharacter[achilles].choseQuestB && AchillesScript.instance.achillesCoinGiven) //fiance w/ coin
         {
-            Picture(characterRecaps[achilles], 3);
-            DisplayText(characterRecaps[achilles], 3);
+            if (!AchillesScript.instance.coinReturned)
+            {
+                Picture(characterRecaps[achilles], 2);
+                DisplayText(characterRecaps[achilles], 3);
+            }
+            else
+            {
+                Picture(characterRecaps[achilles], 1);
+                DisplayText(characterRecaps[achilles], 4);
+            }
+
         }
     }
 

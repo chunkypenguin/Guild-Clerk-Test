@@ -47,10 +47,10 @@ public class LightSystem : MonoBehaviour
         light3.DOIntensity(targetIntensity, duration);
         light4.DOIntensity(targetIntensity, duration);
 
-        light1.DOColor(Color.red, duration); // Changes light color over time
-        light2.DOColor(Color.red, duration); // Changes light color over time
-        light3.DOColor(Color.red, duration); // Changes light color over time
-        light4.DOColor(Color.red, duration);
+        light1.DOColor(Color.magenta, duration); // Changes light color over time
+        light2.DOColor(Color.magenta, duration); // Changes light color over time
+        light3.DOColor(Color.magenta, duration); // Changes light color over time
+        light4.DOColor(Color.magenta, duration);
     }
 
     public void UndimLights()

@@ -16,6 +16,7 @@ public class AchillesScript : MonoBehaviour
     bool askedForGold;
 
     public bool achillesCoinGiven;
+    public bool coinReturned;
     public GameObject coinGlow;
 
     public static AchillesScript instance;
@@ -48,14 +49,16 @@ public class AchillesScript : MonoBehaviour
             {
                 cs.achillesQ1BReturn.StartNewDialogue(cs.dialogueTriggerScript);
             }
+            TutorialScript.instance.achillesDialogueFinished = true; //important to trigger review
         }
 
     }
 
     public void CheckForReward()
     {
+        askedForGold = true;
         achillesGoldGiven = gs.goldAmount;
-        if (cs.currentCharacter.choseQuestA)
+        if (cs.currentCharacter.choseQuestA) //lindenburrow
         {
             achillesRequestedGold = 12;
             if (gs.goldAmount == 12)
@@ -73,7 +76,7 @@ public class AchillesScript : MonoBehaviour
             }
 
         }
-        else if (cs.currentCharacter.choseQuestB)
+        else if (cs.currentCharacter.choseQuestB) //holdem dam
         {
             achillesRequestedGold = 17;
             if (gs.goldAmount == 17)
@@ -110,5 +113,10 @@ public class AchillesScript : MonoBehaviour
             ReviewManager.instance.CharacterGoldAccuracyCalculator(achillesGoldGiven, achillesRequestedGold);
 
         }
+    }
+
+    public void CoinReturned()
+    {
+        coinReturned = true;
     }
 }
