@@ -394,7 +394,7 @@ public class MoveCharacter : MonoBehaviour
             }
             if(cs.currentCharacter.characterName == "Ishizu" && cs.currentCharacter.choseItemB)
             {
-                LightSystem.instance.DimLightsRed();
+                LightSystem.instance.DimLights();
             }
             if (josieS.beginReview)
             {
