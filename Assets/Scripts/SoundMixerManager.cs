@@ -11,13 +11,20 @@ public class SoundMixerManager : MonoBehaviour
     [SerializeField] Slider[] volumeSliders;
     [SerializeField] Slider[] volumeSliders2;
 
+    public static SoundMixerManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
 
         SetMasterVolume(0.5f);
         SetMusicVolume(0.5f);
         SetTextVolume(0.75f);
-        SetSoundFXVolume(0.75f);
+        //SetSoundFXVolume(0.75f);
 
         foreach(Slider volume in volumeSliders)
         {
