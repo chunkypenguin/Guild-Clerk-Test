@@ -19,9 +19,14 @@ public class CoinFountain : MonoBehaviour
     [SerializeField] private float jumpDuration = 0.6f;
     [SerializeField] private float scaleDown = 0.5f;
     [SerializeField] private float fadeDuration = 0.3f;
+    private bool spawnCoin;
 
     [SerializeField] int coinCount;
     [SerializeField] TMP_Text goldGivenText;
+
+    public TMP_Text goldRequestedText;
+
+    [SerializeField] AudioSource coinAudioSource;
 
     public static CoinFountain instance;
 
@@ -29,17 +34,26 @@ public class CoinFountain : MonoBehaviour
     {
         instance = this;
     }
+    private void Start()
+    {
+        spawnCoin = true;
+    }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.C))
         {
-            ShootCoins();
+            //ShootCoins();
         }
     }
 
     public void ShootCoins()
     {
         StartCoroutine(ShootCoinsCoroutine());
+        if(goldGiven > 0)
+        {
+            coinAudioSource.Play();
+        }
+
     }
 
     private IEnumerator ShootCoinsCoroutine()
@@ -49,28 +63,49 @@ public class CoinFountain : MonoBehaviour
             coinCount++;
             goldGivenText.text = coinCount.ToString();
 
-            Image coin = Instantiate(coinPrefab, canvas.transform);
-            coin.transform.position = uiSpawnPoint.position;
-            coin.transform.localScale = Vector3.one;
-            coin.color = Color.white;
-
-            float randomX = Random.Range(randomXRange.x, randomXRange.y);
-            float randomY = Random.Range(randomYRange.x, randomYRange.y);
-            Vector3 targetPos = coin.transform.position + new Vector3(randomX, randomY, 0);
-
-            // Animate jump in an arc
-            coin.transform.DOJump(targetPos, jumpPower, numJumps, jumpDuration).SetEase(Ease.OutQuad);
-
-            // Scale down
-            coin.transform.DOScale(scaleDown, jumpDuration).SetEase(Ease.OutQuad);
-
-            // Fade out after jump
-            coin.DOFade(0f, fadeDuration).SetDelay(jumpDuration).OnComplete(() =>
+            if (spawnCoin)
             {
-                Destroy(coin.gameObject);
-            });
+                coinAudioSource.pitch = Random.Range(0.8f, 1.2f);
+                if (i == goldGiven - 1)
+                {
+                    coinAudioSource.pitch = 1.5f;
+                }
+
+                Image coin = Instantiate(coinPrefab, canvas.transform);
+                coin.transform.position = uiSpawnPoint.position;
+                //coin.transform.localScale = Vector3.one;
+                coin.color = Color.white;
+
+                float randomX = Random.Range(randomXRange.x, randomXRange.y);
+                float randomY = Random.Range(randomYRange.x, randomYRange.y);
+                Vector3 targetPos = coin.transform.position + new Vector3(randomX, randomY, 0);
+
+                // Animate jump in an arc
+                coin.transform.DOJump(targetPos, jumpPower, numJumps, jumpDuration).SetEase(Ease.OutQuad);
+
+                // Scale down
+                coin.transform.DOScale(scaleDown, jumpDuration).SetEase(Ease.OutQuad);
+
+                // Fade out after jump
+                coin.DOFade(0f, fadeDuration).SetDelay(jumpDuration).OnComplete(() =>
+                {
+                    Destroy(coin.gameObject);
+                });
+
+                spawnCoin = false;
+            }
+            else
+            {
+                spawnCoin = true;
+            }
 
             yield return new WaitForSeconds(delayBetweenCoins);
         }
+
+        coinAudioSource.Stop();
+
+        //go to next dialogue
+        ReviewManager.instance.GoldDialogueResults();
+        ReviewManager.instance.ReviewInProgressCheck(); //turns on review in progress bool
     }
 }

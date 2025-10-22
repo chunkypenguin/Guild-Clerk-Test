@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,12 +16,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] DialogueCharacter lotestCharacter;
     [SerializeField] DialogueCharacter kalinCharacter;
 
+    [SerializeField] Image startBGImage;
+    [SerializeField] float fadeTime;
+
     public static GameManager instance;
     private void Awake()
     {
         instance = this;
 
         ResetCharacters();
+    }
+
+    private void Start()
+    {
+        startBGImage.DOFade(0, fadeTime).OnComplete(() => startBGImage.gameObject.SetActive(false));
     }
 
     private void Update()

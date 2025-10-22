@@ -19,6 +19,12 @@ public class ReviewClipboard : MonoBehaviour
     private Vector2 originalPos;
     private Vector2 offscreenPos;
 
+    [Header("Gold")]
+    [SerializeField] GameObject goldUI;
+
+    [Header("Reputation")]
+    [SerializeField] GameObject reputationUI;
+
     public static ReviewClipboard instance;
 
     private void Awake()
@@ -41,11 +47,11 @@ public class ReviewClipboard : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.V))
         {
-            SlideIn();
+            //SlideIn();
         }
         if(Input.GetKeyDown(KeyCode.B))
         {
-            SlideOut();
+            //SlideOut();
         }
     }
 
@@ -65,6 +71,16 @@ public class ReviewClipboard : MonoBehaviour
 
     public void SlideIn()
     {
+        if (ReviewManager.instance.goldClipBoard)
+        {
+            goldUI.gameObject.SetActive(true);
+            ReviewManager.instance.goldClipBoard = false;
+        }
+        else
+        {
+            goldUI.gameObject.SetActive(false);
+            reputationUI.gameObject.SetActive(true);
+        }
         targetImage.DOAnchorPos(originalPos, tweenDuration).SetEase(Ease.OutQuad);
     }
 

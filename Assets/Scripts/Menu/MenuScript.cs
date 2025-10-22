@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class MenuScript : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class MenuScript : MonoBehaviour
     bool creditsOn;
 
     public static MenuScript instance;
+
 
     private void Awake()
     {

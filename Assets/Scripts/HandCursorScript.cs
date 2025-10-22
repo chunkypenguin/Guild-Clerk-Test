@@ -11,6 +11,8 @@ public class HandCursorScript : MonoBehaviour
     [SerializeField] Sprite cursorClick;
 
     bool clicking;
+
+
     // Start is called before the first frame update
     void Start()
     {

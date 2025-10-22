@@ -12,6 +12,9 @@ public class PauseScript : MonoBehaviour
     [SerializeField] TMP_Text _totalCoinText;
 
     [SerializeField] AudioSource textAudioSource;
+    [SerializeField] AudioSource pauseSoundSource;
+    [SerializeField] AudioClip pauseClip;
+    [SerializeField] AudioClip unpauseClip;
 
     // Update is called once per frame
     void Update()
@@ -41,6 +44,7 @@ public class PauseScript : MonoBehaviour
 
     private void Paused()
     {
+        pauseSoundSource.PlayOneShot(pauseClip);
         pauseOverlay.SetActive(true);
         dayText.text = "Day " + DaySystem.instance.dayCount.ToString();
         GetCoinsTotal();
@@ -48,6 +52,7 @@ public class PauseScript : MonoBehaviour
     }
     private void Unpaused()
     {
+        pauseSoundSource.PlayOneShot(unpauseClip);
         TooltipUI.Instance.Hide();
         pauseOverlay.SetActive(false);
         textAudioSource.volume = 0.5f;
