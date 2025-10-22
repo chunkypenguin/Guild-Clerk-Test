@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuMouse : MonoBehaviour
 {
@@ -12,6 +15,15 @@ public class MainMenuMouse : MonoBehaviour
     private Tween currentTween;
     [SerializeField] float scaleSizeMult;
     [SerializeField] float scaleTime;
+
+    [SerializeField] AudioSource clickAudio;
+    [SerializeField] AudioSource buttonSounds;
+    [SerializeField] AudioClip hoverOn;
+    [SerializeField] AudioClip hoverOff;
+
+
+    [SerializeField] Image mainGameBG;
+    [SerializeField] float fadeTime;
 
     private Dictionary<Transform, Vector3> originalScales = new();
 
@@ -39,10 +51,14 @@ public class MainMenuMouse : MonoBehaviour
             // Hover enter
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("MMButtons"))
             {
+                
+
                 Transform hitTransform = hit.collider.transform;
 
                 if (currentHovered != hitTransform)
                 {
+                    buttonSounds.PlayOneShot(hoverOn);
+
                     // Reset previous one
                     ResetHovered();
 
@@ -61,10 +77,15 @@ public class MainMenuMouse : MonoBehaviour
 
             if (hit.collider.CompareTag("Play") && Input.GetMouseButtonDown(0))
             {
-                MenuScript.instance.MainScene();
+                clickAudio.Play();
+                mainGameBG.gameObject.SetActive(true);
+                mainGameBG.DOFade(1, fadeTime).OnComplete(() => MenuScript.instance.MainScene());
+                //MenuScript.instance.MainScene();
             }
             if (hit.collider.CompareTag("Quit") && Input.GetMouseButtonDown(0))
             {
+                clickAudio.Play();
+                //mainGameBG.DOFade(1, fadeTime).OnComplete(() => MenuScript.instance.QuitGame());
                 MenuScript.instance.QuitGame();
             }
         }
@@ -78,6 +99,8 @@ public class MainMenuMouse : MonoBehaviour
     {
         if (currentHovered != null)
         {
+            buttonSounds.PlayOneShot(hoverOff);
+
             currentTween?.Kill();
             currentHovered.DOScale(originalScale, scaleTime).SetEase(Ease.InOutSine);
             currentHovered = null;

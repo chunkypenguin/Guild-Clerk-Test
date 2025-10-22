@@ -17,7 +17,7 @@ public class MassChangeRep : MonoBehaviour
 
     private void Start()
     {
-        GiveCharactersRep(2);
+        GiveCharactersRep(1);
         Invoke(nameof(CanShowRepVisual), 1f);
     }
     void GiveCharactersRep(int rep)

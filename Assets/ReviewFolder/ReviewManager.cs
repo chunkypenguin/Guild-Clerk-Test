@@ -43,6 +43,8 @@ public class ReviewManager : MonoBehaviour
     public float overallAverageRep;
     [SerializeField] bool goldPerfect, goldVeryClose, goldPrettyClose, goldOffLess, goldOffMore, goldWayOffLess, goldWayOffMore;
 
+    public bool goldClipBoard;
+
     [Header("Character Reputation")]
     [SerializeField] List<CharacterReputation> characterRep;
     public int characterCount;
@@ -52,6 +54,8 @@ public class ReviewManager : MonoBehaviour
     [SerializeField] bool everyoneLovesYou;
     [SerializeField] bool everyoneHatesYou;
     [SerializeField] bool repPerfect, repGreat, repOkay, repMeh, repBad;
+
+    public bool reputationClipBoard;
 
     int index;
 
@@ -85,6 +89,7 @@ public class ReviewManager : MonoBehaviour
     {
         heartAudio = UIVisualizer.instance.heartAudio;
         cs = CharacterSystem.instance;
+        goldClipBoard = true;
     }
 
     private void Update()
@@ -92,13 +97,13 @@ public class ReviewManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             //TestingCharacterGoldReview();
-            StartReview();
+            //StartReview();
 
         }
         if(Input.GetKeyDown(KeyCode.H))
         {
             //HeartDisplay();
-            StartCoroutine(ClipBoardHearts());
+            //StartCoroutine(ClipBoardHearts());
         }
     }
 
@@ -117,7 +122,7 @@ public class ReviewManager : MonoBehaviour
         CallCharacterAccuracy();//start of gold calculations
 
         //should be ready for dialogue functions now
-        reviewInProgress = true;
+        //reviewInProgress = true;
     }
 
     public void ReviewInProgressCheck()
@@ -334,6 +339,7 @@ public class ReviewManager : MonoBehaviour
         Debug.Log("Gold Fountain Ready");
 
         CoinFountain.instance.goldGiven = totalGoldGiven;
+        CoinFountain.instance.goldRequestedText.text = totalRequestedGold.ToString();
 
         totalGoldOverUnder = totalGoldGiven - totalRequestedGold; //ex: gave 400 - total 600 = -200 (gave 200 less than asked)
 

@@ -88,6 +88,8 @@ public class GrabObjectProperties{
 
 		[SerializeField] AudioSource pickupSound;
 
+		public bool canGrab;
+
 		public static GrabIt instance;
 
 		void Awake()
@@ -101,8 +103,12 @@ public class GrabObjectProperties{
 			m_lineRenderer = GetComponent<LineRenderer>();
 		}
 
+        private void Start()
+        {
+			canGrab = true;
+        }
 
-		void Update()
+        void Update()
 		{
             //TESTING FOR CURSOR STUFF & TOOLTIP  STUFF
 			//quests can be picked up as before to avoid not being able to pick up quests beneath their text UI
@@ -167,7 +173,7 @@ public class GrabObjectProperties{
 			else //if not holding an object
 			{
 
-				if (Input.GetMouseButtonDown(0))
+				if (Input.GetMouseButtonDown(0) && canGrab)
 				{
 					mouseButtonUp = false; //my code
 

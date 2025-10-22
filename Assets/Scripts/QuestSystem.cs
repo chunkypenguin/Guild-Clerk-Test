@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using HeneGames.DialogueSystem;
 using DG.Tweening;
+using Lightbug.GrabIt;
 
 public class QuestSystem : MonoBehaviour
 {
@@ -146,6 +147,7 @@ public class QuestSystem : MonoBehaviour
 
     public void VanelleRefuseCollectQuest()
     {
+        questsOnBoard = false;
         questAHolder.SetActive(false);
         questBHolder.SetActive(false);
 
@@ -267,10 +269,14 @@ public class QuestSystem : MonoBehaviour
     {
         desk.SetActive(true);
         Invoke(nameof(CountItemsOnDesk), 0.2f);
+
+        GrabIt.instance.canGrab = false; //prevent items from being grabbed when being sucked (especially coins)
     }
 
     public void CountItemsOnDesk()
     {
+        GrabIt.instance.canGrab = true; //prevent items from being grabbed when being sucked (especially coins)
+
         desk.SetActive(false);
         //Debug.Log("You chose" + deskTrigger.items[0]);
         Debug.Log("You give: ");

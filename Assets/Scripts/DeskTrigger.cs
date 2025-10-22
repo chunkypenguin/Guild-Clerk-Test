@@ -169,7 +169,6 @@ public class DeskTrigger : MonoBehaviour
     public void CheckForReward()
     {
 
-
         //always take return quest
         GameObject questRB = items.Find(item => item.name == "QuestReturn");
         if(questRB != null)
@@ -266,6 +265,16 @@ public class DeskTrigger : MonoBehaviour
         //trying to have vanelles quest stay when you give her less gold
         if (gs.coins.Count > 0)
         {
+            //prevent players from grabbing coins when being sucked up to avoid errors
+            foreach (GameObject coin in GoldSystem.instance.coins)
+            {
+                if (coin != null) // always check for null
+                {
+                    coin.layer = LayerMask.NameToLayer("Default");
+                }
+            }
+            
+
             if (cs.currentCharacter.characterName == "Finch")
             {
                 if (!finchS.askingForGold)

@@ -28,6 +28,8 @@ public class LotestScript : MonoBehaviour
 
     public bool lotestIsAhem;
 
+    [SerializeField] CharacterReputation lotestRep;
+
     public static LotestScript instance;
     private void Awake()
     {
@@ -192,5 +194,17 @@ public class LotestScript : MonoBehaviour
     public void LotestIsNotAhem()
     {
         lotestIsAhem = false;
+    }
+
+    public void LotestBeanBundleRepuation()
+    {
+        MassChangeRep.instance.canShowRep = false;
+        lotestRep.ModifyReputation(-2);
+        Invoke(nameof(SetCanShowRep), 0.25f);
+    }
+
+    private void SetCanShowRep()
+    {
+        MassChangeRep.instance.canShowRep = true;
     }
 }

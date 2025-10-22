@@ -93,4 +93,19 @@ public class ShadowWalk : MonoBehaviour
             yield return new WaitForSeconds(delay);
         }
     }
+
+    private void OnDisable()
+    {
+        // Kill all tweens in this script’s objects
+        DOTween.KillAll();
+
+        // Or only kill tweens related to specific transforms:
+        foreach (var walker in leftToRightObjects)
+            if (walker.character != null) DOTween.Kill(walker.character);
+
+        foreach (var walker in rightToLeftObjects)
+            if (walker.character != null) DOTween.Kill(walker.character);
+
+        StopAllCoroutines();
+    }
 }
