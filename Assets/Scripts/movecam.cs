@@ -65,7 +65,7 @@ public class movecam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!DaySystem.instance.gameEnd && !Recap.instance.recapOn && !DaySystem.instance.endOfDayCantPause)
+        if(!DaySystem.instance.gameEnd && !Recap.instance.recapOn && !DaySystem.instance.endOfDayCantPause && !PauseScript.instance.paused)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) //LEFT
             {

@@ -17,6 +17,8 @@ public class TahmasScript : MonoBehaviour
     public int tahmasRequestedGold;
     bool askedForGold;
 
+    public bool tahmasMet;
+
     public static TahmasScript instance;
 
     private void Awake()
@@ -31,6 +33,7 @@ public class TahmasScript : MonoBehaviour
     }
     public void StartDialogue()
     {
+        tahmasMet = true;
         if (cs.currentCharacter.choseQuestA)
         {
             cs.tahmasD3JoleneQA3.StartNewDialogue(cs.dialogueTriggerScript);

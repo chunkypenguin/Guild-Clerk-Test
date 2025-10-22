@@ -139,6 +139,11 @@ public class ReviewManager : MonoBehaviour
     //check this first before calculating rep stuff (sets up characters to be removed)
     public void CheckForDeaths()
     {
+        if (!TahmasScript.instance.tahmasMet)
+        {
+            RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[5]);
+        }
+
         //Jolene
         if (jolene.choseQuestB)
         {
@@ -537,10 +542,14 @@ public class ReviewManager : MonoBehaviour
             cs.rBadRes.StartNewDialogue(cs.dialogueTriggerScript);
             //all hate you dialogue
         }
-        else
+        else if(likes > 5)
         {
             cs.rGoodRes.StartNewDialogue(cs.dialogueTriggerScript);
             //regular x adventurers like you dialogue
+        }
+        else
+        {
+            cs.rMehRes.StartNewDialogue(cs.dialogueTriggerScript);
         }
 
         //each dialgoue end should go to characterreputationdialogue

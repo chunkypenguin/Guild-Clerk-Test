@@ -13,7 +13,7 @@ public class CoinAudio : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (Time.time - lastSoundTime < 0.15f) return; // prevent spam
+        if (Time.time - lastSoundTime < 0.3f) return; // prevent spam
         lastSoundTime = Time.time;
 
         float impactStrength = collision.relativeVelocity.magnitude;
