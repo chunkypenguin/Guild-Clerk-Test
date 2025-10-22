@@ -239,14 +239,18 @@ public class GoldSystem : MonoBehaviour
     }
    void CollectAllCoins()
     {
-        if(coins.Count > 0) //if there are still coins hanging around after turning in, turn them in manually
-        {
-            foreach (GameObject coin in coins)
-            {
-                CollectCoin(coin);
-            }
-        }
+        //if(coins.Count > 0) //if there are still coins hanging around after turning in, turn them in manually
+        //{
+        //    foreach (GameObject coin in coins)
+        //    {
+        //        CollectCoin(coin);
+        //    }
+        //}
 
+        for (int i = coins.Count - 1; i >= 0; i--)
+        {
+            CollectCoin(coins[i]);
+        }
     }
 
     public void PressedDown()

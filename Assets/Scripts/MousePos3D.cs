@@ -46,6 +46,13 @@ public class MousePos3D : MonoBehaviour
     public static MousePos3D instance;
 
     public bool isHoveringQuest;
+
+    [Header("NewCursorPositionStuff")]
+    public RectTransform cursorUIObjectNew;
+    public Canvas canvas;
+    [SerializeField] int mouseePaddingX;
+    [SerializeField] int mouseePaddingY;
+
     private void Awake()
     {
         instance = this;
@@ -67,7 +74,19 @@ public class MousePos3D : MonoBehaviour
     {
         //MOUSE STUFF
         CursorStuff();
-        cursorUIObject.transform.position = Input.mousePosition + new Vector3(18, -25, 0);
+        //cursorUIObject.transform.position = Input.mousePosition + new Vector3(18, -25, 0);
+        //NEW
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+        Input.mousePosition,
+        canvas.renderMode == RenderMode.ScreenSpaceCamera ? canvas.worldCamera : null,
+        out localPoint
+        );
+
+        cursorUIObjectNew.localPosition = localPoint + new Vector2(mouseePaddingX, mouseePaddingY); // offset
+
+
 
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, guideLayer))

@@ -319,7 +319,7 @@ public class AlexDecoSystemScript : MonoBehaviour
         }
         else if (recordAudioSource[x].CompareTag("Breeze"))
         {
-            recordAudioSource[x].DOFade(0.5f, fadeTime).SetUpdate(true);
+            recordAudioSource[x].DOFade(0.35f, fadeTime).SetUpdate(true);
         }
         else
         {

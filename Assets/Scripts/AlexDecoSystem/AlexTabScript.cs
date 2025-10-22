@@ -38,7 +38,7 @@ public class AlexTabScript : MonoBehaviour
     [SerializeField] Color highlightColor;
 
     //TESTING
-    bool decorHidden = true;
+    //bool decorHidden = true;
 
     public static AlexTabScript instance;
     private void Awake()
@@ -70,16 +70,16 @@ public class AlexTabScript : MonoBehaviour
         //DELETE
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (decorHidden)
-            {
-                ShowDecorUI();
-                decorHidden = false;
-            }
-            else
-            {
-                HideDecorUI();
-                decorHidden = true;
-            }
+            //if (decorHidden)
+            //{
+            //    ShowDecorUI();
+            //    decorHidden = false;
+            //}
+            //else
+            //{
+            //    HideDecorUI();
+            //    decorHidden = true;
+            //}
         }
 
         goldAmount = DayReputationTracker.Instance.GetGold();

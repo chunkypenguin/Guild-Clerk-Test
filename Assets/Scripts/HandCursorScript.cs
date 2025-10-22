@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +11,18 @@ public class HandCursorScript : MonoBehaviour
     [SerializeField] Sprite cursorPoint;
     [SerializeField] Sprite cursorClick;
 
+    //NEW
+    public RectTransform cursorUIObjectNew;
+    public Canvas canvas;
+
     bool clicking;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(gameObject.name);
+
         Cursor.visible = false;
         cursorImage = cursorUIObject.GetComponent<Image>();
         cursorImage.sprite = cursorPoint;
@@ -26,7 +33,18 @@ public class HandCursorScript : MonoBehaviour
     {
         //MOUSE STUFF
         CursorStuff();
-        cursorUIObject.transform.position = Input.mousePosition + new Vector3(18, -25, 0);
+        //cursorUIObject.transform.position = Input.mousePosition + new Vector3(18, -25, 0);
+
+        //NEW
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+        Input.mousePosition,
+        canvas.renderMode == RenderMode.ScreenSpaceCamera ? canvas.worldCamera : null,
+        out localPoint
+        );
+
+        cursorUIObjectNew.localPosition = localPoint + new Vector2(18, -32); // offset
     }
 
     private void CursorStuff()

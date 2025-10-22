@@ -356,8 +356,10 @@ public class CharacterSystem : MonoBehaviour
             isEquipment = false;
             isIdle = false;
 
+            Debug.Log("before quest on board");
             if (!QuestSystem.instance.questsOnBoard)
             {
+                Debug.Log("got past questOnBoard");
                 if (movecam.instance.right)
                 {
                     QuestSystem.instance.UpdateQuests();
