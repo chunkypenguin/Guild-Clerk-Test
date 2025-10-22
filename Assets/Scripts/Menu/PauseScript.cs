@@ -5,7 +5,7 @@ using TMPro;
 
 public class PauseScript : MonoBehaviour
 {
-    bool paused;
+    public bool paused;
 
     [SerializeField] GameObject pauseOverlay;
     [SerializeField] TMP_Text dayText;
@@ -16,6 +16,12 @@ public class PauseScript : MonoBehaviour
     [SerializeField] AudioClip pauseClip;
     [SerializeField] AudioClip unpauseClip;
 
+    public static PauseScript instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     // Update is called once per frame
     void Update()
     {
