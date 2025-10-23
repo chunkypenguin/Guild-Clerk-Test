@@ -278,6 +278,7 @@ public class CharacterSystem : MonoBehaviour
 
     [Header("Dialogue History")]
     public DialogueManager dialogueHistory;
+    public DialogueCharacter historyDialogueCharacter;
 
     [Header("CharacterStates")]
     public DialogueManager questDialogue;
@@ -421,6 +422,7 @@ public class CharacterSystem : MonoBehaviour
             currentCharacterObject = characterObjects[characterCount];
 
             SkipCharacter();
+            SkipCharacter(); //meme way of not skipping Josie on day 5
 
             //Create an "End Of Day" Character/Object to be placed in character list
             if(currentCharacter.characterName == "End Of Day")
@@ -675,7 +677,8 @@ public class CharacterSystem : MonoBehaviour
         Debug.Log("text history");
         dialogueHistory.currentSentence = 0;
         dialogueHistory.sentences[dialogueHistory.currentSentence].sentence = duiScript.lastMessage;
-        dialogueHistory.sentences[dialogueHistory.currentSentence].dialogueCharacter = currentCharacter;
+        //dialogueHistory.sentences[dialogueHistory.currentSentence].dialogueCharacter = currentCharacter;
+        dialogueHistory.sentences[dialogueHistory.currentSentence].dialogueCharacter = historyDialogueCharacter;
         dialogueHistory.StartNewDialogue(dialogueTriggerScript);
     }
 

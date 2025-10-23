@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f4a308dae7ffd048a8b0eb8d5ae4a02, type: 3}
-  m_Name: Lorne
+  m_Name: ????
   m_EditorClassIdentifier: 
   characterPhoto: {fileID: 0}
   characterName: Lorne
@@ -19,10 +19,13 @@ MonoBehaviour:
   ItemBName: BlackPackage
   ItemANameA: Yarn
   ItemBNameB: 
+  ItemCName: 
   choseQuestA: 0
   choseQuestB: 0
-  choseItemA: 0
-  choseItemB: 1
+  choseItemA: 1
+  choseItemB: 0
   choseItemAA: 0
+  choseItemBB: 0
+  choseItemC: 0
   textColor: {r: 0.08392483, g: 0.41239887, b: 0.26208025, a: 1}
   textAudioPitch: 0.75

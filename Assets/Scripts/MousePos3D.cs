@@ -97,7 +97,7 @@ public class MousePos3D : MonoBehaviour
         Ray questray = mainCam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(questray, out RaycastHit questraycastHit, float.MaxValue, noGuideLayer))
         {
-            if (DaySystem.instance.endOfDayCantPause || PauseScript.instance.paused)
+            if (DaySystem.instance.endOfDayCantPause || PauseScript.instance.paused || Recap.instance.recapOn)
             {
                 return;
             }

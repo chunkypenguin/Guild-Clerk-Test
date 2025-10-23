@@ -175,6 +175,10 @@ namespace HeneGames.DialogueSystem
             nameText.text = _dialogueCharacter.characterName;
             currentMessage = _message;
 
+            //FOR TEXT HISTORY
+            //CharacterSystem.instance.dialogueHistoryName = _dialogueCharacter.characterName;
+            CharacterSystem.instance.historyDialogueCharacter = _dialogueCharacter;
+
             if (animateText)
             {
                 StartCoroutine(WriteTextToTextmesh(_message, messageText));

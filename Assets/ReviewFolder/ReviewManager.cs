@@ -73,6 +73,7 @@ public class ReviewManager : MonoBehaviour
     [SerializeField] CharacterReputation achillesRep;
     [SerializeField] CharacterReputation ishizuRep;
     [SerializeField] CharacterReputation zekeRep;
+    [SerializeField] CharacterReputation tahmasRep;
 
     CharacterSystem cs;
 
@@ -127,6 +128,7 @@ public class ReviewManager : MonoBehaviour
 
     public void ReviewInProgressCheck()
     {
+
         if(reviewInProgress)
         {
             reviewInProgress = false;
@@ -136,13 +138,22 @@ public class ReviewManager : MonoBehaviour
             reviewInProgress = true;
         }
     }
+
+    public void ReviewInProgressCheckP1()
+    {
+        if (deathCount > 0) //moves to death thing
+        {
+            //do nothing, moves on to death dialogue, which does its own reeview check
+        }
+        else //will skip death dialogue
+        {
+            reviewInProgress = false;
+        }
+    }
     //check this first before calculating rep stuff (sets up characters to be removed)
     public void CheckForDeaths()
     {
-        if (!TahmasScript.instance.tahmasMet)
-        {
-            RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[5]);
-        }
+
 
         //Jolene
         if (jolene.choseQuestB)
@@ -162,6 +173,25 @@ public class ReviewManager : MonoBehaviour
             }
         }
 
+        //Ishizu
+        if (ishizu.choseItemB)
+        {
+            //dead
+            deathCount++;
+            ishizuRep.CharacterDie();
+            RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[10]); //ishizu = 2
+        }
+        else
+        {
+            //characterRep.Add(ishizuRep);
+        }
+
+        if (!TahmasScript.instance.tahmasMet)
+        {
+            tahmasRep.CharacterDie();
+            RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[5]);
+        }
+
         //Achilles
         if (!AchillesScript.instance.achillesCoinGiven)
         {
@@ -176,26 +206,15 @@ public class ReviewManager : MonoBehaviour
             //characterRep.Add(achillesRep);
         }
 
-        //Ishizu
-        if (ishizu.choseQuestB)
-        {
-            //dead
-            deathCount++;
-            ishizuRep.CharacterDie();
-            RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[10]); //ishizu = 2
-        }
-        else
-        {
-            //characterRep.Add(ishizuRep);
-        }
+
 
         //zeke
-        if(zeke.choseItemAA)
+        if (zeke.choseItemAA)
         {
             //dead
-            deathCount++;
-            zekeRep.CharacterDie();
-            RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[7]); //zeke = 3
+            //deathCount++;
+            //zekeRep.CharacterDie();
+            //RemoveClipBoardIcon(ReviewClipboard.instance.clipBoardIcons[7]); //zeke = 3
         }
         else
         {
@@ -508,7 +527,7 @@ public class ReviewManager : MonoBehaviour
         {
             //say rep result dialogue
             //ReviewDialogueReputationResults(); //OLD
-
+            //ReviewInProgressCheck();
             //NEW
             ClipBoardFunction();
         }
@@ -542,7 +561,7 @@ public class ReviewManager : MonoBehaviour
             cs.rBadRes.StartNewDialogue(cs.dialogueTriggerScript);
             //all hate you dialogue
         }
-        else if(likes > 5)
+        else if(likes > 7)
         {
             cs.rGoodRes.StartNewDialogue(cs.dialogueTriggerScript);
             //regular x adventurers like you dialogue
