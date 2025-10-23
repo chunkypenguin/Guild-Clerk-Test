@@ -44,21 +44,21 @@ namespace HeneGames.DialogueSystem
             //Start dialogue by input
             if (Input.GetKeyDown(DialogueUI.instance.actionInput) && dialogueTrigger != null && !dialogueIsOn)
             {
-                //Trigger event inside DialogueTrigger component
-                if (dialogueTrigger != null)
-                {
-                    dialogueTrigger.startDialogueEvent.Invoke();
-                }
+                ////Trigger event inside DialogueTrigger component
+                //if (dialogueTrigger != null)
+                //{
+                //    dialogueTrigger.startDialogueEvent.Invoke();
+                //}
 
-                startDialogueEvent.Invoke();
+                //startDialogueEvent.Invoke();
 
-                //If component found start dialogue
-                DialogueUI.instance.StartDialogue(this);
+                ////If component found start dialogue
+                //DialogueUI.instance.StartDialogue(this);
 
-                //Hide interaction UI
-                DialogueUI.instance.ShowInteractionUI(false);
+                ////Hide interaction UI
+                //DialogueUI.instance.ShowInteractionUI(false);
 
-                dialogueIsOn = true;
+                //dialogueIsOn = true;
             }
         }
 

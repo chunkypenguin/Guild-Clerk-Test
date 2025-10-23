@@ -107,5 +107,6 @@ public class CoinFountain : MonoBehaviour
         //go to next dialogue
         ReviewManager.instance.GoldDialogueResults();
         ReviewManager.instance.ReviewInProgressCheck(); //turns on review in progress bool
+        //dont skip dialogue after 
     }
 }
