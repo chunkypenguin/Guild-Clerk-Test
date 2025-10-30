@@ -136,7 +136,7 @@ public class MoveCharacter : MonoBehaviour
             }
             transform.DOMove(endPos, moveSpeed).OnComplete(() =>
             {
-                DialogueUI.instance.textAnimationSpeed = 0.6f; //back to base speed
+                DialogueUI.instance.textAnimationSpeed = 1f; //back to base speed
                 moveSpeed = 2f;
                 if (cs.currentCharacter.characterName == "Greg")
                 {
@@ -381,7 +381,8 @@ public class MoveCharacter : MonoBehaviour
                 }
                 else
                 {
-                    DialogueUI.instance.textAnimationSpeed = 0.6f;
+                    //DialogueUI.instance.textAnimationSpeed = 0.6f;
+                    DialogueUI.instance.textAnimationSpeed = 1f;
                 }
             }
             else

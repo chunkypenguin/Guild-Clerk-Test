@@ -314,6 +314,9 @@ public class CharacterSystem : MonoBehaviour
 
     [SerializeField] bool josieSkippedOne;
 
+    [Header("Trailer Stuff")]
+    [SerializeField] AudioSource bellStepsAudio;
+
     public static CharacterSystem instance;
 
     private void Awake()
@@ -325,8 +328,17 @@ public class CharacterSystem : MonoBehaviour
     }
     private void Start()
     {
-        currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
+        //currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
         ChangeTextColor();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            currentCharacterObject.GetComponent<MoveCharacter>().MoveToDesk();
+            bellStepsAudio.Play();
+        }
     }
 
     //achilles specific stuff (found at end of first dialogue)

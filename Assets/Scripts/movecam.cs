@@ -29,7 +29,7 @@ public class movecam : MonoBehaviour
 
     //TUTORIAL STUFF
     public bool tutorial;
-    bool rightTut;
+    [SerializeField] bool rightTut;
     //[SerializeField] bool turnedRight;
     //[SerializeField] bool turnedLeft;
     [SerializeField] public bool dontFlash;
@@ -85,6 +85,7 @@ public class movecam : MonoBehaviour
                     GoldSystem.instance.StopHold(); //prevents gold button glitch (when holding up/down and moving cameras using keys)
                     if (!rightTut)
                     {
+                        Debug.Log("Right Tut Triggered");
                         //TutorialScript.instance.JosieTutDialogue(CharacterSystem.instance.josieD1P4);
                         TutorialScript.instance.TutorialQuestPoof();
                         rightTut = true;
