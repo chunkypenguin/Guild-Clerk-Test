@@ -63,6 +63,7 @@ public class CharacterSystem : MonoBehaviour
     public DialogueManager rPerfectRes;
     public DialogueManager rGoodRes;
     public DialogueManager rMehRes;
+    public DialogueManager rMehResSingle;
     public DialogueManager rBadRes;
     public DialogueManager rPerfect;
     public DialogueManager rGreat;

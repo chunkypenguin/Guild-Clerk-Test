@@ -568,7 +568,15 @@ public class ReviewManager : MonoBehaviour
         }
         else
         {
-            cs.rMehRes.StartNewDialogue(cs.dialogueTriggerScript);
+            if(likes > 1)
+            {
+                cs.rMehRes.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+            else
+            {
+                cs.rMehResSingle.StartNewDialogue(cs.dialogueTriggerScript);
+            }
+                
         }
 
         //each dialgoue end should go to characterreputationdialogue
