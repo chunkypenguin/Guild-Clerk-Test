@@ -354,6 +354,10 @@ public class DeskTrigger : MonoBehaviour
 
                     LorneScript.instance.partOneComplete = true;
                 }
+                else
+                {
+                    DefaultDuplicateCheck();
+                }
             }
 
             else if (!LorneScript.instance.partTwoComplete)
@@ -390,8 +394,6 @@ public class DeskTrigger : MonoBehaviour
                 }
 
             }
-
-
         }
 
         else if(cs.currentCharacter.characterName == "Zeke")
@@ -476,8 +478,9 @@ public class DeskTrigger : MonoBehaviour
                     cs.IsIdle();
                 }
 
+                //ADDED 11/11/25
+                DefaultDuplicateCheck();
 
-                
                 //Debug.Log("two or no quests on desk");
                 //if (!raspS.raspberriesOnDesk)
                 //{
@@ -491,7 +494,7 @@ public class DeskTrigger : MonoBehaviour
                 //    {
                 //        cs.zekeD3Refuse2.StartNewDialogue(cs.dialogueTriggerScript);
                 //        itemScript.ItemGlowOff();
-                        
+
                 //    }
                 //    cs.IsIdle();
                 //}
@@ -516,7 +519,11 @@ public class DeskTrigger : MonoBehaviour
                 cs.josieKalinERefuse.StartNewDialogue(cs.dialogueTriggerScript);
                 itemScript.ItemGlowOff();
                 cs.IsIdle();
+
+                //ADDED 11/11/25
+                DefaultDuplicateCheck();
             }
+
         }
 
         else if (cs.currentCharacter.characterName == "Nomira")
@@ -559,6 +566,10 @@ public class DeskTrigger : MonoBehaviour
                     itemS.GetItemRb(itemRB);
                     cs.IsIdle();
                 }
+                else
+                {
+                    DefaultDuplicateCheck();
+                }
 
             }
             else if (cs.currentCharacter.choseQuestA) //QUEST A (RUINS)
@@ -588,6 +599,10 @@ public class DeskTrigger : MonoBehaviour
                     GameObject itemRB = items.Find(item => item.name == cs.currentCharacter.ItemBName);
                     itemS.GetItemRb(itemRB);
                     cs.IsIdle();
+                }
+                else
+                {
+                    DefaultDuplicateCheck();
                 }
             }
         }
@@ -651,21 +666,88 @@ public class DeskTrigger : MonoBehaviour
             Debug.Log("two or no items on desk");
 
             //CheckForDuplicateItems();
+            DefaultDuplicateCheck();
 
         }
 
-        CheckForDuplicateItems(); //should only work when more than two items are on the desk which should never be allowed to turn in
+        //CheckForDuplicateItems(); //should only work when more than two items are on the desk which should never be allowed to turn in
     }
 
     private void CheckForDuplicateItems()
     {
+        if(cs.currentCharacter.characterName == "Lorne")
+        {
+            if (!LorneScript.instance.partOneComplete)
+            {
+                string[] lorneTargetNames = {
+                cs.currentCharacter.ItemAName,
+                cs.currentCharacter.ItemBName,
+                };
+
+                // Count how many of the target items exist in the list
+                int lorneTotalMatches = items.Count(item => lorneTargetNames.Contains(item.name));
+
+                if (lorneTotalMatches > 1)
+                {
+                    cs.josieTwoItemReminder.StartNewDialogue(cs.dialogueTriggerScript);
+                }
+                Debug.Log(lorneTotalMatches);
+            }
+            else if (!LorneScript.instance.partTwoComplete)
+            {
+                string[] lorneTargetNames = {
+                cs.currentCharacter.ItemCName
+                };
+
+                // Count how many of the target items exist in the list
+                int lorneTotalMatches = items.Count(item => lorneTargetNames.Contains(item.name));
+
+                if (lorneTotalMatches > 1)
+                {
+                    cs.josieTwoItemReminder.StartNewDialogue(cs.dialogueTriggerScript);
+                }
+                Debug.Log(lorneTotalMatches);
+            }
+        }
+        else if (cs.currentCharacter.characterName == "Nomira")
+        {
+            if (cs.currentCharacter.choseQuestA) //curse
+            {
+                string[] nomiraTargetNames = {
+                cs.currentCharacter.ItemBName,
+                cs.currentCharacter.ItemANameA,
+                cs.currentCharacter.ItemBNameB
+                };
+
+                // Count how many of the target items exist in the list
+                int nomiraTotalMatches = items.Count(item => nomiraTargetNames.Contains(item.name));
+
+                if (nomiraTotalMatches > 1)
+                {
+                    cs.josieTwoItemReminder.StartNewDialogue(cs.dialogueTriggerScript);
+                }
+                Debug.Log(nomiraTotalMatches);
+            }
+            else
+            {
+                DefaultDuplicateCheck();
+            }
+        }
+        else
+        {
+            DefaultDuplicateCheck();
+        }
+    }
+
+    void DefaultDuplicateCheck()
+    {
         string[] targetNames = {
-        cs.currentCharacter.ItemAName,
-        cs.currentCharacter.ItemBName,
-        cs.currentCharacter.ItemANameA,
-        cs.currentCharacter.ItemBNameB,
-        cs.currentCharacter.ItemCName
-        };
+            cs.currentCharacter.ItemAName,
+            cs.currentCharacter.ItemBName,
+            cs.currentCharacter.ItemANameA,
+            cs.currentCharacter.ItemBNameB,
+            cs.currentCharacter.ItemCName
+            };
 
         // Count how many of the target items exist in the list
         int totalMatches = items.Count(item => targetNames.Contains(item.name));
