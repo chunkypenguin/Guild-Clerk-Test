@@ -3121,7 +3121,7 @@ Transform:
   m_GameObject: {fileID: 663274217}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: -0.49999997, z: 0.49999997, w: 0.50000006}
-  m_LocalPosition: {x: -13.896107, y: 0.58407784, z: 8.4}
+  m_LocalPosition: {x: -13.896107, y: 1.11, z: 8.4}
   m_LocalScale: {x: 0.34935287, y: 0, z: 0.6096465}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6404,8 +6404,8 @@ MonoBehaviour:
     moveSpeed: 2
     numJumps: 15
   moveDistance: 20
-  minDelay: 2
-  maxDelay: 8
+  minDelay: 1
+  maxDelay: 5
   jumpPower: 0.125
 --- !u!1 &1534416663
 GameObject:
