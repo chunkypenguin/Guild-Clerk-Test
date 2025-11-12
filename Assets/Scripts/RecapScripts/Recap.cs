@@ -51,7 +51,8 @@ public class Recap : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.G))
         {
-            //DisplayRecap();
+            RecapPage.SetActive(true);
+            FadeToRecap();
         }
     }
 
