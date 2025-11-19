@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Item Labels Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Item Labels
+  m_TableCollectionNameGuidString: c1e795978e9d1e446abd9370b52ad69a
+  m_Entries:
+  - m_Id: 35605229568
+    m_Key: itemLabel.Amethyst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 539181756416
+    m_Key: itemLabel.Malachite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 956036853760
+    m_Key: itemLabel.GlassCrystal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1434388836352
+    m_Key: itemLabel.Succulent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1540362121216
+    m_Key: itemLabel.RedMushroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2101912317952
+    m_Key: itemLabel.MysticMushroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2260268265472
+    m_Key: itemLabel.TallPlant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2638653206528
+    m_Key: itemLabel.MoneyPlant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2807478136832
+    m_Key: itemLabel.Bonsai
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3150773530624
+    m_Key: itemLabel.Banana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3343904452608
+    m_Key: itemLabel.RustySword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3563241385984
+    m_Key: itemLabel.GreatSword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3841361489920
+    m_Key: itemLabel.GrainBundle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4115627028480
+    m_Key: itemLabel.RedHerb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4294438596608
+    m_Key: itemLabel.TealHerb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4482620239872
+    m_Key: itemLabel.Pie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4640275738624
+    m_Key: itemLabel.Bone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5010355957760
+    m_Key: itemLabel.GrimNote
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5145957806080
+    m_Key: itemLabel.Talon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5488254955520
+    m_Key: itemLabel.Yarn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5780266594304
+    m_Key: itemLabel.LuckyCoin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6211256496128
+    m_Key: itemLabel.Goblin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6354290651136
+    m_Key: itemLabel.Dragon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6480484675584
+    m_Key: itemLabel.PurpPackage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6755882676224
+    m_Key: itemLabel.GolemCore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6901643128832
+    m_Key: itemLabel.Mandrake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7373787541504
+    m_Key: itemLabel.ChewMandrake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7753053286400
+    m_Key: itemLabel.CosmicStaff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7855327195136
+    m_Key: itemLabel.DruidicStaff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7983576428544
+    m_Key: itemLabel.DivineStaff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8205169897472
+    m_Key: itemLabel.BrokenStaff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8485781417984
+    m_Key: itemLabel.BlackPackage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8701339283456
+    m_Key: itemLabel.RedPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8826258239488
+    m_Key: itemLabel.PurpPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8964703825920
+    m_Key: itemLabel.Skull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9309173624832
+    m_Key: itemLabel.Raspberries
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9560336936960
+    m_Key: itemLabel.GoldBundle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9977670184960
+    m_Key: itemLabel.MushroomBag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10095408492544
+    m_Key: itemLabel.TulipBasket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10867957346304
+    m_Key: itemLabel.BeanBundle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11297466658816
+    m_Key: itemLabel.Elixir
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7876072711851343909
+  references:
+    version: 2
+    RefIds:
+    - rid: 7876072711851343909
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1763558896623

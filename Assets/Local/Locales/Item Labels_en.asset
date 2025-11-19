@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Item Labels_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c1e795978e9d1e446abd9370b52ad69a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 35605229568
+    m_Localized: Amethyst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 539181756416
+    m_Localized: Malachite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 956036853760
+    m_Localized: Glass Crystal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1434388836352
+    m_Localized: Succulent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1540362121216
+    m_Localized: Red Mushroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2101912317952
+    m_Localized: Mystic Mushroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2260268265472
+    m_Localized: Tall Plant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2638653206528
+    m_Localized: Money Plant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2807478136832
+    m_Localized: Bonsai
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3150773530624
+    m_Localized: Banana Scimitar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3343904452608
+    m_Localized: Rusty Long Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3563241385984
+    m_Localized: Malicious Great Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3841361489920
+    m_Localized: Bundle of Grains
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4115627028480
+    m_Localized: Fiery Herb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4294438596608
+    m_Localized: Minty Herb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4482620239872
+    m_Localized: Slice of Pie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4640275738624
+    m_Localized: Bone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5010355957760
+    m_Localized: Grim Note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5145957806080
+    m_Localized: Harpy Talon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5488254955520
+    m_Localized: Josie's Yarn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5780266594304
+    m_Localized: Lucky Coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6211256496128
+    m_Localized: Goblin Head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6354290651136
+    m_Localized: Dragon Head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6480484675584
+    m_Localized: Purple Package
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6755882676224
+    m_Localized: Golem Core
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6901643128832
+    m_Localized: Mandrake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7373787541504
+    m_Localized: Chewed Mandrake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7753053286400
+    m_Localized: Cosmic Staff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7855327195136
+    m_Localized: Druidic Staff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7983576428544
+    m_Localized: Divine Staff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8205169897472
+    m_Localized: Broken Staff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8485781417984
+    m_Localized: Black Package
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8701339283456
+    m_Localized: Red Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8826258239488
+    m_Localized: Purple Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8964703825920
+    m_Localized: Skull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9309173624832
+    m_Localized: Raspberries
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9560336936960
+    m_Localized: Bundle of 25 Gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9977670184960
+    m_Localized: Bag of Mushrooms
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10095408492544
+    m_Localized: Basket of Tulips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10867957346304
+    m_Localized: Bundle of Beans
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11297466658816
+    m_Localized: Lorne's Elixir
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
