@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ko
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e840ab1e076190743b34a50c47529217
+    m_Address: Day End Screen_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f55432ba8ec7b3a40a77b63e32ca1784
     m_Address: Pause Menu Labels_ko
     m_ReadOnly: 1

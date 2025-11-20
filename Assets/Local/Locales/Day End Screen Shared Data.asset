@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Day End Screen Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Day End Screen
+  m_TableCollectionNameGuidString: 5c3ed0cdf6374024c8f9d59d3e5870c9
+  m_Entries:
+  - m_Id: 55091965952
+    m_Key: dayEnd.1P1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 406478172160
+    m_Key: dayEnd.1P2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 622837149696
+    m_Key: dayEnd.1P3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 922075574272
+    m_Key: dayEnd.2P1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1249688465408
+    m_Key: dayEnd.2P2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1528987168768
+    m_Key: dayEnd.3P1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1790258753536
+    m_Key: dayEnd.3P2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2015308328960
+    m_Key: dayEnd.4P1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2279679504384
+    m_Key: dayEnd.4P2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2636388282368
+    m_Key: dayEnd.5GP1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3000193822720
+    m_Key: dayEnd.5GP2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3536297177088
+    m_Key: dayEnd.5OP1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3742422052864
+    m_Key: dayEnd.5OP2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4080487149568
+    m_Key: dayEnd.5OP3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4315254927360
+    m_Key: dayEnd.5RP1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474579759104
+    m_Key: dayEnd.5RP2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5460090204160
+    m_Key: dayEnd.NextDay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8157791039488
+    m_Key: dayEnd.Total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8496757911552
+    m_Key: dayEnd.GoldBundle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8711439167488
+    m_Key: dayEnd.Wage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8880708694016
+    m_Key: dayEnd.Rep
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8970596823040
+    m_Key: dayEnd.Earnings
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7876072734058610688
+  references:
+    version: 2
+    RefIds:
+    - rid: 7876072734058610688
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1763640493788

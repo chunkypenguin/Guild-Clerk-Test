@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c3ed0cdf6374024c8f9d59d3e5870c9
+    m_Address: Assets/Local/Locales/Day End Screen Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c1e795978e9d1e446abd9370b52ad69a
     m_Address: Assets/Local/Locales/Item Labels Shared Data.asset
     m_ReadOnly: 1

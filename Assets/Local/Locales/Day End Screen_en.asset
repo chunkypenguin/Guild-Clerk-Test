@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Day End Screen_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 5c3ed0cdf6374024c8f9d59d3e5870c9, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 55091965952
+    m_Localized: Your day comes to an end. You go home and wake up the next morning.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 406478172160
+    m_Localized: After a full night's rest, you start your walk towards the Guild
+      House before it opens. The walk is blissful and you recognize a few faces of
+      other guild clerks on their way to the Guild House, but you decide to hold
+      yourself back from walking to them to say hi out of fear of embarrassing yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 622837149696
+    m_Localized: "As you walk into the Guild House, you see a few guild clerks already
+      here\u2014just chatting with one another before the day starts. You walk to
+      your station, tidy up your counter, and await the next adventurer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 922075574272
+    m_Localized: Adventurers grumble and filter out of the Guild. You wipe the sweat
+      off your forehead and sigh. Today was rough, but you made it through just fine.
+      You pack up your stuff and head out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1249688465408
+    m_Localized: Tommorow is a new day.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1528987168768
+    m_Localized: "You leave work with your head buzzing, today\u2019s conversations
+      still echoing in your ears. A strange mix of tension and laughter trails behind
+      you\u2014some customers left you smiling, others left you questioning reality.
+      At home, you throw your bag down, light a scented candle you forgot you owned,
+      and sink into the couch like it owes you money."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1790258753536
+    m_Localized: "The next morning, you're back on your feet. A little sore, a little
+      sharper. Whatever walks through that door today? You\u2019re ready. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2015308328960
+    m_Localized: "You close up shop just as the lanterns flicker to life outside.
+      Today wasn\u2019t the worst, but it sure tried a few times. Back home, you
+      toss a heel of bread into some soup and call it dinner. One more day, you tell
+      yourself. Just one more and you've made it through the first week!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2279679504384
+    m_Localized: "The rooster barely crows before you\u2019re up again, bleary-eyed
+      but getting dressed. You\u2019re sure that you can handle whoever shows up
+      today."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2636388282368
+    m_Localized: "The end of your shift comes and you start to pack up. You take
+      a look at your station and can\u2019t help but smile. Sure, thus far it\u2019s
+      been the most violent pendulum swing of either the nicest people you've ever
+      met to the craziest people the guild could legally call an adventurer\u2014but
+      it\u2019s kind of fun in an odd way. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3000193822720
+    m_Localized: "You finish packing stuff in your bag and walk out the doors. After
+      a couple of steps you look back at the big guild house and feel a tinge of
+      happiness. You know that whatever comes next in the future, it\u2019s going
+      to be just as fun and exciting as the days before. You simply can\u2019t imagine
+      the job getting boring after all. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3536297177088
+    m_Localized: "The end of the day comes and you start to pack up. Sure, Josie
+      didn\u2019t offer you an official position just yet, but you feel like these
+      next few days you\u2019ll be able to redeem yourself. Just a bit more of sucking
+      up to adventurers who probably don\u2019t deserve it, properly handing out
+      gold, and maybe then you think you can make it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3742422052864
+    m_Localized: "You finish packing stuff in your bag and head home. After a couple
+      of steps you look back at the guild house and you feel a stirring in your heart
+      hoping you can turn things around for the better. You know that whatever comes
+      next, get the job or not, you\u2019ve learned from this experience and that
+      next time you\u2019ll be ready.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4080487149568
+    m_Localized: 'When you finally return home and sink into bed, your mind can''t
+      help but wonder: What if I had been hired? Where would all the adventurers
+      be now?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4315254927360
+    m_Localized: "The end of the day comes and Josie rushes you out of the Guild
+      House\u2014barely having time to gather your belongings. You messed up REALLY
+      bad, and you know it. You think to yourself, \u201CIf only I could start the
+      week over and retry\u2026\u201D But it\u2019s not like you can rewind time,
+      right?\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474579759104
+    m_Localized: "You head home, looking down at your feet, kicking some pebbles
+      around thinking about how the past 5 days unfolded. Wow. YOU REALLY MESSED
+      UP. After walking for a bit, you look back towards the guild house to reminisce
+      about the time you spent there\u2026 All of a sudden you trip over a rock and
+      fall on your face. Today must not be your day.\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5460090204160
+    m_Localized: Next Day
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8157791039488
+    m_Localized: 'Total Earnings: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8496757911552
+    m_Localized: 'Josie''s Gold Bundle:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8711439167488
+    m_Localized: 'Daily Wage: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8880708694016
+    m_Localized: 'Adventurer Rep: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8970596823040
+    m_Localized: 'Daily Earnings: '
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

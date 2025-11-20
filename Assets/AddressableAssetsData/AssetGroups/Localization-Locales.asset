@@ -23,6 +23,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d2b97d18a9277046af373024d34b493
+    m_Address: Romanian (ro)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9aebf773e4f589846a92f2ed6878ba56
+    m_Address: Greek (el)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ba2c228a15c36334296c4546661fc77b
     m_Address: Chinese (Simplified) (zh-Hans)
     m_ReadOnly: 1

@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-zh-Hans
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61548f65e31bf2744ae9f7b62b1470be
+    m_Address: Day End Screen_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe278963eebf1f3428a2d0050e11c1f3
     m_Address: Pause Menu Labels_zh-Hans
     m_ReadOnly: 1

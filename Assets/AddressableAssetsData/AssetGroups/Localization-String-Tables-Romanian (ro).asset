@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Romanian (ro)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Romanian (ro)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 51e6677f129dc6546801c433e13c0949
+  m_SerializeEntries:
+  - m_GUID: 364cb404829ed8445877ac3883a37c71
+    m_Address: Item Labels_ro
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ro
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e338982c31cc67499591f2f9b295f85
+    m_Address: Day End Screen_ro
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ro
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6a8d7c46e5628f4883530e61d174a40
+    m_Address: Pause Menu Labels_ro
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ro
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: e45c24cdbca58944f8ff664a0dbd328e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 61555c99ca0a9fe48aad12e683142693, type: 2}
+    - {fileID: 11400000, guid: b7ab9ecc5da709c439fe33fe27563c77, type: 2}
