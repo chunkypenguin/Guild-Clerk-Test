@@ -24,7 +24,7 @@ public class InGameConsole : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.BackQuote)) // toggle with ~ key
         {
-            consolePanel.SetActive(!consolePanel.activeSelf);
+            //consolePanel.SetActive(!consolePanel.activeSelf);
         }
     }
 
