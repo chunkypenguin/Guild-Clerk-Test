@@ -16,6 +16,6 @@ MonoBehaviour:
   questDescription: "\r\"An ancient dragon has recently inhabited the Deep Rune Mines.
     It\u2019s been hoarding tools, wrecking equipment, and making work impossible
     for the miners. We\u2019ve tried luring it out with gems, but anyone who has
-    attempted has been burnt to a crisp!\r\n\r\nIf you\u2019ve got a guts and a sharp
+    attempted has been burnt to a crisp!\r\n\r\nIf you\u2019ve got guts and a sharp
     blade, we need your help. The mines won\u2019t be safe until it\u2019s gone.\"\r\r\n"
   questReward: 'Reward: 85 gold'
